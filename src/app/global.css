@@ -1,4 +1,8 @@
 /* color #def7ff */
+
+.margin-top-50 {
+    margin-top: 50px;
+}
 /* main */
 .bannerImg {
     width: 100%;
@@ -51,9 +55,9 @@
 
 /* LoginLink */
 .LoginLink {
-    text-decoration: underline;
-    color: lightgrey;
-    font-weight: 500;
+    color: #ffd400;
+    font-weight: 900;
     font-size: 0.875rem;
     margin-left: 5px;
+    text-decoration: none;
 }

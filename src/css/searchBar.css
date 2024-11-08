@@ -6,10 +6,9 @@
 .inputNav input {
     width: 20rem;
     height: 2rem;
-    background-color: #def7ff;
     padding-left: 15%;
     border: none;
-    border-radius: 10px;
+    border-bottom: 1px solid black;
 }
 
 .inputNav input:focus {
@@ -19,5 +18,5 @@
 .navIcon {
     position: absolute;
     top: 20%;
-    left: 5%;
+    left: 2%;
 }

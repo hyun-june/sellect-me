@@ -13,7 +13,7 @@ const Navigation = () => {
         <>
             <Navbar>
                 <div className="navContainer">
-                    <Navbar.Brand href="#">
+                    <Navbar.Brand href="/">
                         <img
                             className="logoImg"
                             src="/images/logo-outline.png"
