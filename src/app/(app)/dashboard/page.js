@@ -1,3 +1,4 @@
+// dashboard - /dashboard 페이지 => 로그인시 대쉬보드로 이동됨. 로그인 했을 때 페이지로 사용 예정
 import Header from '@/app/(app)/Header'
 
 export const metadata = {
@@ -22,3 +23,4 @@ const Dashboard = () => {
 }
 
 export default Dashboard
+

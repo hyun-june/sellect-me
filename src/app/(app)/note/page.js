@@ -7,11 +7,11 @@ import axios from 'axios';
 const Note = () => { // 컴포넌트 이름은 React로 유지합니다.
 
     const [notes, setNotes] = useState([]);
-    
+
     useEffect(() => {
         const fetchNotes = async () => {
             try {
-                const response = await axios.get('http://dbsrbtjs.cafe24.com:80/notes'); // 노트를 가져오는 API 호출
+                const response = await axios.get('http://localhost:8000/notes'); // 노트를 가져오는 API 호출
                 setNotes(response.data); // 상태에 노트를 저장
             } catch (error) {
                 console.error("Failed to fetch notes:", error);
@@ -32,7 +32,7 @@ const Note = () => { // 컴포넌트 이름은 React로 유지합니다.
                     </li>
                 ))}
             </ul>
-            
+
         </>
     );
 };
