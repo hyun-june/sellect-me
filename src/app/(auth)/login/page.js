@@ -9,11 +9,17 @@ import { useAuth } from '@/hooks/auth'
 import { useEffect, useState } from 'react'
 import { useRouter } from 'next/navigation'
 import AuthSessionStatus from '@/app/(auth)/AuthSessionStatus'
+import { v4 as uuidv4 } from 'uuid'
 
 
-const client_id = "0eca8c37d1d2fa4a589d2aeb9a8a3053"
-const redirect_uri = "http://dbsrbtjs.cafe24.com:3000/login"
-const response_type = "code";
+const kakao_client_id = "0eca8c37d1d2fa4a589d2aeb9a8a3053"
+const kakao_redirect_uri = "http://localhost:8000/auth/callback"
+const kakao_response_type = "code"
+
+const naver_client_id = "ykhorqbDvWdjxdHre6Zg"
+const naver_redirect_uri = "http://localhost:8000/auth/callback"
+const naver_response_type = "code"
+const naver_state = uuidv4();
 
 const Login = () => {
     const router = useRouter()
@@ -52,10 +58,17 @@ const Login = () => {
 
 
     const authParam = new URLSearchParams({
-        client_id,
-        redirect_uri,
-        response_type
-    })
+        client_id: kakao_client_id,  // kakao_client_id 값을 client_id로 사용
+        redirect_uri: kakao_redirect_uri,  // kakao_redirect_uri 값을 redirect_uri로 사용
+        response_type: kakao_response_type  // kakao_response_type 값을 response_type으로 사용
+    });
+
+    const authParam1 = new URLSearchParams({
+        client_id: naver_client_id,  // naver_client_id 값을 client_id로 사용
+        redirect_uri: naver_redirect_uri,  // naver_redirect_uri 값을 redirect_uri로 사용
+        response_type: naver_response_type,  // naver_response_type 값을 response_type으로 사용
+        status,
+    });
 
 
 
@@ -135,6 +148,8 @@ const Login = () => {
             </form>
 
             <a href={`https://kauth.kakao.com/oauth/authorize?${authParam.toString()}`}> 카카오 로그인 </a>
+            <br/>
+            <a href={`https://nid.naver.com/oauth2.0/authorize/authorize?${authParam1.toString()}`}> 네이버 로그인 </a>
         </>
     )
 }
