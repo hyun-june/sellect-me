@@ -11,6 +11,8 @@ import { useRouter } from 'next/navigation'
 import AuthSessionStatus from '@/app/(auth)/AuthSessionStatus'
 import { v4 as uuidv4 } from 'uuid'
 import LoginButton from '@/components/LoginButton'
+import './css/login.css'
+import { Container, Row, Col } from 'react-bootstrap'
 
 const kakao_client_id = '0eca8c37d1d2fa4a589d2aeb9a8a3053'
 const kakao_redirect_uri = 'http://localhost:8000/auth/callback'
@@ -69,22 +71,32 @@ const Login = () => {
     })
 
     return (
-        <>
-            <AuthSessionStatus className="mb-4" status={status}/>
+        <Container>
+            <AuthSessionStatus className="mb-4" status={status} />
+            <Row className="justify-content-center">
+                <Col xs="auto">
+                    <div className="login-text">로그인 / 회원가입</div>
+                    <LoginButton title="구글" src="./images/google_login.png" />
 
-            <a
-                href={`https://kauth.kakao.com/oauth/authorize?${authParam.toString()}`}>
-                <LoginButton title="카카오" src="/images/kakao_login.png"/>
-            </a>
-
-
-            <br/>
-            <a
-                href={`https://nid.naver.com/oauth2.0/authorize/authorize?${authParam1.toString()}`}>
-                    <LoginButton title="네이버" src="/images/naver_login.png" />
+                    <a
+                        href={`https://kauth.kakao.com/oauth/authorize?${authParam.toString()}`}>
+                        <LoginButton
+                            title="카카오"
+                            src="/images/kakao_login.png"
+                        />
                     </a>
-                    </>
-                    )
-                }
+
+                    <a
+                        href={`https://nid.naver.com/oauth2.0/authorize/authorize?${authParam1.toString()}`}>
+                        <LoginButton
+                            title="네이버"
+                            src="/images/naver_login.png"
+                        />
+                    </a>
+                </Col>
+            </Row>
+        </Container>
+    )
+}
 
 export default Login
