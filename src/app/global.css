@@ -1,7 +1,63 @@
-/*@tailwind base;*/
-/*@tailwind components;*/
-/*@tailwind utilities;*/
+/* color #def7ff */
 
-@import '~bootstrap/dist/css/bootstrap.min.css';
+.margin-top-50 {
+    margin-top: 50px;
+}
+/* main */
+.bannerImg {
+    width: 100%;
+    height: 400px;
+    margin: 3rem 0rem;
+    position: relative;
+}
 
-/* 추가적인 사용자 정의 CSS가 필요하다면 아래에 작성 */
+.textBox {
+    margin: 2rem;
+    padding: 1rem 2rem;
+    border: none;
+    position: relative;
+    z-index: 0;
+}
+
+.textBox:before {
+    border-top: 2px solid #def7ff;
+    border-left: 2px solid #def7ff;
+    content: '';
+    display: block;
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    width: 20px;
+    height: 20px;
+    z-index: 1;
+}
+
+.textBox::after {
+    border-bottom: 2px solid #def7ff;
+    border-right: 2px solid #def7ff;
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: -2px;
+    right: -2px;
+    width: 20px;
+    height: 20px;
+    z-index: 1;
+}
+
+.cardSection {
+    margin: 3rem 0px;
+}
+
+.sectionLine {
+    border-bottom: 2px solid #def7ff;
+}
+
+/* LoginLink */
+.LoginLink {
+    color: #ffd400;
+    font-weight: 900;
+    font-size: 0.875rem;
+    margin-left: 5px;
+    text-decoration: none;
+}
