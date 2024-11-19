@@ -23,3 +23,16 @@
     background-color: #def7ff;
     border: none;
 }
+.box-box {
+    border: 1px solid red;
+}
+
+.drop-icon {
+    position: relative;
+    left: -1em;
+}
+
+.box {
+    border: 1px solid black;
+    width: 7em;
+}
