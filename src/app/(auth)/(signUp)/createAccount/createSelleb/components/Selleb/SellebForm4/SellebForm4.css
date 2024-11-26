@@ -1,0 +1,10 @@
+.detail-info {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+
+    & label {
+        width: 60%;
+    }
+}

@@ -1,39 +1,56 @@
 'use client'
 
 import { useForm } from 'react-hook-form'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import FormInput from '@/components/FormInput'
-import './SellebForm1.css'
 import NextButton from '../../NextButton/NextButton'
+import './SellebForm1.css'
 
 const SellebForm1 = ({ goToNextTab }) => {
     const { register, handleSubmit } = useForm()
 
-    const [selectYear, setSelectYear] = useState('')
-    const [selectMonth, setSelectMonth] = useState('')
-    const [selectDay, setSelectDay] = useState('')
-    const [selectGender, setSelectGender] = useState('')
-    const [selectWorld, setSelectWorld] = useState('')
-    const [selectFormDataInfo, setSelectFormDataInfo] = useState({})
+    const [infoFormData, setInfoFormData] = useState({
+        first_name: '',
+        last_name: '',
+        year: '',
+        month: '',
+        day: '',
+        gender: '',
+        world: '',
+        country: '',
+        address: '',
+        phone_number: '',
+        auth_number: '',
+        email_address: '',
+    })
+
+    useEffect(() => {
+        const userInfoData =
+            JSON.parse(sessionStorage.getItem('infoFormData')) || {}
+        setInfoFormData(userInfoData)
+    }, [])
 
     const handleData = () => {
-        const formData1 = {
-            year: selectYear,
-            month: selectMonth,
-            day: selectDay,
-            world: selectWorld,
-            gender: selectGender,
-        }
-        setSelectFormDataInfo(formData1)
-        console.log('form1', formData1)
-
+        console.log('infoFormData', infoFormData)
+        sessionStorage.setItem('infoFormData', JSON.stringify(infoFormData))
         goToNextTab()
     }
 
     const handleInfo = formData => {
-        // sessionStorage.setItem(formTitle, formData)
         console.log('formData', formData)
         handleData()
+    }
+
+    const handleChange = e => {
+        const { name, value } = e.target
+        setInfoFormData(prevState => ({
+            ...prevState,
+            [name]: value, // state 값 갱신
+        }))
+    }
+
+    const authNumber = () => {
+        console.log('인증번호')
     }
 
     const worldList = ['대한민국', '미국', '일본', '중국']
@@ -55,86 +72,89 @@ const SellebForm1 = ({ goToNextTab }) => {
         return Array.from({ length: 28 }, (_, i) => `${i + 1}일`)
     }
 
-    const handleYearChange = e => {
-        const year = e.target.value
-        setSelectYear(year)
-    }
-
-    const handleMonthChange = e => {
-        const month = e.target.value
-        setSelectMonth(month)
-    }
-
-    const handleDayChange = e => {
-        const day = e.target.value
-        setSelectDay(day)
-    }
-
-    const handleGender = e => {
-        const gender = e.target.value
-        setSelectGender(gender)
-    }
-    const handleWorld = e => {
-        const world = e.target.value
-        setSelectWorld(world)
-    }
-
-    const authNumber = () => {
-        console.log('인증번호')
-    }
     return (
         <div className="sellebForm1-container">
             <form onSubmit={handleSubmit(handleInfo)}>
                 <section className="form-name">
                     <FormInput
                         title="이름"
-                        id="first-name"
+                        id="first_name"
+                        value={infoFormData.first_name}
+                        onChange={handleChange}
                         register={register}
                     />
-                    <FormInput title="성" id="last-name" register={register} />
+                    <FormInput
+                        title="성"
+                        id="last_name"
+                        value={infoFormData.last_name}
+                        onChange={handleChange}
+                        register={register}
+                    />
                 </section>
                 <section className="birth-section">
                     <span>생년월일</span>
                     <div className="option-birth">
-                        <select onChange={handleYearChange} value={selectYear}>
+                        <select
+                            name="year"
+                            onChange={handleChange}
+                            value={infoFormData.year}>
                             <option value="">연도 ▼</option>
                             {yearList.map((year, index) => (
-                                <option key={index}>{year}</option>
+                                <option key={index} value={year}>
+                                    {year}
+                                </option>
                             ))}
                         </select>
                         <select
-                            onChange={handleMonthChange}
-                            value={selectMonth}>
+                            name="month"
+                            onChange={handleChange}
+                            value={infoFormData.month}>
                             <option value="">월 ▼</option>
                             {monthList.map((month, index) => (
-                                <option key={index}>{month}</option>
+                                <option key={index} value={month}>
+                                    {month}
+                                </option>
                             ))}
                         </select>
-                        <select onChange={handleDayChange} value={selectDay}>
+                        <select
+                            name="day"
+                            onChange={handleChange}
+                            value={infoFormData.day}>
                             <option value="">일 ▼</option>
-                            {dayList(selectMonth).map((day, index) => (
-                                <option key={index}>{day}</option>
+                            {dayList(infoFormData.month).map((day, index) => (
+                                <option key={index} value={day}>
+                                    {day}
+                                </option>
                             ))}
                         </select>
                     </div>
                 </section>
                 <section className="section-country">
-                    <select value={selectGender} onChange={handleGender}>
+                    <select
+                        name="gender"
+                        value={infoFormData.gender}
+                        onChange={handleChange}>
                         <option value="">성별 ▼</option>
-
-                        <option>남성</option>
-                        <option>여성</option>
+                        <option value="남성">남성</option>
+                        <option value="여성">여성</option>
                     </select>
 
-                    <select value={selectWorld} onChange={handleWorld}>
+                    <select
+                        name="world"
+                        value={infoFormData.world}
+                        onChange={handleChange}>
                         <option value="">국적 ▼</option>
                         {worldList.map((world, index) => (
-                            <option key={index}>{world}</option>
+                            <option key={index} value={world}>
+                                {world}
+                            </option>
                         ))}
                     </select>
                     <FormInput
                         title="국적 입력"
                         id="country"
+                        value={infoFormData.country}
+                        onChange={handleChange}
                         register={register}
                     />
                 </section>
@@ -142,17 +162,23 @@ const SellebForm1 = ({ goToNextTab }) => {
                     <FormInput
                         title="현 거주지"
                         id="address"
+                        value={infoFormData.address}
+                        onChange={handleChange}
                         register={register}
                     />
                     <FormInput
                         title="전화번호 입력"
-                        id="phone-number"
+                        id="phone_number"
+                        value={infoFormData.phone_number}
+                        onChange={handleChange}
                         register={register}
                     />
                     <div className="auth-num-section">
                         <FormInput
                             title="인증번호 입력"
-                            id="auth-number"
+                            id="auth_number"
+                            value={infoFormData.auth_number}
+                            onChange={handleChange}
                             register={register}
                         />
                         <button type="button" onClick={authNumber}>
@@ -162,6 +188,8 @@ const SellebForm1 = ({ goToNextTab }) => {
                     <FormInput
                         title="이메일 주소"
                         id="email-address"
+                        value={infoFormData.email_address}
+                        onChange={handleChange}
                         register={register}
                     />
                 </section>

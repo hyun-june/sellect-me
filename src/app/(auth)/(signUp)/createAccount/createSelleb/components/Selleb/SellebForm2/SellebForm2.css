@@ -1,0 +1,112 @@
+.infoImage-section {
+    border: 3px solid var(--main-color);
+    border-radius: 20%;
+    width: 10em;
+    height: 10em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    & label {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    & input {
+        display: none;
+    }
+}
+
+.info-left {
+    border-right: 1px dashed black;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+
+    & span {
+        display: inline-block;
+        margin-bottom: 1em;
+    }
+}
+
+.info-form {
+    display: flex;
+}
+
+.info-display {
+    display: flex;
+    margin-bottom: 1em;
+}
+
+.trash-box {
+    width: 2em;
+    height: 2em;
+    border: 2px solid var(--main-color);
+    border-radius: 10px;
+    padding: 0.1em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: auto;
+}
+
+.trash-icon {
+    width: 100%;
+    height: 100%;
+}
+
+.visa-info-section {
+    display: flex;
+    flex-direction: column;
+}
+
+.info-right {
+    width: 100%;
+    padding-left: 1em;
+    display: flex;
+    flex-direction: column;
+    gap: 3em;
+
+    & input {
+        appearance: auto;
+    }
+}
+
+.visa-info {
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid black;
+    align-items: center;
+    height: 2em;
+}
+
+.visa-input {
+    div {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    input {
+        width: 60%;
+    }
+}
+
+.account-info {
+    label {
+        width: 100%;
+    }
+}
+
+.bankbook-info {
+    display: flex;
+    flex-direction: column;
+
+    label {
+        width: 70%;
+    }
+}

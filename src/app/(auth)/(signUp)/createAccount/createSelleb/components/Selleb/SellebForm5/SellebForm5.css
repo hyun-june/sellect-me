@@ -1,0 +1,52 @@
+.pay-section {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1em;
+
+    & input {
+        appearance: auto;
+        text-align: right;
+    }
+}
+
+.select-currency {
+    display: flex;
+    height: 2em;
+    align-items: center;
+    border: 1px solid black;
+    justify-content: space-around;
+    width: 60%;
+}
+
+.select-currency-self {
+    width: 60%;
+}
+.pay-bar-section {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    & div {
+        display: flex;
+        width: 60%;
+        justify-content: space-between;
+    }
+}
+
+#pay-rangebar {
+    width: 60%;
+    cursor: pointer;
+    -webkit-appearance: none;
+    background-color: #00498c;
+    height: 0.2em;
+
+    &::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        background-color: #00498c;
+        width: 15px;
+        height: 15px;
+        border-radius: 50%;
+    }
+}

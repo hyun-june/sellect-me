@@ -37,4 +37,11 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    padding-top: 1.5em;
+}
+
+.tabs-form2 {
+    display: flex;
+    justify-content: center;
+    padding-top: 1.5em;
 }

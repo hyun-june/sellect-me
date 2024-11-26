@@ -78,11 +78,11 @@
     }
 
     & label {
-        width: 25%;
+        width: 35%;
         padding-left: 0.2em;
     }
 
     & input {
-        width: 100%;
+        width: 65%;
     }
 }

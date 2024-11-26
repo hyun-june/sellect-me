@@ -1,7 +1,6 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons'
-import '../css/searchBar.css'
 import { useEffect, useState } from 'react'
+import { VscSearch } from 'react-icons/vsc'
+import '../css/searchBar.css'
 
 const SearchBar = () => {
     const keywordList = [
@@ -26,7 +25,7 @@ const SearchBar = () => {
 
     return (
         <div className="inputNav">
-            <FontAwesomeIcon icon={faMagnifyingGlass} className="navIcon" />
+            <VscSearch className="navIcon" />
             <input type="text" placeholder={keyword} />
         </div>
     )
