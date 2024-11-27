@@ -4,11 +4,31 @@ import { useForm } from 'react-hook-form'
 import { IoTrashOutline } from 'react-icons/io5'
 import FormInput from '@/components/FormInput'
 import './SellebForm2.css'
-import NextButton from '../../NextButton/NextButton'
+import NextButton from '../../../components/NextButton/NextButton'
+import UploadBox from '../../../components/UploadBox/UploadBox'
 
 const SellebForm2 = ({ goToNextTab }) => {
     const { register, handleSubmit } = useForm()
-    const [infoImageUrl, setInfoImageUrl] = useState()
+    const [images, setImages] = useState({
+        id_photo: null,
+        consent_photo: null,
+        bank_photo: null,
+    })
+
+    const handleImageUpload = (e, type) => {
+        const file = e.target.files[0]
+        setImages(prev => ({
+            ...prev,
+            [type]: file,
+        }))
+    }
+
+    const handleDelete = type => {
+        setImages(prev => ({
+            ...prev,
+            [type]: null,
+        }))
+    }
 
     const onSubmit = data => {
         console.log('폼 데이터:', data)
@@ -20,15 +40,11 @@ const SellebForm2 = ({ goToNextTab }) => {
             <section className="info-left">
                 <h5>신분증</h5>
                 <p>주민등록증/여권/운전면허증/외국인등록증</p>
-                <div className="info-display">
-                    <div className="infoImage-section">
-                        <label htmlFor="infoImage">이미지 업로드</label>
-                        <input type="file" id="infoImage" />
-                    </div>
-                    <div className="trash-box">
-                        <IoTrashOutline className="trash-icon" />
-                    </div>
-                </div>
+                <UploadBox
+                    onChange={e => handleImageUpload(e, 'id_photo')}
+                    onDelete={() => handleDelete('id_photo')}
+                    id="id_photo"
+                />
                 <div>
                     <h5>미성년자 부모 동의서</h5>
                     <p>
@@ -45,17 +61,11 @@ const SellebForm2 = ({ goToNextTab }) => {
                         />
                     </span>
 
-                    <div className="info-display">
-                        <div className="infoImage-section">
-                            <label htmlFor="infoAdultImage">
-                                이미지 업로드
-                            </label>
-                            <input type="file" id="infoAdultImage" />
-                        </div>
-                        <div className="trash-box">
-                            <IoTrashOutline className="trash-icon" />
-                        </div>
-                    </div>
+                    <UploadBox
+                        onChange={e => handleImageUpload(e, 'consent_photo')}
+                        onDelete={() => handleDelete('consent_photo')}
+                        id="consent_photo"
+                    />
                 </div>
             </section>
             <section className="info-right">
@@ -67,14 +77,12 @@ const SellebForm2 = ({ goToNextTab }) => {
                             <span>Y</span>
                             <input
                                 type="radio"
-                                className="input-check"
                                 {...register('visaStatus')}
                                 value="yes"
                             />
                             <span>N</span>
                             <input
                                 type="radio"
-                                className="input-check"
                                 {...register('visaStatus')}
                                 value="no"
                             />
@@ -114,15 +122,11 @@ const SellebForm2 = ({ goToNextTab }) => {
 
                 <div className="bankbook-info">
                     <p>통장 사본</p>
-                    <div className="info-display">
-                        <div className="infoImage-section">
-                            <label htmlFor="account-info">이미지 업로드</label>
-                            <input type="file" id="account-info" />
-                        </div>
-                        <div className="trash-box">
-                            <IoTrashOutline className="trash-icon" />
-                        </div>
-                    </div>
+                    <UploadBox
+                        onChange={e => handleImageUpload(e, 'bank_photo')}
+                        onDelete={() => handleDelete('bank_photo')}
+                        id="bank_photo"
+                    />
                     <div>
                         <FormInput
                             title="세금계산서수취이메일"

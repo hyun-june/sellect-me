@@ -1,0 +1,32 @@
+.business_info {
+    width: 25em;
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+
+    & section {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5em;
+    }
+
+    & span {
+        position: absolute;
+        right: 0;
+        cursor: pointer;
+    }
+}
+
+.business_type_section {
+    display: flex;
+    justify-content: space-between;
+    gap: 1em;
+
+    & div {
+        width: 100%;
+    }
+
+    & label {
+        width: 30%;
+    }
+}

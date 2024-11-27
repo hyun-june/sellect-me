@@ -1,9 +1,9 @@
 'use client'
 import Link from 'next/link'
-import {useAuth} from '@/hooks/auth'
+import { useAuth } from '@/hooks/auth'
 
 const LoginLinks = () => {
-    const {user} = useAuth({middleware: 'guest'})
+    const { user } = useAuth({ middleware: 'guest' })
 
     return (
         <div>
@@ -17,7 +17,7 @@ const LoginLinks = () => {
                         로그인
                     </Link>
 
-                    <Link href="/register" className="LoginLink">
+                    <Link href="/createAccount" className="LoginLink">
                         회원가입
                     </Link>
                 </>

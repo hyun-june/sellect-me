@@ -28,6 +28,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+
     & div {
         display: flex;
         width: 60%;

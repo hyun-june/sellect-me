@@ -1,7 +1,3 @@
-.tab_container {
-    display: flex;
-}
-
 .tabs_list {
     display: flex;
     justify-content: center;
@@ -24,21 +20,10 @@
     border: none;
 }
 
-.drop-icon {
-    position: relative;
-    left: -1em;
-}
-
 .tabs-inner {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    padding-top: 1.5em;
-}
-
-.tabs-form2 {
-    display: flex;
-    justify-content: center;
     padding-top: 1.5em;
 }

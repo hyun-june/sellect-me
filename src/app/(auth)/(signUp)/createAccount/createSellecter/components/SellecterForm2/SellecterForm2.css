@@ -1,0 +1,13 @@
+.sellecter-form {
+    width: 25em;
+
+    & span {
+        position: absolute;
+        right: 0;
+        cursor: pointer;
+    }
+
+    & label {
+        width: 80%;
+    }
+}

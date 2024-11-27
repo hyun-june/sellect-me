@@ -7,6 +7,14 @@
 .margin-top-50 {
     margin-top: 50px;
 }
+
+.text-center {
+    text-align: center;
+}
+
+.input-check {
+    appearance: auto;
+}
 /* main */
 .bannerImg {
     width: 100%;
@@ -85,4 +93,47 @@
     & input {
         width: 65%;
     }
+}
+
+/* dropdown */
+.custom-dropdown {
+    border: 1px solid black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 2em;
+}
+
+.dropdown-container {
+    position: relative;
+    width: 60%;
+    text-align: center;
+}
+
+.selected-section {
+    cursor: pointer;
+    padding-right: 1em;
+    padding-top: 0.5em;
+    min-height: 2em;
+}
+
+.selected-item {
+    display: flex;
+    justify-content: center;
+}
+
+.dropdown-list {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    border: 1px solid #ccc;
+    background-color: white;
+    z-index: 10;
+    height: auto;
+    overflow-y: auto;
+}
+
+.dropdown-item {
+    cursor: pointer;
 }

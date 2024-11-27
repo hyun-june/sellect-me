@@ -1,7 +1,7 @@
 import FormInput from '@/components/FormInput'
 import { useForm } from 'react-hook-form'
 import './SellebForm3.css'
-import NextButton from '../../NextButton/NextButton'
+import NextButton from '../../../components/NextButton/NextButton'
 
 const SellebForm3 = ({ goToNextTab }) => {
     const { register, handleSubmit } = useForm()
