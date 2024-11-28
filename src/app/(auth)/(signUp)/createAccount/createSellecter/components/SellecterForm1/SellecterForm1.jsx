@@ -1,8 +1,8 @@
 'use client'
 
 import { useForm } from 'react-hook-form'
-import FormInput from '@/components/FormInput'
-import DropdownForm from '@/components/DropdownForm'
+import FormInput from '@/components/FormInput/FormInput'
+import DropdownForm from '@/components/DropdownForm/DropdownForm'
 import './SellecterForm1.css'
 import NextButton from '../../../components/NextButton/NextButton'
 

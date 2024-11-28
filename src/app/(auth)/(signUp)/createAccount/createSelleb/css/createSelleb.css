@@ -1,42 +1,7 @@
-.tab_container {
-    display: flex;
-}
-
-.tabs_list {
-    display: flex;
-    justify-content: center;
-    list-style: none;
-}
-
-.tab_item {
-    border: 2px solid #def7ff;
-    width: 150px;
-    height: 60px;
-    margin: 0rem 0.2rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 8px;
-}
-
-.react-tabs__tab--selected {
-    background-color: #def7ff;
-    border: none;
-}
-
 .drop-icon {
     position: relative;
     left: -1em;
 }
-
-.tabs-inner {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    padding-top: 1.5em;
-}
-
 .tabs-form2 {
     display: flex;
     justify-content: center;

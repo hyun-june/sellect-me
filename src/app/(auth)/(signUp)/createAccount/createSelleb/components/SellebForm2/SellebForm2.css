@@ -103,9 +103,6 @@
 }
 
 .bankbook-info {
-    display: flex;
-    flex-direction: column;
-
     label {
         width: 70%;
     }

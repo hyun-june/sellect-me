@@ -1,4 +1,4 @@
-import FormInput from '@/components/FormInput'
+import FormInput from '@/components/FormInput/FormInput'
 import { useForm } from 'react-hook-form'
 import { useState } from 'react'
 import './SellebForm5.css'

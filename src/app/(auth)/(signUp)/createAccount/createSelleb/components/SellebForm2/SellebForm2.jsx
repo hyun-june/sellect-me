@@ -1,11 +1,10 @@
 'use client'
 import { useState } from 'react'
 import { useForm } from 'react-hook-form'
-import { IoTrashOutline } from 'react-icons/io5'
-import FormInput from '@/components/FormInput'
-import './SellebForm2.css'
+import FormInput from '@/components/FormInput/FormInput'
 import NextButton from '../../../components/NextButton/NextButton'
 import UploadBox from '../../../components/UploadBox/UploadBox'
+import './SellebForm2.css'
 
 const SellebForm2 = ({ goToNextTab }) => {
     const { register, handleSubmit } = useForm()

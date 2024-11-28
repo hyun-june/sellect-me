@@ -1,4 +1,5 @@
 import { useState, useRef, useEffect } from 'react'
+import './DropdownForm.css'
 
 const DropdownForm = ({ list, selectedValue, label, onSelect }) => {
     const [isOpen, setIsOpen] = useState(false)

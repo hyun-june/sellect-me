@@ -1,4 +1,4 @@
-import FormInput from '@/components/FormInput'
+import FormInput from '@/components/FormInput/FormInput'
 import { useForm } from 'react-hook-form'
 import './SellebForm3.css'
 import NextButton from '../../../components/NextButton/NextButton'

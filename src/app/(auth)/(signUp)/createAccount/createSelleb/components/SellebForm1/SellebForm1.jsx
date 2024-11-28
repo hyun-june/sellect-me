@@ -1,7 +1,7 @@
 'use client'
 
 import { useForm } from 'react-hook-form'
-import FormInput from '@/components/FormInput'
+import FormInput from '@/components/FormInput/FormInput'
 import NextButton from '../../../components/NextButton/NextButton'
 import './SellebForm1.css'
 
@@ -116,7 +116,7 @@ const SellebForm1 = ({ goToNextTab }) => {
                         ))}
                     </select>
                     <FormInput
-                        title="국적 입력"
+                        title="국적 추가"
                         id="country"
                         register={register}
                     />
