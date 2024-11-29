@@ -66,7 +66,7 @@ const LoginPage = () => {
             <LoginButton
                 title="구글"
                 onClick={login}
-                src="./images/google_logo.png"
+                src="./images/google_login.png"
             />
         )
     }
@@ -76,7 +76,7 @@ const LoginPage = () => {
             clientId={process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID}>
             <Container>
                 <Row className="justify-content-center">
-                    <Col xs="auto">
+                    {/* <Col xs="auto">
                         <div className="login-text">로그인 / 회원가입</div>
 
                         <button className="login_button" onClick={kakaoLogin}>
@@ -112,7 +112,7 @@ const LoginPage = () => {
                             onSuccess={naverUser => console.log(naverUser)}
                             onFailure={() => console.error(result)}
                         />
-                    </Col>
+                    </Col> */}
                     <Col xs="auto">
                         <div className="login-text">로그인 / 회원가입</div>
 
@@ -121,7 +121,7 @@ const LoginPage = () => {
                         <LoginButton
                             title="카카오"
                             onClick={kakaoLogin}
-                            src="/images/kakao_logo.png"
+                            src="/images/kakao_login.png"
                         />
 
                         <NaverLogin
@@ -133,7 +133,7 @@ const LoginPage = () => {
                                 <LoginButton
                                     title="네이버"
                                     onClick={props.onClick}
-                                    src="/images/naver_logo.png"
+                                    src="/images/naver_login.png"
                                 />
                             )}
                         />

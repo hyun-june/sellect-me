@@ -1,0 +1,27 @@
+.detail-info {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+
+    & p {
+        color: var(--text-sub-color);
+        font-weight: bold;
+    }
+
+    & label {
+        width: 60%;
+    }
+
+    & span {
+        color: var(--text-color);
+        font-weight: bold;
+        text-align: center;
+    }
+}
+
+.detail-box {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3em;
+}
