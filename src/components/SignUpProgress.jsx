@@ -1,4 +1,4 @@
-import { Container, Row, Col } from 'react-bootstrap'
+import { Container } from 'react-bootstrap'
 import '../css/signUpProgress.css'
 
 const SignUpProgress = ({ currentStep }) => {
@@ -23,11 +23,6 @@ const SignUpProgress = ({ currentStep }) => {
                     <div className="circle-text">등록</div>
                 </div>
             </div>
-            {/* <div className="sign-section text">
-                <div>가입</div>
-                <div>승인</div>
-                <div>등록</div>
-            </div> */}
         </Container>
     )
 }

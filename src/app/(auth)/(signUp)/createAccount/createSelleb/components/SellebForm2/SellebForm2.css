@@ -1,0 +1,109 @@
+.info-left {
+    border-right: 1px dashed black;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+
+    & span {
+        display: inline-block;
+        margin-bottom: 1em;
+    }
+
+    & h5 {
+        color: var(--text-sub-color);
+        font-weight: bold;
+    }
+
+    & p {
+        color: var(--text-color);
+    }
+
+    & span {
+        color: var(--text-color);
+        display: flex;
+        align-items: center;
+    }
+}
+
+.info-form {
+    display: flex;
+}
+
+.info-display {
+    display: flex;
+    margin-bottom: 1em;
+}
+
+.visa-info-section {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3em;
+}
+
+.info-right {
+    width: 100%;
+    padding-left: 1em;
+    display: flex;
+    flex-direction: column;
+    gap: 3em;
+
+    & p {
+        color: var(--text-sub-color);
+        font-weight: bold;
+    }
+}
+
+.visa-info {
+    display: flex;
+    justify-content: space-between;
+    border: 2px solid var(--line-color);
+    align-items: center;
+    height: 2.5em;
+
+    & span:first-child {
+        color: var(--text-color);
+        font-weight: bold;
+    }
+}
+
+.visa-check {
+    display: flex;
+    width: 8em;
+    justify-content: space-around;
+
+    & input {
+        width: 13px;
+        height: 13px;
+        border: 2px solid var(--text-color);
+        cursor: pointer;
+    }
+
+    & input:checked {
+        background-color: var(--text-sub-color);
+    }
+}
+
+.visa-input {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3em;
+}
+
+.account-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3em;
+    label {
+        width: 100%;
+    }
+}
+
+.bankbook-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3em;
+
+    & label {
+        width: 70%;
+    }
+}

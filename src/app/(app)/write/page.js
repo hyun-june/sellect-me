@@ -1,8 +1,5 @@
 'use client'
 
-import Header from '@/app/(app)/Header'
-import axios from '@/lib/axios'
-import { useRouter } from 'next/navigation' // 추가: Next.js의 useRouter 훅 사용
 
 const Write = () => {
     const router = useRouter() // 추가: useRouter 훅 선언

@@ -7,7 +7,7 @@ import axios from 'axios';
 const Note = () => { // 컴포넌트 이름은 React로 유지합니다.
 
     const [notes, setNotes] = useState([]);
-    
+
     useEffect(() => {
         const fetchNotes = async () => {
             try {
@@ -32,7 +32,7 @@ const Note = () => { // 컴포넌트 이름은 React로 유지합니다.
                     </li>
                 ))}
             </ul>
-            
+
         </>
     );
 };

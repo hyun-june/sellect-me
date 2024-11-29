@@ -1,0 +1,15 @@
+.selleb-consent {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+.selleb-consent-inner {
+    display: flex;
+    justify-content: space-between;
+    gap: 1em;
+}
+
+.consent-text {
+    display: flex;
+}

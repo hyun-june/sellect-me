@@ -1,0 +1,128 @@
+.sellebForm1-container {
+    height: auto;
+
+    & section {
+        margin-top: 1em;
+    }
+
+    & select {
+        height: 2.5em;
+        padding-left: 0.2em;
+        cursor: pointer;
+
+        & option {
+            color: black;
+        }
+    }
+}
+
+.form-name {
+    display: flex;
+    gap: 1em;
+    height: auto;
+    line-height: 1.4;
+}
+
+.birth-section {
+    border: 2px solid var(--line-color);
+    padding-left: 0.2em;
+    display: flex;
+    align-items: center;
+
+    & div {
+        display: flex;
+        width: 15em;
+        gap: 1em;
+        align-items: center;
+    }
+
+    & select {
+        text-align: center;
+        width: 6em;
+        color: var(--text-sub-color);
+        font-weight: bold;
+    }
+
+    & span:first-child {
+        color: var(--text-color);
+        font-weight: bold;
+    }
+
+    & span {
+        color: var(--text-sub-color);
+    }
+}
+
+.option-birth {
+    display: flex;
+    margin-left: 2em;
+
+    div {
+        position: relative;
+    }
+
+    & span {
+        position: absolute;
+        right: 0;
+        cursor: pointer;
+    }
+}
+
+.section-country {
+    display: flex;
+}
+
+.country-dropdown {
+    display: flex;
+    gap: 1em;
+    width: 100%;
+
+    & select {
+        width: 100%;
+        color: var(--text-color);
+        font-weight: bold;
+    }
+
+    & div {
+        display: flex;
+        align-items: center;
+        width: 5em;
+        height: 2.5em;
+        border: 2px solid var(--line-color);
+        position: relative;
+    }
+
+    & span {
+        color: var(--text-sub-color);
+        position: absolute;
+        right: 0;
+        cursor: pointer;
+    }
+}
+
+.section-address {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+
+    & span {
+        position: absolute;
+        right: 0;
+        cursor: pointer;
+    }
+}
+
+.auth-num-section {
+    position: relative;
+
+    & button {
+        position: absolute;
+        right: 0.2em;
+        top: 0.3em;
+        background-color: var(--text-sub-color);
+        color: var(--text-color);
+        font-weight: bold;
+        padding: 0.5em 0.8em;
+        border-radius: 5px;
+    }
+}
