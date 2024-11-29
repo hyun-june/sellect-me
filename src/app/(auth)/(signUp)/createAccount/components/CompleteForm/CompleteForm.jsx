@@ -18,7 +18,7 @@ const CompleteForm = ({ type }) => {
                 ) : null}
             </p>
             <span className="myPage-link">
-                <Link href="/">MY PAGE 바로가기</Link>
+                <Link href="/myPage">MY PAGE 바로가기</Link>
             </span>
         </div>
     )
