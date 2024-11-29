@@ -21,8 +21,8 @@ const ConsentForm = ({ type }) => {
     return (
         <div>
             {type === 'selleb' ? (
-                <div className="selleb-consent">
-                    <div className="selleb-consent-inner">
+                <div className="consent">
+                    <div className="consent-inner">
                         <span className="consent-text">
                             <input type="checkbox" id="selleb_publicity" />
                             <label
@@ -46,7 +46,7 @@ const ConsentForm = ({ type }) => {
                             ) : null}
                         </span>
                     </div>
-                    <div className="selleb-consent-inner">
+                    <div className="consent-inner">
                         <span>
                             <input type="checkbox" id="selleb_escrow" />
                             <label
@@ -69,7 +69,7 @@ const ConsentForm = ({ type }) => {
                             ) : null}
                         </span>
                     </div>
-                    <div className="selleb-consent-inner">
+                    <div className="consent-inner">
                         <span>
                             <input type="checkbox" id="selleb_noShow" />
                             <label
@@ -95,8 +95,8 @@ const ConsentForm = ({ type }) => {
                     </div>
                 </div>
             ) : type === 'sellecter' ? (
-                <div className="selleb-consent">
-                    <div className="selleb-consent-inner">
+                <div className="consent">
+                    <div className="consent-inner">
                         <span>
                             <input type="checkbox" id="sellecter_publicity" />
                             <label
@@ -120,7 +120,7 @@ const ConsentForm = ({ type }) => {
                             ) : null}
                         </span>
                     </div>
-                    <div className="selleb-consent-inner">
+                    <div className="consent-inner">
                         <span>
                             <input type="checkbox" id="sellecter_escrow" />
                             <label

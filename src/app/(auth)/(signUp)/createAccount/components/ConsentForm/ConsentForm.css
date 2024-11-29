@@ -1,10 +1,19 @@
-.selleb-consent {
+.consent {
     display: flex;
     flex-direction: column;
     gap: 1em;
+    font-weight: bold;
+
+    & label {
+        color: var(--text-sub-color);
+    }
+
+    & button {
+        color: var(--text-sub-color);
+    }
 }
 
-.selleb-consent-inner {
+.consent-inner {
     display: flex;
     justify-content: space-between;
     gap: 1em;
