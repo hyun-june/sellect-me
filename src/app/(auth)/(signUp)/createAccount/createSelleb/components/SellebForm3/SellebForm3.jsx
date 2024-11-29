@@ -17,10 +17,22 @@ const SellebForm3 = ({ goToNextTab }) => {
             <div className="agency-info">
                 <label htmlFor="">에이전시 소속</label>
                 <div>
-                    <span>Y</span>
-                    <input type="radio" />
-                    <span>N</span>
-                    <input type="radio" />
+                    <span>
+                        <span>Y</span>
+                        <input
+                            type="radio"
+                            value="yes"
+                            {...register('agencyStatus')}
+                        />
+                    </span>
+                    <span>
+                        <span>N</span>
+                        <input
+                            type="radio"
+                            value="no"
+                            {...register('agencyStatus')}
+                        />
+                    </span>
                 </div>
             </div>
             <FormInput title="에이전시 입력" id="agency" register={register} />

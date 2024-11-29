@@ -1,0 +1,13 @@
+.next-button {
+    display: flex;
+    justify-content: center;
+    margin-top: 2em;
+
+    & button {
+        background-color: var(--text-sub-color);
+        color: var(--text-color);
+        font-weight: bold;
+        padding: 0.3em 0.7em;
+        border-radius: 5px;
+    }
+}

@@ -3,6 +3,12 @@
     flex-direction: column;
     align-items: center;
     width: 25em;
+    gap: 1em;
+
+    & p {
+        color: var(--text-sub-color);
+        font-weight: bold;
+    }
 
     & span {
         position: absolute;
@@ -15,10 +21,21 @@
     }
 }
 
+.form-gap {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3em;
+}
+
 .message-box {
-    background-color: var(--main-color);
+    background-color: var(--line-color);
     padding: 1.5em;
     border-radius: 50px;
+    width: 30em;
+
+    & p {
+        color: black;
+    }
 
     & li {
         margin: 0.5em 0;

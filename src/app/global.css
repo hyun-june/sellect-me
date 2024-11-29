@@ -2,6 +2,10 @@
 
 :root {
     --main-color: #def7ff;
+    --text-color: #155f82;
+    --text-sub-color: #83caeb;
+    --line-color: #dceaf7;
+    --point-color-yellow: #ffc30b;
 }
 
 .margin-top-50 {
@@ -19,8 +23,14 @@
     text-align: center;
 }
 
-.input-check {
-    appearance: auto;
+.check-box {
+    width: 15px;
+    height: 15px;
+    border: 2px solid var(--text-color);
+    cursor: pointer;
+}
+input[type='checkbox']:checked + label.check-box {
+    background-color: var(--text-sub-color);
 }
 /* react-tabs */
 .tabs_list {
@@ -31,7 +41,9 @@
 }
 
 .tab_item {
-    border: 2px solid #def7ff;
+    border: 2px solid var(--line-color);
+    color: var(--text-color);
+    font-weight: bold;
     width: 150px;
     height: 60px;
     margin: 0rem 0.2rem;
@@ -42,7 +54,7 @@
 }
 
 .react-tabs__tab--selected {
-    background-color: #def7ff;
+    background-color: #dceaf7;
     border: none;
 }
 

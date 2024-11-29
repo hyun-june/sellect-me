@@ -1,9 +1,13 @@
+import Link from 'next/link'
+import './CompleteForm.css'
+
 const CompleteForm = ({ type }) => {
     return (
-        <div className="text-center">
-            <h3>축하합니다</h3>
+        <div className="text-center complete-section">
+            <h3>축하합니다!</h3>
             <p>
-                이제 셀렉트의 <span>CREATIVE</span>한 {type.toUpperCase()}로
+                이제 셀렉트의 <span className="point-text">CREATIVE</span>한
+                <span className="point-text">{type.toUpperCase()}</span>로
                 활동하세요.
             </p>
             <p>
@@ -13,8 +17,8 @@ const CompleteForm = ({ type }) => {
                     <span>총 15카테고리의 다양한 셀럽들을 만나보세요!</span>
                 ) : null}
             </p>
-            <span>
-                <a href="">MY PAGE 바로가기</a>
+            <span className="myPage-link">
+                <Link href="/">MY PAGE 바로가기</Link>
             </span>
         </div>
     )

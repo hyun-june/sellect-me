@@ -8,7 +8,6 @@ import ConsentForm from '../components/ConsentForm/ConsentForm'
 import CompleteForm from '../components/CompleteForm/CompleteForm'
 import SellecterForm1 from './components/SellecterForm1/SellecterForm1'
 import SellecterForm2 from './components/SellecterForm2/SellecterForm2'
-import './css/createSellecter.css'
 
 const createSelleterPage = () => {
     const [currentTabIndex, setCurrentTabIndex] = useState(0)

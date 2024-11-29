@@ -33,7 +33,7 @@ const createSellebPage = () => {
                 </TabList>
                 <div>
                     <TabPanel>
-                        <div className="tabs-inner ">
+                        <div className="tabs-inner">
                             <SellebForm1 goToNextTab={goToNextTab} />
                         </div>
                     </TabPanel>
@@ -48,7 +48,7 @@ const createSellebPage = () => {
                         </div>
                     </TabPanel>
                     <TabPanel>
-                        <div className="tabs-inner ">
+                        <div className="tabs-inner">
                             <SellebForm4 goToNextTab={goToNextTab} />
                         </div>
                     </TabPanel>

@@ -14,7 +14,7 @@
 .circle {
     width: 40px;
     height: 40px;
-    border: 2px solid #80adff;
+    border: 2px solid var(--text-sub-color);
     border-radius: 50%;
     background-color: white;
     display: flex;
@@ -29,7 +29,7 @@
 }
 
 .circle.completed {
-    background-color: #50bcdf; /* 완료된 원 색 */
+    background-color: #95dcf8;
 }
 
 .circle.completed::after {
@@ -45,6 +45,6 @@
     left: 0;
     right: 0;
     height: 2px;
-    background-color: #80adff;
+    background-color: var(--text-sub-color);
     z-index: -1;
 }

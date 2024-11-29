@@ -12,7 +12,7 @@ const SellebForm4 = ({ goToNextTab }) => {
     }
     return (
         <form className="detail-info" onSubmit={handleSubmit(handleInfo)}>
-            <div>
+            <div className="detail-box ">
                 <p>사이즈정보(선택)</p>
                 <FormInput title="키(cm)" id="height" register={register} />
                 <FormInput
@@ -46,7 +46,7 @@ const SellebForm4 = ({ goToNextTab }) => {
                     register={register}
                 />
             </div>
-            <div>
+            <div className="detail-box ">
                 <p>필터 정보</p>
                 <FormInput
                     title="머리 색깔"
@@ -59,7 +59,7 @@ const SellebForm4 = ({ goToNextTab }) => {
                     register={register}
                 />
             </div>
-            <p>상세 필터는 프로필에서 설정 가능합니다.</p>
+            <span>상세 필터는 프로필에서 설정 가능합니다.</span>
             <NextButton />
         </form>
     )

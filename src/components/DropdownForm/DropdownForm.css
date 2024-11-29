@@ -1,9 +1,18 @@
 .custom-dropdown {
-    border: 1px solid black;
+    border: 2px solid var(--line-color);
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 2em;
+    height: 2.5em;
+
+    & label {
+        color: var(--text-color);
+        font-weight: bold;
+    }
+
+    & span {
+        color: var(--text-sub-color);
+    }
 }
 
 .dropdown-container {
@@ -26,9 +35,8 @@
 
 .dropdown-list {
     position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
+    top: 2.2em;
+    right: -0.1em;
     border: 1px solid #ccc;
     background-color: white;
     z-index: 10;
@@ -38,4 +46,5 @@
 
 .dropdown-item {
     cursor: pointer;
+    width: 10em;
 }

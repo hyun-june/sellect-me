@@ -9,3 +9,7 @@
     justify-content: space-between;
     gap: 1em;
 }
+
+.consent-text {
+    display: flex;
+}

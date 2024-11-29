@@ -53,11 +53,10 @@ const SellebForm2 = ({ goToNextTab }) => {
                     </p>
                     <span>
                         <label htmlFor="info-parents">해당사항없음</label>
-                        <input
-                            type="checkbox"
-                            className="input-check"
-                            id="info-parents"
-                        />
+                        <input type="checkbox" id="info-parents" />
+                        <label
+                            htmlFor="info-parents"
+                            className="check-box"></label>
                     </span>
 
                     <UploadBox
@@ -72,19 +71,23 @@ const SellebForm2 = ({ goToNextTab }) => {
                     <p>비자 정보</p>
                     <div className="visa-info">
                         <span>대한민국 영주권 혹은 시민권</span>
-                        <div>
-                            <span>Y</span>
-                            <input
-                                type="radio"
-                                {...register('visaStatus')}
-                                value="yes"
-                            />
-                            <span>N</span>
-                            <input
-                                type="radio"
-                                {...register('visaStatus')}
-                                value="no"
-                            />
+                        <div className="visa-check">
+                            <div>
+                                <span>Y</span>
+                                <input
+                                    type="radio"
+                                    {...register('visaStatus')}
+                                    value="yes"
+                                />
+                            </div>
+                            <div>
+                                <span>N</span>
+                                <input
+                                    type="radio"
+                                    {...register('visaStatus')}
+                                    value="no"
+                                />
+                            </div>
                         </div>
                     </div>
                     <div className="visa-input">
@@ -103,7 +106,7 @@ const SellebForm2 = ({ goToNextTab }) => {
                 <div className="account-info">
                     <p>계좌 정보</p>
                     <FormInput
-                        title="출금 은행"
+                        title="수익금 출금 은행"
                         id="bank_number"
                         register={register}
                     />
@@ -126,18 +129,17 @@ const SellebForm2 = ({ goToNextTab }) => {
                         onDelete={() => handleDelete('bank_photo')}
                         id="bank_photo"
                     />
-                    <div>
-                        <FormInput
-                            title="세금계산서수취이메일"
-                            id="tax_email"
-                            register={register}
-                        />
-                        <FormInput
-                            title="담당자명"
-                            id="manager_name"
-                            register={register}
-                        />
-                    </div>
+
+                    <FormInput
+                        title="세금계산서수취이메일"
+                        id="tax_email"
+                        register={register}
+                    />
+                    <FormInput
+                        title="담당자명"
+                        id="manager_name"
+                        register={register}
+                    />
                 </div>
 
                 <NextButton type="submit" />

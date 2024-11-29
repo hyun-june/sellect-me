@@ -4,6 +4,12 @@
     flex-direction: column;
     gap: 2em;
 
+    & p {
+        margin: 0;
+        color: var(--text-sub-color);
+        font-weight: 600;
+    }
+
     & section {
         display: flex;
         flex-direction: column;

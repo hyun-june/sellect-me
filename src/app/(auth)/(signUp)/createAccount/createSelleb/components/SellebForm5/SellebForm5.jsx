@@ -22,23 +22,19 @@ const SellebForm5 = ({ goToNextTab }) => {
     return (
         <form className="pay-section" onSubmit={handleSubmit(handleInfo)}>
             <h5>시간 당 모델료로 희망하는 최소금액을 설정해 주세요.</h5>
-            <span>
+            <p>
                 언제든 시간 당 모델료를 자유롭게 조절할 수 있으며 <br />
                 촬영 건에 따라 셀렉터(클라이언트)와 자유롭게 협상이 가능합니다.
-            </span>
+            </p>
             <div className="select-currency">
                 <label>
-                    한화{' '}
-                    <input
-                        type="checkbox"
-                        value="won"
-                        {...register('currency')}
-                    />
+                    한화
+                    <input type="radio" value="won" {...register('currency')} />
                 </label>
                 <label>
-                    달러{' '}
+                    달러
                     <input
-                        type="checkbox"
+                        type="radio"
                         value="dollar"
                         {...register('currency')}
                     />
@@ -54,12 +50,13 @@ const SellebForm5 = ({ goToNextTab }) => {
                     type="range"
                     min="0"
                     max="300"
-                    step="10"
+                    step="5"
                     value={payValue}
                     onChange={handlePayChange}
                 />
                 <div>
-                    <span>단위 : 10,000</span>
+                    <span className="unit-text">단위 : 10,000</span>
+                    <span>value:{payValue}</span>
                 </div>
             </div>
 

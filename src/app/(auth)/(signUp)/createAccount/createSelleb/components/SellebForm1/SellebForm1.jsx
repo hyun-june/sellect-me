@@ -3,10 +3,13 @@
 import { useForm } from 'react-hook-form'
 import FormInput from '@/components/FormInput/FormInput'
 import NextButton from '../../../components/NextButton/NextButton'
+import DropdownForm from '@/components/DropdownForm/DropdownForm'
 import './SellebForm1.css'
 
+const languageList = ['Korean ', 'English', 'Japanese', 'Chinese']
+
 const SellebForm1 = ({ goToNextTab }) => {
-    const { register, handleSubmit, watch } = useForm({
+    const { register, handleSubmit, watch, setValue } = useForm({
         defaultValues: {
             first_name: '',
             last_name: '',
@@ -22,6 +25,10 @@ const SellebForm1 = ({ goToNextTab }) => {
             email_address: '',
         },
     })
+
+    const handleSelect = (fieldName, value) => {
+        setValue(fieldName, value)
+    }
 
     const handleInfo = formData => {
         console.log('FormData:', formData)
@@ -45,7 +52,7 @@ const SellebForm1 = ({ goToNextTab }) => {
         if ([4, 6, 9, 11].includes(monthNumber)) {
             return Array.from({ length: 30 }, (_, i) => `${i + 1}일`)
         }
-        return Array.from({ length: 28 }, (_, i) => `${i + 1}일`)
+        return Array.from({ length: 29 }, (_, i) => `${i + 1}일`)
     }
 
     return (
@@ -101,20 +108,28 @@ const SellebForm1 = ({ goToNextTab }) => {
                     </div>
                 </section>
                 <section className="section-country">
-                    <select name="gender" {...register('gender')}>
-                        <option value="">성별 ▼</option>
-                        <option value="남성">남성</option>
-                        <option value="여성">여성</option>
-                    </select>
+                    <div className="country-dropdown">
+                        <div>
+                            <select name="gender" {...register('gender')}>
+                                <option value="">성별</option>
+                                <option value="남성">남성</option>
+                                <option value="여성">여성</option>
+                            </select>
+                            <span>▼</span>
+                        </div>
+                        <div>
+                            <select name="world" {...register('world')}>
+                                <option value="">국적</option>
+                                {worldList.map((world, index) => (
+                                    <option key={index} value={world}>
+                                        {world}
+                                    </option>
+                                ))}
+                            </select>
+                            <span>▼</span>
+                        </div>
+                    </div>
 
-                    <select name="world" {...register('world')}>
-                        <option value="">국적 ▼</option>
-                        {worldList.map((world, index) => (
-                            <option key={index} value={world}>
-                                {world}
-                            </option>
-                        ))}
-                    </select>
                     <FormInput
                         title="국적 추가"
                         id="country"
@@ -131,6 +146,12 @@ const SellebForm1 = ({ goToNextTab }) => {
                         title="전화번호 입력"
                         id="phone_number"
                         register={register}
+                    />
+                    <DropdownForm
+                        label="사용 가능 언어"
+                        list={languageList}
+                        selectedValue=""
+                        onSelect={value => handleSelect('language', value)}
                     />
                     <div className="auth-num-section">
                         <FormInput

@@ -23,9 +23,14 @@ const ConsentForm = ({ type }) => {
             {type === 'selleb' ? (
                 <div className="selleb-consent">
                     <div className="selleb-consent-inner">
-                        <span>
-                            <input type="checkbox" className="input-check" />
-                            <label htmlFor="">초상권 동의서</label>
+                        <span className="consent-text">
+                            <input type="checkbox" id="selleb_publicity" />
+                            <label
+                                htmlFor="selleb_publicity"
+                                className="check-box"></label>
+                            <label htmlFor="selleb_publicity">
+                                초상권 동의서
+                            </label>
                         </span>
 
                         <span>
@@ -43,8 +48,13 @@ const ConsentForm = ({ type }) => {
                     </div>
                     <div className="selleb-consent-inner">
                         <span>
-                            <input type="checkbox" className="input-check" />
-                            <label htmlFor="">에스크로 동의서</label>
+                            <input type="checkbox" id="selleb_escrow" />
+                            <label
+                                htmlFor="selleb_escrow"
+                                className="check-box"></label>
+                            <label htmlFor="selleb_escrow">
+                                에스크로 동의서
+                            </label>
                         </span>
                         <span>
                             <button onClick={() => toggleModal('selleb2')}>
@@ -61,8 +71,13 @@ const ConsentForm = ({ type }) => {
                     </div>
                     <div className="selleb-consent-inner">
                         <span>
-                            <input type="checkbox" className="input-check" />
-                            <label htmlFor="">노쇼방지 동의서</label>
+                            <input type="checkbox" id="selleb_noShow" />
+                            <label
+                                htmlFor="selleb_noShow"
+                                className="check-box"></label>
+                            <label htmlFor="selleb_noShow">
+                                노쇼방지 동의서
+                            </label>
                         </span>
 
                         <span>
@@ -83,8 +98,13 @@ const ConsentForm = ({ type }) => {
                 <div className="selleb-consent">
                     <div className="selleb-consent-inner">
                         <span>
-                            <input type="checkbox" className="input-check" />
-                            <label htmlFor="">초상권 이용 주의사항</label>
+                            <input type="checkbox" id="sellecter_publicity" />
+                            <label
+                                htmlFor="sellecter_publicity"
+                                className="check-box"></label>
+                            <label htmlFor="sellecter_publicity">
+                                초상권 이용 주의사항
+                            </label>
                         </span>
 
                         <span>
@@ -102,8 +122,13 @@ const ConsentForm = ({ type }) => {
                     </div>
                     <div className="selleb-consent-inner">
                         <span>
-                            <input type="checkbox" className="input-check" />
-                            <label htmlFor="">에스크로 동의서</label>
+                            <input type="checkbox" id="sellecter_escrow" />
+                            <label
+                                htmlFor="sellecter_escrow"
+                                className="check-box"></label>
+                            <label htmlFor="sellecter_escrow">
+                                에스크로 동의서
+                            </label>
                         </span>
 
                         <span>

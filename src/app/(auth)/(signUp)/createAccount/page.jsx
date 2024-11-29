@@ -1,6 +1,6 @@
 import { Container } from 'react-bootstrap'
-import '../createAccount/css/createAccount.css'
 import Link from 'next/link'
+import '../createAccount/css/createAccount.css'
 
 export const metadata = {
     title: 'create Account',

@@ -55,6 +55,12 @@ select {
     padding: 0;
 }
 
+input[type='radio'] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
 textarea {
     resize: vertical;
 }

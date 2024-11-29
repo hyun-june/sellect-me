@@ -41,7 +41,7 @@ const SellecterForm2 = ({ goToNextTab }) => {
             <form
                 onSubmit={handleSubmit(handleInfo)}
                 className="sellecter-form">
-                <div>
+                <div className="form-gap">
                     <p>계좌정보</p>
                     <DropdownForm
                         label="사업자 통장 은행"
@@ -55,7 +55,7 @@ const SellecterForm2 = ({ goToNextTab }) => {
                         register={register}
                     />
                 </div>
-                <div className="width-100">
+                <div className="width-100 form-gap">
                     <p>통장사본</p>
                     <UploadBox
                         onChange={e => handleImageUpload(e, 'bankbook_img')}

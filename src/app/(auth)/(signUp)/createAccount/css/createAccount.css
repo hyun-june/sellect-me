@@ -4,8 +4,11 @@
 }
 
 .account_box {
-    border: 2px solid #def7ff;
-    background-color: white;
+    background-color: #c1e4f5;
+    color: var(--text-color);
+    font-size: 2em;
+    font-weight: bold;
+    border-radius: 15px;
     width: 300px;
     height: 120px;
     box-shadow:
