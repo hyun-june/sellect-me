@@ -1,8 +1,10 @@
 import { useState } from 'react'
 import Modal from '@/components/Modal/Modal'
+import PrevButton from '../PrevButton/PrevButton'
+import NextButton from '../NextButton/NextButton'
 import './ConsentForm.css'
 
-const ConsentForm = ({ type }) => {
+const ConsentForm = ({ type, goToPrevTab, goToNextTab }) => {
     const [modals, setModals] = useState({
         selleb1: false,
         selleb2: false,
@@ -146,6 +148,10 @@ const ConsentForm = ({ type }) => {
                     </div>
                 </div>
             ) : null}
+            <div className="flex justify-between margin-top-3 ">
+                <PrevButton onClick={goToPrevTab} />
+                <NextButton onClick={goToNextTab} />
+            </div>
         </div>
     )
 }

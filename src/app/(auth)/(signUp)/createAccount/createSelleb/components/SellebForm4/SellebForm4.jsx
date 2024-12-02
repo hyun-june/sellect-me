@@ -1,9 +1,10 @@
 import FormInput from '@/components/FormInput/FormInput'
 import { useForm } from 'react-hook-form'
 import NextButton from '../../../components/NextButton/NextButton'
+import PrevButton from '../../../components/PrevButton/PrevButton'
 import './SellebForm4.css'
 
-const SellebForm4 = ({ goToNextTab }) => {
+const SellebForm4 = ({ goToNextTab, goToPrevTab }) => {
     const { register, handleSubmit } = useForm()
 
     const handleInfo = formData => {
@@ -12,8 +13,8 @@ const SellebForm4 = ({ goToNextTab }) => {
     }
     return (
         <form className="detail-info" onSubmit={handleSubmit(handleInfo)}>
-            <div className="detail-box ">
-                <p>사이즈정보(선택)</p>
+            <div className="detail-box">
+                <h5>사이즈정보(선택)</h5>
                 <FormInput title="키(cm)" id="height" register={register} />
                 <FormInput
                     title="가슴 둘레(inch)"
@@ -47,7 +48,7 @@ const SellebForm4 = ({ goToNextTab }) => {
                 />
             </div>
             <div className="detail-box ">
-                <p>필터 정보</p>
+                <h5>필터 정보</h5>
                 <FormInput
                     title="머리 색깔"
                     id="hair_color"
@@ -60,7 +61,10 @@ const SellebForm4 = ({ goToNextTab }) => {
                 />
             </div>
             <span>상세 필터는 프로필에서 설정 가능합니다.</span>
-            <NextButton />
+            <div className="flex justify-between">
+                <PrevButton onClick={goToPrevTab} />
+                <NextButton />
+            </div>
         </form>
     )
 }

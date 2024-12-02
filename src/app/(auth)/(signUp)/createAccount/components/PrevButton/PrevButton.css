@@ -1,7 +1,7 @@
-.next-button {
+.prev-button {
     margin-bottom: 0.5em;
     display: flex;
-    justify-content: end;
+    justify-content: start;
 
     & button {
         color: var(--text-color);

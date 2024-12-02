@@ -26,7 +26,7 @@ const SellecterForm1 = ({ goToNextTab }) => {
         <div>
             <form onSubmit={handleSubmit(handleInfo)} className="business_info">
                 <section>
-                    <p>사업자 정보</p>
+                    <h5>사업자 정보</h5>
                     <FormInput
                         title="국가"
                         id="business_country"

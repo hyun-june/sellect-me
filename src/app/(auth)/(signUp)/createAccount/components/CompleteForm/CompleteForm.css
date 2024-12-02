@@ -1,6 +1,6 @@
 .complete-section {
     & h3 {
-        color: var(--text-sub-color);
+        color: var(--text-color);
         margin-bottom: 1em;
     }
 

@@ -1,13 +1,14 @@
 .custom-dropdown {
-    border: 2px solid var(--line-color);
+    border-bottom: 1px solid var(--line-color);
     display: flex;
     justify-content: space-between;
     align-items: center;
     height: 2.5em;
 
     & label {
-        color: var(--text-color);
+        color: var(--text-sub-color);
         font-weight: bold;
+        padding-left: 0.5em;
     }
 
     & span {

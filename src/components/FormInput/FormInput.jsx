@@ -3,12 +3,17 @@ import './FormInput.css'
 const FormInput = ({ id, title, register, size, ...props }) => {
     return (
         <div className="form-input">
-            <label
+            {/* <label
                 htmlFor={id}
                 className={`form-label ${size ? `form-label-${size}` : ''}`}>
                 {title}
-            </label>
-            <input id={id} {...register(`${id}`)} {...props} />
+            </label> */}
+            <input
+                id={id}
+                {...register(`${id}`)}
+                {...props}
+                placeholder={`${title}`}
+            />
         </div>
     )
 }

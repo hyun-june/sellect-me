@@ -1,9 +1,10 @@
 import FormInput from '@/components/FormInput/FormInput'
 import { useForm } from 'react-hook-form'
-import './SellebForm3.css'
 import NextButton from '../../../components/NextButton/NextButton'
+import PrevButton from '../../../components/PrevButton/PrevButton'
+import './SellebForm3.css'
 
-const SellebForm3 = ({ goToNextTab }) => {
+const SellebForm3 = ({ goToNextTab, goToPrevTab }) => {
     const { register, handleSubmit } = useForm()
 
     const handleInfo = formData => {
@@ -13,25 +14,29 @@ const SellebForm3 = ({ goToNextTab }) => {
 
     return (
         <form className="agency-section" onSubmit={handleSubmit(handleInfo)}>
-            <p>에이전시 정보</p>
+            <h5>에이전시 정보</h5>
             <div className="agency-info">
                 <label htmlFor="">에이전시 소속</label>
                 <div>
                     <span>
-                        <span>Y</span>
-                        <input
-                            type="radio"
-                            value="yes"
-                            {...register('agencyStatus')}
-                        />
+                        <label>
+                            Y
+                            <input
+                                type="radio"
+                                value="yes"
+                                {...register('agencyStatus')}
+                            />
+                        </label>
                     </span>
                     <span>
-                        <span>N</span>
-                        <input
-                            type="radio"
-                            value="no"
-                            {...register('agencyStatus')}
-                        />
+                        <label>
+                            N
+                            <input
+                                type="radio"
+                                value="no"
+                                {...register('agencyStatus')}
+                            />
+                        </label>
                     </span>
                 </div>
             </div>
@@ -48,7 +53,10 @@ const SellebForm3 = ({ goToNextTab }) => {
                     register={register}
                 />
             </div>
-            <NextButton type="submit" />
+            <div className="flex justify-between">
+                <PrevButton onClick={goToPrevTab} />
+                <NextButton type="submit" />
+            </div>
         </form>
     )
 }
