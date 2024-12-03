@@ -6,7 +6,13 @@ import PrevButton from '../../../components/PrevButton/PrevButton'
 import './SellebForm5.css'
 
 const SellebForm5 = ({ goToNextTab, goToPrevTab }) => {
-    const { register, handleSubmit, setValue, getValues } = useForm()
+    const {
+        register,
+        handleSubmit,
+        setValue,
+        getValues,
+        formState: { errors },
+    } = useForm()
     const [payValue, setPayValue] = useState(0)
     const handleInfo = formData => {
         if (getValues('currency-input') && formData.payValue) {

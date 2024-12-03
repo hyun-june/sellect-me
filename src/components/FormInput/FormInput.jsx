@@ -1,6 +1,8 @@
+import { validationPatterns } from '../../core/constants/validationPatterns'
 import './FormInput.css'
 
-const FormInput = ({ id, title, register, size, ...props }) => {
+const FormInput = ({ id, title, register, type = 'text', error, ...props }) => {
+    const patternType = validationPatterns[type]
     return (
         <div className="form-input">
             {/* <label
@@ -10,10 +12,16 @@ const FormInput = ({ id, title, register, size, ...props }) => {
             </label> */}
             <input
                 id={id}
-                {...register(`${id}`)}
+                {...register(`${id}`, {
+                    pattern: {
+                        value: patternType?.value,
+                        message: patternType?.message,
+                    },
+                })}
                 {...props}
                 placeholder={`${title}`}
             />
+            {error?.message && <span>{error.message}</span>}
         </div>
     )
 }

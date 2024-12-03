@@ -9,7 +9,12 @@ import UploadBox from '../../../components/UploadBox/UploadBox'
 import './SellecterForm2.css'
 
 const SellecterForm2 = ({ goToNextTab, goToPrevTab }) => {
-    const { register, handleSubmit, setValue } = useForm()
+    const {
+        register,
+        handleSubmit,
+        setValue,
+        formState: { errors },
+    } = useForm()
 
     const handleInfo = formData => {
         console.log('FormData:', formData)

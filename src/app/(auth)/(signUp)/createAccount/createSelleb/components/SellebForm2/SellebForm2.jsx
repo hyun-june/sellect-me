@@ -8,7 +8,11 @@ import PrevButton from '../../../components/PrevButton/PrevButton'
 import './SellebForm2.css'
 
 const SellebForm2 = ({ goToNextTab, goToPrevTab }) => {
-    const { register, handleSubmit } = useForm()
+    const {
+        register,
+        handleSubmit,
+        formState: { errors },
+    } = useForm()
     const [images, setImages] = useState({
         id_photo: null,
         consent_photo: null,
@@ -107,6 +111,7 @@ const SellebForm2 = ({ goToNextTab, goToPrevTab }) => {
                             title="비자 종류"
                             id="visa"
                             register={register}
+                            errors={errors?.visa}
                         />
                         <FormInput
                             title="외국인 등록번호"

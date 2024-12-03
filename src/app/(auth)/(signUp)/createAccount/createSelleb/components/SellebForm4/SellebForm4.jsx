@@ -5,7 +5,11 @@ import PrevButton from '../../../components/PrevButton/PrevButton'
 import './SellebForm4.css'
 
 const SellebForm4 = ({ goToNextTab, goToPrevTab }) => {
-    const { register, handleSubmit } = useForm()
+    const {
+        register,
+        handleSubmit,
+        formState: { errors },
+    } = useForm()
 
     const handleInfo = formData => {
         console.log('form 4:', formData)

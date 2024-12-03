@@ -3,9 +3,8 @@
     width: 100%;
     height: 2.5em;
     display: flex;
-    & span {
-        width: 65%;
-    }
+    position: relative;
+
     /* 
     & label {
         width: 35%;
@@ -27,5 +26,12 @@
     & input::placeholder {
         color: var(--text-sub-color);
         font-weight: bold;
+    }
+
+    & span {
+        color: var(--warn-color);
+        font-size: 0.7em;
+        position: absolute;
+        bottom: -1.3em;
     }
 }

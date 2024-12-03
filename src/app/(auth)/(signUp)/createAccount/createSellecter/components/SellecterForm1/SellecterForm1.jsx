@@ -11,7 +11,12 @@ const typeList = ['도소매업', '제조업', '서비스업']
 const categoryList = ['의류 소매업', '자동차 제도업', 'IT 컨설팅']
 
 const SellecterForm1 = ({ goToNextTab }) => {
-    const { register, handleSubmit, setValue } = useForm()
+    const {
+        register,
+        handleSubmit,
+        setValue,
+        formState: { errors },
+    } = useForm()
 
     const handleInfo = formData => {
         console.log('FormData:', formData)
