@@ -1,0 +1,74 @@
+.create_profile {
+    margin-top: 1em;
+    padding: 0;
+
+    & header {
+        display: flex;
+        justify-content: space-between;
+
+        & nav {
+            display: flex;
+            margin-bottom: 0.5em;
+        }
+    }
+
+    & section {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+    }
+}
+
+.main_profile_img {
+    & img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+    }
+}
+
+.profile_info_box {
+    border: 1px solid var(--line-color);
+    display: grid;
+    grid-template-rows: 1.5fr 0.5fr;
+}
+
+.profile_List {
+    display: flex;
+    justify-content: center;
+    padding-top: 2em;
+    gap: 3em;
+    border: 1px solid red;
+}
+
+.profile_range {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-items: center;
+    gap: 3em;
+}
+
+.star-icons {
+    font-size: 1.5em;
+}
+
+.slider_section {
+    width: 70%;
+}
+
+.slider-container {
+    width: 100%;
+}
+
+.slick-prev::before {
+    color: var(--text-color);
+}
+
+.slick-next::before {
+    color: var(--text-color);
+}
+
+.slick-prev:hover,
+.slick-next:hover {
+    background-color: transparent;
+    border: none;
+}
