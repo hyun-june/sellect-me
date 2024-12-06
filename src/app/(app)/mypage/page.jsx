@@ -1,5 +1,11 @@
+import './../myPage/css/myPage.css'
+
 const myPage = () => {
-    return <div>myPage</div>
+    return (
+        <div>
+            <div>myPage</div>
+        </div>
+    )
 }
 
 export default myPage

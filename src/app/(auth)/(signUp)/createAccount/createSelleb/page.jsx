@@ -37,6 +37,13 @@ const createSellebPage = () => {
             alert('모든 필드를 입력해야 제출 완료 탭으로 이동할 수 있습니다.')
             return false
         }
+
+        if (currentTabIndex === tabList.length - 1) {
+            alert(
+                '현재 제출 완료 탭에 있습니다. 다른 탭으로 이동할 수 없습니다.',
+            )
+            return
+        }
         setCurrentTabIndex(index)
     }
 
