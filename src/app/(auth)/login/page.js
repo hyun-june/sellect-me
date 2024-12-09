@@ -5,7 +5,8 @@ import Input from '@/components/Input'
 import InputError from '@/components/InputError'
 import Label from '@/components/Label'
 import Link from 'next/link'
-import { useAuth } from '@/hooks/auth'
+import { useAuth } from '@/core/hooks/auth'
+//import { useAuth } from '@/hooks/auth'
 import { useEffect, useState } from 'react'
 import { useRouter } from 'next/navigation'
 import AuthSessionStatus from '@/app/(auth)/AuthSessionStatus'
@@ -74,28 +75,24 @@ const Login = () => {
     return (
         <Container>
             <AuthSessionStatus className="mb-4" status={status} />
-            <Row className="justify-content-center">
-                <Col xs="auto">
-                    <div className="login-text">로그인 / 회원가입</div>
-                    <LoginButton title="구글" src="./images/google_login.png" />
+            <section className="login_section">
+                <h5>로그인 / 회원가입</h5>
+                <img title="구글" src="/images/google_btn.svg" />
 
-                    <a
-                        href={`https://kauth.kakao.com/oauth/authorize?${KakaoAuthParam.toString()}`}>
-                        <LoginButton
-                            title="카카오"
-                            src="/images/kakao_login.png"
-                        />
-                    </a>
+                <a
+                    href={`https://kauth.kakao.com/oauth/authorize?${KakaoAuthParam.toString()}`}>
+                    <img title="카카오" src="/images/kakao_login_btn.png" />
+                </a>
 
-                    <a
-                        href={`https://nid.naver.com/oauth2.0/authorize?${NaverAuthParam.toString()}`}>
-                        <LoginButton
-                            title="네이버"
-                            src="/images/naver_login.png"
-                        />
-                    </a>
-                </Col>
-            </Row>
+                <a
+                    href={`https://nid.naver.com/oauth2.0/authorize?${NaverAuthParam.toString()}`}>
+                    <img
+                        title="네이버"
+                        src="/images/naver_btn.png"
+                        style={{ borderRadius: '5px' }}
+                    />
+                </a>
+            </section>
         </Container>
     )
 }

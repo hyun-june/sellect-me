@@ -75,8 +75,8 @@ const LoginPage = () => {
         <GoogleOAuthProvider
             clientId={process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID}>
             <Container>
-                <Row className="justify-content-center">
-                    {/* <Col xs="auto">
+                {/* <Row className="justify-content-center">
+                    <Col xs="auto">
                         <div className="login-text">로그인 / 회원가입</div>
 
                         <button className="login_button" onClick={kakaoLogin}>
@@ -112,7 +112,7 @@ const LoginPage = () => {
                             onSuccess={naverUser => console.log(naverUser)}
                             onFailure={() => console.error(result)}
                         />
-                    </Col> */}
+                    </Col>
                     <Col xs="auto">
                         <div className="login-text">로그인 / 회원가입</div>
 
@@ -138,7 +138,16 @@ const LoginPage = () => {
                             )}
                         />
                     </Col>
-                </Row>
+                </Row> */}
+                <div className="login_btn">
+                    <img src="/images/google_btn.svg" alt="" />
+                    <img src="/images/kakao_login_btn.png" alt="" />
+                    <img
+                        src="/images/naver_btn.png"
+                        style={{ borderRadius: '5px' }}
+                        alt=""
+                    />
+                </div>
             </Container>
         </GoogleOAuthProvider>
     )

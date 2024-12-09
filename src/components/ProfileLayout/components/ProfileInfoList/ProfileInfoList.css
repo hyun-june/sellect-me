@@ -1,0 +1,14 @@
+.profile_inner_List {
+    & ul {
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 3em;
+
+        & li {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+        }
+    }
+}

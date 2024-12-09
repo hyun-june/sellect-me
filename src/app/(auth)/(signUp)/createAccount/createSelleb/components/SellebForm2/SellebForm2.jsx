@@ -4,10 +4,15 @@ import { useForm } from 'react-hook-form'
 import FormInput from '@/components/FormInput/FormInput'
 import NextButton from '../../../components/NextButton/NextButton'
 import UploadBox from '../../../components/UploadBox/UploadBox'
+import PrevButton from '../../../components/PrevButton/PrevButton'
 import './SellebForm2.css'
 
-const SellebForm2 = ({ goToNextTab }) => {
-    const { register, handleSubmit } = useForm()
+const SellebForm2 = ({ goToNextTab, goToPrevTab }) => {
+    const {
+        register,
+        handleSubmit,
+        formState: { errors },
+    } = useForm()
     const [images, setImages] = useState({
         id_photo: null,
         consent_photo: null,
@@ -45,18 +50,27 @@ const SellebForm2 = ({ goToNextTab }) => {
                     id="id_photo"
                 />
                 <div>
-                    <h5>미성년자 부모 동의서</h5>
+                    <h5 className="info-second-title">미성년자 부모 동의서</h5>
                     <p>
-                        미성년자 셀럽 활동을 위한 부모님 동의서 사본을 업로드
-                        해주세요.
-                        <br />
+                        미성년자 셀럽 활동을 위한 부모님 동의서 <br />
+                        사본을 업로드 해주세요.
                     </p>
-                    <span>
+                    {/* <span className="info-text">
                         <label htmlFor="info-parents">해당사항없음</label>
                         <input type="checkbox" id="info-parents" />
                         <label
                             htmlFor="info-parents"
                             className="check-box"></label>
+                    </span> */}
+                    <span className="info-text">
+                        <label>
+                            해당사항없음
+                            <input
+                                type="checkbox"
+                                {...register('parental_consent ')}
+                            />
+                            <span className="check-box"></span>
+                        </label>
                     </span>
 
                     <UploadBox
@@ -68,22 +82,24 @@ const SellebForm2 = ({ goToNextTab }) => {
             </section>
             <section className="info-right">
                 <div className="visa-info-section">
-                    <p>비자 정보</p>
+                    <h5>비자 정보</h5>
                     <div className="visa-info">
                         <span>대한민국 영주권 혹은 시민권</span>
                         <div className="visa-check">
                             <div>
-                                <span>Y</span>
+                                <label htmlFor="visaStatusYes">Y</label>
                                 <input
                                     type="radio"
+                                    id="visaStatusYes"
                                     {...register('visaStatus')}
                                     value="yes"
                                 />
                             </div>
                             <div>
-                                <span>N</span>
+                                <label htmlFor="visaStatusNo">N</label>
                                 <input
                                     type="radio"
+                                    id="visaStatusNo"
                                     {...register('visaStatus')}
                                     value="no"
                                 />
@@ -95,6 +111,7 @@ const SellebForm2 = ({ goToNextTab }) => {
                             title="비자 종류"
                             id="visa"
                             register={register}
+                            errors={errors?.visa}
                         />
                         <FormInput
                             title="외국인 등록번호"
@@ -104,7 +121,7 @@ const SellebForm2 = ({ goToNextTab }) => {
                     </div>
                 </div>
                 <div className="account-info">
-                    <p>계좌 정보</p>
+                    <h5>계좌 정보</h5>
                     <FormInput
                         title="수익금 출금 은행"
                         id="bank_number"
@@ -123,7 +140,7 @@ const SellebForm2 = ({ goToNextTab }) => {
                 </div>
 
                 <div className="bankbook-info">
-                    <p>통장 사본</p>
+                    <h5>통장 사본</h5>
                     <UploadBox
                         onChange={e => handleImageUpload(e, 'bank_photo')}
                         onDelete={() => handleDelete('bank_photo')}
@@ -141,9 +158,11 @@ const SellebForm2 = ({ goToNextTab }) => {
                         register={register}
                     />
                 </div>
-
-                <NextButton type="submit" />
             </section>
+            <div className="flex justify-between prevnext_btn">
+                <PrevButton onClick={goToPrevTab} />
+                <NextButton type="submit" />
+            </div>
         </form>
     )
 }

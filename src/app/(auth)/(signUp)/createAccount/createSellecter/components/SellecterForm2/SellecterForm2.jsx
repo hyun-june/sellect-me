@@ -4,11 +4,17 @@ import { useForm } from 'react-hook-form'
 import FormInput from '@/components/FormInput/FormInput'
 import DropdownForm from '@/components/DropdownForm/DropdownForm'
 import NextButton from '../../../components/NextButton/NextButton'
+import PrevButton from '../../../components/PrevButton/PrevButton'
 import UploadBox from '../../../components/UploadBox/UploadBox'
 import './SellecterForm2.css'
 
-const SellecterForm2 = ({ goToNextTab }) => {
-    const { register, handleSubmit, setValue } = useForm()
+const SellecterForm2 = ({ goToNextTab, goToPrevTab }) => {
+    const {
+        register,
+        handleSubmit,
+        setValue,
+        formState: { errors },
+    } = useForm()
 
     const handleInfo = formData => {
         console.log('FormData:', formData)
@@ -41,8 +47,8 @@ const SellecterForm2 = ({ goToNextTab }) => {
             <form
                 onSubmit={handleSubmit(handleInfo)}
                 className="sellecter-form">
-                <div className="form-gap">
-                    <p>계좌정보</p>
+                <div className="form-gap width-100">
+                    <h5>계좌정보</h5>
                     <DropdownForm
                         label="사업자 통장 은행"
                         list={bankList}
@@ -56,7 +62,7 @@ const SellecterForm2 = ({ goToNextTab }) => {
                     />
                 </div>
                 <div className="width-100 form-gap">
-                    <p>통장사본</p>
+                    <h5>통장사본</h5>
                     <UploadBox
                         onChange={e => handleImageUpload(e, 'bankbook_img')}
                         onDelete={() => handleDelete('bankbook_img')}
@@ -75,7 +81,7 @@ const SellecterForm2 = ({ goToNextTab }) => {
                     />
                 </div>
                 <div className="width-100">
-                    <p>사업자등록증 사본</p>
+                    <h5>사업자등록증 사본</h5>
                     <UploadBox
                         onChange={e =>
                             handleImageUpload(e, 'business_registration_img')
@@ -86,7 +92,7 @@ const SellecterForm2 = ({ goToNextTab }) => {
                         id="business_registration_img"
                     />
                 </div>
-                <div className="message-box ">
+                <div className="message-box">
                     <p>
                         <strong>* 확인해주세요</strong>
                     </p>
@@ -130,6 +136,10 @@ const SellecterForm2 = ({ goToNextTab }) => {
                             </li>
                         </ul>
                     </section>
+                </div>
+                <div className="flex justify-between width-100">
+                    <PrevButton onClick={goToPrevTab} />
+                    <NextButton type="submit" />
                 </div>
             </form>
         </div>

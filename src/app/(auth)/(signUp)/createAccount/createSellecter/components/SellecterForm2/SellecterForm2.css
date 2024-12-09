@@ -5,8 +5,8 @@
     width: 25em;
     gap: 1em;
 
-    & p {
-        color: var(--text-sub-color);
+    & h5 {
+        color: var(--text-color);
         font-weight: bold;
     }
 
@@ -28,10 +28,11 @@
 }
 
 .message-box {
-    background-color: var(--line-color);
     padding: 1.5em;
+    border: 1px solid var(--line-color);
     border-radius: 50px;
     width: 30em;
+    cursor: auto;
 
     & p {
         color: black;

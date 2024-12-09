@@ -8,7 +8,7 @@
     display: flex;
     align-items: center;
     position: relative;
-    border-bottom: 2px solid #def7ff;
+    border-bottom: 1px solid #c1c1be;
 }
 
 .logoImg {

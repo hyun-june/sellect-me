@@ -9,7 +9,13 @@ import './SellebForm1.css'
 const languageList = ['Korean ', 'English', 'Japanese', 'Chinese']
 
 const SellebForm1 = ({ goToNextTab }) => {
-    const { register, handleSubmit, watch, setValue } = useForm({
+    const {
+        register,
+        handleSubmit,
+        watch,
+        setValue,
+        formState: { errors },
+    } = useForm({
         defaultValues: {
             first_name: '',
             last_name: '',
@@ -24,6 +30,7 @@ const SellebForm1 = ({ goToNextTab }) => {
             auth_number: '',
             email_address: '',
         },
+        mode: 'onChange',
     })
 
     const handleSelect = (fieldName, value) => {
@@ -63,8 +70,14 @@ const SellebForm1 = ({ goToNextTab }) => {
                         title="이름"
                         id="first_name"
                         register={register}
+                        error={errors.first_name}
                     />
-                    <FormInput title="성" id="last_name" register={register} />
+                    <FormInput
+                        title="성"
+                        id="last_name"
+                        register={register}
+                        error={errors.last_name}
+                    />
                 </section>
                 <section className="birth-section">
                     <span>생년월일</span>
@@ -134,6 +147,7 @@ const SellebForm1 = ({ goToNextTab }) => {
                         title="국적 추가"
                         id="country"
                         register={register}
+                        error={errors.country}
                     />
                 </section>
                 <section className="section-address">
@@ -146,6 +160,8 @@ const SellebForm1 = ({ goToNextTab }) => {
                         title="전화번호 입력"
                         id="phone_number"
                         register={register}
+                        type="number"
+                        error={errors.phone_number}
                     />
                     <DropdownForm
                         label="사용 가능 언어"
@@ -158,6 +174,8 @@ const SellebForm1 = ({ goToNextTab }) => {
                             title="인증번호 입력"
                             id="auth_number"
                             register={register}
+                            type="number"
+                            error={errors.auth_number}
                         />
                         <button
                             type="button"
@@ -169,6 +187,8 @@ const SellebForm1 = ({ goToNextTab }) => {
                         title="이메일 주소"
                         id="email_address"
                         register={register}
+                        type="email"
+                        error={errors.email_address}
                     />
                 </section>
 

@@ -4,6 +4,11 @@
     flex-direction: column;
     gap: 0.3em;
 
+    & h5 {
+        color: var(--text-color);
+        font-weight: bold;
+    }
+
     & label {
         padding-left: 0.5em;
     }
@@ -12,8 +17,8 @@
 .agency-info {
     display: flex;
     justify-content: space-between;
-    border: 2px solid var(--line-color);
-    color: var(--text-color);
+    border-bottom: 1px solid var(--line-color);
+    color: var(--text-sub-color);
     font-weight: bold;
     align-items: center;
     height: 2.5em;
@@ -24,11 +29,16 @@
         justify-content: space-around;
     }
 
+    & label {
+        cursor: pointer;
+    }
+
     & input {
         width: 13px;
         height: 13px;
         border: 2px solid var(--text-color);
         cursor: pointer;
+        margin-left: 0.3em;
     }
     & input:checked {
         background-color: var(--text-sub-color);

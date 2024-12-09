@@ -8,6 +8,7 @@
     & p {
         margin: 0;
         color: var(--text-color);
+        line-height: 1.3em;
     }
 
     & h5 {
@@ -36,11 +37,16 @@
     justify-content: space-around;
     width: 100%;
 
+    & label {
+        cursor: pointer;
+    }
+
     & input {
         width: 13px;
         height: 13px;
         border: 2px solid var(--text-color);
         cursor: pointer;
+        margin-left: 0.3em;
     }
 
     & input:checked {
@@ -50,13 +56,14 @@
 
 .select-currency-self {
     width: 100%;
-
-    & label {
-        width: 50%;
-    }
-
     & input {
         text-align: center;
+    }
+
+    & p {
+        font-size: 0.675em;
+        text-align: right;
+        margin-top: 0.5em;
     }
 }
 .pay-bar-section {
@@ -69,6 +76,25 @@
         display: flex;
         width: 100%;
         justify-content: space-between;
+    }
+}
+
+.pay_section {
+    border-bottom: 1px solid var(--line-color);
+    width: 100%;
+    height: 2em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-sub-color);
+
+    & strong {
+        margin-right: 0.5em;
+    }
+
+    & div {
+        margin-top: 0.1em;
+        padding-left: 0.5em;
     }
 }
 

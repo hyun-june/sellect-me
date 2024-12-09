@@ -1,6 +1,6 @@
 'use client'
 
-import { useAuth } from '@/hooks/auth'
+import { useAuth } from '@/core/hooks/auth'
 import Navigation from '@/app/(app)/Navigation'
 import Loading from '@/app/(app)/Loading'
 

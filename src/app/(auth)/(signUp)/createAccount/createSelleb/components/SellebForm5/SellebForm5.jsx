@@ -1,15 +1,25 @@
 import FormInput from '@/components/FormInput/FormInput'
 import { useForm } from 'react-hook-form'
 import { useState } from 'react'
-import './SellebForm5.css'
 import NextButton from '../../../components/NextButton/NextButton'
+import PrevButton from '../../../components/PrevButton/PrevButton'
+import './SellebForm5.css'
 
-const SellebForm5 = ({ goToNextTab }) => {
-    const { register, handleSubmit, setValue } = useForm()
-    const [payValue, setPayValue] = useState(150)
+const SellebForm5 = ({ goToNextTab, goToPrevTab }) => {
+    const {
+        register,
+        handleSubmit,
+        setValue,
+        getValues,
+        formState: { errors },
+    } = useForm()
+    const [payValue, setPayValue] = useState(0)
     const handleInfo = formData => {
-        console.log('Form 5:', formData)
+        if (getValues('currency-input') && formData.payValue) {
+            setValue('payValue', 0)
+        }
 
+        console.log('Form 5:', { ...formData, payValue: getValues('payValue') })
         goToNextTab()
     }
 
@@ -18,7 +28,7 @@ const SellebForm5 = ({ goToNextTab }) => {
         setPayValue(pay)
         setValue('payValue', pay)
     }
-    console.log('pay', payValue)
+
     return (
         <form className="pay-section" onSubmit={handleSubmit(handleInfo)}>
             <h5>시간 당 모델료로 희망하는 최소금액을 설정해 주세요.</h5>
@@ -56,9 +66,16 @@ const SellebForm5 = ({ goToNextTab }) => {
                 />
                 <div>
                     <span className="unit-text">단위 : 10,000</span>
-                    <span>value:{payValue}</span>
                 </div>
             </div>
+
+            {payValue !== 0 ? (
+                <div className="pay_section">
+                    <strong>pay</strong>: <div>{payValue}</div>
+                </div>
+            ) : (
+                ''
+            )}
 
             <div className="select-currency-self">
                 <FormInput
@@ -66,8 +83,15 @@ const SellebForm5 = ({ goToNextTab }) => {
                     id="currency-input"
                     register={register}
                 />
+                <p>
+                    pay와 직접 입력한 값이 둘 다 있는 경우 직접 입력의 값이
+                    적용됩니다.
+                </p>
             </div>
-            <NextButton />
+            <div className="flex justify-between width-100">
+                <PrevButton onClick={goToPrevTab} />
+                <NextButton />
+            </div>
         </form>
     )
 }
