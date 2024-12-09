@@ -15,13 +15,13 @@ import './css/login.css'
 import { Container, Row, Col } from 'react-bootstrap'
 
 const kakao_client_id = '0eca8c37d1d2fa4a589d2aeb9a8a3053'
-const kakao_redirect_uri = 'http://localhost:8000/auth/callback'
-const kakao_response_type = 'code'
-
 const naver_client_id = 'ykhorqbDvWdjxdHre6Zg'
-const naver_redirect_uri = 'http://localhost:8000/auth/callback'
-const naver_response_type = 'code'
-const naver_state = uuidv4()
+// const redirect_uri = 'http://localhost:8000/auth/callback'
+const getRedirectUri = (provider) => {
+    return `http://localhost:8000/auth/callback/${provider}`;
+}
+const response_type = 'code'
+const state = uuidv4()
 
 const Login = () => {
     const router = useRouter()
@@ -57,17 +57,18 @@ const Login = () => {
         })
     }
 
-    const authParam = new URLSearchParams({
+    const KakaoAuthParam = new URLSearchParams({
         client_id: kakao_client_id, // kakao_client_id 값을 client_id로 사용
-        redirect_uri: kakao_redirect_uri, // kakao_redirect_uri 값을 redirect_uri로 사용
-        response_type: kakao_response_type, // kakao_response_type 값을 response_type으로 사용
+        redirect_uri: getRedirectUri('kakao'),
+        response_type: response_type, // kakao_response_type 값을 response_type으로 사용
+        state: state,
     })
 
-    const authParam1 = new URLSearchParams({
+    const NaverAuthParam = new URLSearchParams({
         client_id: naver_client_id, // naver_client_id 값을 client_id로 사용
-        redirect_uri: naver_redirect_uri, // naver_redirect_uri 값을 redirect_uri로 사용
-        response_type: naver_response_type, // naver_response_type 값을 response_type으로 사용
-        status,
+        redirect_uri: getRedirectUri('naver'),
+        response_type: response_type, // naver_response_type 값을 response_type으로 사용
+        state: state,
     })
 
     return (
@@ -79,7 +80,7 @@ const Login = () => {
                     <LoginButton title="구글" src="./images/google_login.png" />
 
                     <a
-                        href={`https://kauth.kakao.com/oauth/authorize?${authParam.toString()}`}>
+                        href={`https://kauth.kakao.com/oauth/authorize?${KakaoAuthParam.toString()}`}>
                         <LoginButton
                             title="카카오"
                             src="/images/kakao_login.png"
@@ -87,7 +88,7 @@ const Login = () => {
                     </a>
 
                     <a
-                        href={`https://nid.naver.com/oauth2.0/authorize/authorize?${authParam1.toString()}`}>
+                        href={`https://nid.naver.com/oauth2.0/authorize?${NaverAuthParam.toString()}`}>
                         <LoginButton
                             title="네이버"
                             src="/images/naver_login.png"

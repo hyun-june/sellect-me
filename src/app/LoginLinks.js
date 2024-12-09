@@ -8,18 +8,21 @@ const LoginLinks = () => {
     return (
         <div>
             {user ? (
-                <Link href="/dashboard" className="LoginLink">
-                    Dashboard
-                </Link>
+                <>
+                    <Link href="/createAccount" className="LoginLink">
+                        회원가입
+                    </Link>
+                    <Link href="/dashboard" className="LoginLink">
+                        Dashboard
+                    </Link>
+                </>
             ) : (
                 <>
                     <Link href="/login" className="LoginLink">
                         로그인
                     </Link>
 
-                    <Link href="/createAccount" className="LoginLink">
-                        회원가입
-                    </Link>
+
                 </>
             )}
         </div>
