@@ -3,12 +3,10 @@
 import Button from '../Button/Button'
 import ProfileImgBox from '../ProfileImgBox/ProfileImgBox'
 import { IoMdStarOutline } from 'react-icons/io'
-import Slider from 'react-slick'
-import 'slick-carousel/slick/slick.css'
-import 'slick-carousel/slick/slick-theme.css'
-import './ProfileLayout.css'
 import { Container } from 'react-bootstrap'
 import ProfileInfoList from './components/ProfileInfoList/ProfileInfoList'
+import { useState } from 'react'
+import './ProfileLayout.css'
 
 const profileInfoList = [
     { title: '성별', content: 'FEMALE' },
@@ -39,37 +37,17 @@ const profileCountryList = [
 ]
 
 const ProfileLayout = () => {
-    const settings = {
-        dots: false,
-        infinite: true,
-        speed: 500,
-        slidesToShow: 3,
-        slidesToScroll: 1,
-        responsive: [
-            {
-                breakpoint: 1024,
-                settings: {
-                    slidesToShow: 3,
-                },
-            },
-            {
-                breakpoint: 600,
-                settings: {
-                    slidesToShow: 2,
-                },
-            },
-            {
-                breakpoint: 480,
-                settings: {
-                    slidesToShow: 1,
-                },
-            },
-        ],
+    const [payValue, setPayValue] = useState(0)
+    const handlePayChange = e => {
+        const pay = e.target.value
+        setPayValue(pay)
     }
+
+    const hourlyPay = payValue * 120000
     const user = '11'
 
     return (
-        <Container className="create_profile">
+        <div className="create_profile">
             <header>
                 {user === 'me' ? (
                     <>
@@ -97,21 +75,13 @@ const ProfileLayout = () => {
                 <div className="main_profile_img">
                     <ProfileImgBox src="/images/test.jpg" />
                 </div>
+
                 <div className="profile_info_box">
-                    {/* <div>
-                        <div>
-                            <strong>성별</strong>
-                            <span>FEMALE</span>
-                        </div>
-                        <div>
-                            <strong>국가</strong>
-                            <span>KOREA</span>
-                        </div>
-                        <div>
-                            <strong>언어</strong>
-                            <span>KOREAN</span>
-                        </div>
-                    </div> */}
+                    <div className="profile_pictures">
+                        <ProfileImgBox src="/images/test1.png" />
+                        <ProfileImgBox src="/images/test2.jpg" />
+                        <ProfileImgBox src="/images/test3.jpg" />
+                    </div>
                     <div className="profile_List">
                         <ProfileInfoList list={profileInfoList} />
                         <ProfileInfoList list={profileThreeSizeList} />
@@ -119,41 +89,47 @@ const ProfileLayout = () => {
                         <ProfileInfoList list={profileColorList} />
                         <ProfileInfoList list={profileCountryList} />
                     </div>
-                    <div className="profile_range">
-                        <div>
-                            <div>예상 금액</div>
-                            <div>6HR 720,000KRW</div>
-                            <input type="range" />
-                        </div>
-                        <div>
-                            <div>프로젝트 가능 범위</div>
-                            <span>사진</span>
-                            <span>영상</span>
-                        </div>
-                        <div>
-                            <>
-                                <div>이동 가능 지역 범위</div>
-                                <span>서울</span>
-                            </>
-                            <>
-                                <div>저작권 사용기간</div>
-                                <span>1년</span>
-                            </>
-                        </div>
-                    </div>
                 </div>
             </section>
-            {/* <div className="slider_section">
-                <Slider {...settings} className="slider-container">
-                    <div className="sub_profile_img">
-                        <ProfileImgBox src="/images/test.jpg" />
-                        <ProfileImgBox src="/images/test.jpg" />
-                        <ProfileImgBox src="/images/test.jpg" />
-                        <ProfileImgBox src="/images/test.jpg" />
+            {/* <div className="profile_range">
+                <div className="hourly_rangebar">
+                    <div>예상 금액</div>
+                    <div>
+                        <span>{payValue}HR</span>
+                        <span>{hourlyPay}KRW</span>
                     </div>
-                </Slider>
+
+                    <input
+                        type="range"
+                        id="hourlyPay_bar"
+                        min="2"
+                        max="12"
+                        step="1"
+                        value={payValue}
+                        onChange={handlePayChange}
+                    />
+                    <div>
+                        <span>2hr</span>
+                        <span>12hr</span>
+                    </div>
+                </div>
+                <div>
+                    <div>프로젝트 가능 범위</div>
+                    <span>사진</span>
+                    <span>영상</span>
+                </div>
+                <div>
+                    <>
+                        <div>이동 가능 지역 범위</div>
+                        <span>서울</span>
+                    </>
+                    <>
+                        <div>저작권 사용기간</div>
+                        <span>1년</span>
+                    </>
+                </div>
             </div> */}
-        </Container>
+        </div>
     )
 }
 
