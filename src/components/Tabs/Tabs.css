@@ -1,0 +1,18 @@
+.tabs-header {
+    display: flex;
+    font-size: 16px;
+    font-weight: bold;
+    color: var(--text-sub-color);
+    padding-left: 0;
+    gap: 1em;
+    border-bottom: 2px solid var(--line-color);
+    li {
+        padding: 1em;
+        cursor: pointer;
+        list-style: none;
+    }
+
+    .active {
+        color: var(--text-color);
+    }
+}

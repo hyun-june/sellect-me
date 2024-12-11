@@ -11,7 +11,6 @@
 
         & nav {
             display: flex;
-
             margin-bottom: 0.5em;
         }
     }
@@ -21,6 +20,7 @@
         display: flex;
         justify-content: center;
         gap: 1em;
+        margin-bottom: 3em;
     }
 }
 
@@ -39,6 +39,7 @@
     & img {
         height: 13em;
         width: 13em;
+        object-fit: cover;
     }
 }
 
@@ -62,7 +63,20 @@
     grid-template-columns: 1fr 1fr 1fr;
     justify-items: center;
     gap: 3em;
-    border: 1px solid green;
+    border-top: 2px solid var(--line-color);
+    /* border-bottom: 2px solid var(--line-color); */
+    padding: 3em 0em;
+    margin-bottom: 3em;
+
+    & h5 {
+        color: var(--text-color);
+        font-weight: bold;
+    }
+
+    & span {
+        font-weight: bold;
+        color: var(--text-sub-color);
+    }
 }
 
 .hourly_rangebar {
@@ -71,6 +85,23 @@
         display: flex;
         justify-content: space-between;
     }
+
+    & label {
+        color: var(--text-color);
+        font-weight: bold;
+        font-size: 0.8em;
+    }
+}
+
+.hourly_rangebar::after {
+    content: '';
+    width: 1px;
+    color: red;
+}
+
+.pay_text {
+    display: flex;
+    flex-direction: column;
 }
 
 #hourlyPay_bar {
@@ -86,6 +117,15 @@
         width: 15px;
         height: 15px;
         border-radius: 50%;
+    }
+}
+
+.tabs_content {
+    & img {
+        width: 45em;
+        height: 60em;
+        object-fit: cover;
+        margin-bottom: 1em;
     }
 }
 

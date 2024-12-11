@@ -3,9 +3,9 @@
 import Button from '../Button/Button'
 import ProfileImgBox from '../ProfileImgBox/ProfileImgBox'
 import { IoMdStarOutline } from 'react-icons/io'
-import { Container } from 'react-bootstrap'
 import ProfileInfoList from './components/ProfileInfoList/ProfileInfoList'
 import { useState } from 'react'
+import Tabs from '../Tabs/Tabs'
 import './ProfileLayout.css'
 
 const profileInfoList = [
@@ -36,6 +36,17 @@ const profileCountryList = [
     { title: '언어', content: 'KOREAN' },
 ]
 
+const tabItems = [
+    {
+        title: '이미지',
+        content: [
+            <ProfileImgBox src="/images/test1.png" />,
+            <ProfileImgBox src="/images/test2.jpg" />,
+        ],
+    },
+    { title: '커리어', content: <ProfileImgBox src="/images/test2.jpg" /> },
+]
+
 const ProfileLayout = () => {
     const [payValue, setPayValue] = useState(0)
     const handlePayChange = e => {
@@ -43,7 +54,7 @@ const ProfileLayout = () => {
         setPayValue(pay)
     }
 
-    const hourlyPay = payValue * 120000
+    const hourlyPay = (payValue * 120000).toLocaleString()
     const user = '11'
 
     return (
@@ -91,12 +102,14 @@ const ProfileLayout = () => {
                     </div>
                 </div>
             </section>
-            {/* <div className="profile_range">
+            <div className="profile_range">
                 <div className="hourly_rangebar">
-                    <div>예상 금액</div>
-                    <div>
-                        <span>{payValue}HR</span>
-                        <span>{hourlyPay}KRW</span>
+                    <div className="pay_text">
+                        <h5>예상 금액</h5>
+                        <div className="margin-bottom-1">
+                            <span>{payValue}HR</span>
+                            <span>{hourlyPay}KRW</span>
+                        </div>
                     </div>
 
                     <input
@@ -109,26 +122,29 @@ const ProfileLayout = () => {
                         onChange={handlePayChange}
                     />
                     <div>
-                        <span>2hr</span>
-                        <span>12hr</span>
+                        <label>2hr</label>
+                        <label>12hr</label>
                     </div>
                 </div>
                 <div>
-                    <div>프로젝트 가능 범위</div>
+                    <h5>프로젝트 가능 범위</h5>
                     <span>사진</span>
                     <span>영상</span>
                 </div>
                 <div>
-                    <>
-                        <div>이동 가능 지역 범위</div>
+                    <div>
+                        <h5>이동 가능 지역 범위</h5>
                         <span>서울</span>
-                    </>
-                    <>
-                        <div>저작권 사용기간</div>
+                    </div>
+                    <div>
+                        <h5>저작권 사용기간</h5>
                         <span>1년</span>
-                    </>
+                    </div>
                 </div>
-            </div> */}
+            </div>
+            <div className="tabs_content">
+                <Tabs items={tabItems}></Tabs>
+            </div>
         </div>
     )
 }
