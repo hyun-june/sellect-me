@@ -1,5 +1,5 @@
 import ProfileLayout from '@/components/ProfileLayout/ProfileLayout'
-import './../CreateProfile/css/CreateProfilePage.css'
+import './css/CreateProfilePage.css'
 
 const CreateProfilePage = () => {
     return (
