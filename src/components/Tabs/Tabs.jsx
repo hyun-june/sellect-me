@@ -5,7 +5,7 @@ import './Tabs.css'
 const Tabs = ({ defaultIdx = 0, items = [] }) => {
     const [tabIdx, setTabIdx] = useState(defaultIdx)
     return (
-        <div>
+        <div className="tabs-container">
             <ul className="tabs-header">
                 {items?.map(({ title }, i) => (
                     <li

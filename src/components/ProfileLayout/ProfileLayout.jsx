@@ -7,6 +7,7 @@ import ProfileInfoList from './components/ProfileInfoList/ProfileInfoList'
 import { useState } from 'react'
 import Tabs from '../Tabs/Tabs'
 import './ProfileLayout.css'
+import TagButton from '../TagButton/TagButton'
 
 const profileInfoList = [
     { title: '성별', content: 'FEMALE' },
@@ -44,8 +45,18 @@ const tabItems = [
             <ProfileImgBox src="/images/test2.jpg" />,
         ],
     },
-    { title: '커리어', content: <ProfileImgBox src="/images/test2.jpg" /> },
+    {
+        title: '커리어',
+        content: (
+            <ul className="career">
+                <li>2020.01.01 OOO브랜드OOO화보촬영</li>
+                <li>2021.05.30 OOO브랜드OOO화보촬영</li>
+            </ul>
+        ),
+    },
 ]
+
+const tagList = ['사진', '영상', '뮤비', '홈쇼핑']
 
 const ProfileLayout = () => {
     const [payValue, setPayValue] = useState(0)
@@ -128,10 +139,9 @@ const ProfileLayout = () => {
                 </div>
                 <div>
                     <h5>프로젝트 가능 범위</h5>
-                    <span>사진</span>
-                    <span>영상</span>
+                    <TagButton list={tagList} />
                 </div>
-                <div>
+                <div className="flex_column gap-3em">
                     <div>
                         <h5>이동 가능 지역 범위</h5>
                         <span>서울</span>

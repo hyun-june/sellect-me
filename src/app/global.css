@@ -35,6 +35,15 @@
     display: flex;
 }
 
+.flex_column {
+    display: flex;
+    flex-direction: column;
+}
+
+.gap-3em {
+    gap: 3em;
+}
+
 .justify-between {
     justify-content: space-between;
 }

@@ -66,7 +66,6 @@
     border-top: 2px solid var(--line-color);
     /* border-bottom: 2px solid var(--line-color); */
     padding: 3em 0em;
-    margin-bottom: 3em;
 
     & h5 {
         color: var(--text-color);
@@ -126,6 +125,17 @@
         height: 60em;
         object-fit: cover;
         margin-bottom: 1em;
+    }
+}
+
+.career {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+
+    & li {
+        list-style-type: '-';
+        padding-left: 0.5em;
     }
 }
 
