@@ -12,6 +12,10 @@
         & nav {
             display: flex;
             margin-bottom: 0.5em;
+
+            & button {
+                font-weight: bold;
+            }
         }
     }
 
@@ -53,9 +57,9 @@
     justify-content: center;
     gap: 3em;
     padding: 0 1.5em;
-    padding-top: 2em;
+    padding-top: 1.5em;
     margin-top: 1em;
-    border: 1px solid var(--line-color);
+    border: 2px solid var(--line-color);
 }
 
 .profile_range {
@@ -64,7 +68,6 @@
     justify-items: center;
     gap: 3em;
     border-top: 2px solid var(--line-color);
-    /* border-bottom: 2px solid var(--line-color); */
     padding: 3em 0em;
 
     & h5 {
@@ -79,7 +82,8 @@
 }
 
 .hourly_rangebar {
-    width: 10em;
+    width: 16em;
+    position: relative;
     & div {
         display: flex;
         justify-content: space-between;
@@ -94,8 +98,12 @@
 
 .hourly_rangebar::after {
     content: '';
-    width: 1px;
-    color: red;
+    width: 2px;
+    height: 100%;
+    top: 0;
+    right: -4em;
+    background-color: var(--line-color);
+    position: absolute;
 }
 
 .pay_text {

@@ -2,6 +2,7 @@ import HamburgerMenu from '@/components/HamburgerMenu'
 import MainButton from '@/components/MainButton'
 import MainCard from '@/components/MainCard'
 import { Container } from 'react-bootstrap'
+import './global.css'
 
 export const metadata = {
     title: 'Laravel',

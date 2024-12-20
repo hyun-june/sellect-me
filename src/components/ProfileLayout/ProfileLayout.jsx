@@ -66,7 +66,7 @@ const ProfileLayout = () => {
     }
 
     const hourlyPay = (payValue * 120000).toLocaleString()
-    const user = '11'
+    const user = 'edit'
 
     return (
         <div className="create_profile">
