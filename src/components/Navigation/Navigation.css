@@ -4,11 +4,11 @@
     padding: 0px 2rem;
     padding-top: 0.5rem;
     padding-bottom: 1rem;
-    margin: 0px 2rem;
+
     display: flex;
     align-items: center;
     position: relative;
-    border-bottom: 1px solid #c1c1be;
+    border-bottom: 1px solid var(--line-color);
 }
 
 .logoImg {

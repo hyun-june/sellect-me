@@ -1,9 +1,9 @@
 'use client'
 import LoginLinks from '@/app/LoginLinks'
 import 'bootstrap/dist/css/bootstrap.min.css'
-import '../css/navigation.css'
+import './Navigation.css'
 import Navbar from 'react-bootstrap/Navbar'
-import SearchBar from './SearchBar'
+import SearchBar from '../SearchBar'
 import { usePathname } from 'next/navigation'
 
 const Navigation = () => {

@@ -11,7 +11,7 @@
 }
 
 .myPage-link {
-    color: var(--point-color-yellow);
+    color: var(--text-point-color);
     font-weight: bold;
 }
 

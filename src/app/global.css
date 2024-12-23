@@ -1,3 +1,4 @@
+/* 에스코어드림 폰트 */
 @font-face {
     font-family: 'S-CoreDream-3Light';
     src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-3Light.woff')
@@ -11,12 +12,12 @@ body {
 }
 
 :root {
-    --main-color: #def7ff;
     --text-color: #333333;
     --text-sub-color: #5c5c5c;
+    --text-white-color: #f5f5f5;
+    --text-point-color: #ffc30b;
     --line-color: #c1c1be;
     --warn-color: #991b1b;
-    --point-color-yellow: #ffc30b;
 }
 
 .margin-top-3 {
