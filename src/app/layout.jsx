@@ -13,9 +13,11 @@ const RootLayout = ({ children }) => {
     return (
         <html lang="en" className={nunitoFont.className}>
             <body>
-                <Navigation />
-                {children}
-                <Footer />
+                <div className="layout-container">
+                    <Navigation />
+                    <main className="content">{children}</main>
+                    <Footer />
+                </div>
             </body>
         </html>
     )

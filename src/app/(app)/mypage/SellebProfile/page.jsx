@@ -1,13 +1,14 @@
 'use client'
 
-import Button from '../Button/Button'
-import ProfileImgBox from '../ProfileImgBox/ProfileImgBox'
+import Button from '@/components/Button/Button'
+
 import { IoMdStarOutline } from 'react-icons/io'
-import ProfileInfoList from '../ProfileInfoList/ProfileInfoList'
 import { useState } from 'react'
-import Tabs from '../Tabs/Tabs'
-import TagButton from '../TagButton/TagButton'
-import './ProfileLayout.css'
+import ProfileImgBox from '@/components/ProfileImgBox/ProfileImgBox'
+import ProfileInfoList from '@/components/ProfileInfoList/ProfileInfoList'
+import Tabs from '@/components/Tabs/Tabs'
+import TagButton from '@/components/TagButton/TagButton'
+import './css/SellebProfilePage.css'
 
 const profileInfoList = [
     { title: '성별', content: 'FEMALE' },
@@ -58,7 +59,7 @@ const tabItems = [
 
 const tagList = ['사진', '영상', '뮤비', '홈쇼핑']
 
-const ProfileLayout = () => {
+const SellebProfilePage = () => {
     const [payValue, setPayValue] = useState(0)
     const handlePayChange = e => {
         const pay = e.target.value
@@ -69,7 +70,7 @@ const ProfileLayout = () => {
     const user = 'edit'
 
     return (
-        <div className="create_profile">
+        <div className="selleb_profile">
             <header>
                 {user === 'me' ? (
                     <>
@@ -93,8 +94,8 @@ const ProfileLayout = () => {
                     </>
                 )}
             </header>
-            <section>
-                <div className="selleb_profile_img">
+            <section className="main_profile">
+                <div className="main_profile_img">
                     <ProfileImgBox src="/images/test.jpg" />
                 </div>
 
@@ -113,7 +114,7 @@ const ProfileLayout = () => {
                     </div>
                 </div>
             </section>
-            <div className="profile_range">
+            <section className="profile_range">
                 <div className="hourly_rangebar">
                     <div className="pay_text">
                         <h5>예상 금액</h5>
@@ -151,7 +152,7 @@ const ProfileLayout = () => {
                         <span>1년</span>
                     </div>
                 </div>
-            </div>
+            </section>
             <div className="tabs_content">
                 <Tabs items={tabItems}></Tabs>
             </div>
@@ -159,4 +160,4 @@ const ProfileLayout = () => {
     )
 }
 
-export default ProfileLayout
+export default SellebProfilePage

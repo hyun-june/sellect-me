@@ -3,14 +3,14 @@ import './ProfileInfoList.css'
 const ProfileInfoList = ({ list, ...props }) => {
     return (
         <div className="profile_inner_List">
-            <ul>
+            <dl>
                 {list.map((item, index) => (
-                    <li key={index}>
-                        <strong>{item.title}</strong>
-                        <span>{item.content}</span>
-                    </li>
+                    <div key={index}>
+                        <dt>{item.title}</dt>
+                        <dd>{item.content}</dd>
+                    </div>
                 ))}
-            </ul>
+            </dl>
         </div>
     )
 }
