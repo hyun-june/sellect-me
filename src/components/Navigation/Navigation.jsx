@@ -1,10 +1,10 @@
 'use client'
+import { usePathname } from 'next/navigation'
 import LoginLinks from '@/app/LoginLinks'
+import Navbar from 'react-bootstrap/Navbar'
+import SearchBar from '../SearchBar/SearchBar'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import './Navigation.css'
-import Navbar from 'react-bootstrap/Navbar'
-import SearchBar from '../SearchBar'
-import { usePathname } from 'next/navigation'
 
 const Navigation = () => {
     const pathname = usePathname()

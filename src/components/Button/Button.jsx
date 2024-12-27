@@ -3,7 +3,9 @@ import './Button.css'
 const Button = ({ children, ...props }) => {
     return (
         <div>
-            <button {...props}>{children}</button>
+            <button {...props}>
+                <div>{children}</div>
+            </button>
         </div>
     )
 }

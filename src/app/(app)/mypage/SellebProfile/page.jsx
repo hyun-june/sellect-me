@@ -1,13 +1,13 @@
 'use client'
 
 import Button from '@/components/Button/Button'
-
 import { IoMdStarOutline } from 'react-icons/io'
 import { useState } from 'react'
 import ProfileImgBox from '@/components/ProfileImgBox/ProfileImgBox'
 import ProfileInfoList from '@/components/ProfileInfoList/ProfileInfoList'
 import Tabs from '@/components/Tabs/Tabs'
 import TagButton from '@/components/TagButton/TagButton'
+import Link from 'next/link'
 import './css/SellebProfilePage.css'
 
 const profileInfoList = [
@@ -67,16 +67,19 @@ const SellebProfilePage = () => {
     }
 
     const hourlyPay = (payValue * 120000).toLocaleString()
-    const user = 'edit'
+    const user = 'me'
 
     return (
         <div className="selleb_profile">
             <header>
                 {user === 'me' ? (
                     <>
-                        <h5>My Profile</h5>
+                        <h3>My Profile</h3>
                         <nav>
-                            <Button>edit</Button>
+                            <Link href="/mypage/SellebProfile/edit">
+                                <Button>edit</Button>
+                            </Link>
+
                             <Button>save</Button>
                         </nav>
                     </>
@@ -99,7 +102,7 @@ const SellebProfilePage = () => {
                     <ProfileImgBox src="/images/test.jpg" />
                 </div>
 
-                <div className="profile_info_box">
+                <div>
                     <div className="profile_pictures">
                         <ProfileImgBox src="/images/test1.png" />
                         <ProfileImgBox src="/images/test2.jpg" />

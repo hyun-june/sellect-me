@@ -1,4 +1,4 @@
-.create_profile {
+.edit_profile {
     margin-top: 1em;
     width: 100%;
     max-width: 1200px;
@@ -23,17 +23,16 @@
             font-weight: 600;
         }
     }
-
-    & section {
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        gap: 1em;
-        margin-bottom: 3em;
-    }
 }
 
-.selleb_profile_img {
+.edit_main_profile {
+    width: 100%;
+    display: flex;
+    gap: 1em;
+    margin-bottom: 3em;
+}
+
+.edit_main_profile_img {
     & img {
         width: 100%;
         height: auto;
@@ -41,7 +40,7 @@
     }
 }
 
-.profile_pictures {
+.edit_profile_pictures {
     display: flex;
     gap: 1em;
 
@@ -52,22 +51,29 @@
     }
 }
 
-.profile_info_box {
-    display: grid;
-    grid-template-rows: 0.5fr 1fr;
-}
-
-.profile_List {
+.edit_profile_List {
     display: flex;
     justify-content: center;
+    padding: 1em 1em;
     gap: 3em;
-    padding: 0 1.5em;
-    padding-top: 1.5em;
     margin-top: 1em;
     border: 2px solid var(--line-color);
+
+    & dl {
+        gap: 3em;
+        margin: 0;
+    }
+
+    & div {
+        width: 100%;
+    }
+
+    & select {
+        width: 100%;
+    }
 }
 
-.profile_range {
+.edit_profile_range {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     justify-items: center;
@@ -86,9 +92,10 @@
     }
 }
 
-.hourly_rangebar {
+.edit_hourly_rangebar {
     width: 16em;
     position: relative;
+
     & div {
         display: flex;
         justify-content: space-between;
@@ -101,7 +108,7 @@
     }
 }
 
-.hourly_rangebar::after {
+.edit_hourly_rangebar::after {
     content: '';
     width: 2px;
     height: 100%;
@@ -111,12 +118,12 @@
     position: absolute;
 }
 
-.pay_text {
+.edit_pay_text {
     display: flex;
     flex-direction: column;
 }
 
-#hourlyPay_bar {
+#edit_hourlyPay_bar {
     width: 100%;
     cursor: pointer;
     -webkit-appearance: none;
@@ -132,7 +139,7 @@
     }
 }
 
-.tabs_content {
+.edit_tabs_content {
     & img {
         width: 45em;
         height: 60em;
@@ -141,10 +148,11 @@
     }
 }
 
-.career {
+.edit_career {
     display: flex;
     flex-direction: column;
     gap: 1em;
+    margin: 1em 0em;
 
     & li {
         list-style-type: '-';
@@ -152,6 +160,6 @@
     }
 }
 
-.star-icons {
+.edit_star-icons {
     font-size: 1.5em;
 }

@@ -11,5 +11,5 @@ button {
 button:hover {
     border: 2px solid var(--text-color);
     background-color: var(--text-color);
-    color: white;
+    color: var(--text-white-color);
 }

@@ -1,6 +1,6 @@
 'use client'
 import { useState } from 'react'
-import '../css/hamburgerMenu.css'
+import './HamburgerMenu.css'
 
 const HamburgerMenu = () => {
     const [menuToggle, setMenuToggle] = useState(false)

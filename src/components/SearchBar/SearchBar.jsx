@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { VscSearch } from 'react-icons/vsc'
-import '../css/searchBar.css'
+import './SearchBar.css'
 
 const SearchBar = () => {
     const keywordList = [

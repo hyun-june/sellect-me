@@ -55,7 +55,7 @@ const SellecterProfilePage = () => {
             <header>
                 {user === 'me' ? (
                     <>
-                        <h5>My Profile</h5>
+                        <h3>My Profile</h3>
                         <nav>
                             <Button>edit</Button>
                             <Button>save</Button>

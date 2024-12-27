@@ -5,11 +5,6 @@ const FormInput = ({ id, title, register, type = 'text', error, ...props }) => {
     const patternType = validationPatterns[type]
     return (
         <div className="form-input">
-            {/* <label
-                htmlFor={id}
-                className={`form-label ${size ? `form-label-${size}` : ''}`}>
-                {title}
-            </label> */}
             <input
                 id={id}
                 {...register(`${id}`, {
@@ -19,7 +14,7 @@ const FormInput = ({ id, title, register, type = 'text', error, ...props }) => {
                     },
                 })}
                 {...props}
-                placeholder={`${title}`}
+                placeholder={title ? title : ''}
             />
             {error?.message && <span>{error.message}</span>}
         </div>

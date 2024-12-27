@@ -5,17 +5,6 @@
     display: flex;
     position: relative;
 
-    /* 
-    & label {
-        width: 35%;
-        padding-left: 0.2em;
-        color: var(--text-color);
-        font-weight: bold;
-        margin: 0;
-        display: flex;
-        align-items: center;
-    } */
-
     & input {
         width: 100%;
         height: auto;

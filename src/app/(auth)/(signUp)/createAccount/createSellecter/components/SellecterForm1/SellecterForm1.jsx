@@ -3,8 +3,8 @@
 import { useForm } from 'react-hook-form'
 import FormInput from '@/components/FormInput/FormInput'
 import DropdownForm from '@/components/DropdownForm/DropdownForm'
-import './SellecterForm1.css'
 import NextButton from '../../../components/NextButton/NextButton'
+import './SellecterForm1.css'
 
 const entityList = ['개인사업자', '공동사업자', '법인사업자']
 const typeList = ['도소매업', '제조업', '서비스업']
