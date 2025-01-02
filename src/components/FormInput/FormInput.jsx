@@ -1,8 +1,17 @@
 import { validationPatterns } from '../../core/constants/validationPatterns'
 import './FormInput.css'
 
-const FormInput = ({ id, title, register, type = 'text', error, ...props }) => {
+const FormInput = ({
+    id,
+    title,
+    register,
+    type = 'text',
+    className,
+    error,
+    ...props
+}) => {
     const patternType = validationPatterns[type]
+
     return (
         <div className="form-input">
             <input

@@ -10,49 +10,23 @@ import { useForm } from 'react-hook-form'
 import FormInput from '@/components/FormInput/FormInput'
 import './css/SellebEditPage.css'
 
-const profileData = {
-    threeSizeList: [
-        { title: '가슴둘레', content: '00' },
-        { title: '허리둘레', content: '00' },
-        { title: '힙 둘레', content: '00' },
-    ],
-    sizeList: [
-        { title: '상의 사이즈', content: '00' },
-        { title: '하의 사이즈', content: '30' },
-        { title: '신발 사이즈', content: '250' },
-    ],
-    colorList: [
-        { title: '헤어컬러', content: 'BROWN' },
-        { title: '아이컬러', content: 'RED' },
-    ],
-    countryList: [
-        { title: '국가', content: 'KOREA' },
-        { title: '언어', content: 'KOREAN' },
-    ],
-    tabItems: [
-        {
-            title: '이미지',
-            content: [
-                <ProfileImgBox key="1" src="/images/test1.png" />,
-                <ProfileImgBox key="2" src="/images/test2.jpg" />,
-            ],
-        },
-        {
-            title: '커리어',
-            content: (
-                <ul className="edit_career">
-                    <li>2020.01.01 OOO브랜드OOO화보촬영</li>
-                    <li>2021.05.30 OOO브랜드OOO화보촬영</li>
-                </ul>
-            ),
-        },
-    ],
-    tagList: ['사진', '영상', '뮤비', '홈쇼핑'],
-    defaultValues: { weight: '177', height: '70', gender: 'FEMALE' },
-}
-
 const tagList = ['사진', '영상', '뮤비', '홈쇼핑']
-const testData = { weight: '177', height: '70' }
+const testData = {
+    height: '180',
+    weight: '70',
+    gender: '남성',
+    chest: '31',
+    waist: '32',
+    hips: '33',
+    top_size: '30',
+    pants_size: '31',
+    shoes_size: '260',
+    hair_color: 'Black',
+    eye_color: 'Brown',
+    world: 'KOREAN',
+    language: 'English',
+    pay: 120000,
+}
 
 const SellebEditPage = () => {
     const {
@@ -60,40 +34,171 @@ const SellebEditPage = () => {
         handleSubmit,
         formState: { errors },
     } = useForm({
-        defaultValues: profileData.defaultValues,
+        defaultValues: testData,
     })
 
-    const [payValue, setPayValue] = useState(0)
-    const handlePayChange = e => {
-        setPayValue(e.target.value)
+    const profileData = {
+        profileInfoList: [
+            {
+                title: '성별',
+                content: testData.gender,
+            },
+            {
+                title: '키',
+                content: (
+                    <FormInput
+                        register={register}
+                        id="height"
+                        type="number"
+                        error={errors.height}
+                    />
+                ),
+            },
+            {
+                title: '몸무게',
+                content: (
+                    <FormInput
+                        register={register}
+                        id="weight"
+                        type="number"
+                        error={errors.weight}
+                    />
+                ),
+            },
+        ],
+        threeSizeList: [
+            {
+                title: '가슴둘레',
+                content: (
+                    <FormInput
+                        id="chest"
+                        register={register}
+                        type="number"
+                        error={errors.chest}
+                    />
+                ),
+            },
+            {
+                title: '허리둘레',
+                content: (
+                    <FormInput
+                        id="waist"
+                        register={register}
+                        type="number"
+                        error={errors.waist}
+                    />
+                ),
+            },
+            {
+                title: '힙 둘레',
+                content: (
+                    <FormInput
+                        id="hips"
+                        register={register}
+                        type="number"
+                        error={errors.hips}
+                    />
+                ),
+            },
+        ],
+        sizeList: [
+            {
+                title: '상의 사이즈',
+                content: (
+                    <FormInput
+                        id="top_size"
+                        register={register}
+                        type="number"
+                        error={errors.top_size}
+                    />
+                ),
+            },
+            {
+                title: '하의 사이즈',
+                content: (
+                    <FormInput
+                        id="pants_size"
+                        register={register}
+                        type="number"
+                        error={errors.pants_size}
+                    />
+                ),
+            },
+            {
+                title: '신발 사이즈',
+                content: (
+                    <FormInput
+                        id="shoes_size"
+                        register={register}
+                        type="number"
+                        error={errors.shoes_size}
+                    />
+                ),
+            },
+        ],
+        colorList: [
+            {
+                title: '헤어컬러',
+                content: (
+                    <FormInput
+                        id="hair_color"
+                        register={register}
+                        error={errors.hair_color}
+                    />
+                ),
+            },
+            {
+                title: '아이컬러',
+                content: (
+                    <FormInput
+                        id="eye_color"
+                        register={register}
+                        error={errors.eye_color}
+                    />
+                ),
+            },
+        ],
+        countryList: [
+            {
+                title: '국가',
+                content: (
+                    <FormInput
+                        id="world"
+                        register={register}
+                        error={errors.world}
+                    />
+                ),
+            },
+            {
+                title: '언어',
+                content: (
+                    <FormInput
+                        id="language"
+                        register={register}
+                        error={errors.language}
+                    />
+                ),
+            },
+        ],
+        tabItems: [
+            {
+                title: '이미지',
+                content: [
+                    <ProfileImgBox key="1" src="/images/test1.png" />,
+                    <ProfileImgBox key="2" src="/images/test2.jpg" />,
+                ],
+            },
+            {
+                title: '커리어',
+                content: (
+                    <ul className="edit_career">
+                        <li>2020.01.01 OOO브랜드OOO화보촬영</li>
+                        <li>2021.05.30 OOO브랜드OOO화보촬영</li>
+                    </ul>
+                ),
+            },
+        ],
     }
-    const hourlyPay = (payValue * 120000).toLocaleString()
-    const profileInfoList = [
-        {
-            title: '성별',
-            content: (
-                <div>
-                    <select name="gender" {...register('gender')}>
-                        <option value="">성별</option>
-                        <option value="남성">남성</option>
-                        <option value="여성">여성</option>
-                    </select>
-                </div>
-            ),
-        },
-        {
-            title: '키',
-            content: (
-                <FormInput register={register} id="height" type="number" />
-            ),
-        },
-        {
-            title: '몸무게',
-            content: (
-                <FormInput register={register} id="weight" type="number" />
-            ),
-        },
-    ]
 
     const editSubmit = formData => {
         console.log('FormData:', formData)
@@ -119,7 +224,7 @@ const SellebEditPage = () => {
                         <ProfileImgBox src="/images/test3.jpg" />
                     </div>
                     <div className="edit_profile_List">
-                        <ProfileInfoList list={profileInfoList} />
+                        <ProfileInfoList list={profileData.profileInfoList} />
                         <ProfileInfoList list={profileData.threeSizeList} />
                         <ProfileInfoList list={profileData.sizeList} />
                         <ProfileInfoList list={profileData.colorList} />
@@ -129,26 +234,21 @@ const SellebEditPage = () => {
             </section>
             <section className="edit_profile_range">
                 <div className="edit_hourly_rangebar">
-                    <div className="edit_pay_text">
-                        <h5>예상 금액</h5>
-                        <div className="margin-bottom-1">
-                            <span>{payValue}HR</span>
-                            <span>{hourlyPay}KRW</span>
-                        </div>
-                    </div>
-
-                    <input
-                        type="range"
-                        id="edit_hourlyPay_bar"
-                        min="2"
-                        max="12"
-                        step="1"
-                        value={payValue}
-                        onChange={handlePayChange}
-                    />
                     <div>
-                        <label>2hr</label>
-                        <label>12hr</label>
+                        <h5>시간당 금액</h5>
+                        <div className="edit_pay">
+                            <span>1HR</span>
+
+                            <div>
+                                <FormInput
+                                    id="pay"
+                                    register={register}
+                                    error={errors.pay}
+                                    type="number"
+                                />
+                                <label htmlFor="pay">KRW</label>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div>

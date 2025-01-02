@@ -60,13 +60,15 @@ const tabItems = [
 const tagList = ['사진', '영상', '뮤비', '홈쇼핑']
 
 const SellebProfilePage = () => {
-    const [payValue, setPayValue] = useState(0)
+    const [time, setTime] = useState(0)
     const handlePayChange = e => {
-        const pay = e.target.value
-        setPayValue(pay)
+        const selectTime = e.target.value
+        setTime(selectTime)
     }
 
-    const hourlyPay = (payValue * 120000).toLocaleString()
+    const pay = 120000
+
+    const hourlyPay = (time * pay).toLocaleString()
     const user = 'me'
 
     return (
@@ -122,7 +124,7 @@ const SellebProfilePage = () => {
                     <div className="pay_text">
                         <h5>예상 금액</h5>
                         <div className="margin-bottom-1">
-                            <span>{payValue}HR</span>
+                            <span>{time}HR</span>
                             <span>{hourlyPay}KRW</span>
                         </div>
                     </div>
@@ -133,7 +135,7 @@ const SellebProfilePage = () => {
                         min="2"
                         max="12"
                         step="1"
-                        value={payValue}
+                        value={time}
                         onChange={handlePayChange}
                     />
                     <div>

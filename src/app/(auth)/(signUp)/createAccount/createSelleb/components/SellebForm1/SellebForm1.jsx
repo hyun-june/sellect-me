@@ -7,7 +7,6 @@ import DropdownForm from '@/components/DropdownForm/DropdownForm'
 import './SellebForm1.css'
 
 const languageList = ['Korean ', 'English', 'Japanese', 'Chinese']
-
 const SellebForm1 = ({ goToNextTab }) => {
     const {
         register,
