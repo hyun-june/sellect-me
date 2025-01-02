@@ -9,6 +9,7 @@ import TagButton from '@/components/TagButton/TagButton'
 import { useForm } from 'react-hook-form'
 import FormInput from '@/components/FormInput/FormInput'
 import './css/SellebEditPage.css'
+import AddProfile from '../../components/AddProfile/AddProfile'
 
 const tagList = ['사진', '영상', '뮤비', '홈쇼핑']
 const testData = {
@@ -204,6 +205,14 @@ const SellebEditPage = () => {
         console.log('FormData:', formData)
     }
 
+    // const mainImg = '/images/test.jpg'
+    const mainImg = ''
+    const subImg = [
+        // '/images/test1.png',
+        // '/images/test2.jpg',
+        // '/images/test3.jpg',
+    ]
+
     return (
         <form className="edit_profile" onSubmit={handleSubmit(editSubmit)}>
             <header>
@@ -214,14 +223,36 @@ const SellebEditPage = () => {
             </header>
             <section className="edit_main_profile">
                 <div className="edit_main_profile_img">
-                    <ProfileImgBox src="/images/test.jpg" />
+                    {mainImg ? (
+                        <ProfileImgBox src={mainImg} />
+                    ) : (
+                        <AddProfile className="edit_main_img" />
+                    )}
                 </div>
 
                 <div>
                     <div className="edit_profile_pictures">
-                        <ProfileImgBox src="/images/test1.png" />
-                        <ProfileImgBox src="/images/test2.jpg" />
-                        <ProfileImgBox src="/images/test3.jpg" />
+                        {subImg && subImg.length > 0 ? (
+                            <>
+                                {subImg.map((img, index) => (
+                                    <ProfileImgBox src={img} key={index} />
+                                ))}
+                                {[...Array(3 - subImg.length)].map(
+                                    (_, index) => (
+                                        <AddProfile
+                                            className="edit_sub_img"
+                                            key={`sub_img_${index}`}
+                                        />
+                                    ),
+                                )}
+                            </>
+                        ) : (
+                            <>
+                                <AddProfile className="edit_sub_img" />
+                                <AddProfile className="edit_sub_img" />
+                                <AddProfile className="edit_sub_img" />
+                            </>
+                        )}
                     </div>
                     <div className="edit_profile_List">
                         <ProfileInfoList list={profileData.profileInfoList} />

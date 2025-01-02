@@ -2,9 +2,3 @@
     display: flex;
     justify-content: center;
 }
-
-.skeleton_container {
-    border: 1px solid var(--text-color);
-    width: 23em;
-    height: 23em;
-}

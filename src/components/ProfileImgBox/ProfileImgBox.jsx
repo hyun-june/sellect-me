@@ -1,6 +1,6 @@
 import './ProfileImgBox.css'
 
-const ProfileImgBox = ({ src }) => {
+const ProfileImgBox = ({ src, className }) => {
     return (
         <>
             {src ? (
@@ -8,7 +8,7 @@ const ProfileImgBox = ({ src }) => {
                     <img src={src} alt="" />
                 </div>
             ) : (
-                <div className="skeleton_container"></div>
+                <div className={className}></div>
             )}
         </>
     )
