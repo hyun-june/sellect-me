@@ -200,18 +200,26 @@ const SellebEditPage = () => {
             },
         ],
     }
+    const [mainImg, setMainImg] = useState(null)
+    const [subImg, setSubImg] = useState([null, null, null])
+
+    const handleMainImgChange = newImg => {
+        setMainImg(newImg)
+    }
+
+    const handleImageChange = (index, newImg) => {
+        setSubImg(prev => {
+            const updated = [...prev]
+            updated[index] = newImg
+            return updated
+        })
+    }
 
     const editSubmit = formData => {
         console.log('FormData:', formData)
+        console.log('Main Image:', mainImg)
+        console.log('Sub Images:', subImg)
     }
-
-    // const mainImg = '/images/test.jpg'
-    const mainImg = ''
-    const subImg = [
-        // '/images/test1.png',
-        // '/images/test2.jpg',
-        // '/images/test3.jpg',
-    ]
 
     return (
         <form className="edit_profile" onSubmit={handleSubmit(editSubmit)}>
@@ -223,36 +231,28 @@ const SellebEditPage = () => {
             </header>
             <section className="edit_main_profile">
                 <div className="edit_main_profile_img">
-                    {mainImg ? (
-                        <ProfileImgBox src={mainImg} />
-                    ) : (
-                        <AddProfile className="edit_main_img" />
-                    )}
+                    <AddProfile
+                        index={-1}
+                        profileImg={mainImg}
+                        key="main_img"
+                        onImageChange={newImg => handleMainImgChange(newImg)}
+                        className="edit_main_img"
+                    />
                 </div>
 
                 <div>
                     <div className="edit_profile_pictures">
-                        {subImg && subImg.length > 0 ? (
-                            <>
-                                {subImg.map((img, index) => (
-                                    <ProfileImgBox src={img} key={index} />
-                                ))}
-                                {[...Array(3 - subImg.length)].map(
-                                    (_, index) => (
-                                        <AddProfile
-                                            className="edit_sub_img"
-                                            key={`sub_img_${index}`}
-                                        />
-                                    ),
-                                )}
-                            </>
-                        ) : (
-                            <>
-                                <AddProfile className="edit_sub_img" />
-                                <AddProfile className="edit_sub_img" />
-                                <AddProfile className="edit_sub_img" />
-                            </>
-                        )}
+                        {subImg.map((img, index) => (
+                            <AddProfile
+                                key={`sub_img_${index}`}
+                                index={index}
+                                profileImg={img}
+                                onImageChange={newImg =>
+                                    handleImageChange(index, newImg)
+                                }
+                                className="edit_sub_img"
+                            />
+                        ))}
                     </div>
                     <div className="edit_profile_List">
                         <ProfileInfoList list={profileData.profileInfoList} />

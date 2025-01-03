@@ -5,13 +5,20 @@ import { FaPlus } from 'react-icons/fa6'
 import { IoCloseSharp } from 'react-icons/io5'
 import './css/AddProfile.css'
 
-const AddProfile = ({ className, ...props }) => {
+const AddProfile = ({
+    className,
+    profileImg,
+    index,
+    onImageChange,
+    ...props
+}) => {
     const [profileImgUrl, setProfileImgUrl] = useState('')
     const [profileImgfile, setProfileImgfile] = useState(null)
 
     const handleProfileDelete = () => {
         setProfileImgUrl('')
         setProfileImgfile(null)
+        onImageChange(null)
     }
 
     const handleProfileChange = e => {
@@ -21,27 +28,28 @@ const AddProfile = ({ className, ...props }) => {
             let profile = window.URL.createObjectURL(file)
             setProfileImgUrl(profile)
             setProfileImgfile(file)
+            onImageChange(profile)
         }
     }
 
     return (
         <div className={className}>
-            {profileImgUrl ? (
+            {profileImg ? (
                 <div className="profilePreview">
-                    <img src={profileImgUrl} />
+                    <img src={profileImg} />
                     <button onClick={handleProfileDelete}>
                         <IoCloseSharp className="profile-icon" />
                     </button>
                 </div>
             ) : (
                 <section className="profile-Section">
-                    <label htmlFor="profileImage">
+                    <label htmlFor={`profileImage-${index}`}>
                         <FaPlus className="profile-icon" />
                         <span>사진 넣기</span>
                     </label>
                     <input
                         type="file"
-                        id="profileImage"
+                        id={`profileImage-${index}`}
                         onChange={handleProfileChange}
                     />
                 </section>

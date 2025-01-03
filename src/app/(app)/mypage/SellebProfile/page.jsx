@@ -81,8 +81,6 @@ const SellebProfilePage = () => {
                             <Link href="/mypage/SellebProfile/edit">
                                 <Button>edit</Button>
                             </Link>
-
-                            <Button>save</Button>
                         </nav>
                     </>
                 ) : (
