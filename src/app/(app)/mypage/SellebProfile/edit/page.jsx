@@ -11,7 +11,8 @@ import FormInput from '@/components/FormInput/FormInput'
 import './css/SellebEditPage.css'
 import AddProfile from '../../components/AddProfile/AddProfile'
 
-const tagList = ['사진', '영상', '뮤비', '홈쇼핑']
+const tagList = ['사진', '영상', '뮤비', '홈쇼', '가방']
+
 const testData = {
     height: '180',
     weight: '70',
@@ -216,9 +217,39 @@ const SellebEditPage = () => {
     }
 
     const editSubmit = formData => {
+        const updateTags = [...defaultTags, ...tags]
         console.log('FormData:', formData)
         console.log('Main Image:', mainImg)
         console.log('Sub Images:', subImg)
+        console.log('tags', updateTags)
+    }
+
+    const [tags, setTags] = useState([])
+    const [newTag, setNewTag] = useState('')
+    const [defaultTags, setDefaultTags] = useState([...tagList])
+
+    const handleAddTag = () => {
+        if (tags.length + defaultTags.length >= 8) {
+            alert('태그는 최대 8개까지만 추가할 수 있습니다.')
+            return
+        }
+        const inputTag = newTag.trim()
+
+        if (!inputTag) return
+        if (!tags.includes(inputTag) && !defaultTags.includes(inputTag)) {
+            setTags([...tags, inputTag])
+            setNewTag('')
+        } else {
+            alert('이미 존재하는 태그입니다.')
+        }
+    }
+
+    const handleDeleteTag = (index, isDefault) => {
+        if (isDefault) {
+            setDefaultTags(prev => prev.filter((_, i) => i !== index))
+        } else {
+            setTags(prev => prev.filter((_, i) => i !== index))
+        }
     }
 
     return (
@@ -282,9 +313,38 @@ const SellebEditPage = () => {
                         </div>
                     </div>
                 </div>
-                <div>
+                <div className="work_scope">
                     <h5>프로젝트 가능 범위</h5>
-                    <TagButton list={tagList} />
+                    <ul className="tags_list">
+                        {[...defaultTags, ...tags].map((tag, index) => (
+                            <li key={index}>
+                                <TagButton>{tag}</TagButton>
+                                <button
+                                    onClick={() =>
+                                        index < defaultTags.length
+                                            ? handleDeleteTag(index, true)
+                                            : handleDeleteTag(
+                                                  index - defaultTags.length,
+                                                  false,
+                                              )
+                                    }>
+                                    x
+                                </button>
+                            </li>
+                        ))}
+                    </ul>
+                    <div className="add_tag_section">
+                        <input
+                            type="text"
+                            value={newTag}
+                            placeholder="태그"
+                            onChange={e => setNewTag(e.target.value)}
+                            onKeyPress={e =>
+                                e.key === 'Enter' && handleAddTag()
+                            }
+                        />
+                        <button onClick={handleAddTag}>+</button>
+                    </div>
                 </div>
                 <div className="flex_column gap-3em">
                     <div>

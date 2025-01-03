@@ -35,13 +35,11 @@
 .edit_main_img {
     width: 35em;
     height: 35em;
-    /* border: 1px solid var(--text-sub-color); */
 }
 
 .edit_sub_img {
     width: 13em;
     height: 13em;
-    /* border: 1px solid var(--text-sub-color); */
 }
 
 .edit_main_profile_img {
@@ -60,6 +58,33 @@
         height: 13em;
         width: 13em;
         object-fit: cover;
+    }
+}
+
+.work_scope {
+    width: 100%;
+
+    & ul {
+        display: flex;
+        gap: 0.5em;
+        padding: 0;
+        flex-wrap: wrap;
+
+        & li {
+            list-style: none;
+            position: relative;
+
+            & button {
+                position: absolute;
+                right: 0.3em;
+                top: 0.3em;
+            }
+        }
+    }
+
+    & input {
+        width: 5em;
+        border-bottom: 1px solid var(--text-sub-color);
     }
 }
 

@@ -1,11 +1,13 @@
 import './TagButton.css'
 
-const TagButton = ({ list = [], ...props }) => {
+const TagButton = ({ list = [], children, ...props }) => {
     return (
-        <div className="tag-container">
-            {list.map((item, index) => (
-                <span key={index}>{item}</span>
-            ))}
+        <div className="tag-container" {...props}>
+            {list.length > 0 ? (
+                list.map((item, index) => <span key={index}>{item}</span>)
+            ) : (
+                <span>{children}</span>
+            )}
         </div>
     )
 }
