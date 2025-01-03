@@ -35,13 +35,13 @@
 .edit_main_img {
     width: 35em;
     height: 35em;
-    border: 1px solid var(--text-sub-color);
+    /* border: 1px solid var(--text-sub-color); */
 }
 
 .edit_sub_img {
     width: 13em;
     height: 13em;
-    border: 1px solid var(--text-sub-color);
+    /* border: 1px solid var(--text-sub-color); */
 }
 
 .edit_main_profile_img {

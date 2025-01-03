@@ -1,7 +1,7 @@
 'use client'
 
-import Button from '@/components/Button/Button'
 import { useState } from 'react'
+import Button from '@/components/Button/Button'
 import ProfileImgBox from '@/components/ProfileImgBox/ProfileImgBox'
 import ProfileInfoList from '@/components/ProfileInfoList/ProfileInfoList'
 import Tabs from '@/components/Tabs/Tabs'

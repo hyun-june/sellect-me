@@ -1,6 +1,7 @@
 .profile-Section {
     width: 100%;
     height: 100%;
+    border: 1px solid var(--text-sub-color);
 
     & label {
         display: flex;
@@ -15,6 +16,17 @@
 
     & input {
         display: none;
+    }
+}
+
+.profilePreview {
+    position: relative;
+    border: 1px solid var(--text-sub-color);
+
+    & button {
+        position: absolute;
+        top: 0;
+        right: 0;
     }
 }
 

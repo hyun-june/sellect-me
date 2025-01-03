@@ -1,4 +1,4 @@
-button {
+.custom_button {
     border: 2px solid var(--line-color);
     background-color: white;
     margin-left: 0.5em;
@@ -8,7 +8,7 @@ button {
     padding: 0.3em 0.5em;
 }
 
-button:hover {
+.button:hover {
     border: 2px solid var(--text-color);
     background-color: var(--text-color);
     color: var(--text-white-color);
