@@ -3,7 +3,7 @@
 import { useState } from 'react'
 import { FaPlus } from 'react-icons/fa6'
 import { IoCloseSharp } from 'react-icons/io5'
-import './css/AddProfile.css'
+import './AddProfile.css'
 
 const AddProfile = ({
     className,
@@ -38,13 +38,13 @@ const AddProfile = ({
                 <div className="profilePreview">
                     <img src={profileImg} />
                     <button onClick={handleProfileDelete}>
-                        <IoCloseSharp className="profile-icon" />
+                        <IoCloseSharp className="font-icon-2" />
                     </button>
                 </div>
             ) : (
                 <section className="profile-Section">
                     <label htmlFor={`profileImage-${index}`}>
-                        <FaPlus className="profile-icon" />
+                        <FaPlus className="font-icon-2" />
                         <span>사진 넣기</span>
                     </label>
                     <input

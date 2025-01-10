@@ -8,10 +8,13 @@ import Tabs from '@/components/Tabs/Tabs'
 import TagButton from '@/components/TagButton/TagButton'
 import { useForm } from 'react-hook-form'
 import FormInput from '@/components/FormInput/FormInput'
-import './css/SellebEditPage.css'
 import AddProfile from '../../components/AddProfile/AddProfile'
+import PreviewImg from './components/PreviewImg/PreviewImg'
+import { IoCloseSharp } from 'react-icons/io5'
+import './css/SellebEditPage.css'
+import AddCareer from '../../components/AddCareer/AddCareer'
 
-const tagList = ['사진', '영상', '뮤비', '홈쇼', '가방']
+const tagList = ['사진', '영상', '뮤비']
 
 const testData = {
     height: '180',
@@ -38,6 +41,13 @@ const SellebEditPage = () => {
     } = useForm({
         defaultValues: testData,
     })
+
+    const [mainImg, setMainImg] = useState(null)
+    const [subImg, setSubImg] = useState([null, null, null])
+    const [tabImg, setTabImg] = useState([null])
+    const [tags, setTags] = useState([])
+    const [newTag, setNewTag] = useState('')
+    const [defaultTags, setDefaultTags] = useState([...tagList])
 
     const profileData = {
         profileInfoList: [
@@ -185,28 +195,35 @@ const SellebEditPage = () => {
         tabItems: [
             {
                 title: '이미지',
-                content: [
-                    <ProfileImgBox key="1" src="/images/test1.png" />,
-                    <ProfileImgBox key="2" src="/images/test2.jpg" />,
-                ],
+                content: <PreviewImg />,
             },
             {
                 title: '커리어',
-                content: (
-                    <ul className="edit_career">
-                        <li>2020.01.01 OOO브랜드OOO화보촬영</li>
-                        <li>2021.05.30 OOO브랜드OOO화보촬영</li>
-                    </ul>
-                ),
+                content: <AddCareer className="edit_career" />,
             },
         ],
     }
-    const [mainImg, setMainImg] = useState(null)
-    const [subImg, setSubImg] = useState([null, null, null])
 
     const handleMainImgChange = newImg => {
         setMainImg(newImg)
     }
+
+    // const handleTabImgChange = (index, newImg) => {
+    //     setTabImg(prev => {
+    //         const updatedTab = [...prev]
+    //         updatedTab[index] = newImg
+
+    //         if (newImg === null && updatedTab[updatedTab.length - 1] === null) {
+    //             updatedTab.pop()
+    //         }
+
+    //         if (updatedTab[updatedTab.length - 1] !== null) {
+    //             updatedTab.push(null)
+    //         }
+
+    //         return updatedTab
+    //     })
+    // }
 
     const handleImageChange = (index, newImg) => {
         setSubImg(prev => {
@@ -222,11 +239,8 @@ const SellebEditPage = () => {
         console.log('Main Image:', mainImg)
         console.log('Sub Images:', subImg)
         console.log('tags', updateTags)
+        console.log('tab Img', tabImg)
     }
-
-    const [tags, setTags] = useState([])
-    const [newTag, setNewTag] = useState('')
-    const [defaultTags, setDefaultTags] = useState([...tagList])
 
     const handleAddTag = () => {
         if (tags.length + defaultTags.length >= 8) {
@@ -328,7 +342,7 @@ const SellebEditPage = () => {
                                                   false,
                                               )
                                     }>
-                                    x
+                                    <IoCloseSharp />
                                 </button>
                             </li>
                         ))}
@@ -337,7 +351,7 @@ const SellebEditPage = () => {
                         <input
                             type="text"
                             value={newTag}
-                            placeholder="태그"
+                            placeholder="예)사진,뮤비"
                             onChange={e => setNewTag(e.target.value)}
                             onKeyPress={e =>
                                 e.key === 'Enter' && handleAddTag()
@@ -357,7 +371,7 @@ const SellebEditPage = () => {
                     </div>
                 </div>
             </section>
-            <div className="edit_tabs_content">
+            <div>
                 <Tabs items={profileData.tabItems} />
             </div>
         </form>

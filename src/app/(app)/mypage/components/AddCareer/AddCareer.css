@@ -1,0 +1,27 @@
+.career {
+    padding: 1em 0em;
+
+    & li {
+        position: relative;
+
+        & button {
+            position: absolute;
+            right: 0;
+        }
+    }
+}
+
+.add_career {
+    padding-left: 2.5em;
+
+    & input {
+        width: 100%;
+        position: relative;
+        border-bottom: 1px solid var(--text-sub-color);
+    }
+
+    & button {
+        position: absolute;
+        right: 0;
+    }
+}

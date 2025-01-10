@@ -16,7 +16,7 @@ const Tabs = ({ defaultIdx = 0, items = [] }) => {
                     </li>
                 ))}
             </ul>
-            {items[tabIdx]?.content}
+            <div>{items[tabIdx]?.content}</div>
         </div>
     )
 }

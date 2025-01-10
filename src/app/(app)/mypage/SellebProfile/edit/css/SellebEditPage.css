@@ -86,6 +86,10 @@
         width: 5em;
         border-bottom: 1px solid var(--text-sub-color);
     }
+
+    & input::placeholder {
+        font-size: 0.8em;
+    }
 }
 
 .edit_profile_List {
@@ -187,20 +191,10 @@
     }
 }
 
-.edit_tabs_content {
-    & img {
-        width: 45em;
-        height: 60em;
-        object-fit: cover;
-        margin-bottom: 1em;
-    }
-}
-
 .edit_career {
     display: flex;
     flex-direction: column;
     gap: 1em;
-    margin: 1em 0em;
 
     & li {
         list-style-type: '-';
@@ -210,4 +204,14 @@
 
 .edit_star-icons {
     font-size: 1.5em;
+}
+
+.edit_tab_img {
+    width: 45em;
+    height: 60em;
+
+    & img {
+        object-fit: cover;
+        margin-bottom: 1em;
+    }
 }
