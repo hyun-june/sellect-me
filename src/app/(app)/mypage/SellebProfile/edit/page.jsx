@@ -2,7 +2,6 @@
 
 import { useState } from 'react'
 import Button from '@/components/Button/Button'
-import ProfileImgBox from '@/components/ProfileImgBox/ProfileImgBox'
 import ProfileInfoList from '@/components/ProfileInfoList/ProfileInfoList'
 import Tabs from '@/components/Tabs/Tabs'
 import TagButton from '@/components/TagButton/TagButton'
@@ -11,8 +10,8 @@ import FormInput from '@/components/FormInput/FormInput'
 import AddProfile from '../../components/AddProfile/AddProfile'
 import PreviewImg from './components/PreviewImg/PreviewImg'
 import { IoCloseSharp } from 'react-icons/io5'
-import './css/SellebEditPage.css'
 import AddCareer from '../../components/AddCareer/AddCareer'
+import './css/SellebEditPage.css'
 
 const tagList = ['사진', '영상', '뮤비']
 
@@ -207,23 +206,6 @@ const SellebEditPage = () => {
     const handleMainImgChange = newImg => {
         setMainImg(newImg)
     }
-
-    // const handleTabImgChange = (index, newImg) => {
-    //     setTabImg(prev => {
-    //         const updatedTab = [...prev]
-    //         updatedTab[index] = newImg
-
-    //         if (newImg === null && updatedTab[updatedTab.length - 1] === null) {
-    //             updatedTab.pop()
-    //         }
-
-    //         if (updatedTab[updatedTab.length - 1] !== null) {
-    //             updatedTab.push(null)
-    //         }
-
-    //         return updatedTab
-    //     })
-    // }
 
     const handleImageChange = (index, newImg) => {
         setSubImg(prev => {

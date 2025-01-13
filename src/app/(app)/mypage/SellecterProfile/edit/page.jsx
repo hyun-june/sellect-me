@@ -5,7 +5,7 @@ import ProfileInfoList from '@/components/ProfileInfoList/ProfileInfoList'
 import TagButton from '@/components/TagButton/TagButton'
 import Tabs from '@/components/Tabs/Tabs'
 import Link from 'next/link'
-import './css/SellecterProfilePage.css'
+import './css/SellecterEditPage.css'
 
 const sellecterInfoList = [
     { title: '회사명', content: 'SELLECT' },
@@ -49,7 +49,7 @@ const tabItems = [
     },
 ]
 
-const SellecterProfilePage = () => {
+const SelleterEditPage = () => {
     const user = 'me'
     return (
         <div className="sellecter_profile">
@@ -96,4 +96,4 @@ const SellecterProfilePage = () => {
     )
 }
 
-export default SellecterProfilePage
+export default SelleterEditPage
