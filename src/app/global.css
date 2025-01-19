@@ -1,4 +1,6 @@
 /* 에스코어드림 폰트 */
+@import './reset.css';
+
 @font-face {
     font-family: 'S-CoreDream-3Light';
     src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-3Light.woff')
@@ -82,6 +84,51 @@ body {
 }
 input[type='checkbox']:checked + label.check-box {
     background-color: var(--text-sub-color);
+}
+
+/* react-tabs */
+.tabs_list {
+    display: flex;
+    justify-content: center;
+    padding: 0;
+}
+
+.tab_item {
+    border: 2px solid var(--line-color);
+    color: var(--text-color);
+    font-weight: bold;
+    width: 150px;
+    height: 60px;
+    margin: 0rem 0.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: box-shadow 0.3s ease;
+}
+
+.tab_item:hover {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.visited {
+    background-color: #333333;
+    color: white;
+    border: none;
+    transition: 0.6s;
+}
+
+.react-tabs__tab--selected {
+    border: 2px solid black;
+}
+
+.tabs-inner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 1.5em;
 }
 
 /* main */

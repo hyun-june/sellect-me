@@ -1,10 +1,15 @@
+'use client'
+
 import { IoMdStarOutline } from 'react-icons/io'
+import { useState } from 'react'
 import Button from '@/components/Button/Button'
 import ProfileImgBox from '@/components/ProfileImgBox/ProfileImgBox'
 import ProfileInfoList from '@/components/ProfileInfoList/ProfileInfoList'
 import TagButton from '@/components/TagButton/TagButton'
-import Tabs from '@/components/Tabs/Tabs'
+import CustomTabs from '@/components/CustomTabs/CustomTabs'
 import Link from 'next/link'
+import AddCareer from '../../components/AddCareer/AddCareer'
+import { IoCloseSharp } from 'react-icons/io5'
 import './css/SellecterEditPage.css'
 
 const sellecterInfoList = [
@@ -40,17 +45,43 @@ const tabItems = [
     },
     {
         title: '커리어',
-        content: (
-            <ul className="career">
-                <li>2020.01.01 OOO브랜드OOO화보촬영</li>
-                <li>2021.05.30 OOO브랜드OOO화보촬영</li>
-            </ul>
-        ),
+        content: <AddCareer className="edit_career" />,
     },
 ]
 
 const SelleterEditPage = () => {
+    const [mainImg, setMainImg] = useState(null)
+    const [subImg, setSubImg] = useState([null, null, null])
+    const [tabImg, setTabImg] = useState([null])
+    const [tags, setTags] = useState([])
+    const [newTag, setNewTag] = useState('')
+    const [defaultTags, setDefaultTags] = useState([...tagList])
     const user = 'me'
+
+    const handleAddTag = () => {
+        if (tags.length + defaultTags.length >= 8) {
+            alert('태그는 최대 8개까지만 추가할 수 있습니다.')
+            return
+        }
+        const inputTag = newTag.trim()
+
+        if (!inputTag) return
+        if (!tags.includes(inputTag) && !defaultTags.includes(inputTag)) {
+            setTags([...tags, inputTag])
+            setNewTag('')
+        } else {
+            alert('이미 존재하는 태그입니다.')
+        }
+    }
+
+    const handleDeleteTag = (index, isDefault) => {
+        if (isDefault) {
+            setDefaultTags(prev => prev.filter((_, i) => i !== index))
+        } else {
+            setTags(prev => prev.filter((_, i) => i !== index))
+        }
+    }
+
     return (
         <div className="sellecter_profile">
             <header>
@@ -90,7 +121,7 @@ const SelleterEditPage = () => {
                 </div>
             </section>
             <div className="tabs_content">
-                <Tabs items={tabItems}></Tabs>
+                <CustomTabs items={tabItems}></CustomTabs>
             </div>
         </div>
     )

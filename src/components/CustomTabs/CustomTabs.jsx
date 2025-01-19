@@ -1,8 +1,8 @@
 'use client'
 import { useState } from 'react'
-import './Tabs.css'
+import './CustomTabs.css'
 
-const Tabs = ({ defaultIdx = 0, items = [] }) => {
+const CustomTabs = ({ defaultIdx = 0, items = [] }) => {
     const [tabIdx, setTabIdx] = useState(defaultIdx)
     return (
         <div className="tabs-container">
@@ -21,4 +21,4 @@ const Tabs = ({ defaultIdx = 0, items = [] }) => {
     )
 }
 
-export default Tabs
+export default CustomTabs

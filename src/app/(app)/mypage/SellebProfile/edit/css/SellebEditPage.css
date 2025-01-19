@@ -76,19 +76,26 @@
 
             & button {
                 position: absolute;
-                right: 0.3em;
+                right: -0.3em;
                 top: 0.3em;
+                border: none;
+                background-color: inherit;
             }
         }
     }
 
     & input {
         width: 5em;
+        border: none;
         border-bottom: 1px solid var(--text-sub-color);
     }
 
     & input::placeholder {
         font-size: 0.8em;
+    }
+    & button:last-child {
+        border: none;
+        background-color: inherit;
     }
 }
 
@@ -119,6 +126,7 @@
     & input {
         width: 5em;
         height: 2em;
+        border: none;
         border-bottom: 1px solid var(--text-sub-color);
     }
 }

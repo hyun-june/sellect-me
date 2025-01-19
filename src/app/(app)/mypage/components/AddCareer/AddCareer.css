@@ -7,6 +7,8 @@
         & button {
             position: absolute;
             right: 0;
+            background-color: white;
+            border: none;
         }
     }
 }
@@ -17,11 +19,14 @@
     & input {
         width: 100%;
         position: relative;
+        border: none;
         border-bottom: 1px solid var(--text-sub-color);
     }
 
     & button {
         position: absolute;
         right: 0;
+        background-color: white;
+        border: none;
     }
 }

@@ -3,7 +3,7 @@
 import { useState } from 'react'
 import Button from '@/components/Button/Button'
 import ProfileInfoList from '@/components/ProfileInfoList/ProfileInfoList'
-import Tabs from '@/components/Tabs/Tabs'
+import CustomTabs from '@/components/CustomTabs/CustomTabs'
 import TagButton from '@/components/TagButton/TagButton'
 import { useForm } from 'react-hook-form'
 import FormInput from '@/components/FormInput/FormInput'
@@ -329,7 +329,7 @@ const SellebEditPage = () => {
                             </li>
                         ))}
                     </ul>
-                    <div className="add_tag_section">
+                    <div>
                         <input
                             type="text"
                             value={newTag}
@@ -354,7 +354,7 @@ const SellebEditPage = () => {
                 </div>
             </section>
             <div>
-                <Tabs items={profileData.tabItems} />
+                <CustomTabs items={profileData.tabItems} />
             </div>
         </form>
     )

@@ -3,7 +3,7 @@ import Button from '@/components/Button/Button'
 import ProfileImgBox from '@/components/ProfileImgBox/ProfileImgBox'
 import ProfileInfoList from '@/components/ProfileInfoList/ProfileInfoList'
 import TagButton from '@/components/TagButton/TagButton'
-import Tabs from '@/components/Tabs/Tabs'
+import CustomTabs from '@/components/CustomTabs/CustomTabs'
 import Link from 'next/link'
 import './css/SellecterProfilePage.css'
 
@@ -90,7 +90,7 @@ const SellecterProfilePage = () => {
                 </div>
             </section>
             <div className="tabs_content">
-                <Tabs items={tabItems}></Tabs>
+                <CustomTabs items={tabItems}></CustomTabs>
             </div>
         </div>
     )

@@ -2,6 +2,7 @@ import MainButton from '@/components/MainButton'
 import MainCard from '@/components/MainCard'
 import { Container } from 'react-bootstrap'
 import HamburgerMenu from '@/components/HamburgerMenu/HamburgerMenu'
+
 import './global.css'
 
 export const metadata = {
