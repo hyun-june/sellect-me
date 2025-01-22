@@ -11,20 +11,9 @@ import Link from 'next/link'
 import AddCareer from '../../components/AddCareer/AddCareer'
 import { IoCloseSharp } from 'react-icons/io5'
 import './css/SellecterEditPage.css'
-
-const sellecterInfoList = [
-    { title: '회사명', content: 'SELLECT' },
-    { title: '대표자', content: '김지은' },
-    { title: '주소', content: '서울시 강서구 마곡동 888-2' },
-    { title: '사업번호', content: '000-00-000000' },
-]
-
-const tagList = ['사진', '영상', '뮤비', '홈쇼핑']
-
-const sellecterProjectList = [
-    { title: '홈페이지', content: 'www.sellect.com' },
-    { title: '프로젝트 범위', content: <TagButton list={tagList} /> },
-]
+import AddProfile from '../../components/AddProfile/AddProfile'
+import FormInput from '@/components/FormInput/FormInput'
+import { useForm } from 'react-hook-form'
 
 const tabItems = [
     {
@@ -49,14 +38,90 @@ const tabItems = [
     },
 ]
 
+const testData = {
+    business_name: 'sellecter',
+    repressentative_name: '김지은',
+    business_address: '서울시 강서구 마곡동 888-2',
+    business_registration_number: '123-23-1234567',
+    company_website: 'www.sellect.com',
+}
+
 const SelleterEditPage = () => {
+    const {
+        register,
+        handleSubmit,
+        formState: { errors },
+    } = useForm({ defaultValues: testData })
+
+    const sellecterInfoList = [
+        {
+            title: '회사명',
+            content: (
+                <FormInput
+                    register={register}
+                    id="business_name"
+                    error={errors.business_name}
+                />
+            ),
+        },
+        {
+            title: '대표자',
+            content: (
+                <FormInput
+                    register={register}
+                    id="repressentative_name"
+                    error={errors.repressentative_name}
+                />
+            ),
+        },
+        {
+            title: '주소',
+            content: (
+                <FormInput
+                    register={register}
+                    id="business_address"
+                    error={errors.business_address}
+                />
+            ),
+        },
+        {
+            title: '사업번호',
+            content: (
+                <FormInput
+                    register={register}
+                    id="business_registration_number"
+                    type="number"
+                    error={errors.business_registration_number}
+                />
+            ),
+        },
+    ]
+
+    const tagList = ['사진', '영상', '뮤비', '홈쇼핑']
+
+    const sellecterProjectList = [
+        {
+            title: '홈페이지',
+            content: (
+                <FormInput
+                    register={register}
+                    id="company_website"
+                    error={errors.company_website}
+                />
+            ),
+        },
+        { title: '프로젝트 범위', content: <TagButton list={tagList} /> },
+    ]
     const [mainImg, setMainImg] = useState(null)
     const [subImg, setSubImg] = useState([null, null, null])
-    const [tabImg, setTabImg] = useState([null])
     const [tags, setTags] = useState([])
     const [newTag, setNewTag] = useState('')
     const [defaultTags, setDefaultTags] = useState([...tagList])
     const user = 'me'
+
+    const handleMainImgChange = newImg => {
+        setMainImg(newImg)
+    }
 
     const handleAddTag = () => {
         if (tags.length + defaultTags.length >= 8) {
@@ -82,18 +147,21 @@ const SelleterEditPage = () => {
         }
     }
 
+    const editSubmit = formData => {
+        const updateTags = [...defaultTags, ...tags]
+        console.log('FormData:', formData)
+        console.log('Main Image:', mainImg)
+        console.log('tags', updateTags)
+    }
+
     return (
-        <div className="sellecter_profile">
+        <form className="sellecter_profile" onSubmit={handleSubmit(editSubmit)}>
             <header>
                 {user === 'me' ? (
                     <>
                         <h3>My Profile</h3>
                         <nav>
-                            <Link href="/mypage/SellecterProfile/edit">
-                                <Button>edit</Button>
-                            </Link>
-
-                            <Button>save</Button>
+                            <Button type="submit">save</Button>
                         </nav>
                     </>
                 ) : (
@@ -109,9 +177,16 @@ const SelleterEditPage = () => {
                     </>
                 )}
             </header>
-            <section className="main_profile">
-                <div className="main_profile_img">
-                    <ProfileImgBox />
+
+            <section className="edit_main_profile">
+                <div>
+                    <AddProfile
+                        index={-1}
+                        profileImg={mainImg}
+                        key="main_img"
+                        onImageChange={newImg => handleMainImgChange(newImg)}
+                        className="edit_sellecter_img"
+                    />
                 </div>
                 <div className="profile_info_box">
                     <div className="profile_List">
@@ -123,7 +198,7 @@ const SelleterEditPage = () => {
             <div className="tabs_content">
                 <CustomTabs items={tabItems}></CustomTabs>
             </div>
-        </div>
+        </form>
     )
 }
 

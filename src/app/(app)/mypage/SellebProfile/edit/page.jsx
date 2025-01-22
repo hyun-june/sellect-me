@@ -43,7 +43,6 @@ const SellebEditPage = () => {
 
     const [mainImg, setMainImg] = useState(null)
     const [subImg, setSubImg] = useState([null, null, null])
-    const [tabImg, setTabImg] = useState([null])
     const [tags, setTags] = useState([])
     const [newTag, setNewTag] = useState('')
     const [defaultTags, setDefaultTags] = useState([...tagList])
@@ -221,7 +220,6 @@ const SellebEditPage = () => {
         console.log('Main Image:', mainImg)
         console.log('Sub Images:', subImg)
         console.log('tags', updateTags)
-        console.log('tab Img', tabImg)
     }
 
     const handleAddTag = () => {

@@ -61,8 +61,6 @@ const SellecterProfilePage = () => {
                             <Link href="/mypage/SellecterProfile/edit">
                                 <Button>edit</Button>
                             </Link>
-
-                            <Button>save</Button>
                         </nav>
                     </>
                 ) : (

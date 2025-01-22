@@ -25,7 +25,7 @@
     }
 }
 
-.main_profile {
+.edit_main_profile {
     width: 100%;
     display: grid;
     grid-template-columns: 0.5fr 1fr;
@@ -33,13 +33,9 @@
     margin-bottom: 3em;
 }
 
-.main_profile_img {
-    border: 1px solid var(--text-sub-color);
-    & img {
-        width: 100%;
-        height: auto;
-        object-fit: cover;
-    }
+.edit_sellecter_img {
+    width: 23em;
+    height: 23em;
 }
 
 .profile_info_box {
