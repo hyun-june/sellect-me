@@ -7,7 +7,7 @@
         & button {
             position: absolute;
             right: 0;
-            background-color: white;
+            background-color: inherit;
             border: none;
         }
     }
@@ -21,12 +21,14 @@
         position: relative;
         border: none;
         border-bottom: 1px solid var(--text-sub-color);
+        padding: 0.3em;
     }
 
     & button {
         position: absolute;
         right: 0;
-        background-color: white;
+        bottom: 1.3em;
+        background-color: inherit;
         border: none;
     }
 }

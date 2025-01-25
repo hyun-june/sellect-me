@@ -16,23 +16,13 @@ import FormInput from '@/components/FormInput/FormInput'
 import { useForm } from 'react-hook-form'
 import NoticeForm from './components/NoticeForm/NoticeForm'
 
-const tabItems = [
-    {
-        title: '프로젝트',
-        content: <NoticeForm />,
-    },
-    {
-        title: '커리어',
-        content: <AddCareer className="edit_career" />,
-    },
-]
-
 const testData = {
     business_name: 'sellecter',
     repressentative_name: '김지은',
     business_address: '서울시 강서구 마곡동 888-2',
     business_registration_number: '123-23-1234567',
     company_website: 'www.sellect.com',
+    noticeText: '',
 }
 
 const SelleterEditPage = () => {
@@ -111,8 +101,25 @@ const SelleterEditPage = () => {
     const [tags, setTags] = useState([])
     const [newTag, setNewTag] = useState('')
     const [defaultTags, setDefaultTags] = useState([...tagList])
-
+    const [noticeText, setNoticeText] = useState('')
     const user = 'me'
+
+    const handleNoticeSave = text => {
+        setNoticeText(text)
+    }
+
+    const tabItems = [
+        {
+            title: '프로젝트',
+            content: (
+                <NoticeForm noticeText={noticeText} onSave={handleNoticeSave} />
+            ),
+        },
+        {
+            title: '커리어',
+            content: <AddCareer className="edit_career" />,
+        },
+    ]
 
     const handleMainImgChange = newImg => {
         setMainImg(newImg)
@@ -147,6 +154,7 @@ const SelleterEditPage = () => {
         console.log('FormData:', formData)
         console.log('Main Image:', mainImg)
         console.log('tags', updateTags)
+        console.log('noticeText', noticeText)
     }
 
     return (

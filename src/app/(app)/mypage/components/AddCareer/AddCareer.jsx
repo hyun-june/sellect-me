@@ -14,6 +14,11 @@ const AddCareer = ({ ...props }) => {
     const [dafaultCareers, setDefaultCareers] = useState([...carrersList])
 
     const handleAddCareer = () => {
+        if (newCareer.trim() === '') {
+            alert('내용을 입력해주세요.')
+            return
+        }
+
         if (
             !careers.includes(newCareer) &&
             !dafaultCareers.includes(newCareer)
