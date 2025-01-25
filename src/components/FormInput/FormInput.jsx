@@ -8,6 +8,7 @@ const FormInput = ({
     type = 'text',
     className,
     error,
+    disableValidation = false,
     ...props
 }) => {
     const patternType = validationPatterns[type]
@@ -16,12 +17,17 @@ const FormInput = ({
         <div className="form-input">
             <input
                 id={id}
-                {...register(`${id}`, {
-                    pattern: {
-                        value: patternType?.value,
-                        message: patternType?.message,
-                    },
-                })}
+                {...register(
+                    `${id}`,
+                    disableValidation
+                        ? {}
+                        : {
+                              pattern: {
+                                  value: patternType?.value,
+                                  message: patternType?.message,
+                              },
+                          },
+                )}
                 {...props}
                 placeholder={title ? title : ''}
             />

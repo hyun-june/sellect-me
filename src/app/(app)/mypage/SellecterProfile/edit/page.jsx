@@ -50,6 +50,7 @@ const SelleterEditPage = () => {
                     register={register}
                     id="business_name"
                     error={errors.business_name}
+                    disableValidation={true}
                 />
             ),
         },
@@ -60,6 +61,7 @@ const SelleterEditPage = () => {
                     register={register}
                     id="repressentative_name"
                     error={errors.repressentative_name}
+                    disableValidation={true}
                 />
             ),
         },
@@ -70,6 +72,7 @@ const SelleterEditPage = () => {
                     register={register}
                     id="business_address"
                     error={errors.business_address}
+                    disableValidation={true}
                 />
             ),
         },
@@ -81,6 +84,7 @@ const SelleterEditPage = () => {
                     id="business_registration_number"
                     type="number"
                     error={errors.business_registration_number}
+                    disableValidation={true}
                 />
             ),
         },
@@ -96,6 +100,7 @@ const SelleterEditPage = () => {
                     register={register}
                     id="company_website"
                     error={errors.company_website}
+                    disableValidation={true}
                 />
             ),
         },
@@ -106,6 +111,7 @@ const SelleterEditPage = () => {
     const [tags, setTags] = useState([])
     const [newTag, setNewTag] = useState('')
     const [defaultTags, setDefaultTags] = useState([...tagList])
+
     const user = 'me'
 
     const handleMainImgChange = newImg => {

@@ -1,12 +1,17 @@
 'use client'
 
+import Button from '@/components/Button/Button'
 import { useState } from 'react'
+import './NoticeForm.css'
 
 const NoticeForm = () => {
     const [noticeText, setNoticeText] = useState('')
 
     const handleChange = e => {
-        setNoticeText(e.target.value)
+        const updatedText = e.target.value
+        setNoticeText(updatedText)
+
+        autoResize(e.target)
     }
 
     const handleSubmit = e => {
@@ -14,81 +19,35 @@ const NoticeForm = () => {
         console.log('Submitted Notice:', noticeText)
     }
 
+    const autoResize = textarea => {
+        textarea.style.height = 'auto'
+        textarea.style.height = `${textarea.scrollHeight}px`
+    }
+
     return (
-        <div style={{ maxWidth: '600px', margin: '0 auto', padding: '1rem' }}>
-            <h1
-                style={{
-                    fontSize: '1.5rem',
-                    fontWeight: 'bold',
-                    marginBottom: '1rem',
-                }}>
-                공고문 작성
-            </h1>
-            <form onSubmit={handleSubmit}>
-                <label
-                    htmlFor="notice"
-                    style={{
-                        display: 'block',
-                        marginBottom: '0.5rem',
-                        fontWeight: 'bold',
-                    }}>
-                    공고문 내용
-                </label>
-                <textarea
-                    id="notice"
-                    value={noticeText}
-                    onChange={handleChange}
-                    rows="10"
-                    style={{
-                        width: '100%',
-                        padding: '0.5rem',
-                        border: '1px solid #ccc',
-                        borderRadius: '0.5rem',
-                        fontSize: '1rem',
-                        fontFamily: 'inherit',
-                    }}
-                    placeholder="공고문 내용을 작성하세요..."
-                />
-                <button
-                    type="submit"
-                    style={{
-                        marginTop: '1rem',
-                        padding: '0.5rem 1rem',
-                        backgroundColor: '#007BFF',
-                        color: '#fff',
-                        border: 'none',
-                        borderRadius: '0.5rem',
-                        cursor: 'pointer',
-                        fontSize: '1rem',
-                    }}>
-                    제출
-                </button>
-            </form>
-            <div style={{ marginTop: '1.5rem' }}>
-                <h2
-                    style={{
-                        fontSize: '1.25rem',
-                        fontWeight: 'bold',
-                        marginBottom: '0.5rem',
-                    }}>
-                    미리보기
-                </h2>
-                {/* CSS로 줄 바꿈과 공백 유지 */}
-                <div
-                    style={{
-                        whiteSpace: 'pre-wrap', // 줄 바꿈과 공백 유지
-                        padding: '1rem',
-                        border: '1px solid #ccc',
-                        borderRadius: '0.5rem',
-                        backgroundColor: '#f9f9f9',
-                        fontSize: '1rem',
-                        lineHeight: '1.5',
-                        fontFamily: 'inherit',
-                    }}>
+        <div className="notice_container">
+            <div>
+                <h4>공고 작성</h4>
+                <div>
+                    <textarea
+                        value={noticeText}
+                        onChange={handleChange}
+                        rows="10"
+                        placeholder="공고문 내용을 작성하세요."></textarea>
+                    <Button type="button" onClick={handleSubmit}>
+                        저장
+                    </Button>
+                </div>
+            </div>
+
+            <div>
+                <h4>미리보기</h4>
+                <div className="notice_preview">
                     {noticeText || '공고문 내용을 입력하면 여기에 표시됩니다.'}
                 </div>
             </div>
         </div>
     )
 }
+
 export default NoticeForm

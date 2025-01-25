@@ -7,7 +7,11 @@ export const useAuth = ({ middleware, redirectIfAuthenticated } = {}) => {
     const router = useRouter()
     const params = useParams()
 
-    const { data: user, error, mutate } = useSWR('/api/user', () =>
+    const {
+        data: user,
+        error,
+        mutate,
+    } = useSWR('/api/user', () =>
         axios
             .get('/api/user')
             .then(res => res.data)
@@ -19,14 +23,14 @@ export const useAuth = ({ middleware, redirectIfAuthenticated } = {}) => {
     )
 
     // const csrf = () => axios.get('/sanctum/csrf-cookie')
- 	const csrf = async () => {
-     try {
-         const response = await axios.get('/sanctum/csrf-cookie');
-         console.log('CSRF 쿠키가 성공적으로 설정되었습니다:', response);
-     } catch (error) {
-         console.error('CSRF 쿠키 설정 중 오류 발생:', error);
-     }
- };
+    const csrf = async () => {
+        try {
+            const response = await axios.get('/sanctum/csrf-cookie')
+            console.log('CSRF 쿠키가 성공적으로 설정되었습니다:', response)
+        } catch (error) {
+            console.error('CSRF 쿠키 설정 중 오류 발생:', error)
+        }
+    }
 
     const register = async ({ setErrors, ...props }) => {
         await csrf()
@@ -100,7 +104,6 @@ export const useAuth = ({ middleware, redirectIfAuthenticated } = {}) => {
     }
 
     const logout = async () => {
-
         if (!error) {
             await axios.post('/logout').then(() => mutate())
         }
