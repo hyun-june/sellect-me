@@ -14,23 +14,12 @@ import './css/SellecterEditPage.css'
 import AddProfile from '../../components/AddProfile/AddProfile'
 import FormInput from '@/components/FormInput/FormInput'
 import { useForm } from 'react-hook-form'
+import NoticeForm from './components/NoticeForm/NoticeForm'
 
 const tabItems = [
     {
         title: '프로젝트',
-        content: (
-            <div className="project">
-                <div>안녕하세요 OOO입니다</div>
-                <div>OOO에서 창의적이고 유능한 셀럽 분들을 모집합니다.</div>
-
-                <ul>
-                    <div>* 자격요건</div>
-                    <li>성별 : 여</li>
-                    <li>나이: 20~25</li>
-                </ul>
-                <div>많은 지원 바랍니다.</div>
-            </div>
-        ),
+        content: <NoticeForm />,
     },
     {
         title: '커리어',
