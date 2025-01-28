@@ -1,0 +1,65 @@
+.quotationForm_container {
+    display: flex;
+    flex-direction: column;
+
+    margin: 1em 0em;
+    gap: 1em;
+
+    & img {
+        width: 150px;
+        height: 180px;
+    }
+}
+.top_section {
+    display: flex;
+    gap: 2em;
+    align-items: flex-start;
+
+    & span {
+        font-weight: bold;
+        letter-spacing: 1px;
+        display: flex;
+        justify-content: center;
+    }
+}
+.img_box {
+    width: 150px;
+    height: 180px;
+    border: 1px solid var(--line-color);
+}
+
+.description_box {
+    border: 1px solid var(--line-color);
+    height: auto;
+    padding: 1em;
+}
+
+.info_section {
+    border: 1px solid red;
+    padding: 1em;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+
+    & fieldset {
+        display: flex;
+        flex-direction: column;
+
+        & span {
+            padding-left: 1em;
+            margin-bottom: 1em;
+        }
+    }
+
+    & legend {
+        font-size: 1.2em;
+        color: var(--text-color);
+    }
+}
+
+.confirm_section {
+    border: 2px solid var(--line-color);
+    padding: 1em;
+    display: flex;
+    flex-direction: column;
+}

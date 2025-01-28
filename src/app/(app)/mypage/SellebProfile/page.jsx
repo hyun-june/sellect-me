@@ -69,7 +69,7 @@ const SellebProfilePage = () => {
     const pay = 120000
 
     const hourlyPay = (time * pay).toLocaleString()
-    const user = 'me'
+    const user = '11'
 
     return (
         <div className="selleb_profile">
@@ -92,7 +92,9 @@ const SellebProfilePage = () => {
                             </Button>
                             <Button>Com-Card</Button>
                             <Button>Chat</Button>
-                            <Button>견적 확인하기</Button>
+                            <Link href="/mypage/SellebProfile/quotation">
+                                <Button>견적 확인하기</Button>
+                            </Link>
                         </nav>
                     </>
                 )}
