@@ -9,7 +9,14 @@
         width: 150px;
         height: 180px;
     }
+
+    & textarea {
+        border: 1px solid var(--line-color);
+        padding: 1em;
+        resize: none;
+    }
 }
+
 .top_section {
     display: flex;
     gap: 2em;
@@ -39,7 +46,7 @@
     padding: 1em;
     display: flex;
     flex-direction: column;
-    gap: 1em;
+    gap: 3em;
 
     & fieldset {
         display: flex;
@@ -57,9 +64,40 @@
     }
 }
 
+.time_section {
+    display: flex;
+    gap: 1em;
+
+    & div {
+        width: 100%;
+
+        & label {
+            width: 100%;
+            padding-left: 1em;
+        }
+    }
+    & .dropdown-list {
+        top: 2.8em;
+    }
+}
+
 .confirm_section {
     border: 2px solid var(--line-color);
     padding: 1em;
     display: flex;
     flex-direction: column;
+}
+
+.label_input {
+    display: flex;
+
+    & label {
+        padding: 0em 1em;
+        white-space: nowrap;
+        display: flex;
+        align-items: center;
+        border-bottom: 1px solid var(--line-color);
+        color: var(--text-sub-color);
+        font-weight: bold;
+    }
 }

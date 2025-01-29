@@ -94,7 +94,7 @@ const SelleterEditPage = () => {
                 />
             ),
         },
-        { title: '프로젝트 범위', content: <TagButton list={tagList} /> },
+        ,
     ]
     const [mainImg, setMainImg] = useState(null)
     const [subImg, setSubImg] = useState([null, null, null])
@@ -162,7 +162,7 @@ const SelleterEditPage = () => {
             <header>
                 {user === 'me' ? (
                     <>
-                        <h3>My Profile</h3>
+                        <h3>My Company</h3>
                         <nav>
                             <Button type="submit">save</Button>
                         </nav>
@@ -194,7 +194,52 @@ const SelleterEditPage = () => {
                 <div className="profile_info_box">
                     <div className="profile_List">
                         <ProfileInfoList list={sellecterInfoList} />
-                        <ProfileInfoList list={sellecterProjectList} />
+                        <div>
+                            <ProfileInfoList list={sellecterProjectList} />
+
+                            <span className="project_title">프로젝트 범위</span>
+                            <div className="tag_section">
+                                <ul>
+                                    {[...defaultTags, ...tags].map(
+                                        (tag, index) => (
+                                            <li key={index}>
+                                                <TagButton>{tag}</TagButton>
+                                                <button
+                                                    onClick={() =>
+                                                        index <
+                                                        defaultTags.length
+                                                            ? handleDeleteTag(
+                                                                  index,
+                                                                  true,
+                                                              )
+                                                            : handleDeleteTag(
+                                                                  index -
+                                                                      defaultTags.length,
+                                                                  false,
+                                                              )
+                                                    }>
+                                                    <IoCloseSharp />
+                                                </button>
+                                            </li>
+                                        ),
+                                    )}
+                                </ul>
+                                <div>
+                                    <input
+                                        type="text"
+                                        value={newTag}
+                                        placeholder="예)사진,뮤비"
+                                        onChange={e =>
+                                            setNewTag(e.target.value)
+                                        }
+                                        onKeyPress={e =>
+                                            e.key === 'Enter' && handleAddTag()
+                                        }
+                                    />
+                                    <button onClick={handleAddTag}>+</button>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>

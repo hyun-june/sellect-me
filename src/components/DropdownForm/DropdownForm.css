@@ -43,6 +43,7 @@
     z-index: 10;
     height: auto;
     overflow-y: auto;
+    height: 10em;
 }
 
 .dropdown-item {
