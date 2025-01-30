@@ -47,13 +47,6 @@
     align-items: center;
 }
 
-/* 여기 css 수정해야함 */
-.tag_section {
-    & input {
-        border-bottom: 1px solid var(--line-color);
-    }
-}
-
 .profile_List {
     display: flex;
     padding: 1.5em 0em;
@@ -61,33 +54,6 @@
 
     & dl {
         gap: 1.5em;
-    }
-
-    & span {
-        width: 50%;
-        padding: 0.2em;
-    }
-
-    & ul {
-        display: flex;
-        flex-direction: column;
-        flex-wrap: wrap;
-        padding: 0em;
-        gap: 0.5em;
-
-        & li {
-            list-style: none;
-            position: relative;
-            height: 2em;
-
-            & button {
-                position: absolute;
-                right: 0em;
-                top: 0.3em;
-                border: none;
-                background-color: inherit;
-            }
-        }
     }
 }
 
@@ -126,5 +92,43 @@
     & li {
         list-style-type: '-';
         padding-left: 0.5em;
+    }
+}
+
+.tag_section {
+    width: 6.5em;
+    display: flex;
+    flex-direction: column;
+
+    & .tag_container {
+        display: flex;
+        justify-content: center;
+    }
+
+    & ul {
+        display: flex;
+        flex-direction: column;
+
+        padding: 0em;
+        gap: 0.5em;
+
+        & li {
+            list-style: none;
+            position: relative;
+            height: 2em;
+
+            & button {
+                position: absolute;
+                right: 0.3em;
+                top: 0.3em;
+                border: none;
+                background-color: inherit;
+            }
+        }
+    }
+
+    & input {
+        width: 5.8em;
+        border-bottom: 1px solid var(--line-color);
     }
 }
