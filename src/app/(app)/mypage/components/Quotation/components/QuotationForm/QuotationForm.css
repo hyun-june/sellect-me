@@ -54,7 +54,6 @@
 
         & span {
             padding-left: 1em;
-            margin-bottom: 1em;
         }
     }
 
@@ -62,6 +61,33 @@
         font-size: 1.2em;
         color: var(--text-color);
     }
+}
+
+.date_section {
+    border-bottom: 1px solid var(--line-color);
+    display: flex;
+    align-items: center;
+    height: 2.5em;
+    position: relative;
+
+    & span {
+        margin: 0;
+        font-weight: bold;
+        color: var(--text-sub-color);
+    }
+
+    & p {
+        margin: 0;
+        margin-left: auto;
+        padding-right: 1em;
+    }
+}
+
+.react-calendar {
+    position: absolute;
+    top: 2.4em;
+    right: 0;
+    z-index: 99;
 }
 
 .time_section {
@@ -77,7 +103,7 @@
         }
     }
     & .dropdown-list {
-        top: 2.8em;
+        top: 2.2em;
     }
 }
 
@@ -99,5 +125,22 @@
         border-bottom: 1px solid var(--line-color);
         color: var(--text-sub-color);
         font-weight: bold;
+    }
+}
+
+.portfolio_file {
+    border-bottom: 1px solid var(--line-color);
+    display: flex;
+    align-items: center;
+    height: 2.5em;
+
+    & span {
+        color: var(--text-sub-color);
+        font-weight: bold;
+    }
+
+    & input {
+        margin-left: auto;
+        width: 15em;
     }
 }

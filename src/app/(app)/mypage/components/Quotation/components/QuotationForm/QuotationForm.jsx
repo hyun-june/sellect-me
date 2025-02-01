@@ -23,19 +23,18 @@ const QuotationForm = () => {
     //     'https://www.urbanbrush.net/web/wp-content/uploads/edd/2022/11/urbanbrush-20221108214712319041.jpg'
     const src = undefined
 
-    const [value, onChange] = useState(new Date());
-    const [isOpen, setIsOpen] = useState(false); // 초기 상태는 달력 닫힘
+    const [value, onChange] = useState(new Date())
+    const [isOpen, setIsOpen] = useState(false)
+    const [files, setFiles] = useState([])
 
-    const handleDateChange = (date) => {
-      onChange(date); 
-      setIsOpen(false);
-    };
-  
+    const handleDateChange = date => {
+        onChange(date)
+        setIsOpen(false)
+    }
+
     const toggleCalendar = () => {
-      setIsOpen(!isOpen); 
-    };
-
-
+        setIsOpen(!isOpen)
+    }
 
     const handleSelect = (fieldName, value) => {
         setValue(fieldName, value)
@@ -44,6 +43,23 @@ const QuotationForm = () => {
     const onSchedule = formData => {
         console.log('form', formData)
     }
+
+    const handleFileChange = event => {
+        const newFiles = Array.from(event.target.files)
+        setFiles(prevFiles => [
+            ...prevFiles,
+            ...newFiles.map(file => file.name),
+        ])
+    }
+
+    const handleDeleteFile = index => {
+        setFiles(prevFiles => {
+            const updatedFiles = [...prevFiles]
+            updatedFiles.splice(index, 1)
+            return updatedFiles
+        })
+    }
+    console.log('dd', files)
 
     return (
         <div className="quotationForm_container">
@@ -68,20 +84,22 @@ const QuotationForm = () => {
             <form className="info_section" onSubmit={handleSubmit(onSchedule)}>
                 <fieldset>
                     <legend>촬영 정보</legend>
-                    <span>
-                        촬영 날짜
+                    <div className="date_section">
+                        <span>촬영 날짜</span>
+
                         <button onClick={toggleCalendar}>
-        {isOpen ? '닫기' : '달력 열기'}
-      </button>
-                        <p>{value ? value.toLocaleDateString() : "loading"}</p>
-                    </span>
-                  
-      {isOpen && (
-        <Calendar 
-          onChange={handleDateChange} 
-          value={value} 
-        />
-      )}
+                            <span> {isOpen ? '▲' : '▼'} </span>
+                        </button>
+
+                        <p>{value ? value.toLocaleDateString() : 'loading'}</p>
+                        {isOpen && (
+                            <Calendar
+                                onChange={handleDateChange}
+                                value={value}
+                            />
+                        )}
+                    </div>
+
                     <div className="time_section">
                         <DropdownForm
                             label="시작 시간"
@@ -115,7 +133,35 @@ const QuotationForm = () => {
                     </div>
 
                     <span>촬영 타입</span>
-                    <span>포트폴리오 파일</span>
+                    <div className="portfolio_file">
+                        <span>포트폴리오 파일</span>
+                        <input
+                            type="file"
+                            id="files"
+                            onChange={handleFileChange}
+                            multiple
+                        />
+                    </div>
+                    <div>
+                        <div>
+                            {files.length > 0 && (
+                                <ul>
+                                    {files.map((fileName, index) => (
+                                        <li key={index}>
+                                            {fileName}
+                                            <button
+                                                type="button"
+                                                onClick={() =>
+                                                    handleDeleteFile(index)
+                                                }>
+                                                지우기
+                                            </button>
+                                        </li>
+                                    ))}
+                                </ul>
+                            )}
+                        </div>
+                    </div>
                 </fieldset>
 
                 <fieldset>
