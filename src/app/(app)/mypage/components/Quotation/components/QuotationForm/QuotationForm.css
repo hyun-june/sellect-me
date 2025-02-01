@@ -1,7 +1,9 @@
 .quotationForm_container {
     display: flex;
     flex-direction: column;
-
+    overflow: hidden;
+    width: 100%;
+    max-width: 54em;
     margin: 1em 0em;
     gap: 1em;
 
@@ -133,6 +135,7 @@
     display: flex;
     align-items: center;
     height: 2.5em;
+    width: 100%;
 
     & span {
         color: var(--text-sub-color);
@@ -142,5 +145,22 @@
     & input {
         margin-left: auto;
         width: 15em;
+    }
+}
+
+.files_name {
+    list-style: none;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    flex-wrap: wrap;
+
+    & li {
+        display: flex;
+        flex-wrap: wrap;
+        padding: 1em;
+        gap: 0.3em;
+        width: 100%;
     }
 }

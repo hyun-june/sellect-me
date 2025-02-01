@@ -6,6 +6,8 @@ import FormInput from '@/components/FormInput/FormInput'
 import './QuotationForm.css'
 import Calendar from 'react-calendar'
 import 'react-calendar/dist/Calendar.css'
+import TagButton from '@/components/TagButton/TagButton'
+import { IoCloseSharp } from 'react-icons/io5'
 
 const timeTable = Array.from(
     { length: 25 },
@@ -59,7 +61,7 @@ const QuotationForm = () => {
             return updatedFiles
         })
     }
-    console.log('dd', files)
+    console.log('ff', files)
 
     return (
         <div className="quotationForm_container">
@@ -135,6 +137,7 @@ const QuotationForm = () => {
                     <span>촬영 타입</span>
                     <div className="portfolio_file">
                         <span>포트폴리오 파일</span>
+
                         <input
                             type="file"
                             id="files"
@@ -142,26 +145,24 @@ const QuotationForm = () => {
                             multiple
                         />
                     </div>
-                    <div>
-                        <div>
-                            {files.length > 0 && (
-                                <ul>
-                                    {files.map((fileName, index) => (
-                                        <li key={index}>
-                                            {fileName}
-                                            <button
-                                                type="button"
-                                                onClick={() =>
-                                                    handleDeleteFile(index)
-                                                }>
-                                                지우기
-                                            </button>
-                                        </li>
-                                    ))}
-                                </ul>
-                            )}
-                        </div>
-                    </div>
+                    <ul className="files_name">
+                        {files.length > 0 && (
+                            <li>
+                                {files.map((fileName, index) => (
+                                    <TagButton key={index}>
+                                        {fileName}
+                                        <button
+                                            type="button"
+                                            onClick={() =>
+                                                handleDeleteFile(index)
+                                            }>
+                                            <IoCloseSharp />
+                                        </button>
+                                    </TagButton>
+                                ))}
+                            </li>
+                        )}
+                    </ul>
                 </fieldset>
 
                 <fieldset>
