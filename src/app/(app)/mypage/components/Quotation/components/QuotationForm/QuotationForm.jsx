@@ -1,8 +1,11 @@
 'use client'
 import DropdownForm from '@/components/DropdownForm/DropdownForm'
 import { useForm } from 'react-hook-form'
+import { useState } from 'react'
 import FormInput from '@/components/FormInput/FormInput'
 import './QuotationForm.css'
+import Calendar from 'react-calendar'
+import 'react-calendar/dist/Calendar.css'
 
 const timeTable = Array.from(
     { length: 25 },
@@ -20,6 +23,20 @@ const QuotationForm = () => {
     //     'https://www.urbanbrush.net/web/wp-content/uploads/edd/2022/11/urbanbrush-20221108214712319041.jpg'
     const src = undefined
 
+    const [value, onChange] = useState(new Date());
+    const [isOpen, setIsOpen] = useState(false); // 초기 상태는 달력 닫힘
+
+    const handleDateChange = (date) => {
+      onChange(date); 
+      setIsOpen(false);
+    };
+  
+    const toggleCalendar = () => {
+      setIsOpen(!isOpen); 
+    };
+
+
+
     const handleSelect = (fieldName, value) => {
         setValue(fieldName, value)
     }
@@ -31,6 +48,7 @@ const QuotationForm = () => {
     return (
         <div className="quotationForm_container">
             <h4>섭외 요청하기</h4>
+
             <section className="top_section">
                 <div>
                     {src ? (
@@ -50,7 +68,20 @@ const QuotationForm = () => {
             <form className="info_section" onSubmit={handleSubmit(onSchedule)}>
                 <fieldset>
                     <legend>촬영 정보</legend>
-                    <span>촬영 날짜</span>
+                    <span>
+                        촬영 날짜
+                        <button onClick={toggleCalendar}>
+        {isOpen ? '닫기' : '달력 열기'}
+      </button>
+                        <p>{value ? value.toLocaleDateString() : "loading"}</p>
+                    </span>
+                  
+      {isOpen && (
+        <Calendar 
+          onChange={handleDateChange} 
+          value={value} 
+        />
+      )}
                     <div className="time_section">
                         <DropdownForm
                             label="시작 시간"
