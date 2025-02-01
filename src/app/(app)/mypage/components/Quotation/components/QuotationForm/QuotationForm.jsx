@@ -3,11 +3,12 @@ import DropdownForm from '@/components/DropdownForm/DropdownForm'
 import { useForm } from 'react-hook-form'
 import { useState } from 'react'
 import FormInput from '@/components/FormInput/FormInput'
-import './QuotationForm.css'
 import Calendar from 'react-calendar'
 import 'react-calendar/dist/Calendar.css'
 import TagButton from '@/components/TagButton/TagButton'
-import { IoCloseSharp } from 'react-icons/io5'
+import Button from '@/components/Button/Button'
+import AddDeleteTag from '@/components/AddDeleteTag/AddDeleteTag'
+import './QuotationForm.css'
 
 const timeTable = Array.from(
     { length: 25 },
@@ -25,12 +26,19 @@ const QuotationForm = () => {
     //     'https://www.urbanbrush.net/web/wp-content/uploads/edd/2022/11/urbanbrush-20221108214712319041.jpg'
     const src = undefined
 
-    const [value, onChange] = useState(new Date())
+    const [value, onChange] = useState(null)
     const [isOpen, setIsOpen] = useState(false)
     const [files, setFiles] = useState([])
+    const [tags, setTags] = useState([])
+    const [defaultTags, setDefaultTags] = useState([])
+
+    const handleTagsChange = updatedTags => {
+        setTags(updatedTags)
+    }
 
     const handleDateChange = date => {
         onChange(date)
+        setValue('date', date)
         setIsOpen(false)
     }
 
@@ -43,7 +51,12 @@ const QuotationForm = () => {
     }
 
     const onSchedule = formData => {
+        if (!formData.date) {
+            alert('날짜를 선택해주세요.')
+            return
+        }
         console.log('form', formData)
+        console.log('tags', tags)
     }
 
     const handleFileChange = event => {
@@ -55,13 +68,8 @@ const QuotationForm = () => {
     }
 
     const handleDeleteFile = index => {
-        setFiles(prevFiles => {
-            const updatedFiles = [...prevFiles]
-            updatedFiles.splice(index, 1)
-            return updatedFiles
-        })
+        setFiles(prevFiles => prevFiles.filter((_, i) => i !== index))
     }
-    console.log('ff', files)
 
     return (
         <div className="quotationForm_container">
@@ -89,11 +97,15 @@ const QuotationForm = () => {
                     <div className="date_section">
                         <span>촬영 날짜</span>
 
-                        <button onClick={toggleCalendar}>
+                        <button onClick={toggleCalendar} type="button">
                             <span> {isOpen ? '▲' : '▼'} </span>
                         </button>
 
-                        <p>{value ? value.toLocaleDateString() : 'loading'}</p>
+                        <p>
+                            {value
+                                ? value.toLocaleDateString()
+                                : '날짜를 선택해주세요.'}
+                        </p>
                         {isOpen && (
                             <Calendar
                                 onChange={handleDateChange}
@@ -133,8 +145,16 @@ const QuotationForm = () => {
                         <label htmlFor="project_name">프로젝트 이름</label>
                         <FormInput id="project_name" register={register} />
                     </div>
+                    <div className="work_scope">
+                        <span>촬영 타입</span>
+                        <AddDeleteTag
+                            tags={tags}
+                            defaultTags={defaultTags}
+                            handleTagsChange={handleTagsChange}
+                            className="tags_list"
+                        />
+                    </div>
 
-                    <span>촬영 타입</span>
                     <div className="portfolio_file">
                         <span>포트폴리오 파일</span>
 
@@ -182,6 +202,7 @@ const QuotationForm = () => {
                     <span>+ 수수료 : 200,000원(20%)</span>
                     <span>+ 부가세 : 120,000원(10%)</span>
                 </div>
+                <Button type="submit">섭외 요청하기</Button>
             </form>
         </div>
     )

@@ -3,18 +3,17 @@
 import { IoMdStarOutline } from 'react-icons/io'
 import { useState } from 'react'
 import Button from '@/components/Button/Button'
-import ProfileImgBox from '@/components/ProfileImgBox/ProfileImgBox'
 import ProfileInfoList from '@/components/ProfileInfoList/ProfileInfoList'
 import TagButton from '@/components/TagButton/TagButton'
 import CustomTabs from '@/components/CustomTabs/CustomTabs'
-import Link from 'next/link'
 import AddCareer from '../../components/AddCareer/AddCareer'
 import { IoCloseSharp } from 'react-icons/io5'
-import './css/SellecterEditPage.css'
 import AddProfile from '../../components/AddProfile/AddProfile'
 import FormInput from '@/components/FormInput/FormInput'
 import { useForm } from 'react-hook-form'
 import NoticeForm from './components/NoticeForm/NoticeForm'
+import AddDeleteTag from '@/components/AddDeleteTag/AddDeleteTag'
+import './css/SellecterEditPage.css'
 
 const testData = {
     business_name: 'sellecter',
@@ -80,8 +79,6 @@ const SelleterEditPage = () => {
         },
     ]
 
-    const tagList = ['사진', '영상', '뮤비', '홈쇼핑']
-
     const sellecterProjectList = [
         {
             title: '홈페이지',
@@ -97,10 +94,6 @@ const SelleterEditPage = () => {
         ,
     ]
     const [mainImg, setMainImg] = useState(null)
-    const [subImg, setSubImg] = useState([null, null, null])
-    const [tags, setTags] = useState([])
-    const [newTag, setNewTag] = useState('')
-    const [defaultTags, setDefaultTags] = useState([...tagList])
     const [noticeText, setNoticeText] = useState('')
     const user = 'me'
 
@@ -125,36 +118,18 @@ const SelleterEditPage = () => {
         setMainImg(newImg)
     }
 
-    const handleAddTag = () => {
-        if (tags.length + defaultTags.length >= 8) {
-            alert('태그는 최대 8개까지만 추가할 수 있습니다.')
-            return
-        }
-        const inputTag = newTag.trim()
+    const [tags, setTags] = useState([])
+    const [defaultTags, setDefaultTags] = useState([])
 
-        if (!inputTag) return
-        if (!tags.includes(inputTag) && !defaultTags.includes(inputTag)) {
-            setTags([...tags, inputTag])
-            setNewTag('')
-        } else {
-            alert('이미 존재하는 태그입니다.')
-        }
-    }
-
-    const handleDeleteTag = (index, isDefault) => {
-        if (isDefault) {
-            setDefaultTags(prev => prev.filter((_, i) => i !== index))
-        } else {
-            setTags(prev => prev.filter((_, i) => i !== index))
-        }
+    const handleTagsChange = updatedTags => {
+        setTags(updatedTags)
     }
 
     const editSubmit = formData => {
-        const updateTags = [...defaultTags, ...tags]
         console.log('FormData:', formData)
         console.log('Main Image:', mainImg)
-        console.log('tags', updateTags)
         console.log('noticeText', noticeText)
+        console.log('tags', tags)
     }
 
     return (
@@ -198,47 +173,12 @@ const SelleterEditPage = () => {
                             <ProfileInfoList list={sellecterProjectList} />
 
                             <span className="project_title">프로젝트 범위</span>
-                            <div className="tag_section">
-                                <ul>
-                                    {[...defaultTags, ...tags].map(
-                                        (tag, index) => (
-                                            <li key={index}>
-                                                <TagButton>{tag}</TagButton>
-                                                <button
-                                                    onClick={() =>
-                                                        index <
-                                                        defaultTags.length
-                                                            ? handleDeleteTag(
-                                                                  index,
-                                                                  true,
-                                                              )
-                                                            : handleDeleteTag(
-                                                                  index -
-                                                                      defaultTags.length,
-                                                                  false,
-                                                              )
-                                                    }>
-                                                    <IoCloseSharp />
-                                                </button>
-                                            </li>
-                                        ),
-                                    )}
-                                </ul>
-                                <div>
-                                    <input
-                                        type="text"
-                                        value={newTag}
-                                        placeholder="예)사진,뮤비"
-                                        onChange={e =>
-                                            setNewTag(e.target.value)
-                                        }
-                                        onKeyPress={e =>
-                                            e.key === 'Enter' && handleAddTag()
-                                        }
-                                    />
-                                    <button onClick={handleAddTag}>+</button>
-                                </div>
-                            </div>
+                            <AddDeleteTag
+                                tags={tags}
+                                defaultTags={defaultTags}
+                                handleTagsChange={handleTagsChange}
+                                className="tags_list"
+                            />
                         </div>
                     </div>
                 </div>

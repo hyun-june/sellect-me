@@ -95,7 +95,7 @@
     }
 }
 
-.tag_section {
+.tags_list {
     width: 6.5em;
     display: flex;
     flex-direction: column;
@@ -108,7 +108,6 @@
     & ul {
         display: flex;
         flex-direction: column;
-
         padding: 0em;
         gap: 0.5em;
 

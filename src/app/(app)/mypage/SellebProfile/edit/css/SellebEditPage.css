@@ -63,7 +63,9 @@
 
 .work_scope {
     width: 100%;
+}
 
+.tags_list {
     & ul {
         display: flex;
         gap: 0.5em;

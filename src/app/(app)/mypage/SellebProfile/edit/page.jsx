@@ -12,6 +12,7 @@ import PreviewImg from './components/PreviewImg/PreviewImg'
 import { IoCloseSharp } from 'react-icons/io5'
 import AddCareer from '../../components/AddCareer/AddCareer'
 import './css/SellebEditPage.css'
+import AddDeleteTag from '@/components/AddDeleteTag/AddDeleteTag'
 
 const tagList = ['사진', '영상', '뮤비']
 
@@ -44,8 +45,7 @@ const SellebEditPage = () => {
     const [mainImg, setMainImg] = useState(null)
     const [subImg, setSubImg] = useState([null, null, null])
     const [tags, setTags] = useState([])
-    const [newTag, setNewTag] = useState('')
-    const [defaultTags, setDefaultTags] = useState([...tagList])
+    const [defaultTags, setDefaultTags] = useState([])
 
     const profileData = {
         profileInfoList: [
@@ -202,6 +202,10 @@ const SellebEditPage = () => {
         ],
     }
 
+    const handleTagsChange = updatedTags => {
+        setTags(updatedTags)
+    }
+
     const handleMainImgChange = newImg => {
         setMainImg(newImg)
     }
@@ -309,7 +313,7 @@ const SellebEditPage = () => {
                 </div>
                 <div className="work_scope">
                     <h5>프로젝트 가능 범위</h5>
-                    <ul className="tags_list">
+                    {/* <ul className="tags_list">
                         {[...defaultTags, ...tags].map((tag, index) => (
                             <li key={index}>
                                 <TagButton>{tag}</TagButton>
@@ -338,7 +342,13 @@ const SellebEditPage = () => {
                             }
                         />
                         <button onClick={handleAddTag}>+</button>
-                    </div>
+                    </div> */}
+                    <AddDeleteTag
+                        tags={tags}
+                        defaultTags={defaultTags}
+                        handleTagsChange={handleTagsChange}
+                        className="tags_list"
+                    />
                 </div>
                 <div className="flex_column gap-3em">
                     <div>
