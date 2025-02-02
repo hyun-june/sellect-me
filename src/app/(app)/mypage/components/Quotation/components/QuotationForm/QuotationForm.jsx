@@ -1,7 +1,7 @@
 'use client'
 import DropdownForm from '@/components/DropdownForm/DropdownForm'
 import { useForm } from 'react-hook-form'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import FormInput from '@/components/FormInput/FormInput'
 import Calendar from 'react-calendar'
 import 'react-calendar/dist/Calendar.css'
@@ -31,6 +31,27 @@ const QuotationForm = () => {
     const [files, setFiles] = useState([])
     const [tags, setTags] = useState([])
     const [defaultTags, setDefaultTags] = useState([])
+    const [businessHours, setBusinessHours] = useState(0)
+    const [startTime, setStartTime] = useState(0)
+    const [endTime, setEndTime] = useState(0)
+
+    const calculateTime = () => {
+        const parseTime = time => {
+            if (!time) return 0
+            const [hours, minutes] = time.split(':').map(Number)
+            return hours + minutes / 60
+        }
+
+        const start = parseTime(startTime)
+        const end = parseTime(endTime)
+
+        const calculatedHours = end - start
+        setBusinessHours(calculatedHours)
+    }
+
+    useEffect(() => {
+        calculateTime()
+    }, [startTime, endTime])
 
     const handleTagsChange = updatedTags => {
         setTags(updatedTags)
@@ -47,6 +68,11 @@ const QuotationForm = () => {
     }
 
     const handleSelect = (fieldName, value) => {
+        if (fieldName == 'start_time') {
+            setStartTime(value)
+        } else if (fieldName == 'end_time') {
+            setEndTime(value)
+        }
         setValue(fieldName, value)
     }
 
@@ -57,6 +83,7 @@ const QuotationForm = () => {
         }
         console.log('form', formData)
         console.log('tags', tags)
+        calculateTime(formData)
     }
 
     const handleFileChange = event => {
@@ -129,6 +156,7 @@ const QuotationForm = () => {
                             list={timeTable}
                             onSelect={value => handleSelect('end_time', value)}
                         />
+                        <span>{businessHours}hr</span>
                     </div>
                     <div className="label_input">
                         <label htmlFor="shooting_location">촬영 장소</label>
@@ -189,20 +217,22 @@ const QuotationForm = () => {
                     <legend>기타 사항</legend>
                     <textarea
                         name=""
-                        id="other_matters"
+                        id="messages"
                         placeholder="메시지를 입력해주세요."
                         rows="4"
                         cols="50"
-                        {...register('other_matters')}></textarea>
+                        {...register('messages')}></textarea>
                 </fieldset>
                 <div className="confirm_section">
                     <span>프로젝트명 : OOO 화보 촬영</span>
-                    <span>촬영 시간 : 5시간</span>
+                    <span>촬영 시간 : {businessHours}시간</span>
                     <span>금액 : 1,000,000원</span>
                     <span>+ 수수료 : 200,000원(20%)</span>
                     <span>+ 부가세 : 120,000원(10%)</span>
                 </div>
-                <Button type="submit">섭외 요청하기</Button>
+                <div className="submit_btn">
+                    <Button type="submit">섭외 요청하기</Button>
+                </div>
             </form>
         </div>
     )
