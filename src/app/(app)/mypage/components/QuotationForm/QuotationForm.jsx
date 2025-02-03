@@ -15,7 +15,7 @@ const timeTable = Array.from(
     (_, i) => `${i.toString().padStart(2, '0')}:00`,
 )
 
-const QuotationForm = () => {
+const QuotationForm = ({ user }) => {
     const {
         register,
         handleSubmit,
@@ -98,7 +98,6 @@ const QuotationForm = () => {
         setFiles(prevFiles => prevFiles.filter((_, i) => i !== index))
     }
 
-    const user = 'sellecter'
     // 시급
     const payValue = 200000
 

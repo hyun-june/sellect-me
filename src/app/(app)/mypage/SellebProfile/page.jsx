@@ -69,7 +69,7 @@ const SellebProfilePage = () => {
     const pay = 120000
 
     const hourlyPay = (time * pay).toLocaleString()
-    const user = 'me'
+    const user = '11'
 
     return (
         <div className="selleb_profile">

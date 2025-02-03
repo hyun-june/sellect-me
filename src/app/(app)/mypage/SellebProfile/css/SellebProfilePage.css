@@ -23,6 +23,15 @@
             font-weight: 600;
         }
     }
+
+    .tag_container {
+        border: none;
+
+        & span {
+            border: 2px solid var(--line-color);
+            border-radius: 8px;
+        }
+    }
 }
 
 .main_profile {

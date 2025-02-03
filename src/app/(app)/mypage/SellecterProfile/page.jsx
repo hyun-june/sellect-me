@@ -50,7 +50,7 @@ const tabItems = [
 ]
 
 const SellecterProfilePage = () => {
-    const user = 'me'
+    const user = '11'
     return (
         <div className="sellecter_profile">
             <header>
@@ -71,7 +71,9 @@ const SellecterProfilePage = () => {
                                 <IoMdStarOutline className="star-icons" />
                             </Button>
                             <Button>Chat</Button>
-                            <Button>프로젝트 신청하기</Button>
+                            <Link href="/mypage/SellecterProfile/quotation">
+                                <Button>프로젝트 신청하기</Button>
+                            </Link>
                         </nav>
                     </>
                 )}

@@ -1,10 +1,10 @@
-import Quotation from '../../components/Quotation/Quotation'
+import QuotationForm from '../../components/QuotationForm/QuotationForm'
 import '../quotation/css/sellebquotation.css'
 
 const sellebQuotationPage = () => {
     return (
         <div className="quotation_container">
-            <Quotation user="selleb" />
+            <QuotationForm user="selleb" />
         </div>
     )
 }
