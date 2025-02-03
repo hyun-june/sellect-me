@@ -1,0 +1,25 @@
+.sign_container {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+
+    position: relative;
+
+    & .sign_title {
+        font-size: 1.5em;
+        font-weight: bold;
+    }
+
+    & button {
+        position: absolute;
+        right: -1em;
+        bottom: 0;
+    }
+}
+
+canvas {
+    border: 2px solid var(--line-color);
+    border-radius: 10px;
+    width: 200px;
+    height: 100px;
+}

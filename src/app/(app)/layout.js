@@ -12,10 +12,11 @@ const AppLayout = ({ children }) => {
     // }
 
     return (
-        <div className="min-h-screen bg-gray-100">
+        <div>
+            {/* <div className="min-h-screen bg-gray-100"> */}
             {/* <Navigation user={user} /> */}
 
-            <main>{children}</main>
+            <main className="flex justify-center">{children}</main>
         </div>
     )
 }
