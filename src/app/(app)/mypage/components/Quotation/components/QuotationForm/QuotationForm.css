@@ -122,13 +122,6 @@
     }
 }
 
-.confirm_section {
-    border: 2px solid var(--line-color);
-    padding: 1em;
-    display: flex;
-    flex-direction: column;
-}
-
 .label_input {
     display: flex;
 
@@ -250,6 +243,26 @@
         & input::placeholder {
             font-size: 0.8em;
         }
+    }
+}
+
+.confirm_section {
+    border: 2px solid var(--line-color);
+
+    & th {
+        width: 30%;
+        padding: 0.5em 3em;
+        text-align: right;
+    }
+
+    & td {
+        padding: 0.5em 3em;
+        text-align: right;
+    }
+
+    .total_row {
+        background-color: #eee;
+        font-weight: bold;
     }
 }
 

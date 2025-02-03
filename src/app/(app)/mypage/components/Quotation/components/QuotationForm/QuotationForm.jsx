@@ -98,9 +98,28 @@ const QuotationForm = () => {
         setFiles(prevFiles => prevFiles.filter((_, i) => i !== index))
     }
 
+    const user = 'sellecter'
+    // 시급
+    const payValue = 200000
+
+    const price = businessHours * payValue
+    const commission = price * 0.2
+    const vat = (price + commission) * 0.1
+    const totalPrice = price + commission + vat
+    console.log('price', price)
+    console.log('com', commission)
+    console.log('vat', vat)
+    console.log('tt', totalPrice)
+
     return (
         <div className="quotationForm_container">
-            <h4>섭외 요청하기</h4>
+            <h4>
+                {user === 'selleb'
+                    ? '섭외 요청하기'
+                    : user === 'sellecter'
+                      ? '프로젝트 신청하기'
+                      : ''}
+            </h4>
 
             <section className="top_section">
                 <div>
@@ -112,9 +131,22 @@ const QuotationForm = () => {
                     <span>LEE OOOOO OOOO</span>
                 </div>
                 <div className="description_box">
-                    셀럽에게 프로젝트 세부사항을 전달하고 견적을 확인하세요.{' '}
-                    <br /> 셀럽과의 협의는 Chat으로 이루어지며, 섭외 요청이
-                    수락되면 계약서를 작성하실 수 있습니다.
+                    {user === 'selleb' ? (
+                        <>
+                            셀럽에게 프로젝트 세부사항을 전달하고 견적을
+                            확인하세요.
+                            <br /> 셀럽과의 협의는 Chat으로 이루어지며, 섭외
+                            요청이 수락되면 계약서를 작성하실 수 있습니다.
+                        </>
+                    ) : user === 'sellecter' ? (
+                        <>
+                            셀렉터의 프로젝트에 신청하세요.
+                            <br /> 셀렉터와의 협의는 Chat으로 이루어지며, 요청이
+                            수락되면 계약서를 작성 할 수 있습니다.
+                        </>
+                    ) : (
+                        ''
+                    )}
                 </div>
             </section>
 
@@ -215,6 +247,7 @@ const QuotationForm = () => {
 
                 <fieldset>
                     <legend>기타 사항</legend>
+
                     <textarea
                         name=""
                         id="messages"
@@ -223,13 +256,36 @@ const QuotationForm = () => {
                         cols="50"
                         {...register('messages')}></textarea>
                 </fieldset>
-                <div className="confirm_section">
-                    <span>프로젝트명 : OOO 화보 촬영</span>
-                    <span>촬영 시간 : {businessHours}시간</span>
-                    <span>금액 : 1,000,000원</span>
-                    <span>+ 수수료 : 200,000원(20%)</span>
-                    <span>+ 부가세 : 120,000원(10%)</span>
-                </div>
+
+                <table className="confirm_section">
+                    <tbody>
+                        <tr>
+                            <th>프로젝트명</th>
+                            <td>OOO 화보 촬영</td>
+                        </tr>
+
+                        <tr>
+                            <th>촬영 시간</th>
+                            <td>{businessHours}시간</td>
+                        </tr>
+                        <tr>
+                            <th>금액</th>
+                            <td>{price.toLocaleString()} 원</td>
+                        </tr>
+                        <tr>
+                            <th>+ 수수료</th>
+                            <td>{commission.toLocaleString()}원 (20%)</td>
+                        </tr>
+                        <tr>
+                            <th>+ 부가세 </th>
+                            <td>{vat.toLocaleString()} (10%) 원</td>
+                        </tr>
+                        <tr className="total_row">
+                            <th>총 금액</th>
+                            <td>{totalPrice.toLocaleString()} (원)</td>
+                        </tr>
+                    </tbody>
+                </table>
                 <div className="submit_btn">
                     <Button type="submit">섭외 요청하기</Button>
                 </div>
