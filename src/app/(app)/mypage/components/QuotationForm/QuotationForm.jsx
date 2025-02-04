@@ -105,10 +105,6 @@ const QuotationForm = ({ user }) => {
     const commission = price * 0.2
     const vat = (price + commission) * 0.1
     const totalPrice = price + commission + vat
-    console.log('price', price)
-    console.log('com', commission)
-    console.log('vat', vat)
-    console.log('tt', totalPrice)
 
     return (
         <div className="quotationForm_container">

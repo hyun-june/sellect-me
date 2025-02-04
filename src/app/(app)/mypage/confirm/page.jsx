@@ -65,7 +65,7 @@ const ConfirmPage = () => {
                         </tr>
                     </tbody>
                 </table>
-                <div>
+                <div className="contract_terms">
                     <div className="inner_text">
                         <h6>계약 목적</h6>
                         <p>
