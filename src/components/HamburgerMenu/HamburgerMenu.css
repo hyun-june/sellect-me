@@ -1,0 +1,62 @@
+.hamburger-section {
+  width: 100%;
+  background-color: white;
+  box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.1);
+}
+
+.hamburger-menu {
+  height: 0; /* 초기 높이 설정 */
+  opacity: 0; /* 초기 투명도 설정 */
+  overflow: hidden; /* 내부 요소가 넘어가는 것을 숨깁니다. */
+  transition: height 0.3s ease-in-out, opacity 0.3s ease-in-out; /* 높이와 투명도의 전환 효과 */
+}
+
+.hamburger-menu.open {
+  height: 200px; /* toggle이 true일 때의 높이 */
+  opacity: 1; /* 투명도를 1로 설정하여 보이게 함 */
+}
+
+.burger__menu,
+.x__menu {
+  width: 30px;
+  display: block;
+  margin-left: 40px;
+  cursor: pointer;
+}
+
+.burger__menu > div,
+.x__menu > div {
+  width: 25px;
+  height: 3px;
+  background-color: black;
+  margin: 5px;
+  transition: all 0.3s ease;
+}
+
+.x__menu > .burger_line1 {
+  transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.x__menu > .burger_line2 {
+  opacity: 0;
+}
+
+.x__menu > .burger_line3 {
+  transform: rotate(45deg) translate(-5px, -6px);
+}
+
+/* 메뉴 아이템을 위한 스타일 */
+.menu-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  opacity: 1; /* 메뉴 아이템의 투명도를 설정 */
+  transform: translateY(0); /* 초기 변형 설정 */
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out; /* 애니메이션 적용 */
+}
+
+.menu-list li {
+  margin: 0px 20px;
+  transition: transform 0.3s ease-in-out; /* 개별 메뉴 아이템의 애니메이션 */
+}

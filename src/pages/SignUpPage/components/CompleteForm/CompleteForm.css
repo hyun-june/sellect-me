@@ -1,0 +1,22 @@
+.complete-section {
+    & h3 {
+        color: var(--text-color);
+        margin-bottom: 1em;
+    }
+
+    & p {
+        color: var(--text-color);
+        margin-bottom: 2em;
+    }
+}
+
+.myPage-link {
+    color: var(--text-point-color);
+    font-weight: bold;
+}
+
+.point-text {
+    color: var(--text-sub-color);
+    font-weight: bold;
+    letter-spacing: 2px;
+}

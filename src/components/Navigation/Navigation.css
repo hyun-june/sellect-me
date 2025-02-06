@@ -1,0 +1,16 @@
+/* navbar */
+.navContainer {
+  width: 100%;
+  padding: 0px 2rem;
+  padding-top: 0.5rem;
+  padding-bottom: 1rem;
+
+  display: flex;
+  align-items: center;
+  position: relative;
+  border-bottom: 1px solid var(--line-color);
+}
+
+.logoImg {
+  width: 100px;
+}

@@ -1,0 +1,25 @@
+.footer-container {
+    border-top: 1px solid var(--line-color);
+    background-color: var(--text-color);
+    color: var(--text-white-color);
+    height: 8em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1em;
+
+    & ul {
+        display: flex;
+        gap: 2em;
+
+        margin: 0;
+
+        li {
+            list-style: none;
+        }
+    }
+}
+
+.point {
+    color: var(--text-point-color);
+}

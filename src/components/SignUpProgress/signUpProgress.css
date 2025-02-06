@@ -1,0 +1,50 @@
+.sign-section {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    position: relative;
+    padding: 0px;
+    text-align: center;
+}
+
+.text {
+    padding: 0rem 0.2rem;
+}
+
+.circle {
+    width: 40px;
+    height: 40px;
+    border: 2px solid var(--text-sub-color);
+    border-radius: 50%;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.circle-text {
+    position: absolute;
+    bottom: -70%;
+    margin-left: 2px;
+}
+
+.circle.completed {
+    background-color: #95dcf8;
+}
+
+.circle.completed::after {
+    content: '✓';
+    font-size: 20px;
+    font-weight: bold;
+    color: black;
+}
+
+.through-line {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background-color: var(--text-sub-color);
+    z-index: -1;
+}

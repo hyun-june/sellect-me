@@ -1,0 +1,37 @@
+.business_info {
+    width: 25em;
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+
+    & h5 {
+        color: var(--text-color);
+        font-weight: bold;
+    }
+
+    & section {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5em;
+    }
+
+    & span {
+        position: absolute;
+        right: 0;
+        cursor: pointer;
+    }
+}
+
+.business_type_section {
+    display: flex;
+    justify-content: space-between;
+    gap: 1em;
+
+    & div {
+        width: 100%;
+    }
+
+    & label {
+        width: 30%;
+    }
+}

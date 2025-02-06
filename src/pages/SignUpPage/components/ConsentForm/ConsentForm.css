@@ -1,0 +1,27 @@
+.consent {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    font-weight: bold;
+
+    & label {
+        color: var(--text-color);
+        cursor: pointer;
+        padding-left: 0.5em;
+    }
+
+    & button {
+        color: var(--text-sub-color);
+        margin-left: 1em;
+    }
+}
+
+.consent-inner {
+    display: flex;
+    justify-content: space-between;
+    gap: 2em;
+}
+
+.consent-text {
+    display: flex;
+}

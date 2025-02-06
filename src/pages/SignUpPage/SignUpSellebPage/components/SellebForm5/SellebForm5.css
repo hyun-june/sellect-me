@@ -1,0 +1,119 @@
+.pay-section {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1em;
+
+    & p {
+        margin: 0;
+        color: var(--text-color);
+        line-height: 1.3em;
+    }
+
+    & h5 {
+        color: var(--text-color);
+        font-weight: bold;
+    }
+
+    & span {
+        color: var(--text-color);
+        font-weight: bold;
+        padding: 0.5em 0em;
+    }
+
+    & input {
+        appearance: none;
+    }
+}
+
+.select-currency {
+    display: flex;
+    height: 2.5em;
+    align-items: center;
+    border: 2px solid var(--line-color);
+    color: var(--text-color);
+    font-weight: bold;
+    justify-content: space-around;
+    width: 100%;
+
+    & label {
+        cursor: pointer;
+    }
+
+    & input {
+        width: 13px;
+        height: 13px;
+        border: 2px solid var(--text-color);
+        cursor: pointer;
+        margin-left: 0.3em;
+    }
+
+    & input:checked {
+        background-color: var(--text-sub-color);
+    }
+}
+
+.select-currency-self {
+    width: 100%;
+    & input {
+        text-align: center;
+    }
+
+    & p {
+        font-size: 0.675em;
+        text-align: right;
+        margin-top: 0.5em;
+    }
+}
+.pay-bar-section {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    & div {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+    }
+}
+
+.pay_section {
+    border-bottom: 1px solid var(--line-color);
+    width: 100%;
+    height: 2em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-sub-color);
+
+    & strong {
+        margin-right: 0.5em;
+    }
+
+    & div {
+        margin-top: 0.1em;
+        padding-left: 0.5em;
+    }
+}
+
+.unit-text {
+    font-size: 0.7em;
+}
+
+#pay-rangebar {
+    width: 100%;
+    cursor: pointer;
+    -webkit-appearance: none;
+    background-color: var(--text-color);
+    height: 0.2em;
+
+    &::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        background-color: var(--text-color);
+        width: 15px;
+        height: 15px;
+        border-radius: 50%;
+    }
+}

@@ -1,0 +1,137 @@
+.info-left {
+    border-right: 1px dashed black;
+    width: 25em;
+    display: flex;
+    flex-direction: column;
+
+    & p {
+        color: var(--text-color);
+        padding-left: 0.5em;
+        line-height: 1.3em;
+    }
+
+    & span {
+        color: var(--text-color);
+        display: flex;
+        align-items: center;
+    }
+}
+
+.info-text {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1em;
+    & label {
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+    }
+}
+
+.check-box {
+    width: 13px;
+    height: 13px;
+    border: 2px solid var(--text-color);
+    margin: 0;
+}
+
+input[type='checkbox']:checked + .check-box {
+    background-color: var(--text-sub-color);
+}
+
+.info-second-title {
+    margin-top: 5.7em;
+}
+
+.info-form {
+    display: flex;
+    position: relative;
+
+    & h5 {
+        color: var(--text-color);
+        font-weight: bold;
+    }
+}
+
+.info-display {
+    display: flex;
+    margin-bottom: 1em;
+}
+
+.visa-info-section {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3em;
+}
+
+.info-right {
+    width: 25em;
+    padding-left: 1em;
+    display: flex;
+    flex-direction: column;
+    gap: 3em;
+}
+
+.visa-info {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--line-color);
+    align-items: center;
+    height: 2.5em;
+    color: var(--text-sub-color);
+    font-weight: bold;
+    padding-left: 0.5em;
+}
+
+.visa-check {
+    display: flex;
+    width: 8em;
+    justify-content: space-around;
+
+    & label {
+        cursor: pointer;
+    }
+
+    & input {
+        width: 13px;
+        height: 13px;
+        border: 2px solid var(--text-color);
+        cursor: pointer;
+        margin-left: 0.3em;
+    }
+
+    & input:checked {
+        background-color: var(--text-sub-color);
+    }
+}
+
+.visa-input {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3em;
+}
+
+.account-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3em;
+    label {
+        width: 100%;
+    }
+}
+
+.bankbook-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3em;
+
+    & label {
+        width: 70%;
+    }
+}
+
+.prevnext_btn {
+    position: absolute;
+    width: 100%;
+    bottom: -3em;
+}

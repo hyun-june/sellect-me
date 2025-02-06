@@ -1,0 +1,20 @@
+.banner-Box {
+    background-color: #def7ff;
+    height: 300px;
+    padding: 1rem 0rem;
+}
+
+.banner-textbox_first_login {
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.banner-textbox_second_login {
+    display: flex;
+    justify-content: space-around;
+    height: 30%;
+    align-items: center;
+}

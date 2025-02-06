@@ -1,0 +1,22 @@
+.inputNav {
+  position: relative;
+  left: 10%;
+}
+
+.inputNav input {
+  width: 20rem;
+  height: 2rem;
+  padding-left: 15%;
+  border: none;
+  border-bottom: 1px solid black;
+}
+
+.inputNav input:focus {
+  outline: 1px solid lightgray;
+}
+
+.navIcon {
+  position: absolute;
+  top: 20%;
+  left: 2%;
+}

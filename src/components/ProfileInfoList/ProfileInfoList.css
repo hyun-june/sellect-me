@@ -1,0 +1,19 @@
+.profile_inner_List {
+    & dl {
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+
+        & dt {
+            font-size: 1em;
+            margin-bottom: 0.1em;
+            color: var(--text-color);
+        }
+
+        & dd {
+            font-size: 0.9em;
+            margin-bottom: 0;
+            color: var(--text-sub-color);
+        }
+    }
+}

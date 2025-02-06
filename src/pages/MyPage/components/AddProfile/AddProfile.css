@@ -1,0 +1,33 @@
+.profile-Section {
+    width: 100%;
+    height: 100%;
+    border: 1px solid var(--text-sub-color);
+
+    & label {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 100%;
+        justify-content: center;
+        align-items: center;
+        gap: 1em;
+        color: var(--text-sub-color);
+    }
+
+    & input {
+        display: none;
+    }
+}
+
+.profilePreview {
+    position: relative;
+    border: 1px solid var(--text-sub-color);
+
+    & button {
+        position: absolute;
+        top: 0;
+        right: 0;
+        border: none;
+        background-color: inherit;
+    }
+}

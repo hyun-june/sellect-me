@@ -1,0 +1,272 @@
+.quotationForm_container {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    width: 100%;
+    max-width: 54em;
+    margin: 1em 0em;
+    gap: 1em;
+
+    & img {
+        width: 150px;
+        height: 180px;
+    }
+
+    & textarea {
+        border: 1px solid var(--line-color);
+        padding: 1em;
+        resize: none;
+    }
+}
+
+.top_section {
+    display: flex;
+    gap: 2em;
+    align-items: flex-start;
+
+    & span {
+        font-weight: bold;
+        letter-spacing: 1px;
+        display: flex;
+        justify-content: center;
+    }
+}
+.img_box {
+    width: 150px;
+    height: 180px;
+    border: 1px solid var(--line-color);
+}
+
+.description_box {
+    border: 1px solid var(--line-color);
+    height: auto;
+    padding: 1em;
+}
+
+.info_section {
+    padding: 1em;
+    display: flex;
+    flex-direction: column;
+    gap: 3em;
+
+    & fieldset {
+        display: flex;
+        flex-direction: column;
+
+        & span:first-child {
+            padding-left: 1em;
+        }
+    }
+
+    & legend {
+        font-size: 1.2em;
+        color: var(--text-color);
+    }
+}
+
+.date_section {
+    border-bottom: 1px solid var(--line-color);
+    display: flex;
+    align-items: center;
+    height: 2.5em;
+    position: relative;
+
+    & span {
+        margin: 0;
+        font-weight: bold;
+        color: var(--text-sub-color);
+    }
+
+    & p {
+        margin: 0;
+        margin-left: auto;
+        padding-right: 1em;
+    }
+}
+
+.react-calendar {
+    position: absolute;
+    top: 2.4em;
+    right: 0;
+    z-index: 99;
+}
+
+.time_section {
+    display: flex;
+    align-items: center;
+    padding-right: 1em;
+    gap: 2em;
+
+    & div {
+        width: 100%;
+
+        & label {
+            width: 100%;
+            padding-left: 1em;
+        }
+    }
+    & .dropdown-list {
+        top: 2.2em;
+    }
+
+    & > span:last-child {
+        display: flex;
+        color: var(--text-sub-color);
+        font-weight: 700;
+    }
+
+    & .selected-section {
+        padding: 0;
+        display: flex;
+        align-items: center;
+    }
+}
+
+.label_input {
+    display: flex;
+
+    & label {
+        padding: 0em 1em;
+        white-space: nowrap;
+        display: flex;
+        align-items: center;
+        border-bottom: 1px solid var(--line-color);
+        color: var(--text-sub-color);
+        font-weight: bold;
+    }
+}
+
+.portfolio_file {
+    border-bottom: 1px solid var(--line-color);
+    display: flex;
+    align-items: center;
+    height: 2.5em;
+    width: 100%;
+
+    & span {
+        color: var(--text-sub-color);
+        font-weight: bold;
+    }
+
+    & input {
+        margin-left: auto;
+        width: 15em;
+        cursor: pointer;
+    }
+}
+
+.files_name {
+    list-style: none;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    flex-wrap: wrap;
+
+    & li {
+        display: flex;
+        flex-wrap: wrap;
+        padding: 1em;
+        gap: 0.3em;
+        width: 100%;
+    }
+}
+
+.work_scope {
+    display: flex;
+    border-bottom: 1px solid var(--line-color);
+    height: 2.5em;
+    align-items: center;
+    justify-content: space-between;
+
+    & > span:first-child {
+        color: var(--text-sub-color);
+        font-weight: bold;
+        white-space: nowrap;
+    }
+}
+
+.tags_list {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+    padding-left: 2em;
+
+    .tag_container {
+        height: 2em;
+        display: flex;
+        align-items: center;
+
+        & span {
+            display: inline-block;
+            width: 5.5em;
+            height: 100%;
+            font-size: 0.725em;
+            font-weight: bold;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+    }
+
+    & ul {
+        display: flex;
+        gap: 0.5em;
+        padding: 0;
+        margin: 0;
+
+        & li {
+            list-style: none;
+            position: relative;
+
+            & button {
+                position: absolute;
+                right: 0em;
+                top: 0.2em;
+                border: none;
+                background-color: inherit;
+            }
+        }
+    }
+
+    .input_container {
+        margin-left: auto;
+        display: flex;
+        flex-shrink: 0;
+
+        & input {
+            width: 5em;
+            height: 2em;
+            border: none;
+        }
+
+        & input::placeholder {
+            font-size: 0.8em;
+        }
+    }
+}
+
+.confirm_section {
+    border: 2px solid var(--line-color);
+
+    & th {
+        width: 30%;
+        padding: 0.5em 3em;
+        text-align: right;
+    }
+
+    & td {
+        padding: 0.5em 3em;
+        text-align: right;
+    }
+
+    .total_row {
+        background-color: #eee;
+        font-weight: bold;
+    }
+}
+
+.submit_btn {
+    display: flex;
+    justify-content: flex-end;
+}

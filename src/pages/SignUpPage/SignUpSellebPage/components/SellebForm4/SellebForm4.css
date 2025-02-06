@@ -1,0 +1,28 @@
+.detail-info {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+
+    & h5 {
+        color: var(--text-color);
+        font-weight: bold;
+    }
+
+    & label {
+        width: 60%;
+    }
+
+    & span {
+        color: var(--text-sub-color);
+        font-weight: bold;
+        text-align: center;
+    }
+}
+
+.detail-box {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3em;
+    margin-bottom: 2em;
+}

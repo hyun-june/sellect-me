@@ -1,0 +1,227 @@
+.edit_profile {
+  margin-top: 1em;
+  width: 100%;
+  max-width: 1230px;
+  margin-left: auto;
+  margin-right: auto;
+
+  & header {
+    display: flex;
+    justify-content: space-between;
+
+    & nav {
+      display: flex;
+      margin-bottom: 0.5em;
+
+      & button {
+        font-weight: bold;
+      }
+    }
+
+    & h3 {
+      letter-spacing: 3px;
+      font-weight: 600;
+    }
+  }
+}
+
+.edit_main_profile {
+  width: 100%;
+  display: flex;
+  gap: 1em;
+  margin-bottom: 3em;
+}
+
+.edit_main_img {
+  width: 35em;
+  height: 35em;
+}
+
+.edit_sub_img {
+  width: 13em;
+  height: 13em;
+}
+
+.edit_main_profile_img {
+  & img {
+    width: 35em;
+    height: 35em;
+    object-fit: cover;
+  }
+}
+
+.edit_profile_pictures {
+  display: flex;
+  gap: 1em;
+
+  & img {
+    height: 13em;
+    width: 13em;
+    object-fit: cover;
+  }
+}
+
+.work_scope {
+  width: 100%;
+}
+
+.tags_list {
+  & ul {
+    display: flex;
+    gap: 0.5em;
+    padding: 0;
+    flex-wrap: wrap;
+
+    & li {
+      list-style: none;
+      position: relative;
+
+      & button {
+        position: absolute;
+        right: 0em;
+        top: 0.3em;
+        border: none;
+        background-color: inherit;
+      }
+    }
+  }
+
+  & input {
+    width: 5em;
+    border: none;
+    border-bottom: 1px solid var(--text-sub-color);
+  }
+
+  & input::placeholder {
+    font-size: 0.8em;
+  }
+  & button:last-child {
+    border: none;
+    background-color: inherit;
+  }
+}
+
+.edit_profile_List {
+  display: flex;
+  justify-content: center;
+  gap: 3em;
+  padding: 2.3em 0em;
+  margin-top: 1em;
+  border: 2px solid var(--line-color);
+
+  & dl {
+    gap: 3em;
+    margin: 0;
+
+    & dd {
+      height: 2em;
+
+      & div {
+        border-bottom: none;
+      }
+    }
+    & span {
+      bottom: -2.3em;
+    }
+  }
+
+  & input {
+    width: 5em;
+    height: 2em;
+    border: none;
+    border-bottom: 1px solid var(--text-sub-color);
+  }
+}
+
+.edit_profile_range {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-items: center;
+  gap: 3em;
+  border-top: 2px solid var(--line-color);
+  padding: 3em 0em;
+
+  & h5 {
+    color: var(--text-color);
+    font-weight: bold;
+  }
+}
+
+.edit_hourly_rangebar {
+  width: 16em;
+  position: relative;
+}
+
+.edit_hourly_rangebar::after {
+  content: "";
+  width: 2px;
+  height: 100%;
+  top: 0;
+  right: -4em;
+  background-color: var(--line-color);
+  position: absolute;
+}
+
+.edit_pay {
+  display: flex;
+  align-items: center;
+
+  & span:first-child {
+    font-weight: bold;
+    color: var(--text-sub-color);
+  }
+  & div {
+    display: flex;
+    border-bottom: none;
+    align-items: center;
+    justify-content: flex-end;
+
+    & input {
+      text-align: center;
+      width: 50%;
+      border: none;
+      border-bottom: 1px solid var(--text-sub-color);
+    }
+  }
+}
+
+#edit_hourlyPay_bar {
+  width: 100%;
+  cursor: pointer;
+  -webkit-appearance: none;
+  background-color: var(--text-color);
+  height: 0.2em;
+
+  &::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    background-color: var(--text-color);
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+  }
+}
+
+.edit_career {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+
+  & li {
+    list-style-type: "-";
+    padding-left: 0.5em;
+  }
+}
+
+.edit_star-icons {
+  font-size: 1.5em;
+}
+
+.edit_tab_img {
+  width: 45em;
+  height: 60em;
+
+  & img {
+    object-fit: cover;
+    margin-bottom: 1em;
+  }
+}

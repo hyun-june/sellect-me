@@ -1,0 +1,15 @@
+.custom_button {
+    border: 2px solid var(--line-color);
+    background-color: white;
+    margin-left: 0.5em;
+    transition: 0.3s;
+    border-radius: 6px;
+    min-height: 2.5em;
+    padding: 0.3em 0.5em;
+}
+
+.custom_button:hover {
+    border: 2px solid var(--text-color);
+    background-color: var(--text-color);
+    color: var(--text-white-color);
+}
