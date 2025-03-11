@@ -26,13 +26,12 @@ const MainPage = () => {
           entries.forEach((entry) => {
             if (entry.isIntersecting) {
               setIsVisible(true);
+            } else {
+              setIsVisible(false);
             }
-            // else {
-            //   setIsVisible(false);
-            // }
           });
         },
-        { threshold: 0 }
+        { threshold: 0.4 }
       );
 
       observer.observe(firstRef.current);
@@ -69,11 +68,18 @@ const MainPage = () => {
 
         <BoxTitle title="NEW UPDATED SELLEB" cardData={pictureData} />
 
-        <div className="sectionLine"></div>
+        {/* <div className="sectionLine"></div> */}
 
-        <div className={`test ${isVisible ? "visible" : ""}`}>
+        <div className={`scroll_animation ${isVisible ? "visible" : ""}`}>
           <h4 ref={firstRef}>FIND YOUR SELLEB</h4>
           <KeywordBox />
+        </div>
+
+        <div>
+          <p>모델을 찾으세요?</p>
+          <p>아직도 출연료 걱정하세요?</p>
+          <p>이제 시간낭비 말고</p>
+          <h3>Sellect</h3>
         </div>
       </Container>
     </MainLayout>
