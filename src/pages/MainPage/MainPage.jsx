@@ -145,31 +145,31 @@ const MainPage = () => {
         <div className="randomText_section ">
           <p
             ref={textRefs[0]}
-            className={`scroll_animation  ${textVisible[0] ? "visible" : ""}`}
+            className={`scroll_animation ${textVisible[0] ? "visible" : ""}`}
           >
-            {getFirstWord}을 찾으세요?
+            {getFirstWord} 찾으세요?
           </p>
           <p
             ref={textRefs[1]}
-            className={`scroll_animation  ${textVisible[1] ? "visible" : ""}`}
+            className={`scroll_animation ${textVisible[1] ? "visible" : ""}`}
           >
             아직도 {getSecondWord} 걱정하세요?
           </p>
           <p
             ref={textRefs[2]}
-            className={`scroll_animation  ${textVisible[2] ? "visible" : ""}`}
+            className={`scroll_animation ${textVisible[2] ? "visible" : ""}`}
           >
             이제 시간낭비 말고
           </p>
           <h3
             ref={textRefs[3]}
-            className={`scroll_animation  ${textVisible[3] ? "visible" : ""}`}
+            className={`scroll_animation ${textVisible[3] ? "visible" : ""}`}
           >
             Sellect
           </h3>
           <span
             ref={textRefs[4]}
-            className={`scroll_animation  ${textVisible[4] ? "visible" : ""}`}
+            className={`scroll_animation ${textVisible[4] ? "visible" : ""}`}
           >
             HOW TO USE?
           </span>

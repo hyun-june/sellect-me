@@ -6,17 +6,18 @@
 
 .title_box_inner {
   display: flex;
+  margin: 1em;
 
   & h4 {
-    margin: 1em;
     padding: 0.5em 1.5em;
     position: relative;
     font-weight: bold;
+    margin: 0;
   }
 
   & h4::before {
-    border-top: 2px solid var(--line-color);
-    border-left: 2px solid var(--line-color);
+    border-top: 3px solid var(--line-color);
+    border-left: 3px solid var(--line-color);
     content: "";
     position: absolute;
     top: -2px;
@@ -26,8 +27,8 @@
   }
 
   & h4::after {
-    border-bottom: 2px solid var(--line-color);
-    border-right: 2px solid var(--line-color);
+    border-bottom: 3px solid var(--line-color);
+    border-right: 3px solid var(--line-color);
     content: "";
     position: absolute;
     bottom: -2px;
@@ -39,7 +40,7 @@
   & span {
     display: flex;
     align-items: flex-end;
-    margin: 1em;
+    margin-left: 1em;
   }
 
   & a {
