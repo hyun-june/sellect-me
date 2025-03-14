@@ -1,6 +1,7 @@
+import { useEffect, useState } from "react";
 import "./KeywordBox.css";
 
-const keyword = [
+const keywordList = [
   "피팅모델",
   "배우",
   "CF모델",
@@ -17,12 +18,18 @@ const keyword = [
 ];
 
 const KeywordBox = () => {
-  const randomKeyword = [...keyword]
-    .sort(() => Math.random() - 0.5)
-    .slice(0, 10);
+  const [randomBox, setRandomBox] = useState([]);
+
+  useEffect(() => {
+    const randomKeyword = [...keywordList]
+      .sort(() => Math.random() - 0.5)
+      .slice(0, 10);
+    setRandomBox(randomKeyword);
+  }, []);
+
   return (
     <div className="keyword_section">
-      {randomKeyword.map((item, index) => {
+      {randomBox.map((item, index) => {
         return (
           <div className="keyword_box" key={index}>
             {item}

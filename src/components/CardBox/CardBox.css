@@ -41,4 +41,12 @@
     align-items: flex-end;
     margin: 1em;
   }
+
+  & a {
+    color: var(--line-color);
+  }
+
+  & a:hover {
+    color: var(--text-color);
+  }
 }

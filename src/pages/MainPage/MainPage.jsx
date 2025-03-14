@@ -1,45 +1,110 @@
 import MainLayout from "../../components/Layout/MainLayout/MainLayout";
 import HamburgerMenu from "./../../components/HamburgerMenu/HamburgerMenu";
 import { Container } from "react-bootstrap";
-import BoxTitle from "../../components/BoxTitle/BoxTitle";
+import CardBox from "../../components/CardBox/CardBox";
 import { useEffect, useRef, useState } from "react";
-import "./MainPage.css";
 import KeywordBox from "../../components/KeywordBox/KeywordBox";
+import "./MainPage.css";
 
-const pictureData = [
-  "https://cdn.pixabay.com/photo/2021/03/26/15/21/beautiful-6126170_1280.jpg",
-  "https://media.istockphoto.com/id/2059137136/ko/%EC%82%AC%EC%A7%84/%EC%8A%A4%ED%8A%9C%EB%94%94%EC%98%A4%EC%97%90%EC%84%9C-%EA%B2%80%EC%9D%80-%EC%96%91%EB%B3%B5%EC%9D%84-%EC%9E%85%EC%9D%80-%EA%B8%88%EB%B0%9C-%EC%97%AC%EC%9E%90-%ED%8C%A8%EC%85%98-%EB%AA%A8%EB%8D%B8.jpg?s=2048x2048&w=is&k=20&c=NsTqYOw9emraS_r68wB5x6ZSiFa5f8BPDk9DBqB1eec=",
-  "https://cdn.pixabay.com/photo/2021/06/26/00/26/fashion-6364998_1280.jpg",
-  "https://cdn.pixabay.com/photo/2021/08/11/04/18/woman-6537397_1280.jpg",
-  "https://cdn.pixabay.com/photo/2020/09/25/16/50/portrait-5601950_1280.jpg",
-  "https://cdn.pixabay.com/photo/2021/03/22/16/07/woman-6115105_1280.jpg",
-];
+const firstWord = ["모델", "배우", "쇼호스트", "인플루언서"];
+const secondWord = ["출연료", "저작권", "초상권"];
 
 const MainPage = () => {
-  const firstRef = useRef();
-  const [isVisible, setIsVisible] = useState(false);
+  const boxRef = useRef();
+  const [boxVisible, setBoxVisible] = useState(false);
+  const textRefs = [
+    useRef(null),
+    useRef(null),
+    useRef(null),
+    useRef(null),
+    useRef(null),
+  ];
+  const [textVisible, setTextVisible] = useState([
+    false,
+    false,
+    false,
+    false,
+    false,
+  ]);
+
+  const [getFirstWord, setGetFirstWord] = useState(firstWord[0]);
+  const [getSecondWord, setGetSecondWord] = useState(secondWord[0]);
+
+  const getRandomWord = (list) => {
+    return list[Math.floor(Math.random() * list.length)];
+  };
 
   useEffect(() => {
-    if (firstRef.current) {
-      const observer = new IntersectionObserver(
+    const randomWord = setInterval(() => {
+      setGetFirstWord(getRandomWord(firstWord));
+      setGetSecondWord(getRandomWord(secondWord));
+    }, 3000);
+
+    return () => clearInterval(randomWord);
+  }, []);
+
+  useEffect(() => {
+    if (boxRef.current) {
+      const boxObserver = new IntersectionObserver(
         (entries) => {
           entries.forEach((entry) => {
             if (entry.isIntersecting) {
-              setIsVisible(true);
+              setBoxVisible(true);
             } else {
-              setIsVisible(false);
+              setBoxVisible(false);
             }
           });
         },
         { threshold: 0.4 }
       );
 
-      observer.observe(firstRef.current);
+      boxObserver.observe(boxRef.current);
 
       return () => {
-        observer.unobserve(firstRef.current);
+        if (boxRef.current) {
+          boxObserver.unobserve(boxRef.current);
+        }
       };
     }
+  }, []);
+
+  useEffect(() => {
+    const textObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          setTextVisible((prev) => {
+            const newVisible = [...prev];
+            const index = textRefs.findIndex(
+              (textRefs) => textRefs.current === entry.target
+            );
+            if (entry.isIntersecting) {
+              if (index !== -1) {
+                newVisible[index] = true;
+              }
+            } else {
+              const index = textRefs.findIndex(
+                (textRefs) => textRefs.current === entry.target
+              );
+              if (index !== -1) {
+                newVisible[index] = false;
+              }
+            }
+            return newVisible;
+          });
+        });
+      },
+      { threshold: 0.8 }
+    );
+
+    textRefs.map((textRefs) => {
+      if (textRefs.current) textObserver.observe(textRefs.current);
+    });
+
+    return () => {
+      textRefs.map((textRefs) => {
+        if (textRefs.current) textObserver.unobserve(textRefs.current);
+      });
+    };
   }, []);
 
   return (
@@ -66,21 +131,56 @@ const MainPage = () => {
           </div>
         </div>
 
-        <BoxTitle title="NEW UPDATED SELLEB" cardData={pictureData} />
+        <CardBox title="NEW UPDATED SELLEB" cardKeyword="NewUpdateSelleb" />
 
-        {/* <div className="sectionLine"></div> */}
-
-        <div className={`scroll_animation ${isVisible ? "visible" : ""}`}>
-          <h4 ref={firstRef}>FIND YOUR SELLEB</h4>
+        <div
+          className={`box_section scroll_animation ${
+            boxVisible ? "visible" : ""
+          }`}
+        >
+          <h4 ref={boxRef}>FIND YOUR SELLEB</h4>
           <KeywordBox />
         </div>
 
-        <div>
-          <p>모델을 찾으세요?</p>
-          <p>아직도 출연료 걱정하세요?</p>
-          <p>이제 시간낭비 말고</p>
-          <h3>Sellect</h3>
+        <div className="randomText_section ">
+          <p
+            ref={textRefs[0]}
+            className={`scroll_animation  ${textVisible[0] ? "visible" : ""}`}
+          >
+            {getFirstWord}을 찾으세요?
+          </p>
+          <p
+            ref={textRefs[1]}
+            className={`scroll_animation  ${textVisible[1] ? "visible" : ""}`}
+          >
+            아직도 {getSecondWord} 걱정하세요?
+          </p>
+          <p
+            ref={textRefs[2]}
+            className={`scroll_animation  ${textVisible[2] ? "visible" : ""}`}
+          >
+            이제 시간낭비 말고
+          </p>
+          <h3
+            ref={textRefs[3]}
+            className={`scroll_animation  ${textVisible[3] ? "visible" : ""}`}
+          >
+            Sellect
+          </h3>
+          <span
+            ref={textRefs[4]}
+            className={`scroll_animation  ${textVisible[4] ? "visible" : ""}`}
+          >
+            HOW TO USE?
+          </span>
         </div>
+
+        <CardBox
+          title="FITTING MODEL FEMALE"
+          cardKeyword="FittingModelFeMale"
+        />
+
+        <CardBox title="FITTING MODEL MALE" cardKeyword="FittingModelMale" />
       </Container>
     </MainLayout>
   );
