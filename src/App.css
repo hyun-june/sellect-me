@@ -12,6 +12,7 @@
 body {
   font-family: "S-CoreDream-3Light" !important;
 }
+/* 사용한 색상 */
 
 :root {
   --text-color: #333333;
@@ -20,6 +21,10 @@ body {
   --text-point-color: #ffc30b;
   --line-color: #c1c1be;
   --warn-color: #991b1b;
+  /* color: #155f82;
+  color: #03396a;
+  color: #0c3d69;
+  color: #a6c9eb; */
 }
 
 .layout-container {

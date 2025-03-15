@@ -4,6 +4,7 @@ import { Container } from "react-bootstrap";
 import CardBox from "../../components/CardBox/CardBox";
 import { useEffect, useRef, useState } from "react";
 import KeywordBox from "../../components/KeywordBox/KeywordBox";
+import { navigateReload } from "../../utils/navigateReload";
 import "./MainPage.css";
 
 const firstWord = ["모델", "배우", "쇼호스트", "인플루언서"];
@@ -167,12 +168,15 @@ const MainPage = () => {
           >
             Sellect
           </h3>
-          <span
+          <div
+            onClick={() => navigateReload("/about")}
             ref={textRefs[4]}
-            className={`scroll_animation ${textVisible[4] ? "visible" : ""}`}
+            className={`scroll_animation link_btn ${
+              textVisible[4] ? "visible" : ""
+            }`}
           >
             HOW TO USE?
-          </span>
+          </div>
         </div>
 
         <CardBox
