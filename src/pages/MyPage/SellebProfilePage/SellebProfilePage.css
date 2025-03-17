@@ -1,9 +1,5 @@
 .selleb_profile {
-  margin-top: 1em;
   width: 100%;
-  max-width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
 
   & header {
     display: flex;
@@ -23,53 +19,55 @@
       font-weight: 600;
     }
   }
-
-  .tag_container {
-    border: none;
-
-    & span {
-      border: 2px solid var(--line-color);
-      border-radius: 8px;
-    }
-  }
 }
 
-.main_profile {
+.selleb_main_profile {
   width: 100%;
   display: flex;
   gap: 1em;
   margin-bottom: 3em;
 }
 
-.main_profile_img {
+.selleb_main_profile_img {
   & img {
-    width: 100%;
-    height: auto;
+    width: 33em;
+    height: 33.75em;
     object-fit: cover;
+    object-position: top;
   }
 }
+.selleb_info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
 
-.profile_pictures {
+.selleb_profile_pictures {
   display: flex;
   gap: 1em;
 
   & img {
-    height: 13em;
     width: 13em;
+    height: 13em;
     object-fit: cover;
   }
 }
 
-.profile_List {
+.selleb_profile_List {
   display: flex;
   justify-content: center;
-  padding: 2.5em 0em;
+  padding: 1.7em 0em;
   gap: 3em;
-  margin-top: 1em;
   border: 2px solid var(--line-color);
 
   & dl {
-    gap: 3em;
+    gap: 2.5em;
+    margin: 0;
+
+    & dd {
+      height: 2em;
+      width: 5em;
+    }
   }
 }
 

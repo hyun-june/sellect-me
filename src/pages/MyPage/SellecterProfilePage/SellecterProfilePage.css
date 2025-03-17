@@ -1,9 +1,5 @@
 .sellecter_profile {
-  margin-top: 1em;
   width: 100%;
-  max-width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
 
   & header {
     display: flex;
@@ -25,7 +21,7 @@
   }
 }
 
-.main_profile {
+.sellecter_main_profile {
   width: 100%;
   display: grid;
   grid-template-columns: 0.5fr 1fr;
@@ -33,49 +29,35 @@
   margin-bottom: 3em;
 }
 
-.main_profile_img {
-  border: 1px solid var(--text-sub-color);
+.sellecter_main_profile_img {
   & img {
-    width: 100%;
-    height: auto;
+    width: 25em;
+    height: 25em;
     object-fit: cover;
+    object-position: top;
   }
 }
 
-.profile_info_box {
-  width: 80%;
-  justify-self: end;
+.sellecter_profile_info {
   border: 2px solid var(--line-color);
   display: flex;
-  justify-content: center;
   align-items: center;
-}
-
-.profile_List {
-  display: flex;
-  padding: 1.5em 0em;
-  gap: 6em;
+  justify-content: center;
+  gap: 5em;
 
   & dl {
     gap: 1.5em;
   }
 
-  & span {
-    width: 50%;
-    padding: 0.2em;
-  }
-
   .tag_container {
-    border: none;
-
-    & span {
-      border: 2px solid var(--line-color);
-      border-radius: 8px;
-    }
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    height: 10em;
   }
 }
 
-.project {
+.selleb_project {
   display: flex;
   flex-direction: column;
   gap: 1em;
@@ -92,7 +74,7 @@
   }
 }
 
-.career {
+.selleb_career {
   display: flex;
   flex-direction: column;
   gap: 1em;

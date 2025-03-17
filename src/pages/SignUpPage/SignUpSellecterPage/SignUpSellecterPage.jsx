@@ -5,6 +5,7 @@ import ConsentForm from "../components/ConsentForm/ConsentForm";
 import CompleteForm from "../components/CompleteForm/CompleteForm";
 import SellecterForm1 from "./components/SellecterForm1/SellecterForm1";
 import SellecterForm2 from "./components/SellecterForm2/SellecterForm2";
+import MainLayout from "./../../../components/Layout/MainLayout/MainLayout";
 
 const tabList = ["사업자 정보", "민감 정보", "동의서", "제출 완료"];
 const SignUpSellecterPage = () => {
@@ -26,7 +27,7 @@ const SignUpSellecterPage = () => {
   };
 
   return (
-    <Container>
+    <MainLayout>
       <Tabs selectedIndex={currentTabIndex} onSelect={handleTabSelect}>
         <TabList className="tabs_list">
           {tabList.map((item, index) => (
@@ -69,7 +70,7 @@ const SignUpSellecterPage = () => {
           </TabPanel>
         </div>
       </Tabs>
-    </Container>
+    </MainLayout>
   );
 };
 

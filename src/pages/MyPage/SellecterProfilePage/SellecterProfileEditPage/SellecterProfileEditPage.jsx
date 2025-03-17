@@ -10,6 +10,7 @@ import NoticeForm from "./components/NoticeForm/NoticeForm";
 import AddDeleteTag from "./../../../../components/AddDeleteTag/AddDeleteTag";
 import Button from "./../../../../components/Button/Button";
 import "./SellecterProfileEditPage.css";
+import MainLayout from "../../../../components/Layout/MainLayout/MainLayout";
 
 const testData = {
   business_name: "sellecter",
@@ -127,60 +128,64 @@ const SellecterProfileEditPage = () => {
   };
 
   return (
-    <form className="sellecter_profile" onSubmit={handleSubmit(editSubmit)}>
-      <header>
-        {user === "me" ? (
-          <>
-            <h3>My Company</h3>
-            <nav>
-              <Button type="submit">save</Button>
-            </nav>
-          </>
-        ) : (
-          <>
-            <h3>VIDEO FACTORY</h3>
-            <nav>
-              <Button>
-                <IoMdStarOutline className="star-icons" />
-              </Button>
-              <Button>Chat</Button>
-              <Button>프로젝트 신청하기</Button>
-            </nav>
-          </>
-        )}
-      </header>
+    <MainLayout>
+      <form
+        className="sellecter_edit_profile"
+        onSubmit={handleSubmit(editSubmit)}
+      >
+        <header>
+          {user === "me" ? (
+            <>
+              <h3>My Company</h3>
+              <nav>
+                <Button type="submit">save</Button>
+              </nav>
+            </>
+          ) : (
+            <>
+              <h3>VIDEO FACTORY</h3>
+              <nav>
+                <Button>
+                  <IoMdStarOutline className="star-icons" />
+                </Button>
+                <Button>Chat</Button>
+                <Button>프로젝트 신청하기</Button>
+              </nav>
+            </>
+          )}
+        </header>
 
-      <section className="edit_main_profile">
-        <div>
+        <section className="sellecter_edit_main_profile">
           <AddProfile
             index={-1}
             profileImg={mainImg}
             key="main_img"
             onImageChange={(newImg) => handleMainImgChange(newImg)}
-            className="edit_sellecter_img"
+            className="sellecter_edit_sellecter_img"
           />
-        </div>
-        <div className="profile_info_box">
-          <div className="profile_List">
+
+          <div className="sellecter_edit_profile_info">
             <ProfileInfoList list={sellecterInfoList} />
-            <div>
+            <div className="sellecter_edit_profile_List">
               <ProfileInfoList list={sellecterProjectList} />
 
-              <span className="project_title">프로젝트 범위</span>
+              <span className="sellecter_edit_project_title">
+                프로젝트 범위
+              </span>
               <AddDeleteTag
                 tags={tags}
                 defaultTags={defaultTags}
                 handleTagsChange={handleTagsChange}
-                className="tags_list"
+                className="sellecter_edit_tags_list"
               />
             </div>
           </div>
+        </section>
+        <div className="sellecter_edit_tabs_content">
+          <CustomTabs items={tabItems}></CustomTabs>
         </div>
-      </section>
-      <div className="tabs_content">
-        <CustomTabs items={tabItems}></CustomTabs>
-      </div>
-    </form>
+      </form>
+    </MainLayout>
   );
 };
 

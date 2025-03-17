@@ -1,6 +1,5 @@
 import MainLayout from "../../components/Layout/MainLayout/MainLayout";
 import HamburgerMenu from "./../../components/HamburgerMenu/HamburgerMenu";
-import { Container } from "react-bootstrap";
 import CardBox from "../../components/CardBox/CardBox";
 import { useEffect, useRef, useState } from "react";
 import KeywordBox from "../../components/KeywordBox/KeywordBox";
@@ -110,82 +109,77 @@ const MainPage = () => {
 
   return (
     <MainLayout>
-      <Container>
-        <HamburgerMenu />
-        <div>
-          <div className="main_video">
-            <video
-              src="https://cdn.pixabay.com/video/2021/07/09/80817-573496287_large.mp4"
-              type="video/mp4"
-              autoPlay
-              playsInline
-              muted
-              loop
-            />
+      <HamburgerMenu />
+      <div>
+        <div className="main_video">
+          <video
+            src="https://cdn.pixabay.com/video/2021/07/09/80817-573496287_large.mp4"
+            type="video/mp4"
+            autoPlay
+            playsInline
+            muted
+            loop
+          />
 
-            <div className="banner_text">
-              <h3>
-                Sell + <br /> Select
-              </h3>
-              <p>당신의 가치를 높이는 성장 플랫폼</p>
-            </div>
+          <div className="banner_text">
+            <h3>
+              Sell + <br /> Select
+            </h3>
+            <p>당신의 가치를 높이는 성장 플랫폼</p>
           </div>
         </div>
+      </div>
 
-        <CardBox title="NEW UPDATED SELLEB" cardKeyword="NewUpdateSelleb" />
+      <CardBox title="NEW UPDATED SELLEB" cardKeyword="NewUpdateSelleb" />
 
+      <div
+        className={`box_section scroll_animation ${
+          boxVisible ? "visible" : ""
+        }`}
+      >
+        <h4 ref={boxRef}>FIND YOUR SELLEB</h4>
+        <KeywordBox />
+      </div>
+
+      <div className="randomText_section ">
+        <p
+          ref={textRefs[0]}
+          className={`scroll_animation ${textVisible[0] ? "visible" : ""}`}
+        >
+          {getFirstWord} 찾으세요?
+        </p>
+        <p
+          ref={textRefs[1]}
+          className={`scroll_animation ${textVisible[1] ? "visible" : ""}`}
+        >
+          아직도 {getSecondWord} 걱정하세요?
+        </p>
+        <p
+          ref={textRefs[2]}
+          className={`scroll_animation ${textVisible[2] ? "visible" : ""}`}
+        >
+          이제 시간낭비 말고
+        </p>
+        <h3
+          ref={textRefs[3]}
+          className={`scroll_animation ${textVisible[3] ? "visible" : ""}`}
+        >
+          Sellect
+        </h3>
         <div
-          className={`box_section scroll_animation ${
-            boxVisible ? "visible" : ""
+          onClick={() => navigateReload("/about")}
+          ref={textRefs[4]}
+          className={`scroll_animation link_btn ${
+            textVisible[4] ? "visible" : ""
           }`}
         >
-          <h4 ref={boxRef}>FIND YOUR SELLEB</h4>
-          <KeywordBox />
+          HOW TO USE?
         </div>
+      </div>
 
-        <div className="randomText_section ">
-          <p
-            ref={textRefs[0]}
-            className={`scroll_animation ${textVisible[0] ? "visible" : ""}`}
-          >
-            {getFirstWord} 찾으세요?
-          </p>
-          <p
-            ref={textRefs[1]}
-            className={`scroll_animation ${textVisible[1] ? "visible" : ""}`}
-          >
-            아직도 {getSecondWord} 걱정하세요?
-          </p>
-          <p
-            ref={textRefs[2]}
-            className={`scroll_animation ${textVisible[2] ? "visible" : ""}`}
-          >
-            이제 시간낭비 말고
-          </p>
-          <h3
-            ref={textRefs[3]}
-            className={`scroll_animation ${textVisible[3] ? "visible" : ""}`}
-          >
-            Sellect
-          </h3>
-          <div
-            onClick={() => navigateReload("/about")}
-            ref={textRefs[4]}
-            className={`scroll_animation link_btn ${
-              textVisible[4] ? "visible" : ""
-            }`}
-          >
-            HOW TO USE?
-          </div>
-        </div>
+      <CardBox title="FITTING MODEL FEMALE" cardKeyword="FittingModelFeMale" />
 
-        <CardBox
-          title="FITTING MODEL FEMALE"
-          cardKeyword="FittingModelFeMale"
-        />
-
-        <CardBox title="FITTING MODEL MALE" cardKeyword="FittingModelMale" />
-      </Container>
+      <CardBox title="FITTING MODEL MALE" cardKeyword="FittingModelMale" />
     </MainLayout>
   );
 };

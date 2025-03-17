@@ -1,9 +1,5 @@
-.edit_profile {
-  margin-top: 1em;
+.selleb_edit_profile {
   width: 100%;
-  max-width: 1230px;
-  margin-left: auto;
-  margin-right: auto;
 
   & header {
     display: flex;
@@ -25,32 +21,21 @@
   }
 }
 
-.edit_main_profile {
+.selleb_edit_main_profile {
   width: 100%;
   display: flex;
   gap: 1em;
   margin-bottom: 3em;
 }
 
-.edit_main_img {
-  width: 35em;
-  height: 35em;
+.selleb_edit_main_img {
+  width: 33em;
+  height: 33.75em;
+  object-fit: cover;
+  object-position: top;
 }
 
-.edit_sub_img {
-  width: 13em;
-  height: 13em;
-}
-
-.edit_main_profile_img {
-  & img {
-    width: 35em;
-    height: 35em;
-    object-fit: cover;
-  }
-}
-
-.edit_profile_pictures {
+.selleb_edit_profile_pictures {
   display: flex;
   gap: 1em;
 
@@ -58,14 +43,20 @@
     height: 13em;
     width: 13em;
     object-fit: cover;
+    object-position: top;
   }
 }
 
-.work_scope {
+.selleb_edit_sub_img {
+  width: 13em;
+  height: 13em;
+}
+
+.selleb_work_scope {
   width: 100%;
 }
 
-.tags_list {
+.selleb_tags_list {
   & ul {
     display: flex;
     gap: 0.5em;
@@ -101,16 +92,21 @@
   }
 }
 
-.edit_profile_List {
+.selleb_edit_info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.selleb_edit_profile_List {
   display: flex;
   justify-content: center;
   gap: 3em;
-  padding: 2.3em 0em;
-  margin-top: 1em;
+  padding: 1.7em 0em;
   border: 2px solid var(--line-color);
 
   & dl {
-    gap: 3em;
+    gap: 2.5em;
     margin: 0;
 
     & dd {
@@ -119,9 +115,6 @@
       & div {
         border-bottom: none;
       }
-    }
-    & span {
-      bottom: -2.3em;
     }
   }
 
@@ -133,7 +126,7 @@
   }
 }
 
-.edit_profile_range {
+.selleb_edit_profile_range {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   justify-items: center;
@@ -147,12 +140,11 @@
   }
 }
 
-.edit_hourly_rangebar {
-  width: 16em;
+.selleb_edit_hourly_rangebar {
   position: relative;
 }
 
-.edit_hourly_rangebar::after {
+.selleb_edit_hourly_rangebar::after {
   content: "";
   width: 2px;
   height: 100%;
@@ -162,7 +154,7 @@
   position: absolute;
 }
 
-.edit_pay {
+.selleb_edit_pay {
   display: flex;
   align-items: center;
 
@@ -185,23 +177,7 @@
   }
 }
 
-#edit_hourlyPay_bar {
-  width: 100%;
-  cursor: pointer;
-  -webkit-appearance: none;
-  background-color: var(--text-color);
-  height: 0.2em;
-
-  &::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    background-color: var(--text-color);
-    width: 15px;
-    height: 15px;
-    border-radius: 50%;
-  }
-}
-
-.edit_career {
+.selleb_edit_career {
   display: flex;
   flex-direction: column;
   gap: 1em;
@@ -212,16 +188,6 @@
   }
 }
 
-.edit_star-icons {
+.selleb_edit_star-icons {
   font-size: 1.5em;
-}
-
-.edit_tab_img {
-  width: 45em;
-  height: 60em;
-
-  & img {
-    object-fit: cover;
-    margin-bottom: 1em;
-  }
 }

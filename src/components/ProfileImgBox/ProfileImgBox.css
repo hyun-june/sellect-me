@@ -1,4 +1,16 @@
 .profile_container {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
+
+  & img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+}
+
+.skeleton_profile_container {
+  border: 2px solid var(--line-color);
+  width: 25em;
+  height: 25em;
 }

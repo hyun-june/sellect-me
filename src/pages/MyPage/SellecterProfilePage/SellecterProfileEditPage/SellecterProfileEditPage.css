@@ -1,9 +1,5 @@
-.sellecter_profile {
-  margin-top: 1em;
+.sellecter_edit_profile {
   width: 100%;
-  max-width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
 
   & header {
     display: flex;
@@ -25,7 +21,7 @@
   }
 }
 
-.edit_main_profile {
+.sellecter_edit_main_profile {
   width: 100%;
   display: grid;
   grid-template-columns: 0.5fr 1fr;
@@ -33,57 +29,45 @@
   margin-bottom: 3em;
 }
 
-.edit_sellecter_img {
-  width: 23em;
-  height: 23em;
+.sellecter_edit_sellecter_img {
+  width: 25em;
+  height: 25em;
 }
 
-.profile_info_box {
-  width: 80%;
-  justify-self: end;
+.sellecter_edit_profile_info {
   border: 2px solid var(--line-color);
   display: flex;
-  justify-content: center;
-  align-items: center;
-}
 
-.profile_List {
-  display: flex;
-  padding: 1.5em 0em;
-  gap: 6em;
+  justify-content: center;
+  padding: 2.2em 0em;
+  gap: 5em;
 
   & dl {
     gap: 1.5em;
+
+    & dt {
+      margin: 0;
+    }
   }
 }
 
-.project_title {
-  font-size: 1em;
+.sellecter_edit_profile_List {
+  height: 100%;
+
+  & .tag_container {
+    overflow: hidden;
+  }
+}
+
+.sellecter_edit_project_title {
+  font-size: 1.2em;
   font-weight: 700;
   color: var(--text-color);
-  margin-bottom: 1em;
   display: block;
   white-space: nowrap;
 }
 
-.project {
-  display: flex;
-  flex-direction: column;
-  gap: 1em;
-  margin: 1em 0em;
-
-  & ul {
-    padding: 0;
-  }
-
-  & li {
-    list-style-type: "-";
-    margin-left: 1em;
-    padding-left: 0.5em;
-  }
-}
-
-.career {
+.sellecter_edit_career {
   display: flex;
   flex-direction: column;
   gap: 1em;
@@ -95,26 +79,20 @@
   }
 }
 
-.tags_list {
-  width: 6.5em;
-  display: flex;
-  flex-direction: column;
-
-  & .tag_container {
-    display: flex;
-    justify-content: center;
-  }
-
+.sellecter_edit_tags_list {
   & ul {
     display: flex;
     flex-direction: column;
     padding: 0em;
-    gap: 0.5em;
+    flex-wrap: wrap;
+    max-height: 10em;
 
     & li {
       list-style: none;
       position: relative;
       height: 2em;
+      margin-top: 0.5em;
+      width: max-content;
 
       & button {
         position: absolute;

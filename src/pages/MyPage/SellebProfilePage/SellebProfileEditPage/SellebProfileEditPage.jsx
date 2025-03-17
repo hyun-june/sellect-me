@@ -9,6 +9,7 @@ import AddCareer from "../../components/AddCareer/AddCareer";
 import AddDeleteTag from "../../../../components/AddDeleteTag/AddDeleteTag";
 import Button from "../../../../components/Button/Button";
 import "./SellebProfileEditPage.css";
+import MainLayout from "../../../../components/Layout/MainLayout/MainLayout";
 
 const testData = {
   height: "180",
@@ -187,7 +188,7 @@ const SellebProfileEditPage = () => {
       },
       {
         title: "커리어",
-        content: <AddCareer className="edit_career" />,
+        content: <AddCareer className="selleb_edit_career" />,
       },
     ],
   };
@@ -217,89 +218,89 @@ const SellebProfileEditPage = () => {
   };
 
   return (
-    <form className="edit_profile" onSubmit={handleSubmit(editSubmit)}>
-      <header>
-        <h3>My Profile</h3>
-        <nav>
-          <Button type="submit">save</Button>
-        </nav>
-      </header>
-      <section className="edit_main_profile">
-        <div className="edit_main_profile_img">
+    <MainLayout>
+      <form className="selleb_edit_profile" onSubmit={handleSubmit(editSubmit)}>
+        <header>
+          <h3>My Profile</h3>
+          <nav>
+            <Button type="submit">save</Button>
+          </nav>
+        </header>
+        <section className="selleb_edit_main_profile">
           <AddProfile
             index={-1}
             profileImg={mainImg}
             key="main_img"
             onImageChange={(newImg) => handleMainImgChange(newImg)}
-            className="edit_main_img"
+            className="selleb_edit_main_img"
           />
-        </div>
 
-        <div>
-          <div className="edit_profile_pictures">
-            {subImg.map((img, index) => (
-              <AddProfile
-                key={`sub_img_${index}`}
-                index={index}
-                profileImg={img}
-                onImageChange={(newImg) => handleImageChange(index, newImg)}
-                className="edit_sub_img"
-              />
-            ))}
-          </div>
-          <div className="edit_profile_List">
-            <ProfileInfoList list={profileData.profileInfoList} />
-            <ProfileInfoList list={profileData.threeSizeList} />
-            <ProfileInfoList list={profileData.sizeList} />
-            <ProfileInfoList list={profileData.colorList} />
-            <ProfileInfoList list={profileData.countryList} />
-          </div>
-        </div>
-      </section>
-      <section className="edit_profile_range">
-        <div className="edit_hourly_rangebar">
-          <div>
-            <h5>시간당 금액</h5>
-            <div className="edit_pay">
-              <span>1HR</span>
-
-              <div>
-                <FormInput
-                  id="pay"
-                  register={register}
-                  error={errors.pay}
-                  type="number"
+          <div className="selleb_edit_info">
+            <div className="selleb_edit_profile_pictures">
+              {subImg.map((img, index) => (
+                <AddProfile
+                  key={`sub_img_${index}`}
+                  index={index}
+                  profileImg={img}
+                  onImageChange={(newImg) => handleImageChange(index, newImg)}
+                  className="selleb_edit_sub_img"
                 />
-                <label htmlFor="pay">KRW</label>
+              ))}
+            </div>
+            <div className="selleb_edit_profile_List">
+              <ProfileInfoList list={profileData.profileInfoList} />
+              <ProfileInfoList list={profileData.threeSizeList} />
+              <ProfileInfoList list={profileData.sizeList} />
+              <ProfileInfoList list={profileData.colorList} />
+              <ProfileInfoList list={profileData.countryList} />
+            </div>
+          </div>
+        </section>
+        <section className="selleb_edit_profile_range">
+          <div className="selleb_edit_hourly_rangebar">
+            <div>
+              <h5>시간당 금액</h5>
+              <div className="selleb_edit_pay">
+                <span>1HR</span>
+
+                <div>
+                  <FormInput
+                    id="pay"
+                    register={register}
+                    error={errors.pay}
+                    type="number"
+                  />
+                  <label htmlFor="pay">KRW</label>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-        <div className="work_scope">
-          <h5>프로젝트 가능 범위</h5>
+          <div className="selleb_work_scope">
+            <h5>프로젝트 가능 범위</h5>
 
-          <AddDeleteTag
-            tags={tags}
-            defaultTags={defaultTags}
-            handleTagsChange={handleTagsChange}
-            className="tags_list"
-          />
-        </div>
-        <div className="flex_column gap-3em">
-          <div>
-            <h5>이동 가능 지역 범위</h5>
-            <span>서울</span>
+            <AddDeleteTag
+              tags={tags}
+              defaultTags={defaultTags}
+              handleTagsChange={handleTagsChange}
+              className="tags_list"
+            />
           </div>
-          <div>
-            <h5>저작권 사용기간</h5>
-            <span>1년</span>
+          <div className="flex_column gap-3em">
+            <div>
+              <h5>이동 가능 지역 범위</h5>
+              <span>서울</span>
+            </div>
+            <div>
+              <h5>저작권 사용기간</h5>
+              <span>1년</span>
+            </div>
           </div>
+        </section>
+        <div>
+          <CustomTabs items={profileData.tabItems} />
         </div>
-      </section>
-      <div>
-        <CustomTabs items={profileData.tabItems} />
-      </div>
-    </form>
+      </form>
+    </MainLayout>
   );
 };
 

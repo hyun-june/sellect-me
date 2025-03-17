@@ -11,8 +11,8 @@
     border: 1px solid var(--line-color);
     padding: 1em;
     resize: none;
-    height: auto;
     overflow: hidden;
+    min-height: 17em;
   }
 
   & button {

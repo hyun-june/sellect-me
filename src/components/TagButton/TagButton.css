@@ -1,13 +1,19 @@
 .tag_container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5em;
-    border: 2px solid var(--line-color);
-    border-radius: 8px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5em;
+  /* border: 2px solid var(--line-color); */
 
-    & span {
-        text-align: center;
-        color: var(--text-color);
-        padding: 0.3em 1.5em;
-    }
+  width: max-content;
+
+  & span {
+    color: var(--text-color);
+    width: 5em;
+    height: 2em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    border: 2px solid var(--line-color);
+  }
 }

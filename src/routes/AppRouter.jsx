@@ -3,13 +3,22 @@ import MainPage from "../pages/MainPage/MainPage";
 import AboutPage from "../pages/AboutPage/AboutPage";
 import { useEffect } from "react";
 import ScrollToTop from "./../components/ScrollToTop/ScrollToTop";
+import ConFirmPage from "../pages/ConFirmPage/ConFirmPage";
+import MyPage from "../pages/MyPage/Mypage";
+import SellebProfilePage from "./../pages/MyPage/SellebProfilePage/SellebProfilePage";
+import SellecterProfilePage from "./../pages/MyPage/SellecterProfilePage/SellecterProfilePage";
+import SellebProfileEditPage from "./../pages/MyPage/SellebProfilePage/SellebProfileEditPage/SellebProfileEditPage";
+import SellecterProfileEditPage from "./../pages/MyPage/SellecterProfilePage/SellecterProfileEditPage/SellecterProfileEditPage";
+import QuotationPage from "./../pages/QuotationPage/QuotationPage";
+import SignUpPage from "../pages/SignUpPage/SignUpPage";
+import SignUpSellebPage from "./../pages/SignUpPage/SignUpSellebPage/SignUpSellebPage";
+import SignUpSellecterPage from "./../pages/SignUpPage/SignUpSellecterPage/SignUpSellecterPage";
 
 const AppRouter = () => {
   const location = useLocation();
   // 새로고침
   useEffect(() => {
     if (performance.getEntriesByType("navigation")[0]?.type === "reload") {
-      console.log(performance);
       window.location.href = location.pathname;
     }
   }, [location]);
@@ -19,6 +28,21 @@ const AppRouter = () => {
       {/* <ScrollToTop/> */}
       <Route path="/" element={<MainPage />} />
       <Route path="/about" element={<AboutPage />} />
+      <Route path="/confirm" element={<ConFirmPage />} />
+      <Route path="/mypage" element={<MyPage />} />
+      <Route path="/mypage/selleb" element={<SellebProfilePage />} />
+      <Route path="/mypage/selleb/edit" element={<SellebProfileEditPage />} />
+      <Route path="/mypage/sellecter" element={<SellecterProfilePage />} />
+      <Route
+        path="/mypage/sellecter/edit"
+        element={<SellecterProfileEditPage />}
+      />
+
+      <Route path="/quotation" element={<QuotationPage />} />
+
+      <Route path="/signup" element={<SignUpPage />} />
+      <Route path="/signup/selleb" element={<SignUpSellebPage />} />
+      <Route path="/signup/sellecter" element={<SignUpSellecterPage />} />
     </Routes>
   );
 };

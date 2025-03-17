@@ -9,6 +9,7 @@ import SellebForm5 from "./components/SellebForm5/SellebForm5";
 import ConsentForm from "../components/ConsentForm/ConsentForm";
 import CompleteForm from "../components/CompleteForm/CompleteForm";
 import "./SignUpSellebPage.css";
+import MainLayout from "./../../../components/Layout/MainLayout/MainLayout";
 
 const tabList = [
   "개인 정보",
@@ -44,7 +45,7 @@ const SignUpSellebPage = () => {
   };
 
   return (
-    <Container>
+    <MainLayout>
       <Tabs selectedIndex={currentTabIndex} onSelect={handleTabSelect}>
         <TabList className="tabs_list">
           {tabList.map((item, index) => (
@@ -114,7 +115,7 @@ const SignUpSellebPage = () => {
           </TabPanel>
         </div>
       </Tabs>
-    </Container>
+    </MainLayout>
   );
 };
 

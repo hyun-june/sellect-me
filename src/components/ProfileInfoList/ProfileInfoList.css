@@ -1,19 +1,26 @@
 .profile_inner_List {
-    & dl {
-        padding: 0;
-        display: flex;
-        flex-direction: column;
+  & dl {
+    padding: 0;
+    display: flex;
+    flex-direction: column;
 
-        & dt {
-            font-size: 1em;
-            margin-bottom: 0.1em;
-            color: var(--text-color);
-        }
-
-        & dd {
-            font-size: 0.9em;
-            margin-bottom: 0;
-            color: var(--text-sub-color);
-        }
+    & dt {
+      font-size: 1.2em;
+      margin-bottom: 0.5em;
+      color: var(--text-color);
     }
+
+    & dd {
+      font-size: 1em;
+      margin-bottom: 0;
+      color: var(--text-sub-color);
+
+      display: flex;
+      max-width: 15em;
+      flex-wrap: wrap;
+      word-break: break-word;
+      overflow-wrap: break-word;
+      white-space: normal;
+    }
+  }
 }
