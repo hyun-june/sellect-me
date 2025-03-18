@@ -1,8 +1,5 @@
-"use client";
 import { useEffect, useRef, useState } from "react";
-
 import { FaRegTrashAlt } from "react-icons/fa";
-
 import "./SignBox.css";
 
 const SignBox = ({ id, saveSign, title }) => {
@@ -61,7 +58,7 @@ const SignBox = ({ id, saveSign, title }) => {
 
   return (
     <div className="sign_container">
-      <div className="sign_title">{title}</div>
+      <span className="sign_title">{title}</span>
 
       <canvas
         id={id}

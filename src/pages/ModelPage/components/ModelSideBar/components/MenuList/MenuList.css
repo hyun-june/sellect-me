@@ -1,0 +1,42 @@
+.menu_list_title {
+  font-weight: bold;
+}
+
+.menu_list_arrow {
+  font-size: 12px;
+  padding-left: 0.3em;
+
+  & span {
+    display: inline-block;
+    transform: rotate(-90deg);
+  }
+}
+
+.menu_list_arrow:hover {
+  cursor: pointer;
+}
+
+.menu_list_category {
+  list-style: none;
+  padding: 0;
+  opacity: 0;
+  overflow: hidden;
+  max-height: 0;
+  transition: opacity 0.3s ease-out;
+
+  & li {
+    padding-left: 0.5em;
+    margin-bottom: 1em;
+  }
+}
+
+.menu_list_category.open {
+  margin: 0.5em 0 0 0;
+  max-height: 300px;
+  opacity: 1;
+  color: var(--text-sub-color);
+}
+
+.menu_list_category.open li {
+  margin-bottom: 1em;
+}
