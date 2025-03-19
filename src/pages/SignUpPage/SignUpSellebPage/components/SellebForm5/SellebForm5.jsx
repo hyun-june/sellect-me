@@ -66,7 +66,7 @@ const SellebForm5 = ({ goToNextTab, goToPrevTab }) => {
       </div>
 
       {payValue !== 0 ? (
-        <div className="pay_section">
+        <div className="show_payvalue">
           <strong>pay</strong>: <div>{payValue}</div>
         </div>
       ) : (

@@ -1,8 +1,24 @@
 .sidebar_container {
   border: 3px solid var(--text-sub-color);
   position: absolute;
-  left: 0;
+  width: 12em;
+  left: -15%;
   max-height: max-content;
   padding: 1em;
   border-radius: 15px;
+  background-color: white;
 }
+
+/* .sidebar_container {
+  border: 3px solid var(--text-sub-color);
+  position: fixed;
+  left: 50px;
+  top: 100px;
+  bottom: 20px;
+
+  max-height: max-content;
+  padding: 1em;
+  border-radius: 15px;
+  background-color: white;
+  z-index: 1000;
+} */

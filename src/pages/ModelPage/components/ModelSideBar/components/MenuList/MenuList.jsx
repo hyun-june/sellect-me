@@ -1,6 +1,4 @@
 import { useState } from "react";
-import { RxTriangleDown } from "react-icons/rx";
-import { RxTriangleUp } from "react-icons/rx";
 import "./MenuList.css";
 
 const MenuList = ({ title, list, ...props }) => {
@@ -15,7 +13,7 @@ const MenuList = ({ title, list, ...props }) => {
       <div className="menu_list_title">
         {title}
         <span className="menu_list_arrow" onClick={handleMenu}>
-          {isOpen ? "▼" : <span>▼</span>}
+          {isOpen ? <span className="right_triangle">▼</span> : "▼"}
         </span>
       </div>
       <ul className={`menu_list_category ${isOpen ? "open" : ""}`}>

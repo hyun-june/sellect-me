@@ -282,7 +282,7 @@ const SellebProfileEditPage = () => {
               tags={tags}
               defaultTags={defaultTags}
               handleTagsChange={handleTagsChange}
-              className="tags_list"
+              className="selleb_tags_list"
             />
           </div>
           <div className="flex_column gap-3em">
