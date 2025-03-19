@@ -3,6 +3,8 @@ import "./ModelDetailSideBar.css";
 import DetailRangeBar from "../DetailRangeBar/DetailRangeBar";
 
 const locationList = ["서울", "경기", "강원", "충청", "대구"];
+const hairColorList = ["BLACK", "BROWON"];
+const eyeColorList = ["BLACK", "BROWON"];
 
 const ModelDetailSideBar = () => {
   const {
@@ -18,6 +20,7 @@ const ModelDetailSideBar = () => {
   const handleDetailData = (formData) => {
     console.log("Detail : ", formData);
   };
+
   return (
     <form
       className="sidebar_detail_container"
@@ -60,8 +63,66 @@ const ModelDetailSideBar = () => {
             <span>▼</span>
           </div>
         </div>
-        <DetailRangeBar title="test1" setValue={setValue} />
-        <DetailRangeBar title="test2" setValue={setValue} />
+        <DetailRangeBar
+          title="금액(1hr)"
+          min="10000"
+          max="100000"
+          step="10000"
+          setValue={setValue}
+          unit="원"
+        />
+        <span style={{ color: "#D84315" }}>
+          <strong>DETAIL</strong>
+        </span>
+        <div className="range_bar_section">
+          <DetailRangeBar
+            title="HEIGHT"
+            min="150"
+            max="200"
+            step="1"
+            setValue={setValue}
+            unit="cm"
+          />
+          <DetailRangeBar
+            title="SHOES"
+            min="200"
+            max="300"
+            step="5"
+            setValue={setValue}
+            unit="mm"
+          />
+        </div>
+
+        <div className="detail_select_color">
+          <label>HAIR COLOR</label>
+          <div>
+            <select name="select_hair_color" {...register("select_hair_color")}>
+              <option value=""></option>
+              {hairColorList.map((item, index) => (
+                <option key={index} value={item}>
+                  {item}
+                </option>
+              ))}
+            </select>
+            <span>▼</span>
+          </div>
+        </div>
+
+        <div className="detail_select_color">
+          <label>EYE COLOR</label>
+          <div>
+            <select name="select_eyes_color" {...register("select_eyes_color")}>
+              <option value=""></option>
+              {eyeColorList.map((item, index) => (
+                <option key={index} value={item}>
+                  {item}
+                </option>
+              ))}
+            </select>
+            <span>▼</span>
+          </div>
+        </div>
+
         <button>dd</button>
       </div>
     </form>

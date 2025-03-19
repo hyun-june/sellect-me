@@ -1,7 +1,8 @@
 import { useState } from "react";
 import "./MenuList.css";
 
-const MenuList = ({ title, list, ...props }) => {
+const MenuList = ({ ...props }) => {
+  const { title, list } = props;
   const [isOpen, setIsOpen] = useState(false);
 
   const handleMenu = () => {
