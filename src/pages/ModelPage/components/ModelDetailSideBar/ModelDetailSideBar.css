@@ -1,6 +1,6 @@
 .sidebar_detail_container {
   border: 3px solid var(--text-sub-color);
-  width: 20em;
+  width: 12em;
   max-height: max-content;
   /* padding: 2em; */
   border-radius: 15px;
@@ -20,7 +20,8 @@
 }
 
 .sidebar_detail_inner {
-  width: 14em;
+  width: 100%;
+  padding: 0em 1em;
   gap: 2em;
   display: flex;
   flex-direction: column;

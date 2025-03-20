@@ -2,6 +2,7 @@ import MainLayout from "../../../components/Layout/MainLayout/MainLayout";
 import ModelDetailSideBar from "../components/ModelDetailSideBar/ModelDetailSideBar";
 import ModelSideBar from "../components/ModelSideBar/ModelSideBar";
 import "./FittingModelPage.css";
+import { IoIosArrowDown } from "react-icons/io";
 
 const fittingMenu = {
   모델: [
@@ -23,8 +24,21 @@ const fittingMenu = {
 const FittingModelPage = () => {
   return (
     <MainLayout>
-      <ModelSideBar data={fittingMenu} />
-      <ModelDetailSideBar />
+      <div className="model_container">
+        <div className="model_sidebar">
+          <ModelSideBar data={fittingMenu} />
+          <ModelDetailSideBar />
+        </div>
+        <div className="model_main_section">
+          <h3>FITTING MODEL</h3>
+          <div className="model_filter">
+            <span>1,004 selleb</span>
+            <span>
+              업데이트순 <IoIosArrowDown />
+            </span>
+          </div>
+        </div>
+      </div>
     </MainLayout>
   );
 };

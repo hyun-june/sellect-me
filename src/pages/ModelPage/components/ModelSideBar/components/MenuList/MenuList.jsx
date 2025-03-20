@@ -14,7 +14,7 @@ const MenuList = ({ ...props }) => {
       <div className="menu_list_title">
         {title}
         <span className="menu_list_arrow" onClick={handleMenu}>
-          {isOpen ? <span className="right_triangle">▼</span> : "▼"}
+          {isOpen ? "▶" : "▼"}
         </span>
       </div>
       <ul className={`menu_list_category ${isOpen ? "open" : ""}`}>

@@ -5,11 +5,6 @@
 .menu_list_arrow {
   font-size: 12px;
   padding-left: 0.3em;
-
-  & .right_triangle {
-    display: inline-block;
-    transform: rotate(-90deg);
-  }
 }
 
 .menu_list_arrow:hover {

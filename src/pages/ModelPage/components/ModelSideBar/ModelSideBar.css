@@ -1,8 +1,8 @@
 .sidebar_container {
   border: 3px solid var(--text-sub-color);
-  position: absolute;
+  /* position: absolute;
+  left: -15%; */
   width: 12em;
-  left: -15%;
   max-height: max-content;
   padding: 1em;
   border-radius: 15px;

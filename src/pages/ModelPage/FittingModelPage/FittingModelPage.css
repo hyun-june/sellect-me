@@ -1,1 +1,19 @@
+.model_container {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 0.5fr 1.5fr;
+}
 
+.model_sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+}
+
+.model_main_section {
+}
+
+.model_filter {
+  display: flex;
+  justify-content: space-between;
+}

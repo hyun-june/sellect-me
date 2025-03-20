@@ -1,6 +1,7 @@
 import { useForm } from "react-hook-form";
-import "./ModelDetailSideBar.css";
 import DetailRangeBar from "../DetailRangeBar/DetailRangeBar";
+import "./ModelDetailSideBar.css";
+import { useEffect } from "react";
 
 const locationList = ["서울", "경기", "강원", "충청", "대구"];
 const hairColorList = ["BLACK", "BROWON"];
@@ -11,11 +12,18 @@ const ModelDetailSideBar = () => {
     register,
     handleSubmit,
     setValue,
-    getValues,
+    watch,
     formState: { errors },
   } = useForm({
     shouldUnregister: true,
   });
+
+  // 주석 풀면 버튼 없이 값 바뀔 때 마다 값 찍힘
+  // const formData = watch();
+
+  // useEffect(() => {
+  //   console.log("Detail :", formData);
+  // }, [formData]);
 
   const handleDetailData = (formData) => {
     console.log("Detail : ", formData);
