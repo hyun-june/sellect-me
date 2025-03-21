@@ -17,7 +17,7 @@
   opacity: 0;
   transform: scaleY(0);
   transform-origin: top;
-  transition: all 0.3s ease-out;
+  transition: all 0.2s ease-out;
   list-style: none;
   width: max-content;
   position: absolute;

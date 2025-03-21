@@ -10,7 +10,9 @@ const ModelCard = ({ ...props }) => {
   };
   return (
     <div className="model_card">
-      <img src={img} />
+      <a href="/">
+        <img src={img} />
+      </a>
       <span onClick={handleLiked} className={`${liked ? "liked_color" : ""}`}>
         ★
       </span>

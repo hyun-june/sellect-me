@@ -1,13 +1,16 @@
-import './Button.css'
+import "./Button.css";
 
-const Button = ({ children, ...props }) => {
-    return (
-        <div>
-            <button className="custom_button" {...props}>
-                <div>{children}</div>
-            </button>
-        </div>
-    )
-}
+const buttonTheme = {
+  normal: "normal",
+  black: "black",
+};
 
-export default Button
+const Button = ({ children, theme = "normal", ...props }) => {
+  return (
+    <button className={`custom_button ${buttonTheme[theme]}`} {...props}>
+      <div>{children}</div>
+    </button>
+  );
+};
+
+export default Button;
