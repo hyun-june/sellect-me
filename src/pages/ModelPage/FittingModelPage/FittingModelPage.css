@@ -1,7 +1,7 @@
 .model_container {
   width: 100%;
-  display: grid;
-  grid-template-columns: 0.5fr 1.5fr;
+  display: flex;
+  gap: 2em;
 }
 
 .model_sidebar {
@@ -11,9 +11,49 @@
 }
 
 .model_main_section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+
+  & h3 {
+    font-weight: bold;
+    letter-spacing: 1.5px;
+  }
 }
 
 .model_filter {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  margin: 1em 0em;
+
+  & > span {
+    font-weight: bold;
+  }
+}
+
+.model_dropdown {
+  .dropdown_container {
+    width: 7em;
+  }
+  .dropdown_select {
+    border-bottom: 1px solid var(--line-color);
+    padding: 0.5em;
+    text-align: center;
+  }
+  .dropdown_list {
+    & li {
+      text-align: center;
+      cursor: pointer;
+    }
+  }
+}
+
+.model_card_section {
+  /* display: grid;
+  grid-template-columns: repeat(3, 1fr); */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  flex: 1;
 }

@@ -1,0 +1,30 @@
+.model_card {
+  position: relative;
+  & img {
+    width: 280px;
+    height: 350px;
+    object-fit: cover;
+    object-position: top;
+    margin-top: 0.5em;
+  }
+
+  & h5 {
+    text-align: center;
+    margin: 0.5em 0em 1em 0em;
+  }
+
+  & span {
+    color: transparent;
+    -webkit-text-stroke: 1px var(--text-color);
+    position: absolute;
+    top: 5%;
+    right: 5%;
+    font-size: 1.5em;
+    cursor: pointer;
+    user-select: none;
+    &.liked_color {
+      color: var(--text-point-color);
+      -webkit-text-stroke: 1px var(--text-point-color);
+    }
+  }
+}
