@@ -2,17 +2,15 @@
   width: 100%;
   display: flex;
   gap: 2em;
-  position: relative;
-  justify-content: flex-end;
 }
 
 .model_sidebar {
+  position: sticky;
+  top: 1em;
+  align-self: start;
   display: flex;
   flex-direction: column;
   gap: 2em;
-  position: absolute;
-  left: -10em;
-  transition: top 0.3s ease-out;
 }
 
 .model_main_section {

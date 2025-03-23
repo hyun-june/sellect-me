@@ -103,32 +103,14 @@ const filterList = ["업데이트순", "거리순", "가격 낮은 순"];
 
 const FittingModelPage = () => {
   const [cardCount, setCardCount] = useState(12);
-  const [sideBarPosition, setSideBarPosition] = useState(0);
-
-  const handelScroll = () => {
-    const settingBar = window.scrollY;
-    const barPosition = 800 > settingBar ? settingBar : settingBar - 50;
-
-    setSideBarPosition(barPosition);
-
-    setSideBarPosition(barPosition);
-  };
-
-  useEffect(() => {
-    window.addEventListener("scroll", handelScroll);
-    return () => {
-      window.removeEventListener("scroll", handelScroll);
-    };
-  }, []);
 
   const handleMore = () => {
-    setCardCount((prev) => prev + 3);
+    setCardCount((prev) => prev + 6);
   };
-  // 사이드바를 다피면 top요소가 부모요소를 넘치면서 무한스크롤이 되버림 -> 다른 방법 생각 or 수정해야함
   return (
     <MainLayout>
       <div className="model_container">
-        <div className="model_sidebar" style={{ top: sideBarPosition }}>
+        <div className="model_sidebar">
           <ModelSideBar data={fittingMenu} />
           <ModelDetailSideBar menuType="addColor" />
         </div>
