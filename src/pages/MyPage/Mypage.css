@@ -1,0 +1,43 @@
+.mypage_container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+
+  & img {
+    width: 250px;
+    height: 300px;
+    border: 1px solid red;
+    object-fit: cover;
+    object-position: top;
+  }
+}
+
+.mypage_inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr 0.2fr;
+  border: 1px solid gray;
+}
+
+.test {
+  border-right: 3px solid red;
+  display: flex;
+}
+
+.mypage_box {
+  width: 100px;
+  height: 50px;
+  background-color: #edf5fb;
+  color: red;
+}
+
+.mypage_boox {
+  width: 100%;
+  height: 50px;
+  color: blue;
+  padding-left: 2em;
+}
+
+.dddd {
+  border: 1px solid red;
+}
