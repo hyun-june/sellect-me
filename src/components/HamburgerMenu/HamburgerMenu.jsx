@@ -14,6 +14,8 @@ const HamburgerMenu = () => {
     { name: "mypage/sellecter/edit", address: "/mypage/sellecter/edit" },
     { name: "quotation", address: "/quotation" },
     { name: "signup", address: "/signup" },
+    { name: "model/fitting", address: "/model/fitting" },
+    { name: "model/homeshopping", address: "/model/homeshopping" },
   ];
   return (
     <nav className="hamburger-section">

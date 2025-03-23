@@ -13,8 +13,7 @@ import QuotationPage from "./../pages/QuotationPage/QuotationPage";
 import SignUpPage from "../pages/SignUpPage/SignUpPage";
 import SignUpSellebPage from "./../pages/SignUpPage/SignUpSellebPage/SignUpSellebPage";
 import SignUpSellecterPage from "./../pages/SignUpPage/SignUpSellecterPage/SignUpSellecterPage";
-import FittingModelPage from "../pages/ModelPage/FittingModelPage/FittingModelPage";
-import HomeShoppingPage from "../pages/ModelPage/HomeShoppingPage/HomeShoppingPage";
+import ModelPage from "../pages/ModelPage/ModelPage";
 
 const AppRouter = () => {
   const location = useLocation();
@@ -47,8 +46,8 @@ const AppRouter = () => {
       <Route path="/signup/sellecter" element={<SignUpSellecterPage />} />
 
       <Route path="/model">
-        <Route path="fitting" element={<FittingModelPage />} />
-        <Route path="homeshopping" element={<HomeShoppingPage />} />
+        <Route path="fitting" element={<ModelPage />} />
+        <Route path="homeshopping" element={<ModelPage />} />
       </Route>
     </Routes>
   );

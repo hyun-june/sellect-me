@@ -1,7 +1,6 @@
 import { useForm } from "react-hook-form";
 import DetailRangeBar from "../DetailRangeBar/DetailRangeBar";
 import "./ModelDetailSideBar.css";
-import { useEffect } from "react";
 
 const locationList = ["서울", "경기", "강원", "충청", "대구"];
 const hairColorList = ["BLACK", "BROWON"];
@@ -144,7 +143,7 @@ const ModelDetailSideBar = ({ menuType = "basic", ...props }) => {
           ""
         )}
 
-        <button>dd</button>
+        <button>적용</button>
       </div>
     </form>
   );

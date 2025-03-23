@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { IoIosArrowDown } from "react-icons/io";
 import "./CustomDropdown.css";
 
@@ -15,6 +15,10 @@ const CustomDropdown = ({ ...props }) => {
     setSelectDropdown(value);
     setIsOpen(false);
   };
+
+  useEffect(() => {
+    console.log(selectDropdown);
+  }, [selectDropdown]);
 
   return (
     <div {...props}>

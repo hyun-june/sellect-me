@@ -1,7 +1,7 @@
 import MenuList from "./components/MenuList/MenuList";
 import "./ModelSideBar.css";
-
 const ModelSideBar = ({ data }) => {
+  console.log("dd", data);
   return (
     <div>
       <div className="sidebar_container">
