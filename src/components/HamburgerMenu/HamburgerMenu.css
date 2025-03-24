@@ -54,9 +54,17 @@
   justify-content: center;
   flex-wrap: wrap;
   gap: 1em;
-  opacity: 1; /* 메뉴 아이템의 투명도를 설정 */
+  opacity: 1; /* 지워도됨 */
   transform: translateY(0); /* 초기 변형 설정 */
   transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out; /* 애니메이션 적용 */
+
+  & a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+  }
 }
 
 .menu-list li {
