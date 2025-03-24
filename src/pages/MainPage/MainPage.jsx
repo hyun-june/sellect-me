@@ -9,6 +9,20 @@ import "./MainPage.css";
 const firstWord = ["모델", "배우", "쇼호스트", "인플루언서"];
 const secondWord = ["출연료", "저작권", "초상권"];
 
+const menu = [
+  { name: "Home", address: "/" },
+  { name: "about", address: "/about" },
+  { name: "confirm", address: "/confirm" },
+  { name: "mypage/selleb", address: "/mypage/selleb" },
+  { name: "mypage/sellecter", address: "/mypage/sellecter" },
+  { name: "mypage/selleb/edit", address: "/mypage/selleb/edit" },
+  { name: "mypage/sellecter/edit", address: "/mypage/sellecter/edit" },
+  { name: "quotation", address: "/quotation" },
+  { name: "signup", address: "/signup" },
+  { name: "model/fitting", address: "/model/fitting" },
+  { name: "model/homeshopping", address: "/model/homeshopping" },
+];
+
 const MainPage = () => {
   const boxRef = useRef();
   const [boxVisible, setBoxVisible] = useState(false);
@@ -109,7 +123,7 @@ const MainPage = () => {
 
   return (
     <MainLayout>
-      <HamburgerMenu />
+      <HamburgerMenu menu={menu} />
       <div>
         <div className="main_video">
           <video

@@ -2,21 +2,10 @@ import { useState } from "react";
 import "./HamburgerMenu.css";
 import { Link } from "react-router-dom";
 
-const HamburgerMenu = () => {
+const HamburgerMenu = ({ ...props }) => {
   const [menuToggle, setMenuToggle] = useState(false);
-  const menu = [
-    { name: "Home", address: "/" },
-    { name: "about", address: "/about" },
-    { name: "confirm", address: "/confirm" },
-    { name: "mypage/selleb", address: "/mypage/selleb" },
-    { name: "mypage/sellecter", address: "/mypage/sellecter" },
-    { name: "mypage/selleb/edit", address: "/mypage/selleb/edit" },
-    { name: "mypage/sellecter/edit", address: "/mypage/sellecter/edit" },
-    { name: "quotation", address: "/quotation" },
-    { name: "signup", address: "/signup" },
-    { name: "model/fitting", address: "/model/fitting" },
-    { name: "model/homeshopping", address: "/model/homeshopping" },
-  ];
+  const { menu } = props;
+
   return (
     <nav className="hamburger-section">
       <span
@@ -31,9 +20,12 @@ const HamburgerMenu = () => {
         {menuToggle && (
           <ul className={`menu-list`}>
             {menu.map((item) => (
-              <li>
-                <Link to={item.address}>{item.name}</Link>
-              </li>
+              <a href={item.address}>
+                <li>{item.name}</li>
+              </a>
+              // <li>
+              //   <Link to={item.address}>{item.name}</Link>
+              // </li>
             ))}
           </ul>
         )}
