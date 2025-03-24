@@ -1,20 +1,20 @@
 .selleb_edit_profile {
   width: 100%;
 
-  & header {
+  header {
     display: flex;
     justify-content: space-between;
 
-    & nav {
+    nav {
       display: flex;
       margin-bottom: 0.5em;
 
-      & button {
+      button {
         font-weight: bold;
       }
     }
 
-    & h3 {
+    h3 {
       letter-spacing: 3px;
       font-weight: 600;
     }
@@ -39,7 +39,7 @@
   display: flex;
   gap: 1em;
 
-  & img {
+  img {
     height: 13em;
     width: 13em;
     object-fit: cover;
@@ -57,17 +57,17 @@
 }
 
 .selleb_tags_list {
-  & ul {
+  ul {
     display: flex;
     gap: 0.5em;
     padding: 0;
     flex-wrap: wrap;
 
-    & li {
+    li {
       list-style: none;
       position: relative;
 
-      & button {
+      button {
         position: absolute;
         right: 0em;
         top: 0.3em;
@@ -77,16 +77,16 @@
     }
   }
 
-  & input {
+  input {
     width: 5em;
     border: none;
     border-bottom: 1px solid var(--text-sub-color);
   }
 
-  & input::placeholder {
+  input::placeholder {
     font-size: 0.8em;
   }
-  & button:last-child {
+  button:last-child {
     border: none;
     background-color: inherit;
   }
@@ -105,20 +105,20 @@
   padding: 1.7em 0em;
   border: 2px solid var(--line-color);
 
-  & dl {
+  dl {
     gap: 2.5em;
     margin: 0;
 
-    & dd {
+    dd {
       height: 2em;
 
-      & div {
+      div {
         border-bottom: none;
       }
     }
   }
 
-  & input {
+  input {
     width: 5em;
     height: 2em;
     border: none;
@@ -134,7 +134,7 @@
   border-top: 2px solid var(--line-color);
   padding: 3em 0em;
 
-  & h5 {
+  h5 {
     color: var(--text-color);
     font-weight: bold;
   }
@@ -158,17 +158,17 @@
   display: flex;
   align-items: center;
 
-  & span:first-child {
+  span:first-child {
     font-weight: bold;
     color: var(--text-sub-color);
   }
-  & div {
+  div {
     display: flex;
     border-bottom: none;
     align-items: center;
     justify-content: flex-end;
 
-    & input {
+    input {
       text-align: center;
       width: 50%;
       border: none;
@@ -182,7 +182,7 @@
   flex-direction: column;
   gap: 1em;
 
-  & li {
+  li {
     list-style-type: "-";
     padding-left: 0.5em;
   }

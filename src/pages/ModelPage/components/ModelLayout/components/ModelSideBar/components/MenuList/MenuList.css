@@ -19,7 +19,7 @@
   max-height: 0;
   transition: opacity 0.3s ease-out;
 
-  & li {
+  li {
     padding-left: 0.5em;
     margin-bottom: 1em;
   }

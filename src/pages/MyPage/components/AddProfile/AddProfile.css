@@ -3,7 +3,7 @@
   height: 100%;
   border: 1px solid var(--text-sub-color);
 
-  & label {
+  label {
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -14,7 +14,7 @@
     color: var(--text-sub-color);
   }
 
-  & input {
+  input {
     display: none;
   }
 }
@@ -23,7 +23,7 @@
   position: relative;
   border: 1px solid var(--text-sub-color);
 
-  & button {
+  button {
     position: absolute;
     top: 0;
     right: 0;

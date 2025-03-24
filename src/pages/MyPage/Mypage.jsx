@@ -54,8 +54,8 @@ const MyPage = () => {
           </div>
         </section>
 
-        <section className="mypage_graph">
-          <div>내 활동 그래프</div>
+        <section className="mypage_graph_section">
+          <h5>내 활동 그래프</h5>
           <div>
             <LineGraph />
           </div>

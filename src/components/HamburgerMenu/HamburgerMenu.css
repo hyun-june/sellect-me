@@ -58,7 +58,7 @@
   transform: translateY(0); /* 초기 변형 설정 */
   transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out; /* 애니메이션 적용 */
 
-  & a {
+  a {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -70,4 +70,8 @@
 .menu-list li {
   margin: 0px 20px;
   transition: transform 0.3s ease-in-out; /* 개별 메뉴 아이템의 애니메이션 */
+}
+
+.dd {
+  border: none;
 }

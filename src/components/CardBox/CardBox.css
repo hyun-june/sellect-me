@@ -8,14 +8,14 @@
   display: flex;
   margin: 1em;
 
-  & h4 {
+  h4 {
     padding: 0.5em 1.5em;
     position: relative;
     font-weight: bold;
     margin: 0;
   }
 
-  & h4::before {
+  h4::before {
     border-top: 3px solid var(--line-color);
     border-left: 3px solid var(--line-color);
     content: "";
@@ -26,7 +26,7 @@
     height: 20px;
   }
 
-  & h4::after {
+  h4::after {
     border-bottom: 3px solid var(--line-color);
     border-right: 3px solid var(--line-color);
     content: "";
@@ -37,17 +37,17 @@
     height: 20px;
   }
 
-  & span {
+  span {
     display: flex;
     align-items: flex-end;
     margin-left: 1em;
   }
 
-  & a {
+  a {
     color: var(--line-color);
   }
 
-  & a:hover {
+  a:hover {
     color: var(--text-color);
   }
 }

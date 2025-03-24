@@ -1,4 +1,3 @@
-import { Container } from "react-bootstrap";
 import { useState } from "react";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import SellebForm1 from "./components/SellebForm1/SellebForm1";
@@ -8,8 +7,8 @@ import SellebForm4 from "./components/SellebForm4/SellebForm4";
 import SellebForm5 from "./components/SellebForm5/SellebForm5";
 import ConsentForm from "../components/ConsentForm/ConsentForm";
 import CompleteForm from "../components/CompleteForm/CompleteForm";
-import "./SignUpSellebPage.css";
 import MainLayout from "./../../../components/Layout/MainLayout/MainLayout";
+import "./SignUpSellebPage.css";
 
 const tabList = [
   "개인 정보",

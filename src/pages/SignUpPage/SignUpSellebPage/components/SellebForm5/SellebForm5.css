@@ -5,24 +5,24 @@
   align-items: center;
   gap: 1em;
 
-  & p {
+  p {
     margin: 0;
     color: var(--text-color);
     line-height: 1.3em;
   }
 
-  & h5 {
+  h5 {
     color: var(--text-color);
     font-weight: bold;
   }
 
-  & span {
+  span {
     color: var(--text-color);
     font-weight: bold;
     padding: 0.5em 0em;
   }
 
-  & input {
+  input {
     appearance: none;
   }
 }
@@ -36,11 +36,11 @@
   justify-content: center;
   color: var(--text-sub-color);
 
-  & strong {
+  strong {
     margin-right: 0.5em;
   }
 
-  & div {
+  div {
     margin-top: 0.1em;
     padding-left: 0.5em;
   }
@@ -56,11 +56,11 @@
   justify-content: space-around;
   width: 100%;
 
-  & label {
+  label {
     cursor: pointer;
   }
 
-  & input {
+  input {
     width: 13px;
     height: 13px;
     border: 2px solid var(--text-color);
@@ -68,18 +68,18 @@
     margin-left: 0.3em;
   }
 
-  & input:checked {
+  input:checked {
     background-color: var(--text-sub-color);
   }
 }
 
 .select-currency-self {
   width: 100%;
-  & input {
+  input {
     text-align: center;
   }
 
-  & p {
+  p {
     font-size: 0.675em;
     text-align: right;
     margin-top: 0.5em;
@@ -91,7 +91,7 @@
   flex-direction: column;
   align-items: center;
 
-  & div {
+  div {
     display: flex;
     width: 100%;
     justify-content: space-between;
@@ -109,7 +109,7 @@
   background-color: var(--text-color);
   height: 0.2em;
 
-  &::-webkit-slider-thumb {
+  ::-webkit-slider-thumb {
     -webkit-appearance: none;
     background-color: var(--text-color);
     width: 15px;

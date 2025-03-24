@@ -8,7 +8,7 @@
   width: 100%;
   position: relative;
 
-  & video {
+  video {
     aspect-ratio: 21 / 9;
     object-fit: cover;
     transform: scaleX(-1);
@@ -25,14 +25,14 @@
   color: var(--text-point-color);
   letter-spacing: 1.3px;
 
-  & h3 {
+  h3 {
     font-size: 3em;
     font-weight: bold;
     line-height: 1.5em;
     margin: 0;
   }
 
-  & p {
+  p {
     font-size: 1em;
     font-weight: bold;
     margin: 0;
@@ -45,7 +45,7 @@
   align-items: center;
   padding: 2em;
 
-  & h4 {
+  h4 {
     font-size: 2em;
     font-weight: bold;
     line-height: 1.5em;
@@ -67,27 +67,27 @@
   text-align: center;
   margin: 3em 0em;
 
-  & p {
+  p {
     font-size: 1.8em;
     color: var(--text-sub-color);
     padding-bottom: 1em;
     margin: 0;
   }
 
-  & > p:nth-child(3) {
+  > p:nth-child(3) {
     color: var(--text-color);
     font-weight: bold;
     margin: 1em 0em;
   }
 
-  & h3 {
+  h3 {
     font-weight: bold;
     font-size: 3em;
     color: var(--text-point-color);
     margin: 1em 0em;
   }
 
-  & .link_btn {
+  .link_btn {
     border: 2px solid var(--line-color);
     border-radius: 3px;
     padding: 0.5em;
@@ -98,7 +98,7 @@
     transition: box-shadow 0.3s;
   }
 
-  & .link_btn:hover {
+  .link_btn:hover {
     box-shadow: 0px 2px 5px 1px var(--line-color);
   }
 }

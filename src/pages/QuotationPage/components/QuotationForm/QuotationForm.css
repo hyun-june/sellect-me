@@ -3,12 +3,12 @@
   flex-direction: column;
   gap: 1em;
 
-  & img {
+  img {
     width: 150px;
     height: 180px;
   }
 
-  & textarea {
+  textarea {
     border: 1px solid var(--line-color);
     padding: 1em;
     resize: none;
@@ -20,7 +20,7 @@
   gap: 2em;
   align-items: flex-start;
 
-  & span {
+  span {
     font-weight: bold;
     letter-spacing: 1px;
     display: flex;
@@ -46,16 +46,16 @@
   flex-direction: column;
   gap: 3em;
 
-  & fieldset {
+  fieldset {
     display: flex;
     flex-direction: column;
 
-    & span:first-child {
+    span:first-child {
       padding-left: 1em;
     }
   }
 
-  & legend {
+  legend {
     font-size: 1.2em;
     color: var(--text-color);
   }
@@ -68,13 +68,13 @@
   height: 2.5em;
   position: relative;
 
-  & span {
+  span {
     margin: 0;
     font-weight: bold;
     color: var(--text-sub-color);
   }
 
-  & p {
+  p {
     margin: 0;
     margin-left: auto;
     padding-right: 1em;
@@ -94,25 +94,25 @@
   padding-right: 1em;
   gap: 2em;
 
-  & div {
+  div {
     width: 100%;
 
-    & label {
+    label {
       width: 100%;
       padding-left: 1em;
     }
   }
-  & .dropdown-list {
+  .dropdown-list {
     top: 2.2em;
   }
 
-  & > span:last-child {
+  > span:last-child {
     display: flex;
     color: var(--text-sub-color);
     font-weight: 700;
   }
 
-  & .selected-section {
+  .selected-section {
     padding: 0;
     display: flex;
     align-items: center;
@@ -122,7 +122,7 @@
 .label_input {
   display: flex;
 
-  & label {
+  label {
     padding: 0em 1em;
     white-space: nowrap;
     display: flex;
@@ -140,12 +140,12 @@
   height: 2.5em;
   width: 100%;
 
-  & span {
+  span {
     color: var(--text-sub-color);
     font-weight: bold;
   }
 
-  & input {
+  input {
     margin-left: auto;
     width: 15em;
     cursor: pointer;
@@ -160,7 +160,7 @@
   overflow: hidden;
   flex-wrap: wrap;
 
-  & li {
+  li {
     display: flex;
     flex-wrap: wrap;
     padding: 1em;
@@ -176,7 +176,7 @@
   align-items: center;
   justify-content: space-between;
 
-  & > span:first-child {
+  > span:first-child {
     color: var(--text-sub-color);
     font-weight: bold;
     white-space: nowrap;
@@ -194,7 +194,7 @@
     display: flex;
     align-items: center;
 
-    & span {
+    span {
       display: inline-block;
       width: 5.5em;
       height: 100%;
@@ -206,17 +206,17 @@
     }
   }
 
-  & ul {
+  ul {
     display: flex;
     gap: 0.5em;
     padding: 0;
     margin: 0;
 
-    & li {
+    li {
       list-style: none;
       position: relative;
 
-      & button {
+      button {
         position: absolute;
         right: 0em;
         top: 0.2em;
@@ -231,13 +231,13 @@
     display: flex;
     flex-shrink: 0;
 
-    & input {
+    input {
       width: 5em;
       height: 2em;
       border: none;
     }
 
-    & input::placeholder {
+    input::placeholder {
       font-size: 0.8em;
     }
   }
@@ -246,13 +246,13 @@
 .confirm_section {
   border: 2px solid var(--line-color);
 
-  & th {
+  th {
     width: 30%;
     padding: 0.5em 3em;
     text-align: right;
   }
 
-  & td {
+  td {
     padding: 0.5em 3em;
     text-align: right;
   }

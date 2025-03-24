@@ -1,14 +1,11 @@
 .tag_container {
   display: flex;
-
   flex-wrap: wrap;
   gap: 0.5em;
-
   /* border: 2px solid var(--line-color); */
-
   width: max-content;
 
-  & span {
+  span {
     color: var(--text-color);
     width: 5em;
     height: 2em;

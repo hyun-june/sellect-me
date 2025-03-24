@@ -1,20 +1,20 @@
 .sellecter_edit_profile {
   width: 100%;
 
-  & header {
+  header {
     display: flex;
     justify-content: space-between;
 
-    & nav {
+    nav {
       display: flex;
       margin-bottom: 0.5em;
 
-      & button {
+      button {
         font-weight: bold;
       }
     }
 
-    & h3 {
+    h3 {
       letter-spacing: 3px;
       font-weight: 600;
     }
@@ -42,10 +42,10 @@
   padding: 2.2em 0em;
   gap: 5em;
 
-  & dl {
+  dl {
     gap: 1.5em;
 
-    & dt {
+    dt {
       margin: 0;
     }
   }
@@ -54,7 +54,7 @@
 .sellecter_edit_profile_List {
   height: 100%;
 
-  & .tag_container {
+  .tag_container {
     overflow: hidden;
   }
 }
@@ -73,28 +73,28 @@
   gap: 1em;
   margin: 1em 0em;
 
-  & li {
+  li {
     list-style-type: "-";
     padding-left: 0.5em;
   }
 }
 
 .sellecter_edit_tags_list {
-  & ul {
+  ul {
     display: flex;
     flex-direction: column;
     padding: 0em;
     flex-wrap: wrap;
     max-height: 10em;
 
-    & li {
+    li {
       list-style: none;
       position: relative;
       height: 2em;
       margin-top: 0.5em;
       width: max-content;
 
-      & button {
+      button {
         position: absolute;
         right: 0.3em;
         top: 0.3em;
@@ -104,7 +104,7 @@
     }
   }
 
-  & input {
+  input {
     width: 5.8em;
     border-bottom: 1px solid var(--line-color);
   }

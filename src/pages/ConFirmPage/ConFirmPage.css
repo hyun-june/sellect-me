@@ -6,16 +6,16 @@
   letter-spacing: 1.5px;
   padding: 1em 0em;
 
-  & h4 {
+  h4 {
     align-self: flex-start;
     margin-bottom: 1em;
   }
 
-  & th {
+  th {
     vertical-align: top;
   }
 
-  & td {
+  td {
     padding-left: 1em;
   }
 }
@@ -28,7 +28,7 @@
   width: 100%;
   gap: 2em;
 
-  & .contract_terms {
+  .contract_terms {
     display: flex;
     flex-direction: column;
     gap: 1em;
@@ -53,28 +53,28 @@
   display: flex;
   flex-direction: column;
 
-  & h6 {
+  h6 {
     font-weight: bold;
     white-space: nowrap;
     align-self: flex-start;
     margin-bottom: 0.5em;
   }
 
-  & p {
+  p {
     margin: 0;
     margin-bottom: 0.5em;
     padding-left: 1em;
   }
 
-  & span {
+  span {
     padding-left: 0.5em;
   }
 
-  & ul {
+  ul {
     margin: 0;
   }
 
-  & li {
+  li {
     margin-bottom: 0.5em;
   }
 }

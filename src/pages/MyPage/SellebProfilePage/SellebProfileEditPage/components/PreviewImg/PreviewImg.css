@@ -3,7 +3,7 @@
   position: relative;
   width: 100%;
 
-  & input {
+  input {
     display: none;
   }
 }
@@ -13,18 +13,18 @@
 
   gap: 1em;
 
-  & div {
+  div {
     position: relative;
   }
 
-  & img {
+  img {
     width: 10em;
     height: 10em;
     border: 1px solid var(--text-sub-color);
     object-fit: cover;
   }
 
-  & button {
+  button {
     position: absolute;
     top: 0;
     right: 0;
@@ -47,7 +47,7 @@
   width: 22.5em;
   height: 30.1em;
 
-  & img {
+  img {
     width: 22.5em;
     height: 30em;
     object-fit: cover;
@@ -62,7 +62,7 @@
 }
 
 .btn_section {
-  & label {
+  label {
     position: absolute;
     right: 0px;
     top: 0;
@@ -79,13 +79,13 @@
     align-items: center;
   }
 
-  & label:hover {
+  label:hover {
     border: 2px solid var(--text-color);
     background-color: var(--text-color);
     color: var(--text-white-color);
   }
 
-  & button {
+  button {
     position: absolute;
     right: 0;
     top: 3em;

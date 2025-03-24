@@ -5,13 +5,13 @@
   align-items: center;
   height: 2.5em;
 
-  & label {
+  label {
     color: var(--text-sub-color);
     font-weight: bold;
     padding-left: 0.5em;
   }
 
-  & span {
+  span {
     color: var(--text-sub-color);
   }
 }

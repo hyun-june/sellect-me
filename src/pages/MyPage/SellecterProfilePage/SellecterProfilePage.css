@@ -1,20 +1,20 @@
 .sellecter_profile {
   width: 100%;
 
-  & header {
+  header {
     display: flex;
     justify-content: space-between;
 
-    & nav {
+    nav {
       display: flex;
       margin-bottom: 0.5em;
 
-      & button {
+      button {
         font-weight: bold;
       }
     }
 
-    & h3 {
+    h3 {
       letter-spacing: 3px;
       font-weight: 600;
     }
@@ -30,7 +30,7 @@
 }
 
 .sellecter_main_profile_img {
-  & img {
+  img {
     width: 25em;
     height: 25em;
     object-fit: cover;
@@ -45,7 +45,7 @@
   justify-content: center;
   gap: 5em;
 
-  & dl {
+  dl {
     gap: 1.5em;
   }
 
@@ -63,11 +63,11 @@
   gap: 1em;
   margin: 1em 0em;
 
-  & ul {
+  ul {
     padding: 0;
   }
 
-  & li {
+  li {
     list-style-type: "-";
     margin-left: 1em;
     padding-left: 0.5em;
@@ -80,7 +80,7 @@
   gap: 1em;
   margin: 1em 0em;
 
-  & li {
+  li {
     list-style-type: "-";
     padding-left: 0.5em;
   }
