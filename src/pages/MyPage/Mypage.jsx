@@ -1,11 +1,11 @@
 import CustomBox from "../../components/CustomBox/CustomBox";
 import MainLayout from "../../components/Layout/MainLayout/MainLayout";
 import ProfileImgBox from "../../components/ProfileImgBox/ProfileImgBox";
-import "./Mypage.css";
 import HamburgerMenu from "./../../components/HamburgerMenu/HamburgerMenu";
 import { FaRegCalendarCheck } from "react-icons/fa";
 import { FaSackDollar } from "react-icons/fa6";
 import LineGraph from "../../components/LineGraph/LineGraph";
+import "./Mypage.css";
 
 const boxListLeft = ["프로필 관리", "CHAT", "V-CHAT"];
 const boxListRight = ["프로젝트 관리", "관심있는 셀럽", "V-CHAT 이용권"];

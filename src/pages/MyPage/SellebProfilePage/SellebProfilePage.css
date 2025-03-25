@@ -90,7 +90,7 @@
   }
 }
 
-.hourly_rangebar {
+.hourly_rangebar_inner {
   width: 16em;
   position: relative;
 
@@ -106,7 +106,7 @@
   }
 }
 
-.hourly_rangebar::after {
+.hourly_rangebar_inner::after {
   content: "";
   width: 2px;
   height: 100%;
@@ -127,14 +127,14 @@
   -webkit-appearance: none;
   background-color: var(--text-color);
   height: 0.2em;
+}
 
-  ::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    background-color: var(--text-color);
-    width: 15px;
-    height: 15px;
-    border-radius: 50%;
-  }
+#hourlyPay_bar::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  background-color: var(--text-color);
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
 }
 
 .tabs_content {

@@ -123,7 +123,7 @@ const SellebProfilePage = () => {
           </div>
         </section>
         <section className="profile_range">
-          <div className="hourly_rangebar">
+          <div className="hourly_rangebar_inner">
             <div className="pay_text">
               <h5>예상 금액</h5>
               <div className="margin-bottom-1">
