@@ -10,6 +10,10 @@
     object-fit: cover;
     object-position: top;
   }
+
+  h4 {
+    font-weight: bold;
+  }
 }
 
 .mypage_inner {
@@ -97,14 +101,19 @@
   .hamburger-menu.open {
     height: 0px;
   }
+
+  .mypage_icons {
+    color: var(--text-color);
+    font-size: 2em;
+  }
 }
 
 .mypage_graph_section {
   height: 100%;
-
+  margin-bottom: 3em;
   h5 {
     margin: 1em 0em;
-    color: red;
+    color: var(--text-color);
   }
 
   canvas {

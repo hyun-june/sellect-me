@@ -45,10 +45,10 @@ const MyPage = () => {
           </div>
           <div className="mypage_menuList">
             <HamburgerMenu menu={mypageMenu} />
-            <div style={{ color: "black", fontSize: "2em" }}>
+            <div className="mypage_icons">
               <FaRegCalendarCheck />
             </div>
-            <div style={{ color: "black", fontSize: "2em" }}>
+            <div className="mypage_icons">
               <FaSackDollar />
             </div>
           </div>
