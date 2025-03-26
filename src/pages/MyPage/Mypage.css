@@ -127,6 +127,7 @@
 
   div {
     overflow-x: auto;
+    /* cursor: grab; */
   }
 
   div::-webkit-scrollbar {

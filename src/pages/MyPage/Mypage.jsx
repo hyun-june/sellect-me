@@ -7,6 +7,8 @@ import { FaSackDollar } from "react-icons/fa6";
 import LineGraph from "../../components/LineGraph/LineGraph";
 import "./Mypage.css";
 
+import { useRef, useState } from "react";
+
 const boxListLeft = [
   { title: "프로필 관리", link: "/mypage/selleb" },
   { title: "CHAT", link: "/" },
@@ -25,8 +27,49 @@ const mypageMenu = [
 ];
 
 const graphData = ["5", "9", "11", "2", "3", "6"];
+// 주석 풀면 드래그로 차트이동
+// const graphData = [
+//   "5",
+//   "9",
+//   "11",
+//   "2",
+//   "3",
+//   "6",
+//   "5",
+//   "9",
+//   "11",
+//   "2",
+//   "3",
+//   "6",
+// ];
 
 const MyPage = () => {
+  // const scrollRef = useRef(null);
+  // const [isDragging, setIsDragging] = useState(false);
+  // const [startX, setStartX] = useState(0);
+  // const [scrollLeft, setScrollLeft] = useState(0);
+
+  // const handleMouseDown = (e) => {
+  //   setIsDragging(true);
+  //   setStartX(e.pageX - scrollRef.current.offsetLeft);
+  //   setScrollLeft(scrollRef.current.scrollLeft);
+  // };
+
+  // const handleMouseLeave = () => {
+  //   setIsDragging(false);
+  // };
+
+  // const handleMouseUp = () => {
+  //   setIsDragging(false);
+  // };
+
+  // const handleMouseMove = (e) => {
+  //   if (!isDragging) return;
+  //   e.preventDefault();
+  //   const x = e.pageX - scrollRef.current.offsetLeft;
+  //   const walk = (x - startX) * 2;
+  //   scrollRef.current.scrollLeft = scrollLeft - walk;
+  // };
   return (
     <MainLayout>
       <div className="mypage_container">
@@ -68,7 +111,14 @@ const MyPage = () => {
 
         <section className="mypage_graph_section">
           <h5>내 활동 그래프</h5>
-          <div>
+          <div
+          // ref={scrollRef}
+          // className="scroll-container"
+          // onMouseDown={handleMouseDown}
+          // onMouseLeave={handleMouseLeave}
+          // onMouseUp={handleMouseUp}
+          // onMouseMove={handleMouseMove}
+          >
             <LineGraph graphData={graphData} />
           </div>
         </section>

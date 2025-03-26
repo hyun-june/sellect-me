@@ -27,7 +27,7 @@ const LineGraph = ({ graphData, ...props }) => {
   const date = new Date();
   const labels = [];
 
-  for (let i = 0; i < 6; i++) {
+  for (let i = 0; i < graphData.length; i++) {
     const month = date.getMonth() + 1 - i; // 현재 월에서 i만큼 빼기
     const year = date.getFullYear();
 
