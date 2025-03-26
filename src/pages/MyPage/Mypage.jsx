@@ -7,14 +7,24 @@ import { FaSackDollar } from "react-icons/fa6";
 import LineGraph from "../../components/LineGraph/LineGraph";
 import "./Mypage.css";
 
-const boxListLeft = ["프로필 관리", "CHAT", "V-CHAT"];
-const boxListRight = ["프로젝트 관리", "관심있는 셀럽", "V-CHAT 이용권"];
+const boxListLeft = [
+  { title: "프로필 관리", link: "/mypage/selleb" },
+  { title: "CHAT", link: "/" },
+  { title: "V-CHAT", link: "/" },
+];
+const boxListRight = [
+  { title: "프로젝트 관리", link: "/" },
+  { title: "관심있는 셀럽", link: "/" },
+  { title: "V-V-CHAT 이용권", link: "/" },
+];
 const mypageMenu = [
   { name: "공지사항", address: "/" },
   { name: "고객센터", address: "/" },
   { name: "계정설정", address: "/" },
   { name: "로그아웃", address: "/" },
 ];
+
+const graphData = ["5", "9", "11", "2", "3", "6"];
 
 const MyPage = () => {
   return (
@@ -26,8 +36,10 @@ const MyPage = () => {
             <ProfileImgBox src="/images/test.jpg" />
             <div>
               {boxListLeft.map((item, index) => (
-                <a href="/" key={index}>
-                  <CustomBox className="mypage_left_box">{item}</CustomBox>
+                <a href={item.link} key={index}>
+                  <CustomBox className="mypage_left_box">
+                    {item.title}
+                  </CustomBox>
                 </a>
               ))}
 
@@ -36,9 +48,9 @@ const MyPage = () => {
           </div>
           <div className="mypage_inner_right">
             {boxListRight.map((item, index) => (
-              <a href="/" key={index}>
+              <a href={item.link} key={index}>
                 <CustomBox className="mypage_right_box" textAlign="left">
-                  {item}
+                  {item.title}
                 </CustomBox>
               </a>
             ))}
@@ -57,7 +69,7 @@ const MyPage = () => {
         <section className="mypage_graph_section">
           <h5>내 활동 그래프</h5>
           <div>
-            <LineGraph />
+            <LineGraph graphData={graphData} />
           </div>
         </section>
       </div>
