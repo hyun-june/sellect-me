@@ -125,12 +125,28 @@
     width: 100px;
   }
 
-  div {
+  .scroll-container {
     overflow-x: auto;
     /* cursor: grab; */
   }
 
-  div::-webkit-scrollbar {
+  .scroll-container::-webkit-scrollbar {
     display: none;
+  }
+}
+
+.graph_dropdown {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+
+  .dropdown_container {
+    width: 6em;
+    border-bottom: 1px solid var(--line-color);
+    text-align: center;
+  }
+
+  .dropdown_select {
+    line-height: 2em;
   }
 }

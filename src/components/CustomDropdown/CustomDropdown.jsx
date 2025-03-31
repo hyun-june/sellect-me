@@ -3,7 +3,7 @@ import { IoIosArrowDown } from "react-icons/io";
 import "./CustomDropdown.css";
 
 const CustomDropdown = ({ ...props }) => {
-  const { label, list } = props;
+  const { label, list, onChange } = props;
 
   const [selectDropdown, setSelectDropdown] = useState(list[0]);
   const [isOpen, setIsOpen] = useState(false);
@@ -14,6 +14,7 @@ const CustomDropdown = ({ ...props }) => {
   const handleSelect = (value) => {
     setSelectDropdown(value);
     setIsOpen(false);
+    onChange(value);
   };
 
   useEffect(() => {

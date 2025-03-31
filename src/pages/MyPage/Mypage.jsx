@@ -7,7 +7,8 @@ import { FaSackDollar } from "react-icons/fa6";
 import LineGraph from "../../components/LineGraph/LineGraph";
 import "./Mypage.css";
 
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import CustomDropdown from "./../../components/CustomDropdown/CustomDropdown";
 
 const boxListLeft = [
   { title: "프로필 관리", link: "/mypage/selleb" },
@@ -26,7 +27,6 @@ const mypageMenu = [
   { name: "로그아웃", address: "/" },
 ];
 
-const graphData = ["5", "9", "11", "2", "3", "6"];
 // 주석 풀면 드래그로 차트이동
 // const graphData = [
 //   "5",
@@ -70,6 +70,61 @@ const MyPage = () => {
   //   const walk = (x - startX) * 2;
   //   scrollRef.current.scrollLeft = scrollLeft - walk;
   // };
+
+  const dateData = ["2025", "2024"];
+  const [selectedYear, setSelectedYear] = useState(dateData[0]);
+  const handleYearChange = (year) => {
+    setSelectedYear(year);
+  };
+
+  const graphData = {
+    2025: {
+      1: "5",
+      2: "9",
+      3: "11",
+      4: "0",
+      5: "0",
+      6: "0",
+      7: "0",
+      8: "0",
+      9: "0",
+      10: "10",
+      11: "0",
+      12: "0",
+    },
+    2024: {
+      1: "2",
+      2: "3",
+      3: "6",
+      4: "0",
+      5: "0",
+      6: "0",
+      7: "0",
+      8: "0",
+      9: "0",
+      10: "0",
+      11: "0",
+      12: "0",
+    },
+  };
+
+  useEffect(() => {
+    console.log("선택된 연도:", selectedYear);
+  }, [selectedYear]);
+
+  // const date = new Date();
+  // const dateDropDown = [];
+
+  // for (let i = 0; i < dateData.length; i++) {
+  //   const month = date.getMonth() + 1 - i;
+  //   const year = date.getFullYear();
+
+  //   const prevMonth = month > 0 ? month : 12 + month;
+  //   const prevYear = month > 0 ? year : year - 1;
+
+  //   dateDropDown.push(`${prevYear}년 `);
+  // }
+
   return (
     <MainLayout>
       <div className="mypage_container">
@@ -110,16 +165,24 @@ const MyPage = () => {
         </section>
 
         <section className="mypage_graph_section">
-          <h5>내 활동 그래프</h5>
+          <div className="graph_dropdown">
+            <h5>내 활동 그래프</h5>
+
+            <CustomDropdown list={dateData} onChange={handleYearChange} />
+          </div>
+
           <div
-          // ref={scrollRef}
-          // className="scroll-container"
-          // onMouseDown={handleMouseDown}
-          // onMouseLeave={handleMouseLeave}
-          // onMouseUp={handleMouseUp}
-          // onMouseMove={handleMouseMove}
+            // ref={scrollRef}
+            className="scroll-container"
+            // onMouseDown={handleMouseDown}
+            // onMouseLeave={handleMouseLeave}
+            // onMouseUp={handleMouseUp}
+            // onMouseMove={handleMouseMove}
           >
-            <LineGraph graphData={graphData} />
+            <LineGraph
+              graphData={graphData[selectedYear]}
+              selectedData={selectedYear}
+            />
           </div>
         </section>
       </div>

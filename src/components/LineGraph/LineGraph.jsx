@@ -23,27 +23,27 @@ ChartJS.register(
   Legend
 );
 
-const LineGraph = ({ graphData, ...props }) => {
-  const date = new Date();
+const LineGraph = ({ graphData, selectedData, ...props }) => {
   const labels = [];
+  const dataPoints = [];
 
-  for (let i = 0; i < graphData.length; i++) {
-    const month = date.getMonth() + 1 - i; // 현재 월에서 i만큼 빼기
-    const year = date.getFullYear();
+  for (let month = 1; month <= 12; month++) {
+    labels.push(`${selectedData % 100}년 ${month}월`);
 
-    // 이전 해로 넘어가는 경우 처리 (예: 3월이면 2월 → 1월 → 12월(작년))
-    const prevMonth = month > 0 ? month : 12 + month;
-    const prevYear = month > 0 ? year : year - 1;
+    const value = graphData[month];
 
-    labels.push(`${prevYear % 100}년 ${prevMonth}월`);
+    dataPoints.push(value);
   }
+
+  console.log("dd", dataPoints);
 
   const data = {
     labels,
     datasets: [
       {
         label: "내 활동",
-        data: graphData.map((data) => data),
+        // data: graphData.map((data) => data),
+        data: dataPoints,
         borderColor: "#ffc30b",
         backgroundColor: "#ffc30b",
         tension: 0,
