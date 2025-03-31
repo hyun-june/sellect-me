@@ -15,6 +15,7 @@ import SignUpSellebPage from "./../pages/SignUpPage/SignUpSellebPage/SignUpSelle
 import SignUpSellecterPage from "./../pages/SignUpPage/SignUpSellecterPage/SignUpSellecterPage";
 import ModelPage from "../pages/ModelPage/ModelPage";
 import Favorites from "../pages/MyPage/Favorites/Favorites";
+import ProjectManagement from "../pages/MyPage/ProjectManagement/ProjectManagement";
 
 const AppRouter = () => {
   const location = useLocation();
@@ -40,6 +41,7 @@ const AppRouter = () => {
         element={<SellecterProfileEditPage />}
       />
       <Route path="/mypage/favorites" element={<Favorites />} />
+      <Route path="/mypage/projectManage" element={<ProjectManagement />} />
 
       <Route path="/quotation" element={<QuotationPage />} />
 

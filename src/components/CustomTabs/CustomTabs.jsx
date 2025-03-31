@@ -1,11 +1,11 @@
 import { useState } from "react";
 import "./CustomTabs.css";
 
-const CustomTabs = ({ defaultIdx = 0, items = [] }) => {
+const CustomTabs = ({ defaultIdx = 0, items = [], ...props }) => {
   const [tabIdx, setTabIdx] = useState(defaultIdx);
   return (
-    <div className="tabs-container">
-      <ul className="tabs-header">
+    <div className="customTabs-container" {...props}>
+      <ul className="customTabs-header">
         {items?.map(({ title }, i) => (
           <li
             key={i}
@@ -16,7 +16,7 @@ const CustomTabs = ({ defaultIdx = 0, items = [] }) => {
           </li>
         ))}
       </ul>
-      <div>{items[tabIdx]?.content}</div>
+      <div className="customTabs-inner">{items[tabIdx]?.content}</div>
     </div>
   );
 };

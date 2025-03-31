@@ -1,0 +1,32 @@
+.management_container {
+  width: 100%;
+
+  h5 {
+    font-weight: bold;
+  }
+
+  .customTabs-container {
+    height: 70dvh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .customTabs-header {
+    border: none;
+
+    li {
+      background-color: #fff5d9;
+      color: var(--text-point-color);
+    }
+
+    .active {
+      color: var(--text-color);
+      background-color: var(--text-point-color);
+    }
+  }
+
+  .customTabs-inner {
+    flex: 1;
+    padding: 1em 0em;
+  }
+}
