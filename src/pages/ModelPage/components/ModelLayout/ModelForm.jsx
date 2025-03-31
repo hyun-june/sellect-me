@@ -107,10 +107,6 @@ const fittingData = [
     src: "https://cdn.pixabay.com/photo/2020/09/25/16/50/portrait-5601950_1280.jpg",
     name: "남수",
   },
-  {
-    src: "https://cdn.pixabay.com/photo/2021/03/22/16/07/woman-6115105_1280.jpg",
-    name: "하하",
-  },
 ];
 
 const homeShoppingData = [

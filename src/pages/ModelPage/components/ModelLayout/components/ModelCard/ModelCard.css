@@ -6,7 +6,6 @@
     height: 350px;
     object-fit: cover;
     object-position: top;
-    margin-top: 0.5em;
   }
 
   h5 {
@@ -23,10 +22,10 @@
     font-size: 1.5em;
     cursor: pointer;
     user-select: none;
+  }
 
-    .liked_color {
-      color: var(--text-point-color);
-      -webkit-text-stroke: 1px var(--text-point-color);
-    }
+  .liked_color {
+    color: var(--text-point-color);
+    -webkit-text-stroke: 1px var(--text-point-color);
   }
 }

@@ -10,16 +10,30 @@ import "./Mypage.css";
 import { useEffect, useRef, useState } from "react";
 import CustomDropdown from "./../../components/CustomDropdown/CustomDropdown";
 
-const boxListLeft = [
-  { title: "프로필 관리", link: "/mypage/selleb" },
-  { title: "CHAT", link: "/" },
-  { title: "V-CHAT", link: "/" },
-];
-const boxListRight = [
-  { title: "프로젝트 관리", link: "/" },
-  { title: "관심있는 셀럽", link: "/" },
-  { title: "V-V-CHAT 이용권", link: "/" },
-];
+const boxListLeft = {
+  selleb: [
+    { title: "프로필 관리", link: "/mypage/selleb" },
+    { title: "CHAT", link: "/" },
+    { title: "V-CHAT", link: "/" },
+  ],
+  sellecter: [
+    { title: "프로필 관리", link: "/mypage/sellecter" },
+    { title: "CHAT", link: "/" },
+    { title: "V-CHAT", link: "/" },
+  ],
+};
+const boxListRight = {
+  selleb: [
+    { title: "프로젝트 관리", link: "/" },
+    { title: "관심있는 셀렉터", link: "/" },
+    { title: "섭외요청 확인", link: "/" },
+  ],
+  sellecter: [
+    { title: "프로젝트 관리", link: "/" },
+    { title: "관심있는 셀럽", link: "/" },
+    { title: "V-CHAT 이용권", link: "/" },
+  ],
+};
 const mypageMenu = [
   { name: "공지사항", address: "/" },
   { name: "고객센터", address: "/" },
@@ -125,6 +139,8 @@ const MyPage = () => {
   //   dateDropDown.push(`${prevYear}년 `);
   // }
 
+  const user = "selleb";
+
   return (
     <MainLayout>
       <div className="mypage_container">
@@ -133,7 +149,7 @@ const MyPage = () => {
           <div className="mypage_inner_left">
             <ProfileImgBox src="/images/test.jpg" />
             <div>
-              {boxListLeft.map((item, index) => (
+              {boxListLeft[user]?.map((item, index) => (
                 <a href={item.link} key={index}>
                   <CustomBox className="mypage_left_box">
                     {item.title}
@@ -145,7 +161,7 @@ const MyPage = () => {
             </div>
           </div>
           <div className="mypage_inner_right">
-            {boxListRight.map((item, index) => (
+            {boxListRight[user].map((item, index) => (
               <a href={item.link} key={index}>
                 <CustomBox className="mypage_right_box" textAlign="left">
                   {item.title}
