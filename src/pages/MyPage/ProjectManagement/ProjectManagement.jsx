@@ -6,7 +6,12 @@ import "./ProjectManagement.css";
 const tabItems = [
   {
     title: "보낸 요청",
-    content: <ProjectContentBox />,
+    content: (
+      <div className="dd">
+        <ProjectContentBox />
+        <ProjectContentBox />
+      </div>
+    ),
   },
   {
     title: "받은 요청",

@@ -30,3 +30,9 @@
     padding: 1em 0em;
   }
 }
+
+.dd {
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+}
