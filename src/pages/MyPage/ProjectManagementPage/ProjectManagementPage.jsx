@@ -1,7 +1,7 @@
 import CustomTabs from "../../../components/CustomTabs/CustomTabs";
 import MainLayout from "../../../components/Layout/MainLayout/MainLayout";
 import ProjectContentBox from "./components/ProjectContentBox/ProjectContentBox";
-import "./ProjectManagement.css";
+import "./ProjectManagementPage.css";
 
 const testData = {
   send: {
@@ -90,7 +90,7 @@ const tabItems = Object.keys(testData).map((status) => ({
   ),
 }));
 
-const ProjectManagement = () => {
+const ProjectManagementPage = () => {
   return (
     <MainLayout>
       <div className="management_container">
@@ -101,4 +101,4 @@ const ProjectManagement = () => {
   );
 };
 
-export default ProjectManagement;
+export default ProjectManagementPage;

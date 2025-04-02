@@ -1,6 +1,6 @@
 import MainLayout from "../../../components/Layout/MainLayout/MainLayout";
 import ModelCard from "../../ModelPage/components/ModelLayout/components/ModelCard/ModelCard";
-import "./Favorites.css";
+import "./FavoritesPage.css";
 
 const favoritesCard = [
   {
@@ -76,7 +76,7 @@ const favoritesCard = [
     name: "하하",
   },
 ];
-const Favorites = () => {
+const FavoritesPage = () => {
   const user = "selleb";
   return (
     <MainLayout>
@@ -92,4 +92,4 @@ const Favorites = () => {
   );
 };
 
-export default Favorites;
+export default FavoritesPage;

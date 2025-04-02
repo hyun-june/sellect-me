@@ -27,7 +27,7 @@ const ProjectContentBox = ({
     const uniqueKey = `${status}-${id}`;
     setIsOpen((prev) => ({
       ...prev,
-      [uniqueKey]: !prev[uniqueKey], // 현재 고유 키만 토글
+      [uniqueKey]: !prev[uniqueKey],
     }));
   };
 
@@ -35,7 +35,7 @@ const ProjectContentBox = ({
     <div>
       <div className="project_content_box">
         {src ? (
-          <img className="content_box_img" src={src} />
+          <img className="content_box_img" src={src} alt="" />
         ) : (
           <span className="content_box_img" />
         )}
