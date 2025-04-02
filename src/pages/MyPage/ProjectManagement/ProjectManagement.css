@@ -31,7 +31,7 @@
   }
 }
 
-.dd {
+.project_content_section {
   display: flex;
   flex-direction: column;
   gap: 2em;
