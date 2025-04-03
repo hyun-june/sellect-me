@@ -47,6 +47,15 @@
   box-sizing: border-box;
   z-index: 10;
   overflow: hidden;
+
+  button {
+    position: absolute;
+    right: 2em;
+    bottom: 1em;
+    background-color: #a6c9eb;
+    padding: 0.5em;
+    border-radius: 5px;
+  }
 }
 
 .content_box_memo_inner.open {

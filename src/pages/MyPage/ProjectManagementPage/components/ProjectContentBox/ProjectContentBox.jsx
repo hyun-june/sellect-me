@@ -15,7 +15,7 @@ const ProjectContentBox = ({
   const [isOpen, setIsOpen] = useState(false);
   const statusMessage = {
     send: "",
-    approve: "확인",
+    approve: "",
     processing: "입금 전",
     done: "입금완료",
   };
@@ -29,6 +29,10 @@ const ProjectContentBox = ({
       ...prev,
       [uniqueKey]: !prev[uniqueKey],
     }));
+  };
+
+  const handleDone = () => {
+    console.log("완료");
   };
 
   return (
@@ -50,15 +54,19 @@ const ProjectContentBox = ({
             isOpen[`${status}-${id}`] ? "memo_active" : ""
           }`}
         >
-          메모
+          {status === "approve" ? "확인" : "메모"}
         </button>
       </div>
-
       {isOpen[`${status}-${id}`] && (
         <div className="content_box_memo_inner open">
           {memo.map((item) => (
             <p key={item.id}>{item.content}</p>
           ))}
+          {status === "approve" ? (
+            <button onClick={handleDone}>완료 요청하기</button>
+          ) : (
+            ""
+          )}
         </div>
       )}
     </div>

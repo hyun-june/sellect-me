@@ -2,30 +2,62 @@
   text-align: left;
   width: 100%;
   height: auto;
-  border: 1px solid black;
   flex: 1;
   display: flex;
   flex-direction: column;
+  gap: 1em;
 
   .bankPage_Info {
-    border: 1px solid red;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 1em;
-    height: 200px;
+
+    p {
+      margin: 0;
+    }
 
     .bankPage_Info_Inner {
-      border: 1px solid blue;
-      display: flex;
-      flex-direction: column;
+      /* display: flex;
+      flex-direction: column; */
+      background-color: #edf5fb;
+      display: grid;
+      grid-template-rows: 1fr 2fr;
 
       .bankPage_Info_title {
-        border-bottom: 3px solid var(--line-color);
-        padding: 1em;
+        border-bottom: 5px solid #a6c9eb;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         margin: 0;
 
+        p {
+          font-weight: bold;
+          font-size: 1.3em;
+        }
+
         input {
-          border: 1px solid red;
+          background-color: white;
+          border-radius: 5px;
+          margin-right: 1em;
+          text-align: right;
+          font-size: 1.3em;
+          font-weight: bold;
+        }
+
+        button {
+          border: 1px solid var(--line-color);
+          padding: 0.5em;
+          border-radius: 5px;
+        }
+
+        button:hover {
+          background-color: #a6c9eb;
+          border: 1px solid #a6c9eb;
+        }
+
+        input::placeholder {
+          font-size: 0.7em;
+          text-align: center;
         }
 
         input::-webkit-outer-spin-button,
@@ -51,20 +83,30 @@
           margin-bottom: 1em;
         }
 
-        p {
-          margin-bottom: 0.5em;
-        }
-
         .bankPage_Info_Inner_pay {
           display: flex;
           gap: 2em;
+
+          div {
+            display: flex;
+            flex-direction: column;
+            gap: 0.3em;
+          }
         }
       }
     }
   }
 
   .bankPage_content_box {
-    border: 1px solid purple;
+    background-color: #edf5fb;
     flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    padding: 1em;
+
+    .content_box_memo_inner {
+      background-color: white;
+    }
   }
 }

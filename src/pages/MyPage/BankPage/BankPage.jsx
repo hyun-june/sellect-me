@@ -2,6 +2,7 @@ import { useState } from "react";
 import MainLayout from "../../../components/Layout/MainLayout/MainLayout";
 import { validationPatterns } from "../../../core/constants/validationPatterns";
 import "./BankPage.css";
+import ProjectContentBox from "../ProjectManagementPage/components/ProjectContentBox/ProjectContentBox";
 
 const BankPage = () => {
   const [value, setValue] = useState();
@@ -19,13 +20,36 @@ const BankPage = () => {
     console.log("dd", formattedValue);
   };
 
+  const bankTest = {
+    1: {
+      name: "aaa",
+      description: "AAA테스트",
+      date: "10.22",
+      memo: [
+        { id: 1, content: "내용이있음" },
+        { id: 2, content: "내용ㅇ옹오오오오오오" },
+      ],
+    },
+    2: {
+      name: "dddd",
+      description: "dddd테스트",
+      date: "10.22",
+      memo: [
+        { id: 1, content: "테스트 메모" },
+        { id: 2, content: "ㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇ" },
+      ],
+    },
+  };
+
   return (
     <MainLayout>
       <div className="bankPage_container">
         <h4>BANK</h4>
         <div className="bankPage_Info">
           <div className="bankPage_Info_Inner">
-            <p className="bankPage_Info_title">출금가능 금액: 500,000 (원)</p>
+            <div className="bankPage_Info_title">
+              <p>출금가능 금액: 500,000 (원)</p>
+            </div>
             <div className="bankPage_Info_desc">
               <p>
                 최소 1,000,000 이상부터 <br /> 10,000원 단위로 출금 가능
@@ -34,13 +58,13 @@ const BankPage = () => {
           </div>
           <div className="bankPage_Info_Inner">
             <div className="bankPage_Info_title">
-              <button>출금하기</button>
               <input
                 type="text"
-                placeholder="금액 입력"
+                placeholder={`출금가능금액 : 500,000(원)`}
                 value={value}
                 onChange={handleMoneyChange}
               />
+              <button>출금하기</button>
             </div>
 
             <div className="bankPage_Info_Inner__Details">
@@ -60,7 +84,19 @@ const BankPage = () => {
             </div>
           </div>
         </div>
-        <div className="bankPage_content_box">콘텐츠박스</div>
+        <div className="bankPage_content_box">
+          {Object.entries(bankTest).map(([key, item]) => (
+            <ProjectContentBox
+              key={item.id}
+              id={item.id}
+              name={item.name}
+              description={item.description}
+              date={item.date}
+              memo={item.memo}
+              status="approve"
+            />
+          ))}
+        </div>
       </div>
     </MainLayout>
   );
