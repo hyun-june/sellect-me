@@ -59,14 +59,20 @@ const ProjectContentBox = ({
       </div>
       {isOpen[`${status}-${id}`] && (
         <div className="content_box_memo_inner open">
-          {memo.map((item) => (
-            <p key={item.id}>{item.content}</p>
-          ))}
-          {status === "approve" ? (
-            <button onClick={handleDone}>완료 요청하기</button>
-          ) : (
-            ""
-          )}
+          <div className="content_memo_form">
+            {memo.map((item) => (
+              <div className="content_memo" key={item.id}>
+                {item.label && <p className="memo_label">{item.label}</p>}
+                <p className="memo_label_content">{item.content}</p>
+              </div>
+            ))}
+
+            {status === "approve" ? (
+              <button onClick={handleDone}>완료 요청하기</button>
+            ) : (
+              ""
+            )}
+          </div>
         </div>
       )}
     </div>

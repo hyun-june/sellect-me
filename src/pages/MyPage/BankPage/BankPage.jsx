@@ -20,14 +20,22 @@ const BankPage = () => {
     console.log("dd", formattedValue);
   };
 
+  const getMoney = () => {
+    if (!value || value == 0) {
+      return alert("금액을 입력해주세요.");
+    }
+    console.log("출금", value);
+  };
+
   const bankTest = {
     1: {
       name: "aaa",
       description: "AAA테스트",
       date: "10.22",
       memo: [
-        { id: 1, content: "내용이있음" },
-        { id: 2, content: "내용ㅇ옹오오오오오오" },
+        { id: 1, label: "프로젝트명", content: "AAA 신제품 화보 촬영" },
+        { id: 2, label: "금액", content: "1,000,000(원)" },
+        { id: 3, content: "1,300,000(원)" },
       ],
     },
     2: {
@@ -64,7 +72,7 @@ const BankPage = () => {
                 value={value}
                 onChange={handleMoneyChange}
               />
-              <button>출금하기</button>
+              <button onClick={getMoney}>출금하기</button>
             </div>
 
             <div className="bankPage_Info_Inner__Details">
