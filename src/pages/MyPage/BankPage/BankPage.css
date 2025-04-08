@@ -135,3 +135,26 @@
     }
   }
 }
+
+.bankPage_sellecter {
+  position: relative;
+  padding-left: 1em;
+
+  .project_content_box {
+  }
+
+  input {
+    border: 2px solid #155f82;
+    width: 12px;
+    height: 12px;
+    position: absolute;
+    top: 2em;
+    transform: translateY(-50%);
+    left: -0.5em;
+    cursor: pointer;
+  }
+
+  input:checked {
+    background-color: #155f82;
+  }
+}

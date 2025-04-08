@@ -31,8 +31,14 @@ const ProjectContentBox = ({
     }));
   };
 
-  const handleDone = () => {
-    console.log("완료");
+  const handleDone = (e) => {
+    const type = e.currentTarget.dataset.type;
+
+    if (type.includes("selleb")) {
+      console.log("셀럽 확인하기", type);
+    } else if (type.includes("sellecter")) {
+      console.log("셀렉터 결제하기", type);
+    }
   };
 
   return (
@@ -54,7 +60,7 @@ const ProjectContentBox = ({
             isOpen[`${status}-${id}`] ? "memo_active" : ""
           }`}
         >
-          {status === "approve" ? "확인" : "메모"}
+          {status.includes("approve") ? "확인" : "메모"}
         </button>
       </div>
       {isOpen[`${status}-${id}`] && (
@@ -67,10 +73,23 @@ const ProjectContentBox = ({
               </div>
             ))}
 
-            {status === "approve" ? (
-              <button onClick={handleDone}>완료 요청하기</button>
-            ) : (
-              ""
+            {status.includes("approve") && (
+              <button
+                onClick={handleDone}
+                data-type={
+                  status.includes("selleb")
+                    ? "selleb_approve"
+                    : status.includes("sellecter")
+                    ? "sellecter_approve"
+                    : ""
+                }
+              >
+                {status.includes("selleb")
+                  ? "완료 요청하기"
+                  : status.includes("sellecter")
+                  ? "결제하기"
+                  : ""}
+              </button>
             )}
           </div>
         </div>
