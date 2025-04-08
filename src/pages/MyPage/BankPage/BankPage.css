@@ -115,23 +115,11 @@
 
     .content_memo {
       display: flex;
+      margin-bottom: 1em;
       align-items: center;
 
       width: 100%;
       justify-content: flex-end;
-
-      p {
-        margin: 0;
-        padding: 0.5em;
-      }
-
-      .memo_label {
-        width: 10em;
-      }
-    }
-
-    .content_memo:last-of-type {
-      border-top: 1px solid var(--line-color);
     }
   }
 }
@@ -139,9 +127,6 @@
 .bankPage_sellecter {
   position: relative;
   padding-left: 1em;
-
-  .project_content_box {
-  }
 
   input {
     border: 2px solid #155f82;

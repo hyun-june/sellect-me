@@ -72,3 +72,25 @@
   gap: 1em;
   width: fit-content;
 }
+
+.memo_label {
+  width: 120px;
+  text-align: right;
+  font-weight: bold;
+}
+
+.memo_label_content {
+  flex: 1;
+  text-align: right;
+}
+
+.memo_label_content.only {
+  width: 100%;
+  border-top: 1px solid #ccc;
+  padding-top: 1em;
+}
+
+.memo_row {
+  display: flex;
+  margin-bottom: 8px;
+}

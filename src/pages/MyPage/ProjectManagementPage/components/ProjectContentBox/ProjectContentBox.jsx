@@ -67,9 +67,15 @@ const ProjectContentBox = ({
         <div className="content_box_memo_inner open">
           <div className="content_memo_form">
             {memo.map((item) => (
-              <div className="content_memo" key={item.id}>
-                {item.label && <p className="memo_label">{item.label}</p>}
-                <p className="memo_label_content">{item.content}</p>
+              <div>
+                {item.label ? (
+                  <div className="content_memo" key={item.id}>
+                    <div className="memo_label">{item.label}</div>
+                    <div className="memo_label_content">{item.content}</div>
+                  </div>
+                ) : (
+                  <div className="memo_label_content only">{item.content}</div>
+                )}
               </div>
             ))}
 

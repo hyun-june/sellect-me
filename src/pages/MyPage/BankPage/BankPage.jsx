@@ -21,13 +21,13 @@ const BankPage = () => {
   };
 
   const getMoney = () => {
-    if (!value || value == 0) {
+    if (!value || value === 0) {
       return alert("금액을 입력해주세요.");
     }
     console.log("출금", value);
   };
 
-  const user = "sellecter";
+  const user = "selleb";
 
   const bankTest = {
     1: {
@@ -45,8 +45,11 @@ const BankPage = () => {
       description: "dddd테스트",
       date: "10.22",
       memo: [
-        { id: 1, content: "테스트 메모" },
-        { id: 2, content: "ㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇ" },
+        { id: 1, label: "프로젝트명", content: "AAA 신제품 화보 촬영" },
+        { id: 2, label: "금액", content: "1,000,000(원)" },
+        { id: 3, label: "+ 수수료", content: "200,000(원)" },
+        { id: 4, label: "+ 부가세", content: "100,000(원)" },
+        { id: 5, content: "1,320,000(원)" },
       ],
     },
   };
