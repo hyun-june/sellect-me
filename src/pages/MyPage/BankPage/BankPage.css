@@ -116,10 +116,7 @@
     .content_memo {
       display: flex;
       margin-bottom: 1em;
-      align-items: center;
-
       width: 100%;
-      justify-content: flex-end;
     }
   }
 }
@@ -141,5 +138,55 @@
 
   input:checked {
     background-color: #155f82;
+  }
+}
+
+.bankPage_cancel_section {
+  /* border-top: 4px solid var(--line-color);
+  border-bottom: 4px solid var(--line-color);
+  padding: 1em;
+  position: relative; */
+
+  display: flex;
+  flex-direction: column;
+  border-top: 4px solid var(--line-color);
+  border-bottom: 4px solid var(--line-color);
+  gap: 2em;
+  padding: 1em;
+
+  input {
+    border: 2px solid #155f82;
+    width: 12px;
+    height: 12px;
+  }
+
+  input:checked {
+    background-color: #155f82;
+  }
+
+  .bankPage_cancel_inner {
+    display: flex;
+    align-items: center;
+    gap: 2em;
+    font-weight: bold;
+
+    input {
+      margin-left: 0.5em;
+    }
+  }
+
+  .cancel_inner_title {
+    width: 8em;
+    text-align: right;
+    margin-right: 2em;
+  }
+
+  button {
+    align-self: flex-end;
+    margin-top: auto;
+    background-color: #a6c9eb;
+    padding: 0.5em;
+    margin: 0.5em;
+    border-radius: 5px;
   }
 }
