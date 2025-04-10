@@ -1,7 +1,7 @@
+import { Container } from "react-bootstrap";
 import Navigation from "./../../Navigation/Navigation";
 import Footer from "./../../Footer/Footer";
 import "./MainLayout.css";
-import { Container } from "react-bootstrap";
 
 const MainLayout = ({ children }) => {
   return (
