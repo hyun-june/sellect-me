@@ -1,0 +1,59 @@
+.payment_container {
+  flex: 1;
+
+  width: 100%;
+  text-align: left;
+  border: 1px solid red;
+
+  .payment_info {
+    display: flex;
+    align-items: center;
+    gap: 2em;
+    img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    span {
+      font-weight: bold;
+      font-size: 2em;
+    }
+  }
+
+  .payment_details {
+    display: grid;
+    grid-template-columns: 1fr 0.5fr;
+    gap: 1em;
+
+    .payment_details_inner {
+      border: 1px solid var(--line-color);
+      padding: 1em;
+
+      table {
+        width: 100%;
+        font-weight: bold;
+
+        th,
+        td {
+          padding: 0.3em 0em;
+        }
+
+        td {
+          text-align: right;
+        }
+      }
+
+      .total {
+        border-top: 1px solid var(--line-color);
+
+        th,
+        td {
+          padding-top: 1em;
+        }
+      }
+    }
+  }
+}

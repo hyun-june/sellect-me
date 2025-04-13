@@ -17,6 +17,7 @@ import ModelPage from "../pages/ModelPage/ModelPage";
 import ProjectManagementPage from "../pages/MyPage/ProjectManagementPage/ProjectManagementPage";
 import FavoritesPage from "../pages/MyPage/FavoritesPage/FavoritesPage";
 import BankPage from "../pages/MyPage/BankPage/BankPage";
+import PayMentPage from "../pages/MyPage/BankPage/PayMentPage/PayMentPage";
 
 const AppRouter = () => {
   const location = useLocation();
@@ -44,6 +45,7 @@ const AppRouter = () => {
       <Route path="/mypage/favorites" element={<FavoritesPage />} />
       <Route path="/mypage/projectManage" element={<ProjectManagementPage />} />
       <Route path="/mypage/bank" element={<BankPage />} />
+      <Route path="/mypage/bank/payment" element={<PayMentPage />} />
 
       <Route path="/quotation" element={<QuotationPage />} />
 
