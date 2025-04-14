@@ -5,6 +5,7 @@ import MainLayout from "./../../components/Layout/MainLayout/MainLayout";
 const ModelPage = () => {
   const location = useLocation();
   const type = location.pathname.replace("/model/", "");
+  console.log("yy", type);
 
   return (
     <MainLayout>

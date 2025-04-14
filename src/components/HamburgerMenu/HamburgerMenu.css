@@ -71,7 +71,3 @@
   margin: 0px 20px;
   transition: transform 0.3s ease-in-out; /* 개별 메뉴 아이템의 애니메이션 */
 }
-
-.dd {
-  border: none;
-}

@@ -93,8 +93,15 @@ body {
   margin-left: 0.5em;
 }
 
-input[type="checkbox"]:checked + label.check-box {
-  background-color: var(--text-sub-color);
+input[type="checkbox"] {
+  border: 3px solid #155f82;
+  width: 12px;
+  height: 12px;
+  cursor: pointer;
+}
+
+input[type="checkbox"]:checked {
+  background-color: #155f82;
 }
 
 /* react-tabs */

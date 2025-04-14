@@ -1,17 +1,16 @@
 .payment_container {
   flex: 1;
-
   width: 100%;
   text-align: left;
-  border: 1px solid red;
 
   .payment_info {
     display: flex;
     align-items: center;
     gap: 2em;
+    margin: 2em 0em;
     img {
-      width: 150px;
-      height: 150px;
+      width: 120px;
+      height: 120px;
       border-radius: 50%;
       object-fit: cover;
       object-position: center;
@@ -27,6 +26,8 @@
     display: grid;
     grid-template-columns: 1fr 0.5fr;
     gap: 1em;
+    margin-bottom: 1em;
+    font-size: 1.2em;
 
     .payment_details_inner {
       border: 1px solid var(--line-color);
@@ -55,5 +56,129 @@
         }
       }
     }
+
+    .assent_section {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+
+      label:first-of-type {
+        font-weight: bold;
+      }
+
+      label {
+        display: flex;
+        gap: 0.5em;
+
+        input {
+          flex-shrink: 0;
+          margin-top: 2px;
+        }
+
+        span {
+          flex: 1;
+        }
+      }
+    }
+  }
+}
+
+.payment_options_section {
+  width: 100%;
+  margin-bottom: 2em;
+  padding: 1em;
+  border: 1px solid var(--line-color);
+
+  h4 {
+    margin-bottom: 1em;
+  }
+
+  .sub_title {
+    font-size: 0.8em;
+    color: var(--text-sub-color);
+  }
+
+  ul {
+    padding: 0;
+    list-style: none;
+    width: 100%;
+    display: flex;
+  }
+
+  .custom_button {
+    background-color: none;
+    width: 10em;
+    height: 3em;
+    border: 1px solid var(--line-color);
+    position: relative;
+  }
+
+  .custom_button:hover {
+    background-color: inherit;
+    color: var(--text-color);
+  }
+
+  .custom_button:focus {
+    border: 2px solid var(--text-color);
+  }
+
+  .event_badge {
+    background-color: #dceaf7;
+    color: #205f9a;
+    border-radius: 8px;
+    position: absolute;
+    left: 0.2em;
+    top: 0.2em;
+    padding: 0.3em;
+    font-size: 10px;
+    font-weight: bold;
+  }
+
+  .select {
+    border: 2px solid var(--text-color);
+  }
+}
+
+.tax_voice_section {
+  position: relative;
+  label {
+    display: flex;
+    gap: 0.5em;
+    margin-bottom: 0.5em;
+
+    input {
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    span {
+      flex: 1;
+      font-weight: bold;
+      font-size: 1.2em;
+    }
+  }
+
+  ul {
+    list-style: "-";
+    padding-left: 0.5em;
+
+    li {
+      padding-left: 0.5em;
+      margin-bottom: 0.5em;
+    }
+  }
+
+  .custom_button {
+    background-color: #dceaf7;
+    color: #205f9a;
+    font-weight: bold;
+    border: none;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+
+  .custom_button:hover {
+    background-color: #90cbfb;
   }
 }
