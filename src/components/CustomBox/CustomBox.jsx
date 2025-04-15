@@ -1,7 +1,7 @@
 import "./CustomBox.css";
 
 const CustomBox = ({
-  children,
+  innerText,
   className = "",
   textAlign = "center",
   ...props
@@ -12,7 +12,7 @@ const CustomBox = ({
       style={{ justifyContent: textAlign }}
       {...props}
     >
-      {children}
+      {innerText}
     </div>
   );
 };

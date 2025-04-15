@@ -20,6 +20,7 @@ import BankPage from "../pages/MyPage/BankPage/BankPage";
 import PayMentPage from "../pages/MyPage/BankPage/PayMentPage/PayMentPage";
 import SchedulePage from "../pages/MyPage/SchedulePage/SchedulePage";
 import ChatListPage from "./../pages/MyPage/ChatListPage/ChatListPage";
+import ChattingPage from "../pages/MyPage/ChatListPage/ChattingPage/ChattingPage";
 
 const AppRouter = () => {
   const location = useLocation();
@@ -50,6 +51,7 @@ const AppRouter = () => {
       <Route path="/mypage/bank/payment" element={<PayMentPage />} />
       <Route path="/mypage/schedule" element={<SchedulePage />} />
       <Route path="/mypage/Chatlist" element={<ChatListPage />} />
+      <Route path="/mypage/Chatting" element={<ChattingPage />} />
       <Route path="/quotation" element={<QuotationPage />} />
 
       <Route path="/signup" element={<SignUpPage />} />

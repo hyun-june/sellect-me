@@ -57,7 +57,7 @@ const mypageMenu = [
 //   "6",
 // ];
 
-const MyPage = () => {
+const MyPage = (props) => {
   // const scrollRef = useRef(null);
   // const [isDragging, setIsDragging] = useState(false);
   // const [startX, setStartX] = useState(0);
@@ -142,7 +142,7 @@ const MyPage = () => {
   const user = "selleb";
 
   return (
-    <MainLayout>
+    <MainLayout {...props}>
       <div className="mypage_container">
         <h4>MY PAGE</h4>
         <section className="mypage_inner">
@@ -151,9 +151,10 @@ const MyPage = () => {
             <div>
               {boxListLeft[user]?.map((item, index) => (
                 <a href={item.link} key={index}>
-                  <CustomBox className="mypage_left_box">
-                    {item.title}
-                  </CustomBox>
+                  <CustomBox
+                    className="mypage_left_box"
+                    innerText={item.title}
+                  />
                 </a>
               ))}
 
@@ -163,9 +164,11 @@ const MyPage = () => {
           <div className="mypage_inner_right">
             {boxListRight[user].map((item, index) => (
               <a href={item.link} key={index}>
-                <CustomBox className="mypage_right_box" textAlign="left">
-                  {item.title}
-                </CustomBox>
+                <CustomBox
+                  className="mypage_right_box"
+                  textAlign="left"
+                  innerText={item.title}
+                />
               </a>
             ))}
           </div>
