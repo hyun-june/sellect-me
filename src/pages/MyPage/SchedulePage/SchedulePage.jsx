@@ -5,7 +5,7 @@ import "react-calendar/dist/Calendar.css";
 import "./SchedulePage.css";
 
 const SchedulePage = (props) => {
-  const [value, setValue] = useState(new Date()); // value로만 날짜 상태 관리
+  const [value, setValue] = useState(new Date());
   const [showModal, setShowModal] = useState(false);
   const [memoInput, setMemoInput] = useState("");
   const [memoData, setMemoData] = useState({
@@ -154,7 +154,10 @@ const SchedulePage = (props) => {
             <div className="modal_btn_section">
               <button
                 onClick={handleAddMemo}
-                disabled={currentMemoLength > MAX_MEMO_LENGTH}
+                disabled={
+                  currentMemoLength > MAX_MEMO_LENGTH ||
+                  memoData[formatDate(value)]?.length >= 3
+                }
               >
                 추가
               </button>
