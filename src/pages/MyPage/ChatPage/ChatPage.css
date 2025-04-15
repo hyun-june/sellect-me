@@ -1,0 +1,41 @@
+.chat_container {
+  width: 100%;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+
+  section {
+    flex: 1;
+    padding: 1em;
+    background-color: #edf5fb;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5em;
+  }
+}
+
+.chat_content_box {
+  background-color: white;
+  padding: 0em 1em;
+  height: 4em;
+  display: grid;
+  align-items: center;
+  grid-template-columns: 0.3fr 0.3fr 1.5fr 0.3fr;
+  box-shadow: 0 5px 8px -2px rgba(0, 0, 0, 0.3);
+
+  .chat_box_img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    background-color: black;
+  }
+
+  .chat_box_date {
+    text-align: center;
+  }
+
+  .chat_box_name {
+    font-weight: bold;
+  }
+}
