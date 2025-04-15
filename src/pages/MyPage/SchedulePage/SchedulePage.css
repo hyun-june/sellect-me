@@ -156,8 +156,13 @@
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
   position: relative;
 
+  h3 {
+    margin-bottom: 1em;
+  }
+
   input {
     border-bottom: 1px solid var(--line-color);
+    margin: 0.5em 0em;
     width: 100%;
   }
 

@@ -125,7 +125,7 @@ const SchedulePage = (props) => {
           <div className="modal_content" onClick={(e) => e.stopPropagation()}>
             <h3>{formatDate(value)} 메모</h3>
 
-            <div>
+            <div className="memo_lists">
               {Array.isArray(memoData[formatDate(value)]) &&
                 memoData[formatDate(value)].map((memo, idx) => (
                   <div key={idx} className="memo_item">
