@@ -5,13 +5,12 @@ import "react-calendar/dist/Calendar.css";
 import "./SchedulePage.css";
 
 const SchedulePage = (props) => {
-  const [value, onChange] = useState(new Date());
-  const [selectDate, setSelectDate] = useState();
+  const [value, setValue] = useState(new Date()); // value로만 날짜 상태 관리
   const [showModal, setShowModal] = useState(false);
   const [memoInput, setMemoInput] = useState("");
   const [memoData, setMemoData] = useState({
     "2025-04-14": "운동함",
-    "2025-04-15": ["스터디참여", "dddddddddddddddddddddd", "fffff"],
+    "2025-04-15": ["스터디참여", "ddddddddddddddddd", "fffff"],
   });
 
   const tileClassName = ({ date, view }) => {
@@ -27,8 +26,7 @@ const SchedulePage = (props) => {
   const tileContent = ({ date, view }) => {
     if (view !== "month") return null;
 
-    const formattedDate = formatDate(date);
-    const memoText = memoData[formattedDate];
+    const memoText = memoData[formatDate(date)];
 
     return (
       <div className="calendar_memo">
@@ -46,12 +44,19 @@ const SchedulePage = (props) => {
     return `${year}-${month}-${day}`;
   };
 
-  const MAX_MEMO_LENGTH = 50;
+  const MAX_MEMO_LENGTH = 40;
 
   const handleAddMemo = () => {
-    if (!selectDate || !memoInput.trim()) return;
+    if (!value || !memoInput.trim()) return;
 
-    const dateKey = formatDate(selectDate);
+    const dateKey = formatDate(value);
+    const currentMemos = memoData[dateKey] || [];
+
+    if (currentMemos.length >= 3) {
+      alert("최대 3개의 메모만 추가할 수 있습니다.");
+      return;
+    }
+
     setMemoData((prev) => ({
       ...prev,
       [dateKey]: [...(prev[dateKey] || []), memoInput.trim()],
@@ -60,11 +65,8 @@ const SchedulePage = (props) => {
     setMemoInput("");
   };
 
-  const totalMemoLength = memoData[formatDate(selectDate)]
-    ? memoData[formatDate(selectDate)].reduce(
-        (sum, memo) => sum + memo.length,
-        0
-      )
+  const totalMemoLength = memoData[formatDate(value)]
+    ? memoData[formatDate(value)].reduce((sum, memo) => sum + memo.length, 0)
     : 0;
 
   const currentMemoLength = totalMemoLength + memoInput.length;
@@ -92,7 +94,7 @@ const SchedulePage = (props) => {
   };
 
   const handleClickDay = (date) => {
-    setSelectDate(date);
+    setValue(date);
     setShowModal(true);
   };
 
@@ -109,31 +111,27 @@ const SchedulePage = (props) => {
         <Calendar
           tileClassName={tileClassName}
           tileContent={tileContent}
-          onChange={onChange}
-          onClickDay={(value, event) => handleClickDay(value, event)}
           value={value}
           calendarType="Hebrew"
           prev2Label={null}
           next2Label={null}
           formatDay={(locale, date) => date.getDate()}
           formatMonthYear={(locale, date) => `${date.getMonth() + 1}`}
-          onClick={handleAddMemo}
+          onClickDay={handleClickDay}
         />
       </div>
-      {showModal && selectDate && (
+      {showModal && value && (
         <div className="modal_overlay" onClick={() => setShowModal(false)}>
           <div className="modal_content" onClick={(e) => e.stopPropagation()}>
-            <h3>{formatDate(selectDate)} 메모</h3>
+            <h3>{formatDate(value)} 메모</h3>
 
             <div>
-              {Array.isArray(memoData[formatDate(selectDate)]) &&
-                memoData[formatDate(selectDate)].map((memo, idx) => (
+              {Array.isArray(memoData[formatDate(value)]) &&
+                memoData[formatDate(value)].map((memo, idx) => (
                   <div key={idx} className="memo_item">
                     <span>{`${idx + 1}. ${memo}`}</span>
                     <button
-                      onClick={() =>
-                        handleDeleteMemo(formatDate(selectDate), idx)
-                      }
+                      onClick={() => handleDeleteMemo(formatDate(value), idx)}
                     >
                       삭제
                     </button>

@@ -21,36 +21,31 @@
 /* 날짜의 글자 스타일 */
 .react-calendar__month-view__days__day-names,
 .react-calendar__month-view__days__day {
-  font-size: 2em;
+  font-size: 1.5em;
   position: relative;
 
   abbr {
     position: absolute;
-    left: 0.2em;
+    left: 0.1em;
     top: 0.2em;
     z-index: 1;
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 40px;
-    height: 40px;
+    width: 35px;
+    height: 35px;
     border-radius: 50%;
   }
 }
 
-.calendar_memo {
-  font-size: 16px;
-  font-weight: bold;
-  color: #81b3e4;
-  display: block;
-  white-space: normal;
-  word-wrap: break-word;
-  text-align: left;
-  margin-top: 2em;
+/* month에서 오늘 날짜 스타일 */
+.react-calendar__month-view .react-calendar__tile--now abbr {
+  background-color: var(--text-point-color) !important;
+}
 
-  div {
-    margin-bottom: 0.3em;
-  }
+/* 오늘 날짜 스타일 */
+.react-calendar__tile--now {
+  background-color: white;
 }
 
 /* 날짜 상자 */
@@ -123,14 +118,19 @@
   overflow: visible !important;
 }
 
-/* 오늘 날짜 스타일 */
-.react-calendar__tile--now {
-  background-color: white !important;
-  border: 50%;
-  color: black;
+/* 메모 */
+.calendar_memo {
+  font-size: 16px;
+  font-weight: bold;
+  color: #81b3e4;
+  display: block;
+  white-space: normal;
+  word-wrap: break-word;
+  text-align: left;
+  margin-top: 2em;
 
-  abbr {
-    background-color: var(--text-point-color);
+  div {
+    margin-bottom: 0.3em;
   }
 }
 
