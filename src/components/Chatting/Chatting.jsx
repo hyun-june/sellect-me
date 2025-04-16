@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import FileContent from "./components/FileContent/FileContent";
+import { FiSend } from "react-icons/fi";
 import "./Chatting.css";
 
 const Chatting = () => {
@@ -146,7 +147,9 @@ const Chatting = () => {
           onKeyDown={(e) => enterMessage(e)}
         />
 
-        <button onClick={sendMessage}>🔺</button>
+        <button onClick={sendMessage}>
+          <FiSend />
+        </button>
       </div>
     </div>
   );
