@@ -1,4 +1,4 @@
-.chatting_container {
+.chattingPage_container {
   width: 100%;
   display: grid;
   grid-template-columns: 0.5fr 1fr;
@@ -61,17 +61,6 @@
 }
 
 .chatting_section {
-  padding: 1em;
   background-color: #edf5fb;
-
-  .start_message {
-    display: flex;
-    justify-content: center;
-
-    span {
-      padding-bottom: 0.2em;
-      border-bottom: 1px solid var(--line-color);
-      width: max-content;
-    }
-  }
+  padding: 1em 0em;
 }

@@ -50,8 +50,8 @@ const AppRouter = () => {
       <Route path="/mypage/bank" element={<BankPage />} />
       <Route path="/mypage/bank/payment" element={<PayMentPage />} />
       <Route path="/mypage/schedule" element={<SchedulePage />} />
-      <Route path="/mypage/Chatlist" element={<ChatListPage />} />
-      <Route path="/mypage/Chatting" element={<ChattingPage />} />
+      <Route path="/mypage/chatlist" element={<ChatListPage />} />
+      <Route path="/mypage/chatting" element={<ChattingPage />} />
       <Route path="/quotation" element={<QuotationPage />} />
 
       <Route path="/signup" element={<SignUpPage />} />

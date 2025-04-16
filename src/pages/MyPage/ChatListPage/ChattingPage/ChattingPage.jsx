@@ -4,6 +4,7 @@ import CustomBox from "../../../../components/CustomBox/CustomBox";
 import MainLayout from "../../../../components/Layout/MainLayout/MainLayout";
 import { IoIosArrowBack } from "react-icons/io";
 import "./ChattingPage.css";
+import Chatting from "../../../../components/Chatting/Chatting";
 
 const chattingMenu = [
   { content: "PROFILE", link: "/" },
@@ -30,7 +31,7 @@ const ChattingPage = (props) => {
 
   return (
     <MainLayout {...props}>
-      <div className="chatting_container">
+      <div className="chattingPage_container">
         <section className="chatting_menu">
           <button className="prev_btn" onClick={() => window.history.back()}>
             <IoIosArrowBack />
@@ -54,9 +55,10 @@ const ChattingPage = (props) => {
           </div>
         </section>
         <section className="chatting_section">
-          <div className="start_message">
+          {/* <div className="start_message">
             <span>CHAT을 시작했습니다!</span>
-          </div>
+          </div> */}
+          <Chatting />
         </section>
       </div>
     </MainLayout>
