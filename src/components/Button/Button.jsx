@@ -5,9 +5,12 @@ const buttonTheme = {
   black: "black",
 };
 
-const Button = ({ children, theme = "normal", ...props }) => {
+const Button = ({ children, theme = "normal", className, ...props }) => {
   return (
-    <button className={`custom_button ${buttonTheme[theme]}`} {...props}>
+    <button
+      className={`custom_button ${className} ${buttonTheme[theme]}`}
+      {...props}
+    >
       <div>{children}</div>
     </button>
   );

@@ -2,6 +2,7 @@
   width: 100%;
   display: flex;
   flex-direction: column;
+  flex: 1;
 }
 
 .vchat_header {
@@ -18,18 +19,28 @@
 }
 
 .vchat_video_section {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 5px 1fr;
   gap: 1em;
-  border-bottom: 1px solid red;
-  height: 500px;
+  border-bottom: 3px solid var(--line-color);
+  padding-bottom: 1em;
+  height: 450px;
+  background-color: white;
+
+  .chat_vertical_line {
+    justify-self: center;
+    width: 3px;
+    height: 100%;
+    background-color: var(--line-color);
+  }
 
   .vchat_video_inner {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
+    display: grid;
+    grid-template-rows: 1fr 0.1fr;
 
     img {
       width: 100%;
+      max-height: 400px;
       overflow: hidden;
       object-fit: cover;
       object-position: center;
@@ -39,21 +50,77 @@
     div {
       display: flex;
       width: 100%;
+      height: 100%;
       justify-content: space-between;
-      margin-bottom: 1em;
       padding: 0.5em;
       background-color: aqua;
     }
   }
-
-  img {
-    object-fit: cover;
-  }
 }
 
 .vchat_chatting_section {
-  background-color: red;
-  display: flex;
-  gap: 1em;
+  display: grid;
+  grid-template-columns: 1fr 0.5fr;
   flex: 1;
+  gap: 1em;
+
+  .vchat_chatting {
+    border-right: 2px solid var(--line-color);
+    max-height: 330px;
+    overflow: auto;
+
+    textarea {
+      padding-left: 1em;
+    }
+  }
+
+  .vchat_btn_section {
+    padding: 1em;
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+
+    .vchat_alarm_box {
+      border: 3px solid var(--text-point-color);
+      background-color: var(--text-point-color);
+      padding: 0.3em 0.5em;
+      margin-left: 0.5em;
+      text-align: center;
+      align-items: center;
+      color: white;
+      border-radius: 6px;
+      min-height: 2.5em;
+      line-height: 1.5em;
+    }
+
+    .vchat_btn {
+      border: 3px solid var(--text-point-color);
+      color: var(--text-point-color);
+    }
+
+    .vchat_btn:hover {
+      background-color: var(--text-point-color);
+      color: white;
+    }
+
+    .vchat_btn:last-child {
+      margin-top: auto;
+    }
+  }
+}
+
+.vchat_chatting::-webkit-scrollbar {
+  width: 5px;
+}
+
+.vchat_chatting::-webkit-scrollbar-thumb {
+  background-color: #2f3542;
+  border-radius: 10px;
+}
+
+.vchat_chatting::-webkit-scrollbar-track {
+  background-color: grey;
+  border-radius: 10px;
+  box-shadow: inset 0px 0px 5px white;
 }

@@ -131,6 +131,7 @@ const ChattingPage = (props) => {
             prevData={prevMessage}
             prevFile={prevFile}
             updateFileData={handleFileData}
+            inputType="file"
           />
         </section>
       </div>

@@ -1,7 +1,7 @@
 .chatting_container {
   display: flex;
   flex-direction: column;
-  min-height: 100%;
+  height: 100%;
 
   .start_message {
     display: flex;
@@ -20,7 +20,7 @@
   display: flex;
   flex-direction: column;
   flex: 1;
-  max-height: 660px;
+  max-height: 750px;
   overflow: auto;
   padding: 1em;
 
@@ -83,7 +83,7 @@
   display: flex;
   align-items: center;
   position: relative;
-
+  margin-top: auto;
   textarea {
     resize: none;
     border: 2px solid #a6c9eb;
@@ -92,10 +92,11 @@
     height: 2em;
     padding-top: 0.1em;
     border-radius: 8px;
-    padding-left: 3em;
+    padding-left: 2em;
     font-size: 1.2em;
-    line-height: 1.5em;
+    line-height: 1.7em;
   }
+
   input[type="file"] {
     display: none;
   }
@@ -104,6 +105,7 @@
     position: absolute;
     left: 1.5em;
     cursor: pointer;
+    display: block;
   }
 
   button {
