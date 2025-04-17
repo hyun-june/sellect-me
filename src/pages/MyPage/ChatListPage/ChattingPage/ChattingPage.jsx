@@ -6,13 +6,17 @@ import Chatting from "../../../../components/Chatting/Chatting";
 import "./ChattingPage.css";
 import { useEffect, useState } from "react";
 
+const user = "selleb";
+
 const chattingMenu = [
-  { content: "PROFILE", link: "/" },
-  { content: "V-CHAT", link: "/" },
-  { content: "견적 상세보기", link: "/" },
+  { content: "PROFILE", link: "mypage" },
+  { content: "V-CHAT", link: "" },
+  {
+    content: `${{ selleb: "견적", sellecter: "제안서" }[user] || ""} 상세보기`,
+    link: "quotation",
+  },
   { content: "주고받은 파일" },
 ];
-
 // 유저 정보
 const chatUserData = {
   other: {
@@ -57,7 +61,7 @@ const ChattingPage = (props) => {
     }
   }, [fileData]);
   const handleMenu = (item) => {
-    navigate(item.link);
+    navigate(`/${item.link}`);
 
     if (item.content === "주고받은 파일") {
       setIsShowFileList((prev) => !prev);
