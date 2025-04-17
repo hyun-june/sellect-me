@@ -3,28 +3,19 @@ import FileContent from "./components/FileContent/FileContent";
 import { FiSend } from "react-icons/fi";
 import "./Chatting.css";
 
-const Chatting = () => {
-  const chattingUserData = {
-    other: {
-      nickname: "모코모코",
-      src: "https://png.pngtree.com/png-clipart/20220112/ourmid/pngtree-cartoon-hand-drawn-default-avatar-png-image_4154232.png",
-    },
-    user: {
-      nickname: "고양이",
-      src: "https://t1.daumcdn.net/friends/prod/editor/dc8b3d02-a15a-4afa-a88b-989cf2a50476.jpg",
-    },
-  };
+const Chatting = ({ ...props }) => {
+  const { userData, prevData, prevFile } = props;
+
+  const [messages, setMessages] = useState(prevData);
 
   const basicProfile =
     "https://mblogthumb-phinf.pstatic.net/MjAyMDExMDFfMTgy/MDAxNjA0MjI4ODc1NDMw.Ex906Mv9nnPEZGCh4SREknadZvzMO8LyDzGOHMKPdwAg.ZAmE6pU5lhEdeOUsPdxg8-gOuZrq_ipJ5VhqaViubI4g.JPEG.gambasg/%EC%9C%A0%ED%8A%9C%EB%B8%8C_%EA%B8%B0%EB%B3%B8%ED%94%84%EB%A1%9C%ED%95%84_%ED%95%98%EB%8A%98%EC%83%89.jpg?type=w800";
 
-  const [messages, setMessages] = useState([
-    { sender: "other", text: "안녕하세요!" },
-  ]);
   const [newMessage, setNewMessage] = useState("");
-  const [fileList, setFileList] = useState([{ sender: "other", name: "pdf" }]);
+  const [fileList, setFileList] = useState([prevFile]);
   const [newFile, setNewFile] = useState(null);
   const fileInputRef = useRef(null);
+  const bottomRef = useRef(null);
   const objectURLs = useRef([]);
 
   useEffect(() => {
@@ -32,6 +23,10 @@ const Chatting = () => {
       objectURLs.current.forEach((url) => URL.revokeObjectURL(url));
     };
   }, []);
+
+  useEffect(() => {
+    bottomRef.current?.scrollIntoView({ behavior: "smooth" });
+  }, [messages]);
 
   const sendMessage = () => {
     if (newMessage.trim() === "" && !newFile) return;
@@ -89,18 +84,18 @@ const Chatting = () => {
 
   return (
     <div className="chatting_container">
-      <div className="start_message">
-        <span>CHAT을 시작했습니다!</span>
-      </div>
       <div className="message_section">
+        <div className="start_message">
+          <span>CHAT을 시작했습니다!</span>
+        </div>
         {messages.map((message, index) => {
-          const userProfile =
-            chattingUserData[message.sender]?.src || basicProfile;
+          const userProfile = userData[message.sender]?.src || basicProfile;
 
           const isGroup =
             index === 0 || messages[index - 1].sender !== message.sender;
           return (
             <div
+              key={index}
               className={`message_box ${
                 message.sender === "user" ? "user" : "other"
               }`}
@@ -111,8 +106,16 @@ const Chatting = () => {
                 <div className="profile" />
               )}
 
+              {/* user프로필 없을때 레이아웃깨짐 해결못함 */}
+              {/* {message.sender !== "user" ? (
+                isGroup ? (
+                  <img className="profile" src={userProfile} />
+                ) : (
+                  <div className="profile" />
+                )
+              ) : null} */}
+
               <div
-                key={index}
                 className={`message ${
                   message.sender === "user" ? "user" : "other"
                 }`}
@@ -126,6 +129,7 @@ const Chatting = () => {
             </div>
           );
         })}
+        <div ref={bottomRef}></div>
       </div>
       <div className="send_message">
         <input

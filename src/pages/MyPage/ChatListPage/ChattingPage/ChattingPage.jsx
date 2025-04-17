@@ -1,10 +1,9 @@
 import { useNavigate } from "react-router-dom";
-import { useState } from "react";
 import CustomBox from "../../../../components/CustomBox/CustomBox";
 import MainLayout from "../../../../components/Layout/MainLayout/MainLayout";
 import { IoIosArrowBack } from "react-icons/io";
-import "./ChattingPage.css";
 import Chatting from "../../../../components/Chatting/Chatting";
+import "./ChattingPage.css";
 
 const chattingMenu = [
   { content: "PROFILE", link: "/" },
@@ -12,6 +11,33 @@ const chattingMenu = [
   { content: "견적 상세보기", link: "/" },
   { content: "주고받은 파일" },
 ];
+
+// 유저 정보
+const chatUserData = {
+  other: {
+    nickname: "모코모코",
+    src: "https://png.pngtree.com/png-clipart/20220112/ourmid/pngtree-cartoon-hand-drawn-default-avatar-png-image_4154232.png",
+  },
+  user: {
+    nickname: "고양이",
+    src: "https://t1.daumcdn.net/friends/prod/editor/dc8b3d02-a15a-4afa-a88b-989cf2a50476.jpg",
+  },
+};
+
+// 이전 대화
+const prevMessage = [
+  { sender: "other", text: "안녕하세요!" },
+  { sender: "other", text: "안녕하세요!" },
+];
+
+// 이전 파일 정보
+const prevFile = {
+  sender: "user",
+  text: "테스트파일.pdf",
+  file: "url",
+  type: "file",
+  fileType: "pdf",
+};
 
 const ChattingPage = (props) => {
   const navigate = useNavigate();
@@ -24,11 +50,6 @@ const ChattingPage = (props) => {
     }
   };
 
-  // laravel mix
-  //   const handleMenu = (item)=>{
-  //     router.visit(`/${item.link}`)
-  //   }
-
   return (
     <MainLayout {...props}>
       <div className="chattingPage_container">
@@ -38,8 +59,8 @@ const ChattingPage = (props) => {
             CHAT 나가기
           </button>
           <div className="chatting_info">
-            <img src="/images/test.jpg" alt="" />
-            <span>이름임</span>
+            <img src={chatUserData.other.src} alt="" />
+            <span>{chatUserData.other.nickname}</span>
             <div className="chatting_menu_list">
               {chattingMenu.map((item, index) => (
                 <button key={index} onClick={() => handleMenu(item)}>
@@ -55,10 +76,11 @@ const ChattingPage = (props) => {
           </div>
         </section>
         <section className="chatting_section">
-          {/* <div className="start_message">
-            <span>CHAT을 시작했습니다!</span>
-          </div> */}
-          <Chatting />
+          <Chatting
+            userData={chatUserData}
+            prevData={prevMessage}
+            prevFile={prevFile}
+          />
         </section>
       </div>
     </MainLayout>
