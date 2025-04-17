@@ -4,11 +4,17 @@
   height: 100%;
   width: 100%;
   align-items: center;
+  padding: 0.5em 0em;
 
   img {
     max-width: 200px;
     max-height: 200px;
     border-radius: 8px;
     object-fit: cover;
+  }
+
+  a {
+    text-decoration: underline;
+    color: blue;
   }
 }

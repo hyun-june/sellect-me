@@ -4,7 +4,7 @@ import { FiSend } from "react-icons/fi";
 import "./Chatting.css";
 
 const Chatting = ({ ...props }) => {
-  const { userData, prevData, prevFile } = props;
+  const { userData, prevData, prevFile, updateFileData } = props;
 
   const [messages, setMessages] = useState(prevData);
 
@@ -12,7 +12,7 @@ const Chatting = ({ ...props }) => {
     "https://mblogthumb-phinf.pstatic.net/MjAyMDExMDFfMTgy/MDAxNjA0MjI4ODc1NDMw.Ex906Mv9nnPEZGCh4SREknadZvzMO8LyDzGOHMKPdwAg.ZAmE6pU5lhEdeOUsPdxg8-gOuZrq_ipJ5VhqaViubI4g.JPEG.gambasg/%EC%9C%A0%ED%8A%9C%EB%B8%8C_%EA%B8%B0%EB%B3%B8%ED%94%84%EB%A1%9C%ED%95%84_%ED%95%98%EB%8A%98%EC%83%89.jpg?type=w800";
 
   const [newMessage, setNewMessage] = useState("");
-  const [fileList, setFileList] = useState([prevFile]);
+  const [fileList, setFileList] = useState(prevFile);
   const [newFile, setNewFile] = useState(null);
   const fileInputRef = useRef(null);
   const bottomRef = useRef(null);
@@ -28,6 +28,13 @@ const Chatting = ({ ...props }) => {
     bottomRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [messages]);
 
+  useEffect(() => {
+    if (updateFileData) {
+      updateFileData(fileList);
+    }
+  }, [fileList]);
+
+  console.log("..", fileList);
   const sendMessage = () => {
     if (newMessage.trim() === "" && !newFile) return;
 
@@ -41,8 +48,8 @@ const Chatting = ({ ...props }) => {
       objectURLs.current.push(fileURL);
       const userFile = {
         sender: "user",
-        text: newFile.name,
-        file: fileURL,
+        fileName: newFile.name,
+        fileURL: fileURL,
         type: "file",
         fileType: newFile.type,
       };

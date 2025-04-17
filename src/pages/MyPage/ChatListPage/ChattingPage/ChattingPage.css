@@ -36,6 +36,30 @@
       font-size: 1.4em;
       margin-top: 0.3em;
     }
+
+    .chatting_fileList {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5em;
+      margin-top: 0.5em;
+      padding-left: 1em;
+      font-weight: bold;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      height: 0;
+    }
+
+    .showFile {
+      opacity: 1;
+      height: 250px;
+      overflow-y: auto;
+    }
+
+    .hideFile {
+      transition: none;
+      opacity: 0;
+      height: 0;
+    }
   }
 
   .chatting_menu_list {

@@ -4,6 +4,7 @@ import MainLayout from "../../../../components/Layout/MainLayout/MainLayout";
 import { IoIosArrowBack } from "react-icons/io";
 import Chatting from "../../../../components/Chatting/Chatting";
 import "./ChattingPage.css";
+import { useEffect, useState } from "react";
 
 const chattingMenu = [
   { content: "PROFILE", link: "/" },
@@ -31,22 +32,35 @@ const prevMessage = [
 ];
 
 // 이전 파일 정보
-const prevFile = {
-  sender: "user",
-  text: "테스트파일.pdf",
-  file: "url",
-  type: "file",
-  fileType: "pdf",
-};
+const prevFile = [
+  {
+    sender: "user",
+    fileName: "테스트파일.pdf",
+    fileURL: "url",
+    type: "file",
+    fileType: "pdf",
+  },
+];
 
 const ChattingPage = (props) => {
   const navigate = useNavigate();
+  const [fileData, setFileData] = useState(prevFile);
+  const [isShowFileList, setIsShowFileList] = useState(false);
 
+  const handleFileData = (file) => {
+    setFileData(file);
+  };
+
+  useEffect(() => {
+    if (fileData.length === 0) {
+      setIsShowFileList(false);
+    }
+  }, [fileData]);
   const handleMenu = (item) => {
     navigate(item.link);
 
     if (item.content === "주고받은 파일") {
-      console.log("파일");
+      setIsShowFileList((prev) => !prev);
     }
   };
 
@@ -72,6 +86,38 @@ const ChattingPage = (props) => {
                   />
                 </button>
               ))}
+
+              {/* {isShowFileList && (
+                <div className="chatting_fileList">
+                  {fileData.map((item, index) => (
+                    <a
+                      href={item?.fileURL}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      key={index}
+                    >
+                      {item?.fileName}
+                    </a>
+                  ))}
+                </div>
+              )} */}
+
+              <div
+                className={`chatting_fileList ${
+                  isShowFileList ? "showFile" : "hideFile"
+                }`}
+              >
+                {fileData.map((item, index) => (
+                  <a
+                    href={item?.fileURL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    key={index}
+                  >
+                    {item?.fileName}
+                  </a>
+                ))}
+              </div>
             </div>
           </div>
         </section>
@@ -80,6 +126,7 @@ const ChattingPage = (props) => {
             userData={chatUserData}
             prevData={prevMessage}
             prevFile={prevFile}
+            updateFileData={handleFileData}
           />
         </section>
       </div>
