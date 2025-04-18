@@ -77,14 +77,16 @@ const VchatPage = (props) => {
 
   useEffect(() => {
     if (timer === 0) {
-      localStream.getTracks().forEach((track) => track.stop());
+      if (localStream) {
+        localStream.getTracks().forEach((track) => track.stop());
+      }
 
       if (localVideoRef.current) {
         localVideoRef.current.srcObject = null;
         console.log("시간이 끝나서 종료됨");
       }
     }
-  });
+  }, [timer]);
 
   const guideMessage = (status) => (status ? "끄기" : "켜기");
 

@@ -150,11 +150,8 @@ const MyPage = (props) => {
             <ProfileImgBox src="/images/test.jpg" />
             <div>
               {boxListLeft[user]?.map((item, index) => (
-                <a href={item.link} key={index}>
-                  <CustomBox
-                    className="mypage_left_box"
-                    innerText={item.title}
-                  />
+                <a href={item.link} key={index} className="mypage_left_box">
+                  <CustomBox>{item.title}</CustomBox>
                 </a>
               ))}
 
@@ -163,12 +160,8 @@ const MyPage = (props) => {
           </div>
           <div className="mypage_inner_right">
             {boxListRight[user].map((item, index) => (
-              <a href={item.link} key={index}>
-                <CustomBox
-                  className="mypage_right_box"
-                  textAlign="left"
-                  innerText={item.title}
-                />
+              <a href={item.link} key={index} className="mypage_right_box">
+                <CustomBox>{item.title}</CustomBox>
               </a>
             ))}
           </div>

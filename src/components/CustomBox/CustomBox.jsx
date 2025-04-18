@@ -1,18 +1,9 @@
 import "./CustomBox.css";
 
-const CustomBox = ({
-  innerText,
-  className = "",
-  textAlign = "center",
-  ...props
-}) => {
+const CustomBox = ({ children, className = "", ...props }) => {
   return (
-    <div
-      className={`custom_box ${className}`}
-      style={{ justifyContent: textAlign }}
-      {...props}
-    >
-      {innerText}
+    <div className={`custom_box ${className}`} {...props}>
+      {children}
     </div>
   );
 };

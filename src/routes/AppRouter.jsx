@@ -22,6 +22,7 @@ import SchedulePage from "../pages/MyPage/SchedulePage/SchedulePage";
 import ChatListPage from "./../pages/MyPage/ChatListPage/ChatListPage";
 import ChattingPage from "../pages/MyPage/ChatListPage/ChattingPage/ChattingPage";
 import VchatPage from "../pages/VchatPage/VchatPage";
+import VchatTicketPage from "../pages/VchatTicketPage/VchatTicketPage";
 
 const AppRouter = () => {
   const location = useLocation();
@@ -54,6 +55,7 @@ const AppRouter = () => {
       <Route path="/mypage/chatlist" element={<ChatListPage />} />
       <Route path="/mypage/chatting" element={<ChattingPage />} />
       <Route path="/v-chat" element={<VchatPage />} />
+      <Route path="/v-chat/ticket" element={<VchatTicketPage />} />
       <Route path="/quotation" element={<QuotationPage />} />
 
       <Route path="/signup" element={<SignUpPage />} />

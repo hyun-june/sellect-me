@@ -38,10 +38,11 @@
     grid-template-rows: 1fr 0.1fr;
 
     video {
-      max-height: 350px;
+      height: 350px;
       width: 100%;
       object-fit: cover;
       object-position: center;
+      background-color: black;
     }
 
     img {

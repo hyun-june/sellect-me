@@ -1,0 +1,86 @@
+.ticket_container {
+  width: 100%;
+  flex: 1;
+
+  h5 {
+    text-align: center;
+    margin-bottom: 3em;
+  }
+
+  .ticket_inner {
+    display: grid;
+    grid-template-columns: 1fr 0.8fr;
+    gap: 2em;
+    margin-top: 1em;
+    height: 100%;
+    font-weight: bold;
+
+    .ticket_list {
+      display: flex;
+      flex-direction: column;
+      gap: 2em;
+
+      .custom_box {
+        cursor: pointer;
+
+        span {
+          pointer-events: none;
+        }
+      }
+    }
+
+    .ticket_item {
+      height: 70px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0em 2em;
+      box-sizing: border-box;
+    }
+
+    .ticket_cart {
+      display: flex;
+      flex-direction: column;
+      gap: 2em;
+      height: 100%;
+
+      .custom_box {
+        border: 3px solid skyblue;
+        height: 70px;
+      }
+    }
+
+    .buy_ticket {
+      flex-grow: 1;
+      padding: 2em;
+      position: relative;
+
+      button {
+        background-color: skyblue;
+        border: none;
+        position: absolute;
+        right: 1em;
+        bottom: 1em;
+      }
+
+      button:hover {
+        background-color: gray;
+        color: black;
+      }
+
+      button:disabled {
+        cursor: not-allowed;
+        background-color: #ccc;
+        color: #888;
+      }
+    }
+  }
+
+  .ticket_font {
+    font-size: 1.8em;
+  }
+
+  .ticket_select {
+    border: 2px solid black;
+  }
+}
