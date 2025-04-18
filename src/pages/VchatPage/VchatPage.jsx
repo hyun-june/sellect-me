@@ -1,5 +1,4 @@
 import MainLayout from "../../components/Layout/MainLayout/MainLayout";
-import "./VchatPage.css";
 import Chatting from "../../components/Chatting/Chatting";
 import Button from "./../../components/Button/Button";
 import { useEffect, useState } from "react";
@@ -7,6 +6,7 @@ import { GoDeviceCameraVideo } from "react-icons/go";
 import { BsCameraVideoOff } from "react-icons/bs";
 import { CiMicrophoneOn } from "react-icons/ci";
 import { CiMicrophoneOff } from "react-icons/ci";
+import "./VchatPage.css";
 
 const chatUserData = {
   other: {
@@ -31,13 +31,7 @@ const VchatPage = (props) => {
     },
   });
 
-  const guideMessage = (status) => {
-    if (status) {
-      return "끄기";
-    } else {
-      return "켜기";
-    }
-  };
+  const guideMessage = (status) => (status ? "끄기" : "켜기");
 
   const handleCamMic = (e) => {
     const controller = e.currentTarget.value;
@@ -57,8 +51,6 @@ const VchatPage = (props) => {
       return updateVchatStatus;
     });
   };
-
-  console.log("ddd", vchatStatus);
 
   useEffect(() => {
     if (timer === 0) return;
@@ -114,7 +106,9 @@ const VchatPage = (props) => {
                       <BsCameraVideoOff />
                     )}
                   </button>
-                  <span className="btn_guide">말풍선 등장</span>
+                  <span className="btn_guide">
+                    {`카메라 ${guideMessage(vchatStatus.selleb.cam)}`}
+                  </span>
                 </div>
                 <div className="video_button_item">
                   <button value="selleb_mic" onClick={handleCamMic}>
@@ -145,7 +139,9 @@ const VchatPage = (props) => {
                       <BsCameraVideoOff />
                     )}
                   </button>
-                  <span className="btn_guide">말풍선 등장</span>
+                  <span className="btn_guide">
+                    {`마이크 ${guideMessage(vchatStatus.sellecter.cam)}`}
+                  </span>
                 </div>
                 <div className="video_button_item">
                   <button value="sellecter_mic" onClick={handleCamMic}>
@@ -155,7 +151,9 @@ const VchatPage = (props) => {
                       <CiMicrophoneOff />
                     )}
                   </button>
-                  <span className="btn_guide">말풍선 등장</span>
+                  <span className="btn_guide">
+                    {`마이크 ${guideMessage(vchatStatus.sellecter.mic)}`}
+                  </span>
                 </div>
               </div>
             </div>

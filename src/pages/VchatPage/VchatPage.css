@@ -53,7 +53,7 @@
       justify-content: space-between;
       padding: 0.2em 0.5em;
       align-items: center;
-      background-color: aqua;
+      background-color: var(--line-color);
 
       span {
         font-weight: bold;
@@ -76,7 +76,7 @@
         }
 
         button:hover {
-          background-color: var(--line-color);
+          background-color: rgba(0, 0, 0, 0.1);
         }
 
         .btn_guide {
