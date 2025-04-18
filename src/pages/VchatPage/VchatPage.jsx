@@ -1,7 +1,7 @@
 import MainLayout from "../../components/Layout/MainLayout/MainLayout";
 import Chatting from "../../components/Chatting/Chatting";
 import Button from "./../../components/Button/Button";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { GoDeviceCameraVideo } from "react-icons/go";
 import { BsCameraVideoOff } from "react-icons/bs";
 import { CiMicrophoneOn } from "react-icons/ci";
@@ -19,6 +19,9 @@ const chatUserData = {
   },
 };
 const VchatPage = (props) => {
+  const videoRef = useRef(null);
+  const [mediaStream, setMediaStream] = useState(null);
+
   const [timer, setTimer] = useState(5); //여기가 설정 시간
   const [vchatStatus, setVchatStatus] = useState({
     selleb: {
@@ -30,8 +33,31 @@ const VchatPage = (props) => {
       mic: false,
     },
   });
+  useEffect(() => {
+    const getMedia = async () => {
+      let stream = null;
 
-  const guideMessage = (status) => (status ? "끄기" : "켜기");
+      try {
+        stream = await navigator.mediaDevices.getUserMedia({
+          video: true,
+          audio: true,
+        });
+        stream.getVideoTracks().forEach((track) => (track.enabled = false));
+        stream.getAudioTracks().forEach((track) => (track.enabled = false));
+
+        if (videoRef?.current) {
+          videoRef.current.srcObject = stream;
+        }
+
+        setMediaStream(stream);
+      } catch (err) {
+        console.log("스트림 에러:", err);
+      }
+    };
+    getMedia();
+  }, []);
+
+  const guideMessage = (status) => (status ? "켜기" : "끄기");
 
   const handleCamMic = (e) => {
     const controller = e.currentTarget.value;
@@ -41,13 +67,34 @@ const VchatPage = (props) => {
 
       if (controller === "selleb_cam") {
         updateVchatStatus.selleb.cam = !prev.selleb.cam;
+        if (mediaStream) {
+          mediaStream.getAudioTracks().forEach((track) => {
+            track.enabled = !prev.selleb.mic;
+          });
+        }
       } else if (controller === "selleb_mic") {
         updateVchatStatus.selleb.mic = !prev.selleb.mic;
+        if (mediaStream) {
+          mediaStream.getAudioTracks().forEach((track) => {
+            track.enabled = !prev.selleb.mic;
+          });
+        }
       } else if (controller === "sellecter_cam") {
         updateVchatStatus.sellecter.cam = !prev.sellecter.cam;
+        if (mediaStream) {
+          mediaStream.getVideoTracks().forEach((track) => {
+            track.enabled = !prev.sellecter.cam;
+          });
+        }
       } else if (controller === "sellecter_mic") {
         updateVchatStatus.sellecter.mic = !prev.sellecter.mic;
+        if (mediaStream) {
+          mediaStream.getAudioTracks().forEach((track) => {
+            track.enabled = !prev.sellecter.mic;
+          });
+        }
       }
+
       return updateVchatStatus;
     });
   };
@@ -94,7 +141,8 @@ const VchatPage = (props) => {
 
         <div className="vchat_video_section">
           <div className="vchat_video_inner">
-            <img src="/images/test.jpg" alt="" />
+            {/* <img src="/images/test.jpg" alt="" /> */}
+            <video ref={videoRef} autoPlay playsInline />
             <div className="vchat_video_button">
               <span>Selleb</span>
               <div>
@@ -128,6 +176,7 @@ const VchatPage = (props) => {
           <span className="chat_vertical_line"></span>
           <div className="vchat_video_inner">
             <img src="/images/test1.png" alt="" />
+
             <div className="vchat_video_button">
               <span>Sellecter</span>
               <div>
