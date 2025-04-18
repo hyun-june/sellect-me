@@ -23,6 +23,7 @@ const menu = [
   { name: "mypage/chatlist", address: "/mypage/chatlist" },
   { name: "mypage/chatting", address: "/mypage/chatting" },
   { name: "v-chat", address: "/v-chat" },
+  { name: "/v-chat/ticket", address: "/v-chat/ticket" },
   { name: "quotation", address: "/quotation" },
   { name: "signup", address: "/signup" },
   { name: "model/fitting", address: "/model/fitting" },
