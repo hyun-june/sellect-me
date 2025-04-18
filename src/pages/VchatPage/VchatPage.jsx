@@ -18,9 +18,11 @@ const chatUserData = {
     src: "https://t1.daumcdn.net/friends/prod/editor/dc8b3d02-a15a-4afa-a88b-989cf2a50476.jpg",
   },
 };
+const user = "selleb";
 const VchatPage = (props) => {
-  const videoRef = useRef(null);
-  const [mediaStream, setMediaStream] = useState(null);
+  const localVideoRef = useRef(null);
+  const [localStream, setLocalStream] = useState(null); // 내 상태
+  const [remoteStream, setRemoteStream] = useState(null); // 상대방 상태
 
   const [timer, setTimer] = useState(5); //여기가 설정 시간
   const [vchatStatus, setVchatStatus] = useState({
@@ -33,7 +35,9 @@ const VchatPage = (props) => {
       mic: false,
     },
   });
+
   useEffect(() => {
+    if (timer === 0) return;
     const getMedia = async () => {
       let stream = null;
 
@@ -42,67 +46,89 @@ const VchatPage = (props) => {
           video: true,
           audio: true,
         });
-        if (videoRef?.current) {
-          videoRef.current.srcObject = stream;
+        if (localVideoRef?.current) {
+          localVideoRef.current.srcObject = stream;
         }
 
-        setMediaStream(stream);
+        setLocalStream(stream);
 
         stream.getVideoTracks().forEach((track) => {
-          track.enabled = vchatStatus.selleb.cam;
+          track.enabled = false;
         });
 
         stream.getAudioTracks().forEach((track) => {
-          track.enabled = vchatStatus.selleb.mic;
+          track.enabled = false;
         });
+
+        console.log(`${user}의 미디어 스트림이 초기화되었습니다.`);
       } catch (err) {
         console.log("스트림 에러:", err);
+        alert("카메라 또는 마이크 접근에 실패했습니다. 권한을 확인해주세요.");
       }
     };
     getMedia();
-  }, []);
+
+    return () => {
+      if (localStream) {
+        localStream.getTracks().forEach((track) => track.stop());
+      }
+    };
+  }, [user]);
+
+  useEffect(() => {
+    if (timer === 0) {
+      localStream.getTracks().forEach((track) => track.stop());
+
+      if (localVideoRef.current) {
+        localVideoRef.current.srcObject = null;
+        console.log("시간이 끝나서 종료됨");
+      }
+    }
+  });
 
   const guideMessage = (status) => (status ? "끄기" : "켜기");
 
   useEffect(() => {
-    if (!mediaStream) return;
+    if (!localStream) return;
 
-    // 현재 사용자가 Selleb인 경우를 가정하고 코드 작성
-    // 실제 앱에서는 현재 사용자가 누구인지에 따라 다르게 처리해야 함
-    const videoTracks = mediaStream.getVideoTracks();
-    const audioTracks = mediaStream.getAudioTracks();
-
-    videoTracks.forEach((track) => {
-      track.enabled = vchatStatus.selleb.cam;
+    const currentUserStatus = vchatStatus[user];
+    // 비디오 트랙
+    localStream.getVideoTracks().forEach((track) => {
+      track.enabled = currentUserStatus.cam;
     });
 
-    audioTracks.forEach((track) => {
-      track.enabled = vchatStatus.selleb.mic;
+    // 오디오 트랙
+    localStream.getAudioTracks().forEach((track) => {
+      track.enabled = currentUserStatus.mic;
     });
 
-    // 디버깅을 위한 로그
-    console.log("미디어 트랙 상태 업데이트:", vchatStatus);
-    console.log("비디오 트랙 활성화 상태:", videoTracks[0]?.enabled);
-    console.log("오디오 트랙 활성화 상태:", audioTracks[0]?.enabled);
-  }, [vchatStatus.selleb.cam, vchatStatus.selleb.mic, mediaStream]);
+    console.log(`${user}의 미디어 상태 업데이트:`, currentUserStatus);
+  }, [vchatStatus, localStream, user]);
 
   const handleCamMic = (e) => {
     const controller = e.currentTarget.value;
 
     setVchatStatus((prev) => {
       const updatedStatus = { ...prev };
+      const [auth, type] = controller.split("_");
 
-      if (controller === "selleb_cam") {
-        updatedStatus.selleb.cam = !prev.selleb.cam;
-      } else if (controller === "selleb_mic") {
-        updatedStatus.selleb.mic = !prev.selleb.mic;
-      } else if (controller === "sellecter_cam") {
-        updatedStatus.sellecter.cam = !prev.sellecter.cam;
-      } else if (controller === "sellecter_mic") {
-        updatedStatus.sellecter.mic = !prev.sellecter.mic;
+      if (auth === user) {
+        updatedStatus[auth][type] = !prev[auth][type];
+      } else {
+        console.log(`다른 사용자(${auth})의 ${type}을 제어합니다.`);
+        updatedStatus[auth][type] = !prev[auth][type];
       }
-
       return updatedStatus;
+
+      // if (controller === "selleb_cam") {
+      //   updatedStatus.selleb.cam = !prev.selleb.cam;
+      // } else if (controller === "selleb_mic") {
+      //   updatedStatus.selleb.mic = !prev.selleb.mic;
+      // } else if (controller === "sellecter_cam") {
+      //   updatedStatus.sellecter.cam = !prev.sellecter.cam;
+      // } else if (controller === "sellecter_mic") {
+      //   updatedStatus.sellecter.mic = !prev.sellecter.mic;
+      // }
     });
   };
 
@@ -149,7 +175,7 @@ const VchatPage = (props) => {
         <div className="vchat_video_section">
           <div className="vchat_video_inner">
             {/* <img src="/images/test.jpg" alt="" /> */}
-            <video ref={videoRef} autoPlay playsInline />
+            <video ref={localVideoRef} autoPlay playsInline />
             <div className="vchat_video_button">
               <span>Selleb</span>
               <div>
