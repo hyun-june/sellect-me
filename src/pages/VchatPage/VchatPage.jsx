@@ -42,14 +42,19 @@ const VchatPage = (props) => {
           video: true,
           audio: true,
         });
-        stream.getVideoTracks().forEach((track) => (track.enabled = false));
-        stream.getAudioTracks().forEach((track) => (track.enabled = false));
-
         if (videoRef?.current) {
           videoRef.current.srcObject = stream;
         }
 
         setMediaStream(stream);
+
+        stream.getVideoTracks().forEach((track) => {
+          track.enabled = vchatStatus.selleb.cam;
+        });
+
+        stream.getAudioTracks().forEach((track) => {
+          track.enabled = vchatStatus.selleb.mic;
+        });
       } catch (err) {
         console.log("스트림 에러:", err);
       }
@@ -57,45 +62,47 @@ const VchatPage = (props) => {
     getMedia();
   }, []);
 
-  const guideMessage = (status) => (status ? "켜기" : "끄기");
+  const guideMessage = (status) => (status ? "끄기" : "켜기");
+
+  useEffect(() => {
+    if (!mediaStream) return;
+
+    // 현재 사용자가 Selleb인 경우를 가정하고 코드 작성
+    // 실제 앱에서는 현재 사용자가 누구인지에 따라 다르게 처리해야 함
+    const videoTracks = mediaStream.getVideoTracks();
+    const audioTracks = mediaStream.getAudioTracks();
+
+    videoTracks.forEach((track) => {
+      track.enabled = vchatStatus.selleb.cam;
+    });
+
+    audioTracks.forEach((track) => {
+      track.enabled = vchatStatus.selleb.mic;
+    });
+
+    // 디버깅을 위한 로그
+    console.log("미디어 트랙 상태 업데이트:", vchatStatus);
+    console.log("비디오 트랙 활성화 상태:", videoTracks[0]?.enabled);
+    console.log("오디오 트랙 활성화 상태:", audioTracks[0]?.enabled);
+  }, [vchatStatus.selleb.cam, vchatStatus.selleb.mic, mediaStream]);
 
   const handleCamMic = (e) => {
     const controller = e.currentTarget.value;
 
     setVchatStatus((prev) => {
-      const updateVchatStatus = { ...prev };
+      const updatedStatus = { ...prev };
 
       if (controller === "selleb_cam") {
-        updateVchatStatus.selleb.cam = !prev.selleb.cam;
-        if (mediaStream) {
-          mediaStream.getAudioTracks().forEach((track) => {
-            track.enabled = !prev.selleb.mic;
-          });
-        }
+        updatedStatus.selleb.cam = !prev.selleb.cam;
       } else if (controller === "selleb_mic") {
-        updateVchatStatus.selleb.mic = !prev.selleb.mic;
-        if (mediaStream) {
-          mediaStream.getAudioTracks().forEach((track) => {
-            track.enabled = !prev.selleb.mic;
-          });
-        }
+        updatedStatus.selleb.mic = !prev.selleb.mic;
       } else if (controller === "sellecter_cam") {
-        updateVchatStatus.sellecter.cam = !prev.sellecter.cam;
-        if (mediaStream) {
-          mediaStream.getVideoTracks().forEach((track) => {
-            track.enabled = !prev.sellecter.cam;
-          });
-        }
+        updatedStatus.sellecter.cam = !prev.sellecter.cam;
       } else if (controller === "sellecter_mic") {
-        updateVchatStatus.sellecter.mic = !prev.sellecter.mic;
-        if (mediaStream) {
-          mediaStream.getAudioTracks().forEach((track) => {
-            track.enabled = !prev.sellecter.mic;
-          });
-        }
+        updatedStatus.sellecter.mic = !prev.sellecter.mic;
       }
 
-      return updateVchatStatus;
+      return updatedStatus;
     });
   };
 
@@ -189,7 +196,7 @@ const VchatPage = (props) => {
                     )}
                   </button>
                   <span className="btn_guide">
-                    {`마이크 ${guideMessage(vchatStatus.sellecter.cam)}`}
+                    {`카메라 ${guideMessage(vchatStatus.sellecter.cam)}`}
                   </span>
                 </div>
                 <div className="video_button_item">
