@@ -3,6 +3,10 @@ import "./VchatPage.css";
 import Chatting from "../../components/Chatting/Chatting";
 import Button from "./../../components/Button/Button";
 import { useEffect, useState } from "react";
+import { GoDeviceCameraVideo } from "react-icons/go";
+import { BsCameraVideoOff } from "react-icons/bs";
+import { CiMicrophoneOn } from "react-icons/ci";
+import { CiMicrophoneOff } from "react-icons/ci";
 
 const chatUserData = {
   other: {
@@ -16,6 +20,45 @@ const chatUserData = {
 };
 const VchatPage = (props) => {
   const [timer, setTimer] = useState(5); //여기가 설정 시간
+  const [vchatStatus, setVchatStatus] = useState({
+    selleb: {
+      cam: false,
+      mic: false,
+    },
+    sellecter: {
+      cam: false,
+      mic: false,
+    },
+  });
+
+  const guideMessage = (status) => {
+    if (status) {
+      return "끄기";
+    } else {
+      return "켜기";
+    }
+  };
+
+  const handleCamMic = (e) => {
+    const controller = e.currentTarget.value;
+
+    setVchatStatus((prev) => {
+      const updateVchatStatus = { ...prev };
+
+      if (controller === "selleb_cam") {
+        updateVchatStatus.selleb.cam = !prev.selleb.cam;
+      } else if (controller === "selleb_mic") {
+        updateVchatStatus.selleb.mic = !prev.selleb.mic;
+      } else if (controller === "sellecter_cam") {
+        updateVchatStatus.sellecter.cam = !prev.sellecter.cam;
+      } else if (controller === "sellecter_mic") {
+        updateVchatStatus.sellecter.mic = !prev.sellecter.mic;
+      }
+      return updateVchatStatus;
+    });
+  };
+
+  console.log("ddd", vchatStatus);
 
   useEffect(() => {
     if (timer === 0) return;
@@ -43,8 +86,8 @@ const VchatPage = (props) => {
   };
 
   const handleVchat = (e) => {
-    const action = e.currentTarget.value;
-    console.log("클릭한 버튼:", action);
+    const vchatMenu = e.currentTarget.value;
+    console.log("클릭한 버튼:", vchatMenu);
   };
 
   return (
@@ -60,17 +103,61 @@ const VchatPage = (props) => {
         <div className="vchat_video_section">
           <div className="vchat_video_inner">
             <img src="/images/test.jpg" alt="" />
-            <div>
+            <div className="vchat_video_button">
               <span>Selleb</span>
-              <span>카메라 마이크</span>
+              <div>
+                <div className="video_button_item">
+                  <button value="selleb_cam" onClick={handleCamMic}>
+                    {vchatStatus.selleb.cam ? (
+                      <GoDeviceCameraVideo />
+                    ) : (
+                      <BsCameraVideoOff />
+                    )}
+                  </button>
+                  <span className="btn_guide">말풍선 등장</span>
+                </div>
+                <div className="video_button_item">
+                  <button value="selleb_mic" onClick={handleCamMic}>
+                    {vchatStatus.selleb.mic ? (
+                      <CiMicrophoneOn />
+                    ) : (
+                      <CiMicrophoneOff />
+                    )}
+                  </button>
+                  <span className="btn_guide">
+                    {`마이크 ${guideMessage(vchatStatus.selleb.mic)}`}
+                  </span>
+                </div>
+              </div>
             </div>
           </div>
           <span className="chat_vertical_line"></span>
           <div className="vchat_video_inner">
             <img src="/images/test1.png" alt="" />
-            <div>
-              <span>Selleb</span>
-              <span>카메라 마이크</span>
+            <div className="vchat_video_button">
+              <span>Sellecter</span>
+              <div>
+                <div className="video_button_item">
+                  <button value="sellecter_cam" onClick={handleCamMic}>
+                    {vchatStatus.sellecter.cam ? (
+                      <GoDeviceCameraVideo />
+                    ) : (
+                      <BsCameraVideoOff />
+                    )}
+                  </button>
+                  <span className="btn_guide">말풍선 등장</span>
+                </div>
+                <div className="video_button_item">
+                  <button value="sellecter_mic" onClick={handleCamMic}>
+                    {vchatStatus.sellecter.mic ? (
+                      <CiMicrophoneOn />
+                    ) : (
+                      <CiMicrophoneOff />
+                    )}
+                  </button>
+                  <span className="btn_guide">말풍선 등장</span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -87,13 +174,25 @@ const VchatPage = (props) => {
               <div className="vchat_alarm_box">이용 시간이 1분 남았습니다.</div>
             )}
 
-            <Button className="vchat_btn" value="extend" onClick={handleVchat}>
+            <Button
+              className="vchat_menu_btn"
+              value="연장하기"
+              onClick={handleVchat}
+            >
               연장하기
             </Button>
-            <Button className="vchat_btn" value="report" onClick={handleVchat}>
+            <Button
+              className="vchat_menu_btn"
+              value="문제해결"
+              onClick={handleVchat}
+            >
               문제 해결
             </Button>
-            <Button className="vchat_btn" value="exit" onClick={handleVchat}>
+            <Button
+              className="vchat_menu_btn"
+              value="나가기"
+              onClick={handleVchat}
+            >
               V-CHAT 나가기
             </Button>
           </div>
