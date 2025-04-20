@@ -23,6 +23,7 @@ import ChatListPage from "./../pages/MyPage/ChatListPage/ChatListPage";
 import ChattingPage from "../pages/MyPage/ChatListPage/ChattingPage/ChattingPage";
 import VchatPage from "../pages/VchatPage/VchatPage";
 import VchatTicketPage from "../pages/VchatTicketPage/VchatTicketPage";
+import ServicePage from "../pages/ServicePage/ServicePage";
 
 const AppRouter = () => {
   const location = useLocation();
@@ -67,6 +68,8 @@ const AppRouter = () => {
         <Route path="fitting" element={<ModelPage />} />
         <Route path="homeshopping" element={<ModelPage />} />
       </Route>
+
+      <Route path="/service" element={<ServicePage />} />
     </Routes>
   );
 };
