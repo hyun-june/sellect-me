@@ -5,6 +5,14 @@
   flex-direction: column;
   align-items: center;
   gap: 2em;
+
+  .intro_text {
+    text-align: center;
+    line-height: 2em;
+    font-weight: bold;
+    font-size: 1.3em;
+    margin: 0;
+  }
 }
 
 .service_search {
@@ -33,7 +41,7 @@
   height: 70px;
   display: flex;
   align-items: center;
-  justify-content: center;
+  padding-left: 2em;
   font-weight: bold;
   font-size: 1.5em;
 }
@@ -60,5 +68,38 @@
     top: 0;
     left: 50%;
     transform: translate(-50%, -50%);
+  }
+}
+
+.report_section {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  gap: 1em;
+
+  div {
+    width: 100%;
+    position: relative;
+
+    input {
+      border: 1px solid black;
+      padding: 1em;
+      padding-right: 3em;
+      width: 100%;
+      border-radius: 8px;
+    }
+
+    button {
+      font-size: 2em;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      right: 0.2em;
+    }
+  }
+
+  p {
+    margin: 0;
   }
 }

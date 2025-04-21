@@ -69,7 +69,8 @@ const AppRouter = () => {
         <Route path="homeshopping" element={<ModelPage />} />
       </Route>
 
-      <Route path="/service" element={<ServicePage />} />
+      <Route path="/service/notice" element={<ServicePage />} />
+      <Route path="/service/faq" element={<ServicePage />} />
     </Routes>
   );
 };

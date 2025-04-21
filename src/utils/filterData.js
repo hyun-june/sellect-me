@@ -4,6 +4,6 @@ export const filterData = (data, keyword) => {
   }
 
   return data.filter((item) =>
-    item.toLowerCase().includes(keyword.toLowerCase())
+    item.content.toLowerCase().includes(keyword.toLowerCase())
   );
 };
