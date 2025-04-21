@@ -31,11 +31,12 @@ const serviceData = {
 
 const ServiceForm = ({ ...props }) => {
   const location = useLocation().pathname;
-  const dataType = location.toLowerCase().includes("notice")
+  const lowerPath = location.toLowerCase();
+  const dataType = lowerPath.includes("notice")
     ? "notice"
-    : location.toLowerCase().includes("faq")
+    : lowerPath.includes("faq")
     ? "FAQ"
-    : null;
+    : "notice";
 
   const currentData = serviceData[dataType];
 
