@@ -9,6 +9,13 @@
     margin-bottom: 1em;
     padding: 0;
     justify-content: center;
+    width: 100%;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    font-size: 1.5em;
+    background-color: white;
   }
 }
 
