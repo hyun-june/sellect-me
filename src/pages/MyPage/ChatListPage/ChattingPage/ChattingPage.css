@@ -68,15 +68,17 @@
     button {
       width: 100%;
     }
-  }
 
-  .custom_box {
-    width: 100%;
-    height: 50px;
-    font-weight: bold;
-    color: var(--text-sub-color);
-    padding-left: 1em;
-    margin-top: 1em;
+    .custom_box {
+      width: 100%;
+      height: 50px;
+      font-weight: bold;
+      color: var(--text-sub-color);
+      margin-top: 1em;
+      align-items: center;
+      display: flex;
+      justify-content: center;
+    }
   }
 
   .color_blue {

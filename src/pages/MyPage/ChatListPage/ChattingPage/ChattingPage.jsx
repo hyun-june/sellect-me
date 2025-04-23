@@ -61,11 +61,10 @@ const ChattingPage = (props) => {
     }
   }, [fileData]);
   const handleMenu = (item) => {
-    navigate(`/${item.link}`);
-
     if (item.content === "주고받은 파일") {
-      setIsShowFileList((prev) => !prev);
+      return setIsShowFileList((prev) => !prev);
     }
+    navigate(`/${item.link}`);
   };
 
   return (
@@ -84,10 +83,11 @@ const ChattingPage = (props) => {
                 <button key={index} onClick={() => handleMenu(item)}>
                   <CustomBox
                     key={index}
-                    innerText={item.content}
                     textAlign="left"
                     className={index < 2 ? "color_blue" : ""}
-                  />
+                  >
+                    {item.content}
+                  </CustomBox>
                 </button>
               ))}
 
