@@ -1,0 +1,47 @@
+.account_container {
+  width: 100%;
+  flex: 1;
+  display: grid;
+  grid-template-columns: 0.2fr 1fr;
+  gap: 1em;
+
+  .custom_box {
+    margin-bottom: 1em;
+    padding: 0;
+    justify-content: center;
+  }
+}
+
+.account_inner {
+  border: 1px solid var(--line-color);
+  position: relative;
+  padding: 2em;
+}
+
+.account_label {
+  display: flex;
+  flex-direction: column;
+  margin: 2em 0em;
+
+  label {
+    margin-bottom: 0.5em;
+  }
+
+  input {
+    width: 50%;
+    border: 1px solid var(--line-color);
+    margin-top: 0.3em;
+  }
+}
+
+.account_btn {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1em;
+
+  button {
+    border: 1px solid var(--text-point-color);
+    padding: 0.5em;
+    border-radius: 5px;
+  }
+}

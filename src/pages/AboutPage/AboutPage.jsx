@@ -91,7 +91,11 @@ const AboutPage = () => {
           />
 
           <div className="info_box">
-            <img src="/images/logo-outline-vertical-img.png" alt="" />
+            <img
+              src="/images/logo-outline-vertical-img.png"
+              alt=""
+              className="background_logo"
+            />
             <div
               className={`inner_box ${
                 visibleIndex >= 2 ? "about_visible" : ""

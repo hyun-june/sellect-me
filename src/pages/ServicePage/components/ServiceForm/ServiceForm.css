@@ -44,6 +44,7 @@
   padding-left: 2em;
   font-weight: bold;
   font-size: 1.5em;
+  background-color: white;
 }
 
 .service_list_section {
@@ -51,6 +52,7 @@
   width: 100%;
   border: 3px solid var(--line-color);
   position: relative;
+  z-index: 999;
 
   .service_list {
     display: flex;

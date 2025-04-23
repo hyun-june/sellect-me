@@ -3,9 +3,9 @@ import CustomBox from "./../../../../components/CustomBox/CustomBox";
 import { VscSearch } from "react-icons/vsc";
 import ServiceAi from "./../ServiceAi/ServiceAi";
 import { filterData } from "../../../../utils/filterData";
-import "./ServiceForm.css";
 import { Link, useLocation } from "react-router-dom";
 import { FaLongArrowAltRight } from "react-icons/fa";
+import "./ServiceForm.css";
 
 const serviceData = {
   notice: {
@@ -115,7 +115,11 @@ const ServiceForm = ({ ...props }) => {
           <p>신고하신 내용에 대한 답변은 이메일로 확인하실 수 있습니다.</p>
         </div>
       )}
-
+      <img
+        className="background_logo"
+        src="/images/logo-outline-vertical-img.png"
+        alt=""
+      />
       <ServiceAi />
     </div>
   );
