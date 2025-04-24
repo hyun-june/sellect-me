@@ -1,7 +1,6 @@
 import { useState } from "react";
 import MainLayout from "../../components/Layout/MainLayout/MainLayout";
 import CustomBox from "./../../components/CustomBox/CustomBox";
-
 import "./AccountSettingPage.css";
 
 const settingData = ["내 정보", "알림 설정", "회원 탈퇴"];
@@ -45,7 +44,10 @@ const AccountSettingPage = (props) => {
 
   return (
     <MainLayout {...props}>
-      <h5>계정 설정 {">"} 내 정보</h5>
+      <div className="account_title">
+        <span></span>
+        <h5>계정 설정 {">"} 내 정보</h5>
+      </div>
       <div className="account_container">
         <div>
           {settingData.map((item, index) => (
@@ -74,85 +76,93 @@ const AccountSettingPage = (props) => {
                   save
                 </button>
               </div>
-              <div className="account_label">
-                <label htmlFor="name">이름</label>
-                <input
-                  id="name"
-                  value={formData.name}
-                  onChange={handleChange}
-                />
-              </div>
-              <div className="account_label">
-                <label htmlFor="email">이메일</label>
-                <input
-                  id="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                />
-              </div>
-              <div className="account_label">
-                <label htmlFor="phone">휴대폰</label>
-                <input
-                  id="phone"
-                  value={formData.phone}
-                  onChange={handleChange}
-                />
-              </div>
-              <div className="account_label">
-                <label htmlFor="account_bank">
-                  계좌 정보: 개인계좌 / 사업자 계좌
-                </label>
-                <input
-                  id="account_bank"
-                  value={formData.account_bank}
-                  placeholder="은행"
-                  onChange={handleChange}
-                />
-                <input
-                  id="account_number"
-                  placeholder="계좌번호"
-                  value={formData.account_number}
-                  onChange={handleChange}
-                />
-              </div>
-              <div className="account_label">
-                <label htmlFor="login">로그인 정보</label>
-                <input
-                  id="login_ID"
-                  value={formData.login_ID}
-                  onChange={handleChange}
-                />
-                <input
-                  id="login_password"
-                  value={formData.login_password}
-                  onChange={handleChange}
-                />
-              </div>
-              <div className="account_label">
-                <label htmlFor="change_password">비밀번호 변겅하기</label>
-                <input
-                  id="change_password"
-                  value={formData.newPassword1}
-                  placeholder="새 비밀번호"
-                  type="password"
-                  onChange={handleChange}
-                />
-                <input
-                  id="change_password1"
-                  value={formData.newPassword2}
-                  placeholder="한 번 더 입력"
-                  type="password"
-                  onChange={handleChange}
-                />
+              <div className="account_myInfo">
+                <div className="account_label">
+                  <label htmlFor="name">이름</label>
+                  <input
+                    id="name"
+                    value={formData.name}
+                    onChange={handleChange}
+                  />
+                </div>
+                <div className="account_label">
+                  <label htmlFor="email">이메일</label>
+                  <input
+                    id="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                  />
+                </div>
+                <div className="account_label">
+                  <label htmlFor="phone">휴대폰</label>
+                  <input
+                    id="phone"
+                    value={formData.phone}
+                    onChange={handleChange}
+                  />
+                </div>
+                <div className="account_label">
+                  <label htmlFor="account_bank">
+                    계좌 정보: 개인계좌 / 사업자 계좌
+                  </label>
+                  <input
+                    id="account_bank"
+                    value={formData.account_bank}
+                    placeholder="은행"
+                    onChange={handleChange}
+                  />
+                  <input
+                    id="account_number"
+                    placeholder="계좌번호"
+                    value={formData.account_number}
+                    onChange={handleChange}
+                  />
+                </div>
+                <div className="account_label">
+                  <label htmlFor="login">로그인 정보</label>
+                  <input
+                    id="login_ID"
+                    value={formData.login_ID}
+                    onChange={handleChange}
+                  />
+                  <input
+                    id="login_password"
+                    value={formData.login_password}
+                    onChange={handleChange}
+                  />
+                </div>
+                <div className="account_label">
+                  <label htmlFor="change_password">비밀번호 변겅하기</label>
+                  <input
+                    id="change_password"
+                    value={formData.newPassword1}
+                    placeholder="새 비밀번호"
+                    type="password"
+                    onChange={handleChange}
+                  />
+                  <input
+                    id="change_password1"
+                    value={formData.newPassword2}
+                    placeholder="한 번 더 입력"
+                    type="password"
+                    onChange={handleChange}
+                  />
+                </div>
               </div>
             </form>
           )}
           {tabIndex === 1 && (
             <div>
-              ff
               <div className="account_btn">
-                <button>edit</button>
-                <button>save</button>
+                <button
+                  type="button"
+                  onClick={() => console.log("edit clicked")}
+                >
+                  edit
+                </button>
+                <button type="submit" onClick={editInfo}>
+                  save
+                </button>
               </div>
             </div>
           )}

@@ -1,8 +1,22 @@
+.account_title {
+  width: 80%;
+  display: grid;
+  grid-template-columns: 0.3fr 1fr;
+  gap: 1em;
+  margin-bottom: 1em;
+
+  h5 {
+    font-weight: bold;
+    margin: 0;
+  }
+}
+
 .account_container {
-  width: 100%;
+  width: 80%;
   flex: 1;
   display: grid;
-  grid-template-columns: 0.2fr 1fr;
+  grid-template-columns: 0.3fr 1fr;
+
   gap: 1em;
 
   .custom_box {
@@ -18,26 +32,34 @@
     background-color: white;
   }
 }
+.account_myInfo {
+  padding: 0em 3em;
+}
 
 .account_inner {
   border: 1px solid var(--line-color);
   position: relative;
-  padding: 2em;
+  padding: 1em;
 }
 
 .account_label {
   display: flex;
   flex-direction: column;
-  margin: 2em 0em;
+  margin-bottom: 2em;
+  align-items: center;
+  width: 60%;
 
   label {
     margin-bottom: 0.5em;
+    width: 100%;
+    font-weight: bold;
   }
 
   input {
-    width: 50%;
+    width: 100%;
     border: 1px solid var(--line-color);
     margin-top: 0.3em;
+    padding: 0.3em 0.5em;
   }
 }
 
@@ -45,6 +67,7 @@
   display: flex;
   justify-content: flex-end;
   gap: 1em;
+  padding-top: 0.5em;
 
   button {
     border: 1px solid var(--text-point-color);
