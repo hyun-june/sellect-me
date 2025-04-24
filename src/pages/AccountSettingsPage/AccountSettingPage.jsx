@@ -16,6 +16,12 @@ const defaultUserData = {
   login_password: "fffff",
   newPassword1: "",
   newPassword2: "",
+  offer_app_push: false,
+  offer_sms_push: false,
+  offer_email_push: false,
+  marketing_app_push: false,
+  marketing_sms_push: false,
+  marketing_email_push: false,
 };
 
 const AccountSettingPage = (props) => {
@@ -29,17 +35,39 @@ const AccountSettingPage = (props) => {
 
   const editInfo = (e) => {
     e.preventDefault();
-    if (formData.newPassword1 !== formData.newPassword2) {
-      return console.log("비밀번호가 일치하지 않음");
-    }
+    if (tabIndex === 0) {
+      if (formData.newPassword1 !== formData.newPassword2) {
+        return console.log("비밀번호가 일치하지 않음");
+      }
 
-    setUserData(formData);
-    console.log("저장된 데이터:", formData);
+      setUserData(formData);
+      console.log("저장된 데이터:", formData);
+    } else if (tabIndex === 1) {
+      console.log(formData);
+    }
   };
 
   const handleChange = (e) => {
     const { id, value } = e.target;
     setFormData((prev) => ({ ...prev, [id]: value }));
+  };
+
+  const handleAlarmChange = (e) => {
+    const { id, checked } = e.target;
+    setFormData((prev) => ({ ...prev, [id]: checked }));
+  };
+
+  const AccountButton = () => {
+    return (
+      <div className="account_btn">
+        <button type="button" onClick={() => console.log("edit clicked")}>
+          edit
+        </button>
+        <button type="submit" onClick={editInfo}>
+          save
+        </button>
+      </div>
+    );
   };
 
   return (
@@ -65,17 +93,7 @@ const AccountSettingPage = (props) => {
 
           {tabIndex === 0 && (
             <form onSubmit={editInfo}>
-              <div className="account_btn">
-                <button
-                  type="button"
-                  onClick={() => console.log("edit clicked")}
-                >
-                  edit
-                </button>
-                <button type="submit" onClick={editInfo}>
-                  save
-                </button>
-              </div>
+              <AccountButton />
               <div className="account_myInfo">
                 <div className="account_label">
                   <label htmlFor="name">이름</label>
@@ -152,19 +170,75 @@ const AccountSettingPage = (props) => {
             </form>
           )}
           {tabIndex === 1 && (
-            <div>
-              <div className="account_btn">
-                <button
-                  type="button"
-                  onClick={() => console.log("edit clicked")}
-                >
-                  edit
-                </button>
-                <button type="submit" onClick={editInfo}>
-                  save
-                </button>
+            <form onSubmit={editInfo}>
+              <AccountButton />
+              <div className="account_push_setting">
+                <p>제안 도착 시 알림</p>
+                <div>
+                  <label htmlFor="offer_app_push">
+                    앱 푸시
+                    <input
+                      type="checkbox"
+                      id="offer_app_push"
+                      checked={formData.offer_app_push}
+                      onChange={handleAlarmChange}
+                    />
+                  </label>
+
+                  <label htmlFor="offer_sms_push">
+                    SMS
+                    <input
+                      type="checkbox"
+                      id="offer_sms_push"
+                      checked={formData.offer_sms_push}
+                      onChange={handleAlarmChange}
+                    />
+                  </label>
+                  <label htmlFor="offer_email_push">
+                    이메일
+                    <input
+                      type="checkbox"
+                      id="offer_email_push"
+                      checked={formData.offer_email_push}
+                      onChange={handleAlarmChange}
+                    />
+                  </label>
+                </div>
               </div>
-            </div>
+              <div className="account_push_setting">
+                <p>마케팅 정보 수신 동의</p>
+                <div>
+                  <label htmlFor="marketing_app_push">
+                    앱 푸시
+                    <input
+                      type="checkbox"
+                      id="marketing_app_push"
+                      checked={formData.marketing_app_push}
+                      onChange={handleAlarmChange}
+                    />
+                  </label>
+
+                  <label htmlFor="marketing_sms_push">
+                    SMS
+                    <input
+                      type="checkbox"
+                      id="marketing_sms_push"
+                      checked={formData.marketing_sms_push}
+                      onChange={handleAlarmChange}
+                    />
+                  </label>
+                  <label htmlFor="marketing_email_push">
+                    이메일
+                    <input
+                      type="checkbox"
+                      id="marketing_email_push"
+                      checked={formData.marketing_email_push}
+                      onChange={handleAlarmChange}
+                    />
+                  </label>
+                </div>
+              </div>
+            </form>
           )}
           {tabIndex === 2 && <div>33</div>}
         </div>
