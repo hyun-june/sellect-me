@@ -4,6 +4,16 @@ import CustomBox from "./../../components/CustomBox/CustomBox";
 import "./AccountSettingPage.css";
 
 const settingData = ["내 정보", "알림 설정", "회원 탈퇴"];
+const reasonData = [
+  "셀럽이 많이 없어요.",
+  "셀렉터가 많이 없어요.",
+  "비매너 이용자를 만났어요.",
+  "서비스 퀄리티가 별로에요.",
+  "대체 가능한 서비스를 찾았어요.",
+  "에스크로 수수료가 너무 부담돼요.",
+  "이벤트, 쿠폰, 적립금 등의 혜택이 적어요",
+  "기타",
+];
 
 const defaultUserData = {
   name: "김땡이",
@@ -25,12 +35,18 @@ const defaultUserData = {
 };
 
 const AccountSettingPage = (props) => {
-  const [tabIndex, setTabIndex] = useState(0);
+  const [tabIndex, setTabIndex] = useState(
+    Number(localStorage.getItem("tabIndex")) || 0
+  );
   const [userData, setUserData] = useState(defaultUserData);
   const [formData, setFormData] = useState(defaultUserData);
+  const [userReason, setUserReason] = useState([]);
+  const [userConsent, setUserConsent] = useState(false);
+  const [userConsentBtn, setUserConsentBtn] = useState(false);
 
   const handleTab = (index) => {
     setTabIndex(index);
+    localStorage.setItem("tabIndex", index);
   };
 
   const editInfo = (e) => {
@@ -70,11 +86,62 @@ const AccountSettingPage = (props) => {
     );
   };
 
+  const ReasonForLeaving = ({ item, index }) => {
+    const handleCheck = (e) => {
+      if (e.target.checked) {
+        setUserReason((prev) => [...prev, item]);
+      } else {
+        setUserReason((prev) => prev.filter((reason) => reason !== item));
+      }
+    };
+    return (
+      <label htmlFor={`reason - ${index}`}>
+        <input
+          type="checkbox"
+          checked={userReason.includes(item)}
+          className="reason_check_input"
+          id={`reason - ${index}`}
+          onChange={(e) => {
+            handleCheck(e);
+          }}
+        />
+        {item}
+      </label>
+    );
+  };
+
+  const handleQuit = () => {
+    if (!userConsent) {
+      alert("동의 체크");
+      return;
+    }
+
+    if (userReason.length === 0) {
+      alert("사유 체크");
+      return;
+    }
+    setUserConsentBtn(true);
+    console.log("이유", userReason);
+
+    if (userConsentBtn) {
+      console.log("진짜 탈퇴");
+    }
+  };
+
   return (
     <MainLayout {...props}>
       <div className="account_title">
         <span></span>
-        <h5>계정 설정 {">"} 내 정보</h5>
+        <h5>
+          계정 설정 {">"}
+          {tabIndex === 0
+            ? "내 정보"
+            : tabIndex === 1
+            ? "알림 설정"
+            : tabIndex === 2
+            ? "회원 탈퇴"
+            : ""}
+        </h5>
       </div>
       <div className="account_container">
         <div>
@@ -240,7 +307,86 @@ const AccountSettingPage = (props) => {
               </div>
             </form>
           )}
-          {tabIndex === 2 && <div>33</div>}
+          {tabIndex === 2 && (
+            <div className="setting_tab_2">
+              {!userConsentBtn && (
+                <>
+                  <div className="tab2_reason_section">
+                    <div>
+                      <h5>셀렉트에 가입한 계정을 확인해주세요.</h5>
+                      <p>이메일 주소: xxxx12@naver.com</p>
+                      <p>
+                        Sellect 서비스에 가입한 계정의 정보는 탈퇴 시 지체없이
+                        파기됩니다.
+                        <br />
+                        보다 자세한 개인정보 제공항목은 이용약관에서 확인하실 수
+                        있습니다.
+                      </p>
+                    </div>
+                    <div>
+                      <h5>셀렉트를 떠나는 이유를 알려주세요.</h5>
+                      <p>향후 셀렉트의 발전에 큰 도움이 됩니다.</p>
+                      <div className="reason_list">
+                        {reasonData.map((item, index) => (
+                          <ReasonForLeaving
+                            item={item}
+                            index={index}
+                            key={index}
+                          />
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                  <ul>
+                    <li>
+                      현재 사용중인 계정 정보는 회원 탈퇴 후 복구가
+                      불가능합니다.
+                    </li>
+                    <li>
+                      진행 중인 프로젝트 거래 건이 있거나 거래에 관한 문제를
+                      조치 중인 경우 탈퇴 신청이 불가합니다.
+                    </li>
+                    <li>
+                      거래 완료된 프로젝트의 수익금은 출금을 통해 정산이 완료된
+                      이후 탈퇴 신청이 가능합니다.
+                    </li>
+                    <li>
+                      프로필과 프로젝트는 자동으로 삭제되지만 이미 거래한
+                      프로젝트의 채팅 및 거래 내역이 삭제되지 않습니다.
+                    </li>
+                    <li>보유 중인 V-chat 이용권은 탈퇴 후 즉시 소멸됩니다.</li>
+                    <li>
+                      탈퇴 후 회원님의 정보는 전자상거래 소비자보허법에 의거한
+                      셀렉트 개인정보처리방침에 따라 관리됩니다.
+                    </li>
+                  </ul>
+                  <label htmlFor="warning_agreement">
+                    <input
+                      type="checkbox"
+                      id="warning_agreement"
+                      className="reason_check_input"
+                      checked={userConsent}
+                      onChange={(e) => setUserConsent(!userConsent)}
+                    />
+                    주의사항을 모두 확인하였습니다.
+                  </label>
+                </>
+              )}
+
+              {userConsentBtn ? (
+                <div>
+                  보유 중인 이용권은 자동 소멸됩니다. 정말로 탈퇴하시겠습니까?
+                </div>
+              ) : null}
+
+              <div className="tab2_btn">
+                <button onClick={() => setUserConsentBtn(false)}>
+                  계속 셀렉트하기
+                </button>
+                <button onClick={handleQuit}>회원 탈퇴하기</button>
+              </div>
+            </div>
+          )}
         </div>
       </div>
     </MainLayout>
