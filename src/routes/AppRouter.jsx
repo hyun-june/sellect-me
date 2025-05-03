@@ -26,6 +26,7 @@ import VchatTicketPage from "../pages/VchatTicketPage/VchatTicketPage";
 import ServicePage from "../pages/ServicePage/ServicePage";
 import ServiceFAQPage from "../pages/ServicePage/ServiceFAQPage/ServiceFAQPage";
 import AccountSettingPage from "./../pages/AccountSettingsPage/AccountSettingPage";
+import TermsPage from "../pages/TermsPage/TermsPage";
 
 const AppRouter = () => {
   const location = useLocation();
@@ -75,6 +76,7 @@ const AppRouter = () => {
       <Route path="/service/faq" element={<ServicePage />} />
       <Route path="/service/faq/faq" element={<ServiceFAQPage />} />
       <Route path="/setting" element={<AccountSettingPage />} />
+      <Route path="terms" element={<TermsPage />} />
     </Routes>
   );
 };

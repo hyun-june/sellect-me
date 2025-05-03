@@ -1,0 +1,29 @@
+.terms_container {
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+
+  h4 {
+    color: blue;
+  }
+
+  p {
+    line-height: 1.2em;
+  }
+  ol {
+    counter-reset: item; /* 카운터 초기화 */
+    margin: 2em 0em;
+  }
+
+  li {
+    list-style: none; /* 기본 리스트 스타일 제거 */
+    margin-bottom: 1em;
+    line-height: 1.2em;
+  }
+
+  li::before {
+    content: "(" counter(item) ")";
+    margin-right: 5px;
+    counter-increment: item;
+  }
+}
