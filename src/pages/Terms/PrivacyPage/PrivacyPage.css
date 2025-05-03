@@ -1,0 +1,55 @@
+.privacy_container {
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+
+  h4 {
+    color: blue;
+  }
+  p {
+    line-height: 1.2em;
+  }
+
+  .table_layout {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 1em 0em;
+
+    span {
+      text-align: left;
+      width: 100%;
+      margin: 1em 0em;
+    }
+  }
+
+  table {
+    width: 100%;
+    table-layout: fixed;
+
+    thead {
+      background-color: var(--line-color);
+
+      th {
+        padding: 1em;
+        border: 1px solid black;
+      }
+    }
+
+    td {
+      padding: 1em;
+      border: 1px solid black;
+      line-height: 1.2em;
+    }
+  }
+
+  a {
+    color: blue;
+    text-decoration: underline;
+  }
+
+  li {
+    margin: 0.5em 0em;
+    line-height: 1.2em;
+  }
+}

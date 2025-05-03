@@ -26,4 +26,18 @@
     margin-right: 5px;
     counter-increment: item;
   }
+
+  table {
+    border-collapse: separate;
+    border-spacing: 1em; /* 셀 간 간격 */
+
+    th,
+    td {
+      padding-right: 3em;
+    }
+  }
+  span {
+    text-decoration: underline;
+    color: blue;
+  }
 }
