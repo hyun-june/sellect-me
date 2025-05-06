@@ -86,7 +86,7 @@
   margin-top: auto;
   textarea {
     resize: none;
-    border: 2px solid #a6c9eb;
+    border: 2px solid var(--line-color-blue);
     background-color: white;
     width: 100%;
     height: 2em;

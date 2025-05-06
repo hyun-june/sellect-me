@@ -4,9 +4,14 @@
   padding: 0px 2rem;
   display: flex;
   align-items: center;
-  border-bottom: 1px solid var(--line-color);
+  /* border-bottom: 1px solid var(--line-color); */
+  box-shadow: 0px 0px 8px 0px var(--line-color);
 }
 
 .logoImg {
   width: 100px;
+}
+
+.navbar {
+  padding: 0;
 }

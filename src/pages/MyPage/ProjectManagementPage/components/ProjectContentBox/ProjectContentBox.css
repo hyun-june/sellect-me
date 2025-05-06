@@ -52,7 +52,7 @@
     position: absolute;
     right: 2em;
     bottom: 1em;
-    background-color: #a6c9eb;
+    background-color: var(--line-color-blue);
     padding: 0.5em;
     border-radius: 5px;
   }

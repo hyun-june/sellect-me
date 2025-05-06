@@ -8,15 +8,15 @@
   height: 2rem;
   padding-left: 15%;
   border: none;
-  border-bottom: 1px solid black;
 }
 
 .inputNav input:focus {
-  outline: 1px solid lightgray;
+  outline: none;
+  border-bottom: 1px solid var(--line-color);
 }
 
 .navIcon {
   position: absolute;
-  top: 20%;
+  top: 30%;
   left: 2%;
 }

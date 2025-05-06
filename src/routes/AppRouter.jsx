@@ -28,6 +28,7 @@ import ServiceFAQPage from "../pages/ServicePage/ServiceFAQPage/ServiceFAQPage";
 import AccountSettingPage from "./../pages/AccountSettingsPage/AccountSettingPage";
 import TermsPage from "../pages/Terms/TermsPage/TermsPage";
 import PrivacyPage from "../pages/Terms/PrivacyPage/PrivacyPage";
+import LoginPage from "./../pages/LoginPage/LoginPage";
 
 const AppRouter = () => {
   const location = useLocation();
@@ -42,6 +43,7 @@ const AppRouter = () => {
     <Routes>
       {/* <ScrollToTop/> */}
       <Route path="/" element={<MainPage />} />
+      <Route path="/login" element={<LoginPage />} />
       <Route path="/about" element={<AboutPage />} />
       <Route path="/confirm" element={<ConFirmPage />} />
       <Route path="/mypage" element={<MyPage />} />

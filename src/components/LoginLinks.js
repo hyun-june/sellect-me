@@ -5,20 +5,20 @@ const LoginLinks = () => {
   const { user } = useAuth({ middleware: "guest" });
 
   return (
-    <div>
+    <div className="fixed top-0 right-0 px-6 py-4 sm:block">
       {user ? (
         <>
           <Link to="/createAccount" className="LoginLink">
-            회원가입
+            dashboard
           </Link>
           <Link to="/dashboard" className="LoginLink">
-            Dashboard
+            My Page
           </Link>
         </>
       ) : (
         <>
           <Link to="/login" className="LoginLink">
-            로그인
+            Log in
           </Link>
         </>
       )}
