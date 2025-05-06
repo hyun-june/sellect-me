@@ -16,12 +16,12 @@
 
     li {
       background-color: #fff5d9;
-      color: var(--text-point-color);
+      color: var(--text-color-yellow);
     }
 
     .active {
       color: var(--text-color);
-      background-color: var(--text-point-color);
+      background-color: var(--text-color-yellow);
     }
   }
 

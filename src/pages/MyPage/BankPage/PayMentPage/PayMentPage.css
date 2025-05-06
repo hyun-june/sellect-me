@@ -95,7 +95,7 @@
 
   .sub_title {
     font-size: 0.8em;
-    color: var(--text-sub-color);
+    color: var(--text-color-gray);
   }
 
   ul {

@@ -136,7 +136,7 @@ const ConsentForm = ({ type, goToPrevTab, goToNextTab }) => {
           </div>
         </div>
       ) : null}
-      <div className="flex justify-between margin-top-3 ">
+      <div className="prev_next_btn">
         <PrevButton onClick={goToPrevTab} />
         <NextButton onClick={goToNextTab} />
       </div>

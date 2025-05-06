@@ -6,13 +6,13 @@
   height: 2.5em;
 
   label {
-    color: var(--text-sub-color);
+    color: var(--text-color-gray);
     font-weight: bold;
     padding-left: 0.5em;
   }
 
   span {
-    color: var(--text-sub-color);
+    color: var(--text-color-gray);
   }
 }
 

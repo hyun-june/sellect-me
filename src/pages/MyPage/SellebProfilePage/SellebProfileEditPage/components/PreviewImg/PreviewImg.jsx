@@ -70,7 +70,7 @@ const PreviewImg = () => {
                       }
                     />
                     <button onClick={() => handleDeleteImg(index)}>
-                      <IoCloseSharp className="font-icon-2" />
+                      <IoCloseSharp className="font-size-2" />
                     </button>
                   </div>
                 ) : (

@@ -79,7 +79,7 @@ const SellebForm5 = ({ goToNextTab, goToPrevTab }) => {
           pay와 직접 입력한 값이 둘 다 있는 경우 직접 입력의 값이 적용됩니다.
         </p>
       </div>
-      <div className="flex justify-between width-100">
+      <div className="prev_next_btn">
         <PrevButton onClick={goToPrevTab} />
         <NextButton />
       </div>

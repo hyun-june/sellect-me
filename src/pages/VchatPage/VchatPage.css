@@ -13,7 +13,7 @@
     position: absolute;
     top: 0;
     right: 0;
-    background-color: var(--text-point-color);
+    background-color: var(--text-color-yellow);
     padding: 1em;
     border-radius: 12px;
   }
@@ -152,8 +152,8 @@
     gap: 1em;
 
     .vchat_alarm_box {
-      border: 3px solid var(--text-point-color);
-      background-color: var(--text-point-color);
+      border: 3px solid var(--text-color-yellow);
+      background-color: var(--text-color-yellow);
       padding: 0.3em 0.5em;
       margin-left: 0.5em;
       text-align: center;
@@ -165,12 +165,12 @@
     }
 
     .vchat_menu_btn {
-      border: 3px solid var(--text-point-color);
-      color: var(--text-point-color);
+      border: 3px solid var(--text-color-yellow);
+      color: var(--text-color-yellow);
     }
 
     .vchat_menu_btn:hover {
-      background-color: var(--text-point-color);
+      background-color: var(--text-color-yellow);
       color: white;
     }
 

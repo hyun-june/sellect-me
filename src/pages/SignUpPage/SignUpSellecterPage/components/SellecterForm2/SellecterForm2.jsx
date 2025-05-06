@@ -49,7 +49,7 @@ const SellecterForm2 = ({ goToNextTab, goToPrevTab }) => {
   return (
     <div>
       <form onSubmit={handleSubmit(handleInfo)} className="sellecter-form">
-        <div className="form-gap width-100">
+        <div className="form-gap">
           <h5>계좌정보</h5>
           <DropdownForm
             label="사업자 통장 은행"
@@ -63,7 +63,7 @@ const SellecterForm2 = ({ goToNextTab, goToPrevTab }) => {
             register={register}
           />
         </div>
-        <div className="width-100 form-gap">
+        <div className="form-gap">
           <h5>통장사본</h5>
           <UploadBox
             onChange={(e) => handleImageUpload(e, "bankbook_img")}
@@ -78,7 +78,7 @@ const SellecterForm2 = ({ goToNextTab, goToPrevTab }) => {
           />
           <FormInput title="담당자명" id="manager_name" register={register} />
         </div>
-        <div className="width-100">
+        <div className="form-gap">
           <h5>사업자등록증 사본</h5>
           <UploadBox
             onChange={(e) => handleImageUpload(e, "business_registration_img")}
@@ -126,7 +126,7 @@ const SellecterForm2 = ({ goToNextTab, goToPrevTab }) => {
             </ul>
           </section>
         </div>
-        <div className="flex justify-between width-100">
+        <div className="prev_next_btn">
           <PrevButton onClick={goToPrevTab} />
           <NextButton type="submit" />
         </div>

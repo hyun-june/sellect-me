@@ -25,7 +25,7 @@
   }
 
   .liked_color {
-    color: var(--text-point-color);
-    -webkit-text-stroke: 1px var(--text-point-color);
+    color: var(--text-color-yellow);
+    -webkit-text-stroke: 1px var(--text-color-yellow);
   }
 }

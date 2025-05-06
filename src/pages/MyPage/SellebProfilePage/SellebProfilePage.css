@@ -86,7 +86,17 @@
 
   span {
     font-weight: bold;
-    color: var(--text-sub-color);
+    color: var(--text-color-gray);
+  }
+
+  .pay_time {
+    margin: 1em 0em 2em 0em;
+  }
+
+  .profile_range_info {
+    display: flex;
+    flex-direction: column;
+    gap: 3em;
   }
 }
 

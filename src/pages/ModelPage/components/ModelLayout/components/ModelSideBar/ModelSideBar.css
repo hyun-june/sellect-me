@@ -1,5 +1,5 @@
 .sidebar_container {
-  border: 3px solid var(--text-sub-color);
+  border: 3px solid var(--text-color-gray);
   /* position: absolute;
   left: -15%; */
   width: 12em;
@@ -10,7 +10,7 @@
 }
 
 /* .sidebar_container {
-  border: 3px solid var(--text-sub-color);
+  border: 3px solid var(--text-color-gray);
   position: fixed;
   left: 50px;
   top: 100px;

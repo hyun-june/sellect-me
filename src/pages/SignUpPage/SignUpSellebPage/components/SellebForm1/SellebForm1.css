@@ -32,13 +32,13 @@
   select {
     text-align: center;
     width: 6em;
-    color: var(--text-sub-color);
+    color: var(--text-color-gray);
     font-weight: bold;
     z-index: 1;
   }
 
   span:first-child {
-    color: var(--text-sub-color);
+    color: var(--text-color-gray);
     font-weight: bold;
   }
 }
@@ -55,7 +55,7 @@
     position: absolute;
     right: 0;
     cursor: pointer;
-    color: var(--text-sub-color);
+    color: var(--text-color-gray);
     z-index: 0;
   }
 }
@@ -71,7 +71,7 @@
 
   select {
     width: 100%;
-    color: var(--text-sub-color);
+    color: var(--text-color-gray);
     font-weight: bold;
     padding-left: 0.5em;
     z-index: 1;
@@ -87,7 +87,7 @@
   }
 
   span {
-    color: var(--text-sub-color);
+    color: var(--text-color-gray);
     position: absolute;
     right: 0;
     cursor: pointer;

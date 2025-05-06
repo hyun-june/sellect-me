@@ -70,7 +70,7 @@
   padding-top: 0.5em;
 
   button {
-    border: 1px solid var(--text-point-color);
+    border: 1px solid var(--text-color-yellow);
     padding: 0.5em;
     border-radius: 5px;
   }
@@ -115,8 +115,8 @@
   }
 
   .reason_check_input:checked {
-    border-bottom: 3px solid var(--text-point-color);
-    border-right: 3px solid var(--text-point-color);
+    border-bottom: 3px solid var(--text-color-yellow);
+    border-right: 3px solid var(--text-color-yellow);
     background-color: white;
   }
 

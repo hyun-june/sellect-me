@@ -71,7 +71,7 @@
   span {
     margin: 0;
     font-weight: bold;
-    color: var(--text-sub-color);
+    color: var(--text-color-gray);
   }
 
   p {
@@ -108,7 +108,7 @@
 
   > span:last-child {
     display: flex;
-    color: var(--text-sub-color);
+    color: var(--text-color-gray);
     font-weight: 700;
   }
 
@@ -128,7 +128,7 @@
     display: flex;
     align-items: center;
     border-bottom: 1px solid var(--line-color);
-    color: var(--text-sub-color);
+    color: var(--text-color-gray);
     font-weight: bold;
   }
 }
@@ -141,7 +141,7 @@
   width: 100%;
 
   span {
-    color: var(--text-sub-color);
+    color: var(--text-color-gray);
     font-weight: bold;
   }
 
@@ -177,7 +177,7 @@
   justify-content: space-between;
 
   > span:first-child {
-    color: var(--text-sub-color);
+    color: var(--text-color-gray);
     font-weight: bold;
     white-space: nowrap;
   }

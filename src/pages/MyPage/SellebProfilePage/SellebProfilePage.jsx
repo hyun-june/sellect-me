@@ -126,7 +126,7 @@ const SellebProfilePage = () => {
           <div className="hourly_rangebar_inner">
             <div className="pay_text">
               <h5>예상 금액</h5>
-              <div className="margin-bottom-1">
+              <div className="pay_time">
                 <span>{time}HR</span>
                 <span>{hourlyPay}KRW</span>
               </div>
@@ -150,7 +150,7 @@ const SellebProfilePage = () => {
             <h5>프로젝트 가능 범위</h5>
             <TagButton list={tagList} />
           </div>
-          <div className="flex_column gap-3em">
+          <div className="profile_range_info">
             <div>
               <h5>이동 가능 지역 범위</h5>
               <span>서울</span>

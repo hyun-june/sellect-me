@@ -48,7 +48,7 @@
   height: 70px;
   background-color: hsl(206, 64%, 96%);
   font-weight: bold;
-  color: var(--text-sub-color);
+  color: var(--text-color-gray);
 
   .custom_box {
     display: flex;
@@ -61,7 +61,7 @@
   height: 70px;
   width: 100%;
   font-weight: bold;
-  color: var(--text-sub-color);
+  color: var(--text-color-gray);
 
   .custom_box {
     display: flex;

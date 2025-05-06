@@ -30,7 +30,7 @@
 
     .black:hover {
       background-color: black;
-      color: var(--text-white-color);
+      color: var(--text-color-white);
       box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.6);
     }
 

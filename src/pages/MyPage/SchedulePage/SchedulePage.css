@@ -91,7 +91,7 @@
 
 /* month에서 오늘 날짜 스타일 */
 .react-calendar__month-view .react-calendar__tile--now abbr {
-  background-color: var(--text-point-color) !important;
+  background-color: var(--text-color-yellow) !important;
 }
 
 /* 날짜 셀 */

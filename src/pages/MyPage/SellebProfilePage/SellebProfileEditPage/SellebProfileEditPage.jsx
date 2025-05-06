@@ -285,7 +285,7 @@ const SellebProfileEditPage = () => {
               className="selleb_tags_list"
             />
           </div>
-          <div className="flex_column gap-3em">
+          <div className="selleb_range_info">
             <div>
               <h5>이동 가능 지역 범위</h5>
               <span>서울</span>

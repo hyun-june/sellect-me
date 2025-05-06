@@ -41,7 +41,7 @@ const SellebForm3 = ({ goToNextTab, goToPrevTab }) => {
         <FormInput title="계약 시작일" id="start_date" register={register} />
         <FormInput title="계약 종료일" id="end_date" register={register} />
       </div>
-      <div className="flex justify-between">
+      <div className="prev_next_btn">
         <PrevButton onClick={goToPrevTab} />
         <NextButton type="submit" />
       </div>

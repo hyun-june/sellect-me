@@ -36,13 +36,13 @@ const AddProfile = ({
         <div className="profilePreview">
           <img src={profileImg} />
           <button onClick={handleProfileDelete}>
-            <IoCloseSharp className="font-icon-2" />
+            <IoCloseSharp className="font-size-2" />
           </button>
         </div>
       ) : (
         <section className="profile-Section">
           <label htmlFor={`profileImage-${index}`}>
-            <FaPlus className="font-icon-2" />
+            <FaPlus className="font-size-2" />
             <span>사진 넣기</span>
           </label>
           <input

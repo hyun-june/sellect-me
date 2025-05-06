@@ -33,7 +33,7 @@
 }
 
 .memo_active {
-  background-color: var(--text-point-color);
+  background-color: var(--text-color-yellow);
 }
 
 .content_box_memo_inner {

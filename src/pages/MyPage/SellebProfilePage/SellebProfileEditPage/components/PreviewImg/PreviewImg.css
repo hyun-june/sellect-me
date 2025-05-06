@@ -20,7 +20,7 @@
   img {
     width: 10em;
     height: 10em;
-    border: 1px solid var(--text-sub-color);
+    border: 1px solid var(--text-color-gray);
     object-fit: cover;
   }
 
@@ -43,7 +43,7 @@
 }
 
 .previewBox {
-  border: 1px solid var(--text-sub-color);
+  border: 1px solid var(--text-color-gray);
   width: 22.5em;
   height: 30.1em;
 
@@ -57,7 +57,7 @@
 .empty-slot {
   width: 10em;
   height: 10em;
-  border: 1px solid var(--text-sub-color);
+  border: 1px solid var(--text-color-gray);
   object-fit: cover;
 }
 
@@ -82,7 +82,7 @@
   label:hover {
     border: 2px solid var(--text-color);
     background-color: var(--text-color);
-    color: var(--text-white-color);
+    color: var(--text-color-white);
   }
 
   button {

@@ -38,7 +38,7 @@
 }
 
 .inner_box {
-  /* border: 4px solid var(--text-sub-color); */
+  /* border: 4px solid var(--text-color-gray); */
   border: 4px solid #a6c9eb;
   border-radius: 13px;
   padding: 1em;

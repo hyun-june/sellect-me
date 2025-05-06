@@ -14,13 +14,13 @@
 .normal:hover {
   border: 2px solid var(--text-color);
   background-color: var(--text-color);
-  color: var(--text-white-color);
+  color: var(--text-color-white);
 }
 
 .black {
   border: 2px solid var(--line-color);
   background-color: black;
-  color: var(--text-white-color);
+  color: var(--text-color-white);
 }
 
 .black:hover {

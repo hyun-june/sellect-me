@@ -37,7 +37,7 @@ const SellebForm4 = ({ goToNextTab, goToPrevTab }) => {
         <FormInput title="눈동자 색깔" id="eye_color" register={register} />
       </div>
       <span>상세 필터는 프로필에서 설정 가능합니다.</span>
-      <div className="flex justify-between">
+      <div className="prev_next_btn">
         <PrevButton onClick={goToPrevTab} />
         <NextButton />
       </div>

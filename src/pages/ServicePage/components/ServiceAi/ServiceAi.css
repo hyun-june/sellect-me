@@ -12,7 +12,7 @@
 }
 
 .service_ai {
-  background-color: var(--text-point-color);
+  background-color: var(--text-color-yellow);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -24,7 +24,7 @@
 }
 
 .ai_modal {
-  background-color: var(--text-point-color);
+  background-color: var(--text-color-yellow);
   color: white;
   position: absolute;
   right: -7em;
@@ -76,7 +76,7 @@
 
     .message_item {
       padding: 0.5em;
-      background-color: var(--text-point-color);
+      background-color: var(--text-color-yellow);
       width: max-content;
       border-radius: 8px;
       margin-bottom: 0.5em;

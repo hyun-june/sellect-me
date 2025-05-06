@@ -13,7 +13,7 @@
     dd {
       font-size: 1em;
       margin-bottom: 0;
-      color: var(--text-sub-color);
+      color: var(--text-color-gray);
 
       display: flex;
       max-width: 15em;

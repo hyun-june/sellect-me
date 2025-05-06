@@ -3,7 +3,7 @@ import "./CompleteForm.css";
 
 const CompleteForm = ({ type }) => {
   return (
-    <div className="text-center complete-section">
+    <div className="complete-section">
       <h3>축하합니다!</h3>
       <p>
         이제 셀렉트의 <span className="point-text">CREATIVE</span>한

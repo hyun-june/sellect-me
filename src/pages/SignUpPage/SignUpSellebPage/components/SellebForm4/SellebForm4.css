@@ -14,7 +14,7 @@
   }
 
   span {
-    color: var(--text-sub-color);
+    color: var(--text-color-gray);
     font-weight: bold;
     text-align: center;
   }
