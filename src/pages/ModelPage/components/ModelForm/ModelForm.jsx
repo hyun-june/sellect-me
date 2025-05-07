@@ -208,6 +208,13 @@ const ModelForm = ({ ...props }) => {
   const selectedDataType = modelPageData[type];
   const { title, label, modelData, menu, menuType } = selectedDataType;
   const [cardCount, setCardCount] = useState(12);
+  const [likedList, setLikedList] = useState([]);
+
+  const handleToggleLike = (id) => {
+    setLikedList((prev) =>
+      prev.includes(id) ? prev.filter((item) => item !== id) : [...prev, id]
+    );
+  };
 
   const handleMore = () => {
     setCardCount((prev) => prev + 6);
@@ -235,9 +242,19 @@ const ModelForm = ({ ...props }) => {
           />
         </div>
         <div className="model_card_section">
-          {modelData?.slice(0, cardCount).map((card, index) => (
-            <ModelCard img={card.src} name={card.name} key={index} />
-          ))}
+          {modelData?.slice(0, cardCount).map((card, index) => {
+            const id = `${card.name}-${index}`;
+
+            return (
+              <ModelCard
+                img={card.src}
+                name={card.name}
+                key={id}
+                isLiked={likedList.includes(id)}
+                onToggleLike={() => handleToggleLike(id)}
+              />
+            );
+          })}
         </div>
         {cardCount < modelData.length && (
           <div className="load_more_btn">

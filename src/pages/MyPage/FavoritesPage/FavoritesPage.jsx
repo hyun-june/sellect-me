@@ -1,3 +1,4 @@
+import { useState } from "react";
 import MainLayout from "../../../components/Layout/MainLayout/MainLayout";
 import ModelCard from "../../ModelPage/components/ModelForm/components/ModelCard/ModelCard";
 import "./FavoritesPage.css";
@@ -77,15 +78,34 @@ const favoritesCard = [
   },
 ];
 const FavoritesPage = () => {
+  const testLike = favoritesCard.map((card, index) => `${card.name}-${index}`);
+  const [likedList, setLikedList] = useState(testLike);
+
+  const handleToggleLike = (id) => {
+    setLikedList((prev) =>
+      prev.includes(id) ? prev.filter((item) => item !== id) : [...prev, id]
+    );
+  };
+
   const user = "selleb";
   return (
     <MainLayout>
       <div className="favorite_container">
         <h4>관심 있는 {user === "selleb" ? "셀렉터" : "셀럽"}</h4>
         <div className="favorite_card_section">
-          {favoritesCard?.map((card, index) => (
-            <ModelCard img={card.src} name={card.name} key={index} />
-          ))}
+          {favoritesCard?.map((card, index) => {
+            const id = `${card.name}-${index}`;
+
+            return (
+              <ModelCard
+                img={card.src}
+                name={card.name}
+                key={id}
+                isLiked={likedList.includes(id)}
+                onToggleLike={() => handleToggleLike(id)}
+              />
+            );
+          })}
         </div>
       </div>
     </MainLayout>

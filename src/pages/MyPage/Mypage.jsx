@@ -5,33 +5,32 @@ import HamburgerMenu from "./../../components/HamburgerMenu/HamburgerMenu";
 import { FaRegCalendarCheck } from "react-icons/fa";
 import { FaSackDollar } from "react-icons/fa6";
 import LineGraph from "../../components/LineGraph/LineGraph";
-import "./Mypage.css";
-
 import { useEffect, useRef, useState } from "react";
 import CustomDropdown from "./../../components/CustomDropdown/CustomDropdown";
+import "./Mypage.css";
 
 const boxListLeft = {
   selleb: [
     { title: "프로필 관리", link: "/mypage/selleb" },
-    { title: "CHAT", link: "/" },
-    { title: "V-CHAT", link: "/" },
+    { title: "CHAT", link: "/mypage/chatting" },
+    { title: "V-CHAT", link: "/v-chat" },
   ],
   sellecter: [
     { title: "프로필 관리", link: "/mypage/sellecter" },
-    { title: "CHAT", link: "/" },
-    { title: "V-CHAT", link: "/" },
+    { title: "CHAT", link: "/mypage/chatting" },
+    { title: "V-CHAT", link: "/v-chat" },
   ],
 };
 const boxListRight = {
   selleb: [
-    { title: "프로젝트 관리", link: "/" },
-    { title: "관심있는 셀렉터", link: "/" },
+    { title: "프로젝트 관리", link: "/mypage/projectManage" },
+    { title: "관심있는 셀렉터", link: "/mypage/favorites" },
     { title: "섭외요청 확인", link: "/" },
   ],
   sellecter: [
-    { title: "프로젝트 관리", link: "/" },
-    { title: "관심있는 셀럽", link: "/" },
-    { title: "V-CHAT 이용권", link: "/" },
+    { title: "프로젝트 관리", link: "/mypage/projectManage" },
+    { title: "관심있는 셀럽", link: "/mypage/favorites" },
+    { title: "V-CHAT 이용권", link: "/v-chat/ticket" },
   ],
 };
 const mypageMenu = [

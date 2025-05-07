@@ -29,6 +29,7 @@ import AccountSettingPage from "./../pages/AccountSettingsPage/AccountSettingPag
 import TermsPage from "../pages/Terms/TermsPage/TermsPage";
 import PrivacyPage from "../pages/Terms/PrivacyPage/PrivacyPage";
 import LoginPage from "./../pages/LoginPage/LoginPage";
+import RequestPage from "../pages/RequestPage/RequestPage";
 
 const AppRouter = () => {
   const location = useLocation();
@@ -79,8 +80,9 @@ const AppRouter = () => {
       <Route path="/service/faq" element={<ServicePage />} />
       <Route path="/service/faq/faq" element={<ServiceFAQPage />} />
       <Route path="/setting" element={<AccountSettingPage />} />
-      <Route path="terms" element={<TermsPage />} />
+      <Route path="/terms" element={<TermsPage />} />
       <Route path="/privacy" element={<PrivacyPage />} />
+      <Route path="/request" element={<RequestPage />} />
     </Routes>
   );
 };
