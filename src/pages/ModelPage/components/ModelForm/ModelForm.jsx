@@ -203,6 +203,7 @@ const modelPageData = {
 };
 
 const ModelForm = ({ ...props }) => {
+  const [cardFilter, setCardFilter] = useState("업데이트순");
   const { type } = props;
   const selectedDataType = modelPageData[type];
   const { title, label, modelData, menu, menuType } = selectedDataType;
@@ -210,6 +211,11 @@ const ModelForm = ({ ...props }) => {
 
   const handleMore = () => {
     setCardCount((prev) => prev + 6);
+  };
+
+  const handleCardFilter = (selected) => {
+    console.log("카드 정렬 기준", selected);
+    setCardFilter(selected);
   };
 
   return (
@@ -222,7 +228,11 @@ const ModelForm = ({ ...props }) => {
         <h3>{title}</h3>
         <div className="model_filter">
           <span>1,004 {label}</span>
-          <CustomDropdown className="model_dropdown" list={filterList} />
+          <CustomDropdown
+            className="model_dropdown"
+            list={filterList}
+            onChange={handleCardFilter}
+          />
         </div>
         <div className="model_card_section">
           {modelData?.slice(0, cardCount).map((card, index) => (

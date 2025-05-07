@@ -21,6 +21,7 @@
   h3 {
     font-weight: bold;
     letter-spacing: 1.5px;
+    padding-left: 24px;
   }
 
   .load_more_btn {
@@ -45,6 +46,7 @@
   justify-content: space-between;
   align-items: center;
   margin: 1em 0em;
+  padding-left: 24px;
 
   > span {
     font-weight: bold;
@@ -75,10 +77,11 @@
   flex-wrap: wrap;
   justify-content: flex-start; /* 왼쪽 정렬 */
   flex: 1;
+  padding-left: 24px;
 }
 
 .model_card_section > div {
-  margin-right: 4.25em;
+  margin-right: 2em;
 }
 
 .model_card_section > div:nth-child(3n) {

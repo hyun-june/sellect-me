@@ -1,5 +1,5 @@
 import { useLocation } from "react-router-dom";
-import ModelForm from "./components/ModelLayout/ModelForm";
+import ModelForm from "./components/ModelForm/ModelForm";
 import MainLayout from "./../../components/Layout/MainLayout/MainLayout";
 
 const ModelPage = () => {

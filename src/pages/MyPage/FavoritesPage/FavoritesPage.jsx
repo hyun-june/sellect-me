@@ -1,5 +1,5 @@
 import MainLayout from "../../../components/Layout/MainLayout/MainLayout";
-import ModelCard from "../../ModelPage/components/ModelLayout/components/ModelCard/ModelCard";
+import ModelCard from "../../ModelPage/components/ModelForm/components/ModelCard/ModelCard";
 import "./FavoritesPage.css";
 
 const favoritesCard = [

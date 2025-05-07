@@ -80,16 +80,16 @@ const SellebProfilePage = () => {
           {user === "me" ? (
             <>
               <h3>My Profile</h3>
-              <nav>
+              <div>
                 <Link to="/mypage/selleb/edit">
                   <Button>edit</Button>
                 </Link>
-              </nav>
+              </div>
             </>
           ) : (
             <>
               <h3>KIM JI EUN</h3>
-              <nav>
+              <div>
                 <Button>
                   <IoMdStarOutline className="star-icons" />
                 </Button>
@@ -98,7 +98,7 @@ const SellebProfilePage = () => {
                 <Link to="/quotation">
                   <Button>견적 확인하기</Button>
                 </Link>
-              </nav>
+              </div>
             </>
           )}
         </header>

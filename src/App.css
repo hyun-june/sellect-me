@@ -51,14 +51,14 @@ body {
 }
 
 input[type="checkbox"] {
-  border: 3px solid #155f82;
+  border: 3px solid var(--text-color);
   width: 12px;
   height: 12px;
   cursor: pointer;
 }
 
 input[type="checkbox"]:checked {
-  background-color: #155f82;
+  background-color: var(--text-color);
 }
 
 .background_logo {

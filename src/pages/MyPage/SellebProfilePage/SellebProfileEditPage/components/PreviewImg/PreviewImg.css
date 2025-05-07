@@ -46,6 +46,11 @@
   border: 1px solid var(--text-color-gray);
   width: 22.5em;
   height: 30.1em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-color-gray);
+  font-weight: bold;
 
   img {
     width: 22.5em;

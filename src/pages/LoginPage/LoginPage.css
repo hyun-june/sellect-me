@@ -6,7 +6,7 @@
   gap: 1em;
 
   & h5 {
-    margin-top: 3em;
+    margin: 3em 0em;
     font-weight: 900;
     color: var(--text-color);
   }
@@ -32,7 +32,7 @@
   }
 }
 
-.kakao {
+.kakao_icon {
   background-color: #fee500;
   border-radius: 50%;
 }

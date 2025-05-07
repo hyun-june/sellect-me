@@ -143,7 +143,7 @@ const ModelDetailSideBar = ({ menuType = "basic", ...props }) => {
           ""
         )}
 
-        <button>적용</button>
+        <button>검색</button>
       </div>
     </form>
   );

@@ -222,9 +222,9 @@ const SellebProfileEditPage = () => {
       <form className="selleb_edit_profile" onSubmit={handleSubmit(editSubmit)}>
         <header>
           <h3>My Profile</h3>
-          <nav>
+          <div>
             <Button type="submit">save</Button>
-          </nav>
+          </div>
         </header>
         <section className="selleb_edit_main_profile">
           <AddProfile
