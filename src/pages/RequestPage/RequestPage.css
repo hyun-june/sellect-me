@@ -5,10 +5,11 @@
 .request_info {
   display: flex;
   gap: 2em;
+
   img {
     width: 150px;
     height: 180px;
-    border: 1px solid black;
+    object-fit: cover;
   }
 
   .request_inner {
@@ -38,4 +39,138 @@
       border-radius: 5px;
     }
   }
+}
+
+.request_profile {
+  display: flex;
+  justify-content: space-between;
+  padding: 1em 0em;
+  margin: 1em 0em;
+  border-top: 2px solid var(--line-color);
+}
+
+.request_main_profile {
+  width: 100%;
+  display: flex;
+  gap: 1em;
+  margin-bottom: 3em;
+}
+
+.request_main_profile_img {
+  img {
+    width: 33em;
+    height: 33.75em;
+    object-fit: cover;
+    object-position: top;
+  }
+}
+.request_profile_info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.request_profile_pictures {
+  display: flex;
+  gap: 1em;
+
+  img {
+    width: 13em;
+    height: 13em;
+    object-fit: cover;
+  }
+}
+
+.request_profile_List {
+  display: flex;
+  justify-content: center;
+  padding: 1.7em 0em;
+  gap: 3em;
+  border: 2px solid var(--line-color);
+
+  dl {
+    gap: 2.5em;
+    margin: 0;
+
+    dd {
+      height: 2em;
+      width: 5em;
+    }
+  }
+}
+
+.request_profile_range {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-items: center;
+  gap: 3em;
+  border-top: 2px solid var(--line-color);
+  padding: 3em 0em;
+
+  h5 {
+    color: var(--text-color);
+    font-weight: bold;
+  }
+
+  span {
+    font-weight: bold;
+    color: var(--text-color-gray);
+  }
+
+  .request_pay_time {
+    margin: 1em 0em 2em 0em;
+  }
+
+  .request_pay_text {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .profile_range_info {
+    display: flex;
+    flex-direction: column;
+    gap: 3em;
+  }
+}
+
+.request_hourly_rangebar_inner {
+  width: 16em;
+  position: relative;
+
+  div {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  label {
+    color: var(--text-color);
+    font-weight: bold;
+    font-size: 0.8em;
+  }
+}
+
+.request_hourly_rangebar_inner::after {
+  content: "";
+  width: 2px;
+  height: 100%;
+  top: 0;
+  right: -4em;
+  background-color: var(--line-color);
+  position: absolute;
+}
+
+#request_hourlyPay_bar {
+  width: 100%;
+  cursor: pointer;
+  -webkit-appearance: none;
+  background-color: var(--text-color);
+  height: 0.2em;
+}
+
+#request_hourlyPay_bar::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  background-color: var(--text-color);
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
 }

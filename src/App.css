@@ -75,6 +75,29 @@ input[type="checkbox"]:checked {
   pointer-events: none;
 }
 
+/* Custom_tabs */
+
+.tabs_content {
+  img {
+    width: 45em;
+    height: 60em;
+    object-fit: cover;
+    margin-bottom: 1em;
+  }
+}
+
+.career {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  margin: 1em 0em;
+
+  li {
+    list-style-type: "-";
+    padding-left: 0.5em;
+  }
+}
+
 /* react-tabs */
 .tabs_list {
   display: flex;

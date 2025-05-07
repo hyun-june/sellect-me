@@ -3,6 +3,7 @@ import "./CustomTabs.css";
 
 const CustomTabs = ({ defaultIdx = 0, items = [], ...props }) => {
   const [tabIdx, setTabIdx] = useState(defaultIdx);
+  console.log("ddddd", items);
   return (
     <div className="customTabs-container" {...props}>
       <ul className="customTabs-header">

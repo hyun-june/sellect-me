@@ -60,6 +60,7 @@ const tagList = ["사진", "영상", "뮤비", "홈쇼핑"];
 
 const SellebProfilePage = (props) => {
   const [time, setTime] = useState(0);
+
   const handlePayChange = (e) => {
     if (user === "me") {
       const selectTime = e.target.value;
