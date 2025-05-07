@@ -31,6 +31,10 @@ body {
   --warn-color: #991b1b;
 }
 
+h3 {
+  font-weight: bold;
+}
+
 .font-size-2 {
   font-size: 2em;
 }
@@ -114,6 +118,38 @@ input[type="checkbox"]:checked {
   align-items: center;
   flex-direction: column;
   padding-top: 1.5em;
+}
+
+/* react-calendar */
+.sunday {
+  color: red;
+}
+
+.not_sunday {
+  color: var(--text-color);
+}
+
+/* 오늘 날짜 스타일 */
+.react-calendar__tile--now {
+  background-color: white;
+}
+
+/* month에서 오늘 날짜 스타일 */
+.react-calendar__month-view .react-calendar__tile--now abbr {
+  background-color: var(--line-color) !important;
+}
+
+/* 선택된 날짜 */
+.react-calendar__tile--active {
+  background-color: white !important;
+
+  abbr {
+    background-color: var(--text-color-yellow);
+  }
+}
+
+.react-calendar__tile:hover {
+  background-color: white !important;
 }
 
 /* LoginLink */

@@ -35,6 +35,16 @@ const QuotationForm = ({ user }) => {
   const [startTime, setStartTime] = useState(0);
   const [endTime, setEndTime] = useState(0);
 
+  const tileClassName = ({ date, view }) => {
+    if (view === "month") {
+      if (date.getDay() === 0) {
+        return "sunday";
+      }
+      return "not_sunday";
+    }
+    return null;
+  };
+
   const calculateTime = () => {
     const parseTime = (time) => {
       if (!time) return 0;
@@ -86,13 +96,34 @@ const QuotationForm = ({ user }) => {
     calculateTime(formData);
   };
 
+  // const handleFileChange = (event) => {
+  //   const newFiles = Array.from(event.target.files);
+
+  //   setFiles((prevFiles) => [
+  //     ...prevFiles,
+  //     ...newFiles.map((file) => file.name),
+  //   ]);
+  // };
+
   const handleFileChange = (event) => {
     const newFiles = Array.from(event.target.files);
-    setFiles((prevFiles) => [
-      ...prevFiles,
-      ...newFiles.map((file) => file.name),
-    ]);
+
+    newFiles.forEach((file) => {
+      const fileURL = URL.createObjectURL(file);
+
+      const userFile = {
+        sender: "user",
+        fileName: file.name,
+        fileURL: fileURL,
+        type: "file",
+        fileType: file.type,
+      };
+
+      setFiles((prev) => [...prev, userFile]);
+    });
   };
+
+  console.log("222", files);
 
   const handleDeleteFile = (index) => {
     setFiles((prevFiles) => prevFiles.filter((_, i) => i !== index));
@@ -108,14 +139,6 @@ const QuotationForm = ({ user }) => {
 
   return (
     <div className="quotationForm_container">
-      <h4>
-        {user === "selleb"
-          ? "섭외 요청하기"
-          : user === "sellecter"
-          ? "프로젝트 신청하기"
-          : ""}
-      </h4>
-
       <section className="top_section">
         <div>
           {src ? <img src={src}></img> : <div className="img_box"></div>}
@@ -151,7 +174,15 @@ const QuotationForm = ({ user }) => {
             </button>
 
             <p>{value ? value.toLocaleDateString() : "날짜를 선택해주세요."}</p>
-            {isOpen && <Calendar onChange={handleDateChange} value={value} />}
+            {isOpen && (
+              <Calendar
+                tileClassName={tileClassName}
+                onChange={handleDateChange}
+                calendarType="Hebrew"
+                value={value}
+                formatDay={(locale, date) => date.getDate()}
+              />
+            )}
           </div>
 
           <div className="time_section">
@@ -207,9 +238,9 @@ const QuotationForm = ({ user }) => {
           <ul className="files_name">
             {files.length > 0 && (
               <li>
-                {files.map((fileName, index) => (
+                {files.map((file, index) => (
                   <TagButton key={index}>
-                    {fileName}
+                    {file.fileName}
                     <button
                       type="button"
                       onClick={() => handleDeleteFile(index)}
