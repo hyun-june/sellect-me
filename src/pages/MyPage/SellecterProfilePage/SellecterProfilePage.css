@@ -57,7 +57,7 @@
   }
 }
 
-.selleb_project {
+.sellecter_project {
   display: flex;
   flex-direction: column;
   gap: 1em;
@@ -70,18 +70,6 @@
   li {
     list-style-type: "-";
     margin-left: 1em;
-    padding-left: 0.5em;
-  }
-}
-
-.selleb_career {
-  display: flex;
-  flex-direction: column;
-  gap: 1em;
-  margin: 1em 0em;
-
-  li {
-    list-style-type: "-";
     padding-left: 0.5em;
   }
 }

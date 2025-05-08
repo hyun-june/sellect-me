@@ -32,7 +32,7 @@ const tabItems = [
   {
     title: "프로젝트",
     content: (
-      <div className="selleb_project">
+      <div className="sellecter_project">
         <div>안녕하세요 OOO입니다</div>
         <div>OOO에서 창의적이고 유능한 셀럽 분들을 모집합니다.</div>
 
@@ -48,7 +48,7 @@ const tabItems = [
   {
     title: "커리어",
     content: (
-      <ul className="selleb_career">
+      <ul className="career">
         <li>2020.01.01 OOO브랜드OOO화보촬영</li>
         <li>2021.05.30 OOO브랜드OOO화보촬영</li>
       </ul>
