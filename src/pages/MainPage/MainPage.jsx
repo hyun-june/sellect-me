@@ -31,7 +31,7 @@ const menu = [
   { name: "signup", address: "/signup" },
 ];
 
-const MainPage = () => {
+const MainPage = (props) => {
   const boxRef = useRef();
   const [boxVisible, setBoxVisible] = useState(false);
   const textRefs = [
@@ -130,7 +130,7 @@ const MainPage = () => {
   }, []);
 
   return (
-    <MainLayout>
+    <MainLayout {...props}>
       <HamburgerMenu menu={menu} />
       <div>
         <div className="main_video">
