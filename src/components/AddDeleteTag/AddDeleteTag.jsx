@@ -26,15 +26,16 @@ const AddDeleteTag = ({
       return;
     }
     const updatedTags = [...tags, inputTag];
-    handleTagsChange(updatedTags);
+    handleTagsChange(updatedTags, defaultTags);
     setNewTag("");
   };
 
   const handleDeleteTag = (index, isDefault) => {
     let updatedTags = [...tags];
+
     if (isDefault) {
       const updatedDefaultTags = defaultTags.filter((_, i) => i !== index);
-      handleTagsChange([...updatedDefaultTags, ...tags]);
+      handleTagsChange([...updatedDefaultTags, ...updatedTags]);
     } else {
       updatedTags = updatedTags.filter((_, i) => i !== index);
       handleTagsChange(updatedTags);

@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { useForm } from "react-hook-form";
-import { IoMdStarOutline } from "react-icons/io";
 import ProfileInfoList from "./../../../../components/ProfileInfoList/ProfileInfoList";
 import CustomTabs from "./../../../../components/CustomTabs/CustomTabs";
 import AddCareer from "../../components/AddCareer/AddCareer";
@@ -21,7 +20,7 @@ const testData = {
   noticeText: "",
 };
 
-const SellecterProfileEditPage = () => {
+const SellecterProfileEditPage = (props) => {
   const {
     register,
     handleSubmit,
@@ -92,7 +91,6 @@ const SellecterProfileEditPage = () => {
   ];
   const [mainImg, setMainImg] = useState(null);
   const [noticeText, setNoticeText] = useState("");
-  const user = "me";
 
   const handleNoticeSave = (text) => {
     setNoticeText(text);
@@ -116,8 +114,9 @@ const SellecterProfileEditPage = () => {
   const [tags, setTags] = useState([]);
   const [defaultTags, setDefaultTags] = useState([]);
 
-  const handleTagsChange = (updatedTags) => {
+  const handleTagsChange = (updatedTags, updatedDefaultTags) => {
     setTags(updatedTags);
+    setDefaultTags(updatedDefaultTags);
   };
 
   const editSubmit = (formData) => {
@@ -128,32 +127,17 @@ const SellecterProfileEditPage = () => {
   };
 
   return (
-    <MainLayout>
+    <MainLayout {...props}>
       <form
         className="sellecter_edit_profile"
         onSubmit={handleSubmit(editSubmit)}
       >
-        <header>
-          {user === "me" ? (
-            <>
-              <h3>My Company</h3>
-              <nav>
-                <Button type="submit">save</Button>
-              </nav>
-            </>
-          ) : (
-            <>
-              <h3>VIDEO FACTORY</h3>
-              <nav>
-                <Button>
-                  <IoMdStarOutline className="star-icons" />
-                </Button>
-                <Button>Chat</Button>
-                <Button>프로젝트 신청하기</Button>
-              </nav>
-            </>
-          )}
-        </header>
+        <div className="sellecter_edit_profile_header">
+          <h3>My Company</h3>
+          <div>
+            <Button type="submit">save</Button>
+          </div>
+        </div>
 
         <section className="sellecter_edit_main_profile">
           <AddProfile

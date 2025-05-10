@@ -56,25 +56,25 @@ const tabItems = [
   },
 ];
 
-const SellecterProfilePage = () => {
+const SellecterProfilePage = (props) => {
   const user = "11";
   return (
-    <MainLayout>
+    <MainLayout {...props}>
       <div className="sellecter_profile">
-        <header>
+        <div className="sellecter_profile_header">
           {user === "me" ? (
             <>
               <h3>My Profile</h3>
-              <nav>
+              <div>
                 <Link to="/mypage/sellecter/edit">
                   <Button>edit</Button>
                 </Link>
-              </nav>
+              </div>
             </>
           ) : (
             <>
               <h3>VIDEO FACTORY</h3>
-              <nav>
+              <div>
                 <Button>
                   <IoMdStarOutline className="star-icons" />
                 </Button>
@@ -82,10 +82,10 @@ const SellecterProfilePage = () => {
                 <Link to="/quotation">
                   <Button>프로젝트 신청하기</Button>
                 </Link>
-              </nav>
+              </div>
             </>
           )}
-        </header>
+        </div>
         <section className="sellecter_main_profile">
           <div className="sellecter_main_profile_img">
             <ProfileImgBox />

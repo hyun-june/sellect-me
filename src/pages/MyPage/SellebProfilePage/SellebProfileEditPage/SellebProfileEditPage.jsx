@@ -28,7 +28,7 @@ const testData = {
   pay: 120000,
 };
 
-const SellebProfileEditPage = () => {
+const SellebProfileEditPage = (props) => {
   const {
     register,
     handleSubmit,
@@ -193,8 +193,9 @@ const SellebProfileEditPage = () => {
     ],
   };
 
-  const handleTagsChange = (updatedTags) => {
+  const handleTagsChange = (updatedTags, updatedDefaultTags) => {
     setTags(updatedTags);
+    setDefaultTags(updatedDefaultTags);
   };
 
   const handleMainImgChange = (newImg) => {
@@ -218,14 +219,14 @@ const SellebProfileEditPage = () => {
   };
 
   return (
-    <MainLayout>
+    <MainLayout {...props}>
       <form className="selleb_edit_profile" onSubmit={handleSubmit(editSubmit)}>
-        <header>
+        <div className="selleb_edit_header">
           <h3>My Profile</h3>
           <div>
             <Button type="submit">save</Button>
           </div>
-        </header>
+        </div>
         <section className="selleb_edit_main_profile">
           <AddProfile
             index={-1}

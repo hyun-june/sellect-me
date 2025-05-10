@@ -1,21 +1,15 @@
 .selleb_edit_profile {
   width: 100%;
 
-  header {
+  .selleb_edit_header {
     display: flex;
     justify-content: space-between;
-
-    nav {
-      display: flex;
-      margin-bottom: 0.5em;
-
-      button {
-        font-weight: bold;
-      }
-    }
+    margin-bottom: 1em;
 
     h3 {
       letter-spacing: 3px;
+      margin: 0;
+      font-size: 2em;
     }
   }
 }
@@ -28,27 +22,27 @@
 }
 
 .selleb_edit_main_img {
-  width: 33em;
-  height: 33.75em;
+  width: 380px;
+  height: 400px;
   object-fit: cover;
   object-position: top;
 }
 
 .selleb_edit_profile_pictures {
   display: flex;
+  justify-content: space-between;
   gap: 1em;
 
   img {
-    height: 13em;
-    width: 13em;
+    width: 180px;
+    height: 180px;
     object-fit: cover;
-    object-position: top;
   }
 }
 
 .selleb_edit_sub_img {
-  width: 13em;
-  height: 13em;
+  width: 180px;
+  height: 180px;
 }
 
 .selleb_work_scope {
@@ -95,21 +89,28 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  flex: 1;
 }
 
 .selleb_edit_profile_List {
   display: flex;
   justify-content: center;
+  padding: 1em 0em;
   gap: 3em;
-  padding: 1.7em 0em;
   border: 2px solid var(--line-color);
 
   dl {
-    gap: 2.5em;
     margin: 0;
+    gap: 1.5em;
+
+    dt {
+      font-size: 1em;
+    }
 
     dd {
-      height: 2em;
+      width: 5em;
+      font-size: 0.8em;
+      height: 1em;
 
       div {
         border-bottom: none;
@@ -117,9 +118,12 @@
     }
   }
 
+  .form-input {
+    height: 1.5em;
+  }
+
   input {
     width: 5em;
-    height: 2em;
     border: none;
     padding: 0em;
     border-bottom: 1px solid var(--text-color-gray);
@@ -155,7 +159,7 @@
   width: 2px;
   height: 100%;
   top: 0;
-  right: -4em;
+  right: -2em;
   background-color: var(--line-color);
   position: absolute;
 }

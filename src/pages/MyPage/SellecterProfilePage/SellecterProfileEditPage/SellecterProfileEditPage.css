@@ -1,42 +1,39 @@
 .sellecter_edit_profile {
   width: 100%;
 
-  header {
+  .sellecter_edit_profile_header {
     display: flex;
     justify-content: space-between;
-
-    nav {
-      display: flex;
-      margin-bottom: 0.5em;
-
-      button {
-        font-weight: bold;
-      }
-    }
+    margin-bottom: 1em;
 
     h3 {
       letter-spacing: 3px;
+      margin: 0;
+      font-size: 2em;
     }
   }
 }
 
 .sellecter_edit_main_profile {
   width: 100%;
-  display: grid;
-  grid-template-columns: 0.5fr 1fr;
-  gap: 6em;
+  display: flex;
+  gap: 1em;
   margin-bottom: 3em;
 }
 
 .sellecter_edit_sellecter_img {
-  width: 25em;
-  height: 25em;
+  min-width: 380px;
+  height: 400px;
+  img {
+    object-fit: cover;
+    object-position: top;
+  }
 }
 
 .sellecter_edit_profile_info {
   border: 2px solid var(--line-color);
   display: flex;
-
+  width: 100%;
   justify-content: center;
   padding: 2.2em 0em;
   gap: 5em;

@@ -77,7 +77,7 @@ const SellebProfilePage = (props) => {
   return (
     <MainLayout {...props}>
       <div className="selleb_profile">
-        <header>
+        <div className="selleb_profile_header">
           {user === "me" ? (
             <>
               <h3>My Profile</h3>
@@ -89,7 +89,7 @@ const SellebProfilePage = (props) => {
             </>
           ) : (
             <>
-              <h3>KIM JI EUN</h3>
+              <h3>KIM OOO OOO</h3>
               <div>
                 <Button>
                   <IoMdStarOutline className="star-icons" />
@@ -102,7 +102,7 @@ const SellebProfilePage = (props) => {
               </div>
             </>
           )}
-        </header>
+        </div>
         <section className="selleb_main_profile">
           <div className="selleb_main_profile_img">
             <ProfileImgBox src="/images/test.jpg" />
@@ -123,6 +123,7 @@ const SellebProfilePage = (props) => {
             </div>
           </div>
         </section>
+
         <section className="profile_range">
           <div className="hourly_rangebar_inner">
             <div className="pay_text">
