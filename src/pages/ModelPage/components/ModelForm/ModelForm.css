@@ -1,7 +1,7 @@
 .model_container {
   width: 100%;
   display: flex;
-  gap: 2em;
+  gap: 62px;
 }
 
 .model_sidebar {
@@ -11,6 +11,7 @@
   display: flex;
   flex-direction: column;
   gap: 2em;
+  font-size: 0.875em;
 }
 
 .model_main_section {
@@ -21,7 +22,6 @@
   h3 {
     font-weight: bold;
     letter-spacing: 1.5px;
-    padding-left: 24px;
   }
 
   .load_more_btn {
@@ -46,7 +46,6 @@
   justify-content: space-between;
   align-items: center;
   margin: 1em 0em;
-  padding-left: 24px;
 
   > span {
     font-weight: bold;
@@ -76,8 +75,8 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start; /* 왼쪽 정렬 */
+  gap: 2em;
   flex: 1;
-  padding-left: 24px;
 }
 
 .model_card_section > div {

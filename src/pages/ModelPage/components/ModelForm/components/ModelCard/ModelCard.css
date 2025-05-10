@@ -2,8 +2,8 @@
   position: relative;
 
   img {
-    width: 280px;
-    height: 350px;
+    width: 200px;
+    height: 250px;
     object-fit: cover;
     object-position: top;
   }

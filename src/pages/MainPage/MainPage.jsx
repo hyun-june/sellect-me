@@ -10,11 +10,14 @@ const firstWord = ["모델", "배우", "쇼호스트", "인플루언서"];
 const secondWord = ["출연료", "저작권", "초상권"];
 
 const menu = [
-  { name: "Home", address: "/" },
-  { name: "about", address: "/about" },
+  { name: "Home(1)", address: "/" },
+  { name: "about(1)", address: "/about" },
+  { name: "login(1)", address: "/login" },
+  { name: "model/fitting(1)", address: "/model/fitting" },
+  { name: "model/homeshopping(1)", address: "/model/homeshopping" },
+  { name: "mypage/selleb(1)", address: "/mypage/selleb" },
+  { name: "mypage/sellecter(1)", address: "/mypage/sellecter" },
   { name: "confirm", address: "/confirm" },
-  { name: "mypage/selleb", address: "/mypage/selleb" },
-  { name: "mypage/sellecter", address: "/mypage/sellecter" },
   { name: "mypage/selleb/edit", address: "/mypage/selleb/edit" },
   { name: "mypage/sellecter/edit", address: "/mypage/sellecter/edit" },
   { name: "mypage/projectManage", address: "/mypage/projectManage" },
@@ -26,7 +29,6 @@ const menu = [
   { name: "/v-chat/ticket", address: "/v-chat/ticket" },
   { name: "quotation", address: "/quotation" },
   { name: "signup", address: "/signup" },
-  { name: "model/fitting", address: "/model/fitting" },
 ];
 
 const MainPage = () => {

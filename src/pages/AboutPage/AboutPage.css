@@ -17,6 +17,8 @@
     border: none;
     opacity: 0;
     pointer-events: none;
+    aspect-ratio: 16/9;
+    width: 800px;
   }
 
   .about_visible {

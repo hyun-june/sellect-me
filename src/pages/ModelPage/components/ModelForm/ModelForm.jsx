@@ -209,6 +209,7 @@ const ModelForm = ({ ...props }) => {
   const { title, label, modelData, menu, menuType } = selectedDataType;
   const [cardCount, setCardCount] = useState(12);
   const [likedList, setLikedList] = useState([]);
+  const [selectedMenu, setSelectedMenu] = useState(null);
 
   const handleToggleLike = (id) => {
     setLikedList((prev) =>
@@ -224,11 +225,15 @@ const ModelForm = ({ ...props }) => {
     console.log("카드 정렬 기준", selected);
     setCardFilter(selected);
   };
-
+  console.log("선택한 메뉴", selectedMenu);
   return (
     <div className="model_container">
       <div className="model_sidebar">
-        <ModelSideBar data={menu} />
+        <ModelSideBar
+          data={menu}
+          selectedMenu={selectedMenu}
+          setSelectedMenu={setSelectedMenu}
+        />
         <ModelDetailSideBar menuType={menuType} />
       </div>
       <div className="model_main_section">

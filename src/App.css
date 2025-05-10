@@ -79,8 +79,8 @@ input[type="checkbox"]:checked {
 
 .tabs_content {
   img {
-    width: 45em;
-    height: 60em;
+    width: 600px;
+    height: 700px;
     object-fit: cover;
     margin-bottom: 1em;
   }

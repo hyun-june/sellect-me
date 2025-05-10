@@ -1,11 +1,10 @@
 import { useEffect, useRef, useState } from "react";
-import { Container } from "react-bootstrap";
 import MainLayout from "../../components/Layout/MainLayout/MainLayout";
 import PointBox from "./components/PointBox/PointBox";
 import { navigateReload } from "../../utils/navigateReload";
 import "./AboutPage.css";
 
-const AboutPage = () => {
+const AboutPage = (props) => {
   const [visibleIndex, setVisibleIndex] = useState(0);
   const [pointBoxIndex, setPointBoxIndex] = useState(0);
 
@@ -74,74 +73,66 @@ const AboutPage = () => {
   }, [visibleIndex]);
 
   return (
-    <MainLayout>
-      <Container>
-        <div className="aboutInfo_main">
-          <h4>What is Sellect?</h4>
+    <MainLayout {...props}>
+      <div className="aboutInfo_main">
+        <h4>What is Sellect?</h4>
 
-          <iframe
-            ref={ref[0]}
-            width="1280"
-            height="720"
-            src="https://www.youtube.com/embed/-7feOG7w4Ks"
-            title="💿 최유리 노래 모음 | 신곡 포함, 잔잔한 감성  | Choiyuree playlist"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen"
-            referrerpolicy="strict-origin-when-cross-origin"
-            className={`${visibleIndex >= 1 ? "about_visible" : ""}`}
+        <iframe
+          ref={ref[0]}
+          src="https://www.youtube.com/embed/-7feOG7w4Ks"
+          title="💿 최유리 노래 모음 | 신곡 포함, 잔잔한 감성  | Choiyuree playlist"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen"
+          referrerpolicy="strict-origin-when-cross-origin"
+          className={`${visibleIndex >= 1 ? "about_visible" : ""}`}
+        />
+
+        <div className="info_box">
+          <img
+            src="/images/logo-outline-vertical-img.png"
+            alt=""
+            className="background_logo"
           />
-
-          <div className="info_box">
-            <img
-              src="/images/logo-outline-vertical-img.png"
-              alt=""
-              className="background_logo"
-            />
-            <div
-              className={`inner_box ${
-                visibleIndex >= 2 ? "about_visible" : ""
-              }`}
-            >
-              <h5>Sellecter</h5>
-              <p>Select를 하는 브랜드, 기업 등의 클라이언트</p>
-            </div>
-            <span
-              ref={ref[1]}
-              className={`vertical_line ${
-                visibleIndex >= 2 ? "about_visible" : ""
-              }`}
-            ></span>
-            <div
-              ref={ref[2]}
-              className={`aboutPoint_word ${
-                visibleIndex >= 3 ? "about_visible" : ""
-              }`}
-            >
-              Sellect
-            </div>
-            <span
-              className={`vertical_line ${
-                visibleIndex >= 4 ? "about_visible" : ""
-              }`}
-            ></span>
-            <div
-              ref={ref[3]}
-              className={`inner_box ${
-                visibleIndex >= 4 ? "about_visible" : ""
-              }`}
-            >
-              <h5>Selleb</h5>
-              <p>Sell + Celeb로 모델, 배우 등의 크리에이터</p>
-            </div>
+          <div
+            className={`inner_box ${visibleIndex >= 2 ? "about_visible" : ""}`}
+          >
+            <h5>Sellecter</h5>
+            <p>Select를 하는 브랜드, 기업 등의 클라이언트</p>
           </div>
-
-          <div className="about_point_box" ref={ref[4]}>
-            <PointBox pointBoxIndex={pointBoxIndex} />
+          <span
+            ref={ref[1]}
+            className={`vertical_line ${
+              visibleIndex >= 2 ? "about_visible" : ""
+            }`}
+          ></span>
+          <div
+            ref={ref[2]}
+            className={`aboutPoint_word ${
+              visibleIndex >= 3 ? "about_visible" : ""
+            }`}
+          >
+            Sellect
           </div>
-          <div onClick={() => navigateReload("/")} className="link_box">
-            SELLECT Now!
+          <span
+            className={`vertical_line ${
+              visibleIndex >= 4 ? "about_visible" : ""
+            }`}
+          ></span>
+          <div
+            ref={ref[3]}
+            className={`inner_box ${visibleIndex >= 4 ? "about_visible" : ""}`}
+          >
+            <h5>Selleb</h5>
+            <p>Sell + Celeb로 모델, 배우 등의 크리에이터</p>
           </div>
         </div>
-      </Container>
+
+        <div className="about_point_box" ref={ref[4]}>
+          <PointBox pointBoxIndex={pointBoxIndex} />
+        </div>
+        <div onClick={() => navigateReload("/")} className="link_box">
+          SELLECT Now!
+        </div>
+      </div>
     </MainLayout>
   );
 };

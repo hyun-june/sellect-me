@@ -25,3 +25,7 @@
   font-weight: bold;
   color: var(--text-color);
 }
+
+.customTabs-inner {
+  padding: 1em 0em;
+}

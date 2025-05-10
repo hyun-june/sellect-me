@@ -6,8 +6,8 @@
   gap: 1em;
 
   & h5 {
-    margin: 3em 0em;
-    font-weight: 900;
+    margin: 1em 0em;
+    font-weight: bold;
     color: var(--text-color);
   }
 

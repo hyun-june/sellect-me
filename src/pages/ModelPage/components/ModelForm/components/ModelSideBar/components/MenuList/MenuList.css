@@ -22,6 +22,7 @@
   li {
     padding-left: 0.5em;
     margin-bottom: 1em;
+    color: var(--text-color-gray);
   }
 }
 
@@ -29,9 +30,13 @@
   margin: 0.5em 0 0 0;
   max-height: 300px;
   opacity: 1;
-  color: var(--text-color-gray);
 }
 
 .menu_list_category.open li {
   margin-bottom: 1em;
+}
+
+.menu_focus {
+  color: black;
+  font-weight: bold;
 }

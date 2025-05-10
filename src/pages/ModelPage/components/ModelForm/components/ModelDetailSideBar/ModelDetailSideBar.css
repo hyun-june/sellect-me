@@ -1,6 +1,5 @@
 .sidebar_detail_container {
   border: 3px solid var(--text-color-gray);
-  width: 15em;
   max-height: max-content;
   /* padding: 2em; */
   border-radius: 15px;
