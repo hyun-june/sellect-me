@@ -113,7 +113,7 @@ OOO에서 창의적이고 유능한 셀럽 분들을 모집합니다.
   ],
 };
 
-const user = "sellecter";
+const user = "selleb";
 
 const RequestPage = (props) => {
   const [time, setTime] = useState(0);
@@ -189,7 +189,10 @@ const RequestPage = (props) => {
       <div className="request_container">
         <h3>{user === "selleb" ? "셀럽" : "셀렉터"} 요청서</h3>
         <div className="request_info">
-          <img src="/images/test.jpg" className="request_img" />
+          <div className="request_form">
+            <img src="/images/test.jpg" />
+            <span> {selectData.name}</span>
+          </div>
 
           <div className="request_inner">
             <div className="request_inner_info">
@@ -209,19 +212,6 @@ const RequestPage = (props) => {
         </div>
         {user === "selleb" ? (
           <>
-            <div className="request_profile">
-              <h3>{selectData.name}</h3>
-              <div>
-                <Button>
-                  <IoMdStarOutline className="star-icons" />
-                </Button>
-                <Button>Com-Card</Button>
-                <Button>Chat</Button>
-                <Link to="/quotation">
-                  <Button>견적 확인하기</Button>
-                </Link>
-              </div>
-            </div>
             <section className="request_main_profile">
               <div className="request_main_profile_img">
                 <ProfileImgBox src={selectData?.profileImg} />
@@ -242,6 +232,19 @@ const RequestPage = (props) => {
                 </div>
               </div>
             </section>
+            <div className="request_profile">
+              <h3>{selectData.name}</h3>
+              <div>
+                <Button>
+                  <IoMdStarOutline className="star-icons" />
+                </Button>
+                <Button>Com-Card</Button>
+                <Button>Chat</Button>
+                <Link to="/quotation">
+                  <Button>견적 확인하기</Button>
+                </Link>
+              </div>
+            </div>
             <section className="request_profile_range">
               <div className="request_hourly_rangebar_inner">
                 <div className="request_pay_text">
@@ -284,6 +287,15 @@ const RequestPage = (props) => {
           </>
         ) : user === "sellecter" ? (
           <div>
+            <section className="request_main_profile_sellecter">
+              <div>
+                <ProfileImgBox src={selectData?.profileImg} />
+              </div>
+              <div className="request_sellecter_profile_info">
+                <ProfileInfoList list={selectData?.companyInfo} />
+                <ProfileInfoList list={selectData?.projectInfo} />
+              </div>
+            </section>
             <div className="request_profile">
               <h3>{selectData.name}</h3>
               <div>
@@ -296,16 +308,6 @@ const RequestPage = (props) => {
                 </Link>
               </div>
             </div>
-
-            <section className="request_main_profile_sellecter">
-              <div>
-                <ProfileImgBox src={selectData?.profileImg} />
-              </div>
-              <div className="request_sellecter_profile_info">
-                <ProfileInfoList list={selectData?.companyInfo} />
-                <ProfileInfoList list={selectData?.projectInfo} />
-              </div>
-            </section>
           </div>
         ) : (
           ""

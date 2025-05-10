@@ -5,17 +5,31 @@
 .request_info {
   display: flex;
   gap: 2em;
+  margin-bottom: 2em;
+  padding-bottom: 2em;
+  border-bottom: 2px solid var(--line-color);
 
-  img {
-    width: 150px;
-    height: 180px;
-    object-fit: cover;
+  .request_form {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+
+    img {
+      width: 150px;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    span {
+      margin-top: 0.5em;
+      font-weight: bold;
+    }
   }
 
   .request_inner {
-    width: 100%;
     display: flex;
     flex-direction: column;
+    flex: 1;
     gap: 1em;
 
     .request_inner_info {
@@ -44,16 +58,15 @@
 .request_profile {
   display: flex;
   justify-content: space-between;
-  padding: 2em 0em 0.5em 0em;
-  margin-top: 1em;
-  border-top: 2px solid var(--line-color);
+  padding: 2em 0em;
+  border-bottom: 2px solid var(--line-color);
+  margin-bottom: 2em;
 }
 
 .request_main_profile {
   width: 100%;
   display: flex;
   gap: 1em;
-  margin-bottom: 3em;
 }
 
 .request_main_profile_img {
@@ -70,7 +83,6 @@
   display: grid;
   grid-template-columns: 0.5fr 1fr;
   gap: 6em;
-  margin-bottom: 3em;
 
   img {
     width: 25em;
@@ -140,8 +152,8 @@
   grid-template-columns: 1fr 1fr 1fr;
   justify-items: center;
   gap: 3em;
-  border-top: 2px solid var(--line-color);
-  padding: 3em 0em;
+
+  padding: 2em 0em;
 
   h5 {
     color: var(--text-color);
