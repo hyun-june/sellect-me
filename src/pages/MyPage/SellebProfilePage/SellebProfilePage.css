@@ -11,6 +11,10 @@
       font-size: 2em;
       margin: 0;
     }
+
+    div {
+      display: flex;
+    }
   }
 }
 

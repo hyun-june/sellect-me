@@ -1,12 +1,12 @@
 import { Link } from "react-router-dom";
-import { IoMdStarOutline } from "react-icons/io";
 import Button from "./../../../components/Button/Button";
 import ProfileImgBox from "./../../../components/ProfileImgBox/ProfileImgBox";
 import ProfileInfoList from "./../../../components/ProfileInfoList/ProfileInfoList";
 import TagButton from "./../../../components/TagButton/TagButton";
 import CustomTabs from "./../../../components/CustomTabs/CustomTabs";
-import "./SellecterProfilePage.css";
 import MainLayout from "../../../components/Layout/MainLayout/MainLayout";
+import LikeButton from "../../../components/LikeButton/LikeButton";
+import "./SellecterProfilePage.css";
 
 const sellecterInfoList = [
   { title: "회사명", content: "SELLECT" },
@@ -75,9 +75,7 @@ const SellecterProfilePage = (props) => {
             <>
               <h3>VIDEO FACTORY</h3>
               <div>
-                <Button>
-                  <IoMdStarOutline className="star-icons" />
-                </Button>
+                <LikeButton />
                 <Button>Chat</Button>
                 <Link to="/quotation">
                   <Button>프로젝트 신청하기</Button>

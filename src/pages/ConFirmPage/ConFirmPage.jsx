@@ -1,17 +1,22 @@
 import { useState } from "react";
 import SignBox from "./components/SignBox/SignBox";
-import "./ConFirmPage.css";
 import MainLayout from "../../components/Layout/MainLayout/MainLayout";
+import "./ConFirmPage.css";
 
-const ConFirmPage = () => {
+const ConFirmPage = (props) => {
   const [sellebSign, setSellebSign] = useState(null);
   const [sellecterSign, setSellecterSign] = useState(null);
 
   const saveSelleb = (signData) => setSellebSign(signData);
   const saveSellecter = (signData) => setSellecterSign(signData);
 
+  const handleConfirm = () => {
+    console.log("계약하기");
+    // 사인 데이터 보내는 로직
+  };
+
   return (
-    <MainLayout>
+    <MainLayout {...props}>
       <div className="confirm_container">
         <h4>컨펌 및 계약</h4>
         <div className="confirm_inner">
@@ -120,7 +125,9 @@ const ConFirmPage = () => {
             <SignBox id="sellecter" title="셀렉터" saveSign={saveSellecter} />
           </div>
         </div>
-
+        <button className="confirm_btn" onClick={handleConfirm}>
+          계약하기
+        </button>
         {/* 
               <div>
                   <h5>Sign 1 저장된 서명:</h5>

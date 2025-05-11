@@ -5,9 +5,9 @@ import ProfileInfoList from "./../../../components/ProfileInfoList/ProfileInfoLi
 import CustomTabs from "./../../../components/CustomTabs/CustomTabs";
 import TagButton from "./../../../components/TagButton/TagButton";
 import Button from "./../../../components/Button/Button";
-import { IoMdStarOutline } from "react-icons/io";
-import "./SellebProfilePage.css";
 import MainLayout from "../../../components/Layout/MainLayout/MainLayout";
+import LikeButton from "./../../../components/LikeButton/LikeButton";
+import "./SellebProfilePage.css";
 
 const profileInfoList = [
   { title: "성별", content: "FEMALE" },
@@ -91,9 +91,7 @@ const SellebProfilePage = (props) => {
             <>
               <h3>KIM OOO OOO</h3>
               <div>
-                <Button>
-                  <IoMdStarOutline className="star-icons" />
-                </Button>
+                <LikeButton />
                 <Button>Com-Card</Button>
                 <Button>Chat</Button>
                 <Link to="/quotation">

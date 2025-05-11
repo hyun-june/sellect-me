@@ -17,6 +17,7 @@
 
   td {
     padding-left: 1em;
+    padding-bottom: 5px;
   }
 }
 
@@ -62,19 +63,31 @@
 
   p {
     margin: 0;
-    margin-bottom: 0.5em;
     padding-left: 1em;
+    line-height: 24px;
   }
 
   span {
     padding-left: 0.5em;
+    line-height: 24px;
   }
 
   ul {
     margin: 0;
+    line-height: 24px;
   }
+}
 
-  li {
-    margin-bottom: 0.5em;
-  }
+.confirm_btn {
+  border-radius: 6px;
+  min-height: 2.5em;
+  padding: 0.3em 0.5em;
+  border: 2px solid var(--line-color);
+  background-color: white;
+  margin-left: auto;
+  margin-top: 1em;
+}
+
+.confirm_btn:hover {
+  transform: scale(1.1);
 }

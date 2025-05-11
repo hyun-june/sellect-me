@@ -50,7 +50,7 @@
 .img_box {
   width: 150px;
   height: 180px;
-  border: 1px solid var(--line-color);
+  border: 2px solid var(--line-color);
 }
 
 .description_box {

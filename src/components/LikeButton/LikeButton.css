@@ -1,0 +1,27 @@
+.liked_btn {
+  margin-left: 0.5em;
+  transition: 0.3s;
+  border-radius: 6px;
+  min-height: 2.5em;
+  padding: 0.3em 0.5em;
+  border: 2px solid var(--line-color);
+  background-color: white;
+  cursor: pointer;
+
+  span {
+    color: transparent;
+    -webkit-text-stroke: 1px var(--text-color);
+    font-size: 1.5em;
+    user-select: none;
+  }
+
+  .liked_color {
+    color: var(--text-color-yellow);
+    -webkit-text-stroke: 1px var(--text-color-yellow);
+  }
+
+  .star-icons:hover {
+    color: var(--text-color-yellow);
+    -webkit-text-stroke: 1px var(--text-color-yellow);
+  }
+}

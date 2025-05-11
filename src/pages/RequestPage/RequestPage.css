@@ -1,5 +1,9 @@
 .request_container {
   width: 100%;
+
+  h3 {
+    margin-bottom: 1em;
+  }
 }
 
 .request_info {
@@ -23,6 +27,8 @@
     span {
       margin-top: 0.5em;
       font-weight: bold;
+      font-size: 1.5em;
+      letter-spacing: 2px;
     }
   }
 
@@ -58,9 +64,19 @@
 .request_profile {
   display: flex;
   justify-content: space-between;
-  padding: 2em 0em;
+  padding: 1em 0em 2em 0em;
   border-bottom: 2px solid var(--line-color);
   margin-bottom: 2em;
+
+  h3 {
+    letter-spacing: 3px;
+    font-size: 2em;
+    margin: 0;
+  }
+
+  .request_profile_btn {
+    display: flex;
+  }
 }
 
 .request_main_profile {
@@ -71,8 +87,8 @@
 
 .request_main_profile_img {
   img {
-    width: 33em;
-    height: 33.75em;
+    width: 380px;
+    height: 400px;
     object-fit: cover;
     object-position: top;
   }
@@ -80,13 +96,12 @@
 
 .request_main_profile_sellecter {
   width: 100%;
-  display: grid;
-  grid-template-columns: 0.5fr 1fr;
-  gap: 6em;
+  display: flex;
+  gap: 2em;
 
   img {
-    width: 25em;
-    height: 25em;
+    min-width: 380px;
+    height: 400px;
     object-fit: cover;
     object-position: top;
   }
@@ -96,6 +111,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  flex: 1;
 }
 
 .request_sellecter_profile_info {
@@ -104,6 +120,7 @@
   align-items: center;
   justify-content: center;
   gap: 5em;
+  width: 100%;
 
   dl {
     gap: 1.5em;
@@ -119,11 +136,12 @@
 
 .request_profile_pictures {
   display: flex;
+  justify-content: space-between;
   gap: 1em;
 
   img {
-    width: 13em;
-    height: 13em;
+    width: 180px;
+    height: 180px;
     object-fit: cover;
   }
 }
@@ -131,18 +149,22 @@
 .request_profile_List {
   display: flex;
   justify-content: center;
-  padding: 1.7em 0em;
+  padding: 1em 0em;
   gap: 3em;
   border: 2px solid var(--line-color);
   width: 100%;
 
   dl {
-    gap: 2.5em;
     margin: 0;
+    gap: 1.5em;
+
+    dt {
+      font-size: 1em;
+    }
 
     dd {
-      height: 2em;
       width: 5em;
+      font-size: 0.8em;
     }
   }
 }
@@ -202,7 +224,7 @@
   width: 2px;
   height: 100%;
   top: 0;
-  right: -4em;
+  right: -2em;
   background-color: var(--line-color);
   position: absolute;
 }

@@ -8,6 +8,7 @@ import { IoMdStarOutline } from "react-icons/io";
 import TagButton from "./../../components/TagButton/TagButton";
 import CustomTabs from "./../../components/CustomTabs/CustomTabs";
 import "./RequestPage.css";
+import LikeButton from "../../components/LikeButton/LikeButton";
 
 const userInfo = {
   name: "Kim Jieun",
@@ -234,10 +235,8 @@ const RequestPage = (props) => {
             </section>
             <div className="request_profile">
               <h3>{selectData.name}</h3>
-              <div>
-                <Button>
-                  <IoMdStarOutline className="star-icons" />
-                </Button>
+              <div className="request_profile_btn">
+                <LikeButton />
                 <Button>Com-Card</Button>
                 <Button>Chat</Button>
                 <Link to="/quotation">
@@ -298,10 +297,8 @@ const RequestPage = (props) => {
             </section>
             <div className="request_profile">
               <h3>{selectData.name}</h3>
-              <div>
-                <Button>
-                  <IoMdStarOutline className="star-icons" />
-                </Button>
+              <div className="request_profile_btn">
+                <LikeButton />
                 <Button>Chat</Button>
                 <Link to="/quotation">
                   <Button>프로젝트 신청하기</Button>
