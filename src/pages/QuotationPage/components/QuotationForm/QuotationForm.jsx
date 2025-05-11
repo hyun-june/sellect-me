@@ -123,7 +123,7 @@ const QuotationForm = ({ user }) => {
     });
   };
 
-  console.log("222", files);
+  console.log("files", files);
 
   const handleDeleteFile = (index) => {
     setFiles((prevFiles) => prevFiles.filter((_, i) => i !== index));

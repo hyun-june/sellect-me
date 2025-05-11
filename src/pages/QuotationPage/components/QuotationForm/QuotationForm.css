@@ -136,12 +136,19 @@
 
   label {
     padding: 0em 1em;
+
     white-space: nowrap;
+    justify-content: center;
     display: flex;
     align-items: center;
     border-bottom: 1px solid var(--line-color);
     color: var(--text-color-gray);
     font-weight: bold;
+  }
+
+  input {
+    width: 700px;
+    margin-left: auto;
   }
 }
 
@@ -203,7 +210,7 @@
   display: flex;
   align-items: center;
   flex-grow: 1;
-  padding-left: 2em;
+  padding-left: 3.5em;
 
   .tag_container {
     height: 2em;
@@ -212,12 +219,12 @@
 
     span {
       padding: 0em 1em;
-      width: 5.5em;
+      min-width: 5.5em;
       height: 100%;
       font-size: 0.725em;
       font-weight: bold;
-      overflow: hidden;
       white-space: nowrap;
+      width: max-content;
     }
   }
 
