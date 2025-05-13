@@ -38,6 +38,12 @@
 
 .info-form {
   display: flex;
+  flex-direction: column;
+
+  > div:first-child {
+    display: flex;
+  }
+
   h5 {
     color: var(--text-color);
     font-weight: bold;

@@ -4,7 +4,7 @@ import NextButton from "../../../components/NextButton/NextButton";
 import DropdownForm from "../../../../../components/DropdownForm/DropdownForm";
 import "./SellebForm1.css";
 
-const languageList = ["Korean ", "English", "Japanese", "Chinese"];
+const languageList = ["Korean", "English", "Japanese", "Chinese"];
 const SellebForm1 = ({ goToNextTab }) => {
   const {
     register,
@@ -20,12 +20,13 @@ const SellebForm1 = ({ goToNextTab }) => {
       month: "",
       day: "",
       gender: "",
-      world: "",
-      country: "",
+      nationality: "",
+      add_country: "",
       address: "",
       phone_number: "",
       auth_number: "",
       email_address: "",
+      language: "",
     },
     mode: "onChange",
   });
@@ -35,9 +36,28 @@ const SellebForm1 = ({ goToNextTab }) => {
   };
 
   const handleInfo = (formData) => {
+    if (!formData.year || !formData.month || !formData.day) {
+      return alert("생년월일을 모두 입력해주세요.");
+    }
+    if (!formData.gender) {
+      return alert("성별을 선택해주세요.");
+    }
+    if (!formData.nationality) {
+      return alert("국적을 선택해주세요.");
+    }
+
+    if (!formData.language) {
+      return alert("언어를 선택해주세요.");
+    }
+
     console.log("FormData:", formData);
     sessionStorage.setItem("infoFormData", JSON.stringify(formData));
     goToNextTab();
+  };
+
+  const handleError = (errors) => {
+    console.log("유효성 검사 실패:", errors);
+    alert("필수 항목을 모두 입력해 주세요.");
   };
 
   const worldList = ["대한민국", "미국", "일본", "중국"];
@@ -58,19 +78,23 @@ const SellebForm1 = ({ goToNextTab }) => {
 
   return (
     <div className="sellebForm1-container">
-      <form onSubmit={handleSubmit(handleInfo)}>
+      <form onSubmit={handleSubmit(handleInfo, handleError)}>
         <section className="form-name">
           <FormInput
             title="이름"
             id="first_name"
             register={register}
             error={errors.first_name}
+            required={true}
+            type="text"
           />
           <FormInput
             title="성"
             id="last_name"
             register={register}
             error={errors.last_name}
+            required={true}
+            type="text"
           />
         </section>
         <section className="birth-section">
@@ -122,7 +146,7 @@ const SellebForm1 = ({ goToNextTab }) => {
               <span>▼</span>
             </div>
             <div>
-              <select name="world" {...register("world")}>
+              <select name="nationality" {...register("nationality")}>
                 <option value="">국적</option>
                 {worldList.map((world, index) => (
                   <option key={index} value={world}>
@@ -136,25 +160,34 @@ const SellebForm1 = ({ goToNextTab }) => {
 
           <FormInput
             title="국적 추가"
-            id="country"
+            id="add_country"
             register={register}
             error={errors.country}
+            type="text"
           />
         </section>
         <section className="section-address">
-          <FormInput title="현 거주지" id="address" register={register} />
+          <FormInput
+            title="현 거주지"
+            id="address"
+            register={register}
+            required={true}
+          />
           <FormInput
             title="전화번호 입력"
             id="phone_number"
             register={register}
             type="number"
             error={errors.phone_number}
+            required={true}
           />
           <DropdownForm
             label="사용 가능 언어"
             list={languageList}
             selectedValue=""
             onSelect={(value) => handleSelect("language", value)}
+            required={true}
+            type="text"
           />
           <div className="auth-num-section">
             <FormInput
@@ -163,6 +196,7 @@ const SellebForm1 = ({ goToNextTab }) => {
               register={register}
               type="number"
               error={errors.auth_number}
+              required={true}
             />
             <button type="button" onClick={() => console.log("인증번호")}>
               확인
@@ -174,6 +208,7 @@ const SellebForm1 = ({ goToNextTab }) => {
             register={register}
             type="email"
             error={errors.email_address}
+            required={true}
           />
         </section>
 

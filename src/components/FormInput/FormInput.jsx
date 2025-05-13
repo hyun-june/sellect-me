@@ -5,9 +5,10 @@ const FormInput = ({
   id,
   title,
   register,
-  type = "text",
+  type = "none",
   className,
   error,
+  required = false,
   disableValidation = false,
   ...props
 }) => {
@@ -23,6 +24,7 @@ const FormInput = ({
           disableValidation
             ? {}
             : {
+                required: required ? `${title}은(는) 필수입니다.` : false,
                 pattern: {
                   value: patternType?.value,
                   message: patternType?.message,

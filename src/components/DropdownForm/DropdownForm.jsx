@@ -38,6 +38,7 @@ const DropdownForm = ({ list, selectedValue, label, onSelect }) => {
             <span>▼</span>
           </div>
         </div>
+
         {isOpen && (
           <div className="dropdown-list">
             {list.map((item, index) => (
