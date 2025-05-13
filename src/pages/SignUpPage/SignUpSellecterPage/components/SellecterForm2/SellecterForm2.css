@@ -32,8 +32,7 @@
   padding: 1.5em;
   border: 1px solid var(--line-color);
   border-radius: 50px;
-  width: 30em;
-  cursor: auto;
+  width: 50em;
 
   & p {
     color: black;
@@ -41,7 +40,7 @@
 
   & li {
     margin: 0.5em 0;
-    font-size: 0.7em;
+    font-size: 0.875em;
     line-height: 1.2em;
   }
 }

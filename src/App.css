@@ -67,6 +67,11 @@ input[type="checkbox"]:checked {
   pointer-events: none;
 }
 
+.warning_text {
+  color: var(--warn-color);
+  font-size: 0.875em;
+}
+
 /* Custom_tabs */
 
 .tabs_content {

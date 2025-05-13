@@ -58,10 +58,13 @@ const SellecterForm2 = ({ goToNextTab, goToPrevTab }) => {
             onSelect={(value) => handleSelect("business_bank", value)}
           />
           <FormInput
-            title="사업자 계좌(통장사본과 일치)"
+            title="사업자 계좌"
             id="business_account"
             register={register}
           />
+          <div className="warning_text">
+            * 계좌 정보는 제출한 통장 사본과 일치해야 합니다.
+          </div>
         </div>
         <div className="form-gap">
           <h5>통장사본</h5>

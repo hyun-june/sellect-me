@@ -114,11 +114,6 @@
   label {
     width: 40%;
   }
-
-  span {
-    color: var(--warn-color);
-    font-size: 0.875em;
-  }
 }
 
 .bankbook-info {

@@ -1,4 +1,3 @@
-import { Container } from "react-bootstrap";
 import { useState } from "react";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import ConsentForm from "../components/ConsentForm/ConsentForm";
@@ -8,7 +7,8 @@ import SellecterForm2 from "./components/SellecterForm2/SellecterForm2";
 import MainLayout from "./../../../components/Layout/MainLayout/MainLayout";
 
 const tabList = ["사업자 정보", "민감 정보", "동의서", "제출 완료"];
-const SignUpSellecterPage = () => {
+
+const SignUpSellecterPage = (props) => {
   const [currentTabIndex, setCurrentTabIndex] = useState(0);
 
   const goToNextTab = () => {
@@ -27,7 +27,7 @@ const SignUpSellecterPage = () => {
   };
 
   return (
-    <MainLayout>
+    <MainLayout {...props}>
       <Tabs selectedIndex={currentTabIndex} onSelect={handleTabSelect}>
         <TabList className="tabs_list">
           {tabList.map((item, index) => (

@@ -129,7 +129,9 @@ const SellebForm2 = ({ goToNextTab, goToPrevTab }) => {
               id="bank_depositor"
               register={register}
             />
-            <span>* 계좌 정보는 제출한 통장 사본과 일치해야 합니다.</span>
+            <div className="warning_text">
+              * 계좌 정보는 제출한 통장 사본과 일치해야 합니다.
+            </div>
           </div>
 
           <div className="bankbook-info">
