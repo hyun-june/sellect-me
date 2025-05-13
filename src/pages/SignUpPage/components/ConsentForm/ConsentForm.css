@@ -1,18 +1,32 @@
+.consent_container {
+  .prev_next_btn {
+    margin-top: 2em;
+  }
+}
+
 .consent {
   display: flex;
   flex-direction: column;
   gap: 1em;
   font-weight: bold;
+  font-size: 1.3em;
 
   label {
     color: var(--text-color);
     cursor: pointer;
-    padding-left: 0.5em;
+    padding-left: 0.2em;
   }
 
   button {
     color: var(--text-color-gray);
     margin-left: 1em;
+  }
+
+  input[type="checkbox"] {
+    border: 3px solid var(--text-color);
+    width: 15px;
+    height: 15px;
+    cursor: pointer;
   }
 }
 

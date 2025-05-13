@@ -5,11 +5,22 @@
   display: flex;
   position: relative;
 
+  & label {
+    min-width: max-content;
+    color: var(--text-color-gray);
+    font-weight: bold;
+    align-self: center;
+    padding-left: 0.5em;
+    margin-right: 0.5em;
+  }
+
   & input {
-    width: 100%;
     height: auto;
     cursor: pointer;
-    padding-left: 0.5em;
+    padding: 0em 0.5em;
+    width: 70%;
+    margin-left: auto;
+    text-align: right;
   }
 
   & input::placeholder {
@@ -22,5 +33,11 @@
     font-size: 0.7em;
     position: absolute;
     bottom: -1.3em;
+    text-align: right;
+    width: 100%;
+  }
+
+  input:not(:placeholder-shown) {
+    background-color: #e8f0fe;
   }
 }

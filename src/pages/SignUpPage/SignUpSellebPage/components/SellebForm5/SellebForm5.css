@@ -100,6 +100,9 @@
 
 .unit-text {
   font-size: 0.7em;
+  user-select: none;
+  margin-top: 0.5em;
+  margin-left: auto;
 }
 
 #pay-rangebar {

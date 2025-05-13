@@ -20,7 +20,7 @@ const tabList = [
   "제출 완료",
 ];
 
-const SignUpSellebPage = () => {
+const SignUpSellebPage = (props) => {
   const [currentTabIndex, setCurrentTabIndex] = useState(0);
   const goToNextTab = () => {
     setCurrentTabIndex((prevIndex) => prevIndex + 1);
@@ -44,7 +44,7 @@ const SignUpSellebPage = () => {
   };
 
   return (
-    <MainLayout>
+    <MainLayout {...props}>
       <Tabs selectedIndex={currentTabIndex} onSelect={handleTabSelect}>
         <TabList className="tabs_list">
           {tabList.map((item, index) => (

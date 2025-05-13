@@ -66,7 +66,6 @@ const SellebForm2 = ({ goToNextTab, goToPrevTab }) => {
               <label>
                 해당사항없음
                 <input type="checkbox" {...register("parental_consent ")} />
-                <span className="check-box"></span>
               </label>
             </span>
 
@@ -124,16 +123,13 @@ const SellebForm2 = ({ goToNextTab, goToPrevTab }) => {
               id="bank_number"
               register={register}
             />
+            <FormInput title="예금주" id="bank_depositor" register={register} />
             <FormInput
-              title="예금주(통장사본과 일치)"
+              title="수익금 출금계좌"
               id="bank_depositor"
               register={register}
             />
-            <FormInput
-              title="수익금 출금계좌(통장사본과 일치)"
-              id="bank_depositor"
-              register={register}
-            />
+            <span>* 계좌 정보는 제출한 통장 사본과 일치해야 합니다.</span>
           </div>
 
           <div className="bankbook-info">

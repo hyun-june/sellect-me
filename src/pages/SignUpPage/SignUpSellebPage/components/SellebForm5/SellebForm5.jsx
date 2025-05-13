@@ -65,13 +65,11 @@ const SellebForm5 = ({ goToNextTab, goToPrevTab }) => {
         </div>
       </div>
 
-      {payValue !== 0 ? (
+      {payValue > 0 ? (
         <div className="show_payvalue">
           <strong>pay</strong>: <div>{payValue}</div>
         </div>
-      ) : (
-        ""
-      )}
+      ) : null}
 
       <div className="select-currency-self">
         <FormInput title="직접입력" id="currency-input" register={register} />

@@ -5,6 +5,7 @@ const DropdownForm = ({ list, selectedValue, label, onSelect }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [selected, setSelected] = useState(selectedValue);
   const dropDownRef = useRef();
+
   const toggleDropdown = () => {
     setIsOpen(!isOpen);
   };
@@ -29,7 +30,7 @@ const DropdownForm = ({ list, selectedValue, label, onSelect }) => {
 
   return (
     <div className="custom-dropdown" ref={dropDownRef}>
-      <label>{label}</label>
+      <label onClick={toggleDropdown}>{label}</label>
       <div className="dropdown-container">
         <div className="selected-section" onClick={toggleDropdown}>
           <div className="selected-item">

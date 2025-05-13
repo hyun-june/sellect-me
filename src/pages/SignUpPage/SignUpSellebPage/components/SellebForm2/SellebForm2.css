@@ -20,22 +20,16 @@
   display: flex;
   align-items: center;
   margin-bottom: 1em;
+
   label {
     cursor: pointer;
     display: flex;
     align-items: center;
+
+    input {
+      margin-left: 0.5em;
+    }
   }
-}
-
-.check-box {
-  width: 13px;
-  height: 13px;
-  border: 2px solid var(--text-color);
-  margin: 0;
-}
-
-input[type="checkbox"]:checked + .check-box {
-  background-color: var(--text-color-gray);
 }
 
 .info-second-title {
@@ -106,14 +100,24 @@ input[type="checkbox"]:checked + .check-box {
   display: flex;
   flex-direction: column;
   gap: 0.3em;
+
+  label {
+    width: 40%;
+  }
 }
 
 .account-info {
   display: flex;
   flex-direction: column;
   gap: 0.3em;
+
   label {
-    width: 100%;
+    width: 40%;
+  }
+
+  span {
+    color: var(--warn-color);
+    font-size: 0.875em;
   }
 }
 

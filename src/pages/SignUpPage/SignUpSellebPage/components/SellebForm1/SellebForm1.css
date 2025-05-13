@@ -23,6 +23,7 @@
   display: flex;
   align-items: center;
   padding-left: 0.5em;
+
   div {
     display: flex;
     gap: 1em;
@@ -45,7 +46,7 @@
 
 .option-birth {
   display: flex;
-  margin-left: 2em;
+  margin-left: auto;
 
   div {
     position: relative;
@@ -67,7 +68,7 @@
 .country-dropdown {
   display: flex;
   gap: 1em;
-  width: 100%;
+  width: 80%;
 
   select {
     width: 100%;

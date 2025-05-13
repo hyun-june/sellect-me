@@ -42,16 +42,8 @@ h3 {
 .prev_next_btn {
   display: flex;
   justify-content: space-between;
-  margin-top: 3em;
+  /* margin-top: 3em; */
   width: 100%;
-}
-
-.check-box {
-  width: 15px;
-  height: 15px;
-  border: 2px solid var(--text-color);
-  cursor: pointer;
-  margin-left: 0.5em;
 }
 
 input[type="checkbox"] {
@@ -98,6 +90,7 @@ input[type="checkbox"]:checked {
 }
 
 /* react-tabs */
+
 .tabs_list {
   display: flex;
   justify-content: center;
