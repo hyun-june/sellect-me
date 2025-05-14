@@ -171,6 +171,7 @@ const SellebForm1 = ({ goToNextTab }) => {
             title="현 거주지"
             id="address"
             register={register}
+            error={errors.address}
             required={true}
           />
           <FormInput

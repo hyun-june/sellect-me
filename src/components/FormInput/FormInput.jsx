@@ -12,12 +12,19 @@ const FormInput = ({
   disableValidation = false,
   ...props
 }) => {
+  const handleKeydown = (e) => {
+    if (e.key === "Enter") {
+      e.preventDefault();
+    }
+  };
+
   const patternType = validationPatterns[type];
 
   return (
     <div className="form-input">
       <label htmlFor={id}>{title}</label>
       <input
+        onKeyDown={(e) => handleKeydown(e)}
         id={id}
         {...register(
           `${id}`,

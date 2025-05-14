@@ -16,12 +16,6 @@
     font-weight: bold;
   }
 
-  span {
-    color: var(--text-color);
-    font-weight: bold;
-    padding: 0.5em 0em;
-  }
-
   input {
     appearance: none;
   }
@@ -76,7 +70,7 @@
 .select-currency-self {
   width: 100%;
   input {
-    text-align: center;
+    text-align: right;
   }
 
   p {
@@ -95,6 +89,12 @@
     display: flex;
     width: 100%;
     justify-content: space-between;
+  }
+
+  span {
+    color: var(--text-color);
+    font-weight: bold;
+    padding: 0.5em 0em;
   }
 }
 

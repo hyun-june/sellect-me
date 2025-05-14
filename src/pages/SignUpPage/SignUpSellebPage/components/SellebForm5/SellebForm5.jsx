@@ -15,7 +15,13 @@ const SellebForm5 = ({ goToNextTab, goToPrevTab }) => {
   } = useForm();
   const [payValue, setPayValue] = useState(0);
   const handleInfo = (formData) => {
-    if (getValues("currency-input") && formData.payValue) {
+    if (formData.currency === null) {
+      return alert("기준 통화를 체크해주세요.");
+    }
+    if (!payValue && !formData.currency_input?.trim()) {
+      return alert("pay를 입력해주세요.");
+    }
+    if (getValues("currency_input") && formData.payValue) {
       setValue("payValue", 0);
     }
 
@@ -72,7 +78,13 @@ const SellebForm5 = ({ goToNextTab, goToPrevTab }) => {
       ) : null}
 
       <div className="select-currency-self">
-        <FormInput title="직접입력" id="currency-input" register={register} />
+        <FormInput
+          title="직접입력"
+          id="currency_input"
+          register={register}
+          type="number"
+          error={errors.currency_input}
+        />
         <p>
           pay와 직접 입력한 값이 둘 다 있는 경우 직접 입력의 값이 적용됩니다.
         </p>

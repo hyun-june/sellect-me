@@ -10,6 +10,7 @@ const SellebForm2 = ({ goToNextTab, goToPrevTab }) => {
   const {
     register,
     handleSubmit,
+    watch,
     formState: { errors },
   } = useForm();
   const [images, setImages] = useState({
@@ -33,7 +34,27 @@ const SellebForm2 = ({ goToNextTab, goToPrevTab }) => {
     }));
   };
 
+  const visaStatus = watch("visaStatus");
+  const isForeign = visaStatus !== "true";
+
   const onSubmit = (data) => {
+    if (images.id_photo === null) {
+      return alert("신분증 사진을 등록해주세요.");
+    }
+    if (images.consent_photo === null && data.parental_consent !== true) {
+      console.log("미성년자 동의");
+      return alert(
+        "미성년자 부모 동의서 사본 또는 해당 사항 없음을 체크해주세요."
+      );
+    }
+
+    if (data.visaStatus === null) {
+      return alert("비자 정보를 입력해주세요.");
+    }
+    if (images.bank_photo === null) {
+      return alert("통장 사본을 등록해주세요.");
+    }
+
     console.log("폼 데이터:", data);
     goToNextTab();
   };
@@ -66,7 +87,7 @@ const SellebForm2 = ({ goToNextTab, goToPrevTab }) => {
               <span className="info-text">
                 <label>
                   해당사항없음
-                  <input type="checkbox" {...register("parental_consent ")} />
+                  <input type="checkbox" {...register("parental_consent")} />
                 </label>
               </span>
 
@@ -80,6 +101,7 @@ const SellebForm2 = ({ goToNextTab, goToPrevTab }) => {
           <section className="info-right">
             <div className="visa-info-section">
               <h5>비자 정보</h5>
+
               <div className="visa-info">
                 <span>대한민국 영주권 혹은 시민권</span>
                 <div className="visa-check">
@@ -89,31 +111,36 @@ const SellebForm2 = ({ goToNextTab, goToPrevTab }) => {
                       type="radio"
                       id="visaStatusYes"
                       {...register("visaStatus")}
-                      value="yes"
+                      value="true"
                     />
                   </div>
+
                   <div>
                     <label htmlFor="visaStatusNo">N</label>
                     <input
                       type="radio"
                       id="visaStatusNo"
                       {...register("visaStatus")}
-                      value="no"
+                      value="false"
                     />
                   </div>
                 </div>
               </div>
+
               <div className="visa-input">
                 <FormInput
                   title="비자 종류"
                   id="visa"
                   register={register}
-                  errors={errors?.visa}
+                  error={errors.visa}
+                  required={isForeign}
                 />
                 <FormInput
                   title="외국인 등록번호"
                   id="registration_number"
                   register={register}
+                  error={errors.registration_number}
+                  required={isForeign}
                 />
               </div>
             </div>
@@ -121,18 +148,27 @@ const SellebForm2 = ({ goToNextTab, goToPrevTab }) => {
               <h5>계좌 정보</h5>
               <FormInput
                 title="수익금 출금 은행"
-                id="bank_number"
+                id="bank_name"
                 register={register}
+                required={true}
+                error={errors.bank_name}
+                type="text"
               />
               <FormInput
                 title="예금주"
                 id="bank_depositor"
                 register={register}
+                required={true}
+                error={errors.bank_depositor}
+                type="text"
               />
               <FormInput
                 title="수익금 출금계좌"
-                id="bank_depositor"
+                id="bank_number"
                 register={register}
+                required={true}
+                error={errors.bank_number}
+                type="number"
               />
               <div className="warning_text">
                 * 계좌 정보는 제출한 통장 사본과 일치해야 합니다.

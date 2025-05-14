@@ -8,8 +8,11 @@ const SellebForm3 = ({ goToNextTab, goToPrevTab }) => {
   const {
     register,
     handleSubmit,
+    watch,
     formState: { errors },
   } = useForm();
+
+  const agency = watch("agencyStatus") === "true";
 
   const handleInfo = (formData) => {
     console.log("Form 3:", formData);
@@ -25,21 +28,36 @@ const SellebForm3 = ({ goToNextTab, goToPrevTab }) => {
           <span>
             <label>
               Y
-              <input type="radio" value="yes" {...register("agencyStatus")} />
+              <input type="radio" value="true" {...register("agencyStatus")} />
             </label>
           </span>
           <span>
             <label>
               N
-              <input type="radio" value="no" {...register("agencyStatus")} />
+              <input type="radio" value="false" {...register("agencyStatus")} />
             </label>
           </span>
         </div>
       </div>
-      <FormInput title="에이전시 입력" id="agency" register={register} />
+      <FormInput
+        title="에이전시 입력"
+        id="agency_name"
+        register={register}
+        required={agency}
+      />
       <div className="agency-date">
-        <FormInput title="계약 시작일" id="start_date" register={register} />
-        <FormInput title="계약 종료일" id="end_date" register={register} />
+        <FormInput
+          title="계약 시작일"
+          id="start_date"
+          register={register}
+          required={agency}
+        />
+        <FormInput
+          title="계약 종료일"
+          id="end_date"
+          register={register}
+          required={agency}
+        />
       </div>
       <div className="prev_next_btn">
         <PrevButton onClick={goToPrevTab} />
