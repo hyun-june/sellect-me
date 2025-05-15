@@ -5,6 +5,18 @@ import NextButton from "../NextButton/NextButton";
 import "./ConsentForm.css";
 
 const ConsentForm = ({ type, goToPrevTab, goToNextTab }) => {
+  const [agreements, setAgreements] = useState({
+    selleb: {
+      publicity: false,
+      escrow: false,
+      noShow: false,
+    },
+    sellecter: {
+      publicity: false,
+      escrow: false,
+    },
+  });
+
   const [modals, setModals] = useState({
     selleb1: false,
     selleb2: false,
@@ -20,14 +32,43 @@ const ConsentForm = ({ type, goToPrevTab, goToNextTab }) => {
     }));
   };
 
+  const toggleCheckbox = (key) => {
+    setAgreements((prev) => ({
+      ...prev,
+      [type]: {
+        ...prev[type],
+        [key]: !prev[type][key],
+      },
+    }));
+  };
+  const handleNext = () => {
+    const formType = agreements[type];
+    const requiredKeys =
+      type === "selleb"
+        ? ["publicity", "escrow", "noShow"]
+        : ["publicity", "escrow"];
+
+    const isAllAgreed = requiredKeys.every((key) => formType[key]);
+    console.log(isAllAgreed);
+    if (!isAllAgreed) {
+      return alert("필수 동의서를 확인해주세요.");
+    }
+
+    goToNextTab();
+  };
+
   return (
     <div className="consent_container">
       {type === "selleb" ? (
         <div className="consent">
           <div className="consent-inner">
             <span className="consent-text">
-              <input type="checkbox" id="selleb_publicity" />
-              <label htmlFor="selleb_publicity"></label>
+              <input
+                type="checkbox"
+                id="selleb_publicity"
+                checked={agreements.selleb.publicity}
+                onChange={() => toggleCheckbox("publicity")}
+              />
               <label htmlFor="selleb_publicity">초상권 동의서</label>
             </span>
 
@@ -47,8 +88,13 @@ const ConsentForm = ({ type, goToPrevTab, goToNextTab }) => {
           </div>
           <div className="consent-inner">
             <span>
-              <input type="checkbox" id="selleb_escrow" />
-              <label htmlFor="selleb_escrow"></label>
+              <input
+                type="checkbox"
+                id="selleb_escrow"
+                checked={agreements.selleb.escrow}
+                onChange={() => toggleCheckbox("escrow")}
+              />
+
               <label htmlFor="selleb_escrow">에스크로 동의서</label>
             </span>
             <span>
@@ -67,8 +113,13 @@ const ConsentForm = ({ type, goToPrevTab, goToNextTab }) => {
           </div>
           <div className="consent-inner">
             <span>
-              <input type="checkbox" id="selleb_noShow" />
-              <label htmlFor="selleb_noShow"></label>
+              <input
+                type="checkbox"
+                id="selleb_noShow"
+                checked={agreements.selleb.noShow}
+                onChange={() => toggleCheckbox("noShow")}
+              />
+
               <label htmlFor="selleb_noShow">노쇼방지 동의서</label>
             </span>
 
@@ -91,8 +142,13 @@ const ConsentForm = ({ type, goToPrevTab, goToNextTab }) => {
         <div className="consent">
           <div className="consent-inner">
             <span>
-              <input type="checkbox" id="sellecter_publicity" />
-              <label htmlFor="sellecter_publicity"></label>
+              <input
+                type="checkbox"
+                id="sellecter_publicity"
+                checked={agreements.sellecter.publicity}
+                onChange={() => toggleCheckbox("publicity")}
+              />
+
               <label htmlFor="sellecter_publicity">초상권 이용 주의사항</label>
             </span>
 
@@ -112,8 +168,13 @@ const ConsentForm = ({ type, goToPrevTab, goToNextTab }) => {
           </div>
           <div className="consent-inner">
             <span>
-              <input type="checkbox" id="sellecter_escrow" />
-              <label htmlFor="sellecter_escrow"></label>
+              <input
+                type="checkbox"
+                id="sellecter_escrow"
+                checked={agreements.sellecter.escrow}
+                onChange={() => toggleCheckbox("escrow")}
+              />
+
               <label htmlFor="sellecter_escrow">에스크로 동의서</label>
             </span>
 
@@ -135,7 +196,7 @@ const ConsentForm = ({ type, goToPrevTab, goToNextTab }) => {
       ) : null}
       <div className="prev_next_btn">
         <PrevButton onClick={goToPrevTab} />
-        <NextButton onClick={goToNextTab} />
+        <NextButton onClick={handleNext} />
       </div>
     </div>
   );

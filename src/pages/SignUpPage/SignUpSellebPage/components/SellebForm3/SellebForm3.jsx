@@ -15,6 +15,9 @@ const SellebForm3 = ({ goToNextTab, goToPrevTab }) => {
   const agency = watch("agencyStatus") === "true";
 
   const handleInfo = (formData) => {
+    if (formData.agencyStatus === null) {
+      return alert("에이전시 소속 유무를 체크해주세요.");
+    }
     console.log("Form 3:", formData);
     goToNextTab();
   };

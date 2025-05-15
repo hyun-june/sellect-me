@@ -86,7 +86,7 @@ const SellebForm5 = ({ goToNextTab, goToPrevTab }) => {
           error={errors.currency_input}
         />
         <p>
-          pay와 직접 입력한 값이 둘 다 있는 경우 직접 입력의 값이 적용됩니다.
+          * 바와 직접 입력한 값이 둘 다 있는 경우 직접 입력의 값이 적용됩니다.
         </p>
       </div>
       <div className="prev_next_btn">
