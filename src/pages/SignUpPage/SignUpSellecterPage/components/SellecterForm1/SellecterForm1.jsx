@@ -14,9 +14,29 @@ const SellecterForm1 = ({ goToNextTab }) => {
     handleSubmit,
     setValue,
     formState: { errors },
-  } = useForm();
+  } = useForm({
+    defaultValues: {
+      business_address: "",
+      business_category: "",
+      business_country: "",
+      business_entity_type: "",
+      business_name: "",
+      business_registration_number: "",
+      business_type: "",
+      manager_email: "",
+      manager_phone: "",
+      representative_name: "",
+    },
+  });
 
   const handleInfo = (formData) => {
+    if (
+      !formData.business_entity_type ||
+      !formData.business_type ||
+      !formData.business_category
+    ) {
+      return alert("사업자 유형을 모두 입력해주세요.");
+    }
     console.log("FormData:", formData);
     goToNextTab();
   };
@@ -30,12 +50,19 @@ const SellecterForm1 = ({ goToNextTab }) => {
       <form onSubmit={handleSubmit(handleInfo)} className="business_info">
         <section>
           <h5>사업자 정보</h5>
-          <FormInput title="국가" id="business_country" register={register} />
+          <FormInput
+            title="국가"
+            id="business_country"
+            register={register}
+            error={errors.business_country}
+            required={true}
+          />
           <DropdownForm
             label="사업자 유형"
             list={entityList}
             selectedValue=""
             onSelect={(value) => handleSelect("business_entity_type", value)}
+            required={true}
           />
           <div className="business_type_section">
             <DropdownForm
@@ -54,21 +81,34 @@ const SellecterForm1 = ({ goToNextTab }) => {
           </div>
         </section>
         <section>
-          <FormInput title="상호" id="business_name" register={register} />
+          <FormInput
+            title="상호"
+            id="business_name"
+            register={register}
+            error={errors.business_name}
+            required={true}
+          />
           <FormInput
             title="대표자명"
             id="representative_name"
             register={register}
+            error={errors.representative_name}
+            required={true}
+            type="text"
           />
           <FormInput
             title="사업자 등록번호"
             id="business_registration_number"
             register={register}
+            error={errors.business_registration_number}
+            required={true}
           />
           <FormInput
             title="사업장 소재지"
             id="business_address"
             register={register}
+            error={errors.business_address}
+            required={true}
           />
         </section>
         <section>
@@ -76,14 +116,20 @@ const SellecterForm1 = ({ goToNextTab }) => {
             title="담당자 전화번호"
             id="manager_phone"
             register={register}
+            error={errors.manager_phone}
+            required={true}
+            type="number"
           />
           <FormInput
             title="담당자 이메일"
             id="manager_email"
             register={register}
+            error={errors.manager_email}
+            required={true}
+            type="email"
           />
         </section>
-        <NextButton />
+        <NextButton type="submit" />
       </form>
     </div>
   );

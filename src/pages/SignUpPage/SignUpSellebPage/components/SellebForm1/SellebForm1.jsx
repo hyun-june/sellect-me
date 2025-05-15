@@ -28,7 +28,6 @@ const SellebForm1 = ({ goToNextTab }) => {
       email_address: "",
       language: "",
     },
-    mode: "onChange",
   });
 
   const handleSelect = (fieldName, value) => {
@@ -187,7 +186,6 @@ const SellebForm1 = ({ goToNextTab }) => {
             list={languageList}
             selectedValue=""
             onSelect={(value) => handleSelect("language", value)}
-            required={true}
             type="text"
           />
           <div className="auth-num-section">

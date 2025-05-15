@@ -16,12 +16,22 @@ const SellecterForm2 = ({ goToNextTab, goToPrevTab }) => {
   } = useForm();
 
   const [images, setImages] = useState({
-    bank_photo: null,
-    business_photo: null,
+    bankbook_img: null,
+    business_registration_img: null,
   });
 
   const handleInfo = (formData) => {
+    if (formData.business_bank === "") {
+      return alert("사업자 통장 은행을 선택해주세요.");
+    }
+    if (images.bankbook_img === null) {
+      return alert("통장 사본을 등록해주세요.");
+    }
+    if (images.business_registration_img === null) {
+      return alert("사업자등록증 사본을 등록해주세요.");
+    }
     console.log("FormData:", formData);
+    console.log("images", images);
     goToNextTab();
   };
 
@@ -61,6 +71,8 @@ const SellecterForm2 = ({ goToNextTab, goToPrevTab }) => {
             title="사업자 계좌"
             id="business_account"
             register={register}
+            required={true}
+            error={errors.business_account}
           />
           <div className="warning_text">
             * 계좌 정보는 제출한 통장 사본과 일치해야 합니다.
@@ -78,8 +90,18 @@ const SellecterForm2 = ({ goToNextTab, goToPrevTab }) => {
             title="세금계산서 수취 이메일"
             id="tax_email"
             register={register}
+            required={true}
+            type="email"
+            error={errors.tax_email}
           />
-          <FormInput title="담당자명" id="manager_name" register={register} />
+          <FormInput
+            title="담당자명"
+            id="manager_name"
+            register={register}
+            required={true}
+            error={errors.manager_name}
+            type="text"
+          />
         </div>
         <div className="form-gap">
           <h5>사업자등록증 사본</h5>
