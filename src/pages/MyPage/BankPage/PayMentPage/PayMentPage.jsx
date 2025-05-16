@@ -3,7 +3,7 @@ import MainLayout from "../../../../components/Layout/MainLayout/MainLayout";
 import Button from "../../../../components/Button/Button";
 import "./PayMentPage.css";
 
-const PayMentPage = () => {
+const PayMentPage = (props) => {
   const [isAllChecked, setIsAllChecked] = useState(false);
   const [selectedPayMent, setSelectedPayMent] = useState();
   const [checkLists, setCheckLists] = useState({
@@ -102,9 +102,9 @@ const PayMentPage = () => {
   };
 
   return (
-    <MainLayout>
+    <MainLayout {...props}>
       <div className="payment_container">
-        <h4>BANK</h4>
+        <h3>BANK</h3>
 
         <section className="payment_info">
           <img src={profile} alt="" />

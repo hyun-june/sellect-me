@@ -106,7 +106,7 @@ const SchedulePage = (props) => {
   return (
     <MainLayout {...props}>
       <div className="schedule_container">
-        <h4>MY PAGE - CALENDAR</h4>
+        <h3>MY PAGE - CALENDAR</h3>
 
         <Calendar
           tileClassName={tileClassName}

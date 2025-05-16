@@ -10,7 +10,7 @@ const user = "selleb";
 
 const chattingMenu = [
   { content: "PROFILE", link: "mypage" },
-  { content: "V-CHAT", link: "" },
+  { content: "V-CHAT", link: "v-chat" },
   {
     content: `${{ selleb: "견적", sellecter: "제안서" }[user] || ""} 상세보기`,
     link: "quotation",

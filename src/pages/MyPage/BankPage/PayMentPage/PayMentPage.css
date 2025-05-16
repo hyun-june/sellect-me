@@ -8,6 +8,7 @@
     align-items: center;
     gap: 2em;
     margin: 2em 0em;
+
     img {
       width: 120px;
       height: 120px;
@@ -66,12 +67,19 @@
         font-weight: bold;
       }
 
+      label:not(:first-of-type) input[type="checkbox"] {
+        border: 2px solid var(--text-color-gray);
+      }
+
+      label:not(:first-of-type) input[type="checkbox"]:checked {
+        background-color: var(--text-color-gray);
+      }
+
       label {
         display: flex;
         gap: 0.5em;
 
         input {
-          flex-shrink: 0;
           margin-top: 2px;
         }
 
@@ -141,6 +149,7 @@
 
 .tax_voice_section {
   position: relative;
+  margin-bottom: 2em;
   label {
     display: flex;
     gap: 0.5em;

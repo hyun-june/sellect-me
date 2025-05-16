@@ -28,6 +28,7 @@
   .react-calendar__navigation__label {
     font-size: 3em;
     flex-grow: 0 !important;
+    margin: 0em 1em;
   }
 
   .react-calendar__navigation__label:hover {
@@ -92,6 +93,10 @@
     font-size: 2em;
     background-color: #003768;
     border-right: 1px solid var(--line-color);
+  }
+
+  .react-calendar__month-view__days__day--neighboringMonth {
+    color: rgba(92, 92, 92, 0.5);
   }
 }
 
