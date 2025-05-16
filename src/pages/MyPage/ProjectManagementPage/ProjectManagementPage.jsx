@@ -90,11 +90,48 @@ const tabItems = Object.keys(testData).map((status) => ({
   ),
 }));
 
-const ProjectManagementPage = () => {
+// const tabItems = Object.keys(testData).map((status) => {
+//   const items = Object.entries(testData[status] || {}).map(([id, item]) => ({
+//     id,
+//     ...item,
+//   }));
+
+//   const filledItems = [...items, ...Array(6).fill(null)].slice(0, 6);
+
+//   return {
+//     title: {
+//       send: "보낸 요청",
+//       approve: "받은 요청",
+//       processing: "진행중",
+//       done: "진행완료",
+//     }[status],
+//     content: (
+//       <div className="project_content_section">
+//         {filledItems.map((item, index) =>
+//           item ? (
+//             <ProjectContentBox
+//               key={item.id}
+//               id={item.id}
+//               name={item.name}
+//               description={item.description}
+//               date={item.date}
+//               status={status}
+//               memo={item.memo}
+//             />
+//           ) : (
+//             <ProjectContentBox key={`empty-${index}`} isPlaceholder={true} />
+//           )
+//         )}
+//       </div>
+//     ),
+//   };
+// });
+
+const ProjectManagementPage = (props) => {
   return (
-    <MainLayout>
+    <MainLayout {...props}>
       <div className="management_container">
-        <h5>프로젝트 관리</h5>
+        <h3>프로젝트 관리</h3>
         <CustomTabs items={tabItems} />
       </div>
     </MainLayout>

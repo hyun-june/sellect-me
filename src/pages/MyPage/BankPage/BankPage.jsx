@@ -57,7 +57,7 @@ const BankPage = (props) => {
     console.log("선택된 name 목록:", checkedName);
   }, [checkedItems]);
 
-  const user = "selleb";
+  const user = "sellecter";
 
   const bankTest = {
     1: {
@@ -65,9 +65,9 @@ const BankPage = (props) => {
       description: "AAA테스트",
       date: "10.22",
       memo: [
-        { id: 1, label: "프로젝트명", content: "AAA 신제품 화보 촬영" },
-        { id: 2, label: "금액", content: "1,000,000(원)" },
-        { id: 3, content: "1,300,000(원)" },
+        { id: "title", label: "프로젝트명", content: "AAA 신제품 화보 촬영" },
+        { id: "expense", label: "금액", content: "1,000,000(원)" },
+        { id: "total", content: "1,300,000(원)" },
       ],
     },
     2: {
@@ -75,11 +75,11 @@ const BankPage = (props) => {
       description: "dddd테스트",
       date: "10.22",
       memo: [
-        { id: 1, label: "프로젝트명", content: "AAA 신제품 화보 촬영" },
-        { id: 2, label: "금액", content: "1,000,000(원)" },
-        { id: 3, label: "+ 수수료", content: "200,000(원)" },
-        { id: 4, label: "+ 부가세", content: "100,000(원)" },
-        { id: 5, content: "1,320,000(원)" },
+        { id: "title", label: "프로젝트명", content: "AAA 신제품 화보 촬영" },
+        { id: "expense", label: "금액", content: "1,000,000(원)" },
+        { id: "commission", label: "+ 수수료", content: "200,000(원)" },
+        { id: "surtax", label: "+ 부가세", content: "100,000(원)" },
+        { id: "total", content: "1,320,000(원)" },
       ],
     },
   };

@@ -1,10 +1,9 @@
 .management_container {
   width: 100%;
 
-  h5 {
-    font-weight: bold;
+  h3 {
+    margin-bottom: 1em;
   }
-
   .customTabs-container {
     height: 70dvh;
     display: flex;
@@ -28,6 +27,10 @@
   .customTabs-inner {
     flex: 1;
     padding: 1em 0em;
+
+    .memo_label_content.only {
+      text-align: left;
+    }
   }
 }
 

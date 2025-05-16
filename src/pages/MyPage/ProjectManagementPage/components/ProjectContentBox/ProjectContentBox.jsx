@@ -31,14 +31,23 @@ const ProjectContentBox = ({
     }));
   };
 
-  const handleDone = (e) => {
-    const type = e.currentTarget.dataset.type;
+  const handleDone = (memoList) => {
+    // console.log("프로젝트 아이템:", memoList);
 
-    if (type.includes("selleb")) {
-      console.log("셀럽 확인하기", type);
-    } else if (type.includes("sellecter")) {
-      console.log("셀렉터 결제하기", type);
-    }
+    const projectItem = {
+      name: memoList.find((e) => e.id === "title")?.content || "",
+      expense: memoList.find((e) => e.id === "expense")?.content || "",
+      total: memoList.find((e) => e.id === "total")?.content || "",
+      commission: memoList.find((e) => e.id === "commission")?.content || "",
+      surtax: memoList.find((e) => e.id === "surtax")?.content || "",
+    };
+    console.log("🚀 ~ handleDone ~ projectItem:", projectItem);
+    // const type = e.currentTarget.dataset.type;
+    // if (type.includes("selleb")) {
+    //   console.log("셀럽 확인하기", type);
+    // } else if (type.includes("sellecter")) {
+    //   console.log("셀렉터 결제하기", type);
+    // }
   };
 
   return (
@@ -60,43 +69,42 @@ const ProjectContentBox = ({
             isOpen[`${status}-${id}`] ? "memo_active" : ""
           }`}
         >
-          {status.includes("approve") ? "확인" : "메모"}
+          {status?.includes("approve") ? "확인" : "메모"}
         </button>
       </div>
       {isOpen[`${status}-${id}`] && (
         <div className="content_box_memo_inner open">
           <div className="content_memo_form">
-            {memo.map((item) => (
-              <div>
+            {memo?.map((item) => (
+              <div key={item.id}>
                 {item.label ? (
-                  <div className="content_memo" key={item.id}>
+                  <div className="content_memo">
                     <div className="memo_label">{item.label}</div>
                     <div className="memo_label_content">{item.content}</div>
                   </div>
                 ) : (
                   <div className="memo_label_content only">{item.content}</div>
                 )}
+                {status?.includes("approve") && (
+                  <button
+                    onClick={() => handleDone(memo)}
+                    data-type={
+                      status.includes("selleb")
+                        ? "selleb_approve"
+                        : status.includes("sellecter")
+                        ? "sellecter_approve"
+                        : ""
+                    }
+                  >
+                    {status.includes("selleb")
+                      ? "완료 요청하기"
+                      : status.includes("sellecter")
+                      ? "결제하기"
+                      : ""}
+                  </button>
+                )}
               </div>
             ))}
-
-            {status.includes("approve") && (
-              <button
-                onClick={handleDone}
-                data-type={
-                  status.includes("selleb")
-                    ? "selleb_approve"
-                    : status.includes("sellecter")
-                    ? "sellecter_approve"
-                    : ""
-                }
-              >
-                {status.includes("selleb")
-                  ? "완료 요청하기"
-                  : status.includes("sellecter")
-                  ? "결제하기"
-                  : ""}
-              </button>
-            )}
           </div>
         </div>
       )}

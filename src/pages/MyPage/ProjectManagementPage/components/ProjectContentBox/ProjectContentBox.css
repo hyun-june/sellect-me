@@ -86,8 +86,8 @@
 
 .memo_label_content.only {
   width: 100%;
-  border-top: 1px solid #ccc;
-  padding-top: 1em;
+  /* border-top: 1px solid #ccc; */
+  margin-bottom: 1em;
 }
 
 .memo_row {
