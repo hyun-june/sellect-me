@@ -19,6 +19,7 @@ const menu = [
   { name: "mypage/sellecter(1)", address: "/mypage/sellecter" },
   { name: "confirm(1)", address: "/confirm" },
   { name: "signup(1)", address: "/signup" },
+  { name: "mypage", address: "/mypage" },
   { name: "request", address: "/request" },
   { name: "mypage/selleb/edit", address: "/mypage/selleb/edit" },
   { name: "mypage/sellecter/edit", address: "/mypage/sellecter/edit" },

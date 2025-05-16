@@ -35,7 +35,7 @@ const LineGraph = ({ graphData, selectedData, ...props }) => {
     dataPoints.push(value);
   }
 
-  console.log("dd", dataPoints);
+  console.log("LineGraph", dataPoints);
 
   const data = {
     labels,

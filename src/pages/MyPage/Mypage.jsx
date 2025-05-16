@@ -7,6 +7,7 @@ import { FaSackDollar } from "react-icons/fa6";
 import LineGraph from "../../components/LineGraph/LineGraph";
 import { useEffect, useRef, useState } from "react";
 import CustomDropdown from "./../../components/CustomDropdown/CustomDropdown";
+import { Link } from "react-router-dom";
 import "./Mypage.css";
 
 const boxListLeft = {
@@ -17,7 +18,7 @@ const boxListLeft = {
   ],
   sellecter: [
     { title: "프로필 관리", link: "/mypage/sellecter" },
-    { title: "CHAT", link: "/mypage/chatting" },
+    { title: "CHAT", link: "/mypage/chatlist" },
     { title: "V-CHAT", link: "/v-chat" },
   ],
 };
@@ -143,15 +144,15 @@ const MyPage = (props) => {
   return (
     <MainLayout {...props}>
       <div className="mypage_container">
-        <h4>MY PAGE</h4>
+        <h3>MY PAGE</h3>
         <section className="mypage_inner">
           <div className="mypage_inner_left">
             <ProfileImgBox src="/images/test.jpg" />
             <div>
               {boxListLeft[user]?.map((item, index) => (
-                <a href={item.link} key={index} className="mypage_left_box">
+                <Link to={item.link} key={index} className="mypage_left_box">
                   <CustomBox>{item.title}</CustomBox>
-                </a>
+                </Link>
               ))}
 
               {/* 프로필 관리를 누르면 본인 프로필 페이지로 이동하면 될듯 */}
@@ -159,19 +160,19 @@ const MyPage = (props) => {
           </div>
           <div className="mypage_inner_right">
             {boxListRight[user].map((item, index) => (
-              <a href={item.link} key={index} className="mypage_right_box">
+              <Link to={item.link} key={index} className="mypage_right_box">
                 <CustomBox>{item.title}</CustomBox>
-              </a>
+              </Link>
             ))}
           </div>
           <div className="mypage_menuList">
             <HamburgerMenu menu={mypageMenu} />
-            <div className="mypage_icons">
+            <Link to="/mypage/schedule" className="mypage_icons">
               <FaRegCalendarCheck />
-            </div>
-            <div className="mypage_icons">
+            </Link>
+            <Link to="/mypage/bank" className="mypage_icons">
               <FaSackDollar />
-            </div>
+            </Link>
           </div>
         </section>
 

@@ -4,7 +4,7 @@ import { validationPatterns } from "../../../core/constants/validationPatterns";
 import ProjectContentBox from "../ProjectManagementPage/components/ProjectContentBox/ProjectContentBox";
 import "./BankPage.css";
 
-const BankPage = () => {
+const BankPage = (props) => {
   const [value, setValue] = useState();
   const [checkedItems, setCheckedItems] = useState([]);
   const [cancelStatus, setCancelStatus] = useState();
@@ -57,7 +57,7 @@ const BankPage = () => {
     console.log("선택된 name 목록:", checkedName);
   }, [checkedItems]);
 
-  const user = "sellecter";
+  const user = "selleb";
 
   const bankTest = {
     1: {
@@ -85,9 +85,9 @@ const BankPage = () => {
   };
 
   return (
-    <MainLayout>
+    <MainLayout {...props}>
       <div className="bankPage_container">
-        <h4>BANK</h4>
+        <h3>BANK</h3>
         {user === "selleb" && (
           <>
             <div className="bankPage_Info">

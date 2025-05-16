@@ -10,22 +10,17 @@
     object-fit: cover;
     object-position: top;
   }
-
-  h4 {
-    font-weight: bold;
-  }
 }
 
 .mypage_inner {
   display: grid;
-  grid-template-columns: 1fr 1fr 0.2fr;
+  grid-template-columns: 1fr 0.8fr 0.1fr;
 }
 
 .mypage_inner_left {
   border-right: 2px solid var(--text-color);
   display: grid;
-  grid-template-columns: 1fr 0.8fr;
-  padding-right: 2em;
+  grid-template-columns: 1fr 1fr;
 
   .profile_container {
     display: flex;
@@ -46,14 +41,15 @@
 
 .mypage_left_box {
   height: 70px;
-  background-color: hsl(206, 64%, 96%);
-  font-weight: bold;
-  color: var(--text-color-gray);
+  padding: 0em 1em;
 
   .custom_box {
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: hsl(206, 64%, 96%);
+    color: var(--text-color-gray);
+    font-weight: bold;
   }
 }
 
