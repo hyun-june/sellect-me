@@ -45,6 +45,16 @@
       margin: 0;
     }
   }
+
+  input {
+    text-align: left;
+    letter-spacing: 1px;
+    width: 100%;
+  }
+
+  input:not(:placeholder-shown) {
+    background-color: white;
+  }
 }
 
 .sellecter_edit_profile_List {

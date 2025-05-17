@@ -21,8 +21,8 @@ const FormInput = ({
   const patternType = validationPatterns[type];
 
   return (
-    <div className="form-input">
-      <label htmlFor={id}>{title}</label>
+    <div className={`form-input ${className}`}>
+      {title ? <label htmlFor={id}>{title}</label> : null}
       <input
         onKeyDown={(e) => handleKeydown(e)}
         id={id}

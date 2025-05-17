@@ -15,10 +15,10 @@
 
 .add_career {
   padding-left: 2.5em;
-
+  position: relative;
   input {
     width: 100%;
-    position: relative;
+
     border: none;
     border-bottom: 1px solid var(--text-color-gray);
     padding: 0.3em;
@@ -27,7 +27,7 @@
   button {
     position: absolute;
     right: 0;
-    bottom: 1.3em;
+    bottom: 0.5em;
     background-color: inherit;
     border: none;
   }

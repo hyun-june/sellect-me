@@ -8,8 +8,8 @@ import FormInput from "./../../../../components/FormInput/FormInput";
 import NoticeForm from "./components/NoticeForm/NoticeForm";
 import AddDeleteTag from "./../../../../components/AddDeleteTag/AddDeleteTag";
 import Button from "./../../../../components/Button/Button";
-import "./SellecterProfileEditPage.css";
 import MainLayout from "../../../../components/Layout/MainLayout/MainLayout";
+import "./SellecterProfileEditPage.css";
 
 const testData = {
   business_name: "sellecter",
