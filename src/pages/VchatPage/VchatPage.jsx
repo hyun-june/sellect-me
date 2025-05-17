@@ -7,6 +7,7 @@ import { BsCameraVideoOff } from "react-icons/bs";
 import { CiMicrophoneOn } from "react-icons/ci";
 import { CiMicrophoneOff } from "react-icons/ci";
 import "./VchatPage.css";
+import { useNavigate } from "react-router-dom";
 
 const chatUserData = {
   other: {
@@ -24,7 +25,8 @@ const VchatPage = (props) => {
   const [localStream, setLocalStream] = useState(null); // 내 상태
   const [remoteStream, setRemoteStream] = useState(null); // 상대방 상태
 
-  const [timer, setTimer] = useState(5); //여기가 설정 시간
+  const navigate = useNavigate();
+  const [timer, setTimer] = useState(200); //여기가 설정 시간
   const [vchatStatus, setVchatStatus] = useState({
     selleb: {
       cam: false,
@@ -160,6 +162,14 @@ const VchatPage = (props) => {
   };
 
   const handleVchat = (e) => {
+    const userticket = 10;
+    const haveTime = userticket * 5;
+
+    if (haveTime === 0) {
+      navigate("/v-chat/ticket");
+    } else if (haveTime > 0) {
+      return alert(`연장할 수 있는 시간: ${haveTime}분`);
+    }
     const vchatMenu = e.currentTarget.value;
     console.log("클릭한 버튼:", vchatMenu);
   };

@@ -1,8 +1,8 @@
 import CustomBox from "../../components/CustomBox/CustomBox";
 import MainLayout from "../../components/Layout/MainLayout/MainLayout";
-import "./VchatTicketPage.css";
 import Button from "./../../components/Button/Button";
 import { useState } from "react";
+import "./VchatTicketPage.css";
 
 const ticketList = [
   {
@@ -49,7 +49,7 @@ const VchatTicketPage = (props) => {
   return (
     <MainLayout {...props}>
       <div className="ticket_container">
-        <h5>V-CHAT 이용권 구매</h5>
+        <h3>V-CHAT 이용권 구매</h3>
         <div>1회당 5분의 V-CHAT 시간을 제공합니다.</div>
         <div className="ticket_inner">
           <div className="ticket_list">

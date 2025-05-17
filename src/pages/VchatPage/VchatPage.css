@@ -43,6 +43,7 @@
       object-fit: cover;
       object-position: center;
       background-color: black;
+      transform: scaleX(-1);
     }
 
     img {
@@ -136,8 +137,8 @@
 
   .vchat_chatting {
     border-right: 3px solid var(--line-color);
-    max-height: 330px;
     overflow: auto;
+    height: 330px;
 
     textarea {
       padding-left: 1em;

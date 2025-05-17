@@ -2,9 +2,13 @@
   width: 100%;
   flex: 1;
 
-  h5 {
+  h3 {
     text-align: center;
     margin-bottom: 3em;
+  }
+
+  > div:first-of-type {
+    font-weight: bold;
   }
 
   .ticket_inner {
@@ -45,7 +49,7 @@
       height: 100%;
 
       .custom_box {
-        border: 3px solid skyblue;
+        border: 2px solid var(--line-color-blue);
         height: 70px;
       }
     }
@@ -56,7 +60,8 @@
       position: relative;
 
       button {
-        background-color: skyblue;
+        background-color: var(--line-color-blue);
+        opacity: 0.8;
         border: none;
         position: absolute;
         right: 1em;
@@ -64,14 +69,20 @@
       }
 
       button:hover {
-        background-color: gray;
+        background-color: var(--line-color-blue);
+        opacity: 1;
         color: black;
       }
 
       button:disabled {
         cursor: not-allowed;
-        background-color: #ccc;
-        color: #888;
+        background-color: var(--line-color);
+        opacity: 1;
+        color: var(--text-color-gray);
+      }
+      button:disabled:hover {
+        background-color: var(--line-color);
+        opacity: 1;
       }
     }
   }

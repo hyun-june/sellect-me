@@ -51,7 +51,7 @@
 
     .showFile {
       opacity: 1;
-      height: 250px;
+      height: 200px;
       overflow-y: auto;
     }
 

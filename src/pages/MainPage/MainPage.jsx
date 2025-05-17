@@ -25,12 +25,12 @@ const menu = [
   { name: "mypage/bank/payment(1)", address: "/mypage/bank/payment" },
   { name: "mypage/schedule(1)", address: "/mypage/schedule" },
   { name: "mypage/chatlist(1)", address: "/mypage/chatlist" },
-  { name: "mypage/chatting", address: "/mypage/chatting" },
+  { name: "mypage/chatting(1)", address: "/mypage/chatting" },
+  { name: "v-chat", address: "/v-chat" },
+  { name: "/v-chat/ticket", address: "/v-chat/ticket" },
   { name: "request", address: "/request" },
   { name: "mypage/selleb/edit", address: "/mypage/selleb/edit" },
   { name: "mypage/sellecter/edit", address: "/mypage/sellecter/edit" },
-  { name: "v-chat", address: "/v-chat" },
-  { name: "/v-chat/ticket", address: "/v-chat/ticket" },
   { name: "quotation", address: "/quotation" },
 ];
 
