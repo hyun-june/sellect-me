@@ -132,7 +132,7 @@ const AccountSettingPage = (props) => {
     <MainLayout {...props}>
       <div className="account_title">
         <span></span>
-        <h5>
+        <h3>
           계정 설정 {">"}
           {tabIndex === 0
             ? "내 정보"
@@ -141,7 +141,7 @@ const AccountSettingPage = (props) => {
             : tabIndex === 2
             ? "회원 탈퇴"
             : ""}
-        </h5>
+        </h3>
       </div>
       <div className="account_container">
         <div>

@@ -41,49 +41,54 @@ const AppRouter = () => {
   }, [location]);
 
   return (
-    <Routes>
-      {/* <ScrollToTop/> */}
-      <Route path="/" element={<MainPage />} />
-      <Route path="/login" element={<LoginPage />} />
-      <Route path="/about" element={<AboutPage />} />
-      <Route path="/confirm" element={<ConFirmPage />} />
-      <Route path="/mypage" element={<MyPage />} />
-      <Route path="/mypage/selleb" element={<SellebProfilePage />} />
-      <Route path="/mypage/selleb/edit" element={<SellebProfileEditPage />} />
-      <Route path="/mypage/sellecter" element={<SellecterProfilePage />} />
-      <Route
-        path="/mypage/sellecter/edit"
-        element={<SellecterProfileEditPage />}
-      />
-      <Route path="/mypage/favorites" element={<FavoritesPage />} />
-      <Route path="/mypage/projectManage" element={<ProjectManagementPage />} />
-      <Route path="/mypage/bank" element={<BankPage />} />
-      <Route path="/mypage/bank/payment" element={<PayMentPage />} />
-      <Route path="/mypage/schedule" element={<SchedulePage />} />
-      <Route path="/mypage/chatlist" element={<ChatListPage />} />
-      <Route path="/mypage/chatting" element={<ChattingPage />} />
-      <Route path="/v-chat" element={<VchatPage />} />
-      <Route path="/v-chat/ticket" element={<VchatTicketPage />} />
+    <>
+      <ScrollToTop />
+      <Routes>
+        <Route path="/" element={<MainPage />} />
+        <Route path="/login" element={<LoginPage />} />
+        <Route path="/about" element={<AboutPage />} />
+        <Route path="/confirm" element={<ConFirmPage />} />
+        <Route path="/mypage" element={<MyPage />} />
+        <Route path="/mypage/selleb" element={<SellebProfilePage />} />
+        <Route path="/mypage/selleb/edit" element={<SellebProfileEditPage />} />
+        <Route path="/mypage/sellecter" element={<SellecterProfilePage />} />
+        <Route
+          path="/mypage/sellecter/edit"
+          element={<SellecterProfileEditPage />}
+        />
+        <Route path="/mypage/favorites" element={<FavoritesPage />} />
+        <Route
+          path="/mypage/projectManage"
+          element={<ProjectManagementPage />}
+        />
+        <Route path="/mypage/bank" element={<BankPage />} />
+        <Route path="/mypage/bank/payment" element={<PayMentPage />} />
+        <Route path="/mypage/schedule" element={<SchedulePage />} />
+        <Route path="/mypage/chatlist" element={<ChatListPage />} />
+        <Route path="/mypage/chatting" element={<ChattingPage />} />
+        <Route path="/v-chat" element={<VchatPage />} />
+        <Route path="/v-chat/ticket" element={<VchatTicketPage />} />
 
-      <Route path="/quotation" element={<QuotationPage />} />
+        <Route path="/quotation" element={<QuotationPage />} />
 
-      <Route path="/signup" element={<SignUpPage />} />
-      <Route path="/signup/selleb" element={<SignUpSellebPage />} />
-      <Route path="/signup/sellecter" element={<SignUpSellecterPage />} />
+        <Route path="/signup" element={<SignUpPage />} />
+        <Route path="/signup/selleb" element={<SignUpSellebPage />} />
+        <Route path="/signup/sellecter" element={<SignUpSellecterPage />} />
 
-      <Route path="/model">
-        <Route path="fitting" element={<ModelPage />} />
-        <Route path="homeshopping" element={<ModelPage />} />
-      </Route>
-      <Route path="/service" element={<ServicePage />} />
-      <Route path="/service/notice" element={<ServicePage />} />
-      <Route path="/service/faq" element={<ServicePage />} />
-      <Route path="/service/faq/faq" element={<ServiceFAQPage />} />
-      <Route path="/setting" element={<AccountSettingPage />} />
-      <Route path="/terms" element={<TermsPage />} />
-      <Route path="/privacy" element={<PrivacyPage />} />
-      <Route path="/request" element={<RequestPage />} />
-    </Routes>
+        <Route path="/model">
+          <Route path="fitting" element={<ModelPage />} />
+          <Route path="homeshopping" element={<ModelPage />} />
+        </Route>
+        <Route path="/service" element={<ServicePage />} />
+        <Route path="/service/notice" element={<ServicePage />} />
+        <Route path="/service/faq" element={<ServicePage />} />
+        <Route path="/service/faq/faq" element={<ServiceFAQPage />} />
+        <Route path="/setting" element={<AccountSettingPage />} />
+        <Route path="/terms" element={<TermsPage />} />
+        <Route path="/privacy" element={<PrivacyPage />} />
+        <Route path="/request" element={<RequestPage />} />
+      </Routes>
+    </>
   );
 };
 

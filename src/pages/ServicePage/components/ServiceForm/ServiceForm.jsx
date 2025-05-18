@@ -81,7 +81,7 @@ const ServiceForm = ({ ...props }) => {
       ) : null}
 
       <div className="service_search">
-        <VscSearch className="test" />
+        <VscSearch className="service_search_icon" />
 
         <input
           type="text"
@@ -104,7 +104,7 @@ const ServiceForm = ({ ...props }) => {
       </section>
       {dataType === "FAQ" && (
         <div className="report_section">
-          <h5>문제 신고</h5>
+          <h4>문제 신고</h4>
           <div>
             <input type="text" onChange={handleReport} />
             <button onClick={sendReport}>

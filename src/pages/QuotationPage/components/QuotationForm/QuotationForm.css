@@ -32,6 +32,10 @@
       border-radius: 50%;
     }
   }
+
+  input:not(:placeholder-shown) {
+    background-color: white;
+  }
 }
 
 .top_section {

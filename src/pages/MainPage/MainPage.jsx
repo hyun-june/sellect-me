@@ -32,13 +32,13 @@ const menu = [
   { name: "mypage/chatting(1)", address: "/mypage/chatting" },
   { name: "v-chat(1)", address: "/v-chat" },
   { name: "/v-chat/ticket(1)", address: "/v-chat/ticket" },
-  { name: "/service", address: "/service" },
-  { name: "/service/notice", address: "/service/notice" },
-  { name: "/service/faq", address: "/service/faq" },
-  { name: "/service/faq/faq", address: "/service/faq/faq" },
-  { name: "/setting", address: "/setting" },
-  { name: "/terms", address: "/terms" },
-  { name: "/privacy", address: "/privacy" },
+  { name: "/service(1)", address: "/service" },
+  { name: "/service/notice(1)", address: "/service/notice" },
+  { name: "/service/faq(1)", address: "/service/faq" },
+  { name: "/service/faq/faq(1)", address: "/service/faq/faq" },
+  { name: "/setting(1)", address: "/setting" },
+  { name: "/terms(1)", address: "/terms" },
+  { name: "/privacy(1)", address: "/privacy" },
 ];
 
 const MainPage = (props) => {

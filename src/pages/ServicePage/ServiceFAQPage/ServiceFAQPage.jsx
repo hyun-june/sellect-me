@@ -5,7 +5,7 @@ const ServiceFAQPage = (props) => {
   return (
     <MainLayout {...props}>
       <div className="faq_container">
-        <h5>고객센터 {">"} FAQ</h5>
+        <h3>고객센터 {">"} FAQ</h3>
         <div className="faq_inner">
           <p>회원탈퇴는 어떻게 진행하나요?</p>
           <img

@@ -1,5 +1,5 @@
 .account_title {
-  width: 80%;
+  width: 100%;
   display: grid;
   grid-template-columns: 0.3fr 1fr;
   gap: 1em;
@@ -12,11 +12,10 @@
 }
 
 .account_container {
-  width: 80%;
+  width: 100%;
   flex: 1;
   display: grid;
   grid-template-columns: 0.3fr 1fr;
-
   gap: 1em;
 
   .custom_box {
@@ -30,6 +29,7 @@
     font-weight: bold;
     font-size: 1.5em;
     background-color: white;
+    cursor: pointer;
   }
 }
 .account_myInfo {
@@ -70,9 +70,10 @@
   padding-top: 0.5em;
 
   button {
-    border: 1px solid var(--text-color-yellow);
+    background-color: var(--text-color-yellow);
     padding: 0.5em;
     border-radius: 5px;
+    font-weight: bold;
   }
 }
 
@@ -84,11 +85,14 @@
   p {
     margin: 0;
     font-weight: bold;
+    font-size: 1.5em;
   }
 
   label {
     margin-left: 2em;
     cursor: pointer;
+    font-size: 1.2em;
+    font-weight: bold;
 
     input {
       margin-left: 0.3em;
@@ -155,8 +159,9 @@
 
     button {
       border-radius: 5px;
-      background-color: antiquewhite;
+      background-color: var(--text-color-yellow);
       padding: 0.5em 2em;
+      font-weight: bold;
     }
   }
 }
