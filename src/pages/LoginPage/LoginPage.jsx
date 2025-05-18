@@ -10,7 +10,7 @@ const LoginPage = (props) => {
           <img title="구글" src="/images/google_login_symbol.png" />
           <span>구글로 로그인하기</span>
         </a>
-        <a href="/auth/kakao" class="kakao-login-btn">
+        <a href="/" class="kakao-login-btn">
           <img
             src="/images/kakao_login_symbol.png"
             className="kakao_icon"

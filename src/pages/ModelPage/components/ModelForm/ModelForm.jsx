@@ -221,6 +221,10 @@ const ModelForm = ({ ...props }) => {
     setCardCount((prev) => prev + 6);
   };
 
+  // 필터는 어떤식으로 작성해야 할까?
+  // 지금은 더미 데이터이기 때문에 이미지랑 이름 밖에 없지만 실제 데이터는
+  // 더 많은 정보를 담고 있을거기에 그걸 이용해서 필터를한다.
+
   const handleCardFilter = (selected) => {
     console.log("카드 정렬 기준", selected);
     setCardFilter(selected);

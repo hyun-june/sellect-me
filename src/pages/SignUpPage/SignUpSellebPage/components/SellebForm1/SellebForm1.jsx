@@ -166,6 +166,13 @@ const SellebForm1 = ({ goToNextTab }) => {
           />
         </section>
         <section className="section-address">
+          <DropdownForm
+            label="사용 가능 언어"
+            list={languageList}
+            selectedValue=""
+            onSelect={(value) => handleSelect("language", value)}
+            type="text"
+          />
           <FormInput
             title="현 거주지"
             id="address"
@@ -181,13 +188,7 @@ const SellebForm1 = ({ goToNextTab }) => {
             error={errors.phone_number}
             required={true}
           />
-          <DropdownForm
-            label="사용 가능 언어"
-            list={languageList}
-            selectedValue=""
-            onSelect={(value) => handleSelect("language", value)}
-            type="text"
-          />
+
           <div className="auth-num-section">
             <FormInput
               title="인증번호 입력"

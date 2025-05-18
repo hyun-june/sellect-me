@@ -6,6 +6,7 @@ const SignBox = ({ id, saveSign, title }) => {
   const canvasRef = useRef(null);
   const [ctx, setCtx] = useState(null);
   const [isDrawing, setIsDrawing] = useState(false);
+  const [hasDrawn, setHasDrawn] = useState(false);
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -36,15 +37,19 @@ const SignBox = ({ id, saveSign, title }) => {
 
     if (type === "down") {
       setIsDrawing(true);
+      setHasDrawn(false);
       ctx.beginPath();
       ctx.moveTo(x, y);
     } else if (type === "move" && isDrawing) {
+      setHasDrawn(true);
       ctx.lineTo(x, y);
       ctx.stroke();
     } else if (type === "up" || type === "leave") {
       setIsDrawing(false);
-      const dataUrl = canvas.toDataURL();
-      saveSign(dataUrl);
+      if (hasDrawn) {
+        const dataUrl = canvas.toDataURL();
+        saveSign(dataUrl);
+      }
     }
   };
 
@@ -53,6 +58,7 @@ const SignBox = ({ id, saveSign, title }) => {
     if (canvas && ctx) {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       signText(ctx);
+      saveSign(null);
     }
   };
 

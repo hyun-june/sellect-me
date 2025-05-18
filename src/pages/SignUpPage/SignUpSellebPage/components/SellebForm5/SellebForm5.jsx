@@ -11,9 +11,20 @@ const SellebForm5 = ({ goToNextTab, goToPrevTab }) => {
     handleSubmit,
     setValue,
     getValues,
+    watch,
     formState: { errors },
   } = useForm();
+
   const [payValue, setPayValue] = useState(0);
+
+  const selectedCurrency = watch("currency");
+  const currencyType =
+    selectedCurrency === "won"
+      ? "원"
+      : selectedCurrency === "dollar"
+      ? "$"
+      : null;
+
   const handleInfo = (formData) => {
     if (formData.currency === null) {
       return alert("기준 통화를 체크해주세요.");
@@ -29,11 +40,16 @@ const SellebForm5 = ({ goToNextTab, goToPrevTab }) => {
     goToNextTab();
   };
 
-  const handlePayChange = (e) => {
-    const pay = e.target.value;
-    setPayValue(pay);
-    setValue("payValue", pay);
-  };
+  // const handlePayChange = (e) => {
+  //   const pay = e.target.value;
+  //   if (pay) {
+  //     setPayValue(pay);
+  //     setInputValue(pay);
+  //   }
+  //   setPayValue(pay);
+
+  //   setValue("payValue", pay);
+  // };
 
   return (
     <form className="pay-section" onSubmit={handleSubmit(handleInfo)}>
@@ -52,7 +68,7 @@ const SellebForm5 = ({ goToNextTab, goToPrevTab }) => {
           <input type="radio" value="dollar" {...register("currency")} />
         </label>
       </div>
-      <div className="pay-bar-section">
+      {/* <div className="pay-bar-section">
         <div>
           <span>0</span>
           <span>300</span>
@@ -75,16 +91,20 @@ const SellebForm5 = ({ goToNextTab, goToPrevTab }) => {
         <div className="show_payvalue">
           <strong>pay</strong>: <div>{payValue}</div>
         </div>
-      ) : null}
+      ) : null} */}
 
       <div className="select-currency-self">
-        <FormInput
-          title="직접입력"
-          id="currency_input"
-          register={register}
-          type="number"
-          error={errors.currency_input}
-        />
+        <div>
+          <FormInput
+            title="직접입력"
+            id="currency_input"
+            register={register}
+            type="number"
+            error={errors.currency_input}
+          />
+          <span>{currencyType}</span>
+        </div>
+
         <p>
           * 바와 직접 입력한 값이 둘 다 있는 경우 직접 입력의 값이 적용됩니다.
         </p>

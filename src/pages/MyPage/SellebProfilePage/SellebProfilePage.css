@@ -28,7 +28,7 @@
 .selleb_main_profile_img {
   img {
     width: 380px;
-    height: 400px;
+    height: 450px;
     object-fit: cover;
     object-position: top;
   }
@@ -44,7 +44,7 @@
   display: flex;
   justify-content: space-between;
   gap: 1em;
-
+  margin-bottom: 1em;
   img {
     width: 180px;
     height: 180px;
@@ -55,21 +55,22 @@
 .selleb_profile_List {
   display: flex;
   justify-content: center;
-  padding: 1em 0em;
-  gap: 3em;
+  padding: 1.5em 0;
+  gap: 2em;
   border: 2px solid var(--line-color);
+  flex: 1;
 
   dl {
     margin: 0;
-    gap: 1.5em;
+    gap: 2em;
 
     dt {
-      font-size: 1em;
+      font-size: 1.2em;
     }
 
     dd {
       width: 5em;
-      font-size: 0.8em;
+      font-size: 1em;
     }
   }
 }

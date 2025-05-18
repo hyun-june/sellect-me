@@ -17,9 +17,9 @@ const menu = [
   { name: "model/homeshopping(1)", address: "/model/homeshopping" },
   { name: "mypage/selleb(1)", address: "/mypage/selleb" },
   { name: "mypage/sellecter(1)", address: "/mypage/sellecter" },
-  { name: "confirm(1)", address: "/confirm" },
   { name: "quotation(1)", address: "/quotation" },
   { name: "request(1)", address: "/request" },
+  { name: "confirm(1)", address: "/confirm" },
   { name: "signup(1)", address: "/signup" },
   { name: "mypage(1)", address: "/mypage" },
   { name: "mypage/selleb/edit(1)", address: "/mypage/selleb/edit" },
@@ -140,7 +140,7 @@ const MainPage = (props) => {
   }, []);
 
   return (
-    <MainLayout {...props}>
+    <MainLayout {...props} className="mainPage_container">
       <HamburgerMenu menu={menu} />
       <div>
         <div className="main_video">

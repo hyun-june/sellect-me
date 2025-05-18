@@ -61,6 +61,7 @@
   border: 1px solid var(--line-color);
   height: auto;
   padding: 1em;
+  line-height: 1.5em;
 }
 
 .info_section {

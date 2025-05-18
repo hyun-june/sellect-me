@@ -5,12 +5,18 @@ import "./ConFirmPage.css";
 
 const ConFirmPage = (props) => {
   const [sellebSign, setSellebSign] = useState(null);
+
   const [sellecterSign, setSellecterSign] = useState(null);
 
   const saveSelleb = (signData) => setSellebSign(signData);
   const saveSellecter = (signData) => setSellecterSign(signData);
 
   const handleConfirm = () => {
+    console.log("🚀 ~ ConFirmPage ~ sellebSign:", sellebSign);
+    console.log("🚀 ~ ConFirmPage ~ sellecterSign:", sellecterSign);
+    if (sellebSign === null || sellecterSign === null) {
+      return alert("서명이 완료되지 않았습니다.");
+    }
     console.log("계약하기");
     // 사인 데이터 보내는 로직
   };
@@ -18,7 +24,7 @@ const ConFirmPage = (props) => {
   return (
     <MainLayout {...props}>
       <div className="confirm_container">
-        <h4>컨펌 및 계약</h4>
+        <h3>컨펌 및 계약</h3>
         <div className="confirm_inner">
           <div className="user_info">
             <table>

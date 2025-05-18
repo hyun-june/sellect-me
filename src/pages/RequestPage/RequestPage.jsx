@@ -4,11 +4,10 @@ import ProfileImgBox from "../../components/ProfileImgBox/ProfileImgBox";
 import ProfileInfoList from "../../components/ProfileInfoList/ProfileInfoList";
 import Button from "../../components/Button/Button";
 import { Link } from "react-router-dom";
-import { IoMdStarOutline } from "react-icons/io";
+import LikeButton from "../../components/LikeButton/LikeButton";
 import TagButton from "./../../components/TagButton/TagButton";
 import CustomTabs from "./../../components/CustomTabs/CustomTabs";
 import "./RequestPage.css";
-import LikeButton from "../../components/LikeButton/LikeButton";
 
 const userInfo = {
   name: "Kim Jieun",
@@ -114,7 +113,7 @@ OOO에서 창의적이고 유능한 셀럽 분들을 모집합니다.
   ],
 };
 
-const user = "selleb";
+const user = "sellecter";
 
 const RequestPage = (props) => {
   const [time, setTime] = useState(0);

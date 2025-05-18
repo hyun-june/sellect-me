@@ -3,9 +3,9 @@ import Navigation from "./../../Navigation/Navigation";
 import Footer from "./../../Footer/Footer";
 import "./MainLayout.css";
 
-const MainLayout = ({ children }) => {
+const MainLayout = ({ children, className }) => {
   return (
-    <div className="main_layout">
+    <div className={`main_layout ${className}`}>
       <Navigation />
       <Container>{children}</Container>
       <Footer />

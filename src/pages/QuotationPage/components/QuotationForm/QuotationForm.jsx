@@ -45,20 +45,6 @@ const QuotationForm = ({ user }) => {
     return null;
   };
 
-  const calculateTime = () => {
-    const parseTime = (time) => {
-      if (!time) return 0;
-      const [hours, minutes] = time.split(":").map(Number);
-      return hours + minutes / 60;
-    };
-
-    const start = parseTime(startTime);
-    const end = parseTime(endTime);
-
-    const calculatedHours = end - start;
-    setBusinessHours(calculatedHours);
-  };
-
   useEffect(() => {
     calculateTime();
   }, [startTime, endTime]);
@@ -86,10 +72,28 @@ const QuotationForm = ({ user }) => {
     setValue(fieldName, value);
   };
 
+  const calculateTime = () => {
+    const parseTime = (time) => {
+      if (!time) return 0;
+      const [hours, minutes] = time.split(":").map(Number);
+      return hours + minutes / 60;
+    };
+
+    const start = parseTime(startTime);
+    const end = parseTime(endTime);
+
+    const calculatedHours = end - start;
+
+    setBusinessHours(calculatedHours);
+  };
+
   const onSchedule = (formData) => {
     if (!formData.date) {
-      alert("날짜를 선택해주세요.");
-      return;
+      return alert("날짜를 선택해주세요.");
+    }
+
+    if (businessHours < 0) {
+      return alert("시간을 다시 확인해주세요.");
     }
     console.log("form", formData);
     console.log("tags", tags);

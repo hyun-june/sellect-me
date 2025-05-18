@@ -1,4 +1,4 @@
-import { Route, Routes, useLocation } from "react-router-dom";
+import { Route, Routes, useLocation, Navigate } from "react-router-dom";
 import MainPage from "../pages/MainPage/MainPage";
 import AboutPage from "../pages/AboutPage/AboutPage";
 import { useEffect } from "react";
@@ -75,10 +75,13 @@ const AppRouter = () => {
         <Route path="/signup/selleb" element={<SignUpSellebPage />} />
         <Route path="/signup/sellecter" element={<SignUpSellecterPage />} />
 
-        <Route path="/model">
-          <Route path="fitting" element={<ModelPage />} />
-          <Route path="homeshopping" element={<ModelPage />} />
-        </Route>
+        <Route
+          path="/model"
+          element={<Navigate to="/model/fitting" replace />}
+        />
+        <Route path="/model/fitting" element={<ModelPage />} />
+        <Route path="/model/homeshopping" element={<ModelPage />} />
+
         <Route path="/service" element={<ServicePage />} />
         <Route path="/service/notice" element={<ServicePage />} />
         <Route path="/service/faq" element={<ServicePage />} />

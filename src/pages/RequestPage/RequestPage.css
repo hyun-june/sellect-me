@@ -1,9 +1,5 @@
 .request_container {
   width: 100%;
-
-  h3 {
-    margin-bottom: 1em;
-  }
 }
 
 .request_info {
@@ -64,14 +60,15 @@
 .request_profile {
   display: flex;
   justify-content: space-between;
-  padding: 1em 0em 2em 0em;
+  padding: 1em 0;
   border-bottom: 2px solid var(--line-color);
-  margin-bottom: 2em;
 
   h3 {
-    letter-spacing: 3px;
+    letter-spacing: 5px;
     font-size: 2em;
     margin: 0;
+    width: 380px;
+    text-align: center;
   }
 
   .request_profile_btn {
@@ -88,7 +85,7 @@
 .request_main_profile_img {
   img {
     width: 380px;
-    height: 400px;
+    height: 450px;
     object-fit: cover;
     object-position: top;
   }
@@ -105,13 +102,6 @@
     object-fit: cover;
     object-position: top;
   }
-}
-
-.request_profile_info {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  flex: 1;
 }
 
 .request_sellecter_profile_info {
@@ -138,7 +128,7 @@
   display: flex;
   justify-content: space-between;
   gap: 1em;
-
+  margin-bottom: 1em;
   img {
     width: 180px;
     height: 180px;
@@ -146,25 +136,32 @@
   }
 }
 
+.request_profile_info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex: 1;
+}
+
 .request_profile_List {
   display: flex;
   justify-content: center;
-  padding: 1em 0em;
-  gap: 3em;
+  padding: 1.5em 0;
+  gap: 2em;
   border: 2px solid var(--line-color);
-  width: 100%;
+  flex: 1;
 
   dl {
     margin: 0;
-    gap: 1.5em;
+    gap: 2em;
 
     dt {
-      font-size: 1em;
+      font-size: 1.2em;
     }
 
     dd {
       width: 5em;
-      font-size: 0.8em;
+      font-size: 1em;
     }
   }
 }

@@ -1,5 +1,8 @@
 .menu_list_title {
   font-weight: bold;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
 }
 
 .menu_list_arrow {
@@ -23,6 +26,8 @@
     padding-left: 0.5em;
     margin-bottom: 1em;
     color: var(--text-color-gray);
+    cursor: pointer;
+    font-size: 1em;
   }
 }
 
@@ -37,6 +42,6 @@
 }
 
 .menu_focus {
-  color: black;
   font-weight: bold;
+  color: var(--text-color) !important;
 }

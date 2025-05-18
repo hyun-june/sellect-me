@@ -2,9 +2,4 @@
   display: flex;
   justify-content: center;
   flex-direction: column;
-
-  h3 {
-    font-size: 2em;
-    margin: 0.5em 0em 1.5em 0em;
-  }
 }

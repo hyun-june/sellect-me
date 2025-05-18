@@ -1,4 +1,5 @@
 import { Row, Col, Container } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import "./InnerCard.css";
 
 const cardData = {
@@ -33,7 +34,9 @@ const InnerCard = ({ cardKeyword, ...props }) => {
       <Row className="card_container">
         {filterCard.map((item, index) => (
           <Col className="card_item" key={index}>
-            <img src={item}></img>
+            <Link to="/mypage/selleb">
+              <img src={item}></img>{" "}
+            </Link>
           </Col>
         ))}
       </Row>

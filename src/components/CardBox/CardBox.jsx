@@ -7,7 +7,7 @@ const CardBox = ({ title, cardKeyword, ...props }) => {
       <div className="title_box_inner">
         <h4>{title}</h4>
         <span>
-          <a href="/">More +</a>
+          <a href="/model">More +</a>
         </span>
       </div>
       <InnerCard cardKeyword={cardKeyword} />

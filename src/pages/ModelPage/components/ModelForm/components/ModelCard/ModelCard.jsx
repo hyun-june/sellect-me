@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import "./ModelCard.css";
 
 const ModelCard = ({ ...props }) => {
@@ -5,9 +6,9 @@ const ModelCard = ({ ...props }) => {
 
   return (
     <div className="model_card">
-      <a href="/">
+      <Link to={`${"/mypage/selleb"}`}>
         <img src={img} />
-      </a>
+      </Link>
       <span
         onClick={onToggleLike}
         className={`${isLiked ? "liked_color" : ""}`}
