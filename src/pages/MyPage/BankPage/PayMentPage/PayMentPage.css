@@ -67,8 +67,13 @@
         font-weight: bold;
       }
 
+      label:first-of-type > input {
+        width: 15px;
+        height: 15px;
+      }
+
       label:not(:first-of-type) input[type="checkbox"] {
-        border: 2px solid var(--text-color-gray);
+        border: 1px solid var(--text-color-gray);
       }
 
       label:not(:first-of-type) input[type="checkbox"]:checked {
@@ -154,6 +159,8 @@
     display: flex;
     gap: 0.5em;
     margin-bottom: 0.5em;
+    width: max-content;
+    cursor: pointer;
 
     input {
       flex-shrink: 0;

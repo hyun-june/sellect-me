@@ -17,7 +17,7 @@
 .sellecter_edit_main_profile {
   width: 100%;
   display: flex;
-  gap: 1em;
+  gap: 2em;
   margin-bottom: 3em;
 }
 
@@ -73,11 +73,10 @@
   white-space: nowrap;
 }
 
-.sellecter_edit_career {
+.edit_career {
   display: flex;
   flex-direction: column;
   gap: 1em;
-  margin: 1em 0em;
 
   li {
     list-style-type: "-";

@@ -16,8 +16,8 @@ const CompleteForm = ({ type }) => {
           <span>총 15카테고리의 다양한 셀럽들을 만나보세요!</span>
         ) : null}
       </p>
-      <span className="myPage-link">
-        <Link to="/myPage">MY PAGE 바로가기</Link>
+      <span className="mypage_link">
+        <Link to="/mypage">MY PAGE 바로가기</Link>
       </span>
     </div>
   );

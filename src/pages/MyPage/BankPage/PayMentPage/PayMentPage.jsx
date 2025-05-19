@@ -39,7 +39,11 @@ const PayMentPage = (props) => {
 
   const payMentOptions = {
     basic: {
-      계좌이체: { name: "퀵계좌이체", sub: "(실시간 계좌이체)", event: true },
+      계좌이체: {
+        name: "퀵계좌이체",
+        sub: "(실시간 계좌이체)",
+        event: true,
+      },
       신용카드: { name: "신용카드", event: true },
       무통장입금: { name: "무통장입금", event: false },
       휴대폰: { name: "휴대폰", event: false },

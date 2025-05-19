@@ -41,15 +41,24 @@ const BankPage = (props) => {
 
   const handleCancelStatus = (value) => {
     if (value === "yes") {
-      console.log("유저가 취소에 동의함", checkedName);
-    } else {
-      console.log("유저가 취소에 동의하지 않음", checkedName);
+      setCancelStatus(value);
+      return console.log("유저가 취소에 동의함", checkedName);
+    } else if (value === "no") {
+      setCancelStatus(value);
+      return console.log("유저가 취소에 동의하지 않음", checkedName);
     }
-    setCancelStatus(value);
   };
 
   const handleCancelBtn = () => {
-    console.log("취소를 요청한 건", checkedItems);
+    if (cancelStatus === "yes") {
+      if (checkedItems.length > 0) {
+        console.log("취소를 요청한 건", checkedItems);
+      } else {
+        alert("선택된 거래가 없습니다.");
+      }
+    } else {
+      return console.log("취소 요청 선택 X");
+    }
   };
 
   useEffect(() => {

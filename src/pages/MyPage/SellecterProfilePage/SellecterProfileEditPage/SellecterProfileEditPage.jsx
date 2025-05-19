@@ -150,6 +150,7 @@ const SellecterProfileEditPage = (props) => {
 
           <div className="sellecter_edit_profile_info">
             <ProfileInfoList list={sellecterInfoList} />
+
             <div className="sellecter_edit_profile_List">
               <ProfileInfoList list={sellecterProjectList} />
 

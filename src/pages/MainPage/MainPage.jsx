@@ -24,6 +24,7 @@ const menu = [
   { name: "mypage(1)", address: "/mypage" },
   { name: "mypage/selleb/edit(1)", address: "/mypage/selleb/edit" },
   { name: "mypage/sellecter/edit(1)", address: "/mypage/sellecter/edit" },
+  { name: "mypage/favorites(1)", address: "/mypage/favorites" },
   { name: "mypage/projectManage(1)", address: "/mypage/projectManage" },
   { name: "mypage/bank(1)", address: "/mypage/bank" },
   { name: "mypage/bank/payment(1)", address: "/mypage/bank/payment" },

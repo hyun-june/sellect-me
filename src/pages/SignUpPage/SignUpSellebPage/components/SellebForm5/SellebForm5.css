@@ -61,10 +61,6 @@
     cursor: pointer;
     margin-left: 0.3em;
   }
-
-  input:checked {
-    background-color: var(--text-color-gray);
-  }
 }
 
 .select-currency-self {

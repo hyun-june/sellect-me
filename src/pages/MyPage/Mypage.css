@@ -4,6 +4,10 @@
   flex-direction: column;
   gap: 1em;
 
+  h3 {
+    margin: 0;
+  }
+
   img {
     width: 250px;
     height: 300px;
@@ -18,7 +22,7 @@
 }
 
 .mypage_inner_left {
-  border-right: 2px solid var(--text-color);
+  border-right: 1px solid var(--text-color);
   display: grid;
   grid-template-columns: 1fr 1fr;
 
@@ -47,8 +51,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: hsl(206, 64%, 96%);
-    color: var(--text-color-gray);
+    background-color: var(--background-blue);
+    color: var(--text-color);
     font-weight: bold;
   }
 }
@@ -57,7 +61,7 @@
   height: 70px;
   width: 100%;
   font-weight: bold;
-  color: var(--text-color-gray);
+  color: var(--text-color);
 
   .custom_box {
     display: flex;
@@ -67,7 +71,7 @@
 }
 
 .mypage_inner_right {
-  padding: 0em 2em;
+  padding: 0em 1em;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -129,7 +133,9 @@
 
   h5 {
     margin: 1em 0em;
+    font-size: 24px;
     color: var(--text-color);
+    font-weight: bold;
   }
 
   canvas {
@@ -154,6 +160,7 @@
   display: flex;
   align-items: center;
   gap: 1em;
+  font-size: 20px;
 
   .dropdown_container {
     width: 6em;

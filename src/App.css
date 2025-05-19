@@ -37,9 +37,11 @@ body {
   --text-color: #121212;
   --text-color-white: #ffffff;
   --text-color-gray: #5c5c5c;
+  --text-color-blue: #46b0e0;
   --line-color: #c1c1be;
   --line-color-blue: #a6c9eb;
   --text-color-yellow: #ffc30b;
+  --background-blue: #e9f3fb;
   --warn-color: #991b1b;
 }
 
@@ -60,13 +62,17 @@ h3 {
 }
 
 input[type="checkbox"] {
-  border: 3px solid var(--text-color);
+  border: 2px solid var(--text-color);
   width: 12px;
   height: 12px;
   cursor: pointer;
 }
 
-input[type="checkbox"]:checked {
+/* input[type="checkbox"]:checked {
+  background-color: var(--text-color);
+} */
+
+input:checked {
   background-color: var(--text-color);
 }
 

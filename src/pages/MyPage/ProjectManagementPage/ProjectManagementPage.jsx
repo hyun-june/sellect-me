@@ -62,6 +62,15 @@ const testData = {
       name: "dddd",
       description: "dddd테스트",
       date: "10.22",
+      memo: [
+        { id: 1, content: " LLL 매트리스제품화보촬영" },
+        { id: 2, content: "파주OOO스튜디오" },
+        {
+          id: 3,
+          content:
+            "의상: 흰 상의 + 청바지 + 흰 운동화 / 플라워 패턴 원피스 + 베이지 단화/ 흰 잠옷 원피스",
+        },
+      ],
     },
   },
 };

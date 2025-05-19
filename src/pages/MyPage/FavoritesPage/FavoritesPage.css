@@ -1,12 +1,5 @@
 .favorite_container {
   width: 100%;
-
-  h4 {
-    display: flex;
-    justify-content: flex-start;
-    font-weight: bold;
-    margin: 0em 0em 1em 0em;
-  }
 }
 
 .favorite_card_section {

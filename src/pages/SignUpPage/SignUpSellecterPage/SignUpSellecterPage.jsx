@@ -41,7 +41,7 @@ const SignUpSellecterPage = (props) => {
         </TabList>
         <div>
           <TabPanel>
-            <div className="tabs-inner ">
+            <div className="tabs-inner">
               <SellecterForm1 goToNextTab={goToNextTab} />
             </div>
           </TabPanel>
