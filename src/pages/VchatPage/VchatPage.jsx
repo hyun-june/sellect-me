@@ -6,8 +6,8 @@ import { GoDeviceCameraVideo } from "react-icons/go";
 import { BsCameraVideoOff } from "react-icons/bs";
 import { CiMicrophoneOn } from "react-icons/ci";
 import { CiMicrophoneOff } from "react-icons/ci";
-import "./VchatPage.css";
 import { useNavigate } from "react-router-dom";
+import "./VchatPage.css";
 
 const chatUserData = {
   other: {
@@ -26,7 +26,7 @@ const VchatPage = (props) => {
   const [remoteStream, setRemoteStream] = useState(null); // 상대방 상태
 
   const navigate = useNavigate();
-  const [timer, setTimer] = useState(200); //여기가 설정 시간
+  const [timer, setTimer] = useState(62); //여기가 설정 시간
   const [vchatStatus, setVchatStatus] = useState({
     selleb: {
       cam: false,
@@ -181,7 +181,9 @@ const VchatPage = (props) => {
           <p>V-CHAT를 시작했습니다!</p>
           <p>모든 통화내용 및 화면은 SELLECT에 기록됩니다.</p>
 
-          <span>남은시간 {formatTime(timer)}</span>
+          <span className={timer <= 60 ? "timeout" : null}>
+            남은시간 {formatTime(timer)}
+          </span>
         </div>
 
         <div className="vchat_video_section">

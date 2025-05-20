@@ -16,6 +16,11 @@
     background-color: var(--text-color-yellow);
     padding: 1em;
     border-radius: 12px;
+    font-weight: bold;
+  }
+
+  .timeout {
+    color: var(--warn-color);
   }
 }
 

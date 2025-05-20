@@ -1,0 +1,15 @@
+.alarmbox_inner {
+  padding: 1em 0em;
+  border-bottom: 1px solid var(--line-color);
+  display: flex;
+  gap: 0.5em;
+  cursor: pointer;
+}
+
+.alarmbox_inner:last-of-type {
+  border: none;
+}
+
+.alarmbox_message {
+  color: var(--text-color);
+}
