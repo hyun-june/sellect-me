@@ -50,7 +50,7 @@ const VchatTicketPage = (props) => {
     <MainLayout {...props}>
       <div className="ticket_container">
         <h3>V-CHAT 이용권 구매</h3>
-        <div>1회당 5분의 V-CHAT 시간을 제공합니다.</div>
+        <div>* 1회당 5분의 V-CHAT 시간을 제공합니다.</div>
         <div className="ticket_inner">
           <div className="ticket_list">
             {ticketList.map((ticket, index) => (

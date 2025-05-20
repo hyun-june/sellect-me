@@ -9,8 +9,8 @@ const SchedulePage = (props) => {
   const [showModal, setShowModal] = useState(false);
   const [memoInput, setMemoInput] = useState("");
   const [memoData, setMemoData] = useState({
-    "2025-04-14": "운동함",
-    "2025-04-15": ["스터디참여", "ddddddddddddddddd", "fffff"],
+    "2025-05-14": "운동함",
+    "2025-05-15": ["스터디참여", "ddddddddddddddddd", "fffff"],
   });
 
   const tileClassName = ({ date, view }) => {

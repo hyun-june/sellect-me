@@ -4,12 +4,14 @@
   gap: 2em;
 
   h4 {
-    color: blue;
+    color: var(--text-color-navy);
+    font-weight: bold;
   }
 
   p {
     line-height: 1.2em;
   }
+
   ol {
     counter-reset: item; /* 카운터 초기화 */
     margin: 2em 0em;

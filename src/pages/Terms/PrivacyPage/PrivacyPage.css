@@ -4,7 +4,7 @@
   gap: 2em;
 
   h4 {
-    color: blue;
+    color: var(--text-color-navy);
   }
   p {
     line-height: 1.2em;
