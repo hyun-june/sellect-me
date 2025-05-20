@@ -35,7 +35,7 @@ const InnerCard = ({ cardKeyword, ...props }) => {
         {filterCard.map((item, index) => (
           <Col className="card_item" key={index}>
             <Link to="/mypage/selleb">
-              <img src={item}></img>{" "}
+              <img src={item} />
             </Link>
           </Col>
         ))}
