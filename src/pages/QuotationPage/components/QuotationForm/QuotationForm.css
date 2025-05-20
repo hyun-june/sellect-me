@@ -124,9 +124,10 @@
   }
 
   > span:last-child {
-    display: flex;
+    text-align: right;
     color: var(--text-color-gray);
-    font-weight: 700;
+    font-weight: bold;
+    min-width: 40px;
   }
 
   .selected-section {

@@ -85,7 +85,7 @@ const AppRouter = () => {
         <Route path="/service" element={<ServicePage />} />
         <Route path="/service/notice" element={<ServicePage />} />
         <Route path="/service/faq" element={<ServicePage />} />
-        <Route path="/service/faq/faq" element={<ServiceFAQPage />} />
+        <Route path="/service/faq/detail" element={<ServiceFAQPage />} />
         <Route path="/setting" element={<AccountSettingPage />} />
         <Route path="/terms" element={<TermsPage />} />
         <Route path="/privacy" element={<PrivacyPage />} />

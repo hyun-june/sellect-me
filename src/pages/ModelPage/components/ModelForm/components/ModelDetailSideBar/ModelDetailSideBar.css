@@ -31,18 +31,6 @@
   justify-content: space-between;
   align-items: center;
   height: 2em;
-
-  input {
-    width: 13px;
-    height: 13px;
-    border: 2px solid var(--text-color);
-    cursor: pointer;
-    margin-left: 0.3em;
-  }
-
-  input:checked {
-    background-color: var(--text-color-gray);
-  }
 }
 
 .detail_select_location {

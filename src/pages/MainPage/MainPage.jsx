@@ -36,7 +36,7 @@ const menu = [
   { name: "/service(1)", address: "/service" },
   { name: "/service/notice(1)", address: "/service/notice" },
   { name: "/service/faq(1)", address: "/service/faq" },
-  { name: "/service/faq/faq(1)", address: "/service/faq/faq" },
+  { name: "/service/faq/detail(1)", address: "/service/faq/detail" },
   { name: "/setting(1)", address: "/setting" },
   { name: "/terms(1)", address: "/terms" },
   { name: "/privacy(1)", address: "/privacy" },

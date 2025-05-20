@@ -162,16 +162,25 @@ const VchatPage = (props) => {
   };
 
   const handleVchat = (e) => {
+    const vchatMenu = e.currentTarget.value;
     const userticket = 10;
     const haveTime = userticket * 5;
-
-    if (haveTime === 0) {
-      navigate("/v-chat/ticket");
-    } else if (haveTime > 0) {
-      return alert(`연장할 수 있는 시간: ${haveTime}분`);
-    }
-    const vchatMenu = e.currentTarget.value;
     console.log("클릭한 버튼:", vchatMenu);
+    if (vchatMenu === "연장하기") {
+      if (haveTime === 0) {
+        navigate("/v-chat/ticket");
+      } else if (haveTime > 0) {
+        return alert(`연장할 수 있는 시간: ${haveTime}분`);
+      }
+    }
+
+    if (vchatMenu === "문제해결") {
+      return navigate("/service/faq");
+    }
+
+    if (vchatMenu === "나가기") {
+      return navigate("/");
+    }
   };
 
   return (
