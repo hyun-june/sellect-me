@@ -5,7 +5,7 @@ import LoginLinks from "../LoginLinks";
 import { FaBell } from "react-icons/fa";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./Navigation.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import AlarmBox from "./components/AlarmBox/AlarmBox";
 
 const testAlarm = [
@@ -50,6 +50,12 @@ const Navigation = () => {
     }
     setOpenAlarm(!openAlarm);
   };
+
+  useEffect(() => {
+    if (unreadCount === 0) {
+      setOpenAlarm(false);
+    }
+  }, [unreadCount]);
 
   return (
     <>
