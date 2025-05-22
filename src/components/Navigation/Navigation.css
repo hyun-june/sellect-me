@@ -7,35 +7,45 @@
   justify-content: space-between;
   /* border-bottom: 1px solid var(--line-color); */
   box-shadow: 0px 0px 8px 0px var(--line-color);
+  position: relative;
 }
 
 .logoImg {
-  width: 130px;
+  width: 100px;
+  cursor: pointer;
 }
 
-.navbar {
-  padding: 0;
+.skeleton_search {
+  width: 20em;
+  height: 2em;
 }
 
 .navbar_alarm_login {
-  max-width: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex: 1;
+}
+
+.nav_items {
+  display: flex;
+  gap: 2em;
 }
 
 .nav_alarm {
   position: relative;
 
   .alarm_count {
-    font-size: 0.875em;
+    font-size: 10px;
     position: absolute;
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 7px;
-    width: 13px;
-    height: 13px;
+    width: 10px;
+    height: 10px;
     top: -8px;
     right: -8px;
-
     background-color: var(--text-color-yellow);
     border-radius: 50%;
     pointer-events: none;
@@ -44,12 +54,12 @@
 
 .alarm_icon {
   cursor: pointer;
-  font-size: 1.5em;
+  font-size: 1.2em;
   color: var(--text-color-yellow);
 }
 
 .alarm_modal {
-  border: 1px solid var(--text-color-yellow);
+  border: 2px solid var(--text-color-yellow);
   border-radius: 8px;
   min-height: 250px;
   max-height: 250px;
@@ -59,4 +69,23 @@
   top: 2em;
   left: 0;
   padding: 0.5em;
+  z-index: 999;
+  background-color: white;
+}
+
+/* 채팅 스크롤바 */
+.alarm_modal::-webkit-scrollbar {
+  width: 5px;
+}
+
+.alarm_modal::-webkit-scrollbar-thumb {
+  background-color: #2f3542;
+  border-radius: 10px;
+}
+
+.alarm_modal::-webkit-scrollbar-track {
+  background-color: grey;
+  border-radius: 10px;
+  box-shadow: inset 0px 0px 5px white;
+  margin: 0.2em 0em;
 }

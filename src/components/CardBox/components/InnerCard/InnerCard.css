@@ -2,14 +2,15 @@
   white-space: nowrap;
   margin-top: 1em;
   margin-bottom: 3em;
+  display: flex;
   gap: 0.5em;
   width: 1000px;
   margin: 0;
 }
 
 .card_item {
-  width: 200px;
-  height: 250px;
+  width: 160px;
+  height: 200px;
   overflow: hidden;
   display: inline-block;
   cursor: pointer;

@@ -6,6 +6,10 @@
   position: relative;
   margin-bottom: 2em;
 
+  h4 {
+    margin-bottom: 0.5em;
+  }
+
   textarea {
     width: 100%;
     border: 1px solid var(--line-color);

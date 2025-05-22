@@ -111,6 +111,7 @@ const SellebProfilePage = (props) => {
               <ProfileImgBox src="/images/test1.png" />
               <ProfileImgBox src="/images/test2.jpg" />
               <ProfileImgBox src="/images/test3.jpg" />
+              <ProfileImgBox src="/images/test3.jpg" />
             </div>
             <div className="selleb_profile_List">
               <ProfileInfoList list={profileInfoList} />

@@ -43,6 +43,10 @@ table {
   border-spacing: 0;
 }
 
+fieldset {
+  border: none;
+}
+
 button,
 input,
 textarea,

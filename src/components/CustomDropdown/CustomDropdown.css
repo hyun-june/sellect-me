@@ -5,7 +5,6 @@
 .dropdown_select {
   cursor: pointer;
   position: relative;
-  font-weight: bold;
 
   span {
     position: absolute;
@@ -14,7 +13,7 @@
 }
 
 .dropdown_list {
-  height: 0em;
+  height: 0;
   opacity: 0;
   transform: scaleY(0);
   transform-origin: top;
@@ -27,7 +26,6 @@
 
   li {
     border-bottom: 1px solid var(--line-color);
-    margin-top: 0.3em;
     padding: 0.2em;
     cursor: pointer;
   }

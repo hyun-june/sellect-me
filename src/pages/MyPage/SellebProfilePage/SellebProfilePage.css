@@ -43,10 +43,9 @@
 .selleb_profile_pictures {
   display: flex;
   justify-content: space-between;
-  gap: 1em;
   margin-bottom: 1em;
   img {
-    width: 180px;
+    width: 140px;
     height: 180px;
     object-fit: cover;
   }
@@ -55,7 +54,7 @@
 .selleb_profile_List {
   display: flex;
   justify-content: center;
-  padding: 1.5em 0;
+  padding: 2em 0;
   gap: 2em;
   border: 2px solid var(--line-color);
   flex: 1;
@@ -63,10 +62,6 @@
   dl {
     margin: 0;
     gap: 2em;
-
-    dt {
-      font-size: 1.2em;
-    }
 
     dd {
       width: 5em;
@@ -86,6 +81,8 @@
   h5 {
     color: var(--text-color);
     font-weight: bold;
+    font-size: 1.2em;
+    margin-bottom: 0.5em;
   }
 
   span {

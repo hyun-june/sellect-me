@@ -3,6 +3,7 @@
   font-size: 16px;
   display: flex;
   align-items: center;
+  margin-bottom: 0.5em;
 }
 
 .menu_list_arrow {
@@ -24,7 +25,8 @@
 
   li {
     padding-left: 0.5em;
-    margin-bottom: 1em;
+    margin-bottom: 0.5em;
+
     color: var(--text-color-gray);
     cursor: pointer;
     font-size: 1em;
@@ -35,10 +37,6 @@
   margin: 0.5em 0 0 0;
   max-height: 300px;
   opacity: 1;
-}
-
-.menu_list_category.open li {
-  margin-bottom: 1em;
 }
 
 .menu_focus {

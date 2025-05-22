@@ -5,9 +5,9 @@
     flex-direction: column;
 
     dt {
-      font-size: 1.2em;
       margin-bottom: 0.5em;
       color: var(--text-color);
+      font-weight: bold;
     }
 
     dd {

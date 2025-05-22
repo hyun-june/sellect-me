@@ -53,14 +53,13 @@
     align-items: center;
     background-color: var(--background-blue);
     color: var(--text-color);
-    font-weight: bold;
   }
 }
 
 .mypage_right_box {
   height: 70px;
   width: 100%;
-  font-weight: bold;
+
   color: var(--text-color);
 
   .custom_box {
@@ -133,7 +132,6 @@
 
   h5 {
     margin: 1em 0em;
-    font-size: 24px;
     color: var(--text-color);
     font-weight: bold;
   }
@@ -160,7 +158,6 @@
   display: flex;
   align-items: center;
   gap: 1em;
-  font-size: 20px;
 
   .dropdown_container {
     width: 6em;
@@ -169,6 +166,6 @@
   }
 
   .dropdown_select {
-    line-height: 2em;
+    line-height: 1.2em;
   }
 }

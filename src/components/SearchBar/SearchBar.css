@@ -1,12 +1,11 @@
 .inputNav {
   position: relative;
-  left: 10%;
 }
 
 .inputNav input {
-  width: 20rem;
-  height: 2rem;
-  padding-left: 15%;
+  width: 20em;
+  height: 2em;
+  padding: 0em 1em 0em 2em;
   border: none;
 }
 

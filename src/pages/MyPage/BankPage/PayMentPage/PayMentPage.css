@@ -97,14 +97,12 @@
 }
 
 .payment_options_section {
-  width: 100%;
   margin-bottom: 2em;
   padding: 1em;
   border: 1px solid var(--line-color);
-
-  h4 {
-    margin-bottom: 1em;
-  }
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
 
   .sub_title {
     font-size: 0.8em;

@@ -1,9 +1,7 @@
-import Navbar from "react-bootstrap/Navbar";
 import SearchBar from "../SearchBar/SearchBar";
-import { useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import LoginLinks from "../LoginLinks";
 import { FaBell } from "react-icons/fa";
-import "bootstrap/dist/css/bootstrap.min.css";
 import "./Navigation.css";
 import { useEffect, useState } from "react";
 import AlarmBox from "./components/AlarmBox/AlarmBox";
@@ -58,34 +56,37 @@ const Navigation = () => {
   }, [unreadCount]);
 
   return (
-    <>
-      <Navbar>
-        <div className="navContainer">
-          <Navbar.Brand href="/">
-            <img className="logoImg" src="/images/logo-outline.png" alt="" />
-          </Navbar.Brand>
+    <div className="navContainer">
+      <Link to="/">
+        <img className="logoImg" src="/images/logo-outline.png" alt="" />
+      </Link>
 
-          {showSearchBarPages.includes(location.pathname) && <SearchBar />}
-          <Navbar.Collapse className="navbar_alarm_login">
-            {user ? (
-              <div className="nav_alarm">
-                <FaBell className="alarm_icon" onClick={handleOpenAlarm} />
-                {unreadCount > 0 && (
-                  <span className="alarm_count">{unreadCount}</span>
-                )}
-                {openAlarm ? (
-                  <div className="alarm_modal">
-                    <AlarmBox data={alarms} onMarkAsRead={handleMarkAsRead} />
-                  </div>
-                ) : null}
-              </div>
-            ) : (
-              <LoginLinks />
-            )}
-          </Navbar.Collapse>
+      <div className="navbar_alarm_login">
+        <div className="nav_search">
+          {showSearchBarPages.includes(location.pathname) ? (
+            <SearchBar />
+          ) : (
+            <div className="skeleton_search" />
+          )}
         </div>
-      </Navbar>
-    </>
+        <div className="nav_items">
+          {user ? (
+            <div className="nav_alarm">
+              <FaBell className="alarm_icon" onClick={handleOpenAlarm} />
+              {unreadCount > 0 && (
+                <span className="alarm_count">{unreadCount}</span>
+              )}
+              {openAlarm ? (
+                <div className="alarm_modal">
+                  <AlarmBox data={alarms} onMarkAsRead={handleMarkAsRead} />
+                </div>
+              ) : null}
+            </div>
+          ) : null}
+          <LoginLinks />
+        </div>
+      </div>
+    </div>
   );
 };
 

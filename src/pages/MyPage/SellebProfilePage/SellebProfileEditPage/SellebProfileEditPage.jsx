@@ -38,7 +38,7 @@ const SellebProfileEditPage = (props) => {
   });
 
   const [mainImg, setMainImg] = useState(null);
-  const [subImg, setSubImg] = useState([null, null, null]);
+  const [subImg, setSubImg] = useState([null, null, null, null]);
   const [tags, setTags] = useState([]);
   const [defaultTags, setDefaultTags] = useState(["사진", "뮤비"]);
 

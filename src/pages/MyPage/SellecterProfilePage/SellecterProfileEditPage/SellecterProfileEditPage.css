@@ -36,7 +36,7 @@
   width: 100%;
   justify-content: center;
   padding: 2.2em 0em;
-  gap: 5em;
+  gap: 3em;
 
   dl {
     gap: 1.5em;
@@ -58,19 +58,18 @@
 }
 
 .sellecter_edit_profile_List {
-  height: 100%;
-
+  dl {
+    margin-bottom: 1.5em;
+  }
   .tag_container {
     overflow: hidden;
   }
-}
 
-.sellecter_edit_project_title {
-  font-size: 1.2em;
-  font-weight: 700;
-  color: var(--text-color);
-  display: block;
-  white-space: nowrap;
+  h5 {
+    color: var(--text-color);
+    font-weight: bold;
+    font-size: 1.2em;
+  }
 }
 
 .edit_career {
@@ -91,6 +90,7 @@
     padding: 0em;
     flex-wrap: wrap;
     max-height: 10em;
+    margin-bottom: 0.5em;
 
     li {
       list-style: none;
@@ -102,9 +102,10 @@
       button {
         position: absolute;
         right: 0.3em;
-        top: 0.3em;
+        top: 0.4em;
         border: none;
         background-color: inherit;
+        cursor: pointer;
       }
     }
   }

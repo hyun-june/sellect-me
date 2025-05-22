@@ -5,7 +5,7 @@ const LoginPage = (props) => {
   return (
     <MainLayout {...props}>
       <section className="login_section">
-        <h5>로그인 / 회원가입</h5>
+        <h3>로그인 / 회원가입</h3>
         <a href="/">
           <img title="구글" src="/images/google_login_symbol.png" />
           <span>구글로 로그인하기</span>
