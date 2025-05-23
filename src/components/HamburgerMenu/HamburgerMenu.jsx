@@ -1,13 +1,12 @@
 import { useState } from "react";
 import "./HamburgerMenu.css";
-import { Link } from "react-router-dom";
 
 const HamburgerMenu = ({ ...props }) => {
   const [menuToggle, setMenuToggle] = useState(false);
   const { menu } = props;
 
   return (
-    <nav className="hamburger-section" {...props}>
+    <nav className={`hamburger-section ${menuToggle ? "open" : ""}`} {...props}>
       <span
         className={!menuToggle ? "burger__menu" : "x__menu"}
         onClick={() => setMenuToggle(!menuToggle)}
@@ -16,11 +15,12 @@ const HamburgerMenu = ({ ...props }) => {
         <div className="burger_line2"></div>
         <div className="burger_line3"></div>
       </span>
+
       <div className={`hamburger-menu  ${menuToggle ? "open" : ""}`}>
         {menuToggle && (
           <ul className="menu-list">
-            {menu.map((item) => (
-              <li>
+            {menu.map((item, index) => (
+              <li key={index}>
                 <a href={item.address}>{item.name} </a>
               </li>
 

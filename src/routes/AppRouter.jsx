@@ -30,6 +30,7 @@ import TermsPage from "../pages/Terms/TermsPage/TermsPage";
 import PrivacyPage from "../pages/Terms/PrivacyPage/PrivacyPage";
 import LoginPage from "./../pages/LoginPage/LoginPage";
 import RequestPage from "../pages/RequestPage/RequestPage";
+import AdminPage from "../pages/AdminPage/AdminPage";
 
 const AppRouter = () => {
   const location = useLocation();
@@ -90,6 +91,7 @@ const AppRouter = () => {
         <Route path="/terms" element={<TermsPage />} />
         <Route path="/privacy" element={<PrivacyPage />} />
         <Route path="/request" element={<RequestPage />} />
+        <Route path="/admin" element={<AdminPage />} />
       </Routes>
     </>
   );

@@ -1,0 +1,130 @@
+.admin_user_container {
+  h4 {
+    margin: 2em 0 1em 0;
+  }
+}
+.admin_user {
+  padding: 1em;
+  display: flex;
+  align-items: center;
+  background-color: var(--background-blue);
+  box-shadow: 0px 2px 3px var(--line-color);
+  gap: 1em;
+  justify-content: space-around;
+
+  li {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    gap: 1em;
+  }
+
+  .admin_icon_wrapper {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .admin_icon {
+    width: 60px;
+    height: 60px;
+  }
+
+  .admin_user_data {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+
+    .admin_user_label {
+      color: var(--text-color-navy);
+      font-weight: bold;
+      font-size: 1.2em;
+    }
+    .admin_user_value {
+      color: red;
+    }
+  }
+}
+
+.admin_user_filter_box {
+  border: 1px solid var(--line-color-blue);
+  box-shadow: 0px 2px 3px var(--line-color);
+  padding: 1em;
+  display: flex;
+  gap: 6em;
+
+  .admin_search {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+  }
+
+  .admin_user_search {
+    display: flex;
+    align-items: center;
+    gap: 2em;
+    position: relative;
+
+    span {
+      min-width: 3em;
+    }
+
+    input {
+      background-color: var(--background-blue);
+      height: 1.5em;
+      padding: 0 2em 0 1em;
+    }
+
+    div {
+      position: absolute;
+      right: 0.5em;
+      top: 0.2em;
+      cursor: pointer;
+    }
+  }
+
+  .admin_filter {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+
+    .admin_filter_type {
+      display: flex;
+      gap: 1em;
+    }
+
+    label {
+      display: flex;
+      gap: 0.5em;
+    }
+
+    input {
+      width: 15px;
+      height: 15px;
+      border: 1px solid var(--line-color-blue);
+    }
+
+    input:checked {
+      background-color: var(--line-color-blue);
+    }
+  }
+
+  .admin_filter_btn {
+    display: flex;
+    margin-top: auto;
+    gap: 1em;
+
+    button {
+      background-color: var(--background-blue);
+      height: 2em;
+      padding: 0 0.5em;
+      border-radius: 5px;
+    }
+  }
+}

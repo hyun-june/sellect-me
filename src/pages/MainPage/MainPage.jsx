@@ -40,6 +40,7 @@ const menu = [
   { name: "/setting(1)", address: "/setting" },
   { name: "/terms(1)", address: "/terms" },
   { name: "/privacy(1)", address: "/privacy" },
+  { name: "/admin", address: "/admin" },
 ];
 
 const MainPage = (props) => {
