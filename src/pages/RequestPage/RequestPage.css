@@ -60,12 +60,12 @@
 .request_profile {
   display: flex;
   justify-content: space-between;
-  padding: 1em 0;
+  padding: 1em 0 2em 0;
   border-bottom: 2px solid var(--line-color);
+  align-items: center;
 
   h3 {
     letter-spacing: 5px;
-    font-size: 2em;
     margin: 0;
     width: 380px;
     text-align: center;
@@ -84,8 +84,8 @@
 
 .request_main_profile_img {
   img {
-    width: 380px;
-    height: 450px;
+    width: 450px;
+    height: 500px;
     object-fit: cover;
     object-position: top;
   }
@@ -97,8 +97,8 @@
   gap: 2em;
 
   img {
-    min-width: 380px;
-    height: 400px;
+    min-width: 400px;
+    height: 450px;
     object-fit: cover;
     object-position: top;
   }
@@ -113,7 +113,11 @@
   width: 100%;
 
   dl {
-    gap: 1.5em;
+    gap: 3em;
+    height: 340px;
+    dt {
+      font-size: 1.2em;
+    }
   }
 
   .tag_container {
@@ -127,11 +131,10 @@
 .request_profile_pictures {
   display: flex;
   justify-content: space-between;
-  gap: 1em;
   margin-bottom: 1em;
   img {
-    width: 180px;
-    height: 180px;
+    width: 175px;
+    height: 220px;
     object-fit: cover;
   }
 }
@@ -145,8 +148,8 @@
 
 .request_profile_List {
   display: flex;
-  justify-content: center;
-  padding: 1.5em 0;
+  justify-content: space-around;
+  padding: 1.9em 0;
   gap: 2em;
   border: 2px solid var(--line-color);
   flex: 1;
@@ -177,6 +180,8 @@
   h5 {
     color: var(--text-color);
     font-weight: bold;
+    font-size: 1.2em;
+    margin-bottom: 0.5em;
   }
 
   span {

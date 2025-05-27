@@ -1,0 +1,50 @@
+.admin_user {
+  padding: 1em;
+  display: flex;
+  align-items: center;
+  background-color: var(--background-blue);
+  box-shadow: 0px 2px 3px var(--line-color);
+  gap: 1em;
+  justify-content: space-around;
+  margin-bottom: 2em;
+
+  li {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    gap: 1em;
+  }
+
+  .admin_icon_wrapper {
+    /* width: 80px;
+    height: 80px; */
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .admin_icon {
+    width: 45px;
+    height: 45px;
+  }
+
+  .admin_user_data {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+
+    .admin_user_label {
+      color: var(--text-color-navy);
+      font-weight: bold;
+      font-size: 1.2em;
+    }
+    .admin_user_value {
+      color: red;
+    }
+  }
+}

@@ -17,6 +17,7 @@
 .main_video {
   width: 100%;
   position: relative;
+  margin-bottom: 3em;
 
   video {
     aspect-ratio: 21 / 9;
@@ -75,7 +76,7 @@
 
 .randomText_section {
   text-align: center;
-  margin: 3em 0em;
+  margin: 2em 0em;
 
   p {
     font-size: 1.8em;

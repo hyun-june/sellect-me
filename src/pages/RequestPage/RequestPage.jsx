@@ -18,6 +18,7 @@ const userInfo = {
     "/images/test1.png",
     "/images/test2.jpg",
     "/images/test3.jpg",
+    "/images/test3.jpg",
   ],
   userInfoList: [
     { title: "성별", content: "FEMALE" },
@@ -197,14 +198,29 @@ const RequestPage = (props) => {
           <div className="request_inner">
             <div className="request_inner_info">
               <div className="request_inner_list">
-                <div>프로젝트명:CF 촬영</div>
-                <div>촬영시간:5시간</div>
-                <div>시간 당 금액:200,000</div>
+                <div>
+                  <strong>프로젝트명: </strong> <span>CF 촬영</span>
+                </div>
+                <div>
+                  <strong>촬영시간: </strong> <span>5시간</span>
+                </div>
+                <div>
+                  <strong>시간 당 금액: </strong> <span>200,000</span>
+                </div>
               </div>
               <div className="request_inner_list">
-                <div>에스크로:200,000</div>
-                <div>부가세:120,000</div>
-                <div>예상 총 금액:1,320,000</div>
+                <div>
+                  <strong>에스크로: </strong>
+                  <span>200,000</span>
+                </div>
+                <div>
+                  <strong>부가세: </strong>
+                  <span>120,000</span>
+                </div>
+                <div>
+                  <strong>예상 총 금액: </strong>
+                  <span>1,320,000</span>
+                </div>
               </div>
             </div>
             <button>계약하기</button>

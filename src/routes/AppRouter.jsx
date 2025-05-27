@@ -30,7 +30,14 @@ import TermsPage from "../pages/Terms/TermsPage/TermsPage";
 import PrivacyPage from "../pages/Terms/PrivacyPage/PrivacyPage";
 import LoginPage from "./../pages/LoginPage/LoginPage";
 import RequestPage from "../pages/RequestPage/RequestPage";
-import AdminPage from "../pages/AdminPage/AdminPage";
+import AdminLayout from "../components/Layout/AdminLayout/AdminLayout";
+import AdminAccount from "../pages/AdminPage/AdminAccount/AdminAccount";
+import AdminChat from "./../pages/AdminPage/AdminChat/AdminChat";
+import AdminMenu from "./../pages/AdminPage/AdminMenu/AdminMenu";
+import AdminDashboard from "./../pages/AdminPage/AdminDashboard/AdminDashboard";
+import AdminUser from "./../pages/AdminPage/AdminUser/AdminUser";
+import AdminUserDetail from "./../pages/AdminPage/AdminUser/AdminUserDetail/AdminUserDetail";
+import AdminService from "./../pages/AdminPage/AdminService/AdminService";
 
 const AppRouter = () => {
   const location = useLocation();
@@ -46,7 +53,7 @@ const AppRouter = () => {
       <ScrollToTop />
       <Routes>
         <Route path="/" element={<MainPage />} />
-        <Route path="/login" element={<LoginPage />} />
+        <Route path="/loginpage" element={<LoginPage />} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/confirm" element={<ConFirmPage />} />
         <Route path="/mypage" element={<MyPage />} />
@@ -91,7 +98,17 @@ const AppRouter = () => {
         <Route path="/terms" element={<TermsPage />} />
         <Route path="/privacy" element={<PrivacyPage />} />
         <Route path="/request" element={<RequestPage />} />
-        <Route path="/admin" element={<AdminPage />} />
+
+        <Route path="/admin" element={<AdminLayout />}>
+          <Route index element={<Navigate to="dashboard" replace />} />
+          <Route path="dashboard" element={<AdminDashboard />} />
+          <Route path="/admin/user" element={<AdminUser />} />
+          <Route path="/admin/user/:nickname" element={<AdminUserDetail />} />
+          <Route path="chat" element={<AdminChat />} />
+          <Route path="account" element={<AdminAccount />} />
+          <Route path="service" element={<AdminService />} />
+          <Route path="menu" element={<AdminMenu />} />
+        </Route>
       </Routes>
     </>
   );

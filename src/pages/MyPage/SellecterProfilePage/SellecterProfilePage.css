@@ -8,7 +8,6 @@
 
     h3 {
       letter-spacing: 3px;
-      font-size: 2em;
       margin: 0;
     }
 
@@ -19,15 +18,15 @@
 }
 
 .sellecter_main_profile {
-  width: 100%;
   display: flex;
   gap: 2em;
   margin-bottom: 3em;
 }
 
 .sellecter_main_profile_img {
-  min-width: 380px;
-  height: 400px;
+  width: 400px;
+  height: 450px;
+
   img {
     object-fit: cover;
     object-position: top;
@@ -40,10 +39,14 @@
   align-items: center;
   justify-content: center;
   gap: 5em;
-  width: 100%;
+  flex: 1;
 
   dl {
-    gap: 1.5em;
+    gap: 3em;
+    height: 340px;
+    dt {
+      font-size: 1.2em;
+    }
   }
 
   .tag_container {

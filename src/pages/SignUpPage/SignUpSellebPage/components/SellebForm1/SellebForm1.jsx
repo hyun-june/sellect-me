@@ -138,9 +138,9 @@ const SellebForm1 = ({ goToNextTab }) => {
           <div className="country-dropdown">
             <div>
               <select name="gender" {...register("gender")}>
-                <option value="">성별</option>
-                <option value="남성">남성</option>
-                <option value="여성">여성</option>
+                <option value="0">성별</option>
+                <option value="1">남성</option>
+                <option value="2">여성</option>
               </select>
               <span>▼</span>
             </div>

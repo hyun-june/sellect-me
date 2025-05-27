@@ -74,7 +74,7 @@ const AboutPage = (props) => {
 
   return (
     <MainLayout {...props}>
-      <div className="aboutInfo_main">
+      <div className="aboutInfo_container">
         <h4>What is Sellect?</h4>
 
         <iframe

@@ -12,7 +12,7 @@ const secondWord = ["출연료", "저작권", "초상권"];
 const menu = [
   { name: "Home(1)", address: "/" },
   { name: "about(1)", address: "/about" },
-  { name: "login(1)", address: "/login" },
+  { name: "login(1)", address: "/loginpage" },
   { name: "model/fitting(1)", address: "/model/fitting" },
   { name: "model/homeshopping(1)", address: "/model/homeshopping" },
   { name: "mypage/selleb(1)", address: "/mypage/selleb" },
@@ -42,6 +42,11 @@ const menu = [
   { name: "/privacy(1)", address: "/privacy" },
   { name: "/admin", address: "/admin" },
 ];
+
+// const menu = [
+//   { name: "피팅모델", address: "/model/fitting" },
+//   { name: "고객센터", address: "/service" },
+// ];
 
 const MainPage = (props) => {
   const boxRef = useRef();

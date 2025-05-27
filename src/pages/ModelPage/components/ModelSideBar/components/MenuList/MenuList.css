@@ -1,0 +1,45 @@
+.menu_list_title {
+    font-weight: bold;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.5em;
+}
+
+.menu_list_arrow {
+    font-size: 12px;
+    padding-left: 0.3em;
+}
+
+.menu_list_arrow:hover {
+    cursor: pointer;
+}
+
+.menu_list_category {
+    list-style: none;
+    padding: 0;
+    opacity: 0;
+    overflow: hidden;
+    max-height: 0;
+    transition: opacity 0.3s ease-out;
+
+    li {
+        padding-left: 0.5em;
+        margin-bottom: 0.5em;
+
+        color: var(--text-color-gray);
+        cursor: pointer;
+        font-size: 1em;
+    }
+}
+
+.menu_list_category.open {
+    margin: 0.5em 0 0 0;
+    max-height: 300px;
+    opacity: 1;
+}
+
+.menu_focus {
+    font-weight: bold;
+    color: var(--text-color) !important;
+}

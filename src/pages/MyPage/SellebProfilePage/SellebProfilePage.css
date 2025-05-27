@@ -1,5 +1,5 @@
 .selleb_profile {
-  width: 100%;
+  width: 1200px;
 
   .selleb_profile_header {
     display: flex;
@@ -8,7 +8,6 @@
 
     h3 {
       letter-spacing: 3px;
-      font-size: 2em;
       margin: 0;
     }
 
@@ -27,8 +26,8 @@
 
 .selleb_main_profile_img {
   img {
-    width: 380px;
-    height: 450px;
+    width: 450px;
+    height: 500px;
     object-fit: cover;
     object-position: top;
   }
@@ -45,16 +44,16 @@
   justify-content: space-between;
   margin-bottom: 1em;
   img {
-    width: 140px;
-    height: 180px;
+    width: 175px;
+    height: 220px;
     object-fit: cover;
   }
 }
 
 .selleb_profile_List {
   display: flex;
-  justify-content: center;
-  padding: 2em 0;
+  justify-content: space-around;
+  padding: 1.9em 0;
   gap: 2em;
   border: 2px solid var(--line-color);
   flex: 1;
@@ -62,6 +61,10 @@
   dl {
     margin: 0;
     gap: 2em;
+
+    dt {
+      font-size: 1.2em;
+    }
 
     dd {
       width: 5em;

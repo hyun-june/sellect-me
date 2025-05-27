@@ -1,17 +1,19 @@
 .title_box {
   display: flex;
   flex-direction: column;
-  margin-top: 3em;
+  margin: 3em 0;
+  width: 100%;
 }
 
 .title_box_inner {
   display: flex;
-  margin: 1em 0em;
+  margin-bottom: 1em;
 
   h4 {
     padding: 0.5em 1.5em;
     position: relative;
     font-weight: bold;
+    font-size: 1.5em;
     margin: 0;
   }
 

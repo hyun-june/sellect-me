@@ -1,17 +1,23 @@
 .hamburger-section {
   background-color: white;
+  width: 100%;
 }
 
 .hamburger-menu {
   height: 0; /* 초기 높이 설정 */
   opacity: 0; /* 초기 투명도 설정 */
-
   transition: height 0.3s ease-in-out, opacity 0.3s ease-in-out; /* 높이와 투명도의 전환 효과 */
+  width: 100%;
+  display: flex;
 }
 
 .hamburger-menu.open {
-  height: 200px; /* toggle이 true일 때의 높이 */
+  height: 40px; /* toggle이 true일 때의 높이 */
   opacity: 1; /* 투명도를 1로 설정하여 보이게 함 */
+  margin-bottom: 1em;
+  padding: 0 2em;
+
+  height: max-content; /* 지우기 */
 }
 
 .burger__menu,

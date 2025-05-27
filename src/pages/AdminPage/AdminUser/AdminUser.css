@@ -1,0 +1,19 @@
+.admin_user_container {
+  .customTabs-header {
+    font-size: 20px;
+  }
+
+  .customTabs-header li {
+    padding: 0 0 1em 0;
+  }
+
+  .customTabs-header li.active {
+    font-size: 20px;
+    font-weight: bold;
+    color: var(--text-color);
+  }
+
+  .customTabs-inner {
+    padding: 1em 0;
+  }
+}

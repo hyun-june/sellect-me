@@ -13,7 +13,7 @@ const sellecterInfoList = [
   { title: "대표자", content: "김지은" },
   {
     title: "주소",
-    content: "서울시 강서구 마곡동 888-2",
+    content: "서울시 강서구 마곡동 888-2서울시 강서구 마곡동 888-2",
   },
   { title: "사업번호", content: "000-00-000000" },
 ];
