@@ -4,7 +4,23 @@ import NextButton from "../../../components/NextButton/NextButton";
 import DropdownForm from "../../../../../components/DropdownForm/DropdownForm";
 import "./SellebForm1.css";
 
-const languageList = ["Korean", "English", "Japanese", "Chinese"];
+const languageList = [
+  "Korean",
+  "English",
+  "Japanese",
+  "Chinese",
+  "Spanish",
+  "French",
+  "German",
+  "Russian",
+  "Portuguese",
+  "Hindi",
+  "Arabic",
+  "Italian",
+  "Vietnamese",
+  "Thai",
+  "Indonesian",
+];
 const SellebForm1 = ({ goToNextTab }) => {
   const {
     register,
@@ -19,7 +35,7 @@ const SellebForm1 = ({ goToNextTab }) => {
       year: "",
       month: "",
       day: "",
-      gender: "",
+      gender: "0",
       nationality: "",
       add_country: "",
       address: "",
@@ -50,7 +66,6 @@ const SellebForm1 = ({ goToNextTab }) => {
     }
 
     console.log("FormData:", formData);
-    sessionStorage.setItem("infoFormData", JSON.stringify(formData));
     goToNextTab();
   };
 
@@ -138,7 +153,9 @@ const SellebForm1 = ({ goToNextTab }) => {
           <div className="country-dropdown">
             <div>
               <select name="gender" {...register("gender")}>
-                <option value="0">성별</option>
+                <option value="0" disabled selected>
+                  성별
+                </option>
                 <option value="1">남성</option>
                 <option value="2">여성</option>
               </select>
@@ -182,6 +199,7 @@ const SellebForm1 = ({ goToNextTab }) => {
           />
           <FormInput
             title="전화번호 입력"
+            addMessage="(-제외하고 입력)"
             id="phone_number"
             register={register}
             type="number"

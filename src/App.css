@@ -52,6 +52,12 @@ h3 {
   font-size: 2em;
 }
 
+h5 {
+  color: var(--text-color);
+  font-size: 1em;
+  margin-bottom: 0.2em;
+}
+
 button {
   cursor: pointer;
 }

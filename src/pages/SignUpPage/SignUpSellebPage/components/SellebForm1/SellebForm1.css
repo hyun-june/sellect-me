@@ -102,10 +102,16 @@
   flex-direction: column;
   gap: 1em;
 
-  span {
-    position: absolute;
-    right: 0;
-    cursor: pointer;
+  .custom-dropdown {
+    span {
+      position: absolute;
+      right: 0;
+      cursor: pointer;
+    }
+
+    .selected-section {
+      width: 16em;
+    }
   }
 }
 

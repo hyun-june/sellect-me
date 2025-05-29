@@ -34,8 +34,9 @@ const SellebForm2 = ({ goToNextTab, goToPrevTab }) => {
     }));
   };
 
-  const visaStatus = watch("visaStatus");
-  const isForeign = visaStatus !== "true";
+  const visaStatus = watch("visaStatus"); // string 결과 출력
+
+  const isForeign = visaStatus !== "true"; // boolean으로 변경
 
   const onSubmit = (data) => {
     if (images.id_photo === null) {
@@ -126,28 +127,30 @@ const SellebForm2 = ({ goToNextTab, goToPrevTab }) => {
                   </div>
                 </div>
               </div>
-
-              <div className="visa-input">
-                <FormInput
-                  title="비자 종류"
-                  id="visa"
-                  register={register}
-                  error={errors.visa}
-                  required={isForeign}
-                />
-                <FormInput
-                  title="외국인 등록번호"
-                  id="registration_number"
-                  register={register}
-                  error={errors.registration_number}
-                  required={isForeign}
-                />
-              </div>
+              {isForeign === true ? (
+                <div className="visa-input">
+                  <FormInput
+                    title="비자 종류"
+                    id="visa"
+                    register={register}
+                    error={errors.visa}
+                    required={isForeign}
+                  />
+                  <FormInput
+                    title="외국인 등록번호"
+                    id="registration_number"
+                    register={register}
+                    error={errors.registration_number}
+                    required={isForeign}
+                  />
+                </div>
+              ) : null}
             </div>
             <div className="account-info">
               <h5>계좌 정보</h5>
               <FormInput
                 title="수익금 출금 은행"
+                addMessage="(-제외하고 입력)"
                 id="bank_name"
                 register={register}
                 required={true}

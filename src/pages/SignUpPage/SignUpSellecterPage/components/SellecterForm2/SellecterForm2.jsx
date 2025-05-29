@@ -54,7 +54,25 @@ const SellecterForm2 = ({ goToNextTab, goToPrevTab }) => {
     }));
   };
 
-  const bankList = ["국민은행", "농협"];
+  const bankList = [
+    "국민은행",
+    "신한은행",
+    "우리은행",
+    "하나은행",
+    "농협은행",
+    "기업은행",
+    "SC제일은행",
+    "씨티은행",
+    "케이뱅크",
+    "카카오뱅크",
+    "토스뱅크",
+    "수협은행",
+    "대구은행",
+    "부산은행",
+    "광주은행",
+    "전북은행",
+    "제주은행",
+  ];
 
   return (
     <div>
@@ -69,6 +87,7 @@ const SellecterForm2 = ({ goToNextTab, goToPrevTab }) => {
           />
           <FormInput
             title="사업자 계좌"
+            addMessage="(-제외하고 입력)"
             id="business_account"
             register={register}
             required={true}

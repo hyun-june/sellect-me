@@ -5,8 +5,41 @@ import FormInput from "../../../../../components/FormInput/FormInput";
 import "./SellecterForm1.css";
 
 const entityList = ["개인사업자", "공동사업자", "법인사업자"];
-const typeList = ["도소매업", "제조업", "서비스업"];
-const categoryList = ["의류 소매업", "자동차 제도업", "IT 컨설팅"];
+const typeList = [
+  "도소매업",
+  "제조업",
+  "서비스업",
+  "건설업",
+  "운수업",
+  "숙박업",
+  "요식업",
+  "부동산업",
+  "정보통신업",
+  "금융업",
+  "교육서비스업",
+  "기타",
+];
+
+const categoryList = [
+  "의류 소매업",
+  "식료품 소매업",
+  "전자제품 소매업",
+  "식품 제조업",
+  "섬유 및 의류 제조업",
+  "전자부품 제조업",
+  "IT 컨설팅 및 소프트웨어 개발",
+  "경영컨설팅 및 연구개발 서비스",
+  "웹호스팅 및 시스템 운영",
+  "청소 및 시설관리 서비스",
+  "물류, 화물 및 여객 운송업",
+  "건설업",
+  "숙박업 ",
+  "요식업",
+  "부동산업",
+  "금융업",
+  "교육서비스업",
+  "기타",
+];
 
 const SellecterForm1 = ({ goToNextTab }) => {
   const {
@@ -57,13 +90,16 @@ const SellecterForm1 = ({ goToNextTab }) => {
             error={errors.business_country}
             required={true}
           />
-          <DropdownForm
-            label="사업자 유형"
-            list={entityList}
-            selectedValue=""
-            onSelect={(value) => handleSelect("business_entity_type", value)}
-            required={true}
-          />
+          <div className="business_info_type">
+            <DropdownForm
+              label="사업자 유형"
+              list={entityList}
+              selectedValue=""
+              onSelect={(value) => handleSelect("business_entity_type", value)}
+              required={true}
+            />
+          </div>
+
           <div className="business_type_section">
             <DropdownForm
               label="업태"

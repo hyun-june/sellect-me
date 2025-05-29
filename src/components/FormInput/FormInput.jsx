@@ -4,6 +4,7 @@ import "./FormInput.css";
 const FormInput = ({
   id,
   title,
+  addMessage,
   register,
   type = "none",
   className,
@@ -22,7 +23,19 @@ const FormInput = ({
 
   return (
     <div className={`form-input ${className}`}>
-      {title ? <label htmlFor={id}>{title}</label> : null}
+      <div className="formInput_title">
+        {title ? (
+          <label htmlFor={id}>
+            {required === true ? <span>*</span> : null}
+            {title}
+          </label>
+        ) : null}
+
+        {addMessage ? (
+          <span className="formInput_sub_message">{addMessage}</span>
+        ) : null}
+      </div>
+
       <input
         onKeyDown={(e) => handleKeydown(e)}
         id={id}
@@ -41,7 +54,9 @@ const FormInput = ({
         {...props}
         // placeholder={title ? title : ""}
       />
-      {error?.message && <span>{error.message}</span>}
+      {error?.message && (
+        <span className="formInput_error_message">{error.message}</span>
+      )}
     </div>
   );
 };

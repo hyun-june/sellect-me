@@ -4,11 +4,6 @@
   flex-direction: column;
   gap: 0.3em;
 
-  h5 {
-    color: var(--text-color);
-    font-weight: bold;
-  }
-
   label {
     padding-left: 0.5em;
   }
@@ -39,9 +34,6 @@
     border: 2px solid var(--text-color);
     cursor: pointer;
     margin-left: 0.3em;
-  }
-  input:checked {
-    background-color: var(--text-color-gray);
   }
 }
 

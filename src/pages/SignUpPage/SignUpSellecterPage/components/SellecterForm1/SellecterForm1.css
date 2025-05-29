@@ -4,21 +4,29 @@
   flex-direction: column;
   gap: 2em;
 
-  & h5 {
-    color: var(--text-color);
-    font-weight: bold;
-  }
-
-  & section {
+  section {
     display: flex;
     flex-direction: column;
     gap: 0.5em;
   }
 
-  & span {
-    position: absolute;
-    right: 0;
-    cursor: pointer;
+  .custom-dropdown {
+    span {
+      position: absolute;
+      right: 0;
+      cursor: pointer;
+    }
+  }
+
+  .business_info_type {
+    .selected-section {
+      width: 15em;
+    }
+
+    .dropdown-list {
+      height: max-content;
+      overflow-y: hidden;
+    }
   }
 
   label {
@@ -31,7 +39,7 @@
   justify-content: space-between;
   gap: 1em;
 
-  & div {
+  div {
     width: 100%;
   }
 }
