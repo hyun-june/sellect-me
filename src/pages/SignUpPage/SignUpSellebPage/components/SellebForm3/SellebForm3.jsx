@@ -42,7 +42,7 @@ const SellebForm3 = ({ goToNextTab, goToPrevTab }) => {
           </span>
         </div>
       </div>
-      <FormInput
+      {agency ?   <><FormInput
         title="에이전시 입력"
         id="agency_name"
         register={register}
@@ -61,7 +61,8 @@ const SellebForm3 = ({ goToNextTab, goToPrevTab }) => {
           register={register}
           required={agency}
         />
-      </div>
+      </div></> : null}
+    
       <div className="prev_next_btn">
         <PrevButton onClick={goToPrevTab} />
         <NextButton type="submit" />
