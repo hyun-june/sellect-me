@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Calendar } from "react-calendar";
-import MainLayout from "../../../components/Layout/MainLayout/MainLayout";
+import MainLayout from ".././../../Layouts/MainLayout/MainLayout";
 import "react-calendar/dist/Calendar.css";
 import "./SchedulePage.css";
 

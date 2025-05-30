@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import MainLayout from "../../../components/Layout/MainLayout/MainLayout";
+import MainLayout from ".././../../Layouts/MainLayout/MainLayout";
 import "./ChatListPage.css";
 
 const ChatPageData = {

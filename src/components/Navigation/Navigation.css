@@ -21,7 +21,8 @@
 .navbar_alarm_login {
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
+  padding: 0 15em;
   flex: 1;
 }
 

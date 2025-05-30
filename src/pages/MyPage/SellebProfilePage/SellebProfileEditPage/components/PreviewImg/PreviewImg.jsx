@@ -9,25 +9,30 @@ const PreviewImg = () => {
 
   const handleAddImg = (e) => {
     const file = e.target.files[0];
+    const profile = window.URL.createObjectURL(file);
     if (!file) return;
 
     if (previewImgs.length >= 7) {
       return alert("사진은 최대 7개까지 등록이 가능합니다.");
     }
 
-    if (
-      previewImgs.some(
-        (img) => img.name === file.name && img.size === file.size
-      )
-    ) {
+    // if (
+    //   previewImgs.some(
+    //     (img) => img.name === file.name && img.size === file.size
+    //   )
+    // ) {
+    //   return alert("등록되어 있는 사진입니다.");
+    // }
+    if (previewImgs.some((img) => img.url === profile)) {
       return alert("등록되어 있는 사진입니다.");
     }
 
-    const profile = window.URL.createObjectURL(file);
     setPreviewImgs((prev) => [
       ...prev,
       { url: profile, name: file.name, size: file.size },
     ]);
+
+    e.target.value = "";
   };
 
   const handlePreviewImgChange = (imgUrl) => {
@@ -36,6 +41,11 @@ const PreviewImg = () => {
 
   const handleDeleteImg = (index) => {
     setPreviewImgs((prev) => {
+      const deletedImgUrl = prev[index].url;
+
+      if (preImg === deletedImgUrl) {
+        setPreImg("");
+      }
       window.URL.revokeObjectURL(prev[index].url);
       return prev.filter((_, idx) => idx !== index);
     });

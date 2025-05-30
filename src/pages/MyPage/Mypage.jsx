@@ -1,5 +1,5 @@
 import CustomBox from "../../components/CustomBox/CustomBox";
-import MainLayout from "../../components/Layout/MainLayout/MainLayout";
+import MainLayout from "./../../Layouts/MainLayout/MainLayout";
 import ProfileImgBox from "../../components/ProfileImgBox/ProfileImgBox";
 import HamburgerMenu from "./../../components/HamburgerMenu/HamburgerMenu";
 import { FaRegCalendarCheck } from "react-icons/fa";
@@ -26,7 +26,7 @@ const boxListRight = {
   selleb: [
     { title: "프로젝트 관리", link: "/mypage/projectManage" },
     { title: "관심있는 셀렉터", link: "/mypage/favorites" },
-    { title: "섭외요청 확인", link: "/" },
+    { title: "섭외요청 확인", link: "/request" },
   ],
   sellecter: [
     { title: "프로젝트 관리", link: "/mypage/projectManage" },
@@ -35,9 +35,9 @@ const boxListRight = {
   ],
 };
 const mypageMenu = [
-  { name: "공지사항", address: "/" },
-  { name: "고객센터", address: "/" },
-  { name: "계정설정", address: "/" },
+  { name: "공지사항", address: "/service" },
+  { name: "고객센터", address: "/service/faq" },
+  { name: "계정설정", address: "/setting" },
   { name: "로그아웃", address: "/" },
 ];
 
@@ -167,6 +167,7 @@ const MyPage = (props) => {
           </div>
           <div className="mypage_menuList">
             <HamburgerMenu menu={mypageMenu} />
+
             <Link to="/mypage/schedule" className="mypage_icons">
               <FaRegCalendarCheck />
             </Link>

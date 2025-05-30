@@ -1,4 +1,4 @@
-import MainLayout from "../../components/Layout/MainLayout/MainLayout";
+import MainLayout from "./../../Layouts/MainLayout/MainLayout";
 import ServiceForm from "./components/ServiceForm/ServiceForm";
 import "./ServicePage.css";
 

@@ -1,4 +1,4 @@
-import MainLayout from "../../components/Layout/MainLayout/MainLayout";
+import MainLayout from "./../../Layouts/MainLayout/MainLayout";
 import Chatting from "../../components/Chatting/Chatting";
 import Button from "./../../components/Button/Button";
 import { useEffect, useRef, useState } from "react";

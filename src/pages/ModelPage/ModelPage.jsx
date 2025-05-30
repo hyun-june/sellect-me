@@ -1,5 +1,5 @@
 import { useLocation } from "react-router-dom";
-import MainLayout from "./../../components/Layout/MainLayout/MainLayout";
+import MainLayout from "././../../Layouts/MainLayout/MainLayout";
 import { useState } from "react";
 import ModelSideBar from "./components/ModelSideBar/ModelSideBar";
 import ModelDetailSideBar from "./components/ModelDetailSideBar/ModelDetailSideBar";

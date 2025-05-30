@@ -9,7 +9,7 @@ import AddCareer from "../../components/AddCareer/AddCareer";
 import AddDeleteTag from "../../../../components/AddDeleteTag/AddDeleteTag";
 import Button from "../../../../components/Button/Button";
 import "./SellebProfileEditPage.css";
-import MainLayout from "../../../../components/Layout/MainLayout/MainLayout";
+import MainLayout from "../.././../../Layouts/MainLayout/MainLayout";
 
 const testData = {
   height: "180",

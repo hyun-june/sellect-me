@@ -70,6 +70,7 @@ const Navigation = () => {
           )}
         </div>
         <div className="nav_items">
+          <LoginLinks />
           {user ? (
             <div className="nav_alarm">
               <FaBell className="alarm_icon" onClick={handleOpenAlarm} />
@@ -83,7 +84,6 @@ const Navigation = () => {
               ) : null}
             </div>
           ) : null}
-          <LoginLinks />
         </div>
       </div>
     </div>

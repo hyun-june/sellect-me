@@ -1,4 +1,4 @@
-import MainLayout from "../../components/Layout/MainLayout/MainLayout";
+import MainLayout from "./../../Layouts/MainLayout/MainLayout";
 import HamburgerMenu from "./../../components/HamburgerMenu/HamburgerMenu";
 import CardBox from "../../components/CardBox/CardBox";
 import { useEffect, useRef, useState } from "react";

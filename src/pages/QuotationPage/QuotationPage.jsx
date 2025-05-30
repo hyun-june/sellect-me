@@ -1,5 +1,5 @@
 import { useForm } from "react-hook-form";
-import MainLayout from "../../components/Layout/MainLayout/MainLayout";
+import MainLayout from "./../../Layouts/MainLayout/MainLayout";
 import { useEffect, useState } from "react";
 import { Calendar } from "react-calendar";
 import DropdownForm from "../../components/DropdownForm/DropdownForm";

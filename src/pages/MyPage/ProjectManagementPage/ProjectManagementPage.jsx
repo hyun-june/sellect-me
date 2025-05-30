@@ -1,5 +1,5 @@
 import CustomTabs from "../../../components/CustomTabs/CustomTabs";
-import MainLayout from "../../../components/Layout/MainLayout/MainLayout";
+import MainLayout from ".././../../Layouts/MainLayout/MainLayout";
 import ProjectContentBox from "./components/ProjectContentBox/ProjectContentBox";
 import "./ProjectManagementPage.css";
 

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import MainLayout from "../../components/Layout/MainLayout/MainLayout";
+import MainLayout from "./../../Layouts/MainLayout/MainLayout";
 import CustomBox from "./../../components/CustomBox/CustomBox";
 import "./AccountSettingPage.css";
 

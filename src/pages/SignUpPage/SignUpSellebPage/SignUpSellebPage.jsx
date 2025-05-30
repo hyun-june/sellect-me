@@ -7,7 +7,7 @@ import SellebForm4 from "./components/SellebForm4/SellebForm4";
 import SellebForm5 from "./components/SellebForm5/SellebForm5";
 import ConsentForm from "../components/ConsentForm/ConsentForm";
 import CompleteForm from "../components/CompleteForm/CompleteForm";
-import MainLayout from "./../../../components/Layout/MainLayout/MainLayout";
+import MainLayout from "./.././../../Layouts/MainLayout/MainLayout";
 import "./SignUpSellebPage.css";
 
 const tabList = [

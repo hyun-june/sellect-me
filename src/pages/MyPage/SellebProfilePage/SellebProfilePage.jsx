@@ -5,7 +5,7 @@ import ProfileInfoList from "./../../../components/ProfileInfoList/ProfileInfoLi
 import CustomTabs from "./../../../components/CustomTabs/CustomTabs";
 import TagButton from "./../../../components/TagButton/TagButton";
 import Button from "./../../../components/Button/Button";
-import MainLayout from "../../../components/Layout/MainLayout/MainLayout";
+import MainLayout from ".././../../Layouts/MainLayout/MainLayout";
 import LikeButton from "./../../../components/LikeButton/LikeButton";
 import "./SellebProfilePage.css";
 

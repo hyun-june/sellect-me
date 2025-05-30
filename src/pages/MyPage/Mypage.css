@@ -5,12 +5,12 @@
   gap: 1em;
 
   h3 {
-    margin: 0;
+    margin-bottom: 16px;
   }
 
   img {
-    width: 250px;
-    height: 300px;
+    width: 300px;
+    height: 350px;
     object-fit: cover;
     object-position: top;
   }
@@ -58,8 +58,6 @@
 
 .mypage_right_box {
   height: 70px;
-  width: 100%;
-
   color: var(--text-color);
 
   .custom_box {
@@ -86,14 +84,13 @@
   .menu-list {
     position: absolute;
     top: 0;
-    /* right: -12em; */
-    right: 6em;
-    background-color: white;
+    right: -13em;
     display: flex;
     flex-direction: column;
     border: 1px solid var(--line-color);
     border-radius: 10px;
     padding: 1em 0em;
+    background-color: white;
 
     li {
       width: 10em;
@@ -112,17 +109,18 @@
   }
 
   .hamburger-section {
+    height: 70px;
     display: flex;
+    align-items: center;
     justify-content: center;
-  }
-
-  .hamburger-menu.open {
-    height: 0px;
   }
 
   .mypage_icons {
     color: var(--text-color);
     font-size: 2em;
+    height: 70px;
+    display: flex;
+    align-items: center;
   }
 }
 

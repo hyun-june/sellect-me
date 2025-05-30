@@ -1,6 +1,5 @@
 .selleb_profile {
-  width: 1200px;
-
+  width: 100%;
   .selleb_profile_header {
     display: flex;
     justify-content: space-between;

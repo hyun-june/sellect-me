@@ -1,4 +1,4 @@
-import HamburgerMenu from "../../HamburgerMenu/HamburgerMenu";
+import HamburgerMenu from "../../components/HamburgerMenu/HamburgerMenu";
 import "./AdminLayout.css";
 import { Link, Outlet, useLocation } from "react-router-dom";
 

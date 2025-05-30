@@ -1,11 +1,6 @@
-.favorite_container {
-  width: 100%;
-}
-
 .favorite_card_section {
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
-  flex: 1;
   gap: 1.5em;
 }

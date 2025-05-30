@@ -4,7 +4,7 @@ import ProfileImgBox from "./../../../components/ProfileImgBox/ProfileImgBox";
 import ProfileInfoList from "./../../../components/ProfileInfoList/ProfileInfoList";
 import TagButton from "./../../../components/TagButton/TagButton";
 import CustomTabs from "./../../../components/CustomTabs/CustomTabs";
-import MainLayout from "../../../components/Layout/MainLayout/MainLayout";
+import MainLayout from ".././../../Layouts/MainLayout/MainLayout";
 import LikeButton from "../../../components/LikeButton/LikeButton";
 import "./SellecterProfilePage.css";
 

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "./HamburgerMenu.css";
+import { Link } from "react-router-dom";
 
 const HamburgerMenu = ({ ...props }) => {
   const [menuToggle, setMenuToggle] = useState(false);
@@ -16,21 +17,21 @@ const HamburgerMenu = ({ ...props }) => {
         <div className="burger_line3"></div>
       </span>
 
-      <div className={`hamburger-menu  ${menuToggle ? "open" : ""}`}>
-        {menuToggle && (
+      {menuToggle && (
+        <div className={`hamburger-menu  ${menuToggle ? "open" : ""}`}>
           <ul className="menu-list">
             {menu.map((item, index) => (
-              <li key={index}>
-                <a href={item.address}>{item.name} </a>
-              </li>
-
-              // <li>
-              //   <Link to={item.address}>{item.name}</Link>
+              // <li key={index}>
+              //   <a href={item.address}>{item.name} </a>
               // </li>
+
+              <li>
+                <Link to={item.address}>{item.name}</Link>
+              </li>
             ))}
           </ul>
-        )}
-      </div>
+        </div>
+      )}
     </nav>
   );
 };

@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
-import MainLayout from "../../components/Layout/MainLayout/MainLayout";
 import PointBox from "./components/PointBox/PointBox";
 import { navigateReload } from "../../utils/navigateReload";
+import MainLayout from "./../../Layouts/MainLayout/MainLayout";
 import "./AboutPage.css";
 
 const AboutPage = (props) => {

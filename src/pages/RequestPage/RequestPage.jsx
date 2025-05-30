@@ -1,5 +1,5 @@
 import { useState } from "react";
-import MainLayout from "../../components/Layout/MainLayout/MainLayout";
+import MainLayout from "./../../Layouts/MainLayout/MainLayout";
 import ProfileImgBox from "../../components/ProfileImgBox/ProfileImgBox";
 import ProfileInfoList from "../../components/ProfileInfoList/ProfileInfoList";
 import Button from "../../components/Button/Button";

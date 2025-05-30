@@ -6,10 +6,6 @@
   flex-direction: column;
   gap: 1em;
 
-  h3 {
-    margin: 0;
-  }
-
   .bankPage_Info {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -17,6 +13,7 @@
 
     p {
       margin: 0;
+      font-size: 1.2em;
     }
 
     .bankPage_Info_Inner {
@@ -35,7 +32,7 @@
 
         p {
           font-weight: bold;
-          font-size: 1.3em;
+          font-size: 1.5em;
         }
 
         input {
@@ -43,7 +40,7 @@
           border-radius: 5px;
           margin-right: 1em;
           text-align: right;
-          font-size: 1.3em;
+          font-size: 1.5em;
           font-weight: bold;
         }
 
@@ -59,9 +56,7 @@
         }
 
         input::placeholder {
-          font-size: 0.7em;
           text-align: center;
-          background-color: red;
         }
 
         input::-webkit-outer-spin-button,
@@ -181,6 +176,10 @@
     width: 8em;
     text-align: right;
     margin-right: 2em;
+  }
+
+  .cancel_user {
+    color: var(--warn-color);
   }
 
   button {

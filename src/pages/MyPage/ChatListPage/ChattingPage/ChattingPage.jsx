@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import CustomBox from "../../../../components/CustomBox/CustomBox";
-import MainLayout from "../../../../components/Layout/MainLayout/MainLayout";
+import MainLayout from "../.././../../Layouts/MainLayout/MainLayout";
 import { IoIosArrowBack } from "react-icons/io";
 import Chatting from "../../../../components/Chatting/Chatting";
 import "./ChattingPage.css";

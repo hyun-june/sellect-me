@@ -30,7 +30,7 @@ import TermsPage from "../pages/Terms/TermsPage/TermsPage";
 import PrivacyPage from "../pages/Terms/PrivacyPage/PrivacyPage";
 import LoginPage from "./../pages/LoginPage/LoginPage";
 import RequestPage from "../pages/RequestPage/RequestPage";
-import AdminLayout from "../components/Layout/AdminLayout/AdminLayout";
+import AdminLayout from "./../Layouts/AdminLayout/AdminLayout";
 import AdminAccount from "../pages/AdminPage/AdminAccount/AdminAccount";
 import AdminChat from "./../pages/AdminPage/AdminChat/AdminChat";
 import AdminMenu from "./../pages/AdminPage/AdminMenu/AdminMenu";

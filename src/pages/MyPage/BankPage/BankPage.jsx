@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import MainLayout from "../../../components/Layout/MainLayout/MainLayout";
+import MainLayout from ".././../../Layouts/MainLayout/MainLayout";
 import { validationPatterns } from "../../../core/constants/validationPatterns";
 import ProjectContentBox from "../ProjectManagementPage/components/ProjectContentBox/ProjectContentBox";
 import "./BankPage.css";
@@ -184,7 +184,7 @@ const BankPage = (props) => {
             <div className="bankPage_cancel_section">
               <div className="bankPage_cancel_inner">
                 <div className="cancel_inner_title">거래 취소하기</div>
-                <div>
+                <div className="cancel_user">
                   {checkedName.join(", ")} 셀럽님과의 거래를 취소하시겠습니까?
                 </div>
                 <label>

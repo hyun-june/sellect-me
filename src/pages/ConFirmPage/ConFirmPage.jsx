@@ -1,6 +1,6 @@
 import { useState } from "react";
 import SignBox from "./components/SignBox/SignBox";
-import MainLayout from "../../components/Layout/MainLayout/MainLayout";
+import MainLayout from "./../../Layouts/MainLayout/MainLayout";
 import "./ConFirmPage.css";
 
 const ConFirmPage = (props) => {

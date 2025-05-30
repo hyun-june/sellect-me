@@ -1,5 +1,5 @@
 import CustomBox from "../../components/CustomBox/CustomBox";
-import MainLayout from "../../components/Layout/MainLayout/MainLayout";
+import MainLayout from "./../../Layouts/MainLayout/MainLayout";
 import Button from "./../../components/Button/Button";
 import { useState } from "react";
 import "./VchatTicketPage.css";

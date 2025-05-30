@@ -4,7 +4,7 @@ import ConsentForm from "../components/ConsentForm/ConsentForm";
 import CompleteForm from "../components/CompleteForm/CompleteForm";
 import SellecterForm1 from "./components/SellecterForm1/SellecterForm1";
 import SellecterForm2 from "./components/SellecterForm2/SellecterForm2";
-import MainLayout from "./../../../components/Layout/MainLayout/MainLayout";
+import MainLayout from "./.././../../Layouts/MainLayout/MainLayout";
 
 const tabList = ["사업자 정보", "민감 정보", "동의서", "제출 완료"];
 

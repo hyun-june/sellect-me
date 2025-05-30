@@ -21,9 +21,12 @@
 }
 
 .sellecter_edit_sellecter_img {
-  min-width: 380px;
-  height: 400px;
+  min-width: 400px;
+  height: 450px;
+
   img {
+    width: 400px;
+    height: 450px;
     object-fit: cover;
     object-position: top;
   }
@@ -32,16 +35,17 @@
 .sellecter_edit_profile_info {
   border: 2px solid var(--line-color);
   display: flex;
-  width: 100%;
+  align-items: center;
   justify-content: center;
-  padding: 2.2em 0em;
-  gap: 3em;
+  gap: 5em;
+  flex: 1;
 
   dl {
-    gap: 1.5em;
+    gap: 3em;
 
     dt {
       margin: 0;
+      font-size: 1.2em;
     }
   }
 
@@ -57,6 +61,7 @@
 }
 
 .sellecter_edit_profile_List {
+  height: 380px;
   dl {
     margin-bottom: 1.5em;
   }
@@ -64,7 +69,7 @@
     overflow: hidden;
   }
 
-  h5 {
+  .sellecter_edit_project_title {
     color: var(--text-color);
     font-weight: bold;
     font-size: 1.2em;
