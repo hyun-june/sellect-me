@@ -2,9 +2,9 @@ import SearchBar from "../SearchBar/SearchBar";
 import { Link, useLocation } from "react-router-dom";
 import LoginLinks from "../LoginLinks";
 import { FaBell } from "react-icons/fa";
-import "./Navigation.css";
 import { useEffect, useState } from "react";
 import AlarmBox from "./components/AlarmBox/AlarmBox";
+import "./Navigation.css";
 
 const testAlarm = [
   { date: "2025-05-18", type: "notice", read: false },

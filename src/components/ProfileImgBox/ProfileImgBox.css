@@ -2,11 +2,11 @@
   display: flex;
   justify-content: center;
 
-  img {
+  /* img {
     width: 100%;
     height: auto;
     object-fit: cover;
-  }
+  } */
 }
 
 .skeleton_profile_container {

@@ -14,7 +14,7 @@ const tabList = [
   "개인 정보",
   "민감 정보",
   "에이전시",
-  "프로필",
+  // "프로필",
   "모델료",
   "동의서",
   "제출 완료",
@@ -31,18 +31,18 @@ const SignUpSellebPage = (props) => {
     setCurrentTabIndex((prevIndex) => prevIndex - 1);
   };
 
-  const handleTabSelect = (index) => {
-    if (index === tabList.length - 1) {
-      alert("모든 필드를 입력해야 제출 완료 탭으로 이동할 수 있습니다.");
-      return false;
-    }
+  // const handleTabSelect = (index) => {
+  //   if (index === tabList.length - 1) {
+  //     alert("모든 필드를 입력해야 제출 완료 탭으로 이동할 수 있습니다.");
+  //     return false;
+  //   }
 
-    if (currentTabIndex === tabList.length - 1) {
-      alert("현재 제출 완료 탭에 있습니다. 다른 탭으로 이동할 수 없습니다.");
-      return;
-    }
-    setCurrentTabIndex(index);
-  };
+  //   if (currentTabIndex === tabList.length - 1) {
+  //     alert("현재 제출 완료 탭에 있습니다. 다른 탭으로 이동할 수 없습니다.");
+  //     return;
+  //   }
+  //   setCurrentTabIndex(index);
+  // };
 
   return (
     <MainLayout {...props}>
@@ -62,12 +62,12 @@ const SignUpSellebPage = (props) => {
           ))}
         </TabList>
         <div>
-          <TabPanel>
+          {/* <TabPanel>
             <div className="tabs-inner">
               <SellebForm1 goToNextTab={goToNextTab} />
             </div>
-          </TabPanel>
-          <TabPanel>
+          </TabPanel> */}
+          {/* <TabPanel>
             <div className="tabs-form2">
               <SellebForm2
                 goToNextTab={goToNextTab}
@@ -90,7 +90,7 @@ const SignUpSellebPage = (props) => {
                 goToPrevTab={goToPrevTab}
               />
             </div>
-          </TabPanel>
+          </TabPanel> */}
           <TabPanel>
             <div className="tabs-inner">
               <SellebForm5

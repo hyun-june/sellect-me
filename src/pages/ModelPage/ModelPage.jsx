@@ -185,7 +185,7 @@ const homeShoppingData = [
     name: "하하",
   },
 ];
-const filterList = ["업데이트순", "거리순", "가격 낮은 순"];
+const filterList = ["업데이트순",  "가격 낮은 순"];
 
 const modelPageData = {
   fitting: {

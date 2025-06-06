@@ -12,7 +12,9 @@ const SellebForm3 = ({ goToNextTab, goToPrevTab }) => {
     formState: { errors },
   } = useForm();
 
-  const agency = watch("agencyStatus") === "true";
+
+    const agency = watch("agencyStatus") === "1";
+
 
   const handleInfo = (formData) => {
     if (formData.agencyStatus === null) {
@@ -27,17 +29,17 @@ const SellebForm3 = ({ goToNextTab, goToPrevTab }) => {
       <h5>에이전시 정보</h5>
       <div className="agency-info">
         <label htmlFor="">에이전시 소속</label>
-        <div>
+       <div>
           <span>
             <label>
               Y
-              <input type="radio" value="true" {...register("agencyStatus")} />
+              <input type="radio" value="1" {...register("agencyStatus")} />
             </label>
           </span>
           <span>
             <label>
               N
-              <input type="radio" value="false" {...register("agencyStatus")} />
+              <input type="radio" value="0" {...register("agencyStatus")} />
             </label>
           </span>
         </div>

@@ -22,29 +22,32 @@ const languageList = [
   "Indonesian",
 ];
 const SellebForm1 = ({ goToNextTab }) => {
-  const {
-    register,
-    handleSubmit,
-    watch,
-    setValue,
-    formState: { errors },
-  } = useForm({
-    defaultValues: {
-      first_name: "",
-      last_name: "",
-      year: "",
-      month: "",
-      day: "",
-      gender: "0",
-      nationality: "",
-      add_country: "",
-      address: "",
-      phone_number: "",
-      auth_number: "",
-      email_address: "",
-      language: "",
-    },
-  });
+ const {
+        register,
+        handleSubmit,
+        watch,
+        setValue,
+        formState: { errors },
+    } = useForm({
+        defaultValues: {
+            first_name: "",
+            last_name: "",
+            year: "",
+            month: "",
+            day: "",
+            gender: "0",
+            // world: "",
+            // country: "",
+            address: "",
+            phone_number: "",
+            // auth_number: "",
+            // email_address: "",
+            language: "",
+        },
+        // mode: "onChange",
+    });
+
+const countryList = require('country-list');
 
   const handleSelect = (fieldName, value) => {
     setValue(fieldName, value);
@@ -74,7 +77,7 @@ const SellebForm1 = ({ goToNextTab }) => {
     alert("필수 항목을 모두 입력해 주세요.");
   };
 
-  const worldList = ["대한민국", "미국", "일본", "중국"];
+
   const currentYear = new Date().getFullYear();
   const yearList = Array.from({ length: 80 }, (_, i) => `${currentYear - i}년`);
   const monthList = Array.from({ length: 12 }, (_, i) => `${i + 1}월`);
@@ -163,24 +166,25 @@ const SellebForm1 = ({ goToNextTab }) => {
             </div>
             <div>
               <select name="nationality" {...register("nationality")}>
-                <option value="">국적</option>
-                {worldList.map((world, index) => (
+                <option value="" disabled selected>국적</option>
+                {countryList.getNames().map((world, index) => (
                   <option key={index} value={world}>
                     {world}
                   </option>
                 ))}
+
               </select>
               <span>▼</span>
             </div>
           </div>
 
-          <FormInput
+          {/* <FormInput
             title="국적 추가"
             id="add_country"
             register={register}
             error={errors.country}
             type="text"
-          />
+          /> */}
         </section>
         <section className="section-address">
           <DropdownForm

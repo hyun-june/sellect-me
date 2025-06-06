@@ -36,7 +36,7 @@ const SellebForm2 = ({ goToNextTab, goToPrevTab }) => {
 
     const visaStatus = watch("visaStatus"); // string 결과 출력
 
-const isForeign = visaStatus === "false" ? true : false;
+const isForeign = visaStatus === "0" ? true : false;
 
     const onSubmit = (data) => {
         if (images.id_photo === null) {
@@ -61,7 +61,7 @@ const isForeign = visaStatus === "false" ? true : false;
     };
 
     return (
-        <div>
+      <div>
             <form className="info-form" onSubmit={handleSubmit(onSubmit)}>
                 <div>
                     <section className="info-left">
@@ -118,8 +118,9 @@ const isForeign = visaStatus === "false" ? true : false;
                                         <input
                                             type="radio"
                                             id="visaStatusYes"
-                                            {...register("visaStatus")}
-                                            value="true"
+                                            {...register("visaStatus", {valueAsNumber: true})}
+                                            value="1"
+                                            defaultChecked={true}
                                         />
                                     </div>
 
@@ -128,8 +129,8 @@ const isForeign = visaStatus === "false" ? true : false;
                                         <input
                                             type="radio"
                                             id="visaStatusNo"
-                                            {...register("visaStatus")}
-                                            value="false"
+                                            {...register("visaStatus", {valueAsNumber: true})}
+                                            value="0"
                                         />
                                     </div>
                                 </div>
@@ -137,6 +138,7 @@ const isForeign = visaStatus === "false" ? true : false;
                             {isForeign  ? (
                                 <div className="visa-input">
                                     <FormInput
+                                        disableValidation={true}
                                         title="비자 종류"
                                         id="visa"
                                         register={register}
@@ -144,6 +146,7 @@ const isForeign = visaStatus === "false" ? true : false;
                                         required={isForeign}
                                     />
                                     <FormInput
+                                        disableValidation={true}
                                         title="외국인 등록번호"
                                         id="registration_number"
                                         register={register}
@@ -156,6 +159,7 @@ const isForeign = visaStatus === "false" ? true : false;
                         <div className="account-info">
                             <h5>계좌 정보</h5>
                             <FormInput
+                                disableValidation={true}
                                 title="수익금 출금 은행"
                                 addMessage="(-제외하고 입력)"
                                 id="bank_name"
@@ -165,6 +169,7 @@ const isForeign = visaStatus === "false" ? true : false;
                                 type="text"
                             />
                             <FormInput
+                                disableValidation={true}
                                 title="예금주"
                                 id="bank_depositor"
                                 register={register}
@@ -173,11 +178,12 @@ const isForeign = visaStatus === "false" ? true : false;
                                 type="text"
                             />
                             <FormInput
+                                disableValidation={true}
                                 title="수익금 출금계좌"
-                                id="bank_number"
+                                id="bank_account"
                                 register={register}
                                 required={true}
-                                error={errors.bank_number}
+                                error={errors.bank_account}
                                 type="number"
                             />
                             <div className="warning_text">
@@ -197,11 +203,13 @@ const isForeign = visaStatus === "false" ? true : false;
                             />
 
                             <FormInput
+                                disableValidation={true}
                                 title="세금계산서수취이메일"
                                 id="tax_email"
                                 register={register}
                             />
                             <FormInput
+                                disableValidation={true}
                                 title="담당자명"
                                 id="manager_name"
                                 register={register}

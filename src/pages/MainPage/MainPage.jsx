@@ -43,10 +43,7 @@ const menu = [
   { name: "/admin", address: "/admin" },
 ];
 
-// const menu = [
-//   { name: "피팅모델", address: "/model/fitting" },
-//   { name: "고객센터", address: "/service" },
-// ];
+
 
 const MainPage = (props) => {
   const boxRef = useRef();

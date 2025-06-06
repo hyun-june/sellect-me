@@ -53,7 +53,7 @@ const AppRouter = () => {
       <ScrollToTop />
       <Routes>
         <Route path="/" element={<MainPage />} />
-        <Route path="/loginpage" element={<LoginPage />} />
+        <Route path="/login" element={<LoginPage />} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/confirm" element={<ConFirmPage />} />
         <Route path="/mypage" element={<MyPage />} />
