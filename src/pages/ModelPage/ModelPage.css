@@ -70,12 +70,37 @@
 }
 
 .model_card_section {
-  /* display: grid;
-    grid-template-columns: repeat(3, 1fr); */
   display: flex;
   flex-wrap: wrap;
-  justify-content: flex-start; /* 왼쪽 정렬 */
+  justify-content: flex-start; 
   gap: 1.8em;
-
   flex: 1;
+}
+
+.model_main_title{
+  display: flex;
+  justify-content: space-between;
+}
+
+@media screen and (max-width:430px){
+
+.model_sidebar_mobile{
+  position: absolute;
+  right: 0;
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+ 
+}
+
+.model_sidebar_mobile_btn{
+  font-size: 2em;
+}
+
+.model_sidebar_mobile_btn_exit{
+  right: 0;
+  top: 0;
+  font-size: 2em;
+  position: absolute;
+}
 }

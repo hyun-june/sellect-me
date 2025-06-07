@@ -116,7 +116,6 @@
 .nav_items {
   display: flex;
   gap: 1em;
-  width: 100px;
 }
 
 .navContainer {

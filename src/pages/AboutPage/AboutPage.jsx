@@ -32,13 +32,15 @@ const AboutPage = (props) => {
     setPointBoxIndex(0);
   }, []);
 
-  useEffect(() => {
-    window.addEventListener("wheel", handleWheel);
+useEffect(() => {
+  const isMobile = window.innerWidth < 768;
+  if (isMobile) return;
 
-    return () => {
-      window.removeEventListener("wheel", handleWheel);
-    };
-  }, [pointBoxIndex, visibleIndex]);
+  window.addEventListener("wheel", handleWheel);
+  return () => {
+    window.removeEventListener("wheel", handleWheel);
+  };
+}, [pointBoxIndex, visibleIndex]);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -59,7 +61,7 @@ const AboutPage = (props) => {
           }
         });
       },
-      { threshold: 0.7 }
+      { threshold: 0.5 }
     );
     ref.forEach((r) => {
       if (r.current) observer.observe(r.current);

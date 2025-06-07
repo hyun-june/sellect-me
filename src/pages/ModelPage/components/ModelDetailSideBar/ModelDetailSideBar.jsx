@@ -6,7 +6,7 @@ const locationList = ["서울", "경기", "강원", "충청", "대구"];
 const hairColorList = ["BLACK", "BROWON"];
 const eyeColorList = ["BLACK", "BROWON"];
 
-const ModelDetailSideBar = ({ menuType = "basic", ...props }) => {
+const ModelDetailSideBar = ({ menuType = "basic", onSearch,...props }) => {
   const {
     register,
     handleSubmit,
@@ -26,6 +26,10 @@ const ModelDetailSideBar = ({ menuType = "basic", ...props }) => {
 
   const handleDetailData = (formData) => {
     console.log("Detail : ", formData);
+
+    if(onSearch){
+      onSearch()
+    }
   };
 
   return (

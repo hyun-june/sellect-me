@@ -1,11 +1,14 @@
 import { useLocation } from "react-router-dom";
 import MainLayout from "././../../Layouts/MainLayout/MainLayout";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import ModelSideBar from "./components/ModelSideBar/ModelSideBar";
 import ModelDetailSideBar from "./components/ModelDetailSideBar/ModelDetailSideBar";
 import CustomDropdown from "../../components/CustomDropdown/CustomDropdown";
 import ModelCard from "./components/ModelCard/ModelCard";
 import Button from "../../components/Button/Button";
+import { VscSettings } from "react-icons/vsc";
+import { RxCross2 } from "react-icons/rx";
+
 import "./ModelPage.css";
 
 const fittingMenu = {
@@ -212,6 +215,9 @@ const ModelPage = (props) => {
   const [cardCount, setCardCount] = useState(12);
   const [likedList, setLikedList] = useState([]);
   const [selectedMenu, setSelectedMenu] = useState(null);
+  const [mobileSidebar,setMobileSideBar] = useState(false)
+const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+
 
   const handleToggleLike = (id) => {
     setLikedList((prev) =>
@@ -231,20 +237,61 @@ const ModelPage = (props) => {
     console.log("카드 정렬 기준", selected);
     setCardFilter(selected);
   };
+
   console.log("선택한 메뉴", selectedMenu);
+
+  const handleMobile = () =>{
+    setMobileSideBar(prev => !prev)
+  }
+  
+useEffect(() => {
+  const handleResize = () => {
+    setIsMobile(window.innerWidth <= 768);
+  };
+  window.addEventListener("resize", handleResize);
+  return () => window.removeEventListener("resize", handleResize);
+}, []);
+
   return (
     <MainLayout {...props}>
       <div className="model_container">
-        <div className="model_sidebar">
+    {isMobile ? (
+  mobileSidebar ? (
+    <div className="model_sidebar_mobile">
+      <ModelSideBar
+        data={menu}
+        selectedMenu={selectedMenu}
+        setSelectedMenu={setSelectedMenu}
+      />
+      <ModelDetailSideBar menuType={menuType} onSearch={()=>setMobileSideBar(false)}/>
+        <div onClick={handleMobile} className="model_sidebar_mobile_btn_exit"><RxCross2 />
+</div>
+    </div>
+  ) : null
+) : (
+  <div className="model_sidebar">
+    <ModelSideBar
+      data={menu}
+      selectedMenu={selectedMenu}
+      setSelectedMenu={setSelectedMenu}
+    />
+    <ModelDetailSideBar menuType={menuType} />
+  </div>
+)}
+        {/* <div className="model_sidebar">
           <ModelSideBar
             data={menu}
             selectedMenu={selectedMenu}
             setSelectedMenu={setSelectedMenu}
           />
           <ModelDetailSideBar menuType={menuType} />
-        </div>
+        </div> */}
         <div className="model_main_section">
-          <h3>{title}</h3>
+          {isMobile ? <div className="model_main_title">
+            <h3>{title}</h3>
+          <div onClick={handleMobile} className="model_sidebar_mobile_btn"><VscSettings /></div>
+          </div> :<h3>{title}</h3> }
+  
           <div className="model_filter">
             <span>1,004 {label}</span>
             <CustomDropdown
