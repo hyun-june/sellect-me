@@ -53,3 +53,13 @@
     color: var(--text-color);
   }
 }
+
+
+@media screen and (max-width:430px){
+.title_box_inner {
+    h4 {
+        padding: 0.5em 1em;
+        font-size: 1.5em;
+    }
+}
+}
