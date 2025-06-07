@@ -13,6 +13,10 @@
   width: 100px;
 }
 
+.logoImg_vertical{
+ display: none;
+}
+
 .skeleton_search {
   width: 20em;
   height: 2em;
@@ -87,4 +91,41 @@
   border-radius: 10px;
   box-shadow: inset 0px 0px 5px white;
   margin: 0.2em 0em;
+}
+
+
+@media screen and (max-width:430px){
+
+.skeleton_search {
+  width: 1em;
+  height: 2em;
+}
+
+.navbar_alarm_login {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1em;
+  flex: 1;
+}
+
+.logoImg {
+  display: none;
+}
+
+.nav_items {
+  display: flex;
+  gap: 1em;
+  width: 100px;
+}
+
+.navContainer {
+  padding: 1em;
+}
+
+.logoImg_vertical{
+ width: 25px;
+ display: block;
+}
+
 }

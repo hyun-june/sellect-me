@@ -2,11 +2,13 @@
   border-top: 1px solid var(--line-color);
   background-color: var(--text-color);
   color: var(--text-color-white);
-  height: 8em;
+  /* height: 8em; */
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   gap: 2em;
+  padding: 2em;
 
   ul {
     display: flex;
@@ -22,4 +24,23 @@
 
 .footer_point {
   color: var(--text-color-yellow);
+}
+
+
+@media screen and (max-width:430px){
+.footer-container {
+
+  ul:first-of-type {
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+  }
+
+  ul:last-of-type{
+    flex-direction: column;
+    gap: 1em;
+  }
+}
+
+
 }

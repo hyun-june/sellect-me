@@ -60,6 +60,10 @@ const Navigation = () => {
       <Link to="/">
         <img className="logoImg" src="/images/logo-outline.png" alt="" />
       </Link>
+      <Link to="/">
+        <img className="logoImg_vertical" src="/images/logo-outline-vertical-img.png" alt="" />
+      </Link>
+
 
       <div className="navbar_alarm_login">
         <div className="nav_search">
