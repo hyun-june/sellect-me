@@ -31,6 +31,7 @@
     object-position: top;
   }
 }
+
 .selleb_info {
   display: flex;
   flex-direction: column;
@@ -152,4 +153,78 @@
 
 .star-icons {
   font-size: 1.5em;
+}
+
+
+@media screen and (max-width:430px){
+
+  .selleb_profile {
+
+  .selleb_profile_header {
+    display: flex;
+    flex-direction: column;
+
+    h3 {
+      margin-bottom: 0.5em;
+      text-align: center;
+    }
+
+    div {
+       align-self: center;
+    }
+  }
+}
+
+
+.selleb_main_profile {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  margin-bottom: 2em;
+}
+
+.selleb_main_profile_img {
+  img {
+   width: 100%;
+    height: 400px;
+    object-fit: cover;
+    object-position: top;
+  }
+}
+
+.selleb_profile_pictures {
+  img {
+    width: 90px;
+    height: 90px;
+    object-fit: cover;
+  }
+}
+
+.selleb_profile_List {
+  flex-direction: column;
+  padding: 1em;
+
+    dl {
+    margin-left: 1.5em;
+    display: flex;
+    flex-direction: row;
+
+    dt {
+      font-size: 1em;
+      width: 90px;
+    }
+  }
+}
+
+
+.profile_range {
+  display: flex;
+  flex-direction: column;
+  padding: 2em;
+  
+  .hourly_rangebar_inner::after {
+  display:none;
+}
+}
 }

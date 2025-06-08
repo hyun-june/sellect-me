@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import ProfileImgBox from "./../../../components/ProfileImgBox/ProfileImgBox";
 import ProfileInfoList from "./../../../components/ProfileInfoList/ProfileInfoList";
@@ -58,7 +58,8 @@ const tabItems = [
 
 const tagList = ["사진", "영상", "뮤비", "홈쇼핑"];
 
-const SellebProfilePage = (props) => {
+const SellebProfilePage = ({...props}) => {
+
   const [time, setTime] = useState(1);
 
   const handlePayChange = (e) => {
@@ -169,5 +170,6 @@ const SellebProfilePage = (props) => {
     </MainLayout>
   );
 };
+
 
 export default SellebProfilePage;

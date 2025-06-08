@@ -32,19 +32,12 @@
 }
 
 @media screen and (max-width:430px){
-
-
 .model_card {
-
-
   img {
     width: 180px;
     height: 250px;
     object-fit: cover;
     object-position: top;
   }
-
 }
-
-
 }

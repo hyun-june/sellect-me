@@ -23,3 +23,12 @@
     }
   }
 }
+
+
+
+@media screen and (max-width:430px){
+ .profile_inner_List {
+  display: flex;
+  flex-direction: column;
+}
+}
