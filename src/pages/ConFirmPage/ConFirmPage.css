@@ -86,3 +86,28 @@
 .confirm_btn:hover {
   transform: scale(1.1);
 }
+
+
+@media screen and (max-width:430px){
+
+.confirm_container {
+   font-size: 14px;
+   width: 100%;
+}
+
+.user_info {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+.confirm_inner {
+  padding: 1em;
+}
+
+.sign_box {
+  display: flex;
+  justify-content: space-between;
+  gap: 2em;
+}
+}

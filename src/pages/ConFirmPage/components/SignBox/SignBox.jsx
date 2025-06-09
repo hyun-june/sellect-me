@@ -15,6 +15,15 @@ const SignBox = ({ id, saveSign, title }) => {
       setCtx(context);
       signText(context);
     }
+
+const preventTouchScroll = (e) => {
+      if (e.cancelable) e.preventDefault();
+    };
+    canvas.addEventListener("touchmove", preventTouchScroll, { passive: false });
+
+    return () => {
+      canvas.removeEventListener("touchmove", preventTouchScroll);
+    };
   }, []);
 
   const signText = (context) => {
@@ -25,33 +34,76 @@ const SignBox = ({ id, saveSign, title }) => {
     context.fillText("Sign", 145, 75);
   };
 
+  // const canvasEventListener = (event, type) => {
+  //   if (!ctx) return;
+
+  //   const canvas = canvasRef.current;
+  //   const canvasRect = canvas.getBoundingClientRect();
+  //   const x =
+  //     (event.clientX - canvasRect.left) * (canvas.width / canvasRect.width);
+  //   const y =
+  //     (event.clientY - canvasRect.top) * (canvas.height / canvasRect.height);
+
+  //   if (type === "down") {
+  //     setIsDrawing(true);
+  //     setHasDrawn(false);
+  //     ctx.beginPath();
+  //     ctx.moveTo(x, y);
+  //   } else if (type === "move" && isDrawing) {
+  //     setHasDrawn(true);
+  //     ctx.lineTo(x, y);
+  //     ctx.stroke();
+  //   } else if (type === "up" || type === "leave") {
+  //     setIsDrawing(false);
+  //     if (hasDrawn) {
+  //       const dataUrl = canvas.toDataURL();
+  //       saveSign(dataUrl);
+  //     }
+  //   }
+  // };
   const canvasEventListener = (event, type) => {
-    if (!ctx) return;
+  if (!ctx) return;
 
-    const canvas = canvasRef.current;
-    const canvasRect = canvas.getBoundingClientRect();
-    const x =
-      (event.clientX - canvasRect.left) * (canvas.width / canvasRect.width);
-    const y =
-      (event.clientY - canvasRect.top) * (canvas.height / canvasRect.height);
+  const canvas = canvasRef.current;
+  const canvasRect = canvas.getBoundingClientRect();
 
-    if (type === "down") {
-      setIsDrawing(true);
-      setHasDrawn(false);
-      ctx.beginPath();
-      ctx.moveTo(x, y);
-    } else if (type === "move" && isDrawing) {
-      setHasDrawn(true);
-      ctx.lineTo(x, y);
-      ctx.stroke();
-    } else if (type === "up" || type === "leave") {
-      setIsDrawing(false);
-      if (hasDrawn) {
-        const dataUrl = canvas.toDataURL();
-        saveSign(dataUrl);
-      }
+  let x, y;
+
+   if (event.touches && event.touches.length > 0) {
+    // 터치 중 (터치 중일 때)
+    x = (event.touches[0].clientX - canvasRect.left) * (canvas.width / canvasRect.width);
+    y = (event.touches[0].clientY - canvasRect.top) * (canvas.height / canvasRect.height);
+  } else if (event.changedTouches && event.changedTouches.length > 0) {
+    // 터치 종료 시
+    x = (event.changedTouches[0].clientX - canvasRect.left) * (canvas.width / canvasRect.width);
+    y = (event.changedTouches[0].clientY - canvasRect.top) * (canvas.height / canvasRect.height);
+  } else if (event.clientX && event.clientY) {
+    // 마우스 이벤트
+    x = (event.clientX - canvasRect.left) * (canvas.width / canvasRect.width);
+    y = (event.clientY - canvasRect.top) * (canvas.height / canvasRect.height);
+  } else {
+    return; // 유효하지 않은 이벤트
+  }
+
+  if (type === "down") {
+    setIsDrawing(true);
+    setHasDrawn(false);
+    ctx.beginPath();
+    ctx.moveTo(x, y);
+  } else if (type === "move" && isDrawing) {
+    setHasDrawn(true);
+    ctx.lineTo(x, y);
+    ctx.stroke();
+  } else if (type === "up" || type === "leave") {
+    setIsDrawing(false);
+    if (hasDrawn) {
+      const dataUrl = canvas.toDataURL();
+      saveSign(dataUrl);
     }
-  };
+  }
+
+  if (event.cancelable) event.preventDefault();
+};
 
   const deleteSign = () => {
     const canvas = canvasRef.current;
@@ -80,7 +132,9 @@ const SignBox = ({ id, saveSign, title }) => {
         }}
         onMouseUp={(event) => {
           canvasEventListener(event, "up");
-        }}
+        }}   onTouchStart={(e) => canvasEventListener(e, "down")}
+  onTouchMove={(e) => canvasEventListener(e, "move")}
+  onTouchEnd={(e) => canvasEventListener(e, "up")}
       ></canvas>
       <button onClick={deleteSign}>
         <FaRegTrashAlt />

@@ -223,5 +223,7 @@ input:checked {
 
 /* 미디어쿼리 */
 @media screen and (max-width:430px){
-
+.tabs_list{
+  display: none;
+}
 }

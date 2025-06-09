@@ -114,7 +114,7 @@ OOO에서 창의적이고 유능한 셀럽 분들을 모집합니다.
   ],
 };
 
-const user = "sellecter";
+const user = "selleb";
 
 const RequestPage = (props) => {
   const [time, setTime] = useState(0);

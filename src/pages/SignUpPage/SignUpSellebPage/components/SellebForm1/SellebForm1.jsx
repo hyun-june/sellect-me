@@ -2,7 +2,11 @@ import { useForm } from "react-hook-form";
 import FormInput from "../../../../../components/FormInput/FormInput";
 import NextButton from "../../../components/NextButton/NextButton";
 import DropdownForm from "../../../../../components/DropdownForm/DropdownForm";
+import { useSellebContext } from "../../../../../context/SellebContext";
+import { useMobileContext } from "../../../../../context/MobileContext";
 import "./SellebForm1.css";
+import { useEffect } from "react";
+
 
 const languageList = [
   "Korean",
@@ -46,31 +50,57 @@ const SellebForm1 = ({ goToNextTab }) => {
         },
         // mode: "onChange",
     });
+const { formData,updateFormData} = useSellebContext();
+const isMobile= useMobileContext();
 
 const countryList = require('country-list');
 
-  const handleSelect = (fieldName, value) => {
+const handleSelect = (fieldName, value) => {
     setValue(fieldName, value);
   };
 
-  const handleInfo = (formData) => {
-    if (!formData.year || !formData.month || !formData.day) {
-      return alert("생년월일을 모두 입력해주세요.");
-    }
-    if (!formData.gender) {
-      return alert("성별을 선택해주세요.");
-    }
-    if (!formData.nationality) {
-      return alert("국적을 선택해주세요.");
-    }
+    useEffect(() => {
+        console.log("Context의 formData가 업데이트됨:", formData);
+    }, [formData]);
 
-    if (!formData.language) {
-      return alert("언어를 선택해주세요.");
-    }
+     const onSubmit = (formData) => {
+        // if (!formData.year || !formData.month || !formData.day) {
+        //     return alert("생년월일을 모두 입력해주세요.");
+        // }
+        // if (!formData.gender) {
+        //     return alert("성별을 선택해주세요.");
+        // }
+        // if (!formData.nationality) {
+        //     return alert("국적을 선택해주세요.");
+        // }
+        //
+        // if (!formData.language) {
+        //     return alert("언어를 선택해주세요.");
+        // }
+        updateFormData(formData);
+        // console.log("완료");
+        // sessionStorage.setItem("infoFormData", JSON.stringify(formData));
+        goToNextTab();
+    };
 
-    console.log("FormData:", formData);
-    goToNextTab();
-  };
+  // const handleInfo = (formData) => {
+  //   if (!formData.year || !formData.month || !formData.day) {
+  //     return alert("생년월일을 모두 입력해주세요.");
+  //   }
+  //   if (!formData.gender) {
+  //     return alert("성별을 선택해주세요.");
+  //   }
+  //   if (!formData.nationality) {
+  //     return alert("국적을 선택해주세요.");
+  //   }
+
+  //   if (!formData.language) {
+  //     return alert("언어를 선택해주세요.");
+  //   }
+
+  //   console.log("FormData:", formData);
+  //   goToNextTab();
+  // };
 
   const handleError = (errors) => {
     console.log("유효성 검사 실패:", errors);
@@ -95,7 +125,7 @@ const countryList = require('country-list');
 
   return (
     <div className="sellebForm1-container">
-      <form onSubmit={handleSubmit(handleInfo, handleError)}>
+     <form onSubmit={handleSubmit(onSubmit, handleError)}>
         <section className="form-name">
           <FormInput
             title="이름"
@@ -154,7 +184,7 @@ const countryList = require('country-list');
         </section>
         <section className="section-country">
           <div className="country-dropdown">
-            <div>
+            <div >
               <select name="gender" {...register("gender")}>
                 <option value="0" disabled selected>
                   성별
@@ -165,7 +195,15 @@ const countryList = require('country-list');
               <span>▼</span>
             </div>
             <div>
-              <select name="nationality" {...register("nationality")}>
+              {isMobile ?
+          <FormInput
+            title="국적"
+            id="nationality"
+            register={register}
+            error={errors.nationality}
+            required={true}
+         
+          /> :    <><select name="nationality" {...register("nationality")} >
                 <option value="" disabled selected>국적</option>
                 {countryList.getNames().map((world, index) => (
                   <option key={index} value={world}>
@@ -174,7 +212,8 @@ const countryList = require('country-list');
                 ))}
 
               </select>
-              <span>▼</span>
+              <span>▼</span></>}
+              
             </div>
           </div>
 
@@ -210,7 +249,7 @@ const countryList = require('country-list');
             error={errors.phone_number}
             required={true}
           />
-
+{/* 
           <div className="auth-num-section">
             <FormInput
               title="인증번호 입력"
@@ -223,7 +262,7 @@ const countryList = require('country-list');
             <button type="button" onClick={() => console.log("인증번호")}>
               확인
             </button>
-          </div>
+          </div> */}
           <FormInput
             title="이메일 주소"
             id="email_address"

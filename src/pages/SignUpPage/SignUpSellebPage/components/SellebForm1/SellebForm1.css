@@ -79,7 +79,8 @@
     width: 100%;
   }
 
-  div {
+
+ div {
     display: flex;
     align-items: center;
     width: 100%;
@@ -95,6 +96,7 @@
     cursor: pointer;
     z-index: 0;
   }
+ 
 }
 
 .section-address {
@@ -135,4 +137,32 @@
   input {
     width: 40%;
   }
+}
+
+
+@media screen and (max-width:430px){
+.sellebForm1-container {
+  max-width: 430px;
+}
+
+.country-dropdown {
+  display: flex;
+  gap: 1em;
+  width: 100%;
+
+  .formInput_title{
+    width: max-content;
+    border: none;
+    span{
+      left:0;
+    }
+  }
+
+  .form-input{
+    border: none;
+    input{
+      height: 2.5em;
+    }
+  }
+}
 }
