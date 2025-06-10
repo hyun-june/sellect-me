@@ -12,6 +12,7 @@
   font-weight: bold;
   font-size: 1.3em;
 
+
   label {
     color: var(--text-color);
     cursor: pointer;
@@ -35,9 +36,22 @@
   display: flex;
   justify-content: space-between;
   gap: 2em;
+
+  span{
+    display: flex;
+    align-items: center;
+  }
 }
 
 .consent-text {
   display: flex;
   align-items: center;
 }
+
+
+@media screen and (max-width:430px){
+.consent {
+  font-size: 1em;
+}
+}
+

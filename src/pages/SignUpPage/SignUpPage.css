@@ -5,6 +5,7 @@
   justify-content: center;
   gap: 6em;
   margin-top: 5em;
+
 }
 
 /* .account_box {
@@ -63,4 +64,17 @@
 }
 .createBox:active {
   top: 2px;
+}
+
+
+@media screen and (max-width:430px){
+  .createAccount_section {
+      margin-top: 2em;
+ a {
+width: 100%;
+ }
+}
+.createBox {
+  width: 100%;
+}
 }

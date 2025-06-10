@@ -146,8 +146,12 @@ const MyPage = (props) => {
       <div className="mypage_container">
         <h3>MY PAGE</h3>
         <section className="mypage_inner">
+       
+
+           
           <div className="mypage_inner_left">
             <ProfileImgBox src="/images/test.jpg" />
+        
             <div>
               {boxListLeft[user]?.map((item, index) => (
                 <Link to={item.link} key={index} className="mypage_left_box">
@@ -174,7 +178,7 @@ const MyPage = (props) => {
             <Link to="/mypage/bank" className="mypage_icons">
               <FaSackDollar />
             </Link>
-          </div>
+          </div> 
         </section>
 
         <section className="mypage_graph_section">

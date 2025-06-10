@@ -119,3 +119,42 @@
     border-bottom: 1px solid var(--line-color);
   }
 }
+
+
+@media screen and (max-width:430px){
+.sellecter_edit_main_profile {
+  flex-direction: column;
+}
+
+.sellecter_edit_profile_info {
+  gap: 2em;
+  padding: 1em;
+  flex: 1;
+
+    dl {
+    gap: 2em;
+
+
+    dt {
+      font-size: 1em;
+    }
+  }
+}
+
+.sellecter_edit_profile_List {
+    height: 320px;
+}
+
+
+.sellecter_edit_tags_list {
+  ul {
+    li {
+      button {
+        right: 0.2em;
+      }
+    }
+  }
+}
+
+
+}

@@ -110,9 +110,13 @@
 
   .hamburger-section {
     height: 70px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+     display: flex;
+      align-items: center;
+      justify-content: center;
+
+    .burger__menu, .x__menu{
+      align-items: center;
+    }
   }
 
   .mypage_icons {
@@ -121,6 +125,7 @@
     height: 70px;
     display: flex;
     align-items: center;
+
   }
 }
 
@@ -136,7 +141,7 @@
 
   canvas {
     border: 1px solid var(--line-color);
-    border-radius: 0px;
+    border-radius: 0;
     padding: 1em;
     height: 400px;
     width: 100px;
@@ -166,4 +171,116 @@
   .dropdown_select {
     line-height: 1.2em;
   }
+}
+
+@media screen and (max-width:430px){
+.mypage_inner {
+  display: flex;
+  flex-direction: column;
+
+}
+
+.mypage_inner_left {
+  border-right: none;
+  display: flex;
+  flex-direction: column;
+
+  .profile_container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1em;
+    width: 100%;
+    justify-content: center;
+
+  }
+  
+  div{
+    display: flex;
+    flex-direction: row;
+  }
+}
+
+.mypage_left_box {
+  height: 70px;
+  padding: 0;
+  margin-bottom: 1em;
+
+
+  .custom_box {
+    display: flex;
+    align-items: center;
+    width: 8em;
+  }
+}
+
+.mypage_inner_right {
+  flex-direction: row;
+  padding: 0;
+
+}
+
+.mypage_right_box {
+
+  .custom_box {
+    display: flex;
+    justify-content: center;
+    width: 8em;
+    padding: 0;
+  }
+}
+
+
+.mypage_menuList {
+  flex-direction: row;
+  gap: 0.5em;
+  position: absolute;
+  top: 0;
+  right: 0;
+
+
+  .menu-list {
+    width: max-content;
+    top: 4em;
+    left: -4em;
+   z-index: 99;
+
+
+    li {
+      width: 10em;
+      height: 70px;
+      color: blue;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 0 5px 7px -1px #c7c7c7;
+      border: 1px solid var(--line-color);
+    }
+
+    a {
+      color: var(--text-color);
+    }
+  }
+
+  .hamburger-section {
+    width: max-content;
+
+    .burger__menu, .x__menu{
+      align-items: center;
+    }
+  }
+
+  .mypage_icons {
+    width: 50px;
+  }
+}
+
+.mypage_graph_section {
+
+  canvas {
+    border: 1px solid var(--line-color);
+    padding: 0;
+    height: 300px !important;
+  
+  }
+}
 }

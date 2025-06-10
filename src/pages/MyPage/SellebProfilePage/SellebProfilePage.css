@@ -186,7 +186,7 @@
 
 .selleb_main_profile_img {
   img {
-   width: 100%;
+     width: 100%;
     height: 400px;
     object-fit: cover;
     object-position: top;

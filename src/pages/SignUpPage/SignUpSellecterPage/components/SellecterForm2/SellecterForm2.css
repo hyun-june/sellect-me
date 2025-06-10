@@ -36,7 +36,7 @@
   width: 50em;
 
   p {
-    color: black;
+    color: var(--text-color);
     font-size: 1.2em;
   }
 
@@ -44,4 +44,16 @@
     margin: 0.5em 0;
     line-height: 1.2em;
   }
+}
+
+
+@media screen and (max-width:430px){
+.message-box {
+  width: 100%;
+
+    p {
+    font-size: 1.1em;
+  }
+}
+
 }

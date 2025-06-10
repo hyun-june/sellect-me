@@ -31,3 +31,12 @@
   padding: 1em;
   min-height: 17em;
 }
+
+
+@media screen and (max-width:430px){
+.notice_container {
+display: flex;
+flex-direction: column;
+}
+
+}

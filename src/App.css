@@ -226,4 +226,9 @@ input:checked {
 .tabs_list{
   display: none;
 }
+
+.react-tabs{
+  width: 100%;
+}
+
 }

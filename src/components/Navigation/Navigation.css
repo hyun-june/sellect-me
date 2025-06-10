@@ -126,5 +126,7 @@
  width: 25px;
  display: block;
 }
-
+.alarm_modal {
+  left: -10em;
+}
 }

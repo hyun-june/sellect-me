@@ -1,3 +1,12 @@
+.info-form {
+  display: flex;
+  flex-direction: column;
+
+  > div:first-child {
+    display: flex;
+  }
+}
+
 .info-left {
   border-right: 1px dashed black;
   width: 25em;
@@ -36,15 +45,6 @@
 
 .info-second-title {
   margin-top: 5.7em;
-}
-
-.info-form {
-  display: flex;
-  flex-direction: column;
-
-  > div:first-child {
-    display: flex;
-  }
 }
 
 .info-display {
@@ -123,4 +123,20 @@
   label {
     width: 70%;
   }
+}
+
+@media screen and (max-width:430px){
+.info-form {
+  > div:first-child {
+    flex-direction: column;
+  }
+}
+
+.info-left {
+  border: none;
+}
+
+.info-second-title {
+  margin-top: 2em;
+}
 }
