@@ -28,7 +28,7 @@
   display: grid;
   grid-template-columns: 1fr 5px 1fr;
   gap: 1em;
-  height: 400px;
+  height: 100%;
   background-color: white;
 
   .chat_vertical_line {
@@ -199,4 +199,36 @@
   background-color: grey;
   border-radius: 10px;
   box-shadow: inset 0px 0px 5px white;
+}
+
+
+@media screen and (max-width:430px){
+
+  .vchat_header {
+  span {
+    padding: 0.5em;
+  }
+
+  .timeout {
+    color: var(--warn-color);
+  }
+}
+
+
+.vchat_video_section{
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+
+}
+
+.vchat_chatting_section {
+  display: flex;
+  flex-direction: column;
+  border: none;
+
+  .vchat_chatting {
+    border: none;
+  }
+}
 }

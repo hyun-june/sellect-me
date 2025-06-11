@@ -54,7 +54,7 @@
       height: 70px;
       display: flex;
       align-items: center;
-      padding-left: 2em;
+      padding-left: 1em;
       font-weight: bold;
       font-size: 1.5em;
       background-color: white;
@@ -108,4 +108,22 @@
   p {
     margin: 0;
   }
+}
+
+
+@media screen and (max-width:430px){
+.service_container {
+  width: 100%;
+  margin-bottom: 8em;
+}
+
+.service_list_section{
+ .service_list {
+    .custom_box {
+      font-size: 1.2em;
+    }
+  }
+}
+
+
 }

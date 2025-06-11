@@ -49,6 +49,7 @@
   align-items: center;
   width: 60%;
 
+
   label {
     margin-bottom: 0.5em;
     width: 100%;
@@ -165,3 +166,62 @@
     }
   }
 }
+
+@media screen and (max-width:430px){
+
+  .account_title {
+    display: flex;
+  > span:first-of-type{
+    display: none;
+  }
+}
+
+.account_container {
+  display: flex;
+  flex-direction: column;
+
+  >div:first-of-type{
+    display: flex;
+    justify-content: space-between;
+  }
+
+
+  .custom_box {
+    margin: 0;
+    width: 30%;
+    height: 40px;
+    font-size: 1em;
+
+  }
+}
+
+.account_label {
+  width: 100%;
+}
+
+.account_inner {
+  padding: 0.5em;
+}
+
+
+.account_push_setting {
+  display: flex;
+  justify-content: space-between;
+  margin: 1em 0;
+
+  p {
+    font-size: 1em;
+    text-wrap: nowrap;
+  }
+
+  label {
+    margin-left: 1em;
+    font-size: 1em;
+
+    input {
+      margin-left: 0.3em;
+    }
+  }
+}
+}
+

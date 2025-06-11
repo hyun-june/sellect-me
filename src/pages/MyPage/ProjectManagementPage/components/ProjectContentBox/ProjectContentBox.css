@@ -94,3 +94,15 @@
   display: flex;
   margin-bottom: 8px;
 }
+
+
+@media screen and (max-width:430px){
+  .project_content_box {
+font-size: 14px;
+padding: 0 0.5em;
+  .content_box_img {
+    width: 40px;
+    height: 40px;
+  }
+}
+}

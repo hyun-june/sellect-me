@@ -131,3 +131,12 @@
   border-radius: 10px;
   box-shadow: inset 0px 0px 5px white;
 }
+
+@media screen and (max-width:430px){
+.message_section {
+  max-height: 300px;
+}
+}
+
+
+

@@ -2,9 +2,9 @@ import MainLayout from "./../../Layouts/MainLayout/MainLayout";
 import ServiceForm from "./components/ServiceForm/ServiceForm";
 import "./ServicePage.css";
 
-const ServicePage = () => {
+const ServicePage = (props) => {
   return (
-    <MainLayout>
+    <MainLayout {...props}>
       <ServiceForm />
     </MainLayout>
   );

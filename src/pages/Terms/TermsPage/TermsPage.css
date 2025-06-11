@@ -14,13 +14,14 @@
 
   ol {
     counter-reset: item; /* 카운터 초기화 */
-    margin: 2em 0em;
+    margin: 1em 0em;
   }
 
   li {
     list-style: none; /* 기본 리스트 스타일 제거 */
     margin-bottom: 1em;
     line-height: 1.2em;
+    padding-left: 0.5em;
   }
 
   li::before {

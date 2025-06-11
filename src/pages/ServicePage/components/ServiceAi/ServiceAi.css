@@ -35,6 +35,7 @@
   padding: 1.5em;
   display: flex;
   flex-direction: column;
+  z-index: 999;
 
   p {
     text-align: center;
@@ -54,6 +55,7 @@
   display: flex;
   flex-direction: column;
   position: relative;
+
 
   .service_ai {
     width: 30px;
@@ -118,4 +120,23 @@
   background-color: grey;
   border-radius: 10px;
   box-shadow: inset 0px 0px 5px white;
+}
+
+
+@media screen and (max-width:430px){
+
+  .service_sideNav {
+  right: 1em;
+  bottom: 2em;
+}
+
+  .service_ai {
+  width: 50px;
+  height: 50px;
+}
+
+.ai_modal {
+  right: 0.5em;
+  bottom: 7em;
+}
 }

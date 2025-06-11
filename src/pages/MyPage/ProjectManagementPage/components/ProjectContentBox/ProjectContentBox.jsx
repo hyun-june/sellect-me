@@ -60,7 +60,7 @@ const ProjectContentBox = ({
         )}
 
         <span className="content_box_name">{name}</span>
-        <span>{description}</span>
+        <span className="content_box_des">{description}</span>
         <span className="content_box_date">{date}</span>
         <span className="content_box_status">{statusMessage[status]}</span>
         <button

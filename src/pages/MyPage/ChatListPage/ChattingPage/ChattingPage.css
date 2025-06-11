@@ -90,3 +90,15 @@
   background-color: #edf5fb;
   padding: 1em 0em;
 }
+
+@media screen and (max-width:430px){
+.chattingPage_container {
+  display: flex;
+  flex-direction: column;
+}
+
+.chatting_menu {
+  border: none;
+  padding: 0;
+}
+}

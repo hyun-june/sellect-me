@@ -236,8 +236,8 @@ const PayMentPage = (props) => {
                 onClick={() => handleSelectPayMent(key)}
               >
                 <div>{value.name} pay</div>
-                <span>{value.sub ? value.sub : ""}</span>
-                {value.event && <span className="event-badge">혜택</span>}
+              {value.sub && <span className="sub_title">{value.sub}</span>}
+              {value.event && <span className="event_badge">혜택</span>}
               </Button>
             ))}
           </ul>

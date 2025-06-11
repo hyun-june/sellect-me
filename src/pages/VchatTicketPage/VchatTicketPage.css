@@ -59,6 +59,10 @@
       padding: 2em;
       position: relative;
 
+      p{
+        margin-bottom: 0.5em;
+      }
+
       button {
         background-color: var(--line-color-blue);
         opacity: 0.8;
@@ -94,4 +98,27 @@
   .ticket_select {
     border: 2px solid black;
   }
+}
+
+
+@media screen and (max-width:430px){
+.ticket_container{
+  .ticket_inner {
+    display: flex;
+    flex-direction: column;
+
+   .buy_ticket {
+      padding: 1em;
+
+      p{
+        margin-bottom: 0;
+      }
+
+    }
+
+    .ticket_font {
+    font-size: 1.5em;
+  }
+  }
+}
 }
