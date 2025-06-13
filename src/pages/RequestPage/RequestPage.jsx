@@ -64,11 +64,6 @@ const companyInfo = {
   name: "SELLECT",
   userType: "sellecter",
   profileImg: "/images/test.jpg",
-  profileSubImg: [
-    "/images/test1.png",
-    "/images/test2.jpg",
-    "/images/test3.jpg",
-  ],
 
   companyInfo: [
     { title: "회사명", content: "SELLECT" },

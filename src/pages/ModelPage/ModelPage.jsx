@@ -1,6 +1,6 @@
 import { useLocation } from "react-router-dom";
 import MainLayout from "././../../Layouts/MainLayout/MainLayout";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import ModelSideBar from "./components/ModelSideBar/ModelSideBar";
 import ModelDetailSideBar from "./components/ModelDetailSideBar/ModelDetailSideBar";
 import CustomDropdown from "../../components/CustomDropdown/CustomDropdown";
@@ -8,7 +8,7 @@ import ModelCard from "./components/ModelCard/ModelCard";
 import Button from "../../components/Button/Button";
 import { VscSettings } from "react-icons/vsc";
 import { RxCross2 } from "react-icons/rx";
-
+import {  useMobileContext } from './../../context/MobileContext';
 import "./ModelPage.css";
 
 const fittingMenu = {
@@ -216,8 +216,7 @@ const ModelPage = (props) => {
   const [likedList, setLikedList] = useState([]);
   const [selectedMenu, setSelectedMenu] = useState(null);
   const [mobileSidebar,setMobileSideBar] = useState(false)
-const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
-
+const isMobile = useMobileContext()
 
   const handleToggleLike = (id) => {
     setLikedList((prev) =>
@@ -244,13 +243,7 @@ const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
     setMobileSideBar(prev => !prev)
   }
   
-useEffect(() => {
-  const handleResize = () => {
-    setIsMobile(window.innerWidth <= 768);
-  };
-  window.addEventListener("resize", handleResize);
-  return () => window.removeEventListener("resize", handleResize);
-}, []);
+
 
   return (
     <MainLayout {...props}>

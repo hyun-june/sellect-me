@@ -126,6 +126,16 @@
   flex-direction: column;
 }
 
+.sellecter_edit_sellecter_img {
+  min-width: 400px;
+  height: 400px;
+
+  img {
+    width: 400px;
+    height: 400px;
+  }
+}
+
 .sellecter_edit_profile_info {
   gap: 2em;
   padding: 1em;

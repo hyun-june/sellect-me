@@ -91,7 +91,7 @@
     color: var(--text-color-white);
   }
 
-  button {
+  .custom_button  {
     position: absolute;
     right: 0;
     top: 3em;
@@ -102,14 +102,43 @@
 
 @media screen and (max-width:430px){
 
+.preview {
+  flex-direction: column-reverse;
+  width: 100%;
+}
+
+.previews_section {
+  padding: 0;
+}
+
+.previewBox {
+  width: 100%;
+}
+
 .previews_ImgSection {
   display: flex;
   flex-wrap: wrap;
+  position: static;
 
   img {
     width: 80px;
     height: 80px;
   }
 }
+
+.btn_section {
+  display: flex;
+  justify-content: flex-end;
+
+  label {
+    position: static;
+    width: max-content;
+  }
+  .custom_button  {
+    position: static;
+  }
+
+}
+
 
 }

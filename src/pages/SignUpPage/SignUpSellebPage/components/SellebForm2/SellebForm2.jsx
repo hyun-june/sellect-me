@@ -35,6 +35,7 @@ const SellebForm2 = ({ goToNextTab, goToPrevTab }) => {
     };
 
     const visaStatus = watch("visaStatus"); // string 결과 출력
+const parentalConsent = watch("parental_consent"); //미성년자 부모 동의서
 
 const isForeign = visaStatus === "0" ? true : false;
 
@@ -97,13 +98,13 @@ const isForeign = visaStatus === "0" ? true : false;
                                 </label>
                             </span>
 
-                            <UploadBox
-                                onChange={(e) =>
-                                    handleImageUpload(e, "consent_photo")
-                                }
-                                onDelete={() => handleDelete("consent_photo")}
-                                id="consent_photo"
-                            />
+                    {!parentalConsent && (
+  <UploadBox
+    onChange={(e) => handleImageUpload(e, "consent_photo")}
+    onDelete={() => handleDelete("consent_photo")}
+    id="consent_photo"
+  />
+)}
                         </div>
                     </section>
                     <section className="info-right">
