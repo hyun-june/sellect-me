@@ -49,7 +49,7 @@ body {
 h3 {
   font-weight: bold;
   margin-bottom: 0.5em;
-  font-size: 2em;
+  font-size: clamp(1.5em,5vw,2em);
 }
 
 h5 {
@@ -107,8 +107,9 @@ input:checked {
 
 .tabs_content {
   img {
-    width: 600px;
-    height: 700px;
+    width: 100%;
+    max-width: 600px;
+    aspect-ratio: 3 / 4;
     object-fit: cover;
     margin-bottom: 1em;
   }
@@ -205,11 +206,11 @@ input:checked {
 
 /* LoginLink */
 .LoginLink {
-  color: #333333;
+  color: var(--text-color);
   font-weight: 900;
   font-size: 0.875rem;
-  margin-left: 5px;
   text-decoration: none;
+  text-wrap: nowrap;
 }
 
 .login_btn {

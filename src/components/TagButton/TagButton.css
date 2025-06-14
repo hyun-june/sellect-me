@@ -2,12 +2,11 @@
   display: flex;
   flex-wrap: wrap;
   gap: 0.5em;
-  /* border: 2px solid var(--line-color); */
-  width: max-content;
+  width: 100%;
 
   span {
     color: var(--text-color);
-    width: 5em;
+    width:clamp(4em,4vw,5em);
     height: 2em;
     display: flex;
     align-items: center;

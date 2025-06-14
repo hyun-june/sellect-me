@@ -56,7 +56,7 @@ const tabItems = [
   },
 ];
 
-const tagList = ["사진", "영상", "뮤비", "홈쇼핑"];
+const tagList = ["사진", "영상", "뮤비", "홈쇼핑","기타"];
 
 const SellebProfilePage = ({...props}) => {
 

@@ -93,6 +93,13 @@
 .confirm_container {
    font-size: 14px;
    width: 100%;
+
+     th {
+      text-wrap: nowrap;
+      min-width: 80px;
+      text-align: left;
+  }
+
 }
 
 .user_info {

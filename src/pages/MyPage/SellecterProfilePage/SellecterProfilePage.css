@@ -96,7 +96,7 @@
 
 .sellecter_main_profile_img {
   width: 100%;
-  height: 400px;
+  height: 100%;
 }
 
 
@@ -110,7 +110,7 @@
 }
 
 .sellecter_profile_info {
-  gap: 2em;
+  gap: 1em;
   padding: 1em;
   flex: 1;
 
@@ -130,7 +130,7 @@
     height: 10em;
 
     span{
-      width: 4em;
+      width: 3em;
     }
   }
 }

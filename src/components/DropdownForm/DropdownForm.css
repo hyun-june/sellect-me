@@ -47,6 +47,6 @@
 
 .dropdown-item {
   cursor: pointer;
-  width: 15em;
+ width: clamp(14em,10vw,16em);
   padding: 0.2em 0;
 }

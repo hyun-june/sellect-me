@@ -289,25 +289,28 @@
   }
   }
   .request_profile_pictures {
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
   img {
-    width: 90px;
+    width: calc(100% - 5px);
     height: 90px;
     object-fit: cover;
   }
 }
 
   .request_profile_List{
-flex-direction: column;
-  padding: 1em;
+    flex-direction: column;
+    padding: 1em;
+    align-items: center;
+    justify-content: center;
 
     dl {
-    margin-left: 1.5em;
-    display: flex;
-    flex-direction: row;
-
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    
     dt {
       font-size: 1em;
-      width: 90px;
+      width: 100%;;
     }
   }
   }
@@ -316,7 +319,7 @@ flex-direction: column;
 .request_profile_range {
   display: flex;
   flex-direction: column;
-  padding: 2em;
+  padding: 2em 1em;
   
   .request_hourly_rangebar_inner::after {
   display:none;

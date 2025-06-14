@@ -32,7 +32,7 @@
 
   select {
     text-align: center;
-    width: 6em;
+    width: clamp(5em,5vw,6em);
     color: var(--text-color-gray);
     font-weight: bold;
     z-index: 1;
@@ -112,7 +112,7 @@
     }
 
     .selected-section {
-      width: 16em;
+      width: clamp(14em,10vw,16em);
     }
   }
 }

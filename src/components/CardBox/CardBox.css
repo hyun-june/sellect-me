@@ -10,10 +10,10 @@
   margin-bottom: 1em;
 
   h4 {
-    padding: 0.5em 1.5em;
+    padding: 0.5em clamp(1em, 3vw, 1.5em);
     position: relative;
     font-weight: bold;
-    font-size: 1.5em;
+    font-size: clamp(1em, 5vw, 1.5em);
     margin: 0;
   }
 
@@ -55,11 +55,3 @@
 }
 
 
-@media screen and (max-width:430px){
-.title_box_inner {
-    h4 {
-        padding: 0.5em 1em;
-        font-size: 1.5em;
-    }
-}
-}

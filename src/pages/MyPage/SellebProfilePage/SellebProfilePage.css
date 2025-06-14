@@ -186,7 +186,7 @@
 
 .selleb_main_profile_img {
   img {
-     width: 100%;
+    width: 100%;
     height: 400px;
     object-fit: cover;
     object-position: top;
@@ -194,25 +194,28 @@
 }
 
 .selleb_profile_pictures {
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
   img {
-    width: 90px;
+    width: calc(100% - 5px);
     height: 90px;
     object-fit: cover;
   }
 }
 
 .selleb_profile_List {
-  flex-direction: column;
-  padding: 1em;
+    flex-direction: column;
+    padding: 1em;
+    align-items: center;
+    justify-content: center;
 
     dl {
-    margin-left: 1.5em;
-    display: flex;
-    flex-direction: row;
-
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    
     dt {
       font-size: 1em;
-      width: 90px;
+      width: 100%;;
     }
   }
 }
@@ -221,7 +224,7 @@
 .profile_range {
   display: flex;
   flex-direction: column;
-  padding: 2em;
+  padding: 2em 1em;
   
   .hourly_rangebar_inner::after {
   display:none;
