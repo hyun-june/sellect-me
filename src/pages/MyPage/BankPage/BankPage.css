@@ -13,7 +13,7 @@
 
     p {
       margin: 0;
-      font-size: 1.2em;
+      font-size: clamp(1em, 5vw, 1.2em);
     }
 
     .bankPage_Info_Inner {
@@ -32,7 +32,7 @@
 
         p {
           font-weight: bold;
-          font-size: 1.5em;
+          font-size: clamp(1.2em, 5vw, 1.5em);
         }
 
         input {
@@ -40,7 +40,7 @@
           border-radius: 5px;
           margin-right: 1em;
           text-align: right;
-          font-size: 1.5em;
+          font-size: clamp(1.2em, 5vw, 1.5em);
           font-weight: bold;
         }
 
@@ -161,7 +161,7 @@
     display: flex;
     gap: 2em;
     font-weight: bold;
-    font-size: 1.2em;
+    font-size: clamp(1em, 3vw, 1.2em);
 
     input {
       margin-left: 0.5em;
@@ -169,6 +169,7 @@
 
     label {
       color: var(--text-color-gray);
+      font-size: clamp(14px, 3vw, 16px);
     }
   }
 
@@ -192,96 +193,68 @@
   }
 }
 
-
-@media screen and (max-width:430px){
+@media screen and (max-width: 430px) {
   .bankPage_container {
-
     .bankPage_Info {
       display: flex;
       flex-direction: column;
 
-    p {
-      margin: 0;
-      font-size: 1em;
-    }
-
       .bankPage_Info_Inner {
-        
-      .bankPage_Info_title {
-        padding: 0.5em 0;
-        
-        p {
-          font-size: 1.2em;
+        .bankPage_Info_title {
+          padding: 0.5em 0;
         }
-
-          input {
-          font-size: 1.2em;
-        }
-
-      }
-  }
-    }
-
-  .bankPage_content_box {
-
- .content_box_memo_inner {
-  button {
-    right: 0.5em;
-    bottom: 0.5em;
-    padding: 0.2em;
-  }
-}
-
-
-.content_box_memo_inner.open {
-  padding: 1em;
-}
-    .content_memo_form {
-      width: fit-content;
-
-      > div:last-of-type {
-        border-top: 1px solid var(--line-color);
-        padding-top: 0.5em;
       }
     }
 
-    .content_memo {
-      display: flex;
-      margin-bottom: 1em;
+    .bankPage_content_box {
+      .content_box_memo_inner {
+        button {
+          right: 0.5em;
+          bottom: 0.5em;
+          padding: 0.2em;
+        }
+      }
+
+      .content_box_memo_inner.open {
+        padding: 1em;
+      }
+      .content_memo_form {
+        width: fit-content;
+
+        > div:last-of-type {
+          border-top: 1px solid var(--line-color);
+          padding-top: 0.5em;
+        }
+      }
+
+      .content_memo {
+        display: flex;
+        margin-bottom: 1em;
+        width: 100%;
+      }
+    }
+  }
+
+  .bankPage_cancel_section {
+    .bankPage_cancel_inner {
+      gap: 0.5em;
       width: 100%;
-    }
-  }
-}
 
-.bankPage_cancel_section {
-
-  .bankPage_cancel_inner {
-    gap: 1em;
-    font-size: 1em;
-    width: 100%;
-    
-
-    input {
-      margin-left: 0.2em;
+      input {
+        margin-left: 0.2em;
+      }
     }
 
-  label {
+    .cancel_user {
       font-size: 14px;
+      text-wrap: wrap;
+      max-width: 140px;
+    }
+
+    .cancel_inner_title {
+      text-wrap: nowrap;
+      width: max-content;
+      margin-right: 0em;
     }
   }
-
-   .cancel_user {
-    font-size: 14px;
-    text-wrap: wrap;
-    max-width: 160px;
-  }
-
-
-  .cancel_inner_title {
-    text-wrap: nowrap;
-    width: max-content;
-    margin-right: 0em;
-  }
-}
-
 }

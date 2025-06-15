@@ -4,6 +4,7 @@
   h3 {
     margin-bottom: 1em;
   }
+
   .customTabs-container {
     height: 70dvh;
     display: flex;
@@ -16,6 +17,7 @@
     li {
       background-color: #fff5d9;
       color: var(--text-color-yellow);
+      padding: 0.5em;
     }
 
     .active {

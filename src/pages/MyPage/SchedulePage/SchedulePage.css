@@ -26,7 +26,7 @@
 
   /* 년월 라벨 스타일 */
   .react-calendar__navigation__label {
-    font-size: 3em;
+    font-size: clamp(2em, 3vw, 3em);
     flex-grow: 0 !important;
     margin: 0em 1em;
   }
@@ -39,7 +39,7 @@
   .react-calendar__navigation__arrow.react-calendar__navigation__prev-button,
   .react-calendar__navigation__arrow.react-calendar__navigation__next-button {
     font-weight: bold;
-    font-size: 3em;
+    font-size: clamp(2em, 3vw, 3em);
     position: relative;
     height: 100%;
     top: -5px;
@@ -81,6 +81,7 @@
       width: 35px;
       height: 35px;
       border-radius: 50%;
+      font-size: clamp(14px, 3vw, 24px);
     }
   }
 
@@ -90,13 +91,18 @@
   }
 
   .react-calendar__month-view__weekdays__weekday {
-    font-size: 2em;
+    font-size: clamp(1.5em, 3vw, 2em);
     background-color: #003768;
     border-right: 1px solid var(--line-color);
   }
 
   .react-calendar__month-view__days__day--neighboringMonth {
     color: rgba(92, 92, 92, 0.5);
+  }
+
+  /* 오늘 날짜 스타일 */
+  .react-calendar__tile--now {
+    background-color: white;
   }
 }
 
@@ -183,15 +189,12 @@
   }
 }
 
-@media screen and (max-width:430px){
-.schedule_container {
-
-
-  /* 달력 타일 */
-  .react-calendar__tile {
-
-    height: 80px;
-    overflow-y: scroll !important;
+@media screen and (max-width: 430px) {
+  .schedule_container {
+    /* 달력 타일 */
+    .react-calendar__tile {
+      height: 80px;
+      overflow-y: scroll !important;
+    }
   }
-}
 }

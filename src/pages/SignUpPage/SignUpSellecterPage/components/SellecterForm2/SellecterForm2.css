@@ -46,14 +46,15 @@
   }
 }
 
-
-@media screen and (max-width:430px){
-.message-box {
-  width: 100%;
+@media screen and (max-width: 430px) {
+  .sellecter-form {
+    width: 100%;
+  }
+  .message-box {
+    width: 100%;
 
     p {
-    font-size: 1.1em;
+      font-size: 1.1em;
+    }
   }
-}
-
 }

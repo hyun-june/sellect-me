@@ -1,11 +1,12 @@
 .project_content_box {
   background-color: #fff7dd;
-  padding: 0em 1em;
+  padding: 0em clamp(0.5em, 3vw, 1em);
   height: 4em;
   display: grid;
   align-items: center;
-  grid-template-columns: 0.5fr 0.5fr 1.5fr 0.5fr 0.5fr 0.3fr;
+  grid-template-columns: 0.5fr 0.5fr 1fr 0.5fr 0.5fr 0.3fr;
   box-shadow: 0 5px 8px -2px rgba(0, 0, 0, 0.3);
+  font-size: clamp(0.875em, 3vw, 1em);
 
   .content_box_img {
     width: 50px;
@@ -24,6 +25,12 @@
   .content_box_name {
     font-weight: bold;
   }
+}
+
+.content_box_des {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .content_box_memo {
@@ -95,14 +102,11 @@
   margin-bottom: 8px;
 }
 
-
-@media screen and (max-width:430px){
+@media screen and (max-width: 430px) {
   .project_content_box {
-font-size: 14px;
-padding: 0 0.5em;
-  .content_box_img {
-    width: 40px;
-    height: 40px;
+    .content_box_img {
+      width: 40px;
+      height: 40px;
+    }
   }
-}
 }

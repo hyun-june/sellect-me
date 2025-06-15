@@ -7,7 +7,7 @@ const testData = {
   send: {
     1: {
       name: "aaa",
-      description: "AAA테스트",
+      description: "AAA테스트AA스트테스트AAA테스트",
       date: "10.22",
       memo: [
         { id: 1, content: "내용이있음" },

@@ -12,9 +12,7 @@ const SellebForm3 = ({ goToNextTab, goToPrevTab }) => {
     formState: { errors },
   } = useForm();
 
-
-    const agency = watch("agencyStatus") === "1";
-
+  const agency = watch("agencyStatus") === "1";
 
   const handleInfo = (formData) => {
     if (formData.agencyStatus === null) {
@@ -29,7 +27,7 @@ const SellebForm3 = ({ goToNextTab, goToPrevTab }) => {
       <h5>에이전시 정보</h5>
       <div className="agency-info">
         <label htmlFor="">에이전시 소속</label>
-       <div>
+        <div>
           <span>
             <label>
               Y
@@ -44,27 +42,31 @@ const SellebForm3 = ({ goToNextTab, goToPrevTab }) => {
           </span>
         </div>
       </div>
-      {agency ?   <><FormInput
-        title="에이전시 입력"
-        id="agency_name"
-        register={register}
-        required={agency}
-      />
-      <div className="agency-date">
-        <FormInput
-          title="계약 시작일"
-          id="start_date"
-          register={register}
-          required={agency}
-        />
-        <FormInput
-          title="계약 종료일"
-          id="end_date"
-          register={register}
-          required={agency}
-        />
-      </div></> : null}
-    
+      {agency ? (
+        <>
+          <FormInput
+            title="에이전시 입력"
+            id="agency_name"
+            register={register}
+            required={agency}
+          />
+          <div className="agency-date">
+            <FormInput
+              title="계약 시작일"
+              id="start_date"
+              register={register}
+              required={agency}
+            />
+            <FormInput
+              title="계약 종료일"
+              id="end_date"
+              register={register}
+              required={agency}
+            />
+          </div>
+        </>
+      ) : null}
+
       <div className="prev_next_btn">
         <PrevButton onClick={goToPrevTab} />
         <NextButton type="submit" />

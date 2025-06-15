@@ -62,7 +62,6 @@
       display: flex;
       flex-direction: column;
       justify-content: space-around;
-    
 
       label:first-of-type {
         font-weight: bold;
@@ -99,14 +98,15 @@
 
 .payment_options_section {
   margin-bottom: 2em;
-  padding: 1em;
+  padding: clamp(0.5em, 3vw, 1em);
   border: 1px solid var(--line-color);
   display: flex;
   flex-direction: column;
   gap: 0.5em;
+  font-size: clamp(0.875em, 3vw, 1em);
 
   .sub_title {
-    font-size: 0.8em;
+    font-size: clamp(0.5em, 3vw, 0.8em);
     color: var(--text-color-gray);
   }
 
@@ -136,7 +136,7 @@
 
   .event_badge {
     background-color: #dceaf7;
-   color: var(--text-color-navy);
+    color: var(--text-color-navy);
     border-radius: 8px;
     position: absolute;
     left: 0.2em;
@@ -198,45 +198,36 @@
   }
 }
 
-
-@media screen and (max-width:430px){
-.payment_container {
-
-.payment_details{
-  display: flex;
-  flex-direction: column;
+@media screen and (max-width: 430px) {
+  .payment_container {
+    .payment_details {
+      display: flex;
+      flex-direction: column;
       font-size: 1em;
-}
+    }
 
- .assent_section {
-    gap: 0.5em;
-    font-size: 1em;
+    .assent_section {
+      gap: 0.5em;
+      font-size: 1em;
+    }
   }
-}
 
-.payment_options_section {
-  margin-bottom: 2em;
-  padding: 1em;
-  border: 1px solid var(--line-color);
-  display: flex;
-  flex-direction: column;
-  gap: 0.5em;
-
-  .custom_button {
-    width: max-content;
-    height: 3em;
-  }
+  .payment_options_section {
+    .custom_button {
+      width: max-content;
+    }
     .event_badge {
       top: -0.5em;
       left: -0.5em;
+    }
   }
-}
 
-.tax_voice_section {
-.custom_button {
-  position: static;
-  display: flex;
-  justify-self: flex-end;
-  align-items: center;
-  }}
+  .tax_voice_section {
+    .custom_button {
+      position: static;
+      display: flex;
+      justify-self: flex-end;
+      align-items: center;
+    }
+  }
 }

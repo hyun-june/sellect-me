@@ -214,83 +214,78 @@
   font-size: 1.5em;
 }
 
-@media screen and (max-width:430px){
-
+@media screen and (max-width: 430px) {
   .selleb_edit_profile {
+    .selleb_edit_header {
+      display: flex;
+      h3 {
+        margin-bottom: 0.5em;
+        text-align: center;
+      }
 
-  .selleb_edit_header {
+      div {
+        align-self: center;
+      }
+    }
+  }
+
+  .selleb_edit_main_profile {
+    width: 100%;
     display: flex;
-    h3 {
-      margin-bottom: 0.5em;
-      text-align: center;
-    }
+    flex-direction: column;
+    gap: 1em;
+    margin-bottom: 2em;
+  }
 
-    div {
-       align-self: center;
+  .selleb_edit_main_img {
+    width: 100%;
+    height: 100%;
+  }
+
+  .selleb_edit_main_profile_img {
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top;
     }
   }
-}
 
-.selleb_edit_main_profile {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  gap: 1em;
-  margin-bottom: 2em;
-}
-
-.selleb_edit_main_img {
-   width: 100%;
-    height: 400px;
-}
-
-.selleb_edit_main_profile_img {
-  img {
-   width: 100%;
-    height: 400px;
-    object-fit: cover;
-    object-position: top;
-  }
-}
-
-.selleb_edit_sub_img {
-  width: 90px;
-  height: 90px;
-}
-
-
-.selleb_edit_profile_pictures{
-  img {
+  .selleb_edit_sub_img {
     width: 90px;
     height: 90px;
-    object-fit: cover;
   }
-}
 
-.selleb_edit_profile_List{
-  flex-direction: column;
-  padding: 1em;
-
-    dl {
-    margin-left: 1.5em;
-    display: flex;
-    flex-direction: row;
-
-    dt {
-      font-size: 1em;
+  .selleb_edit_profile_pictures {
+    img {
       width: 90px;
+      height: 90px;
+      object-fit: cover;
     }
   }
-}
 
+  .selleb_edit_profile_List {
+    flex-direction: column;
+    padding: 1em;
 
-.selleb_edit_profile_range {
-  display: flex;
-  flex-direction: column;
-  padding: 2em;
-  
-  .selleb_edit_hourly_rangebar::after {
-  display:none;
-}
-}
+    dl {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+
+      dt {
+        font-size: 1em;
+        width: 100%;
+      }
+    }
+  }
+
+  .selleb_edit_profile_range {
+    display: flex;
+    flex-direction: column;
+    padding: 2em;
+
+    .selleb_edit_hourly_rangebar::after {
+      display: none;
+    }
+  }
 }

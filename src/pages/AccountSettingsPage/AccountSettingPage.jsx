@@ -35,9 +35,7 @@ const defaultUserData = {
 };
 
 const AccountSettingPage = (props) => {
-  const [tabIndex, setTabIndex] = useState(
-    Number(localStorage.getItem("tabIndex")) || 0
-  );
+  const [tabIndex, setTabIndex] = useState(0);
   const [userData, setUserData] = useState(defaultUserData);
   const [formData, setFormData] = useState(defaultUserData);
   const [userReason, setUserReason] = useState([]);
@@ -46,7 +44,6 @@ const AccountSettingPage = (props) => {
 
   const handleTab = (index) => {
     setTabIndex(index);
-    localStorage.setItem("tabIndex", index);
   };
 
   const editInfo = (e) => {

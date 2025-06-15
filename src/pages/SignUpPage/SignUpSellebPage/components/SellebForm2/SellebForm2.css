@@ -1,7 +1,7 @@
 .info-form {
   display: flex;
   flex-direction: column;
-
+  width: 100%;
 
   > div:first-child {
     display: flex;
@@ -126,18 +126,23 @@
   }
 }
 
-@media screen and (max-width:430px){
-.info-form {
-  > div:first-child {
-    flex-direction: column;
+@media screen and (max-width: 430px) {
+  .info-form {
+    > div:first-child {
+      flex-direction: column;
+    }
   }
-}
 
-.info-left {
-  border: none;
-}
+  .info-left {
+    border: none;
+    width: 100%;
+  }
 
-.info-second-title {
-  margin-top: 2em;
-}
+  .info-right {
+    width: 100%;
+  }
+
+  .info-second-title {
+    margin-top: 2em;
+  }
 }

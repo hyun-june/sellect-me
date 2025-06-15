@@ -11,7 +11,6 @@
 
 .agency-info {
   display: flex;
-  
   justify-content: space-between;
   border-bottom: 1px solid var(--line-color);
   color: var(--text-color-gray);
@@ -47,9 +46,8 @@
   }
 }
 
-@media screen and (max-width:430px){
-.agency-section {
- width: 100%;
+@media screen and (max-width: 430px) {
+  .agency-section {
+    width: 100%;
+  }
 }
-}
-

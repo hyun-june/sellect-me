@@ -9,7 +9,7 @@ import ConsentForm from "../components/ConsentForm/ConsentForm";
 import CompleteForm from "../components/CompleteForm/CompleteForm";
 import MainLayout from "./.././../../Layouts/MainLayout/MainLayout";
 import "./SignUpSellebPage.css";
-import { SellebProvider } from './../../../context/SellebContext';
+import { SellebProvider } from "./../../../context/SellebContext";
 
 const tabList = [
   "개인 정보",
@@ -48,44 +48,44 @@ const SignUpSellebPage = (props) => {
   return (
     <MainLayout {...props}>
       <SellebProvider>
-      <Tabs selectedIndex={currentTabIndex} onSelect={() => false}>
-        <TabList className="tabs_list">
-          {tabList.map((item, index) => (
-            <>
-              <Tab
-                key={index}
-                className={`tab_item ${
-                  index < currentTabIndex ? "visited" : ""
-                }`}
-              >
-                {item}
-              </Tab>
-            </>
-          ))}
-        </TabList>
-        <div>
-          <TabPanel>
-            <div className="tabs-inner">
-              <SellebForm1 goToNextTab={goToNextTab} />
-            </div>
-          </TabPanel>
-          <TabPanel>
-            <div className="tabs-form2">
-              <SellebForm2
-                goToNextTab={goToNextTab}
-                goToPrevTab={goToPrevTab}
-              />
-            </div>
-          </TabPanel>
-          <TabPanel>
-            <div className="tabs-inner">
-              <SellebForm3
-                goToNextTab={goToNextTab}
-                goToPrevTab={goToPrevTab}
-              />
-            </div>
-          </TabPanel>
-          {/* <TabPanel>
+        <Tabs selectedIndex={currentTabIndex} onSelect={() => false}>
+          <TabList className="tabs_list">
+            {tabList.map((item, index) => (
+              <>
+                <Tab
+                  key={index}
+                  className={`tab_item ${
+                    index < currentTabIndex ? "visited" : ""
+                  }`}
+                >
+                  {item}
+                </Tab>
+              </>
+            ))}
+          </TabList>
+          <div>
+            <TabPanel>
+              <div className="tabs-inner">
+                <SellebForm1 goToNextTab={goToNextTab} />
+              </div>
+            </TabPanel>
+            <TabPanel>
+              <div className="tabs-form2">
+                <SellebForm2
+                  goToNextTab={goToNextTab}
+                  goToPrevTab={goToPrevTab}
+                />
+              </div>
+            </TabPanel>
+            <TabPanel>
+              <div className="tabs-inner">
+                <SellebForm3
+                  goToNextTab={goToNextTab}
+                  goToPrevTab={goToPrevTab}
+                />
+              </div>
+            </TabPanel>
+            {/* <TabPanel>
             <div className="tabs-inner">
               <SellebForm4
                 goToNextTab={goToNextTab}
@@ -93,30 +93,30 @@ const SignUpSellebPage = (props) => {
               />
             </div>
           </TabPanel> */}
-          <TabPanel>
-            <div className="tabs-inner">
-              <SellebForm5
-                goToNextTab={goToNextTab}
-                goToPrevTab={goToPrevTab}
-              />
-            </div>
-          </TabPanel>
-          <TabPanel>
-            <div className="tabs-inner">
-              <ConsentForm
-                type="selleb"
-                goToNextTab={goToNextTab}
-                goToPrevTab={goToPrevTab}
-              />
-            </div>
-          </TabPanel>
-          <TabPanel>
-            <div className="tabs-inner">
-              <CompleteForm type="selleb" goToPrevTab={goToPrevTab} />
-            </div>
-          </TabPanel>
-        </div>
-      </Tabs>
+            <TabPanel>
+              <div className="tabs-inner">
+                <SellebForm5
+                  goToNextTab={goToNextTab}
+                  goToPrevTab={goToPrevTab}
+                />
+              </div>
+            </TabPanel>
+            <TabPanel>
+              <div className="tabs-inner">
+                <ConsentForm
+                  type="selleb"
+                  goToNextTab={goToNextTab}
+                  goToPrevTab={goToPrevTab}
+                />
+              </div>
+            </TabPanel>
+            <TabPanel>
+              <div className="tabs-inner">
+                <CompleteForm type="selleb" goToPrevTab={goToPrevTab} />
+              </div>
+            </TabPanel>
+          </div>
+        </Tabs>
       </SellebProvider>
     </MainLayout>
   );

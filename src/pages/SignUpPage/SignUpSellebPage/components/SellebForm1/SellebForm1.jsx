@@ -3,10 +3,8 @@ import FormInput from "../../../../../components/FormInput/FormInput";
 import NextButton from "../../../components/NextButton/NextButton";
 import DropdownForm from "../../../../../components/DropdownForm/DropdownForm";
 import { useSellebContext } from "../../../../../context/SellebContext";
-import { useMobileContext } from "../../../../../context/MobileContext";
-import "./SellebForm1.css";
 import { useEffect } from "react";
-
+import "./SellebForm1.css";
 
 const languageList = [
   "Korean",
@@ -26,62 +24,62 @@ const languageList = [
   "Indonesian",
 ];
 const SellebForm1 = ({ goToNextTab }) => {
- const {
-        register,
-        handleSubmit,
-        watch,
-        setValue,
-        formState: { errors },
-    } = useForm({
-        defaultValues: {
-            first_name: "",
-            last_name: "",
-            year: "",
-            month: "",
-            day: "",
-            gender: "0",
-            // world: "",
-            // country: "",
-            address: "",
-            phone_number: "",
-            // auth_number: "",
-            // email_address: "",
-            language: "",
-        },
-        // mode: "onChange",
-    });
-const { formData,updateFormData} = useSellebContext();
-const isMobile= useMobileContext();
+  const {
+    register,
+    handleSubmit,
+    watch,
+    setValue,
+    formState: { errors },
+  } = useForm({
+    defaultValues: {
+      first_name: "",
+      last_name: "",
+      year: "",
+      month: "",
+      day: "",
+      gender: "0",
+      // world: "",
+      // country: "",
+      address: "",
+      phone_number: "",
+      // auth_number: "",
+      // email_address: "",
+      language: "",
+    },
+    // mode: "onChange",
+  });
+  const { formData, updateFormData } = useSellebContext();
 
-const countryList = require('country-list');
+  const countryList = require("country-list");
+  const countryNames = countryList.getNames();
 
-const handleSelect = (fieldName, value) => {
+  const handleSelect = (fieldName, value) => {
     setValue(fieldName, value);
   };
 
-    useEffect(() => {
-        console.log("Context의 formData가 업데이트됨:", formData);
-    }, [formData]);
+  useEffect(() => {
+    console.log("Context의 formData가 업데이트됨:", formData);
+  }, [formData]);
 
-     const onSubmit = (formData) => {
-        // if (!formData.year || !formData.month || !formData.day) {
-        //     return alert("생년월일을 모두 입력해주세요.");
-        // }
-        // if (!formData.gender) {
-        //     return alert("성별을 선택해주세요.");
-        // }
-        // if (!formData.nationality) {
-        //     return alert("국적을 선택해주세요.");
-        // }
-        //
-        // if (!formData.language) {
-        //     return alert("언어를 선택해주세요.");
-        // }
-        updateFormData(formData);
-        // console.log("완료");
-        // sessionStorage.setItem("infoFormData", JSON.stringify(formData));
-        goToNextTab();
-    };
+  const onSubmit = (formData) => {
+    // if (!formData.year || !formData.month || !formData.day) {
+    //     return alert("생년월일을 모두 입력해주세요.");
+    // }
+    // if (!formData.gender) {
+    //     return alert("성별을 선택해주세요.");
+    // }
+    // if (!formData.nationality) {
+    //     return alert("국적을 선택해주세요.");
+    // }
+    //
+    // if (!formData.language) {
+    //     return alert("언어를 선택해주세요.");
+    // }
+    updateFormData(formData);
+    // console.log("완료");
+    // sessionStorage.setItem("infoFormData", JSON.stringify(formData));
+    goToNextTab();
+  };
 
   // const handleInfo = (formData) => {
   //   if (!formData.year || !formData.month || !formData.day) {
@@ -107,7 +105,6 @@ const handleSelect = (fieldName, value) => {
     alert("필수 항목을 모두 입력해 주세요.");
   };
 
-
   const currentYear = new Date().getFullYear();
   const yearList = Array.from({ length: 80 }, (_, i) => `${currentYear - i}년`);
   const monthList = Array.from({ length: 12 }, (_, i) => `${i + 1}월`);
@@ -125,7 +122,7 @@ const handleSelect = (fieldName, value) => {
 
   return (
     <div className="sellebForm1-container">
-     <form onSubmit={handleSubmit(onSubmit, handleError)}>
+      <form onSubmit={handleSubmit(onSubmit, handleError)}>
         <section className="form-name">
           <FormInput
             title="이름"
@@ -184,7 +181,7 @@ const handleSelect = (fieldName, value) => {
         </section>
         <section className="section-country">
           <div className="country-dropdown">
-            <div >
+            <div className="select_gender">
               <select name="gender" {...register("gender")}>
                 <option value="0" disabled selected>
                   성별
@@ -195,25 +192,12 @@ const handleSelect = (fieldName, value) => {
               <span>▼</span>
             </div>
             <div>
-              {isMobile ?
-          <FormInput
-            title="국적"
-            id="nationality"
-            register={register}
-            error={errors.nationality}
-            required={true}
-         
-          /> :    <><select name="nationality" {...register("nationality")} >
-                <option value="" disabled selected>국적</option>
-                {countryList.getNames().map((world, index) => (
-                  <option key={index} value={world}>
-                    {world}
-                  </option>
-                ))}
-
-              </select>
-              <span>▼</span></>}
-              
+              <DropdownForm
+                label="국적"
+                list={countryNames}
+                onSelect={(value) => handleSelect("nationality", value)}
+                selectedValue=""
+              />
             </div>
           </div>
 
@@ -249,7 +233,7 @@ const handleSelect = (fieldName, value) => {
             error={errors.phone_number}
             required={true}
           />
-{/* 
+          {/* 
           <div className="auth-num-section">
             <FormInput
               title="인증번호 입력"

@@ -90,7 +90,7 @@
   background-color: grey;
   border-radius: 10px;
   box-shadow: inset 0px 0px 5px white;
-  margin: 0.2em 0em;
+  margin: 0.2em 0;
 }
 
 
@@ -98,8 +98,7 @@
   
 .nav_search{
   width: calc(100% - 50px);
-  }
-
+}
 
 .skeleton_search {
   height: 2em;

@@ -155,79 +155,74 @@
   font-size: 1.5em;
 }
 
-
-@media screen and (max-width:430px){
-
+@media screen and (max-width: 430px) {
   .selleb_profile {
+    .selleb_profile_header {
+      display: flex;
+      flex-direction: column;
 
-  .selleb_profile_header {
+      h3 {
+        margin-bottom: 0.5em;
+        text-align: center;
+      }
+
+      div {
+        align-self: center;
+      }
+    }
+  }
+
+  .selleb_main_profile {
+    width: 100%;
     display: flex;
     flex-direction: column;
+    gap: 1em;
+    margin-bottom: 2em;
+  }
 
-    h3 {
-      margin-bottom: 0.5em;
-      text-align: center;
+  .selleb_main_profile_img {
+    img {
+      width: 100%;
+      height: 400px;
+      object-fit: cover;
+      object-position: top;
     }
+  }
 
-    div {
-       align-self: center;
+  .selleb_profile_pictures {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    img {
+      width: calc(100% - 5px);
+      height: 90px;
+      object-fit: cover;
     }
   }
-}
 
-
-.selleb_main_profile {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  gap: 1em;
-  margin-bottom: 2em;
-}
-
-.selleb_main_profile_img {
-  img {
-    width: 100%;
-    height: 400px;
-    object-fit: cover;
-    object-position: top;
-  }
-}
-
-.selleb_profile_pictures {
-  display: grid;
-  grid-template-columns: repeat(4,1fr);
-  img {
-    width: calc(100% - 5px);
-    height: 90px;
-    object-fit: cover;
-  }
-}
-
-.selleb_profile_List {
+  .selleb_profile_List {
     flex-direction: column;
     padding: 1em;
     align-items: center;
     justify-content: center;
 
     dl {
-    display: grid;
-    grid-template-columns: repeat(3,1fr);
-    
-    dt {
-      font-size: 1em;
-      width: 100%;;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+
+      dt {
+        font-size: 1em;
+        width: 100%;
+      }
     }
   }
-}
 
+  .profile_range {
+    display: flex;
+    flex-direction: column;
+    padding: 2em 1em;
 
-.profile_range {
-  display: flex;
-  flex-direction: column;
-  padding: 2em 1em;
-  
-  .hourly_rangebar_inner::after {
-  display:none;
-}
-}
+    .hourly_rangebar_inner::after {
+      display: none;
+    }
+  }
 }
