@@ -276,7 +276,7 @@ const SellebProfileEditPage = (props) => {
               </div>
             </div>
           </div>
-          <div className="selleb_work_scope">
+          <div className="selleb_edit_work_scope">
             <h5>프로젝트 가능 범위</h5>
 
             <AddDeleteTag

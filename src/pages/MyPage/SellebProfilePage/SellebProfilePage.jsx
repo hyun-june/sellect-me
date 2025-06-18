@@ -155,7 +155,7 @@ const SellebProfilePage = ({ ...props }) => {
               <label>12hr</label>
             </div>
           </div>
-          <div>
+          <div className="selleb_work_scope">
             <h5>프로젝트 가능 범위</h5>
             <TagButton list={tagList} />
           </div>

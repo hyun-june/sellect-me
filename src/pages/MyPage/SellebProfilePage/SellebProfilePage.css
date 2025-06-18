@@ -95,6 +95,10 @@
     color: var(--text-color-gray);
   }
 
+  .selleb_work_scope {
+    width: 100%;
+  }
+
   .tag_container {
     span {
       width: max-content;
@@ -135,7 +139,7 @@
   width: 2px;
   height: 100%;
   top: 0;
-  right: -2em;
+  right: -1em;
   background-color: var(--line-color);
   position: absolute;
 }
@@ -163,9 +167,6 @@
 
 .star-icons {
   font-size: 1.5em;
-}
-
-@media screen and (min-width: 768px) and (max-width: 1366px) {
 }
 
 @media screen and (max-width: 430px) {

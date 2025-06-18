@@ -153,8 +153,8 @@ const SellecterProfileEditPage = (props) => {
 
             <div className="sellecter_edit_profile_List">
               <ProfileInfoList list={sellecterProjectList} />
-              <div>
-                <h5 className="sellecter_edit_project_title">프로젝트 범위</h5>
+              <div className="sellecter_edit_project">
+                <h5>프로젝트 범위</h5>
                 <AddDeleteTag
                   tags={tags}
                   defaultTags={defaultTags}

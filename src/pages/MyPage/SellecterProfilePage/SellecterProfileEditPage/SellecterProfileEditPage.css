@@ -15,37 +15,43 @@
 
 .sellecter_edit_main_profile {
   width: 100%;
-  display: flex;
   gap: 2em;
-  margin-bottom: 3em;
+  margin-bottom: 2em;
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
 }
 
 .sellecter_edit_sellecter_img {
-  width: 400px;
-  height: 450px;
+  max-height: 400px;
+  max-width: 400px;
+  width: 100%;
+  aspect-ratio: 1/1;
+
+  label {
+    width: 100%;
+    aspect-ratio: 1/1;
+  }
 
   img {
-    width: 400px;
-    height: 450px;
     object-fit: cover;
     object-position: top;
   }
 }
 
 .sellecter_edit_profile_info {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   border: 2px solid var(--line-color);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 5em;
-  flex: 1;
+  padding: clamp(1em, 2vw, 1.5em);
+  gap: 0.5em;
 
   dl {
-    gap: 3em;
+    height: 100%;
+    width: 100%;
+    gap: clamp(1em, 2vw, 1.5em);
 
     dt {
-      margin: 0;
-      font-size: clamp(1em, 3vw, 1.2em);
+      font-size: clamp(0.875em, 2vw, 1.2em);
     }
   }
 
@@ -61,29 +67,30 @@
 }
 
 .sellecter_edit_profile_List {
-  height: 380px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
   dl {
-    margin-bottom: 1.5em;
+    margin-bottom: clamp(1em, 2vw, 2em);
   }
   .tag_container {
     overflow: hidden;
+
+    span {
+      width: clamp(4em, 4vw, 5em);
+      font-size: clamp(0.875em, 1vw, 1em);
+    }
   }
 
-  .sellecter_edit_project_title {
-    color: var(--text-color);
-    font-weight: bold;
-    font-size: clamp(1em, 3vw, 1.2em);
-  }
-}
-
-.edit_career {
-  display: flex;
-  flex-direction: column;
-  gap: 1em;
-
-  li {
-    list-style-type: "-";
-    padding-left: 0.5em;
+  .sellecter_edit_project {
+    h5 {
+      color: var(--text-color);
+      font-weight: bold;
+      font-size: clamp(0.875em, 2vw, 1.2em);
+      margin-bottom: 0.5em;
+      width: max-content;
+    }
   }
 }
 
@@ -99,7 +106,6 @@
     li {
       list-style: none;
       position: relative;
-      height: 2em;
       margin-top: 0.5em;
       width: max-content;
 
@@ -117,6 +123,22 @@
   input {
     width: 5.8em;
     border-bottom: 1px solid var(--line-color);
+    height: 1.7em;
+  }
+
+  .input_container {
+    width: max-content;
+  }
+}
+
+.edit_career {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+
+  li {
+    list-style-type: "-";
+    padding-left: 0.5em;
   }
 }
 

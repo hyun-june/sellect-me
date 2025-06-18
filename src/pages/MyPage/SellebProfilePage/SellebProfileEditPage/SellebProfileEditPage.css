@@ -19,37 +19,47 @@
 
 .selleb_edit_main_profile {
   width: 100%;
-  display: flex;
   gap: 1em;
-  margin-bottom: 3em;
+  margin-bottom: 2em;
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+
+  .profile-Section {
+    label {
+      width: 100%;
+      aspect-ratio: 1 / 1.2;
+    }
+  }
 }
 
 .selleb_edit_main_img {
-  width: 450px;
-  height: 500px;
+  width: 100%;
+  aspect-ratio: 1/1.2;
+  max-height: 500px;
   object-fit: cover;
   object-position: top;
 }
 
 .selleb_edit_profile_pictures {
-  display: flex;
-  justify-content: space-between;
-  gap: 1em;
-  margin-bottom: 2em;
+  margin-bottom: 1em;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.5em;
 
   img {
-    width: 175px;
-    height: 220px;
+    width: 100%;
+    aspect-ratio: 1/1.2;
     object-fit: cover;
   }
 }
 
 .selleb_edit_sub_img {
-  width: 175px;
-  height: 220px;
+  width: 100%;
+  aspect-ratio: 1/1.2;
+  object-fit: cover;
 }
 
-.selleb_work_scope {
+.selleb_edit_work_scope {
   width: 100%;
 }
 
@@ -100,23 +110,21 @@
 }
 
 .selleb_edit_profile_List {
-  display: flex;
-  justify-content: space-around;
-  padding: 1.4em 0em;
-  gap: 2em;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
   border: 2px solid var(--line-color);
-  flex: 1;
+  align-content: center;
+  height: 100%;
 
   dl {
     margin: 0;
-    gap: 2em;
+    gap: clamp(1.5em, 1vw, 2em);
 
     dt {
-      font-size: 1.2em;
+      font-size: clamp(0.875em, 2vw, 1.2em);
     }
     dd {
-      width: 5em;
-      font-size: 1em;
+      width: clamp(4em, 1vw, 5em);
       height: 1em;
 
       div {
@@ -144,14 +152,14 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   justify-items: center;
-  gap: 3em;
+  gap: clamp(2em, 3vw, 3em);
   border-top: 2px solid var(--line-color);
   padding: 2em 0em;
 
   h5 {
     color: var(--text-color);
     font-weight: bold;
-    font-size: 1.2em;
+    font-size: clamp(1em, 2vw, 1.2em);
     margin-bottom: 0.5em;
   }
 
@@ -164,6 +172,7 @@
 
 .selleb_edit_hourly_rangebar {
   position: relative;
+  width: clamp(10em, 30vw, 16em);
 }
 
 .selleb_edit_hourly_rangebar::after {
@@ -171,7 +180,7 @@
   width: 2px;
   height: 100%;
   top: 0;
-  right: -2em;
+  right: -1em;
   background-color: var(--line-color);
   position: absolute;
 }
