@@ -185,7 +185,7 @@ const QuotationPage = (props) => {
 
   return (
     <MainLayout {...props}>
-      <div>
+      <div className="quotation_container">
         <h3>
           {user === "selleb"
             ? "섭외 요청하기"

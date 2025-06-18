@@ -1,6 +1,11 @@
+.quotation_container {
+  width: 100%;
+}
+
 .quotationForm {
   display: flex;
   flex-direction: column;
+  width: 100%;
   gap: 1em;
 
   img {
@@ -74,7 +79,6 @@
   fieldset {
     display: flex;
     flex-direction: column;
-     box-sizing: border-box;
 
     span:first-child {
       padding-left: 1em;
@@ -138,6 +142,7 @@
 
 .label_input {
   display: flex;
+  width: 100%;
 
   label {
     padding: 0em 1em;
@@ -152,7 +157,8 @@
   }
 
   input {
-    width: 700px;
+    max-width: 700px;
+    width: 100%;
     margin-left: auto;
   }
 }
@@ -297,68 +303,58 @@
   justify-content: flex-end;
 }
 
-
-@media screen and (max-width:430px){
-
-.quotationForm {
-  width: 100%;
-  max-width: 430px;
-  margin: 0 auto;
+@media screen and (max-width: 430px) {
+  .quotation_container {
+    width: 100%;
 
     textarea {
-    width: 100%;
-  }
-
-}
-
-.top_section {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1em;
-  width: 100%;
-}
-.description_box {
-  width: 100%;
-  max-width: 100%;
-}
-
-.info_section {
-   max-width: 430px;
-   padding: 0;
-
-  fieldset {
-  width: 100%;
-  border: none;
-
-
-    span:first-child {
-      padding-left: 1em;
+      width: 100%;
     }
   }
 
-  legend {
-  font-size: 1em;
-  }
-}
-
-.date_section {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  max-width: 400px;
-  gap: 0;
-}
-.label_input{
-  input{
+  .top_section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1em;
     width: 100%;
   }
-}
-
-.confirm_section {
-  th {
-    padding: 0.5em;
-
+  .description_box {
+    width: 100%;
+    max-width: 100%;
   }
-}
+
+  .info_section {
+    padding: 0;
+
+    fieldset {
+      border: none;
+      span:first-child {
+        padding-left: 1em;
+      }
+    }
+
+    legend {
+      font-size: 1em;
+    }
+  }
+
+  .date_section {
+    display: flex;
+    flex-direction: column;
+
+    max-width: 400px;
+    gap: 0;
+  }
+  .label_input {
+    input {
+      width: 100%;
+    }
+  }
+
+  .confirm_section {
+    th {
+      padding: 0.5em;
+    }
+  }
 }

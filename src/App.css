@@ -49,7 +49,7 @@ body {
 h3 {
   font-weight: bold;
   margin-bottom: 0.5em;
-  font-size: clamp(1.5em,5vw,2em);
+  font-size: clamp(1.5em, 5vw, 2em);
 }
 
 h5 {
@@ -109,7 +109,6 @@ input:checked {
   img {
     width: 100%;
     max-width: 600px;
-    aspect-ratio: 3 / 4;
     object-fit: cover;
     margin-bottom: 1em;
   }
@@ -199,6 +198,11 @@ input:checked {
   background-color: white !important;
 }
 
+/* 오늘 날짜 스타일 */
+.react-calendar__tile--now {
+  background-color: white;
+}
+
 /* LoginLink */
 .LoginLink {
   color: var(--text-color);
@@ -216,15 +220,24 @@ input:checked {
   gap: 2em;
 }
 
-
 /* 미디어쿼리 */
-@media screen and (max-width:430px){
-.tabs_list{
-  display: none;
+
+@media screen and (min-width: 768px) and (max-width: 1366px) {
+  .tabs_list {
+    width: 100%;
+  }
+
+  .tab_item {
+    width: 100px;
+  }
 }
 
-.react-tabs{
-  width: 100%;
-}
+@media screen and (max-width: 430px) {
+  .tabs_list {
+    display: none;
+  }
 
+  .react-tabs {
+    width: 100%;
+  }
 }

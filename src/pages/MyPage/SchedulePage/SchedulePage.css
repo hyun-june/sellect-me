@@ -99,11 +99,6 @@
   .react-calendar__month-view__days__day--neighboringMonth {
     color: rgba(92, 92, 92, 0.5);
   }
-
-  /* 오늘 날짜 스타일 */
-  .react-calendar__tile--now {
-    background-color: white;
-  }
 }
 
 /* 메모 */

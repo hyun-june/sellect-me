@@ -33,11 +33,11 @@
   padding: 1.5em;
   border: 1px solid var(--line-color);
   border-radius: 50px;
-  width: 50em;
+  width: clamp(40em, 3vw, 50em);
 
   p {
     color: var(--text-color);
-    font-size: 1.2em;
+    font-size: clamp(1.1em, 1vw, 1.2em);
   }
 
   li {
@@ -52,9 +52,5 @@
   }
   .message-box {
     width: 100%;
-
-    p {
-      font-size: 1.1em;
-    }
   }
 }

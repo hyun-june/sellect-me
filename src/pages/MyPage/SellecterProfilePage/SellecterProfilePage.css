@@ -18,15 +18,18 @@
 }
 
 .sellecter_main_profile {
-  display: flex;
+  width: 100%;
   gap: 2em;
-  margin-bottom: 3em;
+  margin-bottom: 2em;
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
 }
 
 .sellecter_main_profile_img {
-  width: 400px;
-  height: 450px;
-
+  max-height: 400px;
+  max-width: 400px;
+  width: 100%;
+  aspect-ratio: 1/1.2;
   img {
     object-fit: cover;
     object-position: top;
@@ -34,19 +37,29 @@
 }
 
 .sellecter_profile_info {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   border: 2px solid var(--line-color);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 5em;
-  flex: 1;
+  padding: 2em;
+
+  .profile_inner_List {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 
   dl {
     gap: 3em;
-    height: 340px;
+    width: max-content;
+    height: 100%;
+
     dt {
-      font-size: 1.2em;
+      font-size: clamp(0.875em, 2vw, 1.2em);
     }
+  }
+
+  div {
+    width: 100%;
   }
 
   .tag_container {

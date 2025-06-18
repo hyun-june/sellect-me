@@ -18,15 +18,17 @@
 
 .selleb_main_profile {
   width: 100%;
-  display: flex;
   gap: 1em;
   margin-bottom: 2em;
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
 }
 
 .selleb_main_profile_img {
   img {
-    width: 450px;
-    height: 500px;
+    width: 100%;
+    aspect-ratio: 1/1.2;
+    max-height: 500px;
     object-fit: cover;
     object-position: top;
   }
@@ -40,35 +42,35 @@
 }
 
 .selleb_profile_pictures {
-  display: flex;
-  justify-content: space-between;
   margin-bottom: 1em;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.5em;
+
   img {
-    width: 175px;
-    height: 220px;
+    width: 100%;
+    aspect-ratio: 1/1.2;
     object-fit: cover;
   }
 }
 
 .selleb_profile_List {
-  display: flex;
-  justify-content: space-around;
-  padding: 1.9em 0;
-  gap: 2em;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
   border: 2px solid var(--line-color);
-  flex: 1;
+  align-content: center;
+  height: 100%;
 
   dl {
     margin: 0;
-    gap: 2em;
+    gap: clamp(1.5em, 1vw, 2em);
 
     dt {
-      font-size: 1.2em;
+      font-size: clamp(0.875em, 2vw, 1.2em);
     }
 
     dd {
-      width: 5em;
-      font-size: 1em;
+      width: clamp(4em, 1vw, 5em);
     }
   }
 }
@@ -77,20 +79,28 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   justify-items: center;
-  gap: 3em;
+  gap: clamp(2em, 3vw, 3em);
   border-top: 2px solid var(--line-color);
   padding: 2em 0em;
 
   h5 {
     color: var(--text-color);
     font-weight: bold;
-    font-size: 1.2em;
+    font-size: clamp(1em, 2vw, 1.2em);
     margin-bottom: 0.5em;
   }
 
   span {
     font-weight: bold;
     color: var(--text-color-gray);
+  }
+
+  .tag_container {
+    span {
+      width: max-content;
+      min-width: 3em;
+      padding: 0 0.2em;
+    }
   }
 
   .pay_time {
@@ -105,7 +115,7 @@
 }
 
 .hourly_rangebar_inner {
-  width: 16em;
+  width: clamp(10em, 30vw, 16em);
   position: relative;
 
   div {
@@ -155,6 +165,9 @@
   font-size: 1.5em;
 }
 
+@media screen and (min-width: 768px) and (max-width: 1366px) {
+}
+
 @media screen and (max-width: 430px) {
   .selleb_profile {
     .selleb_profile_header {
@@ -189,30 +202,15 @@
     }
   }
 
-  .selleb_profile_pictures {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    img {
-      width: calc(100% - 5px);
-      height: 90px;
-      object-fit: cover;
-    }
-  }
-
   .selleb_profile_List {
     flex-direction: column;
-    padding: 1em;
+    padding: 0.5em;
     align-items: center;
     justify-content: center;
 
     dl {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-
-      dt {
-        font-size: 1em;
-        width: 100%;
-      }
+      grid-template-rows: repeat(3, 1fr);
     }
   }
 
