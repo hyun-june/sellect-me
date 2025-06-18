@@ -66,7 +66,7 @@ const BankPage = (props) => {
     console.log("선택된 name 목록:", checkedName);
   }, [checkedItems]);
 
-  const user = "sellecter";
+  const user = "selleb";
 
   const bankTest = {
     1: {
