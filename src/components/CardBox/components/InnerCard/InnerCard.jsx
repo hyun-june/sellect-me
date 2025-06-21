@@ -33,6 +33,10 @@ const cardData = {
 
 const InnerCard = ({ cardKeyword, ...props }) => {
   const [maxCard, setMaxCard] = useState(8);
+  const [startIndex, setStartIndex] = useState(0);
+  const [isFocused, setIsFocused] = useState(false);
+
+  const cards = cardData[cardKeyword] || [];
 
   useEffect(() => {
     const updateCardCount = () => {
@@ -51,19 +55,32 @@ const InnerCard = ({ cardKeyword, ...props }) => {
     return () => window.removeEventListener("resize", updateCardCount);
   }, []);
 
-  const cards = cardData[cardKeyword] || [];
-  const filterCard = [
-    ...cards.slice(0, maxCard),
-    ...new Array(Math.max(maxCard - cards.length, 0)).fill(
-      "https://www.yu.ac.kr/_res/yu/main/img/common/img-ready.png"
-    ),
-  ];
+  useEffect(() => {
+    const interval = setInterval(() => {
+      if (!isFocused) {
+        setStartIndex((prevIndex) => (prevIndex + maxCard) % cards.length);
+      }
+    }, 3000); // 30초마다
+
+    return () => clearInterval(interval);
+  }, [cards.length, maxCard, isFocused]);
+
+  const visibleCards = [];
+  for (let i = 0; i < maxCard; i++) {
+    const index = (startIndex + i) % cards.length;
+    visibleCards.push(cards[index]);
+  }
 
   return (
     <div>
       <Row className="card_container">
-        {filterCard.map((item, index) => (
-          <Col className="card_item" key={index}>
+        {visibleCards.map((item, index) => (
+          <Col
+            className="card_item"
+            key={index}
+            onMouseEnter={() => setIsFocused(true)}
+            onMouseLeave={() => setIsFocused(false)}
+          >
             <Link to="/mypage/selleb">
               <img src={item} />
             </Link>
