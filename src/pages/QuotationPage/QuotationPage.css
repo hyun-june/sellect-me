@@ -117,6 +117,7 @@
     margin: 0;
     margin-left: auto;
     padding-right: 1em;
+    cursor: pointer;
   }
 
   div {

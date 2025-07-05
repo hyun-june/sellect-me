@@ -16,3 +16,22 @@ export const validationPatterns = {
     message: "한글, 영어, 숫자만 입력 가능합니다.",
   },
 };
+
+export const inputMaxLength = {
+  first_name: 50,
+  last_name: 50,
+  address: 85,
+  phone_number: 20,
+  bank_name: 50,
+  bank_depositor: 50,
+  bank_account: 50,
+  tax_email: 50,
+  manager_name: 50,
+  visa: 50,
+  registration_number: 50,
+  agency: 50,
+  manager_name: 50,
+  visa_type: 50,
+  registration_number: 50,
+  agency: 50,
+};

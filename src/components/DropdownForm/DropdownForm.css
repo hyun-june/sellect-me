@@ -10,10 +10,6 @@
     font-weight: bold;
     padding-left: 0.5em;
   }
-
-  span {
-    color: var(--text-color-gray);
-  }
 }
 
 .dropdown-container {

@@ -12,7 +12,17 @@ const SellebForm2 = ({ goToNextTab, goToPrevTab }) => {
     handleSubmit,
     watch,
     formState: { errors },
-  } = useForm();
+  } = useForm({
+    defaultValues: {
+      visa_type: "",
+      registration_number: "",
+      bank_name: "",
+      bank_depositor: "",
+      bank_account: "",
+      tax_email: "",
+      manager_name: "",
+    },
+  });
   const [images, setImages] = useState({
     id_photo: null,
     consent_photo: null,
@@ -50,8 +60,9 @@ const SellebForm2 = ({ goToNextTab, goToPrevTab }) => {
       );
     }
 
-    if (data.visaStatus === null) {
-      return alert("비자 정보를 입력해주세요.");
+    if (data.visaStatus === "1") {
+      data.visa_type = "";
+      data.registration_number = "";
     }
     if (images.bank_photo === null) {
       return alert("통장 사본을 등록해주세요.");
@@ -133,15 +144,13 @@ const SellebForm2 = ({ goToNextTab, goToPrevTab }) => {
             {isForeign ? (
               <div className="visa-input">
                 <FormInput
-                  disableValidation={true}
                   title="비자 종류"
-                  id="visa"
+                  id="visa_type"
                   register={register}
                   error={errors.visa}
                   required={isForeign}
                 />
                 <FormInput
-                  disableValidation={true}
                   title="외국인 등록번호"
                   id="registration_number"
                   register={register}
@@ -154,9 +163,7 @@ const SellebForm2 = ({ goToNextTab, goToPrevTab }) => {
           <div className="account-info">
             <h5>계좌 정보</h5>
             <FormInput
-              disableValidation={true}
               title="수익금 출금 은행"
-              addMessage="(-제외하고 입력)"
               id="bank_name"
               register={register}
               required={true}
@@ -164,7 +171,6 @@ const SellebForm2 = ({ goToNextTab, goToPrevTab }) => {
               type="text"
             />
             <FormInput
-              disableValidation={true}
               title="예금주"
               id="bank_depositor"
               register={register}
@@ -173,9 +179,9 @@ const SellebForm2 = ({ goToNextTab, goToPrevTab }) => {
               type="text"
             />
             <FormInput
-              disableValidation={true}
               title="수익금 출금계좌"
               id="bank_account"
+              addMessage="(-제외하고 입력)"
               register={register}
               required={true}
               error={errors.bank_account}
@@ -195,17 +201,11 @@ const SellebForm2 = ({ goToNextTab, goToPrevTab }) => {
             />
 
             <FormInput
-              disableValidation={true}
               title="세금계산서수취이메일"
               id="tax_email"
               register={register}
             />
-            <FormInput
-              disableValidation={true}
-              title="담당자명"
-              id="manager_name"
-              register={register}
-            />
+            <FormInput title="담당자명" id="manager_name" register={register} />
           </div>
         </section>
       </div>

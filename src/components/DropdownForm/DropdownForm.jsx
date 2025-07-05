@@ -30,12 +30,15 @@ const DropdownForm = ({ list, selectedValue, label, onSelect }) => {
 
   return (
     <div className="custom-dropdown" ref={dropDownRef}>
-      <label onClick={toggleDropdown}>{label}</label>
+      <label onClick={toggleDropdown}>
+        <span className="required_mark">*</span>
+        {label}
+      </label>
       <div className="dropdown-container">
         <div className="selected-section" onClick={toggleDropdown}>
           <div className="selected-item">
             <div>{selected || <>&nbsp;</>}</div>
-            <span>▼</span>
+            <span className="dropdown_mark">▼</span>
           </div>
         </div>
 

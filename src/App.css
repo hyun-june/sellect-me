@@ -103,6 +103,16 @@ input:checked {
   font-size: 0.875em;
 }
 
+.required_mark {
+  font-weight: lighter;
+  color: red;
+  margin-right: 0.1em;
+}
+
+.dropdown_mark {
+  color: var(--text-color-gray);
+}
+
 /* Custom_tabs */
 
 .tabs_content {

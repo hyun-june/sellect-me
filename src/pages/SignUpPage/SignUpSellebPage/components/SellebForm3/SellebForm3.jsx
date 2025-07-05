@@ -10,13 +10,25 @@ const SellebForm3 = ({ goToNextTab, goToPrevTab }) => {
     handleSubmit,
     watch,
     formState: { errors },
-  } = useForm();
+  } = useForm({
+    defaultValues: {
+      agencyStatus: "",
+      agency_name: "",
+      start_date: "",
+      end_date: "",
+    },
+  });
 
   const agency = watch("agencyStatus") === "1";
 
   const handleInfo = (formData) => {
     if (formData.agencyStatus === null) {
       return alert("에이전시 소속 유무를 체크해주세요.");
+    }
+    if (formData.agencyStatus === "0") {
+      formData.agency_name = "";
+      formData.start_date = "";
+      formData.end_date = "";
     }
     console.log("Form 3:", formData);
     goToNextTab();

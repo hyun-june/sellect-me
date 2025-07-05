@@ -64,19 +64,19 @@ const SignUpSellebPage = (props) => {
             ))}
           </TabList>
           <div>
-            <TabPanel>
+            {/* <TabPanel>
               <div className="tabs-inner">
                 <SellebForm1 goToNextTab={goToNextTab} />
               </div>
-            </TabPanel>
-            <TabPanel>
+            </TabPanel> */}
+            {/* <TabPanel>
               <div className="tabs-form2">
                 <SellebForm2
                   goToNextTab={goToNextTab}
                   goToPrevTab={goToPrevTab}
                 />
               </div>
-            </TabPanel>
+            </TabPanel> */}
             <TabPanel>
               <div className="tabs-inner">
                 <SellebForm3

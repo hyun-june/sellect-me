@@ -1,4 +1,7 @@
-import { validationPatterns } from "../../core/constants/validationPatterns";
+import {
+  inputMaxLength,
+  validationPatterns,
+} from "../../core/constants/validationPatterns";
 import "./FormInput.css";
 
 const FormInput = ({
@@ -17,6 +20,17 @@ const FormInput = ({
     if (e.key === "Enter") {
       e.preventDefault();
     }
+    if (type === "number") {
+      if (
+        ["-", "+", "=", "e", "E"].includes(e.key) ||
+        (!/[0-9]/.test(e.key) &&
+          !["Backspace", "ArrowLeft", "ArrowRight", "Delete", "Tab"].includes(
+            e.key
+          ))
+      ) {
+        e.preventDefault();
+      }
+    }
   };
 
   const patternType = validationPatterns[type];
@@ -26,7 +40,9 @@ const FormInput = ({
       <div className="formInput_title">
         {title ? (
           <label htmlFor={id}>
-            {required === true ? <span>*</span> : null}
+            {required === true ? (
+              <span className="required_mark">*</span>
+            ) : null}
             {title}
           </label>
         ) : null}
@@ -38,7 +54,9 @@ const FormInput = ({
 
       <input
         onKeyDown={(e) => handleKeydown(e)}
+        onPaste={(e) => e.preventDefault()}
         id={id}
+        maxLength={inputMaxLength[id]}
         {...register(
           `${id}`,
           disableValidation

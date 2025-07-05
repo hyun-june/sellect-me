@@ -38,12 +38,10 @@ const SellebForm1 = ({ goToNextTab }) => {
       month: "",
       day: "",
       gender: "0",
-      // world: "",
-      // country: "",
+      nationality: "",
       address: "",
       phone_number: "",
-      // auth_number: "",
-      // email_address: "",
+      email_address: "",
       language: "",
     },
     // mode: "onChange",
@@ -142,7 +140,9 @@ const SellebForm1 = ({ goToNextTab }) => {
           />
         </section>
         <section className="birth-section">
-          <span>생년월일</span>
+          <label>
+            <span className="required_mark">*</span>생년월일
+          </label>
           <div className="option-birth">
             <div>
               <select id="birth_year" name="year" {...register("year")}>
@@ -181,7 +181,8 @@ const SellebForm1 = ({ goToNextTab }) => {
         </section>
         <section className="section-country">
           <div className="country-dropdown">
-            <div className="select_gender">
+            <div>
+              <span className="required_mark">*</span>
               <select name="gender" {...register("gender")}>
                 <option value="0" disabled selected>
                   성별
@@ -189,15 +190,32 @@ const SellebForm1 = ({ goToNextTab }) => {
                 <option value="1">남성</option>
                 <option value="2">여성</option>
               </select>
-              <span>▼</span>
+              <span className="dropdown_mark">▼</span>
             </div>
             <div>
-              <DropdownForm
-                label="국적"
-                list={countryNames}
-                onSelect={(value) => handleSelect("nationality", value)}
-                selectedValue=""
-              />
+              <span className="required_mark">*</span>
+              <select name="nationality" {...register("nationality")}>
+                <option value="" disabled selected>
+                  국적
+                </option>
+                {countryNames.map((country, index) => {
+                  const countryLabel =
+                    country.length > 20
+                      ? country.slice(0, 20) + "..."
+                      : country;
+                  return (
+                    <option
+                      className="nationality_option"
+                      value={index + 1}
+                      key={index + 1}
+                      title={country}
+                    >
+                      {countryLabel}
+                    </option>
+                  );
+                })}
+              </select>
+              <span className="dropdown_mark">▼</span>
             </div>
           </div>
 

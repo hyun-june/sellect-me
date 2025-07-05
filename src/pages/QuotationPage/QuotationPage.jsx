@@ -61,13 +61,21 @@ const QuotationPage = (props) => {
     setTags(updatedTags);
   };
 
+  const formatDate = (date) => {
+    const yyyy = date.getFullYear();
+    const mm = String(date.getMonth() + 1).padStart(2, "0");
+    const dd = String(date.getDate()).padStart(2, "0");
+    return `${yyyy}-${mm}-${dd}`;
+  };
+
   const handleDateChange = (id, date) => {
-    onChange(date);
+    const formattedDate = formatDate(date);
+
     setCalendarDate((prev) => ({
       ...prev,
-      [id]: date,
+      [id]: formattedDate,
     }));
-    setValue(id, date);
+    setValue(id, formattedDate);
 
     setCalendarOpen((prev) => ({
       ...prev,
@@ -230,15 +238,12 @@ const QuotationPage = (props) => {
                     onClick={() => toggleCalendar("start_date_calendar")}
                     type="button"
                   >
-                    <span>
-                      {" "}
-                      {calendarOpen.start_date_calendar ? "▲" : "▼"}{" "}
-                    </span>
+                    <span>{calendarOpen.start_date_calendar ? "▲" : "▼"} </span>
                   </button>
 
-                  <p>
+                  <p onClick={() => toggleCalendar("start_date_calendar")}>
                     {calendarDate.start_date
-                      ? calendarDate.start_date.toLocaleDateString()
+                      ? calendarDate.start_date
                       : "날짜를 선택해주세요."}
                   </p>
                   {calendarOpen.start_date_calendar && (
@@ -246,7 +251,11 @@ const QuotationPage = (props) => {
                       tileClassName={tileClassName}
                       onChange={(date) => handleDateChange("start_date", date)}
                       calendarType="Hebrew"
-                      value={calendarDate.start_date}
+                      value={
+                        calendarDate.start_date
+                          ? new Date(calendarDate.start_date)
+                          : null
+                      }
                       formatDay={(locale, date) => date.getDate()}
                     />
                   )}
@@ -269,9 +278,9 @@ const QuotationPage = (props) => {
                     <span> {calendarOpen.end_date_calendar ? "▲" : "▼"} </span>
                   </button>
 
-                  <p>
+                  <p onClick={() => toggleCalendar("end_date_calendar")}>
                     {calendarDate.end_date
-                      ? calendarDate.end_date.toLocaleDateString()
+                      ? calendarDate.end_date
                       : "날짜를 선택해주세요."}
                   </p>
                   {calendarOpen.end_date_calendar && (
@@ -279,7 +288,11 @@ const QuotationPage = (props) => {
                       tileClassName={tileClassName}
                       onChange={(date) => handleDateChange("end_date", date)}
                       calendarType="Hebrew"
-                      value={calendarDate.end_date}
+                      value={
+                        calendarDate.end_date
+                          ? new Date(calendarDate.end_date)
+                          : null
+                      }
                       formatDay={(locale, date) => date.getDate()}
                     />
                   )}
