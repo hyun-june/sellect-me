@@ -96,11 +96,11 @@ const SellebForm5 = ({ goToNextTab, goToPrevTab }) => {
       {/*    </div>*/}
       {/*</div>*/}
 
-      {payValue > 0 ? (
+      {/* {payValue > 0 ? (
         <div className="show_payvalue">
           <strong>pay</strong>: <div>{payValue}</div>
         </div>
-      ) : null}
+      ) : null} */}
 
       <div className="select-currency-self">
         <div>
@@ -115,9 +115,9 @@ const SellebForm5 = ({ goToNextTab, goToPrevTab }) => {
           <span>{currencyType}</span>
         </div>
 
-        <p>
+        {/* <p>
           * 바와 직접 입력한 값이 둘 다 있는 경우 직접 입력의 값이 적용됩니다.
-        </p>
+        </p> */}
       </div>
       <div className="prev_next_btn">
         <PrevButton onClick={goToPrevTab} />

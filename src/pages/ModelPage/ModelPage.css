@@ -13,6 +13,7 @@
   flex-direction: column;
   gap: 2em;
   font-size: 0.875em;
+  max-width: 210px;
 }
 
 .model_main_section {

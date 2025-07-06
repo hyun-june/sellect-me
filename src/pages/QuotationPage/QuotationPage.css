@@ -39,6 +39,10 @@
     }
   }
 
+  .react-calendar__navigation__label__labelText {
+    padding: 0 !important;
+  }
+
   input:not(:placeholder-shown) {
     background-color: white;
   }
@@ -110,7 +114,7 @@
   span {
     margin: 0;
     font-weight: bold;
-    color: var(--text-color-gray);
+    color: var(--text-color);
   }
 
   p {
@@ -153,7 +157,7 @@
     display: flex;
     align-items: center;
     border-bottom: 1px solid var(--line-color);
-    color: var(--text-color-gray);
+    color: var(--text-color);
     font-weight: bold;
   }
 
@@ -172,7 +176,7 @@
   width: 100%;
 
   span {
-    color: var(--text-color-gray);
+    color: var(--text-color);
     font-weight: bold;
     padding-top: 0.5em;
   }
@@ -213,7 +217,7 @@
   justify-content: space-between;
 
   > span:first-child {
-    color: var(--text-color-gray);
+    color: var(--text-color);
     font-weight: bold;
     white-space: nowrap;
     padding-top: 0.5em;

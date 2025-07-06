@@ -1,5 +1,5 @@
 .agency-section {
-  width: 30em;
+  width: 35em;
   display: flex;
   flex-direction: column;
   gap: 0.3em;
@@ -40,14 +40,16 @@
 .agency-date {
   display: flex;
   gap: 1em;
-
-  label {
-    width: 60%;
-  }
+  width: 100%;
+  min-height: 330px;
 }
 
 @media screen and (max-width: 430px) {
   .agency-section {
     width: 100%;
+  }
+
+  .agency-date {
+    flex-direction: column;
   }
 }

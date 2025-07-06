@@ -9,6 +9,7 @@ import Button from "../../components/Button/Button";
 import { IoCloseSharp } from "react-icons/io5";
 import TagButton from "../../components/TagButton/TagButton";
 import "./QuotationPage.css";
+import CustomCalendar from "../../components/CustomCalendar/CustomCalendar";
 
 const QuotationPage = (props) => {
   // user가 셀럽인지 셀렉터인지 구분 그에 따른 내용이 다르게 보임
@@ -234,13 +235,6 @@ const QuotationPage = (props) => {
                 <div className="date_calendar">
                   <span>촬영 시작 날짜</span>
 
-                  <button
-                    onClick={() => toggleCalendar("start_date_calendar")}
-                    type="button"
-                  >
-                    <span>{calendarOpen.start_date_calendar ? "▲" : "▼"} </span>
-                  </button>
-
                   <p onClick={() => toggleCalendar("start_date_calendar")}>
                     {calendarDate.start_date
                       ? calendarDate.start_date
@@ -259,6 +253,12 @@ const QuotationPage = (props) => {
                       formatDay={(locale, date) => date.getDate()}
                     />
                   )}
+                  <button
+                    onClick={() => toggleCalendar("start_date_calendar")}
+                    type="button"
+                  >
+                    <span>{calendarOpen.start_date_calendar ? "▲" : "▼"} </span>
+                  </button>
                 </div>
                 <DropdownForm
                   label="시작 시간"
@@ -270,14 +270,6 @@ const QuotationPage = (props) => {
               <div className="date_section">
                 <div className="date_calendar">
                   <span>촬영 종료 날짜</span>
-
-                  <button
-                    onClick={() => toggleCalendar("end_date_calendar")}
-                    type="button"
-                  >
-                    <span> {calendarOpen.end_date_calendar ? "▲" : "▼"} </span>
-                  </button>
-
                   <p onClick={() => toggleCalendar("end_date_calendar")}>
                     {calendarDate.end_date
                       ? calendarDate.end_date
@@ -296,7 +288,14 @@ const QuotationPage = (props) => {
                       formatDay={(locale, date) => date.getDate()}
                     />
                   )}
+                  <button
+                    onClick={() => toggleCalendar("end_date_calendar")}
+                    type="button"
+                  >
+                    <span> {calendarOpen.end_date_calendar ? "▲" : "▼"} </span>
+                  </button>
                 </div>
+
                 <DropdownForm
                   label="종료 시간"
                   selectedValue=""

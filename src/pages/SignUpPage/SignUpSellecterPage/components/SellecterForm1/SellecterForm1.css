@@ -11,6 +11,9 @@
   }
 
   .custom-dropdown {
+    .required_mark {
+      position: relative;
+    }
     span {
       position: absolute;
       right: 0;
@@ -19,7 +22,7 @@
   }
 
   .business_info_type {
-    .selected-section {
+    /* .selected-section {
       width: 15em;
     }
 
@@ -27,6 +30,7 @@
       height: max-content;
       overflow-y: hidden;
     }
+     */
   }
 
   label {

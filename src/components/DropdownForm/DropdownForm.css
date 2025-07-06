@@ -6,7 +6,7 @@
   height: 2.5em;
 
   label {
-    color: var(--text-color-gray);
+    color: var(--text-color);
     font-weight: bold;
     padding-left: 0.5em;
   }

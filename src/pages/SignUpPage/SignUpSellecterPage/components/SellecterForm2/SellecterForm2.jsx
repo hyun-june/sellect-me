@@ -13,7 +13,14 @@ const SellecterForm2 = ({ goToNextTab, goToPrevTab }) => {
     handleSubmit,
     setValue,
     formState: { errors },
-  } = useForm();
+  } = useForm({
+    defaultValues: {
+      business_bank: "",
+      business_account: "",
+      tax_email: "",
+      manager_name: "",
+    },
+  });
 
   const [images, setImages] = useState({
     bankbook_img: null,
@@ -78,11 +85,18 @@ const SellecterForm2 = ({ goToNextTab, goToPrevTab }) => {
     <form onSubmit={handleSubmit(handleInfo)} className="sellecter-form">
       <div className="form-gap">
         <h5>계좌정보</h5>
-        <DropdownForm
+        {/* <DropdownForm
           label="사업자 통장 은행"
           list={bankList}
           selectedValue=""
           onSelect={(value) => handleSelect("business_bank", value)}
+        /> */}
+        <FormInput
+          title="사업자 통장 은행"
+          id="business_bank"
+          required={true}
+          register={register}
+          error={errors.business_bank}
         />
         <FormInput
           title="사업자 계좌"
@@ -91,6 +105,7 @@ const SellecterForm2 = ({ goToNextTab, goToPrevTab }) => {
           register={register}
           required={true}
           error={errors.business_account}
+          type="number"
         />
         <div className="warning_text">
           * 계좌 정보는 제출한 통장 사본과 일치해야 합니다.

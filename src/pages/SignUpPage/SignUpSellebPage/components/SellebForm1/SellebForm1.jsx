@@ -4,6 +4,7 @@ import NextButton from "../../../components/NextButton/NextButton";
 import DropdownForm from "../../../../../components/DropdownForm/DropdownForm";
 import { useSellebContext } from "../../../../../context/SellebContext";
 import { useEffect } from "react";
+import SelectInput from "../../../../../components/SelectInput/SelectInput";
 import "./SellebForm1.css";
 
 const languageList = [
@@ -23,6 +24,9 @@ const languageList = [
   "Thai",
   "Indonesian",
 ];
+
+const genderList = ["남성", "여성"];
+
 const SellebForm1 = ({ goToNextTab }) => {
   const {
     register,
@@ -139,7 +143,7 @@ const SellebForm1 = ({ goToNextTab }) => {
             type="text"
           />
         </section>
-        <section className="birth-section">
+        <section className="birth-section ">
           <label>
             <span className="required_mark">*</span>생년월일
           </label>
@@ -181,36 +185,41 @@ const SellebForm1 = ({ goToNextTab }) => {
         </section>
         <section className="section-country">
           <div className="country-dropdown">
-            <div>
-              <span className="required_mark">*</span>
-              <select name="gender" {...register("gender")}>
-                <option value="0" disabled selected>
-                  성별
-                </option>
-                <option value="1">남성</option>
-                <option value="2">여성</option>
-              </select>
-              <span className="dropdown_mark">▼</span>
-            </div>
-            <div>
-              <span className="required_mark">*</span>
+            <SelectInput
+              label="성별"
+              id="gender"
+              options={genderList}
+              required
+              register={register}
+            />
+
+            <div className="select_option">
+              <label>
+                <span className="required_mark">*</span>국적
+              </label>
+
               <select name="nationality" {...register("nationality")}>
                 <option value="" disabled selected>
                   국적
                 </option>
                 {countryNames.map((country, index) => {
-                  const countryLabel =
-                    country.length > 20
-                      ? country.slice(0, 20) + "..."
-                      : country;
+                  const value = (index + 1).toString();
+                  const selectedValue = watch("nationality");
+
+                  const isSelected = selectedValue === value;
+
                   return (
                     <option
                       className="nationality_option"
-                      value={index + 1}
-                      key={index + 1}
+                      value={value}
+                      key={value}
                       title={country}
                     >
-                      {countryLabel}
+                      {isSelected
+                        ? country
+                        : country.length > 20
+                        ? country.slice(0, 20) + "..."
+                        : country}
                     </option>
                   );
                 })}
@@ -228,13 +237,21 @@ const SellebForm1 = ({ goToNextTab }) => {
           /> */}
         </section>
         <section className="section-address">
-          <DropdownForm
+          {/* <DropdownForm
             label="사용 가능 언어"
             list={languageList}
             selectedValue=""
             onSelect={(value) => handleSelect("language", value)}
             type="text"
+          /> */}
+          <SelectInput
+            label="언어"
+            id="language"
+            options={languageList}
+            required
+            register={register}
           />
+
           <FormInput
             title="현 거주지"
             id="address"

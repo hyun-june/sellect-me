@@ -68,8 +68,8 @@ const SignUpSellebPage = (props) => {
               <div className="tabs-inner">
                 <SellebForm1 goToNextTab={goToNextTab} />
               </div>
-            </TabPanel> */}
-            {/* <TabPanel>
+            </TabPanel>
+            <TabPanel>
               <div className="tabs-form2">
                 <SellebForm2
                   goToNextTab={goToNextTab}

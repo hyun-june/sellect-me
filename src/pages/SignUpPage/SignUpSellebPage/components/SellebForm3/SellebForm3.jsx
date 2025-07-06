@@ -2,6 +2,7 @@ import { useForm } from "react-hook-form";
 import FormInput from "../../../../../components/FormInput/FormInput";
 import NextButton from "../../../components/NextButton/NextButton";
 import PrevButton from "../../../components/PrevButton/PrevButton";
+import CustomCalendar from "../../../../../components/CustomCalendar/CustomCalendar";
 import "./SellebForm3.css";
 
 const SellebForm3 = ({ goToNextTab, goToPrevTab }) => {
@@ -9,27 +10,37 @@ const SellebForm3 = ({ goToNextTab, goToPrevTab }) => {
     register,
     handleSubmit,
     watch,
+    setValue,
     formState: { errors },
   } = useForm({
     defaultValues: {
       agencyStatus: "",
       agency_name: "",
-      start_date: "",
-      end_date: "",
+      agency_startDate: "",
+      agency_endDate: "",
     },
   });
 
   const agency = watch("agencyStatus") === "1";
 
   const handleInfo = (formData) => {
+    const startDate = new Date(formData.agency_startDate);
+    const endDate = new Date(formData.agency_endDate);
+
     if (formData.agencyStatus === null) {
       return alert("에이전시 소속 유무를 체크해주세요.");
     }
     if (formData.agencyStatus === "0") {
       formData.agency_name = "";
-      formData.start_date = "";
-      formData.end_date = "";
+      formData.agency_startDate = "";
+      formData.agency_endDate = "";
     }
+    if (formData.agencyStatus === "1") {
+      if (startDate > endDate) {
+        return alert("계약 종료일은 계약 시작일보다 빠를 수 없습니다.");
+      }
+    }
+
     console.log("Form 3:", formData);
     goToNextTab();
   };
@@ -63,17 +74,15 @@ const SellebForm3 = ({ goToNextTab, goToPrevTab }) => {
             required={agency}
           />
           <div className="agency-date">
-            <FormInput
-              title="계약 시작일"
-              id="start_date"
-              register={register}
-              required={agency}
+            <CustomCalendar
+              id="agency_startDate"
+              label="계약 시작일"
+              setValue={setValue}
             />
-            <FormInput
-              title="계약 종료일"
-              id="end_date"
-              register={register}
-              required={agency}
+            <CustomCalendar
+              id="agency_endDate"
+              label="계약 종료일"
+              setValue={setValue}
             />
           </div>
         </>

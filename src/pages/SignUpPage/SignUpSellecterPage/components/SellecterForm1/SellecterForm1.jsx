@@ -2,6 +2,7 @@ import { useForm } from "react-hook-form";
 import DropdownForm from "../../../../../components/DropdownForm/DropdownForm";
 import NextButton from "../../../components/NextButton/NextButton";
 import FormInput from "../../../../../components/FormInput/FormInput";
+import SelectInput from "./../../../../../components/SelectInput/SelectInput";
 import "./SellecterForm1.css";
 
 const entityList = ["개인사업자", "공동사업자", "법인사업자"];
@@ -46,6 +47,7 @@ const SellecterForm1 = ({ goToNextTab }) => {
     register,
     handleSubmit,
     setValue,
+    watch,
     formState: { errors },
   } = useForm({
     defaultValues: {
@@ -77,43 +79,116 @@ const SellecterForm1 = ({ goToNextTab }) => {
   const handleSelect = (fieldName, value) => {
     setValue(fieldName, value);
   };
+  const countryList = require("country-list");
+  const countryNames = countryList.getNames();
 
   return (
     <div>
       <form onSubmit={handleSubmit(handleInfo)} className="business_info">
         <section>
           <h5>사업자 정보</h5>
-          <FormInput
+          <div className="select_option">
+            <label>
+              <span className="required_mark">*</span>국가
+            </label>
+            <select name="business_country" {...register("business_country")}>
+              <option value="" disabled selected>
+                국가
+              </option>
+              {countryNames.map((country, index) => {
+                const value = (index + 1).toString();
+                const selectedValue = watch("business_country");
+
+                const isSelected = selectedValue === value;
+
+                return (
+                  <option
+                    className="options_list"
+                    value={value}
+                    key={value}
+                    title={country}
+                  >
+                    {isSelected
+                      ? country
+                      : country.length > 20
+                      ? country.slice(0, 20) + "..."
+                      : country}
+                  </option>
+                );
+              })}
+            </select>
+            <span className="dropdown_mark">▼</span>
+          </div>
+          {/* <FormInput
             title="국가"
             id="business_country"
             register={register}
             error={errors.business_country}
             required={true}
-          />
+          /> */}
           <div className="business_info_type">
-            <DropdownForm
+            {/* <DropdownForm
               label="사업자 유형"
               list={entityList}
               selectedValue=""
               onSelect={(value) => handleSelect("business_entity_type", value)}
               required={true}
+            /> */}
+            <SelectInput
+              label="사업자 유형"
+              id="business_entity_type"
+              options={entityList}
+              register={register}
+              required
             />
+
+            {/* <label>
+              <span className="required_mark">*</span>사업자 유형
+            </label>
+            <select
+              name="business_entity_type"
+              {...register("business_entity_type")}
+            >
+              <option value="" disabled selected>
+                사업자 유형
+              </option>
+              {entityList.map((type, index) => (
+                <option value={type} key={index} className="options_list">
+                  {type}
+                </option>
+              ))}
+            </select>
+            <span className="dropdown_mark">▼</span> */}
           </div>
 
           <div className="business_type_section">
-            <DropdownForm
+            <SelectInput
+              label="업태"
+              id="business_type"
+              options={typeList}
+              register={register}
+              required
+            />
+            <SelectInput
+              label="업종"
+              id="business_category"
+              options={categoryList}
+              register={register}
+              required
+            />
+
+            {/* <DropdownForm
               label="업태"
               list={typeList}
               selectedValue=""
               onSelect={(value) => handleSelect("business_type", value)}
-            />
-
-            <DropdownForm
+            /> */}
+            {/* <DropdownForm
               label="업종"
               list={categoryList}
               selectedValue=""
               onSelect={(value) => handleSelect("business_category", value)}
-            />
+            /> */}
           </div>
         </section>
         <section>

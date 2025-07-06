@@ -55,7 +55,13 @@ const FormInput = ({
       <input
         onKeyDown={(e) => handleKeydown(e)}
         onPaste={(e) => e.preventDefault()}
+        onInput={(e) => {
+          if (type === "number") {
+            e.target.value = e.target.value.replace(/[^0-9]/g, "");
+          }
+        }}
         id={id}
+        inputMode="numeric"
         maxLength={inputMaxLength[id]}
         {...register(
           `${id}`,

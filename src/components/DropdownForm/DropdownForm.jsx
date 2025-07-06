@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect } from "react";
 import "./DropdownForm.css";
 
-const DropdownForm = ({ list, selectedValue, label, onSelect }) => {
+const DropdownForm = ({ list, selectedValue, label, onSelect, required }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [selected, setSelected] = useState(selectedValue);
   const dropDownRef = useRef();
@@ -31,7 +31,7 @@ const DropdownForm = ({ list, selectedValue, label, onSelect }) => {
   return (
     <div className="custom-dropdown" ref={dropDownRef}>
       <label onClick={toggleDropdown}>
-        <span className="required_mark">*</span>
+        {required && <span className="required_mark">*</span>}
         {label}
       </label>
       <div className="dropdown-container">

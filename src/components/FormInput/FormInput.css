@@ -13,7 +13,7 @@
 
     label {
       min-width: max-content;
-      color: var(--text-color-gray);
+      color: var(--text-color);
       font-weight: bold;
       align-self: center;
       padding-left: 0.5em;
