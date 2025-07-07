@@ -8,8 +8,10 @@ import PreviewImg from "./components/PreviewImg/PreviewImg";
 import AddCareer from "../../components/AddCareer/AddCareer";
 import AddDeleteTag from "../../../../components/AddDeleteTag/AddDeleteTag";
 import Button from "../../../../components/Button/Button";
-import "./SellebProfileEditPage.css";
 import MainLayout from "../.././../../Layouts/MainLayout/MainLayout";
+import SelectInput from "./../../../../components/SelectInput/SelectInput";
+import SelectInputCountry from "../../../../components/SelectInputCountry/SelectInputCountry";
+import "./SellebProfileEditPage.css";
 
 const testData = {
   height: "180",
@@ -23,15 +25,36 @@ const testData = {
   shoes_size: "260",
   hair_color: "Black",
   eye_color: "Brown",
-  world: "KOREAN",
+  nationality: "1",
   language: "English",
   pay: 120000,
 };
+
+const languageList = [
+  "Korean",
+  "English",
+  "Japanese",
+  "Chinese",
+  "Spanish",
+  "French",
+  "German",
+  "Russian",
+  "Portuguese",
+  "Hindi",
+  "Arabic",
+  "Italian",
+  "Vietnamese",
+  "Thai",
+  "Indonesian",
+];
+
+const genderList = ["남성", "여성"];
 
 const SellebProfileEditPage = (props) => {
   const {
     register,
     handleSubmit,
+    watch,
     formState: { errors },
   } = useForm({
     defaultValues: testData,
@@ -46,7 +69,14 @@ const SellebProfileEditPage = (props) => {
     profileInfoList: [
       {
         title: "성별",
-        content: testData.gender,
+        content: (
+          <SelectInput
+            register={register}
+            id="gender"
+            options={genderList}
+            title="성별"
+          />
+        ),
       },
       {
         title: "키",
@@ -165,18 +195,19 @@ const SellebProfileEditPage = (props) => {
     ],
     countryList: [
       {
-        title: "국가",
+        title: "국적",
         content: (
-          <FormInput id="world" register={register} error={errors.world} />
+          // <FormInput id="world" register={register} error={errors.world} />
+          <SelectInputCountry register={register} watch={watch} />
         ),
       },
       {
         title: "언어",
         content: (
-          <FormInput
+          <SelectInput
             id="language"
+            options={languageList}
             register={register}
-            error={errors.language}
           />
         ),
       },
@@ -253,7 +284,9 @@ const SellebProfileEditPage = (props) => {
               <ProfileInfoList list={profileData.threeSizeList} />
               <ProfileInfoList list={profileData.sizeList} />
               <ProfileInfoList list={profileData.colorList} />
-              <ProfileInfoList list={profileData.countryList} />
+              <div className="country_list">
+                <ProfileInfoList list={profileData.countryList} />
+              </div>
             </div>
           </div>
         </section>

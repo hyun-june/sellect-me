@@ -103,44 +103,23 @@
   gap: 2em;
 
   .date_calendar {
-    position: relative;
-    border-bottom: 1px solid var(--line-color);
-    display: flex;
-    height: 2.5em;
-    align-items: center;
-    padding-top: 0.5em;
-  }
-
-  span {
-    margin: 0;
-    font-weight: bold;
-    color: var(--text-color);
-  }
-
-  p {
-    margin: 0;
-    margin-left: auto;
-    padding-right: 1em;
-    cursor: pointer;
-  }
-
-  div {
     width: 100%;
+    position: relative;
 
+    .react-calendar {
+      width: min-content;
+    }
+  }
+
+  .customCalendar_label_section {
     label {
-      width: 100%;
       padding-left: 1em;
     }
   }
 
-  .custom-dropdown {
+  div {
     label {
-      padding-top: 0.5em;
-    }
-    .selected-section {
-      display: flex;
-      align-items: center;
-      padding-right: 0;
+      width: 100%;
     }
   }
 }

@@ -1,6 +1,7 @@
 .profile-Section {
   width: 100%;
   border: 1px solid var(--text-color-gray);
+  height: 100%;
 
   label {
     display: flex;

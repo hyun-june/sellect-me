@@ -1,9 +1,9 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Calendar } from "react-calendar";
 import "./CustomCalendar.css";
 
 const CustomCalendar = ({ ...props }) => {
-  const { label, id, setValue } = props;
+  const { label, id, setValue, value } = props;
   const [calendarDate, setCalendarDate] = useState();
   const [calendarOpen, setCalendarOpen] = useState(false);
 
@@ -34,6 +34,19 @@ const CustomCalendar = ({ ...props }) => {
     setValue(id, formattedDate);
     setCalendarOpen(false);
   };
+  useEffect(() => {
+    if (!value) {
+      setCalendarDate((prev) => ({
+        ...prev,
+        [id]: undefined,
+      }));
+    } else {
+      setCalendarDate((prev) => ({
+        ...prev,
+        [id]: value,
+      }));
+    }
+  }, [value, id]);
 
   return (
     <div className="customCalendar_container">
@@ -52,6 +65,7 @@ const CustomCalendar = ({ ...props }) => {
           calendarType="Hebrew"
           onChange={(date) => handleDateChange(id, date)}
           formatDay={(locale, date) => date.getDate()}
+          value={value ? new Date(value) : null}
         />
       )}
     </div>

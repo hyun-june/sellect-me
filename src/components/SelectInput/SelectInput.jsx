@@ -1,16 +1,28 @@
 import "./SelectInput.css";
 
 const SelectInput = ({ ...props }) => {
-  const { label, id, required, register, options } = props;
+  const { title, label, id, required, register, options, onChange } = props;
   return (
     <div className="select_option">
-      <label>
-        {required && <span className="required_mark">*</span>}
-        {label}
-      </label>
-      <select name={id} {...register(id)} defaultValue="">
-        <option value="" disabled>
+      {label && (
+        <label>
+          {required && <span className="required_mark">*</span>}
           {label}
+        </label>
+      )}
+
+      <select
+        name={id}
+        {...register(id, {
+          onChange: (e) => {
+            const value = e.target.value;
+            if (onChange) onChange(value);
+          },
+        })}
+        defaultValue=""
+      >
+        <option value="" disabled>
+          {title || label}
         </option>
         {options.map((opt, i) => (
           <option key={i} value={opt}>

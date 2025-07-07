@@ -25,7 +25,7 @@ const SellecterProfileEditPage = (props) => {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm({ defaultValues: testData });
+  } = useForm({ defaultValues: { testData } });
 
   const sellecterInfoList = [
     {

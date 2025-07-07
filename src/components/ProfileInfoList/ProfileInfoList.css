@@ -1,4 +1,6 @@
 .profile_inner_List {
+  width: max-content;
+
   dl {
     padding: 0;
     display: flex;

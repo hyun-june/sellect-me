@@ -86,10 +86,10 @@ const ModelDetailSideBar = ({ menuType = "basic", onSearch, ...props }) => {
             register={register}
           />
           <div className="select_option select_country">
-            <label>국가</label>
+            <label>국적</label>
             <select name="select_country" {...register("select_country")}>
               <option value="" disabled selected>
-                국가
+                국적
               </option>
               {countryNames.map((country, index) => {
                 const value = (index + 1).toString();

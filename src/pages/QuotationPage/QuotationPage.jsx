@@ -1,15 +1,19 @@
 import { useForm } from "react-hook-form";
 import MainLayout from "./../../Layouts/MainLayout/MainLayout";
 import { useEffect, useState } from "react";
-import { Calendar } from "react-calendar";
-import DropdownForm from "../../components/DropdownForm/DropdownForm";
 import FormInput from "../../components/FormInput/FormInput";
 import AddDeleteTag from "../../components/AddDeleteTag/AddDeleteTag";
 import Button from "../../components/Button/Button";
 import { IoCloseSharp } from "react-icons/io5";
 import TagButton from "../../components/TagButton/TagButton";
-import "./QuotationPage.css";
 import CustomCalendar from "../../components/CustomCalendar/CustomCalendar";
+import SelectInput from "./../../components/SelectInput/SelectInput";
+import "./QuotationPage.css";
+
+const timeTable = Array.from(
+  { length: 25 },
+  (_, i) => `${i.toString().padStart(2, "0")}:00`
+);
 
 const QuotationPage = (props) => {
   // user가 셀럽인지 셀렉터인지 구분 그에 따른 내용이 다르게 보임
@@ -19,146 +23,111 @@ const QuotationPage = (props) => {
     register,
     handleSubmit,
     setValue,
+    watch,
     formState: { errors },
-  } = useForm();
+  } = useForm({
+    defaultValues: {
+      brand_name: "",
+      messages: "",
+      project_name: "",
+      shooting_location: "",
+      quotation_startDate: "",
+      quotation_endDate: "",
+      quotation_startTime: "",
+      quotation_endTime: "",
+    },
+  });
   const src =
     "https://www.urbanbrush.net/web/wp-content/uploads/edd/2022/11/urbanbrush-20221108214712319041.jpg";
 
-  const [value, onChange] = useState(null);
-  const [calendarDate, setCalendarDate] = useState({
-    start_date: null,
-    end_date: null,
-  });
-  const [calendarOpen, setCalendarOpen] = useState({
-    start_date_calendar: false,
-    end_date_calendar: false,
-  });
+  const quotation_startDate = watch("quotation_startDate");
+  const quotation_endDate = watch("quotation_endDate");
+  const quotation_startTime = watch("quotation_startTime");
+  const quotation_endTime = watch("quotation_endTime");
+
   const [files, setFiles] = useState([]);
   const [tags, setTags] = useState([]);
   const [defaultTags, setDefaultTags] = useState([]);
   const [businessHours, setBusinessHours] = useState(0);
-  const [startTime, setStartTime] = useState("");
-  const [endTime, setEndTime] = useState("");
-  const timeTable = Array.from(
-    { length: 25 },
-    (_, i) => `${i.toString().padStart(2, "0")}:00`
-  );
-
-  const tileClassName = ({ date, view }) => {
-    if (view === "month") {
-      if (date.getDay() === 0) {
-        return "sunday";
-      }
-      return "not_sunday";
-    }
-    return null;
-  };
-
-  useEffect(() => {
-    calculateTime();
-  }, [startTime, endTime, calendarDate]);
+  console.log("🚀 ~ QuotationPage ~ businessHours:", businessHours);
 
   const handleTagsChange = (updatedTags) => {
     setTags(updatedTags);
   };
 
-  const formatDate = (date) => {
-    const yyyy = date.getFullYear();
-    const mm = String(date.getMonth() + 1).padStart(2, "0");
-    const dd = String(date.getDate()).padStart(2, "0");
-    return `${yyyy}-${mm}-${dd}`;
+  const calculateTime = () => {
+    if (!quotation_startDate || !quotation_endDate) {
+      setBusinessHours(0);
+      return;
+    }
+
+    const startTimeStr = quotation_startTime || "00:00";
+    const endTimeStr = quotation_endTime || "00:00";
+
+    const startDateTimeStr = `${quotation_startDate}T${startTimeStr}:00`;
+    const endDateTimeStr = `${quotation_endDate}T${endTimeStr}:00`;
+
+    const startDateTime = new Date(startDateTimeStr);
+    const endDateTime = new Date(endDateTimeStr);
+
+    if (isNaN(startDateTime) || isNaN(endDateTime)) {
+      setBusinessHours(0);
+      return;
+    }
+
+    const diffMs = endDateTime - startDateTime;
+    const diffHours = diffMs / (1000 * 60 * 60);
+
+    if (diffHours < 0) {
+      setValue("quotation_startTime", "");
+      setValue("quotation_endTime", "");
+      setValue("quotation_startDate", "");
+      setValue("quotation_endDate", "");
+      setBusinessHours(0);
+      alert("종료 시간이 시작 시간보다 이전일 수 없습니다.");
+      return;
+    }
+
+    setBusinessHours(diffHours);
   };
 
-  const handleDateChange = (id, date) => {
-    const formattedDate = formatDate(date);
+  useEffect(() => {
+    calculateTime();
+  }, [
+    quotation_startDate,
+    quotation_endDate,
+    quotation_startTime,
+    quotation_endTime,
+  ]);
 
-    setCalendarDate((prev) => ({
-      ...prev,
-      [id]: formattedDate,
-    }));
-    setValue(id, formattedDate);
-
-    setCalendarOpen((prev) => ({
-      ...prev,
-      [`${id}_calendar`]: false,
-    }));
-  };
-
-  const toggleCalendar = (id) => {
-    setCalendarOpen((prev) => ({
-      ...prev,
-      [id]: !prev[id],
-    }));
-  };
+  useEffect(() => {
+    return () => {
+      files.forEach((file) => {
+        if (file.fileURL) {
+          URL.revokeObjectURL(file.fileURL);
+        }
+      });
+    };
+  }, [files]);
 
   const handleSelect = (fieldName, value) => {
-    if (fieldName === "start_time") {
-      setStartTime(value);
-    } else if (fieldName === "end_time") {
-      setEndTime(value);
-    }
     setValue(fieldName, value);
   };
 
-  const calculateTime = () => {
-    if (!calendarDate.start_date || !calendarDate.end_date) {
-      setBusinessHours(0);
-      return;
-    }
-
-    // start_date, end_date 복사
-    const startDateTime = new Date(calendarDate.start_date);
-
-    const endDateTime = new Date(calendarDate.end_date);
-
-    // startTime이 "HH:mm" 형태일 때 시간과 분 설정
-    if (startTime) {
-      const hour = Number(startTime.split(":")[0]);
-      startDateTime.setHours(hour, 0, 0, 0);
-    } else {
-      startDateTime.setHours(0, 0, 0, 0);
-    }
-
-    if (endTime) {
-      const hour = Number(endTime.split(":")[0]);
-      endDateTime.setHours(hour, 0, 0, 0);
-    } else {
-      endDateTime.setHours(0, 0, 0, 0);
-    }
-
-    const calenderMinute = endDateTime - startDateTime; // 밀리초 차이
-    const calenderHours = calenderMinute / (1000 * 60 * 60); // 시간 단위 변환
-
-    if (calenderHours < 0) {
-      alert("시간을 다시 확인해주세요.");
-      setBusinessHours(0);
-      return;
-    }
-
-    setBusinessHours(calenderHours);
-  };
-
   const onSchedule = (formData) => {
-    if (!calendarDate.start_date || !calendarDate.end_date) {
-      return alert("날짜를 선택해주세요.");
+    if (!formData.quotation_startDate || !formData.quotation_endDate) {
+      alert("날짜를 선택해주세요.");
+      return;
     }
 
-    if (businessHours < 0) {
-      return alert("시간을 다시 확인해주세요.");
+    if (businessHours <= 0) {
+      alert("시간을 다시 확인해주세요.");
+      return;
     }
-    console.log("form", formData);
-    console.log("tags", tags);
-    calculateTime(formData);
+
+    console.log("formData", formData);
+    console.log("총 촬영시간", businessHours);
   };
-
-  // const handleFileChange = (event) => {
-  //   const newFiles = Array.from(event.target.files);
-
-  //   setFiles((prevFiles) => [
-  //     ...prevFiles,
-  //     ...newFiles.map((file) => file.name),
-  //   ]);
-  // };
 
   const handleFileChange = (event) => {
     const newFiles = Array.from(event.target.files);
@@ -181,6 +150,9 @@ const QuotationPage = (props) => {
   console.log("files", files);
 
   const handleDeleteFile = (index) => {
+    if (files[index]?.fileURL) {
+      URL.revokeObjectURL(files[index].fileURL);
+    }
     setFiles((prevFiles) => prevFiles.filter((_, i) => i !== index));
   };
 
@@ -233,74 +205,40 @@ const QuotationPage = (props) => {
               <legend>촬영 정보</legend>
               <div className="date_section">
                 <div className="date_calendar">
-                  <span>촬영 시작 날짜</span>
-
-                  <p onClick={() => toggleCalendar("start_date_calendar")}>
-                    {calendarDate.start_date
-                      ? calendarDate.start_date
-                      : "날짜를 선택해주세요."}
-                  </p>
-                  {calendarOpen.start_date_calendar && (
-                    <Calendar
-                      tileClassName={tileClassName}
-                      onChange={(date) => handleDateChange("start_date", date)}
-                      calendarType="Hebrew"
-                      value={
-                        calendarDate.start_date
-                          ? new Date(calendarDate.start_date)
-                          : null
-                      }
-                      formatDay={(locale, date) => date.getDate()}
-                    />
-                  )}
-                  <button
-                    onClick={() => toggleCalendar("start_date_calendar")}
-                    type="button"
-                  >
-                    <span>{calendarOpen.start_date_calendar ? "▲" : "▼"} </span>
-                  </button>
+                  <CustomCalendar
+                    id="quotation_startDate"
+                    label="촬영 시작일"
+                    setValue={setValue}
+                    value={watch("quotation_startDate")}
+                  />
                 </div>
-                <DropdownForm
+
+                <SelectInput
+                  register={register}
+                  options={timeTable}
                   label="시작 시간"
-                  selectedValue=""
-                  list={timeTable}
-                  onSelect={(value) => handleSelect("start_time", value)}
+                  id="quotation_startTime"
+                  onChange={(value) =>
+                    handleSelect("quotation_startTime", value)
+                  }
                 />
               </div>
               <div className="date_section">
                 <div className="date_calendar">
-                  <span>촬영 종료 날짜</span>
-                  <p onClick={() => toggleCalendar("end_date_calendar")}>
-                    {calendarDate.end_date
-                      ? calendarDate.end_date
-                      : "날짜를 선택해주세요."}
-                  </p>
-                  {calendarOpen.end_date_calendar && (
-                    <Calendar
-                      tileClassName={tileClassName}
-                      onChange={(date) => handleDateChange("end_date", date)}
-                      calendarType="Hebrew"
-                      value={
-                        calendarDate.end_date
-                          ? new Date(calendarDate.end_date)
-                          : null
-                      }
-                      formatDay={(locale, date) => date.getDate()}
-                    />
-                  )}
-                  <button
-                    onClick={() => toggleCalendar("end_date_calendar")}
-                    type="button"
-                  >
-                    <span> {calendarOpen.end_date_calendar ? "▲" : "▼"} </span>
-                  </button>
+                  <CustomCalendar
+                    id="quotation_endDate"
+                    label="촬영 종료일"
+                    setValue={setValue}
+                    value={watch("quotation_endDate")}
+                  />
                 </div>
 
-                <DropdownForm
+                <SelectInput
+                  register={register}
+                  options={timeTable}
                   label="종료 시간"
-                  selectedValue=""
-                  list={timeTable}
-                  onSelect={(value) => handleSelect("end_time", value)}
+                  id="quotation_endTime"
+                  onChange={(value) => handleSelect("quotation_endTime", value)}
                 />
               </div>
 
@@ -401,7 +339,9 @@ const QuotationPage = (props) => {
               </tbody>
             </table>
             <div className="submit_btn">
-              <Button type="submit">섭외 요청하기</Button>
+              <Button type="submit" disabled={businessHours <= 0}>
+                섭외 요청하기
+              </Button>
             </div>
           </form>
         </div>

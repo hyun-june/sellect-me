@@ -94,10 +94,6 @@
       cursor: pointer;
       z-index: 0;
     }
-
-    .nationality_option {
-      font-size: clamp(12px, 2vw, 16px);
-    }
   }
 }
 

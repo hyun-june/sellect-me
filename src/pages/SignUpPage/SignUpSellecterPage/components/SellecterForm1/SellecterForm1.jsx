@@ -89,11 +89,11 @@ const SellecterForm1 = ({ goToNextTab }) => {
           <h5>사업자 정보</h5>
           <div className="select_option">
             <label>
-              <span className="required_mark">*</span>국가
+              <span className="required_mark">*</span>국적
             </label>
             <select name="business_country" {...register("business_country")}>
               <option value="" disabled selected>
-                국가
+                국적
               </option>
               {countryNames.map((country, index) => {
                 const value = (index + 1).toString();
@@ -120,7 +120,7 @@ const SellecterForm1 = ({ goToNextTab }) => {
             <span className="dropdown_mark">▼</span>
           </div>
           {/* <FormInput
-            title="국가"
+            title="국적"
             id="business_country"
             register={register}
             error={errors.business_country}

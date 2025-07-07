@@ -40,7 +40,7 @@ const userInfo = {
     { title: "아이컬러", content: "RED" },
   ],
   userCountryList: [
-    { title: "국가", content: "KOREA" },
+    { title: "국적", content: "KOREA" },
     { title: "언어", content: "KOREAN" },
   ],
 
