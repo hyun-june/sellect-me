@@ -25,7 +25,7 @@ const testData = {
   shoes_size: "260",
   hair_color: "Black",
   eye_color: "Brown",
-  nationality: "1",
+  nationality: "10",
   language: "English",
   pay: 120000,
 };

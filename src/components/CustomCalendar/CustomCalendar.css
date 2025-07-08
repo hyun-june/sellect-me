@@ -50,6 +50,10 @@
     margin: 0;
   }
 
+  .react-calendar__tile--now {
+    background-color: white;
+  }
+
   .react-calendar__navigation__label__labelText {
     font-weight: bold;
     color: var(--text-color);

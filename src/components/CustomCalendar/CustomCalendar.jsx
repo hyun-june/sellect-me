@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Calendar } from "react-calendar";
+import "react-calendar/dist/Calendar.css";
 import "./CustomCalendar.css";
 
 const CustomCalendar = ({ ...props }) => {
@@ -34,6 +35,7 @@ const CustomCalendar = ({ ...props }) => {
     setValue(id, formattedDate);
     setCalendarOpen(false);
   };
+
   useEffect(() => {
     if (!value) {
       setCalendarDate((prev) => ({

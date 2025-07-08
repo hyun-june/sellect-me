@@ -61,6 +61,10 @@
   align-content: center;
   height: 100%;
 
+  .profile_inner_List {
+    width: 100%;
+  }
+
   dl {
     margin: 0;
     gap: clamp(1.5em, 1vw, 2em);

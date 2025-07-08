@@ -33,5 +33,4 @@ export const inputMaxLength = {
   manager_name: 50,
   visa_type: 50,
   registration_number: 50,
-  agency: 50,
 };

@@ -41,7 +41,7 @@ const SellebForm1 = ({ goToNextTab }) => {
       year: "",
       month: "",
       day: "",
-      gender: "0",
+      gender: "",
       nationality: "",
       address: "",
       phone_number: "",
