@@ -6,6 +6,7 @@ import { useSellebContext } from "../../../../../context/SellebContext";
 import { useEffect } from "react";
 import SelectInput from "../../../../../components/SelectInput/SelectInput";
 import "./SellebForm1.css";
+import SelectInputCountry from "./../../../../../components/SelectInputCountry/SelectInputCountry";
 
 const languageList = [
   "Korean",
@@ -52,12 +53,9 @@ const SellebForm1 = ({ goToNextTab }) => {
   });
   const { formData, updateFormData } = useSellebContext();
 
-  const countryList = require("country-list");
-  const countryNames = countryList.getNames();
-
-  const handleSelect = (fieldName, value) => {
-    setValue(fieldName, value);
-  };
+  // const handleSelect = (fieldName, value) => {
+  //   setValue(fieldName, value);
+  // };
 
   useEffect(() => {
     console.log("Context의 formData가 업데이트됨:", formData);
@@ -193,7 +191,9 @@ const SellebForm1 = ({ goToNextTab }) => {
               register={register}
             />
 
-            <div className="select_option">
+            <SelectInputCountry register={register} watch={watch} />
+
+            {/* <div className="select_option">
               <label>
                 <span className="required_mark">*</span>국적
               </label>
@@ -225,7 +225,7 @@ const SellebForm1 = ({ goToNextTab }) => {
                 })}
               </select>
               <span className="dropdown_mark">▼</span>
-            </div>
+            </div>*/}
           </div>
 
           {/* <FormInput
