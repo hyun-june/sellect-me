@@ -4,6 +4,8 @@ import NextButton from "../../../components/NextButton/NextButton";
 import PrevButton from "../../../components/PrevButton/PrevButton";
 import CustomCalendar from "../../../../../components/CustomCalendar/CustomCalendar";
 import "./SellebForm3.css";
+import { useEffect } from "react";
+import { useSellebContext } from "../../../../../context/SellebContext";
 
 const SellebForm3 = ({ goToNextTab, goToPrevTab }) => {
   const {
@@ -11,6 +13,7 @@ const SellebForm3 = ({ goToNextTab, goToPrevTab }) => {
     handleSubmit,
     watch,
     setValue,
+    reset,
     formState: { errors },
   } = useForm({
     defaultValues: {
@@ -20,6 +23,17 @@ const SellebForm3 = ({ goToNextTab, goToPrevTab }) => {
       agency_endDate: "",
     },
   });
+
+  const { formData, updateFormData } = useSellebContext();
+  useEffect(() => {
+    console.log("SellebForm3에서 확인한 전체 formData:", formData);
+  }, [formData]);
+
+  useEffect(() => {
+    if (formData) {
+      reset(formData);
+    }
+  }, [formData]);
 
   const agency = watch("agencyStatus") === "1";
 
@@ -78,11 +92,13 @@ const SellebForm3 = ({ goToNextTab, goToPrevTab }) => {
               id="agency_startDate"
               label="계약 시작일"
               setValue={setValue}
+              value={formData?.agency_startDate}
             />
             <CustomCalendar
               id="agency_endDate"
               label="계약 종료일"
               setValue={setValue}
+              value={formData?.agency_endDate}
             />
           </div>
         </>

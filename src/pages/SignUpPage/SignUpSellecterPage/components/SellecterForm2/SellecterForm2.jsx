@@ -1,17 +1,19 @@
 import { useForm } from "react-hook-form";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import FormInput from "../../../../../components/FormInput/FormInput";
 import DropdownForm from "../../../../../components/DropdownForm/DropdownForm";
 import NextButton from "../../../components/NextButton/NextButton";
 import PrevButton from "../../../components/PrevButton/PrevButton";
 import UploadBox from "../../../components/UploadBox/UploadBox";
 import "./SellecterForm2.css";
+import { useSellecterContext } from "../../../../../context/SellecterContext";
 
 const SellecterForm2 = ({ goToNextTab, goToPrevTab }) => {
   const {
     register,
     handleSubmit,
     setValue,
+    reset,
     formState: { errors },
   } = useForm({
     defaultValues: {
@@ -21,6 +23,18 @@ const SellecterForm2 = ({ goToNextTab, goToPrevTab }) => {
       manager_name: "",
     },
   });
+
+  const { formData, updateFormData } = useSellecterContext();
+
+  useEffect(() => {
+    console.log("SellebForm2에서 확인한 전체 formData:", formData);
+  }, [formData]);
+
+  useEffect(() => {
+    if (formData) {
+      reset(formData);
+    }
+  }, [formData]);
 
   const [images, setImages] = useState({
     bankbook_img: null,

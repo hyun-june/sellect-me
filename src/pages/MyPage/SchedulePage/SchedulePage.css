@@ -9,6 +9,10 @@
     border: none;
   }
 
+  .react-calendar__tile--now {
+    background-color: white;
+  }
+
   .sunday {
     color: red;
   }

@@ -10,6 +10,7 @@ const SellebForm4 = ({ goToNextTab, goToPrevTab }) => {
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors },
   } = useForm({
     defaultValues: {
@@ -29,6 +30,12 @@ const SellebForm4 = ({ goToNextTab, goToPrevTab }) => {
 
   useEffect(() => {
     console.log("SellebForm4에서 확인한 전체 formData:", formData);
+  }, [formData]);
+
+  useEffect(() => {
+    if (formData) {
+      reset(formData);
+    }
   }, [formData]);
 
   const onSubmit = (data) => {

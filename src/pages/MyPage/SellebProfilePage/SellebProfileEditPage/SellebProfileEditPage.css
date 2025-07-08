@@ -27,7 +27,6 @@
     select {
       width: 100%;
       text-align: left;
-
       font-weight: normal;
     }
   }
@@ -155,7 +154,7 @@
     }
   }
 
-  .country_list {
+  .option_list {
     width: 100%;
 
     .select_option {

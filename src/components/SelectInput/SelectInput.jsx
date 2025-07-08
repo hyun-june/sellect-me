@@ -24,8 +24,8 @@ const SelectInput = ({ ...props }) => {
         <option value="" disabled>
           {title || label}
         </option>
-        {options.map((opt, i) => (
-          <option key={i} value={opt}>
+        {options.map((opt, index) => (
+          <option key={index + 1} value={index + 1}>
             {opt}
           </option>
         ))}

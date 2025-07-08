@@ -33,7 +33,7 @@ const SellebForm1 = ({ goToNextTab }) => {
     register,
     handleSubmit,
     watch,
-    setValue,
+    reset,
     formState: { errors },
   } = useForm({
     defaultValues: {
@@ -59,6 +59,12 @@ const SellebForm1 = ({ goToNextTab }) => {
 
   useEffect(() => {
     console.log("Context의 formData가 업데이트됨:", formData);
+  }, [formData]);
+
+  useEffect(() => {
+    if (formData) {
+      reset(formData);
+    }
   }, [formData]);
 
   const onSubmit = (formData) => {
@@ -191,7 +197,12 @@ const SellebForm1 = ({ goToNextTab }) => {
               register={register}
             />
 
-            <SelectInputCountry register={register} watch={watch} />
+            <SelectInputCountry
+              register={register}
+              watch={watch}
+              label="국적"
+              id="nationality"
+            />
 
             {/* <div className="select_option">
               <label>

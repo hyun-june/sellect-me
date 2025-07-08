@@ -44,6 +44,7 @@
   border: 2px solid var(--line-color);
   padding: clamp(1em, 2vw, 1.5em);
   gap: 0.5em;
+  justify-items: center;
 
   dl {
     height: 100%;
@@ -74,11 +75,13 @@
   dl {
     margin-bottom: clamp(1em, 2vw, 2em);
   }
+
   .tag_container {
     overflow: hidden;
 
     span {
       width: clamp(4em, 4vw, 5em);
+
       font-size: clamp(0.875em, 1vw, 1em);
     }
   }
@@ -100,8 +103,9 @@
     flex-direction: column;
     padding: 0em;
     flex-wrap: wrap;
-    max-height: 10em;
+    max-height: 12em;
     margin-bottom: 0.5em;
+    gap: 0.2em;
 
     li {
       list-style: none;

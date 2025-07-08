@@ -1,20 +1,22 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import FormInput from "../../../../../components/FormInput/FormInput";
 import NextButton from "../../../components/NextButton/NextButton";
 import UploadBox from "../../../components/UploadBox/UploadBox";
 import PrevButton from "../../../components/PrevButton/PrevButton";
 import "./SellebForm2.css";
+import { useSellebContext } from "../../../../../context/SellebContext";
 
 const SellebForm2 = ({ goToNextTab, goToPrevTab }) => {
   const {
     register,
     handleSubmit,
     watch,
+    reset,
     formState: { errors },
   } = useForm({
     defaultValues: {
-      visa_type: "",
+      visa: "",
       registration_number: "",
       bank_name: "",
       bank_depositor: "",
@@ -23,6 +25,19 @@ const SellebForm2 = ({ goToNextTab, goToPrevTab }) => {
       manager_name: "",
     },
   });
+  const { formData, updateFormData } = useSellebContext();
+
+  // formData 변경 감지
+  useEffect(() => {
+    console.log("SellebForm2에서 확인한 전체 formData:", formData);
+  }, [formData]);
+
+  useEffect(() => {
+    if (formData) {
+      reset(formData);
+    }
+  }, [formData]);
+
   const [images, setImages] = useState({
     id_photo: null,
     consent_photo: null,
@@ -61,7 +76,7 @@ const SellebForm2 = ({ goToNextTab, goToPrevTab }) => {
     }
 
     if (data.visaStatus === "1") {
-      data.visa_type = "";
+      data.visa = "";
       data.registration_number = "";
     }
     if (images.bank_photo === null) {
@@ -145,7 +160,7 @@ const SellebForm2 = ({ goToNextTab, goToPrevTab }) => {
               <div className="visa-input">
                 <FormInput
                   title="비자 종류"
-                  id="visa_type"
+                  id="visa"
                   register={register}
                   error={errors.visa}
                   required={isForeign}
@@ -204,8 +219,14 @@ const SellebForm2 = ({ goToNextTab, goToPrevTab }) => {
               title="세금계산서수취이메일"
               id="tax_email"
               register={register}
+              disableValidation={true}
             />
-            <FormInput title="담당자명" id="manager_name" register={register} />
+            <FormInput
+              title="담당자명"
+              id="manager_name"
+              register={register}
+              disableValidation={true}
+            />
           </div>
         </section>
       </div>

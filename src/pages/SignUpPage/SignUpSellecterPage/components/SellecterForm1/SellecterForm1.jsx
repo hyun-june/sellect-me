@@ -4,6 +4,9 @@ import NextButton from "../../../components/NextButton/NextButton";
 import FormInput from "../../../../../components/FormInput/FormInput";
 import SelectInput from "./../../../../../components/SelectInput/SelectInput";
 import "./SellecterForm1.css";
+import SelectInputCountry from "../../../../../components/SelectInputCountry/SelectInputCountry";
+import { useEffect } from "react";
+import { useSellecterContext } from "../../../../../context/SellecterContext";
 
 const entityList = ["개인사업자", "공동사업자", "법인사업자"];
 const typeList = [
@@ -48,6 +51,7 @@ const SellecterForm1 = ({ goToNextTab }) => {
     handleSubmit,
     setValue,
     watch,
+    reset,
     formState: { errors },
   } = useForm({
     defaultValues: {
@@ -64,6 +68,18 @@ const SellecterForm1 = ({ goToNextTab }) => {
     },
   });
 
+  const { formData, updateFormData } = useSellecterContext();
+
+  useEffect(() => {
+    console.log("SellebForm2에서 확인한 전체 formData:", formData);
+  }, [formData]);
+
+  useEffect(() => {
+    if (formData) {
+      reset(formData);
+    }
+  }, [formData]);
+
   const handleInfo = (formData) => {
     if (
       !formData.business_entity_type ||
@@ -79,46 +95,18 @@ const SellecterForm1 = ({ goToNextTab }) => {
   const handleSelect = (fieldName, value) => {
     setValue(fieldName, value);
   };
-  const countryList = require("country-list");
-  const countryNames = countryList.getNames();
 
   return (
     <div>
       <form onSubmit={handleSubmit(handleInfo)} className="business_info">
         <section>
           <h5>사업자 정보</h5>
-          <div className="select_option">
-            <label>
-              <span className="required_mark">*</span>국적
-            </label>
-            <select name="business_country" {...register("business_country")}>
-              <option value="" disabled selected>
-                국적
-              </option>
-              {countryNames.map((country, index) => {
-                const value = (index + 1).toString();
-                const selectedValue = watch("business_country");
-
-                const isSelected = selectedValue === value;
-
-                return (
-                  <option
-                    className="options_list"
-                    value={value}
-                    key={value}
-                    title={country}
-                  >
-                    {isSelected
-                      ? country
-                      : country.length > 20
-                      ? country.slice(0, 20) + "..."
-                      : country}
-                  </option>
-                );
-              })}
-            </select>
-            <span className="dropdown_mark">▼</span>
-          </div>
+          <SelectInputCountry
+            register={register}
+            watch={watch}
+            label="국적"
+            id="business_country"
+          />
           {/* <FormInput
             title="국적"
             id="business_country"

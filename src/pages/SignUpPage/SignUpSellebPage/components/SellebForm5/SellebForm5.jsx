@@ -1,9 +1,10 @@
 import { useForm } from "react-hook-form";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import FormInput from "../../../../../components/FormInput/FormInput";
 import NextButton from "../../../components/NextButton/NextButton";
 import PrevButton from "../../../components/PrevButton/PrevButton";
 import "./SellebForm5.css";
+import { useSellebContext } from "../../../../../context/SellebContext";
 
 const SellebForm5 = ({ goToNextTab, goToPrevTab }) => {
   const {
@@ -11,6 +12,7 @@ const SellebForm5 = ({ goToNextTab, goToPrevTab }) => {
     handleSubmit,
     setValue,
     getValues,
+    reset,
     watch,
     formState: { errors },
   } = useForm({
@@ -18,6 +20,18 @@ const SellebForm5 = ({ goToNextTab, goToPrevTab }) => {
       currency: "won",
     },
   });
+
+  const { formData, updateFormData } = useSellebContext();
+
+  useEffect(() => {
+    console.log("SellebForm5에서 확인한 전체 formData:", formData);
+  }, [formData]);
+
+  useEffect(() => {
+    if (formData) {
+      reset(formData);
+    }
+  }, [formData]);
 
   const [payValue, setPayValue] = useState(0);
 

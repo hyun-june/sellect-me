@@ -32,6 +32,7 @@ const FormInput = ({
       }
     }
   };
+  console.log(props);
 
   const patternType = validationPatterns[type];
 

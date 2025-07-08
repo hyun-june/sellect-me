@@ -16,17 +16,17 @@ import "./SellebProfileEditPage.css";
 const testData = {
   height: "180",
   weight: "70",
-  gender: "남성",
+  gender: "1",
   chest: "31",
   waist: "32",
   hips: "33",
   top_size: "30",
   pants_size: "31",
   shoes_size: "260",
-  hair_color: "Black",
-  eye_color: "Brown",
+  hair_color: "1",
+  eye_color: "2",
   nationality: "10",
-  language: "English",
+  language: "2",
   pay: 120000,
 };
 
@@ -46,6 +46,20 @@ const languageList = [
   "Vietnamese",
   "Thai",
   "Indonesian",
+];
+
+const colorList = [
+  "Black",
+  "Dark Brown",
+  "Brown",
+  "Light Brown",
+  "Blonde",
+  "Red",
+  "Gray",
+  "White",
+  "Blue",
+  "Green",
+  "Hazel",
 ];
 
 const genderList = ["남성", "여성"];
@@ -175,20 +189,22 @@ const SellebProfileEditPage = (props) => {
       {
         title: "헤어컬러",
         content: (
-          <FormInput
+          <SelectInput
             id="hair_color"
+            title="헤어컬러"
+            options={colorList}
             register={register}
-            error={errors.hair_color}
           />
         ),
       },
       {
         title: "아이컬러",
         content: (
-          <FormInput
+          <SelectInput
             id="eye_color"
+            title="아이컬러"
+            options={colorList}
             register={register}
-            error={errors.eye_color}
           />
         ),
       },
@@ -198,7 +214,11 @@ const SellebProfileEditPage = (props) => {
         title: "국적",
         content: (
           // <FormInput id="world" register={register} error={errors.world} />
-          <SelectInputCountry register={register} watch={watch} />
+          <SelectInputCountry
+            register={register}
+            watch={watch}
+            id="nationality"
+          />
         ),
       },
       {
@@ -206,6 +226,7 @@ const SellebProfileEditPage = (props) => {
         content: (
           <SelectInput
             id="language"
+            title="언어"
             options={languageList}
             register={register}
           />
@@ -283,8 +304,10 @@ const SellebProfileEditPage = (props) => {
               <ProfileInfoList list={profileData.profileInfoList} />
               <ProfileInfoList list={profileData.threeSizeList} />
               <ProfileInfoList list={profileData.sizeList} />
-              <ProfileInfoList list={profileData.colorList} />
-              <div className="country_list">
+              <div className="option_list">
+                <ProfileInfoList list={profileData.colorList} />
+              </div>
+              <div className="option_list">
                 <ProfileInfoList list={profileData.countryList} />
               </div>
             </div>

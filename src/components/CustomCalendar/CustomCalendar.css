@@ -33,6 +33,14 @@
     width: 100%;
   }
 
+  .sunday {
+    color: red;
+  }
+
+  .not_sunday {
+    color: var(--text-color);
+  }
+
   .react-calendar__month-view__days__day-names,
   .react-calendar__month-view__days__day {
     abbr {

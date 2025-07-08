@@ -13,7 +13,7 @@ import "./SellecterProfileEditPage.css";
 
 const testData = {
   business_name: "sellecter",
-  repressentative_name: "김지은",
+  representative_name: "김지은",
   business_address: "서울시 강서구 마곡동 888-2",
   business_registration_number: "123-23-1234567",
   company_website: "www.sellect.com",
@@ -25,7 +25,7 @@ const SellecterProfileEditPage = (props) => {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm({ defaultValues: { testData } });
+  } = useForm({ defaultValues: testData });
 
   const sellecterInfoList = [
     {
@@ -44,8 +44,8 @@ const SellecterProfileEditPage = (props) => {
       content: (
         <FormInput
           register={register}
-          id="repressentative_name"
-          error={errors.repressentative_name}
+          id="representative_name"
+          error={errors.representative_name}
           disableValidation={true}
         />
       ),
