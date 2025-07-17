@@ -2,15 +2,17 @@
   display: flex;
   flex-wrap: wrap;
   gap: 0.5em;
-  width: 100%;
 
   span {
     color: var(--text-color);
-    width: clamp(4em, 4vw, 5em);
+    width: clamp(4em, 5vw, 5em);
     height: 2em;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    display: block;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    text-align: center;
+    line-height: 1.7em;
     border-radius: 8px;
     border: 2px solid var(--line-color);
   }

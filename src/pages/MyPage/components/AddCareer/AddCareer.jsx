@@ -3,15 +3,9 @@ import { FaPlus } from "react-icons/fa6";
 import { IoCloseSharp } from "react-icons/io5";
 import "./AddCareer.css";
 
-const carrersList = [
-  "2020.01.01 OOO브랜드OOO화보촬영",
-  "2021.05.30 OOO브랜드OOO화보촬영",
-];
-
 const AddCareer = ({ ...props }) => {
-  const [careers, setCareers] = useState([]);
+  const { careers, setCareers } = props;
   const [newCareer, setNewCareer] = useState("");
-  const [dafaultCareers, setDefaultCareers] = useState([...carrersList]);
 
   const handleAddCareer = () => {
     if (newCareer.trim() === "") {
@@ -19,7 +13,7 @@ const AddCareer = ({ ...props }) => {
       return;
     }
 
-    if (!careers.includes(newCareer) && !dafaultCareers.includes(newCareer)) {
+    if (!careers.includes(newCareer)) {
       setCareers([...careers, newCareer]);
       setNewCareer("");
     } else {
@@ -27,26 +21,22 @@ const AddCareer = ({ ...props }) => {
     }
   };
 
-  const handleDeleteCareer = (index, isDefault) => {
-    if (isDefault) {
-      setDefaultCareers((prev) => prev.filter((_, i) => i !== index));
-    } else {
-      setCareers((prev) => prev.filter((_, i) => i !== index));
-    }
+  const handleDeleteCareer = (index) => {
+    setCareers((prev) => prev.filter((_, i) => i !== index));
   };
 
   return (
     <div className="career">
       <ul {...props}>
-        {[...dafaultCareers, ...careers].map((carrer, index) => (
+        {careers.map((carrer, index) => (
           <li key={index}>
             {carrer}{" "}
             <button
               type="button"
               onClick={() =>
-                index < dafaultCareers.length
+                index < careers.length
                   ? handleDeleteCareer(index, true)
-                  : handleDeleteCareer(index - dafaultCareers.length, false)
+                  : handleDeleteCareer(index - careers.length, false)
               }
             >
               <IoCloseSharp />

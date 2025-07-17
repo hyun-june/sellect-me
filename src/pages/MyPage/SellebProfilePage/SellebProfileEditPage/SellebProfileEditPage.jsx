@@ -21,13 +21,15 @@ const testData = {
   waist: "32",
   hips: "33",
   top_size: "30",
-  pants_size: "31",
-  shoes_size: "260",
+  bottom_size: "31",
+  shoe_size: "260",
   hair_color: "1",
   eye_color: "2",
   nationality: "10",
   language: "2",
   pay: 120000,
+  city: "서울",
+  copyright: 1,
 };
 
 const languageList = [
@@ -62,6 +64,11 @@ const colorList = [
   "Hazel",
 ];
 
+const careerList = [
+  "2020.01.01 OOO브랜드OOO화보촬영",
+  "2021.05.30 OOO브랜드OOO화보촬영",
+];
+
 const genderList = ["남성", "여성"];
 
 const SellebProfileEditPage = (props) => {
@@ -78,11 +85,12 @@ const SellebProfileEditPage = (props) => {
   const [subImg, setSubImg] = useState([null, null, null, null]);
   const [tags, setTags] = useState([]);
   const [defaultTags, setDefaultTags] = useState(["사진", "뮤비"]);
+  const [careers, setCareers] = useState([...careerList]);
 
   const profileData = {
     profileInfoList: [
       {
-        title: "성별",
+        title: "Gender",
         content: (
           <SelectInput
             register={register}
@@ -93,7 +101,7 @@ const SellebProfileEditPage = (props) => {
         ),
       },
       {
-        title: "키",
+        title: "Height",
         content: (
           <FormInput
             register={register}
@@ -104,7 +112,7 @@ const SellebProfileEditPage = (props) => {
         ),
       },
       {
-        title: "몸무게",
+        title: "Weight",
         content: (
           <FormInput
             register={register}
@@ -117,7 +125,7 @@ const SellebProfileEditPage = (props) => {
     ],
     threeSizeList: [
       {
-        title: "가슴둘레",
+        title: "Chest",
         content: (
           <FormInput
             id="chest"
@@ -128,7 +136,7 @@ const SellebProfileEditPage = (props) => {
         ),
       },
       {
-        title: "허리둘레",
+        title: "Waist",
         content: (
           <FormInput
             id="waist"
@@ -139,7 +147,7 @@ const SellebProfileEditPage = (props) => {
         ),
       },
       {
-        title: "힙 둘레",
+        title: "Hip size",
         content: (
           <FormInput
             id="hips"
@@ -152,7 +160,7 @@ const SellebProfileEditPage = (props) => {
     ],
     sizeList: [
       {
-        title: "상의 사이즈",
+        title: "Top size",
         content: (
           <FormInput
             id="top_size"
@@ -163,31 +171,31 @@ const SellebProfileEditPage = (props) => {
         ),
       },
       {
-        title: "하의 사이즈",
+        title: "Bottom size",
         content: (
           <FormInput
-            id="pants_size"
+            id="bottom_size"
             register={register}
             type="number"
-            error={errors.pants_size}
+            error={errors.bottom_size}
           />
         ),
       },
       {
-        title: "신발 사이즈",
+        title: "Shoe size",
         content: (
           <FormInput
-            id="shoes_size"
+            id="shoe_size"
             register={register}
             type="number"
-            error={errors.shoes_size}
+            error={errors.shoe_size}
           />
         ),
       },
     ],
     colorList: [
       {
-        title: "헤어컬러",
+        title: "Hair Color",
         content: (
           <SelectInput
             id="hair_color"
@@ -211,7 +219,7 @@ const SellebProfileEditPage = (props) => {
     ],
     countryList: [
       {
-        title: "국적",
+        title: "Nationality",
         content: (
           // <FormInput id="world" register={register} error={errors.world} />
           <SelectInputCountry
@@ -222,7 +230,7 @@ const SellebProfileEditPage = (props) => {
         ),
       },
       {
-        title: "언어",
+        title: "Language",
         content: (
           <SelectInput
             id="language"
@@ -234,13 +242,19 @@ const SellebProfileEditPage = (props) => {
       },
     ],
     tabItems: [
-      {
-        title: "이미지",
-        content: <PreviewImg />,
-      },
+      //  {
+      //     title: "이미지",
+      //     content: <PreviewImg />,
+      //   },
       {
         title: "커리어",
-        content: <AddCareer className="selleb_edit_career" />,
+        content: (
+          <AddCareer
+            className="selleb_edit_career"
+            careers={careers}
+            setCareers={setCareers}
+          />
+        ),
       },
     ],
   };
@@ -268,6 +282,7 @@ const SellebProfileEditPage = (props) => {
     console.log("Main Image:", mainImg);
     console.log("Sub Images:", subImg);
     console.log("tags", updateTags);
+    console.log("🚀 ~ SellebProfileEditPage ~ careers:", careers);
   };
 
   return (
@@ -344,12 +359,20 @@ const SellebProfileEditPage = (props) => {
           </div>
           <div className="selleb_range_info">
             <div>
-              <h5>이동 가능 지역 범위</h5>
-              <span>서울</span>
+              <h5>촬영 가능 지역</h5>
+
+              <FormInput id="city" register={register} error={errors.city} />
             </div>
             <div>
               <h5>저작권 사용기간</h5>
-              <span>1년</span>
+              <div className="copyright_input">
+                <FormInput
+                  id="copyright"
+                  register={register}
+                  error={errors.copyright}
+                />
+                <span>년</span>
+              </div>
             </div>
           </div>
         </section>

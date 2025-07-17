@@ -22,6 +22,11 @@ const AddProfile = ({
   const handleProfileChange = (e) => {
     if (!e.target.files) return;
     const file = e.target.files[0];
+
+    if (file && !file.type.startsWith("image/")) {
+      alert("이미지 파일만 업로드 가능합니다.");
+      return;
+    }
     if (file) {
       let profile = window.URL.createObjectURL(file);
       setProfileImgUrl(profile);
@@ -48,6 +53,7 @@ const AddProfile = ({
           <input
             type="file"
             id={`profileImage-${index}`}
+            accept=".jpg, .jpeg, .png"
             onChange={handleProfileChange}
           />
         </section>

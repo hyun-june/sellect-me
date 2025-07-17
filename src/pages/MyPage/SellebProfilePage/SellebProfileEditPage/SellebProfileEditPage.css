@@ -137,9 +137,14 @@
     gap: clamp(1em, 1vw, 2em);
     width: max-content;
 
+    > div {
+      width: 100%;
+    }
+
     dt {
       font-size: clamp(0.875em, 2vw, 1.2em);
     }
+
     dd {
       width: clamp(4em, 1vw, 2em);
       height: 1em;
@@ -208,6 +213,16 @@
     display: flex;
     flex-direction: column;
     gap: 3em;
+
+    input {
+      margin: 0;
+      width: 100%;
+    }
+
+    .copyright_input {
+      display: flex;
+      align-items: center;
+    }
   }
 }
 
