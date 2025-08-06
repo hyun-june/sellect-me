@@ -33,6 +33,7 @@
 .nav_items {
   display: flex;
   gap: 2em;
+  justify-content: space-around;
 }
 
 .nav_alarm {
@@ -121,7 +122,7 @@
     gap: 1em;
     align-items: center;
     flex: 1;
-    min-width: 80px;
+    min-width: 100px;
   }
 
   .navContainer {

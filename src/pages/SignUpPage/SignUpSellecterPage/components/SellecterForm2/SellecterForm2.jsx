@@ -125,7 +125,7 @@ const SellecterForm2 = ({ goToNextTab, goToPrevTab }) => {
           * 계좌 정보는 제출한 통장 사본과 일치해야 합니다.
         </div>
       </div>
-      <div className="form-gap">
+      <div className="form-gap chapter2">
         <h5>통장사본</h5>
         <UploadBox
           onChange={(e) => handleImageUpload(e, "bankbook_img")}

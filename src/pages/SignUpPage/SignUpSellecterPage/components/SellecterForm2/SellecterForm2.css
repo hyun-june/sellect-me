@@ -5,8 +5,13 @@
   width: 25em;
   gap: 1em;
 
-  label {
-    width: 80%;
+  .formInput_title {
+    text-align: left;
+    width: 30%;
+
+    label {
+      width: 100%;
+    }
   }
 
   .custom-dropdown {
@@ -27,6 +32,12 @@
   flex-direction: column;
   gap: 0.3em;
   width: 100%;
+}
+
+.chapter2 {
+  .formInput_title {
+    width: 55%;
+  }
 }
 
 .message-box {

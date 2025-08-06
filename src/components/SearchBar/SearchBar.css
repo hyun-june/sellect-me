@@ -20,9 +20,15 @@
   left: 2%;
 }
 
+@media screen and (max-width: 430px) {
+  .inputNav input::placeholder {
+    font-size: 0.875em;
+  }
 
-@media screen and (max-width:430px){
-.inputNav input::placeholder {
- font-size: 0.875em;
-}
+  .inputNav input {
+    width: 90%;
+    height: 2em;
+    padding: 0em 1em 0em 2em;
+    border: none;
+  }
 }

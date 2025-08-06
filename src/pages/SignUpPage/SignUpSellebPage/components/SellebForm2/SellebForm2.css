@@ -99,6 +99,10 @@
   gap: 1.2em;
 
   label {
+    width: 90%;
+  }
+
+  .formInput_title {
     width: 40%;
   }
 }
@@ -109,6 +113,10 @@
   gap: 1.2em;
 
   label {
+    width: 90%;
+  }
+
+  .formInput_title {
     width: 40%;
   }
 }
@@ -119,7 +127,11 @@
   gap: 0.3em;
 
   label {
-    width: 70%;
+    width: 90%;
+  }
+
+  .formInput_title {
+    width: 50%;
   }
 }
 

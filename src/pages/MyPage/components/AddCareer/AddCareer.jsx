@@ -28,7 +28,7 @@ const AddCareer = ({ ...props }) => {
   return (
     <div className="career">
       <ul {...props}>
-        {careers.map((carrer, index) => (
+        {careers?.map((carrer, index) => (
           <li key={index}>
             {carrer}{" "}
             <button

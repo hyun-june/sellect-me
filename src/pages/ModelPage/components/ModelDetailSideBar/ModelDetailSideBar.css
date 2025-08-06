@@ -1,7 +1,6 @@
 .sidebar_detail_container {
   border: 2px solid var(--text-color);
   max-height: max-content;
-  /* padding: 2em; */
   border-radius: 15px;
   background-color: white;
   display: flex;
@@ -16,10 +15,6 @@
     font-weight: bold;
     text-wrap: nowrap;
   }
-
-  .dropdown_mark {
-    right: -0.5em;
-  }
 }
 
 .sidebar_detail_inner {
@@ -30,54 +25,14 @@
   flex-direction: column;
 }
 
-.detail_select_gender {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 2em;
-}
-
-/* .detail_select_location {
-  height: 2em;
-  width: 100%;
-  display: grid;
-  color: var(--text-color);
-  grid-template-columns: 0.7fr 1fr;
-
-  div {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    border-bottom: 1px solid var(--text-color-gray);
-  }
-
-  select {
-    height: 100%;
-    width: 100%;
-    text-align: right;
-    padding-right: 1.5em;
-    z-index: 1;
-    cursor: pointer;
-  }
-
-  span {
-    position: absolute;
-    right: 0;
-    font-size: 0.8em;
-    z-index: 0;
-  }
-} */
-
-.detail_select_location {
+.detail_select {
   display: flex;
   flex-direction: column;
   gap: 1em;
 
   .select_country {
     label {
-      margin-right: 1em;
+      margin-right: 2em;
     }
     select {
       width: 100%;
@@ -107,51 +62,13 @@
   }
 
   label {
-    margin-right: 0.5em;
+    width: 100%;
   }
   select {
     width: 100%;
     border-bottom: 1px solid var(--text-color-gray);
-    font-size: clamp(12px, 2vw, 14px);
+    font-size: clamp(10px, 2vw, 12px);
+    text-align: left;
+    padding-left: 0.2em;
   }
 }
-
-/* .detail_select_color {
-  display: flex;
-  justify-content: space-between;
-  gap: 1em;
-  height: 2em;
-  position: relative;
-
-  div {
-    position: relative;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    border-bottom: 1px solid var(--text-color-gray);
-  }
-
-  label {
-    height: 100%;
-  }
-
-  select {
-    width: 100%;
-    height: 2em;
-    text-align: right;
-    padding-right: 1em;
-    z-index: 1;
-    cursor: pointer;
-  }
-
-  option {
-    text-align: center;
-  }
-
-  span {
-    position: absolute;
-    right: 0;
-    font-size: 0.8em;
-    z-index: 0;
-  }
-} */

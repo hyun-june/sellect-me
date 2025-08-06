@@ -4,6 +4,15 @@
   flex-direction: column;
   gap: 2em;
 
+  .formInput_title {
+    width: 40%;
+    text-align: left;
+
+    label {
+      width: 100%;
+    }
+  }
+
   section {
     display: flex;
     flex-direction: column;

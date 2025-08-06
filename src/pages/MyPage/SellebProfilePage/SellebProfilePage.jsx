@@ -10,31 +10,31 @@ import LikeButton from "./../../../components/LikeButton/LikeButton";
 import "./SellebProfilePage.css";
 
 const profileInfoList = [
-  { title: "성별", content: "FEMALE" },
-  { title: "키", content: "160cm" },
-  { title: "몸무게", content: "44kg" },
+  { title: "Gender", content: "FEMALE" },
+  { title: "Height", content: "160cm" },
+  { title: "Weight", content: "44kg" },
 ];
 
 const profileThreeSizeList = [
-  { title: "가슴둘레", content: "00" },
-  { title: "허리둘레", content: "00" },
-  { title: "힙 둘레", content: "00" },
+  { title: "Chest", content: "00" },
+  { title: "Waist", content: "00" },
+  { title: "Hip size", content: "00" },
 ];
 
 const profileSizeList = [
-  { title: "상의 사이즈", content: "00" },
-  { title: "하의 사이즈", content: "30" },
-  { title: "신발 사이즈", content: "250" },
+  { title: "Top size", content: "00" },
+  { title: "Bottom size", content: "30" },
+  { title: "Shoe size", content: "250" },
 ];
 
 const profileColorList = [
-  { title: "헤어컬러", content: "BROWN" },
-  { title: "아이컬러", content: "RED" },
+  { title: "Hair Color", content: "BROWN" },
+  { title: "Eye Color", content: "RED" },
 ];
 
 const profileCountryList = [
-  { title: "국적", content: "KOREA" },
-  { title: "언어", content: "KOREAN" },
+  { title: "Nationality", content: "KOREA" },
+  { title: "Language", content: "KOREAN" },
 ];
 
 const tabItems = [
@@ -55,6 +55,9 @@ const tabItems = [
     ),
   },
 ];
+
+const copyRightTest = 0;
+const currentTest = ["서울", "대구"];
 
 const tagList = [
   "사진",
@@ -162,11 +165,11 @@ const SellebProfilePage = ({ ...props }) => {
           <div className="profile_range_info">
             <div>
               <h5>이동 가능 지역 범위</h5>
-              <span>서울</span>
+              <span>{currentTest.join(", ")}</span>
             </div>
             <div>
               <h5>저작권 사용기간</h5>
-              <span>1년</span>
+              <span>{copyRightTest > 0 ? `${copyRightTest}년` : "-"}</span>
             </div>
           </div>
         </section>

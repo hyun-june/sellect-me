@@ -6,6 +6,7 @@ import SelectInput from "./../../../../components/SelectInput/SelectInput";
 const locationList = ["서울", "경기", "강원", "충청", "대구"];
 const hairColorList = ["BLACK", "BROWON"];
 const eyeColorList = ["BLACK", "BROWON"];
+const genderList = ["Male", "FeMale"];
 
 const ModelDetailSideBar = ({ menuType = "basic", onSearch, ...props }) => {
   const {
@@ -42,43 +43,13 @@ const ModelDetailSideBar = ({ menuType = "basic", onSearch, ...props }) => {
       onSubmit={handleSubmit(handleDetailData)}
     >
       <div className="sidebar_detail_inner">
-        <div className="detail_select_gender">
-          <span>
-            <label>
-              Male
-              <input
-                type="checkbox"
-                value="male"
-                {...register("select_gender")}
-              />
-            </label>
-          </span>
-          <span>
-            <label>
-              Female
-              <input
-                type="checkbox"
-                value="female"
-                {...register("select_gender")}
-              />
-            </label>
-          </span>
-        </div>
-        {/* <div className="detail_select_location">
-          <label>촬영장소</label>
-          <div>
-            <select name="select_location" {...register("select_location")}>
-              <option value=""></option>
-              {locationList.map((item, index) => (
-                <option key={index} value={item}>
-                  {item}
-                </option>
-              ))}
-            </select>
-            <span>▼</span>
-          </div>
-        </div> */}
-        <div className="detail_select_location">
+        <div className="detail_select">
+          <SelectInput
+            label="성별"
+            id="gender"
+            options={genderList}
+            register={register}
+          />
           <SelectInput
             label="촬영장소"
             id="select_location"
@@ -156,39 +127,9 @@ const ModelDetailSideBar = ({ menuType = "basic", onSearch, ...props }) => {
                 options={hairColorList}
                 register={register}
               />
-              {/* <label>HAIR COLOR</label>
-              <div>
-                <select
-                  name="select_hair_color"
-                  {...register("select_hair_color")}
-                >
-                  <option value=""></option>
-                  {hairColorList.map((item, index) => (
-                    <option key={index} value={item}>
-                      {item}
-                    </option>
-                  ))}
-                </select>
-                <span>▼</span>
-              </div> */}
             </div>
 
             <div className="detail_select_color">
-              {/* <label>EYE COLOR</label>
-              <div>
-                <select
-                  name="select_eyes_color"
-                  {...register("select_eyes_color")}
-                >
-                  <option value=""></option>
-                  {eyeColorList.map((item, index) => (
-                    <option key={index} value={item}>
-                      {item}
-                    </option>
-                  ))}
-                </select>
-                <span>▼</span>
-              </div> */}
               <SelectInput
                 label="EYE COLOR"
                 id="select_eyes_color"

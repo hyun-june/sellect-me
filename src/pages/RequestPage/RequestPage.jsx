@@ -21,27 +21,27 @@ const userInfo = {
     "/images/test3.jpg",
   ],
   userInfoList: [
-    { title: "성별", content: "FEMALE" },
-    { title: "키", content: "160cm" },
-    { title: "몸무게", content: "44kg" },
+    { title: "Gender", content: "FEMALE" },
+    { title: "Height", content: "160cm" },
+    { title: "Weight", content: "44kg" },
   ],
   userThreeSizeList: [
-    { title: "가슴둘레", content: "00" },
-    { title: "허리둘레", content: "00" },
-    { title: "힙 둘레", content: "00" },
+    { title: "Chest", content: "00" },
+    { title: "Waist", content: "00" },
+    { title: "Hip size", content: "00" },
   ],
   userSizeList: [
-    { title: "상의 사이즈", content: "00" },
-    { title: "하의 사이즈", content: "30" },
-    { title: "신발 사이즈", content: "250" },
+    { title: "Top size", content: "00" },
+    { title: "Bottom size", content: "30" },
+    { title: "Shoe size", content: "250" },
   ],
   userColorList: [
-    { title: "헤어컬러", content: "BROWN" },
-    { title: "아이컬러", content: "RED" },
+    { title: "Hair Color", content: "BROWN" },
+    { title: "Eye Color", content: "RED" },
   ],
   userCountryList: [
-    { title: "국적", content: "KOREA" },
-    { title: "언어", content: "KOREAN" },
+    { title: "Nationality", content: "KOREA" },
+    { title: "Language", content: "KOREAN" },
   ],
 
   tagList: ["사진", "영상", "뮤비", "홈쇼핑"],
@@ -180,6 +180,9 @@ const RequestPage = (props) => {
     return [];
   })();
 
+  const copyRightTest = 1;
+  const currentTest = ["서울", "대구"];
+
   return (
     <MainLayout {...props}>
       <div className="request_container">
@@ -285,11 +288,11 @@ const RequestPage = (props) => {
               <div className="request_profile_range_info">
                 <div>
                   <h5>이동 가능 지역 범위</h5>
-                  <span>서울</span>
+                  <span>{currentTest.join(", ")}</span>
                 </div>
                 <div>
                   <h5>저작권 사용기간</h5>
-                  <span>1년</span>
+                  <span>{copyRightTest > 0 ? `${copyRightTest}년` : "-"}</span>
                 </div>
               </div>
             </section>

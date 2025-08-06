@@ -346,6 +346,10 @@
     }
   }
 
+  .selleb_edit_hourly_rangebar {
+    width: 100%;
+  }
+
   .selleb_edit_profile_range {
     display: flex;
     flex-direction: column;

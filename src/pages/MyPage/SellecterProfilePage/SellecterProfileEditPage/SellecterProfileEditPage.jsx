@@ -89,8 +89,13 @@ const SellecterProfileEditPage = (props) => {
     },
     ,
   ];
+
+  const careerList = [];
+
   const [mainImg, setMainImg] = useState(null);
   const [noticeText, setNoticeText] = useState("");
+  const [careers, setCareers] = useState([...careerList]);
+  console.log("🚀 ~ careers:", careers);
 
   const handleNoticeSave = (text) => {
     setNoticeText(text);
@@ -103,7 +108,13 @@ const SellecterProfileEditPage = (props) => {
     },
     {
       title: "커리어",
-      content: <AddCareer className="edit_career" />,
+      content: (
+        <AddCareer
+          className="edit_career"
+          careers={careers}
+          setCareers={setCareers}
+        />
+      ),
     },
   ];
 

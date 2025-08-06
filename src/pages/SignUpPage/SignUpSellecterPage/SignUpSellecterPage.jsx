@@ -5,6 +5,7 @@ import CompleteForm from "../components/CompleteForm/CompleteForm";
 import SellecterForm1 from "./components/SellecterForm1/SellecterForm1";
 import SellecterForm2 from "./components/SellecterForm2/SellecterForm2";
 import MainLayout from "./.././../../Layouts/MainLayout/MainLayout";
+import { SellecterProvider } from "../../../context/SellecterContext";
 
 const tabList = ["사업자 정보", "민감 정보", "동의서", "제출 완료"];
 
@@ -28,48 +29,52 @@ const SignUpSellecterPage = (props) => {
 
   return (
     <MainLayout {...props}>
-      <Tabs selectedIndex={currentTabIndex} onSelect={() => false}>
-        <TabList className="tabs_list">
-          {tabList.map((item, index) => (
-            <Tab
-              key={index}
-              className={`tab_item ${index < currentTabIndex ? "visited" : ""}`}
-            >
-              {item}
-            </Tab>
-          ))}
-        </TabList>
-        <div>
-          <TabPanel>
-            <div className="tabs-inner">
-              <SellecterForm1 goToNextTab={goToNextTab} />
-            </div>
-          </TabPanel>
-          <TabPanel>
-            <div className="tabs-inner">
-              <SellecterForm2
-                goToNextTab={goToNextTab}
-                goToPrevTab={goToPrevTab}
-              />
-            </div>
-          </TabPanel>
+      <SellecterProvider>
+        <Tabs selectedIndex={currentTabIndex} onSelect={() => false}>
+          <TabList className="tabs_list">
+            {tabList.map((item, index) => (
+              <Tab
+                key={index}
+                className={`tab_item ${
+                  index < currentTabIndex ? "visited" : ""
+                }`}
+              >
+                {item}
+              </Tab>
+            ))}
+          </TabList>
+          <div>
+            <TabPanel>
+              <div className="tabs-inner">
+                <SellecterForm1 goToNextTab={goToNextTab} />
+              </div>
+            </TabPanel>
+            <TabPanel>
+              <div className="tabs-inner">
+                <SellecterForm2
+                  goToNextTab={goToNextTab}
+                  goToPrevTab={goToPrevTab}
+                />
+              </div>
+            </TabPanel>
 
-          <TabPanel>
-            <div className="tabs-inner">
-              <ConsentForm
-                type="sellecter"
-                goToNextTab={goToNextTab}
-                goToPrevTab={goToPrevTab}
-              />
-            </div>
-          </TabPanel>
-          <TabPanel>
-            <div className="tabs-inner">
-              <CompleteForm type="sellecter" />
-            </div>
-          </TabPanel>
-        </div>
-      </Tabs>
+            <TabPanel>
+              <div className="tabs-inner">
+                <ConsentForm
+                  type="sellecter"
+                  goToNextTab={goToNextTab}
+                  goToPrevTab={goToPrevTab}
+                />
+              </div>
+            </TabPanel>
+            <TabPanel>
+              <div className="tabs-inner">
+                <CompleteForm type="sellecter" />
+              </div>
+            </TabPanel>
+          </div>
+        </Tabs>
+      </SellecterProvider>
     </MainLayout>
   );
 };

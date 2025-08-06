@@ -1,5 +1,6 @@
 .model_card {
   position: relative;
+  transition: all 0.2s ease-in-out;
 
   img {
     width: 210px;
@@ -18,7 +19,7 @@
     color: transparent;
     -webkit-text-stroke: 1px var(--text-color);
     position: absolute;
-    top: 5%;
+    top: 10px;
     right: 5%;
     font-size: 1.5em;
     cursor: pointer;
@@ -29,4 +30,8 @@
     color: var(--text-color-yellow);
     -webkit-text-stroke: 1px var(--text-color-yellow);
   }
+}
+
+.model_card:hover {
+  transform: scale(1.05);
 }

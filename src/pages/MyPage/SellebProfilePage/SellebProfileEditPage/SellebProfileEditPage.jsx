@@ -206,7 +206,7 @@ const SellebProfileEditPage = (props) => {
         ),
       },
       {
-        title: "아이컬러",
+        title: "Eye Color",
         content: (
           <SelectInput
             id="eye_color"

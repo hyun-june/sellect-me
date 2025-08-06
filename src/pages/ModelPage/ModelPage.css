@@ -46,7 +46,8 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 1em 0em;
+  margin: 1em 0;
+  width: 93%;
 
   > span {
     font-weight: bold;
@@ -59,9 +60,10 @@
   }
   .dropdown_select {
     border-bottom: 1px solid var(--line-color);
-    padding: 0.5em;
+    padding: 0.5em 1em;
     text-align: center;
   }
+
   .dropdown_list {
     & li {
       text-align: center;
@@ -81,6 +83,12 @@
 .model_main_title {
   display: flex;
   justify-content: space-between;
+}
+
+@media screen and (min-width: 1200px) {
+  .model_card_section {
+    min-width: 1200px;
+  }
 }
 
 @media screen and (min-width: 768px) and (max-width: 1366px) {
