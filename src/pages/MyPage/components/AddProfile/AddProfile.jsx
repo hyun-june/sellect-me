@@ -25,6 +25,7 @@ const AddProfile = ({
 
     if (file && !file.type.startsWith("image/")) {
       alert("이미지 파일만 업로드 가능합니다.");
+      e.target.value = "";
       return;
     }
     if (file) {

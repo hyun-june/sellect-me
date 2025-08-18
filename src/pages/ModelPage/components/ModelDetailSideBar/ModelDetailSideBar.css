@@ -7,6 +7,7 @@
   padding: 2em 0em;
   align-items: center;
   flex-direction: column;
+  width: 15em;
 
   label {
     display: flex;
@@ -67,8 +68,30 @@
   select {
     width: 100%;
     border-bottom: 1px solid var(--text-color-gray);
-    font-size: clamp(10px, 2vw, 12px);
+    font-size: clamp(10px, 2vw, 14px);
     text-align: left;
     padding-left: 0.2em;
+    padding-top: 0.2em;
+  }
+}
+
+.search_input {
+  input {
+    margin: 0;
+    width: 100%;
+    text-align: left;
+  }
+  input:not(:placeholder-shown) {
+    background-color: transparent;
+  }
+}
+
+.detail_search_btn {
+  text-align: center;
+
+  button {
+    padding: 0.5em;
+    border: 1px solid var(--line-color);
+    border-radius: 5px;
   }
 }

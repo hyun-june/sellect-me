@@ -108,7 +108,7 @@ const SellebForm1 = ({ goToNextTab }) => {
 
   const handleError = (errors) => {
     console.log("유효성 검사 실패:", errors);
-    alert("필수 항목을 모두 입력해 주세요.");
+    // alert("필수 항목을 모두 입력해 주세요.");
   };
 
   const currentYear = new Date().getFullYear();

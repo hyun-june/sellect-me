@@ -33,7 +33,7 @@ const profileColorList = [
 ];
 
 const profileCountryList = [
-  { title: "Nationality", content: "KOREA" },
+  { title: "Nationality", content: "Korea, Republic of" },
   { title: "Language", content: "KOREAN" },
 ];
 

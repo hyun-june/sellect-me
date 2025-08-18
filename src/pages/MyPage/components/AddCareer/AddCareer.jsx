@@ -28,7 +28,7 @@ const AddCareer = ({ ...props }) => {
   return (
     <div className="career">
       <ul {...props}>
-        {careers?.map((carrer, index) => (
+        {careers.map((carrer, index) => (
           <li key={index}>
             {carrer}{" "}
             <button
@@ -49,8 +49,13 @@ const AddCareer = ({ ...props }) => {
           type="text"
           value={newCareer}
           onChange={(e) => setNewCareer(e.target.value)}
-          placeholder="내용을 입력해주세요"
-          onKeyPress={(e) => e.key === "Enter" && handleAddCareer()}
+          placeholder="내용을 입력해주세요. 예) 2020.01.01 OOO 브랜드 OOO 화보 촬영"
+          onKeyPress={(e) => {
+            if (e.key === "Enter") {
+              e.preventDefault();
+              handleAddCareer();
+            }
+          }}
         />
         <button type="button" onClick={handleAddCareer}>
           <FaPlus />

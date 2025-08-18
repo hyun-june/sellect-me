@@ -360,7 +360,6 @@ const SellebProfileEditPage = (props) => {
           <div className="selleb_range_info">
             <div>
               <h5>촬영 가능 지역</h5>
-
               <FormInput id="city" register={register} error={errors.city} />
             </div>
             <div>

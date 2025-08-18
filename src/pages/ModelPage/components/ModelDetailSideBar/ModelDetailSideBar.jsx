@@ -142,7 +142,9 @@ const ModelDetailSideBar = ({ menuType = "basic", onSearch, ...props }) => {
           ""
         )}
 
-        <button>검색</button>
+        <div className="detail_search_btn">
+          <button type="submit">검색</button> {/*🔥 type="submit" 추가*/}
+        </div>
       </div>
     </form>
   );

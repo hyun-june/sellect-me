@@ -2,7 +2,7 @@ import "./ProfileInfoList.css";
 
 const ProfileInfoList = ({ list, ...props }) => {
   return (
-    <div className="profile_inner_List">
+    <div className="profile_inner_List" {...props}>
       <dl>
         {list.map((item, index) => (
           <div key={index}>

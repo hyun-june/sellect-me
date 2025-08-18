@@ -200,7 +200,7 @@ const modelPageData = {
   },
   homeshopping: {
     menu: homeshoppingMenu,
-    title: "CHOICE SELLECTER",
+    title: "SELLECTER",
     label: "sellecter",
     modelData: homeShoppingData,
   },
@@ -249,11 +249,11 @@ const ModelPage = (props) => {
         {isMobile ? (
           mobileSidebar ? (
             <div className="model_sidebar_mobile">
-              <ModelSideBar
+              {/* <ModelSideBar
                 data={menu}
                 selectedMenu={selectedMenu}
                 setSelectedMenu={setSelectedMenu}
-              />
+              /> */}
               <ModelDetailSideBar
                 menuType={menuType}
                 onSearch={() => setMobileSideBar(false)}
@@ -268,11 +268,11 @@ const ModelPage = (props) => {
           ) : null
         ) : (
           <div className="model_sidebar">
-            <ModelSideBar
+            {/* <ModelSideBar
               data={menu}
               selectedMenu={selectedMenu}
               setSelectedMenu={setSelectedMenu}
-            />
+            /> */}
             <ModelDetailSideBar menuType={menuType} />
           </div>
         )}
