@@ -170,6 +170,9 @@
     dl {
       gap: 2em;
     }
+    .profile_inner_List {
+      width: 100%;
+    }
   }
 
   .sellecter_edit_profile_List {

@@ -68,19 +68,19 @@ const companyInfo = {
   companyInfo: [
     { title: "회사명", content: "SELLECT" },
     { title: "대표자", content: "김지은" },
-    {
-      title: "주소",
-      content: "서울시 강서구 마곡동 888-2",
-    },
+
     { title: "사업번호", content: "000-00-000000" },
   ],
 
   projectInfo: [
     {
+      title: "주소",
+      content: "서울시 강서구 마곡동 888-2",
+    },
+    {
       title: "홈페이지",
       content: "www.sellect.com",
     },
-    { title: "프로젝트 범위", content: <TagButton list={tagList} /> },
   ],
 
   career: [
@@ -304,8 +304,14 @@ const RequestPage = (props) => {
                 <ProfileImgBox src={selectData?.profileImg} />
               </div>
               <div className="request_sellecter_profile_info">
-                <ProfileInfoList list={selectData?.companyInfo} />
-                <ProfileInfoList list={selectData?.projectInfo} />
+                <div className="request_sellecter_profile_infoList">
+                  <ProfileInfoList list={selectData?.companyInfo} />
+                  <ProfileInfoList list={selectData?.projectInfo} />
+                </div>
+                <div className="request_sellecter_profile_project">
+                  <h5>프로젝트 범위</h5>
+                  <TagButton list={tagList} />
+                </div>
               </div>
             </section>
             <div className="request_profile">

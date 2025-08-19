@@ -8,24 +8,32 @@ import MainLayout from ".././../../Layouts/MainLayout/MainLayout";
 import LikeButton from "../../../components/LikeButton/LikeButton";
 import "./SellecterProfilePage.css";
 
+const tagList = [
+  "사진",
+  "영상",
+  "뮤비",
+  "홈쇼핑",
+  "배우",
+  "dddddddddddddddddddd",
+  "구구구구국구",
+  "가나",
+];
+
 const sellecterInfoList = [
   { title: "회사명", content: "SELLECT" },
   { title: "대표자", content: "김지은" },
+  { title: "사업번호", content: "000-00-000000" },
+];
+
+const sellecterProjectList = [
   {
     title: "주소",
     content: "서울시 강서구 마곡동 888-2서울시 강서구 마곡동 888-2",
   },
-  { title: "사업번호", content: "000-00-000000" },
-];
-
-const tagList = ["사진", "영상", "뮤비", "홈쇼핑", "배우"];
-
-const sellecterProjectList = [
   {
     title: "홈페이지",
     content: "www.sellect.com",
   },
-  { title: "프로젝트 범위", content: <TagButton list={tagList} /> },
 ];
 
 const tabItems = [
@@ -86,11 +94,17 @@ const SellecterProfilePage = (props) => {
         </div>
         <section className="sellecter_main_profile">
           <div className="sellecter_main_profile_img">
-            <ProfileImgBox />
+            <ProfileImgBox src="/images/test.jfif" />
           </div>
           <div className="sellecter_profile_info">
-            <ProfileInfoList list={sellecterInfoList} />
-            <ProfileInfoList list={sellecterProjectList} />
+            <div className="sellecter_profile_infoList">
+              <ProfileInfoList list={sellecterInfoList} />
+              <ProfileInfoList list={sellecterProjectList} />
+            </div>
+            <div className="sellecter_profile_project">
+              <h5>프로젝트 범위</h5>
+              <TagButton list={tagList} />
+            </div>
           </div>
         </section>
         <div className="tabs_content">

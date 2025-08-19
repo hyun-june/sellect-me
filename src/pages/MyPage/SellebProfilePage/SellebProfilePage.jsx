@@ -114,7 +114,8 @@ const SellebProfilePage = ({ ...props }) => {
         </div>
         <section className="selleb_main_profile">
           <div className="selleb_main_profile_img">
-            <ProfileImgBox src="/images/test.jpg" />
+            {/* <ProfileImgBox src="/images/test.jpg" /> */}
+            <ProfileImgBox src="/images/test.jfif" />
           </div>
 
           <div className="selleb_info">

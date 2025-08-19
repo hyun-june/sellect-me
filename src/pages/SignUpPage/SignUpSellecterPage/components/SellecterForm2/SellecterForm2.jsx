@@ -99,12 +99,6 @@ const SellecterForm2 = ({ goToNextTab, goToPrevTab }) => {
     <form onSubmit={handleSubmit(handleInfo)} className="sellecter-form">
       <div className="form-gap">
         <h5>계좌정보</h5>
-        {/* <DropdownForm
-          label="사업자 통장 은행"
-          list={bankList}
-          selectedValue=""
-          onSelect={(value) => handleSelect("business_bank", value)}
-        /> */}
         <FormInput
           title="사업자 통장 은행"
           id="business_bank"

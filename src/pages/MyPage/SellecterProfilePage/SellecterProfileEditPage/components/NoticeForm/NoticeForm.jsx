@@ -1,21 +1,15 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import "./NoticeForm.css";
 
-const NoticeForm = ({ noticeText, onSave }) => {
+const NoticeForm = ({ noticeText, onChange }) => {
   const [text, setText] = useState(noticeText || ``);
 
   const handleChange = (e) => {
     const updatedText = e.target.value;
     setText(updatedText);
     autoResize(e.target);
-    onSave(updatedText);
+    if (onChange) onChange(updatedText);
   };
-
-  useEffect(() => {
-    if (noticeText !== text) {
-      onSave(text);
-    }
-  }, [text, noticeText, onSave]);
 
   const autoResize = (textarea) => {
     textarea.style.height = "auto";

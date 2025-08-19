@@ -95,16 +95,11 @@ const SellecterProfileEditPage = (props) => {
   const [mainImg, setMainImg] = useState(null);
   const [noticeText, setNoticeText] = useState("");
   const [careers, setCareers] = useState([...careerList]);
-  console.log("🚀 ~ careers:", careers);
-
-  const handleNoticeSave = (text) => {
-    setNoticeText(text);
-  };
 
   const tabItems = [
     {
       title: "프로젝트",
-      content: <NoticeForm noticeText={noticeText} onSave={handleNoticeSave} />,
+      content: <NoticeForm noticeText={noticeText} onChange={setNoticeText} />,
     },
     {
       title: "커리어",

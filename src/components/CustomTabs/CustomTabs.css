@@ -28,4 +28,10 @@
 
 .customTabs-inner {
   padding: 1em 0em;
+
+  img {
+    max-height: 600px;
+    border-radius: 20px;
+    border: none;
+  }
 }
