@@ -126,7 +126,7 @@
 @media screen and (min-width: 768px) and (max-width: 1366px) {
 }
 
-@media screen and (max-width: 430px) {
+@media screen and (max-width: 500px) {
   .info-form {
     > div:first-child {
       flex-direction: column;

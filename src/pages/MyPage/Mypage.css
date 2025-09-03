@@ -185,7 +185,7 @@
   }
 }
 
-@media screen and (max-width: 430px) {
+@media screen and (max-width: 500px) {
   .mypage_inner {
     display: flex;
     flex-direction: column;

@@ -142,7 +142,7 @@
   }
 }
 
-@media screen and (max-width: 430px) {
+@media screen and (max-width: 500px) {
   .sellecter_edit_main_profile {
     flex-direction: column;
   }

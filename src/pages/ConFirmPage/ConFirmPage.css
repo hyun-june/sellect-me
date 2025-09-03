@@ -95,7 +95,7 @@
   }
 }
 
-@media screen and (max-width: 430px) {
+@media screen and (max-width: 500px) {
   .confirm_container {
     font-size: 14px;
     width: 100%;

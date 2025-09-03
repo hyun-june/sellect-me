@@ -93,7 +93,51 @@
   margin: 0.2em 0;
 }
 
-@media screen and (max-width: 430px) {
+/* @media screen and (max-width: 430px) {
+  .nav_search {
+    width: calc(100% - 50px);
+  }
+
+  .skeleton_search {
+    height: 2em;
+    width: 100%;
+  }
+
+  .navbar_alarm_login {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1em;
+    padding-right: 0;
+    flex: 1;
+  }
+
+  .logoImg {
+    display: none;
+  }
+
+  .nav_items {
+    display: flex;
+    gap: 1em;
+    align-items: center;
+    flex: 1;
+    min-width: 80px;
+  }
+
+  .navContainer {
+    padding: 0.5em 1em;
+  }
+
+  .logoImg_vertical {
+    width: 25px;
+    display: block;
+  }
+  .alarm_modal {
+    left: -10em;
+  }
+} */
+
+@media screen and (max-width: 500px) {
   .nav_search {
     width: calc(100% - 50px);
   }

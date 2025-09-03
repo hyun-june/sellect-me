@@ -44,7 +44,7 @@
   }
 }
 
-@media screen and (max-width: 430px) {
+@media screen and (max-width: 500px) {
   .business_info {
     width: 100%;
   }

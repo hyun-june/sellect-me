@@ -26,8 +26,7 @@
   color: var(--text-color-yellow);
 }
 
-
-@media screen and (max-width:430px){
+/* @media screen and (max-width:430px){
 .footer-container {
 
   ul:first-of-type {
@@ -43,4 +42,19 @@
 }
 
 
+} */
+
+@media screen and (max-width: 500px) {
+  .footer-container {
+    ul:first-of-type {
+      flex-direction: column;
+      align-items: center;
+      margin: 0;
+    }
+
+    ul:last-of-type {
+      flex-direction: column;
+      gap: 1em;
+    }
+  }
 }

@@ -6,8 +6,8 @@ import "./ProjectManagementPage.css";
 const testData = {
   send: {
     1: {
-      name: "aaa",
-      description: "AAA테스트AA스트테스트AAA테스트",
+      name: "가나나나나나나나나나난ㄴㄴㄴㄴㄴ",
+      description: "AAA테스트AA스트테스트테스트AA스트테스트AAA테스트",
       date: "10.22",
       memo: [
         { id: 1, content: "내용이있음" },
@@ -83,19 +83,28 @@ const tabItems = Object.keys(testData).map((status) => ({
     done: "진행완료",
   }[status],
   content: (
-    <div className="project_content_section">
-      {Object.entries(testData[status]).map(([key, item]) => (
-        <ProjectContentBox
-          key={item.id}
-          id={item.id}
-          name={item.name}
-          description={item.description}
-          date={item.date}
-          status={status}
-          memo={item.memo}
-        />
-      ))}
-    </div>
+    <>
+      <div className="project_content_header">
+        <span className="header_name">회사명</span>
+        <span className="header_description">프로젝트 내용</span>
+        <span className="header_date">날짜</span>
+        <span className="header_status">상태</span>
+        <span className="header_memo">메모</span>
+      </div>
+      <div className="project_content_section">
+        {Object.entries(testData[status]).map(([key, item]) => (
+          <ProjectContentBox
+            key={item.id}
+            id={item.id}
+            name={item.name}
+            description={item.description}
+            date={item.date}
+            status={status}
+            memo={item.memo}
+          />
+        ))}
+      </div>
+    </>
   ),
 }));
 
@@ -141,6 +150,7 @@ const ProjectManagementPage = (props) => {
     <MainLayout {...props}>
       <div className="management_container">
         <h3>프로젝트 관리</h3>
+
         <CustomTabs items={tabItems} />
       </div>
     </MainLayout>

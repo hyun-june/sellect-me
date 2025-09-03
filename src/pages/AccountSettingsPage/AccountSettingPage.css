@@ -174,7 +174,7 @@
   }
 }
 
-@media screen and (max-width: 430px) {
+@media screen and (max-width: 500px) {
   .account_title {
     display: flex;
     > span:first-of-type {

@@ -184,7 +184,7 @@
   }
 }
 
-@media screen and (max-width: 430px) {
+@media screen and (max-width: 500px) {
   .schedule_container {
     /* 달력 타일 */
     .react-calendar__tile {

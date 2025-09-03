@@ -36,6 +36,21 @@
   }
 }
 
+.project_content_header {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 0.5fr 1fr 0.5fr 0.5fr 0.3fr;
+  padding: 1em clamp(0.5em, 3vw, 1em);
+  gap: 1em;
+  border-bottom: 1px dashed var(--line-color);
+  margin-bottom: 1em;
+
+  .header_status,
+  .header_memo {
+    text-align: center;
+  }
+}
+
 .project_content_section {
   display: flex;
   flex-direction: column;

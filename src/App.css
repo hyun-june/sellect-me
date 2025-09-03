@@ -232,7 +232,7 @@ input:checked {
   }
 }
 
-@media screen and (max-width: 430px) {
+@media screen and (max-width: 500px) {
   .tabs_list {
     display: none;
   }

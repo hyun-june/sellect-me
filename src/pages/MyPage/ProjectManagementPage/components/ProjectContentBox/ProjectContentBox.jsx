@@ -53,14 +53,18 @@ const ProjectContentBox = ({
   return (
     <div>
       <div className="project_content_box">
-        {src ? (
+        {/* {src ? (
           <img className="content_box_img" src={src} alt="" />
         ) : (
           <span className="content_box_img" />
-        )}
+        )} */}
 
-        <span className="content_box_name">{name}</span>
-        <span className="content_box_des">{description}</span>
+        <span className="content_box_name" title={name}>
+          {name}
+        </span>
+        <span className="content_box_des" title={description}>
+          {description}
+        </span>
         <span className="content_box_date">{date}</span>
         <span className="content_box_status">{statusMessage[status]}</span>
         <button

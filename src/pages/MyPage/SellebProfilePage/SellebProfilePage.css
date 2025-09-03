@@ -169,7 +169,7 @@
   font-size: 1.5em;
 }
 
-@media screen and (max-width: 430px) {
+@media screen and (max-width: 500px) {
   .selleb_profile {
     .selleb_profile_header {
       display: flex;

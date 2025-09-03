@@ -89,7 +89,7 @@
   }
 }
 
-@media screen and (max-width: 430px) {
+@media screen and (max-width: 500px) {
   .model_card_section {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
