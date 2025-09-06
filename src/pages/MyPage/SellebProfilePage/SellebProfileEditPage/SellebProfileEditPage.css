@@ -15,6 +15,22 @@
   input:not(:placeholder-shown) {
     background-color: white;
   }
+
+  .select_option {
+    width: 100%;
+    height: 1.5em;
+    border: none;
+    padding-left: 0.2em;
+    border-bottom: 1px solid var(--text-color-gray);
+    text-align: left;
+    letter-spacing: 1px;
+
+    select {
+      width: 100%;
+      text-align: left;
+      font-weight: normal;
+    }
+  }
 }
 
 .selleb_edit_main_profile {
@@ -23,13 +39,6 @@
   margin-bottom: 2em;
   display: grid;
   grid-template-columns: 1fr 1.5fr;
-
-  .profile-Section {
-    label {
-      width: 100%;
-      aspect-ratio: 1 / 1.2;
-    }
-  }
 }
 
 .selleb_edit_main_img {
@@ -37,33 +46,74 @@
   aspect-ratio: 1/1.2;
   max-height: 500px;
   object-fit: cover;
-  object-position: top;
-}
 
-.selleb_edit_profile_pictures {
-  margin-bottom: 1em;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 0.5em;
+  .profile-Section {
+    width: 100%;
+    aspect-ratio: 1/1.2;
+    max-height: 500px;
+  }
 
   img {
     width: 100%;
     aspect-ratio: 1/1.2;
+    max-height: 500px;
     object-fit: cover;
   }
 }
 
-.selleb_edit_sub_img {
-  width: 100%;
-  aspect-ratio: 1/1.2;
-  object-fit: cover;
-}
-
 .selleb_edit_work_scope {
   width: 100%;
+
+  .selleb_edit_model_category {
+    position: relative;
+    width: max-content;
+    display: flex;
+    align-items: center;
+    margin-bottom: 1em;
+
+    select {
+      color: var(--text-color-gray);
+      font-weight: bold;
+      z-index: 1;
+      border-bottom: 1px solid var(--line-color);
+      padding: 0.3em 0.5em;
+      cursor: pointer;
+      text-align: left;
+    }
+
+    .dropdown_mark {
+      color: var(--text-color-gray);
+      position: absolute;
+      right: 0;
+      cursor: pointer;
+      z-index: 0;
+      font-size: clamp(10px, 1vw, 14px);
+    }
+  }
+
+  .selleb_edit_checked_box {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    height: 80px;
+
+    gap: 0.2em;
+
+    label {
+      font-weight: bold;
+    }
+
+    input {
+      margin-left: 0.2em;
+    }
+
+    input[type="checkbox"]:checked {
+      background-color: #333;
+    }
+  }
 }
 
-.selleb_tags_list {
+/* .selleb_tags_list {
   ul {
     display: flex;
     gap: 0.5em;
@@ -100,39 +150,80 @@
     border: none;
     background-color: inherit;
   }
-}
+} */
 
 .selleb_edit_info {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.2em;
+
+  .selleb_edit_sub_img {
+    height: 246px;
+  }
 }
 
 .selleb_edit_profile_List {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  border: 2px solid var(--line-color);
+  grid-template-columns: repeat(4, 1fr) 1.5fr;
+  border-top: 2px solid var(--line-color);
+  justify-items: center;
   align-content: center;
-  height: 100%;
+  padding: clamp(0.5em, 2vw, 2em);
+  gap: 4em;
+  margin-bottom: 1em;
 
   dl {
     margin: 0;
     gap: clamp(1.5em, 1vw, 2em);
+    width: max-content;
+
+    > div {
+      width: 100%;
+    }
 
     dt {
       font-size: clamp(0.875em, 2vw, 1.2em);
+      margin-bottom: 0.3em;
     }
+
     dd {
-      width: clamp(4em, 1vw, 5em);
+      /* width: clamp(4em, 1vw, 2em); */
+      width: 100%;
       height: 1em;
 
       div {
-        border-bottom: none;
+        /* border-bottom: none; */
+        height: 100%;
       }
 
       input {
         color: var(--text-color-gray);
+      }
+    }
+  }
+
+  .option_list {
+    width: 100%;
+
+    .formInput_title {
+      display: none;
+    }
+
+    .profile_inner_List {
+      width: 100%;
+      dl {
+        width: 100%;
+      }
+      div {
+        width: 100%;
+      }
+
+      dd {
+        width: 100%;
+      }
+
+      input {
+        width: 100%;
       }
     }
   }
@@ -154,7 +245,7 @@
   justify-items: center;
   gap: clamp(2em, 3vw, 3em);
   border-top: 2px solid var(--line-color);
-  padding: 2em 0em;
+  padding: 1.5em 0em;
 
   h5 {
     color: var(--text-color);
@@ -166,12 +257,29 @@
   .selleb_range_info {
     display: flex;
     flex-direction: column;
-    gap: 3em;
+    gap: 1em;
+
+    .select_option {
+      margin-bottom: 1em;
+      height: 2em;
+    }
+    /* 
+    input {
+      margin: 0;
+      width: 100%;
+      text-align: left;
+    } */
+
+    .copyright_input {
+      display: flex;
+      align-items: center;
+    }
   }
 }
 
 .selleb_edit_hourly_rangebar {
   position: relative;
+
   width: clamp(10em, 30vw, 16em);
 }
 
@@ -200,10 +308,11 @@
     justify-content: flex-end;
 
     input {
-      text-align: center;
       width: 50%;
       border: none;
       border-bottom: 1px solid var(--text-color-gray);
+      text-align: right;
+      padding-right: 0.5em;
     }
   }
 }
@@ -259,33 +368,35 @@
       object-position: top;
     }
   }
-
-  .selleb_edit_sub_img {
-    width: 90px;
-    height: 90px;
-  }
-
-  .selleb_edit_profile_pictures {
-    img {
-      width: 90px;
-      height: 90px;
-      object-fit: cover;
+  .selleb_edit_info {
+    .selleb_edit_sub_img {
+      /* width: clamp(80px, 10vw, 98px); */
+      width: 100%;
+      height: 116px;
     }
   }
 
   .selleb_edit_profile_List {
+    display: flex;
     flex-direction: column;
     padding: 1em;
+    gap: 2em;
+    width: 100%;
 
     dl {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
+      max-width: 350px;
 
       dt {
         font-size: 1em;
         width: 100%;
       }
     }
+  }
+
+  .selleb_edit_hourly_rangebar {
+    width: 100%;
   }
 
   .selleb_edit_profile_range {

@@ -3,8 +3,9 @@ import FormInput from "../../../../../components/FormInput/FormInput";
 import NextButton from "../../../components/NextButton/NextButton";
 import DropdownForm from "../../../../../components/DropdownForm/DropdownForm";
 import { useSellebContext } from "../../../../../context/SellebContext";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import "./SellebForm1.css";
+import SearchAddress from "./../../../../../components/SearchAddress/SearchAddress";
 
 const languageList = [
   "Korean",
@@ -49,6 +50,7 @@ const SellebForm1 = ({ goToNextTab }) => {
     // mode: "onChange",
   });
   const { formData, updateFormData } = useSellebContext();
+  const [address, setAddress] = useState("");
 
   const countryList = require("country-list");
   const countryNames = countryList.getNames();
@@ -62,6 +64,7 @@ const SellebForm1 = ({ goToNextTab }) => {
   }, [formData]);
 
   const onSubmit = (formData) => {
+    console.log("🚀 ~ SellebForm1 ~ address:", address);
     // if (!formData.year || !formData.month || !formData.day) {
     //     return alert("생년월일을 모두 입력해주세요.");
     // }
@@ -75,7 +78,11 @@ const SellebForm1 = ({ goToNextTab }) => {
     // if (!formData.language) {
     //     return alert("언어를 선택해주세요.");
     // }
-    updateFormData(formData);
+    const submitData = {
+      ...formData,
+      address,
+    };
+    updateFormData(submitData);
     // console.log("완료");
     // sessionStorage.setItem("infoFormData", JSON.stringify(formData));
     goToNextTab();
@@ -217,13 +224,14 @@ const SellebForm1 = ({ goToNextTab }) => {
             onSelect={(value) => handleSelect("language", value)}
             type="text"
           />
-          <FormInput
+          {/* <FormInput
             title="현 거주지"
             id="address"
             register={register}
             error={errors.address}
             required={true}
-          />
+          /> */}
+          <SearchAddress setAddress={setAddress} />
           <FormInput
             title="전화번호 입력"
             addMessage="(-제외하고 입력)"

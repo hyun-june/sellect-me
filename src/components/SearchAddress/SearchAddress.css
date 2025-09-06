@@ -1,0 +1,21 @@
+.SearchAddress_form {
+  input {
+    padding: 0.5em;
+    border: 1px solid var(--line-color);
+    margin: 0.2em 0.2em 0.2em 0;
+  }
+
+  > input:nth-of-type(2) {
+    width: 100%;
+  }
+
+  div {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  button {
+    background-color: #e8f0fe;
+    padding: 0.5em;
+  }
+}

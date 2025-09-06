@@ -14,6 +14,10 @@
       display: flex;
     }
   }
+
+  img {
+    border-radius: 10px;
+  }
 }
 
 .selleb_main_profile {
@@ -35,17 +39,9 @@
 }
 
 .selleb_info {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  flex: 1;
-}
-
-.selleb_profile_pictures {
-  margin-bottom: 1em;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 0.5em;
+  gap: 0.2em;
 
   img {
     width: 100%;
@@ -55,22 +51,20 @@
 }
 
 .selleb_profile_List {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  border: 2px solid var(--line-color);
-  align-content: center;
-  height: 100%;
+  display: flex;
+  border-top: 2px solid var(--line-color);
+  justify-content: space-around;
+  margin-bottom: 1em;
+  padding: clamp(0.5em, 1vw, 2em);
 
   dl {
     margin: 0;
     gap: clamp(1.5em, 1vw, 2em);
 
+    align-items: flex-start;
+
     dt {
       font-size: clamp(0.875em, 2vw, 1.2em);
-    }
-
-    dd {
-      width: clamp(4em, 1vw, 5em);
     }
   }
 }
@@ -186,6 +180,10 @@
     }
   }
 
+  .hourly_rangebar_inner {
+    width: 100%;
+  }
+
   .selleb_main_profile {
     width: 100%;
     display: flex;
@@ -200,18 +198,6 @@
       height: 400px;
       object-fit: cover;
       object-position: top;
-    }
-  }
-
-  .selleb_profile_List {
-    flex-direction: column;
-    padding: 0.5em;
-    align-items: center;
-    justify-content: center;
-
-    dl {
-      display: grid;
-      grid-template-rows: repeat(3, 1fr);
     }
   }
 

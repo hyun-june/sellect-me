@@ -10,7 +10,16 @@ import AddDeleteTag from "../../../../components/AddDeleteTag/AddDeleteTag";
 import Button from "../../../../components/Button/Button";
 import "./SellebProfileEditPage.css";
 import MainLayout from "../.././../../Layouts/MainLayout/MainLayout";
-
+import SelectInput from "./../../../../components/SelectInput/SelectInput";
+import SelectInputCountry from "./../../../../components/SelectInputCountry/SelectInputCountry";
+import {
+  colorList,
+  genderList,
+  languageList,
+  modelCategoryList,
+  modelDetailCategory,
+  regions,
+} from "../../../../core/constants/optionList";
 const testData = {
   height: "180",
   weight: "70",
@@ -32,21 +41,45 @@ const SellebProfileEditPage = (props) => {
   const {
     register,
     handleSubmit,
+    watch,
     formState: { errors },
   } = useForm({
     defaultValues: testData,
   });
 
   const [mainImg, setMainImg] = useState(null);
-  const [subImg, setSubImg] = useState([null, null, null, null]);
+  const [subImg, setSubImg] = useState([
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+  ]);
   const [tags, setTags] = useState([]);
+  const [careers, setCareers] = useState([]);
   const [defaultTags, setDefaultTags] = useState(["사진", "뮤비"]);
+  const [selectedCategory, setSelectedCategory] = useState("");
+  const [checkedValues, setCheckedValues] = useState([]);
+
+  // console.log("🚀 ~ selectedCategory:", selectedCategory);
+  // console.log(modelDetailCategory[selectedCategory]);
+  // console.log("check", checkedValues);
 
   const profileData = {
     profileInfoList: [
       {
         title: "성별",
-        content: testData.gender,
+        content: (
+          <SelectInput
+            register={register}
+            id="gender"
+            options={genderList}
+            title="성별"
+          />
+        ),
       },
       {
         title: "키",
@@ -60,7 +93,7 @@ const SellebProfileEditPage = (props) => {
         ),
       },
       {
-        title: "몸무게",
+        title: "체중",
         content: (
           <FormInput
             register={register}
@@ -95,7 +128,7 @@ const SellebProfileEditPage = (props) => {
         ),
       },
       {
-        title: "힙 둘레",
+        title: "엉덩이둘레",
         content: (
           <FormInput
             id="hips"
@@ -122,10 +155,10 @@ const SellebProfileEditPage = (props) => {
         title: "하의 사이즈",
         content: (
           <FormInput
-            id="pants_size"
+            id="bottom_size"
             register={register}
             type="number"
-            error={errors.pants_size}
+            error={errors.bottom_size}
           />
         ),
       },
@@ -133,62 +166,86 @@ const SellebProfileEditPage = (props) => {
         title: "신발 사이즈",
         content: (
           <FormInput
-            id="shoes_size"
+            id="shoe_size"
             register={register}
             type="number"
-            error={errors.shoes_size}
+            error={errors.shoe_size}
           />
         ),
       },
     ],
     colorList: [
       {
-        title: "헤어컬러",
+        title: "머리색",
         content: (
-          <FormInput
+          <SelectInput
             id="hair_color"
+            title="머리색"
+            options={colorList}
             register={register}
-            error={errors.hair_color}
           />
         ),
       },
       {
-        title: "아이컬러",
+        title: "눈동자색",
         content: (
-          <FormInput
+          <SelectInput
             id="eye_color"
+            title="눈동자색"
+            options={colorList}
             register={register}
-            error={errors.eye_color}
           />
         ),
       },
     ],
     countryList: [
       {
-        title: "국가",
+        title: "국적",
         content: (
-          <FormInput id="world" register={register} error={errors.world} />
+          // <FormInput id="world" register={register} error={errors.world} />
+          <SelectInputCountry
+            register={register}
+            watch={watch}
+            id="nationality"
+          />
         ),
       },
       {
         title: "언어",
         content: (
-          <FormInput
+          <SelectInput
             id="language"
+            title="언어"
+            options={languageList}
             register={register}
-            error={errors.language}
+          />
+        ),
+      },
+      {
+        title: "학력사항",
+        content: (
+          <FormInput
+            id="education"
+            register={register}
+            error={errors.education}
           />
         ),
       },
     ],
     tabItems: [
-      {
-        title: "이미지",
-        content: <PreviewImg />,
-      },
+      //  {
+      //     title: "이미지",
+      //     content: <PreviewImg />,
+      //   },
       {
         title: "커리어",
-        content: <AddCareer className="selleb_edit_career" />,
+        content: (
+          <AddCareer
+            className="selleb_edit_career"
+            careers={careers}
+            setCareers={setCareers}
+          />
+        ),
       },
     ],
   };
@@ -216,6 +273,7 @@ const SellebProfileEditPage = (props) => {
     console.log("Main Image:", mainImg);
     console.log("Sub Images:", subImg);
     console.log("tags", updateTags);
+    console.log("checked", checkedValues);
   };
 
   return (
@@ -228,33 +286,37 @@ const SellebProfileEditPage = (props) => {
           </div>
         </div>
         <section className="selleb_edit_main_profile">
-          <AddProfile
-            index={-1}
-            profileImg={mainImg}
-            key="main_img"
-            onImageChange={(newImg) => handleMainImgChange(newImg)}
-            className="selleb_edit_main_img"
-          />
+          <div className="selleb_edit_main_img">
+            <AddProfile
+              index={-1}
+              profileImg={mainImg}
+              key="main_img"
+              onImageChange={(newImg) => handleMainImgChange(newImg)}
+            />
+          </div>
 
           <div className="selleb_edit_info">
-            <div className="selleb_edit_profile_pictures">
-              {subImg.map((img, index) => (
-                <AddProfile
-                  key={`sub_img_${index}`}
-                  index={index}
-                  profileImg={img}
-                  onImageChange={(newImg) => handleImageChange(index, newImg)}
-                  className="selleb_edit_sub_img"
-                />
-              ))}
-            </div>
-            <div className="selleb_edit_profile_List">
-              <ProfileInfoList list={profileData.profileInfoList} />
-              <ProfileInfoList list={profileData.threeSizeList} />
-              <ProfileInfoList list={profileData.sizeList} />
-              <ProfileInfoList list={profileData.colorList} />
-              <ProfileInfoList list={profileData.countryList} />
-            </div>
+            {subImg.map((img, index) => (
+              <AddProfile
+                key={`sub_img_${index}`}
+                index={index}
+                profileImg={img}
+                onImageChange={(newImg) => handleImageChange(index, newImg)}
+                className="selleb_edit_sub_img"
+              />
+            ))}
+          </div>
+        </section>
+        <section className="selleb_edit_profile_List">
+          <ProfileInfoList list={profileData.profileInfoList} />
+          <ProfileInfoList list={profileData.threeSizeList} />
+          <ProfileInfoList list={profileData.sizeList} />
+          <div className="option_list">
+            <ProfileInfoList list={profileData.colorList} />
+          </div>
+
+          <div className="option_list">
+            <ProfileInfoList list={profileData.countryList} />
           </div>
         </section>
         <section className="selleb_edit_profile_range">
@@ -279,21 +341,78 @@ const SellebProfileEditPage = (props) => {
           <div className="selleb_edit_work_scope">
             <h5>프로젝트 가능 범위</h5>
 
-            <AddDeleteTag
+            <div className="selleb_edit_model_category">
+              <select
+                name="model_category"
+                id=""
+                onChange={(e) => setSelectedCategory(e.target.value)}
+              >
+                <option value="">선택안함</option>
+                {modelCategoryList.map((item) => (
+                  <option key={item.value} value={item.value}>
+                    {item.label}
+                  </option>
+                ))}
+              </select>
+              <span className="dropdown_mark">▼</span>
+            </div>
+
+            <div className="selleb_edit_checked_box">
+              {selectedCategory &&
+                modelDetailCategory[selectedCategory]?.map((value, index) => (
+                  <label key={`${selectedCategory}-${index}`}>
+                    {value}
+                    <input
+                      type="checkbox"
+                      checked={checkedValues.includes(value)}
+                      onChange={(e) =>
+                        setCheckedValues((prev) =>
+                          e.target.checked
+                            ? [...prev, value]
+                            : prev.filter((v) => v !== value)
+                        )
+                      }
+                    />
+                  </label>
+                ))}
+            </div>
+
+            {/* <AddDeleteTag
               tags={tags}
               defaultTags={defaultTags}
               handleTagsChange={handleTagsChange}
               className="selleb_tags_list"
-            />
+            /> */}
           </div>
           <div className="selleb_range_info">
             <div>
-              <h5>이동 가능 지역 범위</h5>
-              <span>서울</span>
+              <h5>촬영 가능 지역</h5>
+
+              <SelectInput
+                register={register}
+                id="region_1"
+                options={regions}
+                title="지역 선택"
+              />
+              <SelectInput
+                register={register}
+                id="region_2"
+                options={regions}
+                title="지역 선택"
+              />
+
+              {/* <FormInput id="city" register={register} error={errors.city} /> */}
             </div>
             <div>
               <h5>저작권 사용기간</h5>
-              <span>1년</span>
+              <div className="copyright_input">
+                <FormInput
+                  id="copyright"
+                  register={register}
+                  error={errors.copyright}
+                />
+                <span>년</span>
+              </div>
             </div>
           </div>
         </section>

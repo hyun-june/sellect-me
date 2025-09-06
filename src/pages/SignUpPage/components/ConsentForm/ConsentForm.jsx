@@ -42,6 +42,10 @@ const ConsentForm = ({ type, goToPrevTab, goToNextTab }) => {
     }));
   };
   const handleNext = () => {
+    localStorage.removeItem("postcode");
+    localStorage.removeItem("address");
+    localStorage.removeItem("detailAddr");
+    localStorage.removeItem("extraAddr");
     const formType = agreements[type];
     const requiredKeys =
       type === "selleb"

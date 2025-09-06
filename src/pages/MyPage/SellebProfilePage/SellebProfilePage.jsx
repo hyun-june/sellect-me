@@ -115,20 +115,22 @@ const SellebProfilePage = ({ ...props }) => {
           </div>
 
           <div className="selleb_info">
-            <div className="selleb_profile_pictures">
-              <ProfileImgBox src="/images/test1.png" />
-              <ProfileImgBox src="/images/test2.jpg" />
-              <ProfileImgBox src="/images/test3.jpg" />
-              <ProfileImgBox src="/images/test3.jpg" />
-            </div>
-            <div className="selleb_profile_List">
-              <ProfileInfoList list={profileInfoList} />
-              <ProfileInfoList list={profileThreeSizeList} />
-              <ProfileInfoList list={profileSizeList} />
-              <ProfileInfoList list={profileColorList} />
-              <ProfileInfoList list={profileCountryList} />
-            </div>
+            <ProfileImgBox src="/images/test1.png" />
+            <ProfileImgBox src="/images/test2.jpg" />
+            <ProfileImgBox src="/images/test3.jpg" />
+            <ProfileImgBox src="/images/test3.jpg" />
+            <ProfileImgBox src="/images/test1.png" />
+            <ProfileImgBox src="/images/test2.jpg" />
+            <ProfileImgBox src="/images/test3.jpg" />
+            <ProfileImgBox src="/images/test3.jpg" />
           </div>
+        </section>
+        <section className="selleb_profile_List">
+          <ProfileInfoList list={profileInfoList} />
+          <ProfileInfoList list={profileThreeSizeList} />
+          <ProfileInfoList list={profileSizeList} />
+          <ProfileInfoList list={profileColorList} />
+          <ProfileInfoList list={profileCountryList} />
         </section>
 
         <section className="profile_range">
