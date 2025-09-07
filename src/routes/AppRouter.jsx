@@ -104,7 +104,10 @@ const AppRouter = () => {
         <Route path="/board">
           <Route index element={<BoardListPage />} />
           <Route path=":id" element={<BoardDetailPage />} />
-          <Route path="create/:id" element={<BoardCreate />} />
+          <Route path="create">
+            <Route index element={<BoardCreate />} />
+            <Route path=":id" element={<BoardCreate />} />
+          </Route>
         </Route>
 
         <Route path="/admin" element={<AdminLayout />}>
