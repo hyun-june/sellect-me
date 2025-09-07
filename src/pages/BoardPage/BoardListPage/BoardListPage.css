@@ -1,0 +1,59 @@
+.board_list_container {
+  width: 100%;
+}
+
+.board_list_header {
+  display: flex;
+  justify-content: space-between;
+
+  a {
+    height: 30px;
+    padding: 0px 25px;
+    background-color: var(--text-color-gray);
+    color: var(--text-color-white);
+    border-radius: 5px;
+    align-self: center;
+    display: flex;
+    align-items: center;
+  }
+}
+
+.board_list {
+  table {
+    width: 100%;
+
+    thead {
+      border-top: 1px solid var(--line-color);
+      border-bottom: 1px solid var(--line-color);
+    }
+
+    th,
+    td {
+      padding: 10px 5px;
+    }
+
+    tbody {
+      border-bottom: 1px solid var(--line-color);
+      width: 100%;
+
+      a {
+        width: 100%;
+        display: block;
+      }
+    }
+
+    .num {
+      position: relative;
+    }
+
+    .num::before {
+      content: "";
+      background-color: red;
+      width: 3px;
+      height: 100%;
+      position: absolute;
+      left: -3px;
+      top: 0;
+    }
+  }
+}

@@ -1,0 +1,35 @@
+.board_detail_container {
+  width: 100%;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+
+  h5 {
+    font-size: 2em;
+    border-bottom: 1px solid var(--line-color);
+    padding: 0.5em 0;
+  }
+}
+.board_detail_top {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5em;
+  font-size: 1em;
+}
+
+.board_detail_main {
+  padding: 1em;
+  flex: 1;
+}
+
+.board_detail_btn {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.5em;
+
+  button,
+  a {
+    padding: 0.5em;
+    border-bottom: 1px solid var(--line-color);
+  }
+}

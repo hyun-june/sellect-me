@@ -1,0 +1,44 @@
+.pagination_wrapper {
+  display: flex;
+
+  justify-content: center;
+  width: 100%;
+  margin-top: 2em;
+
+  ul {
+    display: flex;
+    gap: 0.5em;
+    list-style: none;
+    padding: 0;
+  }
+
+  li {
+    /* float: left; */
+    height: 40px;
+    width: 40px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .page {
+    cursor: pointer;
+    border: 1px solid var(--line-color);
+  }
+
+  .active {
+    background-color: #333;
+    color: var(--text-color-white);
+  }
+
+  .move {
+    font-size: 2em;
+    cursor: pointer;
+  }
+
+  .invisible {
+    visibility: hidden;
+  }
+}

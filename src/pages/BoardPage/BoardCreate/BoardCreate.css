@@ -1,0 +1,27 @@
+.board_create {
+  input {
+    margin-bottom: 0.5em;
+    border-bottom: 1px solid var(--line-color);
+    width: 100%;
+    font-size: 2em;
+    padding: 0.3em 0.5em;
+  }
+
+  input:focus {
+    outline: none;
+  }
+
+  .create_btn_wrapper {
+    display: flex;
+    justify-content: flex-end;
+    margin: 0.5em 0;
+
+    button {
+      height: 30px;
+      padding: 0px 25px;
+      background-color: var(--text-color-gray);
+      color: var(--text-color-white);
+      border-radius: 5px;
+    }
+  }
+}

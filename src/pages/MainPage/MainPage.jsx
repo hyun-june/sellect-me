@@ -41,9 +41,8 @@ const menu = [
   { name: "/terms(1)", address: "/terms" },
   { name: "/privacy(1)", address: "/privacy" },
   { name: "/admin", address: "/admin" },
+  { name: "/board", address: "/board" },
 ];
-
-
 
 const MainPage = (props) => {
   const boxRef = useRef();
@@ -144,7 +143,7 @@ const MainPage = (props) => {
   }, []);
 
   return (
-    <MainLayout {...props} >
+    <MainLayout {...props}>
       <HamburgerMenu menu={menu} />
       <div>
         <div className="main_video">

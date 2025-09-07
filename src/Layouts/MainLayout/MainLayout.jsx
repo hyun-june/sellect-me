@@ -4,11 +4,10 @@ import Footer from "./../../components/Footer/Footer";
 import "./MainLayout.css";
 
 const MainLayout = ({ children, className }) => {
-
   return (
     <div className={`main_layout ${className}`}>
       <Navigation />
-      <Container  >{children}</Container>
+      <Container>{children}</Container>
       <Footer />
     </div>
   );

@@ -38,6 +38,9 @@ import AdminDashboard from "./../pages/AdminPage/AdminDashboard/AdminDashboard";
 import AdminUser from "./../pages/AdminPage/AdminUser/AdminUser";
 import AdminUserDetail from "./../pages/AdminPage/AdminUser/AdminUserDetail/AdminUserDetail";
 import AdminService from "./../pages/AdminPage/AdminService/AdminService";
+import BoardListPage from "../pages/BoardPage/BoardListPage/BoardListPage";
+import BoardDetailPage from "../pages/BoardPage/BoardDetailPage/BoardDetailPage";
+import BoardCreate from "../pages/BoardPage/BoardCreate/BoardCreate";
 
 const AppRouter = () => {
   const location = useLocation();
@@ -98,6 +101,11 @@ const AppRouter = () => {
         <Route path="/terms" element={<TermsPage />} />
         <Route path="/privacy" element={<PrivacyPage />} />
         <Route path="/request" element={<RequestPage />} />
+        <Route path="/board">
+          <Route index element={<BoardListPage />} />
+          <Route path=":id" element={<BoardDetailPage />} />
+          <Route path="create/:id" element={<BoardCreate />} />
+        </Route>
 
         <Route path="/admin" element={<AdminLayout />}>
           <Route index element={<Navigate to="dashboard" replace />} />

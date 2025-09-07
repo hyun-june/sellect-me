@@ -1,0 +1,24 @@
+.board_row {
+  border-bottom: 1px solid var(--line-color);
+  cursor: pointer;
+
+  .notice {
+    position: relative;
+  }
+
+  .notice:before {
+    content: "";
+    background-color: red;
+    width: 3px;
+    height: 100%;
+    position: absolute;
+    left: -3px;
+    top: 0;
+  }
+
+  .board_row_num,
+  .board_row_date,
+  .board_row_view {
+    text-align: center;
+  }
+}
