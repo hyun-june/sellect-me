@@ -1,47 +1,15 @@
-.main_video {
-  width: 100%;
-  position: relative;
-  margin-bottom: 3em;
-
-  video {
-    aspect-ratio: 21 / 9;
-    object-fit: cover;
-    transform: scaleX(-1);
-  }
-}
-
-.banner_text {
-  position: absolute;
-  top: 10%;
-  left: 5%;
-  color: var(--text-color-yellow);
-  letter-spacing: 1.3px;
-
-  h3 {
-    font-size: 3em;
-    font-size: clamp(1.5em, 5vw, 3em);
-    font-weight: bold;
-    line-height: 1.5em;
-  }
-
-  p {
-    font-size: clamp(0.875em, 3vw, 1em);
-    font-weight: bold;
-    margin: 0;
-  }
-}
-
 .box_section {
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 2em;
+  gap: 3em;
+  margin: 3em 0;
 
   h4 {
-    font-size: clamp(30px, 6vw, 32px);
+    font-size: clamp(30px, 6vw, 3em);
     font-weight: bold;
     line-height: 1.5em;
-    margin-bottom: 1em;
   }
 }
 
@@ -55,53 +23,20 @@
   transition: opacity 0.5s ease-in-out;
 }
 
-.randomText_section {
-  text-align: center;
-  margin: 2em 0em;
-
-  p {
-    font-size: 1.8em;
-    color: var(--text-color-gray);
-    padding-bottom: 1em;
-    margin: 0;
-  }
-
-  > p:nth-child(3) {
-    color: var(--text-color);
-    font-weight: bold;
-    margin: 1em 0em;
-  }
-
-  h3 {
-    font-weight: bold;
-    font-size: 3em;
-    color: var(--text-color-yellow);
-    margin: 1em 0em;
-  }
-
-  .link_btn {
-    border: 2px solid var(--line-color);
-    border-radius: 3px;
-    padding: 0.5em;
-    font-weight: bold;
-    color: var(--text-color);
-    display: inline-block;
-    cursor: pointer;
-    transition: box-shadow 0.3s;
-  }
-
-  .link_btn:hover {
-    box-shadow: 0px 2px 5px 1px var(--line-color);
-  }
+.link_btn {
+  border: 2px solid var(--line-color);
+  border-radius: 3px;
+  padding: 0.5em;
+  font-weight: bold;
+  color: var(--text-color);
+  display: inline-block;
+  cursor: pointer;
+  transition: box-shadow 0.3s;
 }
 
-/* @media screen and (max-width:430px){
-  .main_video {
-  video {
-    aspect-ratio: 16 / 9;
-  }
+.link_btn:hover {
+  transform: scale(1.1);
 }
-} */
 
 @media screen and (max-width: 500px) {
   .main_video {

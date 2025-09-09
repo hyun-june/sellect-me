@@ -11,6 +11,7 @@ const secondWord = ["출연료", "저작권", "초상권"];
 
 const menu = [
   { name: "Home(1)", address: "/" },
+  { name: "start", address: "/start" },
   { name: "about(1)", address: "/about" },
   { name: "login(1)", address: "/login" },
   { name: "model/fitting(1)", address: "/model/fitting" },
@@ -145,27 +146,6 @@ const MainPage = (props) => {
   return (
     <MainLayout {...props}>
       <HamburgerMenu menu={menu} />
-      <div>
-        <div className="main_video">
-          <video
-            src="https://cdn.pixabay.com/video/2021/07/09/80817-573496287_large.mp4"
-            type="video/mp4"
-            autoPlay
-            playsInline
-            muted
-            loop
-          />
-
-          <div className="banner_text">
-            <h3>
-              Sell + <br /> Select
-            </h3>
-            <p>당신의 가치를 높이는 성장 플랫폼</p>
-          </div>
-        </div>
-      </div>
-
-      <CardBox title="NEW UPDATED SELLEB" cardKeyword="NewUpdateSelleb" />
 
       <div
         className={`box_section scroll_animation ${
@@ -174,33 +154,7 @@ const MainPage = (props) => {
       >
         <h4 ref={boxRef}>FIND YOUR SELLEB</h4>
         <KeywordBox />
-      </div>
 
-      <div className="randomText_section ">
-        <p
-          ref={textRefs[0]}
-          className={`scroll_animation ${textVisible[0] ? "visible" : ""}`}
-        >
-          {getFirstWord} 찾으세요?
-        </p>
-        <p
-          ref={textRefs[1]}
-          className={`scroll_animation ${textVisible[1] ? "visible" : ""}`}
-        >
-          아직도 {getSecondWord} 걱정하세요?
-        </p>
-        <p
-          ref={textRefs[2]}
-          className={`scroll_animation ${textVisible[2] ? "visible" : ""}`}
-        >
-          이제 시간낭비 말고
-        </p>
-        <h3
-          ref={textRefs[3]}
-          className={`scroll_animation ${textVisible[3] ? "visible" : ""}`}
-        >
-          Sellect
-        </h3>
         <div
           onClick={() => navigateReload("/about")}
           ref={textRefs[4]}
@@ -211,6 +165,12 @@ const MainPage = (props) => {
           HOW TO USE?
         </div>
       </div>
+
+      <CardBox
+        title="NEW UPDATED SELLEB"
+        cardKeyword="NewUpdateSelleb"
+        type="slide"
+      />
 
       <CardBox title="FITTING MODEL FEMALE" cardKeyword="FittingModelFeMale" />
 

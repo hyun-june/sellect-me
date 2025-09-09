@@ -41,6 +41,7 @@ import AdminService from "./../pages/AdminPage/AdminService/AdminService";
 import BoardListPage from "../pages/BoardPage/BoardListPage/BoardListPage";
 import BoardDetailPage from "../pages/BoardPage/BoardDetailPage/BoardDetailPage";
 import BoardCreate from "../pages/BoardPage/BoardCreate/BoardCreate";
+import StartPage from "../pages/StartPage/StartPage";
 
 const AppRouter = () => {
   const location = useLocation();
@@ -56,6 +57,7 @@ const AppRouter = () => {
       <ScrollToTop />
       <Routes>
         <Route path="/" element={<MainPage />} />
+        <Route path="/start" element={<StartPage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/confirm" element={<ConFirmPage />} />

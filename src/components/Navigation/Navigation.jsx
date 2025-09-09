@@ -57,40 +57,43 @@ const Navigation = () => {
 
   return (
     <div className="navContainer">
-      <Link to="/">
-        <img className="logoImg" src="/images/logo-outline.png" alt="" />
-      </Link>
-      <Link to="/">
-        <img className="logoImg_vertical" src="/images/logo-outline-vertical-img.png" alt="" />
-      </Link>
-
+      <div className="navbar_logo">
+        <Link to="/">
+          <img className="logoImg" src="/images/logo-outline.png" alt="" />
+        </Link>
+        <ul>
+          <li>메뉴</li>
+          <li>메뉴</li>
+          <li>메뉴</li>
+          <li>메뉴</li>
+        </ul>
+      </div>
 
       <div className="navbar_alarm_login">
-        <div className="nav_search">
-          {showSearchBarPages.includes(location.pathname) ? (
-            <SearchBar />
-          ) : (
-            <div className="skeleton_search" />
-          )}
-        </div>
         <div className="nav_items">
-      
-          <LoginLinks />
-   
-
-          {user ? (
-            <div className="nav_alarm">
-              <FaBell className="alarm_icon" onClick={handleOpenAlarm} />
-              {unreadCount > 0 && (
-                <span className="alarm_count">{unreadCount}</span>
-              )}
-              {openAlarm ? (
-                <div className="alarm_modal">
-                  <AlarmBox data={alarms} onMarkAsRead={handleMarkAsRead} />
-                </div>
-              ) : null}
-            </div>
-          ) : null}
+          <div className="nav_search">
+            {showSearchBarPages.includes(location.pathname) ? (
+              <SearchBar />
+            ) : (
+              <div className="skeleton_search" />
+            )}
+          </div>
+          <div className="nav_login">
+            <LoginLinks />
+            {user ? (
+              <div className="nav_alarm">
+                <FaBell className="alarm_icon" onClick={handleOpenAlarm} />
+                {unreadCount > 0 && (
+                  <span className="alarm_count">{unreadCount}</span>
+                )}
+                {openAlarm ? (
+                  <div className="alarm_modal">
+                    <AlarmBox data={alarms} onMarkAsRead={handleMarkAsRead} />
+                  </div>
+                ) : null}
+              </div>
+            ) : null}
+          </div>
         </div>
       </div>
     </div>
