@@ -17,7 +17,13 @@ const keywordList = [
   "키워드4",
 ];
 
-const KeywordBox = () => {
+const keywordTest = [
+  ["update", "새로운"],
+  ["male", "남자모델"],
+  ["female", "여자모델"],
+];
+
+const KeywordBox = ({ bannerKeyword, setBannerKeyword, ...props }) => {
   const [randomBox, setRandomBox] = useState([]);
 
   useEffect(() => {
@@ -27,11 +33,21 @@ const KeywordBox = () => {
     setRandomBox(randomKeyword);
   }, []);
 
+  const changeBanner = (keyword) => {
+    setBannerKeyword(keyword);
+  };
+
   return (
     <div className="keyword_section">
-      {randomBox.map((item, index) => {
+      {keywordTest.map(([value, item], index) => {
         return (
-          <div className="keyword_box" key={index}>
+          <div
+            className={`keyword_box ${
+              value === bannerKeyword ? "focus" : null
+            }`}
+            key={index}
+            onClick={() => changeBanner(value)}
+          >
             {item}
           </div>
         );

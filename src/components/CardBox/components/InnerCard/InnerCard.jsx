@@ -1,4 +1,4 @@
-import { Row, Col, Container } from "react-bootstrap";
+import { Row, Col } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import "./InnerCard.css";
 import { useEffect, useState } from "react";
@@ -37,7 +37,6 @@ const InnerCard = ({ cardKeyword, ...props }) => {
   useEffect(() => {
     const updateCardCount = () => {
       const width = window.innerWidth;
-
       if (width <= 576) setMaxCard(2);
       else if (width <= 768) setMaxCard(3);
       else if (width <= 992) setMaxCard(4);
@@ -45,9 +44,8 @@ const InnerCard = ({ cardKeyword, ...props }) => {
       else setMaxCard(6);
     };
 
-    updateCardCount(); // 초기 설정
+    updateCardCount();
     window.addEventListener("resize", updateCardCount);
-
     return () => window.removeEventListener("resize", updateCardCount);
   }, []);
 
@@ -73,5 +71,4 @@ const InnerCard = ({ cardKeyword, ...props }) => {
     </div>
   );
 };
-
 export default InnerCard;

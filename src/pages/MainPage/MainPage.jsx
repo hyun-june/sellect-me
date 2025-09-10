@@ -1,13 +1,12 @@
 import MainLayout from "./../../Layouts/MainLayout/MainLayout";
 import HamburgerMenu from "./../../components/HamburgerMenu/HamburgerMenu";
 import CardBox from "../../components/CardBox/CardBox";
-import { useEffect, useRef, useState } from "react";
-import KeywordBox from "../../components/KeywordBox/KeywordBox";
-import { navigateReload } from "../../utils/navigateReload";
-import "./MainPage.css";
 
-const firstWord = ["모델", "배우", "쇼호스트", "인플루언서"];
-const secondWord = ["출연료", "저작권", "초상권"];
+import KeywordBox from "../../components/KeywordBox/KeywordBox";
+
+import "./MainPage.css";
+import SlideBanner from "./components/SlideBanner/SlideBanner";
+import { useState } from "react";
 
 const menu = [
   { name: "Home(1)", address: "/" },
@@ -46,131 +45,20 @@ const menu = [
 ];
 
 const MainPage = (props) => {
-  const boxRef = useRef();
-  const [boxVisible, setBoxVisible] = useState(false);
-  const textRefs = [
-    useRef(null),
-    useRef(null),
-    useRef(null),
-    useRef(null),
-    useRef(null),
-  ];
-  const [textVisible, setTextVisible] = useState([
-    false,
-    false,
-    false,
-    false,
-    false,
-  ]);
-
-  const [getFirstWord, setGetFirstWord] = useState(firstWord[0]);
-  const [getSecondWord, setGetSecondWord] = useState(secondWord[0]);
-
-  const getRandomWord = (list) => {
-    return list[Math.floor(Math.random() * list.length)];
-  };
-
-  useEffect(() => {
-    const randomWord = setInterval(() => {
-      setGetFirstWord(getRandomWord(firstWord));
-      setGetSecondWord(getRandomWord(secondWord));
-    }, 3000);
-
-    return () => clearInterval(randomWord);
-  }, []);
-
-  useEffect(() => {
-    if (boxRef.current) {
-      const boxObserver = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              setBoxVisible(true);
-            } else {
-              setBoxVisible(false);
-            }
-          });
-        },
-        { threshold: 0.4 }
-      );
-
-      boxObserver.observe(boxRef.current);
-
-      return () => {
-        if (boxRef.current) {
-          boxObserver.unobserve(boxRef.current);
-        }
-      };
-    }
-  }, []);
-
-  useEffect(() => {
-    const textObserver = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          setTextVisible((prev) => {
-            const newVisible = [...prev];
-            const index = textRefs.findIndex(
-              (textRefs) => textRefs.current === entry.target
-            );
-            if (entry.isIntersecting) {
-              if (index !== -1) {
-                newVisible[index] = true;
-              }
-            } else {
-              const index = textRefs.findIndex(
-                (textRefs) => textRefs.current === entry.target
-              );
-              if (index !== -1) {
-                newVisible[index] = false;
-              }
-            }
-            return newVisible;
-          });
-        });
-      },
-      { threshold: 0.8 }
-    );
-
-    textRefs.map((textRefs) => {
-      if (textRefs.current) textObserver.observe(textRefs.current);
-    });
-
-    return () => {
-      textRefs.map((textRefs) => {
-        if (textRefs.current) textObserver.unobserve(textRefs.current);
-      });
-    };
-  }, []);
+  const [bannerKeyword, setBannerKeyword] = useState("update");
 
   return (
     <MainLayout {...props}>
-      <HamburgerMenu menu={menu} />
+      {/* <HamburgerMenu menu={menu} /> */}
 
-      <div
-        className={`box_section scroll_animation ${
-          boxVisible ? "visible" : ""
-        }`}
-      >
-        <h4 ref={boxRef}>FIND YOUR SELLEB</h4>
-        <KeywordBox />
-
-        <div
-          onClick={() => navigateReload("/about")}
-          ref={textRefs[4]}
-          className={`scroll_animation link_btn ${
-            textVisible[4] ? "visible" : ""
-          }`}
-        >
-          HOW TO USE?
-        </div>
+      <div className="box_section">
+        <h4>FIND YOUR SELLEB</h4>
+        <KeywordBox
+          setBannerKeyword={setBannerKeyword}
+          bannerKeyword={bannerKeyword}
+        />
       </div>
-
-      <CardBox
-        title="NEW UPDATED SELLEB"
-        cardKeyword="NewUpdateSelleb"
-        type="slide"
-      />
+      <SlideBanner bannerKeyword={bannerKeyword} />
 
       <CardBox title="FITTING MODEL FEMALE" cardKeyword="FittingModelFeMale" />
 

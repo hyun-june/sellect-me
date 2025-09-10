@@ -10,6 +10,7 @@ const CardBox = ({ title, cardKeyword, type = "none", ...props }) => {
           <a href="/model">More +</a>
         </span>
       </div>
+
       <InnerCard cardKeyword={cardKeyword} type={type} />
     </div>
   );
