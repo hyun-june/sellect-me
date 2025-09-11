@@ -3,31 +3,35 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 1em;
-  margin: 3em 0;
+  gap: 2.5em;
+  margin-top: 3em;
+  width: clamp(400px, 30vw, 500px);
 
   h3 {
     font-size: 1.5em;
   }
 
   a {
-    border: 2px solid var(--line-color-blue);
+    border: 2px solid var(--text-color-black);
     padding: 0.5em 1em;
     display: flex;
     width: 100%;
-    justify-content: space-around;
+    height: 70px;
     align-items: center;
-    gap: 1em;
+    border-radius: 10px;
   }
 
   span {
     flex-grow: 1;
-    text-align: left;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.2em;
+    padding-right: 1em;
   }
 
   img {
-    width: 30px;
-    height: 30px;
+    width: 50px;
+    height: 50px;
   }
 }
 

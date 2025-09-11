@@ -7,13 +7,6 @@ const SignUpPage = (props) => {
   return (
     <MainLayout {...props}>
       <div className="createAccount_section">
-        {/* <Link href="/createAccount/createSelleb">
-                <div className="account_box">SELLEB</div>
-            </Link>
-            <Link href="/createAccount/createSellecter">
-                <div className="account_box">SELLECTER</div>
-            </Link> */}
-
         <Link to="/signup/selleb">
           <button class="createBox">
             SELLEB

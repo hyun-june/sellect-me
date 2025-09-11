@@ -4,13 +4,12 @@
   align-items: center;
 
   gap: 1em;
-  margin-top: 6em;
 
   h4 {
     font-size: clamp(30px, 6vw, 3em);
     font-weight: bold;
     line-height: 1.5em;
-    color: var(--text-color-yellow);
+    color: var(--text-color);
   }
 }
 

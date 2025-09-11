@@ -5,24 +5,7 @@
   justify-content: center;
   gap: 6em;
   margin-top: 5em;
-
 }
-
-/* .account_box {
-    background-color: #f0f0f0;
-    color: var(--text-color);
-    font-size: 2em;
-    font-weight: bold;
-    border-radius: 15px;
-    width: 300px;
-    height: 120px;
-    box-shadow:
-        rgba(0, 0, 0, 0.1) 0px 4px 6px -1px,
-        rgba(0, 0, 0, 0.03) 0px 2px 6px -1px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-} */
 
 .arrow-icon {
   margin-top: 0.2em;
@@ -66,15 +49,14 @@
   top: 2px;
 }
 
-
-@media screen and (max-width:430px){
+@media screen and (max-width: 430px) {
   .createAccount_section {
-      margin-top: 2em;
- a {
-width: 100%;
- }
-}
-.createBox {
-  width: 100%;
-}
+    margin-top: 2em;
+    a {
+      width: 100%;
+    }
+  }
+  .createBox {
+    width: 100%;
+  }
 }

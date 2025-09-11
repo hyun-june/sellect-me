@@ -45,6 +45,8 @@ body {
   --text-color-yellow: #ffc30b;
   --background-blue: #e9f3fb;
   --warn-color: #991b1b;
+  --text-color-lightgray: #e0e0e0;
+  --theme-color-blue: #1e8bf7;
 }
 
 h3 {

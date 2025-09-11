@@ -1,6 +1,6 @@
 .lineGraph_section {
   /* width: 100dvw; */
-  width:100%;
+  width: 100%;
 }
 
 /* 드래그 할거면 width 100%가 아닌 크기로 바꿔주기 */

@@ -22,7 +22,7 @@ const HamburgerMenu = ({ ...props }) => {
           <ul className="menu-list">
             {menu.map((item, index) => (
               // <li key={index}>
-              //   <a href={item.address}>{item.name} </a>
+              //     <a href={item.address}>{item.name} </a>
               // </li>
 
               <li>

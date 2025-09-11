@@ -2,138 +2,143 @@
   width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 1em;
+  gap: 3em;
 
-  h3 {
-    margin-bottom: 16px;
+  h5 {
+    font-size: 1.2em;
+    width: max-content;
   }
+}
+
+.mypage_profile_banner {
+  border: 2px solid var(--text-color);
+  background: linear-gradient(to bottom right, #0f2027, #2c5364);
+  border-radius: 8px;
+  padding: 1em 3em;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: white;
+
+  .mypage_banner_info {
+    p {
+      margin-bottom: 1em;
+    }
+  }
+
+  .mypage_banner_count {
+    .mypage_banner_item {
+      display: flex;
+      flex-direction: column;
+      gap: 1em;
+      text-align: center;
+      position: relative;
+      padding-left: 2em;
+
+      span {
+        border: 1px solid white;
+        padding: 0.4em 0.8em;
+        border-radius: 20px;
+      }
+    }
+
+    .mypage_banner_item::before {
+      bottom: 3px;
+      content: "";
+      left: 0;
+      position: absolute;
+      top: 3px;
+      width: 1px;
+      height: 100%;
+      background-color: var(--line-color);
+    }
+  }
+}
+
+.mypage_view {
+  display: flex;
+  gap: 2em;
 
   img {
     width: 300px;
     height: 350px;
     object-fit: cover;
     object-position: top;
-  }
-}
-
-.mypage_inner {
-  display: grid;
-  grid-template-columns: 1fr 0.8fr 0.1fr;
-}
-
-.mypage_inner_left {
-  border-right: 1px solid var(--text-color);
-  display: grid;
-  grid-template-columns: 1fr 0.8fr;
-
-  .profile_container {
-    display: flex;
-    justify-content: flex-start;
-  }
-
-  div {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-  }
-
-  .skeleton_profile_container {
-    width: 250px;
-    height: 300px;
-  }
-}
-
-.mypage_left_box {
-  height: 70px;
-  padding: 0em 1em;
-
-  .custom_box {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: var(--background-blue);
-    color: var(--text-color);
-  }
-}
-
-.mypage_right_box {
-  height: 70px;
-  color: var(--text-color);
-
-  .custom_box {
-    display: flex;
-    align-items: center;
-    padding-left: 2em;
-  }
-}
-
-.mypage_inner_right {
-  padding: 0em 1em;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-.mypage_menuList {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-
-  .menu-list {
-    position: absolute;
-    top: 0;
-    right: -13em;
-    display: flex;
-    flex-direction: column;
-    border: 1px solid var(--line-color);
     border-radius: 10px;
-    padding: 1em 0em;
-    background-color: white;
+    margin-bottom: 1em;
+  }
 
-    li {
-      width: 10em;
-      height: 70px;
-      color: blue;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      box-shadow: 0 5px 7px -1px #c7c7c7;
-      border: 1px solid var(--line-color);
-    }
-
+  .mypage_profile_link {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
     a {
+      padding: 0.8em 2em;
       color: var(--text-color);
+      background-color: #f1f2f4;
+      border-radius: 5px;
     }
   }
 
-  .hamburger-section {
-    height: 70px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  .mypage_preview {
+    flex: 1;
+    gap: 2em;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
 
-    .burger__menu,
-    .x__menu {
+    .mypage_preview_item {
+      border: 1px solid var(--line-color);
+      border-radius: 5px;
+      padding: 1em;
+      position: relative;
+      overflow-y: scroll;
+      max-height: 400px;
+      box-shadow: 0 5px 8px -2px rgba(0, 0, 0, 0.3);
+
+      .mypage_preview_title {
+        display: flex;
+        justify-content: space-between;
+      }
+
+      p {
+        margin: 1em 0;
+      }
+    }
+
+    .mypage_calendar {
+      border-bottom: 1px dashed var(--line-color);
+      display: flex;
       align-items: center;
+      gap: 2em;
+      margin: 1em 0;
+      padding-bottom: 0.5em;
+
+      span {
+        width: 30px;
+        height: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+        background-color: var(--text-color-lightgray);
+        padding: 1em;
+        border-radius: 50%;
+      }
+    }
+    .mypage_calendar.first {
+      span {
+        background-color: var(--theme-color-blue);
+        color: var(--text-color-white);
+      }
     }
   }
+}
 
-  .mypage_icons {
-    color: var(--text-color);
-    font-size: 2em;
-    height: 70px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+.mypage_calendar:nth-of-type(1) {
+  background-color: red;
 }
 
 .mypage_graph_section {
-  height: 100%;
-  margin-bottom: 3em;
-
   h5 {
     margin: 1em 0em;
     color: var(--text-color);
@@ -144,13 +149,13 @@
     border: 1px solid var(--line-color);
     border-radius: 0;
     padding: 1em;
-    height: 400px;
+    min-height: 400px;
     width: 100px;
+    margin-bottom: 2em;
   }
 
   .scroll-container {
     overflow-x: auto;
-    /* cursor: grab; */
   }
 
   .scroll-container::-webkit-scrollbar {
@@ -174,117 +179,69 @@
   }
 }
 
-@media screen and (min-width: 768px) and (max-width: 1366px) {
-  .mypage_container {
-    img {
-      width: 100%;
-      max-height: 300px;
-      object-fit: cover;
-      object-position: top;
-    }
-  }
-}
-
-@media screen and (max-width: 500px) {
-  .mypage_inner {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .mypage_inner_left {
-    border-right: none;
+.mypage_preview_item {
+  .chat_container {
+    width: 100%;
+    flex: 1;
     display: flex;
     flex-direction: column;
 
-    .profile_container {
+    section {
+      flex: 1;
+      padding: 1em;
+      background-color: #edf5fb;
       display: flex;
-      align-items: center;
-      margin-bottom: 1em;
-      width: 100%;
-      justify-content: center;
-    }
-
-    div {
-      padding: 0;
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1em;
+      flex-direction: column;
+      gap: 1.5em;
     }
   }
 
-  .mypage_left_box {
-    height: 70px;
+  .chat_content_box {
     padding: 0;
-    margin-bottom: 1em;
-
-    .custom_box {
-      display: flex;
-      align-items: center;
-    }
-  }
-
-  .mypage_inner_right {
-    padding: 0;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1em;
-  }
-
-  .mypage_right_box {
-    .custom_box {
-      justify-content: center;
-      padding: 0;
-    }
-  }
-
-  .mypage_menuList {
-    flex-direction: row;
+    height: 4em;
+    display: flex;
     gap: 0.5em;
-    position: absolute;
-    top: 0;
-    right: 0;
+    align-items: center;
+    justify-content: space-between;
 
-    .menu-list {
-      width: max-content;
-      top: 4em;
-      left: -4em;
-      z-index: 99;
+    box-shadow: none;
+    border-bottom: 1px solid #e0e0e0;
+    margin: 1em 0;
 
-      li {
-        width: 10em;
-        height: 70px;
-        color: blue;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        box-shadow: 0 5px 7px -1px #c7c7c7;
-        border: 1px solid var(--line-color);
-      }
-
-      a {
-        color: var(--text-color);
-      }
+    .chat_inner {
+      display: flex;
+      gap: 1em;
+      align-items: center;
     }
 
-    .hamburger-section {
-      width: max-content;
-
-      .burger__menu,
-      .x__menu {
-        align-items: center;
-      }
+    .des {
+      text-wrap: nowrap;
     }
 
-    .mypage_icons {
-      width: 50px;
+    .chat_box_info {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5em;
     }
-  }
 
-  .mypage_graph_section {
-    canvas {
-      border: 1px solid var(--line-color);
-      padding: 0;
-      height: 300px !important;
+    .chat_box_img {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      object-fit: cover;
+      background-color: var(--line-color);
+      margin: 0;
+    }
+
+    .chat_box_date {
+      text-align: center;
+      font-size: 0.9em;
+    }
+
+    .chat_box_name {
+      font-weight: bold;
+      font-size: 1em;
+      text-wrap: nowrap;
     }
   }
 }

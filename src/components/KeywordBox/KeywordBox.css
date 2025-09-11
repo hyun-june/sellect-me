@@ -3,12 +3,13 @@
   justify-content: center;
   gap: 1em;
   font-size: 1.2em;
-  font-weight: bold;
+  /* font-weight: bold; */
   flex-wrap: wrap;
 }
 
 .keyword_box {
-  border-bottom: 2px solid var(--line-color);
+  /* border-bottom: 1px solid var(--line-color); */
+  box-shadow: inset 0 -1px 0 0 var(--line-color);
   color: var(--text-color);
   padding: 0.5em 1em;
 
@@ -17,5 +18,6 @@
 }
 
 .keyword_box.focus {
-  border-bottom: 2px solid black;
+  box-shadow: inset 0 -2px 0 0 var(--theme-color-blue);
+  font-weight: bold;
 }

@@ -41,23 +41,23 @@
   }
 }
 
-@media screen and (max-width:430px){
-.chat_content_box {
-  gap: 0.5em;
-  padding: 0 0.5em;
+@media screen and (max-width: 430px) {
+  .chat_content_box {
+    gap: 0.5em;
+    padding: 0 0.5em;
 
-  .chat_box_img {
-    width: 40px;
-    height: 40px;
-  }
+    .chat_box_img {
+      width: 40px;
+      height: 40px;
+    }
 
-  .chat_box_date {
-    text-align: center;
-  }
+    .chat_box_date {
+      text-align: center;
+    }
 
-  .chat_box_name {
-    font-size: 1em;
-    text-wrap: nowrap;
+    .chat_box_name {
+      font-size: 1em;
+      text-wrap: nowrap;
+    }
   }
-}
 }

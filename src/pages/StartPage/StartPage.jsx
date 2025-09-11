@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
-
+import SideHamburgerMenu from "./components/SideHamburgerMenu/SideHamburgerMenu";
 import "./StartPage.css";
-import HamburgerMenu from "./../../components/HamburgerMenu/HamburgerMenu";
 
 const firstWord = ["모델", "배우", "쇼호스트", "인플루언서"];
 const secondWord = ["출연료", "저작권", "초상권"];
@@ -31,7 +30,7 @@ const StartPage = () => {
 
   return (
     <div className="start_page">
-      <HamburgerMenu menu={menu} />
+      <SideHamburgerMenu menu={menu} />
       <div className="start_container">
         {/* <section className="first-grid"></section> */}
         <section className="middle-grid">

@@ -49,7 +49,7 @@ const MainPage = (props) => {
 
   return (
     <MainLayout {...props}>
-      {/* <HamburgerMenu menu={menu} /> */}
+      <HamburgerMenu menu={menu} />
 
       <div className="box_section">
         <h4>FIND YOUR SELLEB</h4>
